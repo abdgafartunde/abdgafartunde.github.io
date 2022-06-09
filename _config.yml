@@ -1,4 +1,4 @@
-title: "TIAMIYU Corner"
+title: "TIAMIYU's Corner"
 author: "TIAMIYU, Abd'gafar Tunde"
 description: "The Chinese University of Hong Kong"
 permalink: /:title/
@@ -21,7 +21,7 @@ navigation:                # accepts {file, title, url, icon, sidebaricon}
 
 external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
   - {title: Mail, icon: envelope, url: "mailto:abdgafartunde@yahoo.com"}
-  - {title: Github, icon: github, url: "https://github.com/abdgafartudne"}
+  - {title: Github, icon: github, url: "https://github.com/abdgafartunde"}
   - {title: Subscribe, icon: rss, url: "/feed.xml"}
 
 comments:
