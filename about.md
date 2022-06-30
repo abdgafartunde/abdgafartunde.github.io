@@ -2,7 +2,7 @@
 layout: page
 title: ""
 ---
-## Awards:
+# Awards:
 - Hong Kong PhD Fellowship Scheme
 - CUHK Vice-Chancellor's Scholarship Award
 - Postgraduate Studentship Award
@@ -10,11 +10,11 @@ title: ""
 - Peter Ojongbede’s prize award for the best graduating student in the department of Mathematics for the 2016/2017 Academic Session
 - Medal award at the 2017 National Mathematics Competition for University Students (NAMCUS), awarded by the National Mathematical Centre, Abuja Nigeria
 
-## Email here: 
+# Email here: 
 - abdgafartunde@yahoo.com
 - tiamiyu@math.cuhk.edu.hk
 
-## Address:
+# Address:
 - 222C, Department of Mathematics, \
 The Chinese University of Hong Kong, 
 Hong Kong
