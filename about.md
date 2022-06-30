@@ -7,7 +7,7 @@ title: ""
 - B.Tech. in Mathematics, Federal University of Technology, Minna, Nigeria, 2017
 
 ## Awards:
-- Hong Kong PhD Fellowship Scheme \ 
+- Hong Kong PhD Fellowship Scheme (HKPFS) \
   Hong Kong Research Grants Council
 - CUHK Vice-Chancellor's Scholarship Award \
   The Chinese University of Hong Kong, Hong Kong
