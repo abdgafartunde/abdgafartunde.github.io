@@ -14,7 +14,7 @@ title: ""
 - Pan African University (PAU) Scholarship (Declined)\
   PAU Institute for Basic Sciences, Technology and Innovation
 - Peter Ojongbede’s prize award for the best graduating student \
-  Department of Mathematics\
+  Department of Mathematics, 2017 \
   Federal University of Technology, Minna, Nigeria.
 - Medal Award\
   National Mathematics Competition for University Students (NAMCUS) \
