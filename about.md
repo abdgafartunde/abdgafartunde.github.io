@@ -3,12 +3,18 @@ layout: page
 title: ""
 ---
 # Awards:
-- Hong Kong PhD Fellowship Scheme
-- CUHK Vice-Chancellor's Scholarship Award
-- Postgraduate Studentship Award
-- Pan African University (PAU) Scholarship at PAU Institute for Basic Sciences, Technology and Innovation
-- Peter Ojongbede’s prize award for the best graduating student in the department of Mathematics for the 2016/2017 Academic Session
-- Medal award at the 2017 National Mathematics Competition for University Students (NAMCUS), awarded by the National Mathematical Centre, Abuja Nigeria
+- Hong Kong PhD Fellowship Scheme\
+  Hong Kong Research Grants Council
+- CUHK Vice-Chancellor's Scholarship Award\
+  The Chinese University of Hong Kong, Hong Kong
+- Pan African University (PAU) Scholarship (Declined)\
+  PAU Institute for Basic Sciences, Technology and Innovation
+- Peter Ojongbede’s prize award for the best graduating student\
+  Department of Mathematics\ 
+  Federal University of Technology, Minna, Nigeria.
+- Medal Award\
+  National Mathematics Competition for University Students (NAMCUS)\ 
+  National Mathematical Centre, Abuja Nigeria
 
 # Email here: 
 - abdgafartunde@yahoo.com
@@ -16,5 +22,5 @@ title: ""
 
 # Address:
 - 222C, Department of Mathematics, \
-The Chinese University of Hong Kong, 
+The Chinese University of Hong Kong,\
 Hong Kong
