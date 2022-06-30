@@ -3,7 +3,7 @@ layout: page
 title: ""
 ---
 
-I am a Phd Student in the Department of Mathematics at the Chinese University of Hong Kong, Hong Kong SAR China. 
+I am a Phd student in the Department of Mathematics at the Chinese University of Hong Kong, Hong Kong SAR China. 
 
 ## Research Interests: 
 - Inverse Problems 
