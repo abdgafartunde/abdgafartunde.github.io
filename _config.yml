@@ -20,6 +20,7 @@ navigation:                # accepts {file, title, url, icon, sidebaricon}
   - {file: "publications.md", title: "Publications"}
   - {file: "/tiamiyu.pdf", title: "CV"}
   - {file: "README.md", title: "Contact"}
+  - {file: "Blog", file: "/blog.md"}
   
 external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
   - {title: Mail, icon: envelope, url: "mailto:abdgafartunde@yahoo.com"}
