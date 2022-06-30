@@ -15,11 +15,10 @@ minimal: false             # use a dark header
 # Menu
 
 navigation:                # accepts {file, title, url, icon, sidebaricon}
-  - {file: "index.html", title: "Home"}
+  - {file: "/tiamiyu.pdf", title: "CV", icon: home}
   - {file: "publications.md", title: "Publications"}
-  - {file: "/tiamiyu.pdf", title: "CV"}
   - {file: "README.md", title: "Contact"}
-  - {file: "Blog", title: "/blog.md"}
+  - {file: "/blog.md", title: "Blog"}
   
 external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
   - {title: Mail, icon: envelope, url: "mailto:abdgafartunde@yahoo.com"}
