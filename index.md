@@ -2,11 +2,10 @@
 layout: page
 title: ""
 ---
-### Abd'gafar Tunde Tiamiyu
-Graduate Research and Teaching Assistant
+### Graduate Research and Teaching Assistant
+I am currently a Phd student in the Department of Mathematics at the Chinese University of Hong Kong, Hong Kong SAR China. 
 
-### Bio
-I am a Phd student in the Department of Mathematics at the Chinese University of Hong Kong, Hong Kong SAR China. My research interests are listed below. 
+
 
 ## Research Interests: 
 - Inverse Problems 
