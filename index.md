@@ -7,7 +7,7 @@ I am currently a Phd student in the Department of Mathematics at the Chinese Uni
 
 
 
-## Research Interests: 
+### Research Interests: 
 - Inverse Problems 
 - Deep Neural Networks 
 - Learning Theory
