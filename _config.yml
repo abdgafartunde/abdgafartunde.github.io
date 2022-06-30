@@ -15,7 +15,7 @@ minimal: false             # use a dark header
 # Menu
 
 navigation:                # accepts {file, title, url, icon, sidebaricon}
-  - {url: "href="https://abdgafartunde.github.io/CV.pdf", title: "CV"}
+  - {file: "resume.md", title: "CV"}
   - {file: "publications.md", title: "Publications"}
   - {file: "contact.md", title: "Contact"}
   - {file: "blog.md", title: "Blog"}
