@@ -5,7 +5,7 @@ title: ""
 
 I am a Phd Student in the Department of Mathematics at the Chinese University of Hong Kong, Hong Kong SAR China. 
 
-## Research Interest: 
+## Research Interests: 
 - Inverse Problems 
 - Deep Neural Networks 
 - Learning Theory
