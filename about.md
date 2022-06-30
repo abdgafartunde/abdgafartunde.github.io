@@ -15,6 +15,6 @@ title: ""
 - tiamiyu@math.cuhk.edu.hk
 
 ## Address:
-- 222C, Department of Mathematics, \n
+- 222C, Department of Mathematics, \
 The Chinese University of Hong Kong, 
 Hong Kong
