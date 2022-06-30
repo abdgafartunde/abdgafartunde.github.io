@@ -14,3 +14,6 @@ I am a Phd Student in the Department of Mathematics at the Chinese University of
 - Scientific Computing 
 - Computational and Applied Mathematics 
 - Differential Equations  
+
+
+<embed src="https://abdgafartunde.github.io/CV.pdf" width="100%" height="850px"/>
