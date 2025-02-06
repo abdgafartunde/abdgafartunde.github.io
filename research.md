@@ -3,30 +3,59 @@ layout: page
 title: "Research"
 ---
 
-## Research Interests
+## Research Focus
+My research addresses fundamental challenges in medical imaging through mathematical innovation and computational advancement. I specialize in:
 
-- Deep Learning for Image Reconstruction
-- Inverse Problems in Imaging
-- Numerical Analysis and Optimization
-- Scientific Computing
+### Theoretical Foundations
+- **Inverse Problems Theory**
+  - Mathematical modeling of ill-posed problems
+  - Regularization theory and parameter selection
+  - Stability and convergence analysis
+
+- **Deep Learning Theory**
+  - Neural operator learning frameworks
+  - Theoretical guarantees for learned reconstructions
+  - Convergence analysis of deep learning methods
+
+### Applied Research
+- **Electrical Impedance Tomography (EIT)**
+  - Bilevel optimization for parameter learning
+  - Primal-dual algorithms with learned components
+  - Real-time reconstruction methods
+
+- **Scientific Computing**
+  - High-performance implementation strategies
+  - GPU-accelerated algorithms
+  - Parallel computing frameworks
 
 ## Current Projects
 
-- **Learning Optimal Regularization Parameters for Electrical Impedance Tomography (EIT)**
-  - Developing a bilevel optimization framework to learn optimal regularization parameters for EIT, improving image reconstruction accuracy and efficiency. My role involves designing the optimization algorithm, implementing it in Python using TensorFlow, and conducting numerical experiments.
+### Bilevel Learning for EIT
+Developing a novel framework that automatically learns optimal regularization parameters through:
+- Data-driven parameter optimization
+- End-to-end training strategies
+- Theoretical convergence guarantees
+- Practical implementation considerations
 
-- **Primal-Dual Algorithms with Learned Regularizers for EIT**
-  - Designing and implementing primal-dual algorithms with learned regularizers to enhance image reconstruction quality in EIT. My responsibilities include developing the algorithm, implementing it in MATLAB, and performing numerical experiments to validate its performance.
+### Advanced Reconstruction Algorithms
+Creating next-generation reconstruction methods featuring:
+- Learned regularization components
+- Adaptive parameter selection
+- Real-time processing capabilities
+- Robust error handling
 
-## Past Projects
-
-- **Mathematical Modeling of HIV/AIDS Transmission Dynamics**
-  - Developed a mathematical model to study the transmission dynamics of HIV/AIDS, analyzing the impact of various intervention strategies. My role involved formulating the model, conducting simulations, and analyzing the results.
+## Research Impact
+Our work contributes to:
+- Improved medical imaging accuracy
+- Faster reconstruction times
+- Reduced computational costs
+- Enhanced clinical applicability
 
 ## Collaborations
+- **The Chinese University of Hong Kong**
+  - Prof. Jun Zou, Department of Mathematics
 
-- Professor Jun Zou, The Chinese University of Hong Kong
-  - Collaborating on the development of novel deep learning techniques for solving inverse problems in imaging.
+- **University of Graz**
+  - Prof. Kristian Bredies, Department of Mathematics and Scientific Computing
 
-- Professor Karl Kunisch, University of Graz
-  - Working together on primal-dual algorithms with learned regularizers for EIT reconstruction.
+[View Publications](/publications)

@@ -3,33 +3,38 @@ layout: page
 title: "Welcome"
 ---
 
-# Abdgafar Tunde Tiamiyu
+# Abd'gafar Tunde Tiamiyu
 
-### Graduate Research and Teaching Assistant
+### Applied Mathematics and Deep Learning Researcher
+Department of Mathematics, The Chinese University of Hong Kong
 
-**Brief Bio:** A dedicated PhD candidate at CUHK, specializing in deep learning for image reconstruction. Passionate about bridging theory and application in computational mathematics.
+## Research Vision
+Advancing medical imaging through mathematical innovation and computational excellence. As a doctoral researcher at CUHK, I develop cutting-edge algorithms that bridge theoretical mathematics with practical healthcare applications.
 
-I am a highly motivated PhD candidate in Mathematics at The Chinese University of Hong Kong (CUHK). My research specializes in deep learning applications for image reconstruction, particularly in electrical impedance tomography (EIT). My work combines innovative algorithm development with strong foundations in numerical analysis, optimization, and inverse problems.
+## Innovation Focus
+- **Next-Generation Medical Imaging**
+  - Developing faster, more accurate reconstruction methods
+  - Creating robust, clinically-viable solutions
+  - Advancing theoretical understanding of deep learning
 
-### Research Focus
-- **Inverse Problems**: Developing innovative solutions for nonlinear ill-posed EIT and ISP
-- **Deep Learning & Learning Theory**: Enhancing model performance through theoretical frameworks
-- **Operator Learning & PDEs**: Advancing computational solutions for complex differential equations
-- **Scientific Computing**: High-performance implementations and parallel computing
-- **Image Reconstruction**: Algorithm development for high-quality imaging
-- **Optimization**: Advanced methods for computational efficiency
+- **Mathematical Foundations**
+  - Novel approaches to inverse problems
+  - Deep learning theory advancement
+  - Computational efficiency optimization
 
-### Technical Expertise
-- **Programming & Deep Learning**: Python, MATLAB, PyTorch, TensorFlow
-- **Mathematical Computing**: Numerical Analysis, PDEs, Optimization
-- **Scientific Software**: LaTeX, Maple, Version Control
-- **High Performance Computing**: Parallel Computing, GPU Acceleration
+## Current Impact
+My research contributes to:
+- **Healthcare**: Improving medical diagnosis through enhanced imaging
+- **Technology**: Advancing deep learning applications in scientific computing
+- **Theory**: Bridging mathematical principles with practical applications
 
-### Current Work
-I'm bridging the gap between theoretical research and practical applications in computational mathematics, focusing on:
-- Bilevel Optimization for Parameter Learning
-- Primal-Dual Algorithms with Learned Regularizers
-- Advanced Image Reconstruction Methods
-- High-Performance Scientific Computing
+## Recent Highlights
+- Visiting Researcher at University of Graz, Graz 8010, Austria
+- Ernst Mach Grant Recipient
+- Hong Kong PhD Fellowship Holder
 
-[Explore my publications](/publications) | [View my complete CV](/cv) | [Contact me](/about)
+[Research Details](/research) | [Publications](/publications) | [Academic Profile](/about)
+
+---
+
+*"The essence of mathematics lies in its freedom." - Georg Cantor*
