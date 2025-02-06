@@ -3,13 +3,9 @@ layout: page
 title: "Curriculum Vitae"
 ---
 
-<button onclick="generatePDF()" class="no-print">Generate PDF</button>
-
 # Abdgafar Tunde Tiamiyu
 PhD Candidate in Mathematics  
 The Chinese University of Hong Kong
-
-[Download my CV as PDF](/assets/cv.pdf){: download="Tiamiyu_CV.pdf"}
 
 ## Education
 - **Ph.D. in Mathematics** (Aug. 2021 - July 2025 expected)  

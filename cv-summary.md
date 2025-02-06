@@ -28,5 +28,3 @@ The Chinese University of Hong Kong
 - **Deep Learning Frameworks**: PyTorch, TensorFlow
 - **Scientific Software**: LaTeX, MATLAB, Maple
 - **Development Tools**: Git, Microsoft Office Suite
-
-[Download my CV as PDF](/assets/cv.pdf){: download="Tiamiyu_CV.pdf"}
