@@ -20,7 +20,6 @@ style:
 # Menu
 
 navigation:                # accepts {file, title, url, icon, sidebaricon}
-  - {file: "index.md", title: "Home"}
   - {file: "about.md", title: "About"}
   - {file: "research.md", title: "Research"}
   - {file: "teaching.md", title: "Teaching"}
