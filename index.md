@@ -5,8 +5,6 @@ title: "Welcome"
 
 # Abdgafar Tunde Tiamiyu
 
-[![IMAGE](https://avatars.githubusercontent.com/u/44282094?v=4)](https://github.com/abdgafartunde)
-
 ### Graduate Research and Teaching Assistant
 
 **Brief Bio:** A dedicated PhD candidate at CUHK, specializing in deep learning for image reconstruction. Passionate about bridging theory and application in computational mathematics.
