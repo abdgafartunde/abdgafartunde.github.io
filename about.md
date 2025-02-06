@@ -91,11 +91,6 @@ I am a highly motivated researcher specializing in deep learning applications fo
   Best Graduating Student in the Department of Mathematics  
   Federal University of Technology, Minna, Nigeria
 
-- **Pan African University (PAU) Scholarship** (2021, Declined)  
-  PAU Institute for Basic Sciences, Technology and Innovation
-- **Peter Ojongbede's Prize** (2018)  
-  Best Graduating Student, Department of Mathematics  
-  Federal University of Technology, Minna, Nigeria
 - **Medal Award** (2017)  
   National Mathematics Competition for University Students (NAMCUS)  
   National Mathematical Centre, Abuja Nigeria
@@ -110,8 +105,7 @@ I am a highly motivated researcher specializing in deep learning applications fo
 - Alternative: abdgafartunde@yahoo.com
 
 ### Office
-LSB 222C  
-Department of Mathematics  
+LSB 222C, Department of Mathematics  
 The Chinese University of Hong Kong  
 Hong Kong SAR, China
 
@@ -123,7 +117,7 @@ Hong Kong SAR, China
 ## Connect With Me
 I'm always interested in collaborating on innovative research projects in inverse problems, deep learning, imaging, and optimization. Feel free to reach out!
 
-## References
+<!-- ## References
 - **Professor Jun Zou**  
   Chairman, Department of Mathematics  
   Choh-Ming Li Professor of Mathematics  
@@ -134,4 +128,4 @@ I'm always interested in collaborating on innovative research projects in invers
   Professor of Mathematics  
   Department of Mathematics  
   The Chinese University of Hong Kong  
-  Email: tschung@math.cuhk.edu.hk
+  Email: tschung@math.cuhk.edu.hk -->
