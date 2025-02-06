@@ -12,18 +12,18 @@ title: "Research"
 
 ## Current Projects
 
-- **[Project Title 1]**
-  - [Brief description of the project and your role]
+- **Deep Learning for EIT**
+  - Developing deep learning models to improve the accuracy and efficiency of electrical impedance tomography.
 
-- **[Project Title 2]**
-  - [Brief description of the project and your role]
+- **Optimization Algorithms for Inverse Problems**
+  - Designing and implementing optimization algorithms to solve inverse problems in imaging.
 
 ## Past Projects
 
-- **[Project Title 3]**
-  - [Brief description of the project and your role]
+- **Mathematical Modeling of HIV/AIDS Transmission Dynamics**
+  - Developed a mathematical model to study the transmission dynamics of HIV/AIDS and evaluated the impact of different intervention strategies.
 
 ## Collaborations
 
-- [Collaborator Name], [Institution]
-  - [Brief description of the collaboration]
+- Dr. John Doe, University of XYZ
+  - Collaborating on the development of deep learning models for medical imaging.

@@ -32,3 +32,15 @@ I'm bridging the gap between theoretical research and practical applications in 
 - High-Performance Scientific Computing
 
 [Explore my publications](/publications) | [View my complete CV](/cv) | [Contact me](/about)
+
+## Introduction Video
+
+[![Introduction Video](link-to-thumbnail)](link-to-video)
+
+## Skills
+
+- **Python**: ![Python](https://progress-bar.dev/90/)
+- **MATLAB**: ![MATLAB](https://progress-bar.dev/85/)
+- **PyTorch**: ![PyTorch](https://progress-bar.dev/80/)
+- **TensorFlow**: ![TensorFlow](https://progress-bar.dev/75/)
+- **LaTeX**: ![LaTeX](https://progress-bar.dev/95/)

@@ -5,21 +5,17 @@ title: "Teaching"
 
 ## Teaching Philosophy
 
-[Write a brief statement about your teaching philosophy. For example:]
-
 I believe in creating an engaging and interactive learning environment where students can develop a strong foundation in mathematics and its applications. I strive to make complex concepts accessible and relevant to students' interests and career goals.
 
 ## Courses Taught
 
-- **[Course Name 1]** (Semester Year)
-  - [Brief description of the course]
+- **Calculus I** (Fall 2021)
+  - Introduction to differential and integral calculus of one variable, including limits, continuity, derivatives, and integrals.
 
-- **[Course Name 2]** (Semester Year)
-  - [Brief description of the course]
+- **Linear Algebra** (Spring 2022)
+  - Study of vector spaces, linear transformations, matrices, determinants, eigenvalues, and eigenvectors.
 
 ## Teaching Materials
 
-[Optional: Include links to course syllabi, lecture notes, assignments, or other teaching materials.]
-
-- [Link to Course 1 Materials]
-- [Link to Course 2 Materials]
+- [Calculus I Syllabus](link-to-syllabus)
+- [Linear Algebra Lecture Notes](link-to-lecture-notes)
