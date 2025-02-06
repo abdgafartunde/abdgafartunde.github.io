@@ -15,11 +15,10 @@ minimal: false             # use a dark header
 # Menu
 
 navigation:                # accepts {file, title, url, icon, sidebaricon}
-  - {file: "resume.md", title: "CV"}
-  - {file: "publications.md", title: "Publications"}
-  - {file: "about.md", title: "About"}
-  - {file: "blog.md", title: "Blog"}
-  
+  - {file: "index.html"}
+  - {file: "README.md"}
+  - {file: "README.md"}
+external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
 external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
   - {title: Mail, icon: envelope, url: "mailto:abdgafartunde@yahoo.com"}
   - {title: Github, icon: github, url: "https://github.com/abdgafartunde"}
