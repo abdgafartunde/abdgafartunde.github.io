@@ -5,17 +5,17 @@ title: "Teaching"
 
 ## Teaching Philosophy
 
-I believe in creating an engaging and interactive learning environment where students can develop a strong foundation in mathematics and its applications. I strive to make complex concepts accessible and relevant to students' interests and career goals.
+I am committed to fostering a dynamic and inclusive learning environment where students are empowered to explore the beauty and power of mathematics. My teaching philosophy centers on making complex concepts accessible through real-world applications, interactive discussions, and personalized guidance. I aim to instill in my students not only a deep understanding of mathematical principles but also the critical thinking and problem-solving skills necessary for success in their future endeavors.
 
 ## Courses Taught
 
-- **Calculus I** (Fall 2022)
-  - Introduction to differential and integral calculus of one variable, including limits, continuity, derivatives, and integrals.
+- **MATH1010: University Mathematics** (Fall 2021, CUHK)
+  - A calculus course covering limits, derivatives, integrals, and applications.
 
-- **Linear Algebra** (Spring 2023)
-  - Study of vector spaces, linear transformations, matrices, determinants, eigenvalues, and eigenvectors.
+- **MATH2050: Mathematical Analysis I** (Spring 2022, CUHK)
+  - An introductory course to real analysis, covering sequences, series, continuity, and differentiability.
 
 ## Teaching Materials
 
-- [Calculus I Syllabus](link-to-syllabus)
-- [Linear Algebra Lecture Notes](link-to-lecture-notes)
+- [MATH1010 Course Syllabus](link-to-syllabus-1010)
+- [MATH2050 Lecture Notes](link-to-lecture-notes-2050)

@@ -15,10 +15,10 @@ For a complete and up-to-date list of my publications, please visit my research 
 ### Journal Articles
 
 - [Title of Article 1](Link to Article 1)  
-  Authors, Journal, Year
+  Authors, Journal, Year (DOI: xxxx)
 
 - [Title of Article 2](Link to Article 2)  
-  Authors, Journal, Year
+  Authors, Journal, Year (DOI: yyyy)
 
 ### Conference Proceedings
 
@@ -38,4 +38,4 @@ For a complete and up-to-date list of my publications, please visit my research 
 
 ## Presentations
 - **[Conference Name]** (Month Year)  
-  Title of presentation, Location
+  Title of presentation: A Novel Approach to..., Location, *Brief description of the presentation.*

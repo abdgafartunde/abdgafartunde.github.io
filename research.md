@@ -12,18 +12,21 @@ title: "Research"
 
 ## Current Projects
 
-- **Deep Learning for EIT** 
-  - Developing deep learning models to improve the accuracy and efficiency of electrical impedance tomography (EIT) reconstructions.
+- **Learning Optimal Regularization Parameters for Electrical Impedance Tomography (EIT)**
+  - Developing a bilevel optimization framework to learn optimal regularization parameters for EIT, improving image reconstruction accuracy and efficiency. My role involves designing the optimization algorithm, implementing it in Python using TensorFlow, and conducting numerical experiments.
 
-- **Optimization Algorithms for Imaging**
-  - Creating advanced optimization algorithms to solve inverse problems in medical imaging.
+- **Primal-Dual Algorithms with Learned Regularizers for EIT**
+  - Designing and implementing primal-dual algorithms with learned regularizers to enhance image reconstruction quality in EIT. My responsibilities include developing the algorithm, implementing it in MATLAB, and performing numerical experiments to validate its performance.
 
 ## Past Projects
 
-- **Numerical Methods for PDEs**
-  - Developed and analyzed numerical methods for solving partial differential equations (PDEs) with applications in scientific computing.
+- **Mathematical Modeling of HIV/AIDS Transmission Dynamics**
+  - Developed a mathematical model to study the transmission dynamics of HIV/AIDS, analyzing the impact of various intervention strategies. My role involved formulating the model, conducting simulations, and analyzing the results.
 
 ## Collaborations
 
-- Dr. John Doe, University of XYZ
-  - Collaborated on developing machine learning algorithms for medical image analysis.
+- Professor Jun Zou, The Chinese University of Hong Kong
+  - Collaborating on the development of novel deep learning techniques for solving inverse problems in imaging.
+
+- Professor Karl Kunisch, University of Graz
+  - Working together on primal-dual algorithms with learned regularizers for EIT reconstruction.

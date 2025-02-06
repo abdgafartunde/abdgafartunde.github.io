@@ -8,6 +8,9 @@ title: "Welcome"
 [![IMAGE](https://avatars.githubusercontent.com/u/44282094?v=4)](https://github.com/abdgafartunde)
 
 ### Graduate Research and Teaching Assistant
+
+**Brief Bio:** A dedicated PhD candidate at CUHK, specializing in deep learning for image reconstruction. Passionate about bridging theory and application in computational mathematics.
+
 I am a highly motivated PhD candidate in Mathematics at The Chinese University of Hong Kong (CUHK). My research specializes in deep learning applications for image reconstruction, particularly in electrical impedance tomography (EIT). My work combines innovative algorithm development with strong foundations in numerical analysis, optimization, and inverse problems.
 
 ### Research Focus
