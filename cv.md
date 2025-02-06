@@ -13,37 +13,43 @@ The Chinese University of Hong Kong
 - **Ph.D. in Mathematics** (Aug. 2021 - July 2025 expected)  
   The Chinese University of Hong Kong  
   Advisor: Professor Jun Zou  
-  - Relevant Coursework: [List relevant coursework]
-  - Dissertation Title: [Dissertation Title]
+  - Relevant Coursework: Numerical Analysis, Optimization, Deep Learning, Inverse Problems
+  - Dissertation Title: Learning Optimal Regularization Parameters for Electrical Impedance Tomography
 
 - **B.Tech. in Mathematics** (Oct. 2012 - Nov. 2017)  
   Federal University of Technology, Minna, Nigeria  
-  - [Add details about relevant projects or achievements during your undergraduate studies]
+  - Final Year Project: Mathematical Modeling of HIV/AIDS Transmission Dynamics
 
 ## Research Experience
 - **Visiting Researcher** (Oct. 2023 - Feb. 2024)  
   Department of Mathematics and Scientific Computing  
   University of Graz, Austria
-  - [Add specific responsibilities and achievements during this research experience]
+  - Developed and analyzed stable models for EIT using primal-dual algorithms with learned regularizers
+  - Conducted numerical experiments leveraging TensorFlow and GPU computing
 
 - **Research Assistant** (June 2018 - April 2019)  
   Kano University of Science and Technology, Nigeria
-  - [Add specific responsibilities and achievements during this research experience]
+  - Conducted literature reviews, collaborated with faculty members on research projects, and organized seminars
+  - Performed numerical experiments and prepared manuscripts for publications
 
 ## Projects
 - **Learning Optimal Regularization Parameters for Inverse Problems**
-  - [Add more details about the project, your role, and the outcomes]
+  - Developed a bilevel optimization framework to learn optimal regularization parameters, demonstrating improved accuracy and efficiency compared to traditional methods
+
 - **Reconstruction Approaches in EIT Using Primal-Dual Algorithms**
-  - [Add more details about the project, your role, and the outcomes]
+  - Designed and implemented primal-dual algorithms with learned regularizers for enhanced image reconstructions in EIT
+  - Conducted extensive numerical experiments demonstrating the efficiency of the proposed method
 
 ## Teaching Experience
 - **Teaching Assistant** (Aug. 2021 - present)  
   The Chinese University of Hong Kong
-  - [Add specific responsibilities and achievements during this teaching experience]
+  - Assisted in teaching undergraduate mathematics courses, including Calculus, Linear Algebra, and Differential Equations
+  - Conducted tutorials, held office hours, and graded assignments and exams
 
 - **Mathematics Tutor** (May 2019 - Dec. 2020)  
   Kano University of Science and Technology Staff School
-  - [Add specific responsibilities and achievements during this teaching experience]
+  - Developed lesson plans and taught classes of over 100 students
+  - Prepared and graded exam papers
 
 ## Technical Skills
 - **Programming Languages**: Python, MATLAB
