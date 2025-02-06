@@ -52,10 +52,10 @@ Our work contributes to:
 - Enhanced clinical applicability
 
 ## Collaborations
-- **The Chinese University of Hong Kong**
+- **The Chinese University of Hong Kong, Shatin, Hong Kong SAR**
   - Prof. Jun Zou, Department of Mathematics
 
-- **University of Graz**
+- **University of Graz, Graz 8010, Austria**
   - Prof. Kristian Bredies, Department of Mathematics and Scientific Computing
 
 [View Publications](/publications)

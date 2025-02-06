@@ -11,12 +11,13 @@ The Chinese University of Hong Kong
 - **Ph.D. in Mathematics** (Aug. 2021 - July 2025 expected)  
   The Chinese University of Hong Kong  
   Advisor: Professor Jun Zou  
-  - Relevant Coursework: Numerical Analysis, Optimization, Deep Learning, Inverse Problems
-  - Dissertation Title: Learning Optimal Regularization Parameters for Electrical Impedance Tomography
+  - Relevant Coursework: Advanced Numerical Analysis, Optimization, Deep Learning, Inverse Problems
+  - Research Direction: Inverse Problems, Deep Learning and learning theory, Electrical Impedance Tomography (EIT)
+  <!-- - Dissertation Title: Learning Optimal Regularization Parameters for Electrical Impedance Tomography -->
 
 - **B.Tech. in Mathematics** (Oct. 2012 - Nov. 2017)  
   Federal University of Technology, Minna, Nigeria  
-  - Final Year Project: Mathematical Modeling of HIV/AIDS Transmission Dynamics
+  - Final Year Project: Hybrid Block Method for Direct Solution of General Fourth Order Ordinary Differential Equations Using Power Series Function
 
 ## Research Experience
 - **Visiting Researcher** (Oct. 2023 - Feb. 2024)  
@@ -41,7 +42,7 @@ The Chinese University of Hong Kong
 ## Teaching Experience
 - **Teaching Assistant** (Aug. 2021 - present)  
   The Chinese University of Hong Kong
-  - Assisted in teaching undergraduate mathematics courses, including Calculus, Linear Algebra, and Differential Equations
+  - Assisted in teaching undergraduate mathematics courses, including Calculus and Games and Strategic Thinking
   - Conducted tutorials, held office hours, and graded assignments and exams
 
 - **Mathematics Tutor** (May 2019 - Dec. 2020)  
@@ -62,8 +63,8 @@ The Chinese University of Hong Kong
 - Sir Peter's Ojongbede's Prize Award (2018)
 
 ## Professional Activities
-- Member, Society for Industrial and Applied Mathematics
-- Member, Hong Kong Mathematical Society
+- Member, Society for Industrial and Applied Mathematics (CUHK Student Chapter)
+- Member, Inverse Problems International Association
 
 ## References
 Available upon request

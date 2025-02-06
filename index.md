@@ -9,7 +9,7 @@ title: "Welcome"
 Department of Mathematics, The Chinese University of Hong Kong
 
 ## Research Vision
-Advancing medical imaging through mathematical innovation and computational excellence. As a doctoral researcher at CUHK, I develop cutting-edge algorithms that bridge theoretical mathematics with practical healthcare applications.
+Advancing medical imaging through mathematical innovation and computational excellence. As a PhD candidate at CUHK, I develop cutting-edge algorithms that bridge theoretical mathematics with practical healthcare applications.
 
 ## Innovation Focus
 - **Next-Generation Medical Imaging**
