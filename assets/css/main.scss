@@ -27,48 +27,6 @@
   }
 }
 
-// Contact Form
-.contact-form {
-  max-width: 600px;
-  margin: 2em 0;
-  
-  .form-group {
-    margin-bottom: 1.5em;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 0.5em;
-  }
-  
-  input, textarea {
-    width: 100%;
-    padding: 0.5em;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-}
-
-// Project Grid
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2em;
-  margin: 2em 0;
-}
-
-// Blog Posts
-.post-list {
-  list-style: none;
-  padding: 0;
-  
-  .post-item {
-    margin-bottom: 2em;
-    padding-bottom: 1em;
-    border-bottom: 1px solid #eee;
-  }
-}
-
 // Buttons
 .button {
   display: inline-block;

@@ -3,7 +3,7 @@ layout: page
 title: "Curriculum Vitae"
 ---
 
-# Abd'gafar Tunde Tiamiyu
+# Abdgafar Tunde Tiamiyu
 PhD Candidate in Mathematics  
 The Chinese University of Hong Kong
 
@@ -11,9 +11,11 @@ The Chinese University of Hong Kong
 - **Ph.D. in Mathematics** (Aug. 2021 - July 2025 expected)  
   The Chinese University of Hong Kong  
   Advisor: Professor Jun Zou  
+  CGPA: 3.865/4.000
 
 - **B.Tech. in Mathematics** (Oct. 2012 - Nov. 2017)  
   Federal University of Technology, Minna, Nigeria  
+  CGPA: 4.62/5.00
 
 ## Research Experience
 - **Visiting Researcher** (Oct. 2023 - Feb. 2024)  
