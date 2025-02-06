@@ -7,17 +7,17 @@ title: "Curriculum Vitae"
 PhD Candidate in Mathematics  
 The Chinese University of Hong Kong
 
+[Download my CV as PDF](cv.pdf)
+
 ## Education
 - **Ph.D. in Mathematics** (Aug. 2021 - July 2025 expected)  
   The Chinese University of Hong Kong  
   Advisor: Professor Jun Zou  
-  CGPA: 3.865/4.000
   - Relevant Coursework: [List relevant coursework]
   - Dissertation Title: [Dissertation Title]
 
 - **B.Tech. in Mathematics** (Oct. 2012 - Nov. 2017)  
   Federal University of Technology, Minna, Nigeria  
-  CGPA: 4.62/5.00
   - [Add details about relevant projects or achievements during your undergraduate studies]
 
 ## Research Experience
