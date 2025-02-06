@@ -3,6 +3,18 @@ layout: page
 title: "Curriculum Vitae"
 ---
 
+<style>
+@media print {
+  body { padding: 0 2em; }
+  nav, footer { display: none; }
+  a { text-decoration: none; color: #000; }
+}
+</style>
+
+<div class="print-button" style="text-align: right;">
+  <button onclick="window.print()">Download as PDF</button>
+</div>
+
 # Abdgafar Tunde Tiamiyu
 PhD Candidate in Mathematics  
 The Chinese University of Hong Kong
