@@ -1,32 +1,32 @@
 ---
-layout: home
-title: "Home"
+layout: page
+title: "Welcome"
 ---
 
-<div class="profile-header">
-  <img src="/assets/images/profile.jpg" alt="Abdgafar Tunde Tiamiyu" class="profile-image">
-  <div class="profile-info">
-    <h1>Abdgafar Tunde Tiamiyu</h1>
-    <h2>PhD Candidate in Mathematics</h2>
-    <p>The Chinese University of Hong Kong</p>
-  </div>
-</div>
+# Abdgafar Tunde Tiamiyu
 
-## About Me
-I am a mathematical researcher focused on developing innovative solutions at the intersection of deep learning and inverse problems. My work primarily addresses challenges in electrical impedance tomography (EIT) and scientific computing.
+### Graduate Research and Teaching Assistant
+I am a highly motivated PhD candidate in Mathematics at The Chinese University of Hong Kong (CUHK). My research specializes in deep learning applications for image reconstruction, particularly in electrical impedance tomography (EIT). My work combines innovative algorithm development with strong foundations in numerical analysis, optimization, and inverse problems.
 
-## Research Highlights
-- **Deep Learning for Inverse Problems**: Novel approaches to EIT reconstruction
-- **Computational Mathematics**: High-performance numerical methods
-- **Machine Learning Theory**: Optimization and regularization techniques
+### Research Focus
+- **Inverse Problems**: Developing innovative solutions for nonlinear ill-posed EIT and ISP
+- **Deep Learning & Learning Theory**: Enhancing model performance through theoretical frameworks
+- **Operator Learning & PDEs**: Advancing computational solutions for complex differential equations
+- **Scientific Computing**: High-performance implementations and parallel computing
+- **Image Reconstruction**: Algorithm development for high-quality imaging
+- **Optimization**: Advanced methods for computational efficiency
 
-[View My Latest Publications →](/publications){: .button}
-[Learn More About My Research →](/research){: .button}
+### Technical Expertise
+- **Programming & Deep Learning**: Python, MATLAB, PyTorch, TensorFlow
+- **Mathematical Computing**: Numerical Analysis, PDEs, Optimization
+- **Scientific Software**: LaTeX, Maple, Version Control
+- **High Performance Computing**: Parallel Computing, GPU Acceleration
 
-## Latest News
-- **Feb 2024**: Completed research visit at University of Graz, Austria
-- **Oct 2023**: Awarded Ernst Mach Grant for research in Austria
-- **Aug 2023**: [Add recent achievement/publication]
+### Current Work
+I'm bridging the gap between theoretical research and practical applications in computational mathematics, focusing on:
+- Bilevel Optimization for Parameter Learning
+- Primal-Dual Algorithms with Learned Regularizers
+- Advanced Image Reconstruction Methods
+- High-Performance Scientific Computing
 
-## Featured Projects
-{% include project-cards.html %}
+[Explore my publications](/publications) | [View my complete CV](/cv) | [Contact me](/about)
