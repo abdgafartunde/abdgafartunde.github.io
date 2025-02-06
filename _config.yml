@@ -1,7 +1,29 @@
+# Site settings
 title: "Abd'gafar Tunde Tiamiyu"
-author: "Abd'gafar Tunde Tiamiyu"
+email: tiamiyu@math.cuhk.edu.hk
 description: "PhD Candidate in Mathematics | Deep Learning | Inverse Problems"
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://abdgafartunde.github.io"
+
+# Build settings
+markdown: kramdown
+theme: jekyll-theme-minimal
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Navigation and social links
 permalink: /:title/
 lang: "en"
 excerpt_separator: "\n\n\n"
@@ -35,7 +57,3 @@ social:
 
 # Analytics and SEO
 google_analytics: # Add your GA ID
-plugins:
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-feed
