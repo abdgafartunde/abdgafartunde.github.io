@@ -8,7 +8,7 @@ title: "Talks & Presentations"
 ## Conference Talks
 - **[Conference Name]** (2024)  
   University of Graz, Austria  
-  "Title of Talk on EIT Methods"
+  "Title of Talk on EIT Methods "
 
 ## Seminar Presentations
 - **Mathematics Department Seminar** (2023)  

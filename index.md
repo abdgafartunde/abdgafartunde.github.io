@@ -13,7 +13,7 @@ title: "Home"
 </div>
 
 ## About Me
-I am a mathematical researcher focused on developing innovative solutions at the intersection of deep learning and inverse problems. My work primarily addresses challenges in electrical impedance tomography (EIT) and scientific computing.
+I am a mathematical researcher focused on developing innovative solutions at the intersection of deep learning and inverse problems. My work primarily addresses challenges in electrical impedance tomography (EIT) and scientific computing. 
 
 ## Research Highlights
 - **Deep Learning for Inverse Problems**: Novel approaches to EIT reconstruction
