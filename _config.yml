@@ -14,8 +14,8 @@ minimal: false             # use a dark header
 
 # Style
 style:
-  theme: custom           # use custom theme
-  css: /assets/css/custom.css  # path to custom CSS
+  theme: minima           # use minima as base theme
+  sass_dir: assets/css    # directory for Sass files
 
 # Menu
 
