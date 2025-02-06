@@ -3,6 +3,8 @@ layout: page
 title: "Curriculum Vitae"
 ---
 
+<button onclick="generatePDF()" class="no-print">Generate PDF</button>
+
 # Abdgafar Tunde Tiamiyu
 PhD Candidate in Mathematics  
 The Chinese University of Hong Kong
