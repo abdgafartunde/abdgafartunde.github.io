@@ -4,7 +4,7 @@ title: "About Me"
 ---
 
 ## Professional Profile
-As a PhD candidate at The Chinese University of Hong Kong (CUHK), I work at the intersection of deep learning and medical imaging. My research journey is driven by a passion for developing innovative solutions that bridge theoretical mathematics with real-world healthcare applications.
+As a mathematical scientist at The Chinese University of Hong Kong, I work at the intersection of deep learning and medical imaging. My research journey is driven by a passion for developing innovative solutions that bridge theoretical mathematics with real-world healthcare applications.
 
 ## Academic Background
 Under the supervision of Professor Jun Zou at CUHK, I'm developing novel approaches to solve complex inverse problems in medical imaging. My work is supported by the Hong Kong PhD Fellowship Scheme (HKPFS).
