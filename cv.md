@@ -69,3 +69,13 @@ The Chinese University of Hong Kong
 
 ## References
 Available upon request
+
+## Contact Information
+### Email
+- Academic: tiamiyu@math.cuhk.edu.hk
+- Alternative: abdgafartunde@yahoo.com
+
+### Social Media
+- [Google Scholar](https://scholar.google.com/citations?user=oZ3egAIAAAAJ&hl=en)
+- [ResearchGate](https://www.researchgate.net/profile/Abdgafar-Tiamiyu)
+- [LinkedIn](https://www.linkedin.com/in/abdgafartunde/)

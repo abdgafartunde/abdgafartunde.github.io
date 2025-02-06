@@ -112,7 +112,7 @@ Hong Kong SAR, China
 ### Social Media
 - [Google Scholar](https://scholar.google.com/citations?user=oZ3egAIAAAAJ&hl=en)
 - [ResearchGate](https://www.researchgate.net/profile/Abdgafar-Tiamiyu)
-- [LinkedIn](#)
+- [LinkedIn](https://www.linkedin.com/in/abdgafartunde/)
 
 ## Connect With Me
 I'm always interested in collaborating on innovative research projects in inverse problems, deep learning, imaging, and optimization. Feel free to reach out!
