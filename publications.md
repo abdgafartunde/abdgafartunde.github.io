@@ -3,18 +3,23 @@ layout: page
 title: "Publications"
 ---
 
-## Journal Publications
+## Research Profiles
 
-### 2023
-[List your recent publications here with proper citation format]
+For a complete and up-to-date list of my publications, please visit my research profiles:
 
-## Conference Proceedings
+- [Google Scholar Profile](https://scholar.google.com/citations?user=oZ3egAIAAAAJ&hl=en)
+- [ResearchGate Profile](https://www.researchgate.net/profile/Abdgafar-Tiamiyu)
 
-### 2022
-[List your conference papers here]
+## Selected Publications
 
-## Preprints
-[List your preprints/working papers here]
+### Journal Articles
+[Coming soon]
+
+### Conference Proceedings
+[Coming soon]
+
+### Preprints
+[Coming soon]
 
 ## Presentations
 - **[Conference Name]** (Month Year)  

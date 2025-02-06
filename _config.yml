@@ -1,6 +1,7 @@
-title: "Abd'gafar Tunde TIAMIYU"
-author: "TIAMIYU, Abd'gafar Tunde"
-description: "The Chinese University of Hong Kong"
+title: "Abd'gafar Tunde Tiamiyu"
+author: "Abd'gafar Tunde Tiamiyu"
+description: "PhD Candidate in Mathematics | Deep Learning | Inverse Problems"
+url: "https://abdgafartunde.github.io"
 permalink: /:title/
 lang: "en"
 excerpt_separator: "\n\n\n"
@@ -12,25 +13,29 @@ show_frame: true           # adds a gray frame to the site
 show_sidebar: false        # show a sidebar instead of the usual header
 minimal: false             # use a dark header
 
-# Menu
+# Navigation
+navigation:
+  - title: Home
+    url: /
+  - title: Research
+    url: /research
+  - title: Publications
+    url: /publications
+  - title: CV
+    url: /cv
+  - title: Contact
+    url: /contact
 
-navigation:                # accepts {file, title, url, icon, sidebaricon}
-  - {file: "resume.md", title: "CV"}
-  - {file: "publications.md", title: "Publications"}
-  - {file: "about.md", title: "About"}
-  - {file: "blog.md", title: "Blog"}
-  
-external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
-  - {title: Mail, icon: envelope, url: "mailto:abdgafartunde@yahoo.com"}
-  - {title: Github, icon: github, url: "https://github.com/abdgafartunde"}
-  - {title: R-gate, icon: researchgate, url: "https://www.researchgate.net/profile/Tiamiyu-Abdgafar"}
-  - {title: G-Scholar, icon: google, url: "https://scholar.google.com/citations?user=oZ3egAIAAAAJ&hl=en"}
-  
-  # - {title: Subscribe, icon: rss, url: "/feed.xml"}
+# Social Media
+social:
+  google_scholar: "https://scholar.google.com/citations?user=oZ3egAIAAAAJ"
+  researchgate: "https://www.researchgate.net/profile/Abdgafar-Tiamiyu"
+  linkedin: "#"
+  github: "https://github.com/abdgafartunde"
 
-comments:
-#  disqus_shortname: ""    # see https://disqus.com/
-#  isso_domain: ""         # see https://posativ.org/isso/
-
+# Analytics and SEO
+google_analytics: # Add your GA ID
 plugins:
- - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed

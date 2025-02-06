@@ -1,31 +1,32 @@
 ---
-layout: page
-title: "Welcome"
+layout: home
+title: "Home"
 ---
 
-# Abdgafar Tunde Tiamiyu
+<div class="profile-header">
+  <img src="/assets/images/profile.jpg" alt="Abdgafar Tunde Tiamiyu" class="profile-image">
+  <div class="profile-info">
+    <h1>Abd'gafar Tunde Tiamiyu</h1>
+    <h2>PhD Candidate in Mathematics</h2>
+    <p>The Chinese University of Hong Kong</p>
+  </div>
+</div>
 
-### Graduate Research and Teaching Assistant
-Welcome to my academic website! I am a PhD candidate under the prestigious Hong Kong PhD Fellowship Scheme (HKPFS) at the Department of Mathematics, The Chinese University of Hong Kong. My research focuses on inverse problems, partial differential equations (PDEs), numerical analysis, and deep learning, with a particular emphasis on Electrical Impedance Tomography (EIT) and Inverse Scattering Problems (ISP).
+## About Me
+I am a mathematical researcher focused on developing innovative solutions at the intersection of deep learning and inverse problems. My work primarily addresses challenges in electrical impedance tomography (EIT) and scientific computing.
 
-### Research Focus
-- **Inverse Problems**: Developing innovative solutions for nonlinear ill-posed EIT and ISP
-- **Deep Learning & Learning Theory**: Enhancing model performance through theoretical frameworks
-- **Operator Learning & PDEs**: Advancing computational solutions for complex differential equations
-- **Scientific Computing**: High-performance implementations and parallel computing
-- **Image Reconstruction**: Algorithm development for high-quality imaging
-- **Optimization**: Advanced methods for computational efficiency
+## Research Highlights
+- **Deep Learning for Inverse Problems**: Novel approaches to EIT reconstruction
+- **Computational Mathematics**: High-performance numerical methods
+- **Machine Learning Theory**: Optimization and regularization techniques
 
-### Technical Expertise
-- Programming Languages: Python, MATLAB
-- Frameworks: TensorFlow, PyTorch
-- Specialties: Adaptive Methods, Parallel Computing
+[View My Latest Publications →](/publications){: .button}
+[Learn More About My Research →](/research){: .button}
 
-### Current Work
-I'm bridging the gap between theoretical research and practical applications in computational mathematics, focusing on:
-- Electrical Impedance Tomography (EIT)
-- Inverse Scattering Problems (ISP)
-- Operator Learning for PDEs
-- Deep Learning Applications in Inverse Problems
+## Latest News
+- **Feb 2024**: Completed research visit at University of Graz, Austria
+- **Oct 2023**: Awarded Ernst Mach Grant for research in Austria
+- **Aug 2023**: [Add recent achievement/publication]
 
-[Explore my publications](/publications) | [View my complete CV](/resume) | [Contact me](/about)
+## Featured Projects
+{% include project-cards.html %}

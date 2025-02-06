@@ -1,0 +1,86 @@
+@import "minima";
+
+// Profile styling
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin: 2em 0;
+  
+  .profile-image {
+    width: 200px;
+    border-radius: 50%;
+    margin-right: 2em;
+  }
+}
+
+// Project cards
+.project-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5em;
+  margin: 1em 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  
+  img {
+    max-width: 100%;
+    border-radius: 4px;
+  }
+}
+
+// Contact Form
+.contact-form {
+  max-width: 600px;
+  margin: 2em 0;
+  
+  .form-group {
+    margin-bottom: 1.5em;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5em;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+}
+
+// Project Grid
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2em;
+  margin: 2em 0;
+}
+
+// Blog Posts
+.post-list {
+  list-style: none;
+  padding: 0;
+  
+  .post-item {
+    margin-bottom: 2em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+// Buttons
+.button {
+  display: inline-block;
+  padding: 0.8em 1.6em;
+  margin: 0.5em 1em 0.5em 0;
+  border-radius: 4px;
+  background: #2a7ae2;
+  color: white;
+  text-decoration: none;
+  
+  &:hover {
+    background: #1756a9;
+    text-decoration: none;
+  }
+}
