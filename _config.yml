@@ -12,6 +12,11 @@ show_frame: true           # adds a gray frame to the site
 show_sidebar: false        # show a sidebar instead of the usual header
 minimal: false             # use a dark header
 
+# Style
+style:
+  theme: custom           # use custom theme
+  css: /assets/css/custom.css  # path to custom CSS
+
 # Menu
 
 navigation:                # accepts {file, title, url, icon, sidebaricon}
