@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Publications"
+permalink: /publications/
 ---
 
 ## Research Profiles
@@ -36,6 +37,10 @@ For a complete and up-to-date list of my publications, please visit my research 
 - [Primal-Dual Algorithms with Learned Regularizers](link-to-preprint)  
   A. T. Tiamiyu, Preprint Server, 2022
 
-## Presentations
-- **Conference on Medical Imaging** (March 2023)  
-  Deep Learning Models for Medical Imaging, New York, USA
+## Presentations & Talks
+
+- **Deep Learning Models for Medical Imaging** (March 2023)  
+  Conference on Medical Imaging, New York, USA
+
+- **Mathematical Modeling of HIV/AIDS** (June 2021)  
+  Conference on Mathematical Biology, London, UK

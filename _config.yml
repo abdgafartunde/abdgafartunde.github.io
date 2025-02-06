@@ -17,15 +17,12 @@ minimal: false             # use a dark header
 navigation:                # accepts {file, title, url, icon, sidebaricon}
   - {file: "index.md", title: "Home"}
   - {file: "about.md", title: "About"}
-  - {file: "cv-summary.md", title: "CV"}
+  - {file: "cv.md", title: "CV"}
   - {file: "research.md", title: "Research"}
   - {file: "publications.md", title: "Publications"}
-  - {file: "teaching.md", title: "Teaching"}
-  - {file: "presentations.md", title: "Presentations"}
-  - {file: "blog.md", title: "Blog"}
-  - {title: Contact, url: "/about#contact-information"}
+  - {file: "contact.md", title: "Contact"}
 
-external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
+external:                  # shows a footer with social links
   - {title: Mail, icon: envelope, url: "mailto:tiamiyu@math.cuhk.edu.hk"}
   - {title: Github, icon: github, url: "https://github.com/abdgafartunde"}
   - {title: LinkedIn, icon: linkedin, url: "https://www.linkedin.com/in/abdgafartunde/"}
