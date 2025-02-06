@@ -32,4 +32,4 @@ Hong Kong SAR, China
 ### Professional Profiles
 - [Google Scholar](https://scholar.google.com/citations?user=oZ3egAIAAAAJ&hl=en)
 - [ResearchGate](https://www.researchgate.net/profile/Abdgafar-Tiamiyu)
-- [LinkedIn](https://www.linkedin.com/in/abdgafar-tunde-tiamiyu-077945159/)
+- [LinkedIn](https://www.linkedin.com/in/abdgafartunde/)
