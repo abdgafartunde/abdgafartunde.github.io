@@ -20,7 +20,7 @@ The Chinese University of Hong Kong
   - Final Year Project: Hybrid Block Method for Direct Solution of General Fourth Order Ordinary Differential Equations Using Power Series Function
 
 ## Research Experience
-- **Visiting Researcher** (Oct. 2023 - Feb. 2024)  
+- **Visiting Researcher** (Oct. 2023 - June. 2024)  
   Department of Mathematics and Scientific Computing  
   University of Graz, Austria
   - Developed and analyzed stable models for EIT using primal-dual algorithms with learned regularizers
