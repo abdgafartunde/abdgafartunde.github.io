@@ -15,19 +15,17 @@ minimal: false             # use a dark header
 # Menu
 
 navigation:                # accepts {file, title, url, icon, sidebaricon}
-  - {file: "index.md", title: "Home"}
-  - {file: "about.md", title: "About"}
-  - {file: "cv.md", title: "CV"}
-  - {file: "research.md", title: "Research"}
-  - {file: "publications.md", title: "Publications"}
-  - {file: "contact.md", title: "Contact"}
-
-external:                  # shows a footer with social links
-  - {title: Mail, icon: envelope, url: "mailto:tiamiyu@math.cuhk.edu.hk"}
+  - {file: "index.html"}
+  - {file: "README.md"}
+  - {file: "README.md"}
+external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
+external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
+  - {title: Mail, icon: envelope, url: "mailto:abdgafartunde@yahoo.com"}
   - {title: Github, icon: github, url: "https://github.com/abdgafartunde"}
-  - {title: LinkedIn, icon: linkedin, url: "https://www.linkedin.com/in/abdgafartunde/"}
-  - {title: Scholar, icon: google, url: "https://scholar.google.com/citations?user=oZ3egAIAAAAJ&hl=en"}
-  - {title: ResearchGate, icon: researchgate, url: "https://www.researchgate.net/profile/Abdgafar-Tiamiyu"}
+  - {title: R-gate, icon: researchgate, url: "https://www.researchgate.net/profile/Tiamiyu-Abdgafar"}
+  - {title: G-Scholar, icon: google, url: "https://scholar.google.com/citations?user=oZ3egAIAAAAJ&hl=en"}
+  
+  # - {title: Subscribe, icon: rss, url: "/feed.xml"}
 
 comments:
 #  disqus_shortname: ""    # see https://disqus.com/

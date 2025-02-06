@@ -5,10 +5,10 @@ title: "Presentations"
 
 ## Presentations
 
-- **Deep Learning Models for Medical Imaging** (March 2023)  
-  Conference on Medical Imaging, New York, USA  
+- **[Presentation Title 1]** (Month Year)  
+  [Conference Name], [Location]  
   [Link to Slides/Recording (if available)]
 
-- **Mathematical Modeling of HIV/AIDS** (June 2021)  
-  Conference on Mathematical Biology, London, UK  
+- **[Presentation Title 2]** (Month Year)  
+  [Conference Name], [Location]  
   [Link to Slides/Recording (if available)]

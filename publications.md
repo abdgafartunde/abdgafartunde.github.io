@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Publications"
-permalink: /publications/
 ---
 
 ## Research Profiles
@@ -15,32 +14,28 @@ For a complete and up-to-date list of my publications, please visit my research 
 
 ### Journal Articles
 
-- [Deep Learning for EIT](link-to-article)  
-  A. T. Tiamiyu, J. Zou, Journal of Medical Imaging, 2023
+- [Title of Article 1](Link to Article 1)  
+  Authors, Journal, Year
 
-- [Optimization Algorithms for Inverse Problems](link-to-article)  
-  A. T. Tiamiyu, J. Doe, Journal of Computational Mathematics, 2022
+- [Title of Article 2](Link to Article 2)  
+  Authors, Journal, Year
 
 ### Conference Proceedings
 
-- [Deep Learning Models for Medical Imaging](link-to-paper)  
-  A. T. Tiamiyu, Conference on Medical Imaging, 2023
+- [Title of Conference Paper 1](Link to Paper 1)  
+  Authors, Conference, Year
 
-- [Mathematical Modeling of HIV/AIDS](link-to-paper)  
-  A. T. Tiamiyu, Conference on Mathematical Biology, 2021
+- [Title of Conference Paper 2](Link to Paper 2)  
+  Authors, Conference, Year
 
 ### Preprints
 
-- [Advanced Image Reconstruction Methods](link-to-preprint)  
-  A. T. Tiamiyu, Preprint Server, 2023
+- [Title of Preprint 1](Link to Preprint 1)  
+  Authors, Preprint Server, Year
 
-- [Primal-Dual Algorithms with Learned Regularizers](link-to-preprint)  
-  A. T. Tiamiyu, Preprint Server, 2022
+- [Title of Preprint 2](Link to Preprint 2)  
+  Authors, Preprint Server, Year
 
-## Presentations & Talks
-
-- **Deep Learning Models for Medical Imaging** (March 2023)  
-  Conference on Medical Imaging, New York, USA
-
-- **Mathematical Modeling of HIV/AIDS** (June 2021)  
-  Conference on Mathematical Biology, London, UK
+## Presentations
+- **[Conference Name]** (Month Year)  
+  Title of presentation, Location
