@@ -14,10 +14,10 @@ For a complete and up-to-date list of my publications, please visit my research 
 
 ### Journal Articles
 
-- [Physics-informed neural networks in iterative form of nonlinear equations for numerical algorithms and simulations of delay differential equations](https://doi.org/10.1016/j.physa.2025.130368)  
+- [Physics-Informed Neural Networks in Iterative Form of Nonlinear Equations for Numerical Algorithms and Simulations of Delay Differential Equations](https://doi.org/10.1016/j.physa.2025.130368)  
   Jilong He and Abd'gafar Tunde Tiamiyu, Physica A: Statistical Mechanics and its Applications, 2025 (DOI: 10.1016/j.physa.2025.130368)
 
-- [Numerical simulation of time-dependent non-Newtonian compressible fluid flow in porous media: Finite element method and time integration approach](https://doi.org/10.1016/j.icheatmasstransfer.2024.107934)  
+- [Numerical Simulation of Time-Dependent Non-Newtonian Compressible Fluid Flow in Porous Media: Finite Element Method and Time Integration Approach](https://doi.org/10.1016/j.icheatmasstransfer.2024.107934)  
   Salman Ahmad and Abd'gafar Tunde Tiamiyu, International Communications in Heat and Mass Transfer, 2024 (DOI: 10.1016/j.icheatmasstransfer.2024.107934)
 
 ### Conference Proceedings
