@@ -29,4 +29,4 @@ The Chinese University of Hong Kong
 - **Scientific Software**: LaTeX, MATLAB, Maple
 - **Development Tools**: Git, Microsoft Office Suite
 
-[Download my CV as PDF](cv.pdf)
+[Download my CV as PDF](../assets/cv.pdf){: download="Tiamiyu_CV.pdf"}
