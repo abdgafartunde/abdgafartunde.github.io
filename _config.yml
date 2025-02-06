@@ -3,7 +3,6 @@ author: "TIAMIYU, Abd'gafar Tunde"
 description: "The Chinese University of Hong Kong"
 permalink: /:title/
 lang: "en"
-excerpt_separator: "\n\n\n"
 date_format: "%B %d, %Y"
 
 # Layout
@@ -18,25 +17,19 @@ style:
   sass_dir: assets/css    # directory for Sass files
 
 # Menu
-
 navigation:                # accepts {file, title, url, icon, sidebaricon}
   - {file: "about.md", title: "About"}
   - {file: "research.md", title: "Research"}
   - {file: "teaching.md", title: "Teaching"}
   - {file: "publications.md", title: "Publications"}
   - {file: "cv.md", title: "CV"}
+  - {file: "blog.md", title: "Blog"}
 
 external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
   - {title: Mail, icon: envelope, url: "mailto:abdgafartunde@yahoo.com"}
   - {title: Github, icon: github, url: "https://github.com/abdgafartunde"}
   - {title: R-gate, icon: researchgate, url: "https://www.researchgate.net/profile/Tiamiyu-Abdgafar"}
   - {title: G-Scholar, icon: google, url: "https://scholar.google.com/citations?user=oZ3egAIAAAAJ&hl=en"}
-  
-  # - {title: Subscribe, icon: rss, url: "/feed.xml"}
-
-comments:
-#  disqus_shortname: ""    # see https://disqus.com/
-#  isso_domain: ""         # see https://posativ.org/isso/
 
 plugins:
  - jekyll-feed
