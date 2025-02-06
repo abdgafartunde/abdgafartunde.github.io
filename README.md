@@ -97,3 +97,15 @@ Contrast comes preinstalled with a leightweight alternative to MathJax called [K
 ![screenshot](https://user-images.githubusercontent.com/4943215/109431832-b6cac080-7a08-11eb-9c5e-a058680c23a1.png)
 
 ![screenshot](https://user-images.githubusercontent.com/4943215/73125194-5f0b8b80-3fa4-11ea-805c-8387187503ad.png)
+
+## Modifications
+
+This website has been modified to include the following:
+
+- Added a teaching page with teaching philosophy and courses taught.
+- Added a research page with research interests and projects.
+- Added a presentations page with a list of presentations.
+- Added a professional photo and skills section to the index page.
+- Added a link to download the CV on the about page.
+- Added more details to each section of the CV page.
+- Added a complete list of publications with links on the publications page.

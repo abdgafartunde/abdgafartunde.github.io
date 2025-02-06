@@ -10,16 +10,31 @@ For a complete and up-to-date list of my publications, please visit my research 
 - [Google Scholar Profile](https://scholar.google.com/citations?user=oZ3egAIAAAAJ&hl=en)
 - [ResearchGate Profile](https://www.researchgate.net/profile/Abdgafar-Tiamiyu)
 
-## Selected Publications
+## Publications
 
 ### Journal Articles
-[Coming soon]
+
+- [Title of Article 1](Link to Article 1)  
+  Authors, Journal, Year
+
+- [Title of Article 2](Link to Article 2)  
+  Authors, Journal, Year
 
 ### Conference Proceedings
-[Coming soon]
+
+- [Title of Conference Paper 1](Link to Paper 1)  
+  Authors, Conference, Year
+
+- [Title of Conference Paper 2](Link to Paper 2)  
+  Authors, Conference, Year
 
 ### Preprints
-[Coming soon]
+
+- [Title of Preprint 1](Link to Preprint 1)  
+  Authors, Preprint Server, Year
+
+- [Title of Preprint 2](Link to Preprint 2)  
+  Authors, Preprint Server, Year
 
 ## Presentations
 - **[Conference Name]** (Month Year)  

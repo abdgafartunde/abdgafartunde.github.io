@@ -117,6 +117,8 @@ Hong Kong SAR, China
 ## Connect With Me
 I'm always interested in collaborating on innovative research projects in inverse problems, deep learning, imaging, and optimization. Feel free to reach out!
 
+[Download my CV](/cv.pdf)
+
 <!-- ## References
 - **Professor Jun Zou**  
   Chairman, Department of Mathematics  
