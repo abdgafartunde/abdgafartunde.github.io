@@ -4,6 +4,7 @@ description: "The Chinese University of Hong Kong"
 permalink: /:title/
 lang: "en"
 date_format: "%B %d, %Y"
+excerpt_separator: "<!-- more -->"   # Add this line
 
 # Layout
 show_excerpts: true        # show article excerpts on the home page
