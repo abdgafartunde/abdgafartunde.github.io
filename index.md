@@ -1,16 +1,24 @@
 ---
 layout: page
-title: ""
+title: "Welcome"
 ---
+
+# Abdgafar Tunde Tiamiyu
+
 ### Graduate Research and Teaching Assistant
-I am currently a Phd student in the Department of Mathematics at the Chinese University of Hong Kong, Hong Kong SAR China. 
+Welcome to my academic website! I am a Ph.D. student in Mathematics at the Chinese University of Hong Kong. My research focuses on numerical analysis and computational mathematics, with particular emphasis on inverse problems and deep learning applications.
 
+### Research Interests
+My research spans several interconnected areas:
 
+- **Inverse Problems**: Theory and computational methods
+- **Deep Neural Networks**: Architecture design and learning theory
+- **Finite Element Methods**: Analysis and implementation
+- **Numerical Analysis**: Algorithm development and error analysis
+- **Scientific Computing**: High-performance implementations
+- **Computational Mathematics**: Applied mathematical modeling
 
-### Research Interests: 
-- Inverse Problems 
-- Deep Neural Networks and Learning Theory
-- Finite Element Methods
-- Numerical Analysis 
-- Scientific Computing 
-- Computational and Applied Mathematics
+### Current Work
+I am currently working on [brief description of current project/research].
+
+[Feel free to explore my publications](/publications) or [view my complete CV](/resume).
