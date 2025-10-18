@@ -136,7 +136,7 @@ description: "Academic CV and professional experience"
             <div class="card-body">
                 <i class="fas fa-trophy fa-3x text-warning mb-3"></i>
                 <h6>Ernst Mach Grant</h6>
-                <p class="text-muted">Austria, Oct 2023 – Jun 2024</p>
+                <p class="text-muted">Austria, 2023 – 2024</p>
                 <small class="text-muted">EUR 1150/month + travel</small>
             </div>
         </div>
@@ -146,7 +146,7 @@ description: "Academic CV and professional experience"
             <div class="card-body">
                 <i class="fas fa-medal fa-3x text-primary mb-3"></i>
                 <h6>Hong Kong PhD Fellowship</h6>
-                <p class="text-muted">RGC, Hong Kong, Aug 2021 – Jul 2024</p>
+                <p class="text-muted">RGC, Hong Kong, 2021 – 2024</p>
                 <small class="text-muted">HK$ 340,800/year</small>
             </div>
         </div>
@@ -156,7 +156,7 @@ description: "Academic CV and professional experience"
             <div class="card-body">
                 <i class="fas fa-award fa-3x text-success mb-3"></i>
                 <h6>CUHK Vice-Chancellor's Scholarship</h6>
-                <p class="text-muted">CUHK, Aug 2021 – Jul 2025</p>
+                <p class="text-muted">CUHK, 2021 – 2025</p>
                 <small class="text-muted">HK$ 100,000 + monthly stipend</small>
             </div>
         </div>
