@@ -1,15 +1,15 @@
-title: "Dr. [Your Name]"
-description: "Academic Researcher in [Your Field]"
+title: "Abd'gafar Tunde Tiamiyu, PhD"
+description: "Doctoral Researcher in Computational Mathematics and Deep Learning"
 baseurl: ""
 url: "https://abdgafartunde.github.io"
 
 # Site settings
 author:
-  name: "[Your Full Name]"
-  email: "[your.email@university.edu]"
-  affiliation: "[Your University/Institution]"
-  position: "[Your Position/Title]"
-  location: "[City, Country]"
+  name: "Abd'gafar Tunde Tiamiyu"
+  email: "abdgafartunde@link.cuhk.edu.hk"
+  affiliation: "The Chinese University of Hong Kong"
+  position: "PhD Candidate in Mathematics"
+  location: "Hong Kong SAR"
 
 # Build settings
 markdown: kramdown
@@ -38,16 +38,36 @@ navigation:
 # Social links
 social:
   github: "abdgafartunde"
-  twitter: "[your_twitter]"
-  linkedin: "[your_linkedin]"
-  orcid: "[your_orcid]"
-  google_scholar: "[your_scholar_id]"
+  linkedin: "abdgafartunde"
+  orcid: # Add your ORCID ID when available
+  google_scholar: # Add your Google Scholar ID when available
 
 # Academic info
 research_interests:
-  - "[Research Area 1]"
-  - "[Research Area 2]"
-  - "[Research Area 3]"
+  - "Inverse problems and regularization"
+  - "Numerical optimization"
+  - "Scientific machine learning"
+  - "Deep learning for computational imaging"
+  - "Partial differential equations"
+
+# Professional details
+education:
+  current:
+    degree: "PhD in Mathematics"
+    institution: "The Chinese University of Hong Kong"
+    period: "Aug 2021 – Jul 2025"
+    advisor: "Professor Jun Zou"
+    funding: "Hong Kong PhD Fellowship Scheme"
+  
+  previous:
+    degree: "Bachelor of Technology in Mathematics"
+    institution: "Federal University of Technology, Minna, Nigeria"
+    period: "Oct 2012 – Nov 2017"
+    honors: "First Class Honours"
+
+# Research focus
+dissertation:
+  title: "Novel regularization and deep learning approaches for electrical impedance tomography (EIT) problems with partial measurement data"
 
 # Exclude from processing
 exclude:
@@ -58,8 +78,8 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - content.txt
 
-# Add after the existing content
 # Analytics and SEO
 google_analytics: # Add your GA tracking ID when ready
 google_site_verification: # Add verification code when ready
@@ -77,16 +97,40 @@ defaults:
       type: "pages"
     values:
       layout: "page"
-      author: "[Your Full Name]"
+      author: "Abd'gafar Tunde Tiamiyu"
   - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
-      author: "[Your Full Name]"
+      author: "Abd'gafar Tunde Tiamiyu"
 
 # Academic-specific settings
 academic:
-  field: "[Your Academic Field]"
-  specialization: "[Your Specialization]"
-  keywords: ["keyword1", "keyword2", "keyword3"]
+  field: "Mathematics"
+  specialization: "Computational Mathematics and Deep Learning"
+  keywords: 
+    - "electrical impedance tomography"
+    - "inverse problems"
+    - "deep learning"
+    - "numerical optimization"
+    - "regularization"
+    - "scientific computing"
+    - "physics-informed neural networks"
+    - "medical imaging"
+
+# Current positions and affiliations
+current_positions:
+  - title: "Doctoral Researcher"
+    institution: "The Chinese University of Hong Kong"
+    period: "Aug 2021 – Jul 2025"
+  
+  - title: "Vice President"
+    institution: "SIAM Student Chapter, CUHK"
+    period: "2024 – 2025"
+
+# Awards highlight
+major_awards:
+  - "Hong Kong PhD Fellowship Scheme (2021-2024)"
+  - "Ernst Mach Grant, Austria (2023-2024)"
+  - "CUHK Vice-Chancellor's Scholarship (2021-2025)"
