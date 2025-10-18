@@ -1,35 +1,22 @@
 ---
-layout: default
-title: "Home"
+layout: page
+title: "Abd'gafar Tunde Tiamiyu, PhD"
+description: "PhD in Mathematics | Numerical Analysis & Deep Learning Researcher"
 ---
 
-<div class="hero-section bg-gradient-primary text-white p-5 rounded mb-5">
+<div class="jumbotron bg-primary text-white text-center py-5 mb-5 rounded">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-8">
-                <h1 class="display-4 mb-3">Welcome to My Academic Page</h1>
-                <p class="lead mb-4">
-                    Exploring the intersection of computational mathematics, deep learning, and inverse problems. 
-                    Passionate about developing innovative algorithms that bridge theoretical mathematics with practical applications.
-                </p>
-                <div class="d-flex flex-wrap gap-2">
-                    <a href="/research" class="btn btn-light btn-lg">
-                        <i class="fas fa-microscope me-2"></i>Research
-                    </a>
-                    <a href="/publications" class="btn btn-outline-light btn-lg">
-                        <i class="fas fa-file-alt me-2"></i>Publications
-                    </a>
-                    <a href="/cv" class="btn btn-outline-light btn-lg">
-                        <i class="fas fa-download me-2"></i>CV
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-4 text-center">
-                <div class="profile-image-container">
-                    <img src="/assets/images/profile.jpg" alt="Profile" class="img-fluid rounded-circle shadow-lg" style="width: 250px; height: 250px; object-fit: cover;">
-                </div>
-            </div>
-        </div>
+        <h1 class="display-4 fw-bold">Abd'gafar Tunde Tiamiyu, PhD</h1>
+        <p class="lead fs-4">PhD in Mathematics</p>
+        <p class="fs-5">Numerical Analysis • Computational Mathematics • Deep Learning • Inverse Problems</p>
+        <hr class="my-4 bg-white">
+        <p class="mb-4">The Chinese University of Hong Kong</p>
+        <a class="btn btn-light btn-lg me-3" href="/cv" role="button">
+            <i class="fas fa-file-pdf"></i> View CV
+        </a>
+        <a class="btn btn-outline-light btn-lg" href="/research" role="button">
+            <i class="fas fa-microscope"></i> Research
+        </a>
     </div>
 </div>
 

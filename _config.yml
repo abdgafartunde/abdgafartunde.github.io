@@ -1,5 +1,5 @@
 title: "Abd'gafar Tunde Tiamiyu, PhD"
-description: "Doctoral Researcher in Computational Mathematics and Deep Learning"
+description: "Computational Mathematician | Deep Learning Researcher | Inverse Problems Specialist"
 baseurl: ""
 url: "https://abdgafartunde.github.io"
 
@@ -9,7 +9,7 @@ author:
   email: "abdgafartunde@link.cuhk.edu.hk"
   affiliation: "The Chinese University of Hong Kong"
   position: "PhD Candidate in Mathematics"
-  location: "Hong Kong SAR"
+  location: "Hong Kong"
 
 # Build settings
 markdown: kramdown
@@ -39,8 +39,8 @@ navigation:
 social:
   github: "abdgafartunde"
   linkedin: "abdgafartunde"
-  orcid: # Add your ORCID ID when available
-  google_scholar: # Add your Google Scholar ID when available
+  orcid: ""
+  google_scholar: ""
 
 # Academic info
 research_interests:
@@ -49,6 +49,7 @@ research_interests:
   - "Scientific machine learning"
   - "Deep learning for computational imaging"
   - "Partial differential equations"
+  - "Electrical impedance tomography (EIT)"
 
 # Professional details
 education:
@@ -58,7 +59,6 @@ education:
     period: "Aug 2021 – Jul 2025"
     advisor: "Professor Jun Zou"
     funding: "Hong Kong PhD Fellowship Scheme"
-  
   previous:
     degree: "Bachelor of Technology in Mathematics"
     institution: "Federal University of Technology, Minna, Nigeria"
@@ -66,19 +66,21 @@ education:
     honors: "First Class Honours"
 
 # Research focus
-dissertation:
-  title: "Novel regularization and deep learning approaches for electrical impedance tomography (EIT) problems with partial measurement data"
+specialization: 
+  primary: "Computational Mathematics"
+  secondary: "Deep Learning for Scientific Computing"
+  applications: "Medical Imaging and Inverse Problems"
 
-# Exclude from processing
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-  - content.txt
+# Keywords for SEO
+keywords: 
+  - "computational mathematics"
+  - "deep learning"
+  - "inverse problems"
+  - "electrical impedance tomography"
+  - "numerical optimization"
+  - "scientific machine learning"
+  - "physics-informed neural networks"
+  - "medical imaging"
 
 # Analytics and SEO
 google_analytics: # Add your GA tracking ID when ready
@@ -108,29 +110,35 @@ defaults:
 # Academic-specific settings
 academic:
   field: "Mathematics"
-  specialization: "Computational Mathematics and Deep Learning"
-  keywords: 
-    - "electrical impedance tomography"
-    - "inverse problems"
-    - "deep learning"
-    - "numerical optimization"
-    - "regularization"
-    - "scientific computing"
-    - "physics-informed neural networks"
-    - "medical imaging"
-
-# Current positions and affiliations
-current_positions:
-  - title: "Doctoral Researcher"
-    institution: "The Chinese University of Hong Kong"
-    period: "Aug 2021 – Jul 2025"
+  department: "Department of Mathematics"
+  university: "The Chinese University of Hong Kong"
+  thesis_topic: "Novel regularization and deep learning approaches for electrical impedance tomography (EIT) problems with partial measurement data"
   
-  - title: "Vice President"
-    institution: "SIAM Student Chapter, CUHK"
-    period: "2024 – 2025"
+# Awards and recognition
+awards:
+  - name: "Hong Kong PhD Fellowship Scheme"
+    year: "2021-2024"
+    amount: "HK$ 340,800/year"
+  - name: "Ernst Mach Grant"
+    year: "2023-2024"
+    amount: "EUR 1150/month"
+  - name: "CUHK Vice-Chancellor's Scholarship"
+    year: "2021-2025"
+    amount: "HK$ 100,000 + monthly stipend"
 
-# Awards highlight
-major_awards:
-  - "Hong Kong PhD Fellowship Scheme (2021-2024)"
-  - "Ernst Mach Grant, Austria (2023-2024)"
-  - "CUHK Vice-Chancellor's Scholarship (2021-2025)"
+# Professional memberships
+memberships:
+  - "Society for Industrial and Applied Mathematics (SIAM)"
+  - "Inverse Problems International Association (IPIA)"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - content.txt
+  - README.md
