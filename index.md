@@ -6,7 +6,7 @@ description: "PhD in Mathematics | Numerical Analysis & Deep Learning Researcher
 
 <div class="jumbotron bg-primary text-white text-center py-5 mb-5 rounded">
     <div class="container">
-        <h1 class="display-4 fw-bold">Abd'gafar Tunde Tiamiyu</h1>
+        <h1 class="display-4 fw-bold">Abd'gafar Tunde Tiamiyu, PhD</h1>
         <p class="lead fs-4">PhD in Mathematics</p>
         <p class="fs-5">Numerical Analysis • Computational Mathematics • Deep Learning • Inverse Problems</p>
         <hr class="my-4 bg-white">
@@ -22,15 +22,15 @@ description: "PhD in Mathematics | Numerical Analysis & Deep Learning Researcher
 
 ## About Me
 
-I am a PhD candidate in Mathematics at The Chinese University of Hong Kong, specializing in **numerical analysis**, **computational mathematics**, and **deep learning** applications to inverse problems. My research focuses on developing innovative algorithms and data-driven models for Electrical Impedance Tomography (EIT) problems, combining theoretical mathematical foundations with cutting-edge machine learning techniques.
+I am a PhD graduate in Mathematics from The Chinese University of Hong Kong, specializing in **numerical analysis**, **computational mathematics**, and **deep learning** applications to inverse problems. My research focuses on developing innovative algorithms and data-driven models for Electrical Impedance Tomography (EIT) problems, combining theoretical mathematical foundations with cutting-edge machine learning techniques.
 
 <div class="row mb-5">
     <div class="col-md-6">
         <div class="card h-100">
             <div class="card-body">
-                <h5 class="card-title"><i class="fas fa-graduation-cap text-primary"></i> Current Position</h5>
+                <h5 class="card-title"><i class="fas fa-graduation-cap text-primary"></i> Education</h5>
                 <p class="card-text">
-                    <strong>PhD Candidate in Mathematics</strong><br>
+                    <strong>PhD in Mathematics</strong><br>
                     The Chinese University of Hong Kong<br>
                     <em>Advisor: Professor Jun Zou</em><br>
                     <span class="badge bg-success">Hong Kong PhD Fellowship Recipient</span>
