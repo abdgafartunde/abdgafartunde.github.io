@@ -58,3 +58,35 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+
+# Add after the existing content
+# Analytics and SEO
+google_analytics: # Add your GA tracking ID when ready
+google_site_verification: # Add verification code when ready
+
+# Collections for better organization
+collections:
+  posts:
+    output: true
+    permalink: /:collection/:year/:month/:day/:title/
+
+# Defaults for better SEO and consistency
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+      author: "[Your Full Name]"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "[Your Full Name]"
+
+# Academic-specific settings
+academic:
+  field: "[Your Academic Field]"
+  specialization: "[Your Specialization]"
+  keywords: ["keyword1", "keyword2", "keyword3"]
