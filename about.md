@@ -1,35 +1,34 @@
 ---
 layout: page
-title: "About Me"
+title: "About"
+description: "Learn more about my background and interests"
 ---
 
-## Professional Profile
-As a mathematical scientist at The Chinese University of Hong Kong, I work at the intersection of deep learning and medical imaging. My research journey is driven by a passion for developing innovative solutions that bridge theoretical mathematics with real-world healthcare applications.
+## About Me
 
-## Academic Background
-Under the supervision of Professor Jun Zou at CUHK, I'm developing novel approaches to solve complex inverse problems in medical imaging. My work is supported by the Hong Kong PhD Fellowship Scheme (HKPFS).
+I am a [your position] at [your institution], where I focus on [your research area]. My work combines [methodology/approach] with [application area] to address [problems you're solving].
 
-## Research Philosophy
-I believe in the power of interdisciplinary approaches to solve complex problems. By combining rigorous mathematical theory with modern computational methods, my work aims to advance both the theoretical understanding and practical applications of deep learning in medical imaging.
+### Background
 
-## Collaboration Interests
-I'm particularly interested in collaborations that:
-- Bridge theoretical mathematics with practical applications
-- Advance medical imaging technologies
-- Develop innovative deep learning architectures
-- Explore new approaches to inverse problems
+- **Education**: [Your degrees and institutions]
+- **Research Experience**: [Brief overview of your research journey]
+- **Industry Experience**: [Any relevant industry work]
 
-## Contact Information
-### Email
-- Academic: tiamiyu@math.cuhk.edu.hk
-- Alternative: abdgafartunde@yahoo.com
+### Research Philosophy
 
-### Office
-LSB 222C, Department of Mathematics  
-The Chinese University of Hong Kong  
-Hong Kong SAR, China
+I believe that [your research philosophy or approach]. My work aims to [your research goals].
 
-### Professional Profiles
-- [Google Scholar](https://scholar.google.com/citations?user=oZ3egAIAAAAJ&hl=en)
-- [ResearchGate](https://www.researchgate.net/profile/Abdgafar-Tiamiyu)
-- [LinkedIn](https://www.linkedin.com/in/abdgafartunde/)
+### Beyond Research
+
+When I'm not in the lab or writing papers, I enjoy:
+- [Hobby 1]
+- [Hobby 2]
+- [Hobby 3]
+
+### Contact
+
+Feel free to reach out if you'd like to collaborate, have questions about my research, or just want to connect:
+
+- **Email**: [your.email@university.edu]
+- **Office**: [Your office location]
+- **Office Hours**: [Your office hours]
