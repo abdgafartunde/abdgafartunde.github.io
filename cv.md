@@ -4,75 +4,377 @@ title: "Curriculum Vitae"
 description: "Academic CV and professional experience"
 ---
 
-<div class="text-center mb-4">
-    <a href="/CV.pdf" class="btn btn-primary btn-lg" target="_blank">
+<div class="text-center mb-5">
+    <a href="/assets/files/CV.pdf" class="btn btn-primary btn-lg" target="_blank">
         <i class="fas fa-download"></i> Download Full CV (PDF)
     </a>
     <p class="text-muted mt-2">Last updated: {{ 'now' | date: "%B %Y" }}</p>
 </div>
 
-# Abdgafar Tunde Tiamiyu
-PhD Candidate in Mathematics  
-The Chinese University of Hong Kong
+---
 
 ## Education
-- **Ph.D. in Mathematics** (Aug. 2021 - July 2025 expected)  
-  The Chinese University of Hong Kong  
-  Advisor: Professor Jun Zou  
-  - Relevant Coursework: Advanced Numerical Analysis, Optimization, Deep Learning, Inverse Problems
-  - Research Direction: Inverse Problems, Deep Learning and learning theory, Electrical Impedance Tomography (EIT)
-  <!-- - Dissertation Title: Learning Optimal Regularization Parameters for Electrical Impedance Tomography -->
 
-- **B.Tech. in Mathematics** (Oct. 2012 - Nov. 2017)  
-  Federal University of Technology, Minna, Nigeria  
-  - Final Year Project: Hybrid Block Method for Direct Solution of General Fourth Order Ordinary Differential Equations Using Power Series Function
+<div class="row">
+    <div class="col-md-12">
+        <div class="card mb-3">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h5 class="card-title"><i class="fas fa-graduation-cap text-primary"></i> Ph.D. in [Field]</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">[University Name]</h6>
+                        <p class="card-text">
+                            <strong>Dissertation:</strong> "[Dissertation Title]"<br>
+                            <strong>Advisor:</strong> [Advisor Name]<br>
+                            <strong>Committee:</strong> [Committee Members]
+                        </p>
+                    </div>
+                    <div class="col-md-4 text-end">
+                        <span class="badge bg-primary fs-6">[Year]</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card mb-3">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h5 class="card-title"><i class="fas fa-user-graduate text-info"></i> M.S. in [Field]</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">[University Name]</h6>
+                        <p class="card-text">
+                            <strong>Thesis:</strong> "[Thesis Title]"<br>
+                            <strong>Advisor:</strong> [Advisor Name]
+                        </p>
+                    </div>
+                    <div class="col-md-4 text-end">
+                        <span class="badge bg-info fs-6">[Year]</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card mb-3">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h5 class="card-title"><i class="fas fa-certificate text-success"></i> B.S. in [Field]</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">[University Name]</h6>
+                        <p class="card-text">
+                            <span class="badge bg-warning text-dark">Magna Cum Laude</span>
+                            <span class="badge bg-secondary">Phi Beta Kappa</span>
+                        </p>
+                    </div>
+                    <div class="col-md-4 text-end">
+                        <span class="badge bg-success fs-6">[Year]</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-## Research Experience
-- **Visiting Researcher** (Oct. 2023 - June. 2024)  
-  Department of Mathematics and Scientific Computing  
-  University of Graz, Austria
-  - Developed and analyzed stable models for EIT using primal-dual algorithms with learned regularizers
-  - Conducted numerical experiments leveraging TensorFlow and GPU computing
+---
 
-- **Research Assistant** (June 2018 - April 2019)  
-  Kano University of Science and Technology, Nigeria
-  - Conducted literature reviews, collaborated with faculty members on research projects, and organized seminars
-  - Performed numerical experiments and prepared manuscripts for publications
+## Professional Experience
 
-## Projects
-- **Learning Optimal Regularization Parameters for Inverse Problems**
-  - Developed a bilevel optimization framework to learn optimal regularization parameters, demonstrating improved accuracy and efficiency compared to traditional methods
+<div class="timeline">
+    <div class="card mb-3">
+        <div class="card-header bg-primary text-white">
+            <div class="row">
+                <div class="col-md-8">
+                    <h5 class="mb-0"><i class="fas fa-briefcase"></i> [Current Position]</h5>
+                    <h6 class="mb-0 opacity-75">[Institution]</h6>
+                </div>
+                <div class="col-md-4 text-end">
+                    <span class="badge bg-light text-primary">[Start Year] - Present</span>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <ul class="list-unstyled">
+                <li><i class="fas fa-chevron-right text-primary me-2"></i>[Key responsibility or achievement]</li>
+                <li><i class="fas fa-chevron-right text-primary me-2"></i>[Another responsibility or achievement]</li>
+                <li><i class="fas fa-chevron-right text-primary me-2"></i>[Another responsibility or achievement]</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="card mb-3">
+        <div class="card-header bg-secondary text-white">
+            <div class="row">
+                <div class="col-md-8">
+                    <h5 class="mb-0"><i class="fas fa-briefcase"></i> [Previous Position]</h5>
+                    <h6 class="mb-0 opacity-75">[Institution]</h6>
+                </div>
+                <div class="col-md-4 text-end">
+                    <span class="badge bg-light text-secondary">[Start Year] - [End Year]</span>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <ul class="list-unstyled">
+                <li><i class="fas fa-chevron-right text-secondary me-2"></i>[Key responsibility or achievement]</li>
+                <li><i class="fas fa-chevron-right text-secondary me-2"></i>[Another responsibility or achievement]</li>
+            </ul>
+        </div>
+    </div>
+</div>
 
-- **Reconstruction Approaches in EIT Using Primal-Dual Algorithms**
-  - Designed and implemented primal-dual algorithms with learned regularizers for enhanced image reconstructions in EIT
-  - Conducted extensive numerical experiments demonstrating the efficiency of the proposed method
+---
 
-## Teaching Experience
-- **Teaching Assistant** (Aug. 2021 - present)  
-  The Chinese University of Hong Kong
-  - Assisted in teaching undergraduate mathematics courses, including Calculus and Games and Strategic Thinking
-  - Conducted tutorials, held office hours, and graded assignments and exams
+## Selected Publications
 
-- **Mathematics Tutor** (May 2019 - Dec. 2020)  
-  Kano University of Science and Technology Staff School
-  - Developed lesson plans and taught classes of over 100 students
-  - Prepared and graded exam papers
+<div class="alert alert-info">
+    <i class="fas fa-info-circle"></i> For a complete list, see the <a href="/publications" class="alert-link">Publications</a> page.
+</div>
 
-## Technical Skills
-- **Programming Languages**: Python, MATLAB
-- **Deep Learning Frameworks**: PyTorch, TensorFlow
-- **Scientific Software**: LaTeX, MATLAB, Maple
-- **Development Tools**: Git, Microsoft Office Suite
+<div class="card">
+    <div class="card-header">
+        <h5><i class="fas fa-file-alt text-primary"></i> Recent Highlights</h5>
+    </div>
+    <div class="card-body">
+        <ol>
+            <li class="mb-3">
+                <strong>[Your Name]</strong>, Co-author. (2024). "Recent Important Paper." 
+                <em>Top Journal</em>, 15(3), 123-145.
+                <a href="#" class="btn btn-outline-primary btn-sm ms-2">DOI</a>
+            </li>
+            
+            <li class="mb-3">
+                <strong>[Your Name]</strong>, Co-author. (2023). "Another Significant Work." 
+                <em>Another Journal</em>, 10(2), 67-89.
+                <a href="#" class="btn btn-outline-primary btn-sm ms-2">DOI</a>
+            </li>
+            
+            <li class="mb-3">
+                <strong>[Your Name]</strong>, Co-author. (2023). "Conference Paper." 
+                <em>Proceedings of Major Conference</em>, 234-241.
+                <a href="#" class="btn btn-outline-secondary btn-sm ms-2">PDF</a>
+            </li>
+        </ol>
+    </div>
+</div>
 
-## Honors & Awards
-- Ernst Mach Grant, Worldwide (2023-2024)
-- Hong Kong PhD Fellowship Scheme (2021-2024)
-- CUHK Vice-Chancellor's Scholarship Award (2021-2025)
-- Sir Peter's Ojongbede's Prize Award (2018)
+---
 
-## Professional Activities
-- Member, Society for Industrial and Applied Mathematics (CUHK Student Chapter)
-- Member, Inverse Problems International Association
+## Research Funding
 
-## References
-Available upon request
+<div class="row">
+    <div class="col-md-6 mb-4">
+        <div class="card h-100">
+            <div class="card-header bg-success text-white">
+                <h6 class="mb-0"><i class="fas fa-dollar-sign"></i> Active Grants</h6>
+            </div>
+            <div class="card-body">
+                <h6 class="card-title">[Grant Title]</h6>
+                <p class="card-text">
+                    <strong>Agency:</strong> [Funding Agency]<br>
+                    <strong>Amount:</strong> $[Amount]<br>
+                    <strong>Period:</strong> [Years]<br>
+                    <strong>Role:</strong> <span class="badge bg-primary">Principal Investigator</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 mb-4">
+        <div class="card h-100">
+            <div class="card-header bg-info text-white">
+                <h6 class="mb-0"><i class="fas fa-handshake"></i> Completed Grants</h6>
+            </div>
+            <div class="card-body">
+                <h6 class="card-title">[Another Grant]</h6>
+                <p class="card-text">
+                    <strong>Agency:</strong> [Funding Agency]<br>
+                    <strong>Amount:</strong> $[Amount]<br>
+                    <strong>Period:</strong> [Years]<br>
+                    <strong>Role:</strong> <span class="badge bg-secondary">Co-Principal Investigator</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+---
+
+## Awards & Honors
+
+<div class="row text-center">
+    <div class="col-md-4 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <i class="fas fa-trophy fa-3x text-warning mb-3"></i>
+                <h6>[Award Name]</h6>
+                <p class="text-muted">[Organization], [Year]</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <i class="fas fa-medal fa-3x text-primary mb-3"></i>
+                <h6>[Honor]</h6>
+                <p class="text-muted">[Organization], [Year]</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <i class="fas fa-award fa-3x text-success mb-3"></i>
+                <h6>[Recognition]</h6>
+                <p class="text-muted">[Organization], [Year]</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+---
+
+## Professional Service
+
+<div class="row">
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h6><i class="fas fa-edit text-primary"></i> Editorial Service</h6>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-user-edit text-primary me-2"></i>Reviewer for [Journal Name] (2022-present)</li>
+                    <li><i class="fas fa-users text-primary me-2"></i>Editorial Board Member, [Journal Name] (2023-present)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h6><i class="fas fa-calendar text-primary"></i> Conference Service</h6>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-cog text-primary me-2"></i>Program Committee Member, [Conference Name] (2024)</li>
+                    <li><i class="fas fa-chair text-primary me-2"></i>Session Chair, [Conference Name] (2023)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h6><i class="fas fa-university text-primary"></i> University Service</h6>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-users text-primary me-2"></i>[Committee Name], [Role] (2023-present)</li>
+                    <li><i class="fas fa-clipboard-list text-primary me-2"></i>[Another Committee], [Role] (2022-2023)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+---
+
+## Technical Skills & Expertise
+
+<div class="row">
+    <div class="col-md-4 mb-3">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h6 class="mb-0"><i class="fas fa-code"></i> Programming</h6>
+            </div>
+            <div class="card-body">
+                <div class="mb-2">
+                    <span class="badge bg-primary">Python</span>
+                    <span class="badge bg-info">R</span>
+                    <span class="badge bg-warning text-dark">MATLAB</span>
+                </div>
+                <div>
+                    <span class="badge bg-secondary">[Other languages]</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-3">
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                <h6 class="mb-0"><i class="fas fa-tools"></i> Software</h6>
+            </div>
+            <div class="card-body">
+                <div class="mb-2">
+                    <span class="badge bg-success">[Software 1]</span>
+                    <span class="badge bg-info">[Software 2]</span>
+                </div>
+                <div>
+                    <span class="badge bg-secondary">[Software 3]</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-3">
+        <div class="card">
+            <div class="card-header bg-warning text-dark">
+                <h6 class="mb-0"><i class="fas fa-language"></i> Languages</h6>
+            </div>
+            <div class="card-body">
+                <p class="mb-1"><strong>English</strong> - Native</p>
+                <p class="mb-1"><strong>[Other language]</strong> - [Proficiency level]</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+---
+
+## Selected Presentations
+
+<div class="row">
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h6 class="mb-0"><i class="fas fa-microphone"></i> Invited Talks</h6>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <strong>"[Talk Title]"</strong><br>
+                        <small class="text-muted">[Institution/Conference], [Location], [Date]</small>
+                    </li>
+                    <li class="mb-2">
+                        <strong>"[Another Talk]"</strong><br>
+                        <small class="text-muted">[Institution/Conference], [Location], [Date]</small>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header bg-secondary text-white">
+                <h6 class="mb-0"><i class="fas fa-presentation"></i> Conference Presentations</h6>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <strong>"[Presentation Title]"</strong><br>
+                        <small class="text-muted">[Conference Name], [Location], [Date]</small>
+                    </li>
+                    <li class="mb-2">
+                        <strong>"[Another Presentation]"</strong><br>
+                        <small class="text-muted">[Conference Name], [Location], [Date]</small>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
