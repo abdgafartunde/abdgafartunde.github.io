@@ -8,7 +8,7 @@ author:
   name: "Abd'gafar Tunde Tiamiyu"
   email: "abdgafartunde@link.cuhk.edu.hk"
   affiliation: "The Chinese University of Hong Kong"
-  position: "PhD Candidate in Mathematics"
+  position: "PhD in Mathematics"
   location: "Hong Kong"
   bio: "PhD researcher specializing in numerical analysis, computational mathematics, deep learning, and inverse problems with electrical impedance tomography."
 
@@ -58,7 +58,7 @@ academic:
   department: "Department of Mathematics"
   university: "The Chinese University of Hong Kong"
   advisor: "Professor Jun Zou"
-  degree_progress: "PhD Candidate (2021-2025)"
+  degree_progress: "PhD (2021-2025)"
 
 # Collections
 collections:

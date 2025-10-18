@@ -10,7 +10,7 @@ description: "PhD Researcher in Computational Mathematics and Deep Learning"
             <div class="col-md-8">
                 <h1 class="display-4 fw-bold mb-3">Abd'gafar Tunde Tiamiyu</h1>
                 <p class="lead mb-4">
-                    PhD Candidate in Mathematics at The Chinese University of Hong Kong, 
+                    PhD in Mathematics from The Chinese University of Hong Kong, 
                     specializing in computational mathematics, deep learning, and inverse problems.
                 </p>
                 <div class="d-flex flex-wrap gap-2">
