@@ -38,3 +38,7 @@ My research contributes to:
 ---
 
 *"The essence of mathematics lies in its freedom." - Georg Cantor*
+
+---
+
+- View my <a href="{{ '/cv/' | relative_url }}">CV</a>.

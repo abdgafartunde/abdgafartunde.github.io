@@ -1,14 +1,7 @@
 ---
 layout: default
 ---
-<article>
-  {% if page.title %}
-  <header class="hero">
-    <h1>{{ page.title }}</h1>
-    {% if page.subtitle %}<p class="meta">{{ page.subtitle }}</p>{% endif %}
-  </header>
-  {% endif %}
-  <section class="content">
-    {{ content }}
-  </section>
+<article class="page">
+	<h1>{{ page.title }}</h1>
+	{{ content }}
 </article>
