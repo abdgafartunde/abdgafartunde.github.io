@@ -1,37 +1,63 @@
 title: "A.T. TIAMIYU"
-author: "A.T. TIAMIYU"
 description: "The Chinese University of Hong Kong"
-permalink: /:title/
-lang: "en"
-date_format: "%B %d, %Y"
-excerpt_separator: "<!-- more -->"   # Add this line
+url: "https://abdgafartunde.github.io"
+baseurl: "" # keep empty for a user/org site
 
-# Layout
-show_excerpts: true        # show article excerpts on the home page
-show_frame: true           # adds a gray frame to the site
-show_sidebar: false        # show a sidebar instead of the usual header
-minimal: false             # use a dark header
-excerpt_separator: "<!-- more -->"
+author:
+  name: "A.T. TIAMIYU"
+  email: "abdgafartunde@yahoo.com"
+  affiliation: "The Chinese University of Hong Kong"
+  location: "Hong Kong"
 
-# Style
-style:
-  theme: minima           # use minima as base theme
-  sass_dir: assets/css    # directory for Sass files
+social:
+  github: "abdgafartunde"
+  linkedin: ""
+  twitter: ""
+  scholar: "https://scholar.google.com/citations?user=oZ3egAIAAAAJ&hl=en"
 
-# Menu
-navigation:                # accepts {file, title, url, icon, sidebaricon}
-  - {file: "about.md", title: "About"}
-  - {file: "research.md", title: "Research"}
-  - {file: "teaching.md", title: "Teaching"}
-  - {file: "publications.md", title: "Publications"}
-  - {file: "cv.md", title: "CV"}
-  - {file: "blog.md", title: "Blog"}
+nav:
+  - label: "Home"
+    url: "/"
+  - label: "About"
+    url: "/about/"
+  - label: "Research"
+    url: "/research/"
+  - label: "Publications"
+    url: "/publications/"
+  - label: "Teaching"
+    url: "/teaching/"
+  - label: "CV"
+    url: "/cv/"
+  - label: "Blog"
+    url: "/blog/"
+  - label: "Archive"
+    url: "/archive.html"
 
-external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
-  - {title: Mail, icon: envelope, url: "mailto:abdgafartunde@yahoo.com"}
-  - {title: Github, icon: github, url: "https://github.com/abdgafartunde"}
-  - {title: R-gate, icon: researchgate, url: "https://www.researchgate.net/profile/Tiamiyu-Abdgafar"}
-  - {title: G-Scholar, icon: google, url: "https://scholar.google.com/citations?user=oZ3egAIAAAAJ&hl=en"}
+markdown: kramdown
+highlighter: rouge
 
 plugins:
- - jekyll-feed
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+permalink: /blog/:title/
+timezone: UTC
+
+# Build settings
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - tmp
+  - scripts
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: false

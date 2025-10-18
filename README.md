@@ -109,3 +109,19 @@ This website has been modified to include the following:
 - Added a link to download the CV on the about page.
 - Added more details to each section of the CV page.
 - Added a complete list of publications with links on the publications page.
+
+# Personal Site
+
+- Prereqs: Ruby + Bundler
+- Install: `bundle install`
+- Serve: `bundle exec jekyll serve --livereload`
+- Open: http://localhost:4000
+
+Content
+- Posts: add files under `_posts/` named `YYYY-MM-DD-title.md` with `layout: post`.
+- Pages: edit the Markdown files at repo root.
+- Publications: edit `publications.md`.
+- CV: replace `CV.pdf`.
+
+Config
+- Update `_config.yml` for title, nav, social, and author info.

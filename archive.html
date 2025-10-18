@@ -1,7 +1,19 @@
 ---
 title: "Archive"
-layout: default
-sitemap: false
+layout: page
+permalink: /archive.html
 ---
 
-{% include archive.html %}
+<ul class="list">
+  {% assign years = site.posts | group_by_exp:"p","p.date | date: '%Y'" %}
+  {% for y in years %}
+    <li>
+      <h3>{{ y.name }}</h3>
+      <ul>
+        {% for post in y.items %}
+          <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> <span class="meta">· {{ post.date | date: "%b %-d" }}</span></li>
+        {% endfor %}
+      </ul>
+    </li>
+  {% endfor %}
+</ul>

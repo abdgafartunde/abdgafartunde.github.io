@@ -1,4 +1,8 @@
 ---
+layout: pdf
+title: CV
+permalink: /cv/
+---
 layout: page
 title: "Curriculum Vitae"
 ---
