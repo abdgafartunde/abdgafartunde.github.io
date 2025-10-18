@@ -1,15 +1,15 @@
-title: "Abd'gafar Tunde Tiamiyu, PhD"
-description: "Computational Mathematician | Deep Learning Researcher | Inverse Problems Specialist"
+title: "Dr. [Your Name]"
+description: "Academic Researcher in [Your Field]"
 baseurl: ""
 url: "https://abdgafartunde.github.io"
 
 # Site settings
 author:
-  name: "Abd'gafar Tunde Tiamiyu"
-  email: "abdgafartunde@link.cuhk.edu.hk"
-  affiliation: "The Chinese University of Hong Kong"
-  position: "PhD Candidate in Mathematics"
-  location: "Hong Kong"
+  name: "[Your Full Name]"
+  email: "[your.email@university.edu]"
+  affiliation: "[Your University/Institution]"
+  position: "[Your Position/Title]"
+  location: "[City, Country]"
 
 # Build settings
 markdown: kramdown
@@ -38,50 +38,28 @@ navigation:
 # Social links
 social:
   github: "abdgafartunde"
-  linkedin: "abdgafartunde"
-  orcid: ""
-  google_scholar: ""
+  twitter: "[your_twitter]"
+  linkedin: "[your_linkedin]"
+  orcid: "[your_orcid]"
+  google_scholar: "[your_scholar_id]"
 
 # Academic info
 research_interests:
-  - "Inverse problems and regularization"
-  - "Numerical optimization"
-  - "Scientific machine learning"
-  - "Deep learning for computational imaging"
-  - "Partial differential equations"
-  - "Electrical impedance tomography (EIT)"
+  - "[Research Area 1]"
+  - "[Research Area 2]"
+  - "[Research Area 3]"
 
-# Professional details
-education:
-  current:
-    degree: "PhD in Mathematics"
-    institution: "The Chinese University of Hong Kong"
-    period: "Aug 2021 – Jul 2025"
-    advisor: "Professor Jun Zou"
-    funding: "Hong Kong PhD Fellowship Scheme"
-  previous:
-    degree: "Bachelor of Technology in Mathematics"
-    institution: "Federal University of Technology, Minna, Nigeria"
-    period: "Oct 2012 – Nov 2017"
-    honors: "First Class Honours"
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
 
-# Research focus
-specialization: 
-  primary: "Computational Mathematics"
-  secondary: "Deep Learning for Scientific Computing"
-  applications: "Medical Imaging and Inverse Problems"
-
-# Keywords for SEO
-keywords: 
-  - "computational mathematics"
-  - "deep learning"
-  - "inverse problems"
-  - "electrical impedance tomography"
-  - "numerical optimization"
-  - "scientific machine learning"
-  - "physics-informed neural networks"
-  - "medical imaging"
-
+# Add after the existing content
 # Analytics and SEO
 google_analytics: # Add your GA tracking ID when ready
 google_site_verification: # Add verification code when ready
@@ -99,46 +77,16 @@ defaults:
       type: "pages"
     values:
       layout: "page"
-      author: "Abd'gafar Tunde Tiamiyu"
+      author: "[Your Full Name]"
   - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
-      author: "Abd'gafar Tunde Tiamiyu"
+      author: "[Your Full Name]"
 
 # Academic-specific settings
 academic:
-  field: "Mathematics"
-  department: "Department of Mathematics"
-  university: "The Chinese University of Hong Kong"
-  thesis_topic: "Novel regularization and deep learning approaches for electrical impedance tomography (EIT) problems with partial measurement data"
-  
-# Awards and recognition
-awards:
-  - name: "Hong Kong PhD Fellowship Scheme"
-    year: "2021-2024"
-    amount: "HK$ 340,800/year"
-  - name: "Ernst Mach Grant"
-    year: "2023-2024"
-    amount: "EUR 1150/month"
-  - name: "CUHK Vice-Chancellor's Scholarship"
-    year: "2021-2025"
-    amount: "HK$ 100,000 + monthly stipend"
-
-# Professional memberships
-memberships:
-  - "Society for Industrial and Applied Mathematics (SIAM)"
-  - "Inverse Problems International Association (IPIA)"
-
-# Exclude from processing
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-  - content.txt
-  - README.md
+  field: "[Your Academic Field]"
+  specialization: "[Your Specialization]"
+  keywords: ["keyword1", "keyword2", "keyword3"]
