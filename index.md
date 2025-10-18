@@ -1,52 +1,81 @@
 ---
-layout: page
-title: "Abd'gafar Tunde Tiamiyu, PhD"
-description: "PhD in Mathematics | Numerical Analysis & Deep Learning Researcher"
+layout: default
+title: "Home"
 ---
 
-<div class="jumbotron bg-primary text-white text-center py-5 mb-5 rounded">
+<!-- Hero Section -->
+<div class="hero-section bg-gradient-primary text-white p-5 rounded mb-5">
     <div class="container">
-        <h1 class="display-4 fw-bold">Abd'gafar Tunde Tiamiyu, PhD</h1>
-        <p class="lead fs-4">PhD in Mathematics</p>
-        <p class="fs-5">Numerical Analysis • Computational Mathematics • Deep Learning • Inverse Problems</p>
-        <hr class="my-4 bg-white">
-        <p class="mb-4">The Chinese University of Hong Kong</p>
-        <a class="btn btn-light btn-lg me-3" href="/cv" role="button">
-            <i class="fas fa-file-pdf"></i> View CV
-        </a>
-        <a class="btn btn-outline-light btn-lg" href="/research" role="button">
-            <i class="fas fa-microscope"></i> Research
-        </a>
-    </div>
-</div>
-
-## About Me
-
-I am a PhD graduate in Mathematics from The Chinese University of Hong Kong, specializing in **numerical analysis**, **computational mathematics**, and **deep learning** applications to inverse problems. My research focuses on developing innovative algorithms and data-driven models for Electrical Impedance Tomography (EIT) problems, combining theoretical mathematical foundations with cutting-edge machine learning techniques.
-
-<div class="row mb-5">
-    <div class="col-md-6">
-        <div class="card h-100">
-            <div class="card-body">
-                <h5 class="card-title"><i class="fas fa-graduation-cap text-primary"></i> Education</h5>
-                <p class="card-text">
-                    <strong>PhD in Mathematics</strong><br>
-                    The Chinese University of Hong Kong<br>
-                    <em>Advisor: Professor Jun Zou</em><br>
-                    <span class="badge bg-success">Hong Kong PhD Fellowship Recipient</span>
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h1 class="display-4 fw-bold mb-3">Welcome to My Academic Portfolio</h1>
+                <p class="lead mb-4">
+                    Exploring the intersection of computational mathematics, deep learning, and medical imaging 
+                    through innovative research in electrical impedance tomography and inverse problems.
                 </p>
+                <div class="mb-4">
+                    <span class="badge bg-light text-primary me-2 fs-6">PhD in Mathematics</span>
+                    <span class="badge bg-light text-primary me-2 fs-6">Deep Learning Researcher</span>
+                    <span class="badge bg-light text-primary fs-6">Scientific Computing</span>
+                </div>
+                <div class="d-flex flex-wrap gap-2">
+                    <a href="/research" class="btn btn-light btn-lg">
+                        <i class="fas fa-microscope me-2"></i>Research
+                    </a>
+                    <a href="/publications" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-file-alt me-2"></i>Publications
+                    </a>
+                    <a href="/CV.pdf" class="btn btn-outline-light btn-lg" target="_blank">
+                        <i class="fas fa-download me-2"></i>Download CV
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center">
+                <div class="position-relative">
+                    <i class="fas fa-brain fa-5x opacity-25"></i>
+                    <i class="fas fa-microscope position-absolute top-0 start-50 translate-middle fa-2x mt-3"></i>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-md-6">
-        <div class="card h-100">
-            <div class="card-body">
-                <h5 class="card-title"><i class="fas fa-envelope text-primary"></i> Contact</h5>
-                <p class="card-text">
-                    <strong>Email:</strong> abdgafartunde@link.cuhk.edu.hk<br>
-                    <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/abdgafartunde" target="_blank">abdgafartunde</a><br>
-                    <strong>Location:</strong> Hong Kong
-                </p>
+</div>
+
+<!-- About Section -->
+<div class="container mb-5">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <div class="row align-items-center">
+                        <div class="col-md-3 text-center mb-3 mb-md-0">
+                            <div class="profile-image-placeholder bg-light rounded-circle mx-auto d-flex align-items-center justify-content-center" style="width: 120px; height: 120px;">
+                                <i class="fas fa-user fa-3x text-muted"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <h3 class="mb-3">About Me</h3>
+                            <p class="text-muted mb-3">
+                                I recently completed my PhD in Mathematics at The Chinese University of Hong Kong, 
+                                where I developed novel computational approaches for electrical impedance tomography 
+                                using deep learning and advanced regularization techniques.
+                            </p>
+                            <div class="row text-center">
+                                <div class="col-4">
+                                    <h6 class="text-primary mb-1">{{ site.data.stats.publications | default: "8+" }}</h6>
+                                    <small class="text-muted">Publications</small>
+                                </div>
+                                <div class="col-4">
+                                    <h6 class="text-primary mb-1">4+</h6>
+                                    <small class="text-muted">Years Research</small>
+                                </div>
+                                <div class="col-4">
+                                    <h6 class="text-primary mb-1">3</h6>
+                                    <small class="text-muted">Major Awards</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
