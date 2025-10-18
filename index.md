@@ -1,4 +1,13 @@
 ---
+layout: default
+title: "Home"
+---
+
+# Welcome to My Academic Website
+
+<!-- This is the homepage content. The site should process correctly once the Gemfile is fixed. -->
+
+---
 layout: page
 title: "Abd'gafar Tunde Tiamiyu, PhD"
 description: "PhD in Mathematics | Numerical Analysis & Deep Learning Researcher"
