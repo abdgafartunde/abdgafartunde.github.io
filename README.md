@@ -110,26 +110,18 @@ This website has been modified to include the following:
 - Added more details to each section of the CV page.
 - Added a complete list of publications with links on the publications page.
 
-# Personal Academic Website
+# Personal Site
 
-## Setup
+- Prereqs: Ruby + Bundler
+- Install: `bundle install`
+- Serve: `bundle exec jekyll serve --livereload`
+- Open: http://localhost:4000
 
-1. Install Ruby and Bundler
-2. Run `bundle install`
-3. Run `bundle exec jekyll serve`
-4. Visit `http://localhost:4000`
+Content
+- Posts: add files under `_posts/` named `YYYY-MM-DD-title.md` with `layout: post`.
+- Pages: edit the Markdown files at repo root.
+- Publications: edit `publications.md`.
+- CV: replace `CV.pdf`.
 
-## Structure
-
-- `_layouts/` - Page templates
-- `_posts/` - Blog posts
-- `assets/` - CSS, images, etc.
-- Root `.md` files - Main pages
-
-## Customization
-
-Edit `_config.yml` for site-wide settings and update individual page content in the `.md` files.
-
-## Deployment
-
-Push to GitHub Pages or deploy to your preferred hosting service.
+Config
+- Update `_config.yml` for title, nav, social, and author info.

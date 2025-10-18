@@ -2,13 +2,20 @@
 layout: default
 ---
 <article>
-	<header style="margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 2px solid #eee;">
-		<h1 style="margin-bottom: 0.5rem; color: #2c3e50;">{{ page.title }}</h1>
-		<p style="color: #7f8c8d;">
-			<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
-		</p>
-	</header>
-	<div class="post-content">
-		{{ content }}
-	</div>
+  <header class="hero">
+    <h1>{{ page.title }}</h1>
+    <p class="meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
+      {% if page.tags %} · tags: {{ page.tags | array_to_sentence_string }}{% endif %}
+    </p>
+  </header>
+  <section class="content">
+    {{ content }}
+  </section>
+  {% if page.comments != false and site.comments.isso or site.comments.disqus %}
+    <hr>
+    {% if site.comments.isso_domain %}<div id="isso-thread"></div>{% endif %}
+    {% if site.comments.disqus_shortname %}<div id="disqus_thread"></div>{% endif %}
+    <noscript>Please enable JavaScript to view comments.</noscript>
+  {% endif %}
 </article>

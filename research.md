@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Research"
-permalink: /research/
 ---
 
 ## Research Focus
@@ -58,34 +57,5 @@ Our work contributes to:
 
 - **University of Graz, Graz 8010, Austria**
   - Prof. Kristian Bredies, Department of Mathematics and Scientific Computing
-
-## Research Overview
-
-[Brief description of your research program]
-
-## Current Projects
-
-### Project Title 1
-**Funding**: [Source], [Amount]  
-**Duration**: [Dates]
-
-[Project description]
-
-### Project Title 2
-**Collaborators**: [Names]
-
-[Project description]
-
-## Research Areas
-
-### Area 1
-[Description and key findings]
-
-### Area 2
-[Description and key findings]
-
-## Lab Resources
-- [Lab website/GitHub repository]
-- [Datasets/Code]
 
 [View Publications](/publications)
