@@ -40,52 +40,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous">
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 
-<!-- Custom CSS for color fixes -->
-<style>
-  /* Fix hero section text contrast */
-  .hero-section {
-    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
-  }
-  
-  .hero-section h1, 
-  .hero-section .display-4,
-  .hero-section .lead,
-  .hero-section p {
-    color: white !important;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
-  }
-  
-  /* Reduce excessive spacing */
-  .mb-5 { margin-bottom: 2rem !important; }
-  .mt-5 { margin-top: 2rem !important; }
-  .py-5 { padding: 2rem 0 !important; }
-  
-  /* Consistent section spacing */
-  section { margin-bottom: 2rem; }
-  
-  /* Fix publication numbering */
-  .publication-item {
-    counter-increment: publication-counter;
-  }
-  
-  .publication-item::before {
-    content: counter(publication-counter) ". ";
-    font-weight: bold;
-    color: #007bff;
-  }
-  
-  .publications-container {
-    counter-reset: publication-counter;
-  }
-  
-  /* Ensure proper text contrast */
-  .text-white { color: white !important; }
-  .bg-primary { background-color: #007bff !important; }
-  .bg-gradient-primary { 
-    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important; 
-  }
-</style>
-
 <!-- JSON-LD Structured Data -->
 <script type="application/ld+json">
 {
