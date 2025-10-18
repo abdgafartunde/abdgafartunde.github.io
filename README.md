@@ -1,16 +1,52 @@
-# Academic Website
+# Abd'gafar Tunde Tiamiyu - Academic Website
 
-This is the source code for my academic website, built with Jekyll and hosted on GitHub Pages.
+This is the source code for my personal academic website, built with Jekyll and hosted on GitHub Pages.
 
-## Features
+## 🎓 About
 
-- **Responsive Design**: Mobile-friendly layout using Bootstrap 5
-- **Academic Focus**: Sections for research, publications, teaching, and CV
-- **SEO Optimized**: Proper meta tags and structured data
-- **Fast Loading**: Optimized images and minimal dependencies
-- **Professional Styling**: Clean, academic-appropriate design
+PhD student in Mathematics at The Chinese University of Hong Kong, specializing in:
+- Inverse problems and regularization
+- Numerical optimization  
+- Scientific machine learning
+- Deep learning for computational imaging
+- Partial differential equations
 
-## Structure
+## 🚀 Quick Start
+
+### Prerequisites
+- Ruby (2.7.0 or higher)
+- Bundler gem
+- Git
+
+### Local Development
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/abdgafartunde/abdgafartunde.github.io.git
+   cd abdgafartunde.github.io
+   ```
+
+2. **Install dependencies**
+   ```bash
+   bundle install
+   ```
+
+3. **Run the development server**
+   ```bash
+   bundle exec jekyll serve
+   ```
+
+4. **Open your browser**
+   Navigate to `http://localhost:4000`
+
+### Making Changes
+
+1. Edit content in Markdown files
+2. Add new posts in `_posts/` directory
+3. Modify configuration in `_config.yml`
+4. Test locally before pushing to GitHub
+
+## 📁 Site Structure
 
 - **Home Page**: Introduction and overview
 - **About Me**: Personal information and contact details

@@ -1,9 +1,18 @@
 User-agent: *
 Allow: /
 
-# Sitemap
+# Sitemap location
 Sitemap: https://abdgafartunde.github.io/sitemap.xml
 
-# Disallow admin areas (if any)
+# Allow access to CSS and JS files
+Allow: /assets/
+Allow: /*.css
+Allow: /*.js
+
+# Disallow access to admin or private areas (if any)
 Disallow: /admin/
-Disallow: /_*
+Disallow: /_site/
+Disallow: /.git/
+
+# Crawl delay (optional - sets delay between requests)
+Crawl-delay: 1
