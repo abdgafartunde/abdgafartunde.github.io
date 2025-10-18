@@ -1,9 +1,7 @@
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
 .DS_Store
-Thumbs.db
-vendor/
-node_modules/
-*.log
+.bundle
+.jekyll-cache
+.sass-cache
+Gemfile.lock
+_site
+*.gem
