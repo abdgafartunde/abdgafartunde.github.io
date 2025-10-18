@@ -125,3 +125,11 @@ Content
 
 Config
 - Update `_config.yml` for title, nav, social, and author info.
+
+Local preview
+- bundle install
+- bundle exec jekyll serve
+
+Notes
+- Pages use layout: page for a consistent look (including /cv/).
+- pdf.html is a passthrough to page layout; no PDF embed or download.

@@ -61,9 +61,3 @@ defaults:
     values:
       layout: "post"
       comments: false
-
-title: "abdgafartunde"
-description: "Personal website"
-theme: minima
-markdown: kramdown
-permalink: pretty
