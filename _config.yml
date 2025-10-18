@@ -8,7 +8,7 @@ author:
   name: "Abd'gafar Tunde Tiamiyu"
   email: "abdgafartunde@link.cuhk.edu.hk"
   affiliation: "The Chinese University of Hong Kong"
-  position: "PhD in Mathematics"
+  position: "PhD Candidate in Mathematics"
   location: "Hong Kong SAR"
 
 # Build settings
@@ -53,7 +53,7 @@ research_interests:
 # Professional details
 education:
   current:
-    degree: "PhD in Mathematics (Completed)"
+    degree: "PhD in Mathematics"
     institution: "The Chinese University of Hong Kong"
     period: "Aug 2021 – Jul 2025"
     advisor: "Professor Jun Zou"
