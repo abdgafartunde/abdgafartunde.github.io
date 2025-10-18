@@ -1,101 +1,133 @@
 ---
-layout: default
-title: "Home"
+layout: page
+title: "Abd'gafar Tunde Tiamiyu, PhD"
+description: "PhD in Mathematics | Numerical Analysis & Deep Learning Researcher"
 ---
 
-<div class="hero-section bg-light py-5">
+<div class="jumbotron bg-primary text-white text-center py-5 mb-5 rounded">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-4 text-center">
-                <img src="/assets/images/profile.jpg" alt="{{ site.author.name }}" 
-                     class="rounded-circle img-fluid mb-3" style="max-width: 250px;">
+        <h1 class="display-4 fw-bold">Abd'gafar Tunde Tiamiyu</h1>
+        <p class="lead fs-4">PhD in Mathematics</p>
+        <p class="fs-5">Numerical Analysis • Computational Mathematics • Deep Learning • Inverse Problems</p>
+        <hr class="my-4 bg-white">
+        <p class="mb-4">The Chinese University of Hong Kong</p>
+        <a class="btn btn-light btn-lg me-3" href="/cv" role="button">
+            <i class="fas fa-file-pdf"></i> View CV
+        </a>
+        <a class="btn btn-outline-light btn-lg" href="/research" role="button">
+            <i class="fas fa-microscope"></i> Research
+        </a>
+    </div>
+</div>
+
+## About Me
+
+I am a PhD candidate in Mathematics at The Chinese University of Hong Kong, specializing in **numerical analysis**, **computational mathematics**, and **deep learning** applications to inverse problems. My research focuses on developing innovative algorithms and data-driven models for Electrical Impedance Tomography (EIT) problems, combining theoretical mathematical foundations with cutting-edge machine learning techniques.
+
+<div class="row mb-5">
+    <div class="col-md-6">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-graduation-cap text-primary"></i> Current Position</h5>
+                <p class="card-text">
+                    <strong>PhD Candidate in Mathematics</strong><br>
+                    The Chinese University of Hong Kong<br>
+                    <em>Advisor: Professor Jun Zou</em><br>
+                    <span class="badge bg-success">Hong Kong PhD Fellowship Recipient</span>
+                </p>
             </div>
-            <div class="col-md-8">
-                <h1 class="display-4 mb-3">{{ site.author.name }}</h1>
-                <h3 class="text-muted mb-3">{{ site.author.position }}</h3>
-                <h5 class="text-secondary mb-4">{{ site.author.affiliation }}</h5>
-                <p class="lead">{{ site.description }}</p>
-                <div class="mt-4">
-                    <a href="/research" class="btn btn-primary me-2">
-                        <i class="fas fa-microscope"></i> Research
-                    </a>
-                    <a href="/publications" class="btn btn-outline-primary me-2">
-                        <i class="fas fa-file-alt"></i> Publications
-                    </a>
-                    <a href="/cv" class="btn btn-outline-secondary">
-                        <i class="fas fa-download"></i> CV
-                    </a>
-                </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-envelope text-primary"></i> Contact</h5>
+                <p class="card-text">
+                    <strong>Email:</strong> abdgafartunde@link.cuhk.edu.hk<br>
+                    <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/abdgafartunde" target="_blank">abdgafartunde</a><br>
+                    <strong>Location:</strong> Hong Kong
+                </p>
             </div>
         </div>
     </div>
 </div>
 
-<div class="container my-5">
-    <div class="row">
-        <div class="col-lg-8">
-            <section class="mb-5">
-                <h2><i class="fas fa-user-graduate text-primary"></i> About Me</h2>
-                <hr>
-                <p class="lead">
-                    Welcome to my academic website! I am a [your position] at [your institution], 
-                    specializing in [your field]. My research focuses on [brief description of your research].
-                </p>
-                <p>
-                    [Add more detailed information about your background, education, and career highlights.]
-                </p>
-            </section>
+## Research Highlights
 
-            <section class="mb-5">
-                <h3><i class="fas fa-bullhorn text-primary"></i> Recent News</h3>
-                <hr>
-                <div class="card">
-                    <div class="card-body">
-                        <ul class="list-unstyled">
-                            <li class="mb-3">
-                                <strong>{{ 'now' | date: "%B %Y" }}:</strong> 
-                                New paper accepted at [Conference/Journal Name]
-                            </li>
-                            <li class="mb-3">
-                                <strong>{{ 'now' | date: "%B %Y" }}:</strong> 
-                                Presenting at [Conference Name]
-                            </li>
-                            <li class="mb-3">
-                                <strong>{{ 'now' | date: "%B %Y" }}:</strong> 
-                                Started new collaboration with [Institution/Person]
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <div class="col-lg-4">
-            <div class="card mb-4">
-                <div class="card-header">
-                    <h5><i class="fas fa-search text-primary"></i> Research Interests</h5>
-                </div>
-                <div class="card-body">
-                    <ul class="list-unstyled">
-                        {% for interest in site.research_interests %}
-                        <li class="mb-2">
-                            <i class="fas fa-chevron-right text-primary"></i> {{ interest }}
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card mb-4">
-                <div class="card-header">
-                    <h5><i class="fas fa-envelope text-primary"></i> Contact</h5>
-                </div>
-                <div class="card-body">
-                    <p><i class="fas fa-envelope me-2"></i> {{ site.author.email }}</p>
-                    <p><i class="fas fa-building me-2"></i> {{ site.author.affiliation }}</p>
-                    <p><i class="fas fa-map-marker-alt me-2"></i> {{ site.author.location }}</p>
-                </div>
+<div class="row mb-5">
+    <div class="col-md-4 mb-4">
+        <div class="card text-center h-100">
+            <div class="card-body">
+                <i class="fas fa-brain fa-3x text-primary mb-3"></i>
+                <h5 class="card-title">Deep Learning for EIT</h5>
+                <p class="card-text">Integrating physics-informed neural networks with traditional inverse problem solvers, achieving 15% accuracy improvement in noisy datasets.</p>
             </div>
         </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card text-center h-100">
+            <div class="card-body">
+                <i class="fas fa-calculator fa-3x text-success mb-3"></i>
+                <h5 class="card-title">Numerical Optimization</h5>
+                <p class="card-text">Developing novel variational inversion schemes using adaptive primal-dual hybrid gradient methods for ill-posed problems.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card text-center h-100">
+            <div class="card-body">
+                <i class="fas fa-image fa-3x text-warning mb-3"></i>
+                <h5 class="card-title">Computational Imaging</h5>
+                <p class="card-text">Creating data-driven approaches for learning multi-parameter regularizers via convex optimization for image restoration.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+## Recent Publications
+
+<div class="card mb-4">
+    <div class="card-header bg-primary text-white">
+        <h5 class="mb-0"><i class="fas fa-newspaper"></i> Latest Research</h5>
+    </div>
+    <div class="card-body">
+        <ul class="list-unstyled">
+            <li class="mb-3">
+                <strong>He J., and Tiamiyu A.T.</strong> (2025). "Physics-informed neural networks in iterative form of nonlinear equations for numerical algorithms and simulations of delay differential equations." 
+                <em>Physica A: Statistical Mechanics and its Applications</em>.
+            </li>
+            <li class="mb-3">
+                <strong>Ahmad S. and Tiamiyu A.T.</strong> (2024). "Numerical simulation of time-dependent non-Newtonian compressible fluid flow in porous media: finite element method and time-dependent approach." 
+                <em>International Communications in Heat and Mass Transfer</em>.
+            </li>
+            <li class="mb-3">
+                <strong>Audu K.J., Tiamiyu A.T., et al.</strong> (2024). "Numerical assessment of some semi-analytical techniques for solving a fractional-order leptospirosis model." 
+                <em>Malaysian Journal of Science</em>.
+            </li>
+        </ul>
+        <div class="text-center">
+            <a href="/publications" class="btn btn-outline-primary">
+                <i class="fas fa-list"></i> View All Publications
+            </a>
+        </div>
+    </div>
+</div>
+
+## Research Interests
+
+<div class="row">
+    <div class="col-md-6">
+        <ul class="list-group">
+            <li class="list-group-item"><i class="fas fa-cog text-primary me-2"></i>Inverse problems and regularization</li>
+            <li class="list-group-item"><i class="fas fa-cog text-primary me-2"></i>Numerical optimization</li>
+            <li class="list-group-item"><i class="fas fa-cog text-primary me-2"></i>Scientific machine learning</li>
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <ul class="list-group">
+            <li class="list-group-item"><i class="fas fa-cog text-success me-2"></i>Deep learning for computational imaging</li>
+            <li class="list-group-item"><i class="fas fa-cog text-success me-2"></i>Partial differential equations</li>
+            <li class="list-group-item"><i class="fas fa-cog text-success me-2"></i>Electrical Impedance Tomography (EIT)</li>
+        </ul>
     </div>
 </div>
