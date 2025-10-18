@@ -1,52 +1,60 @@
-title: "A.T. TIAMIYU"
-author: "A.T. TIAMIYU"
-description: "The Chinese University of Hong Kong"
-permalink: /:title/
-lang: "en"
-date_format: "%B %d, %Y"
-excerpt_separator: "<!-- more -->"
+title: "Dr. [Your Name]"
+description: "Academic Researcher in [Your Field]"
+baseurl: ""
 url: "https://abdgafartunde.github.io"
-baseurl: ""               
-timezone: "Asia/Hong_Kong"
-mathjax: true          
 
-# Layout
-show_excerpts: true        # show article excerpts on the home page
-show_frame: true           # adds a gray frame to the site
-show_sidebar: false        # show a sidebar instead of the usual header
-# minimal: false             # use a dark header
+# Site settings
+author:
+  name: "[Your Full Name]"
+  email: "[your.email@university.edu]"
+  affiliation: "[Your University/Institution]"
+  position: "[Your Position/Title]"
+  location: "[City, Country]"
 
-
-# # Style
-# style:
-#   theme: minima           # use minima as base theme
-#   sass_dir: assets/css    # directory for Sass files
-
-# Menu
-navigation:                # accepts {file, title, url, icon, sidebaricon}
-  - {file: "about.md", title: "About"}
-  - {file: "research.md", title: "Research"}
-  - {file: "teaching.md", title: "Teaching"}
-  - {file: "publications.md", title: "Publications"}
-  - {file: "cv.md", title: "CV"}
-  - {file: "blog.md", title: "Blog"}
-
-external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
-  - {title: Mail, icon: envelope, url: "mailto:abdgafartunde@yahoo.com"}
-  - {title: Github, icon: github, url: "https://github.com/abdgafartunde"}
-  - {title: ResearchGate, icon: researchgate, url: "https://www.researchgate.net/profile/Tiamiyu-Abdgafar"}
-  - {title: Google Scholar, icon: google, url: "https://scholar.google.com/citations?user=oZ3egAIAAAAJ&hl=en"}
-
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
 plugins:
- - jekyll-feed
- - jekyll-sitemap
- - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
 
-paginate: 5
-paginate_path: "/page:num/"
+# Navigation
+navigation:
+  - title: "Home"
+    url: "/"
+  - title: "Research"
+    url: "/research"
+  - title: "Publications"
+    url: "/publications"
+  - title: "Teaching"
+    url: "/teaching"
+  - title: "CV"
+    url: "/cv"
+  - title: "Blog"
+    url: "/blog"
+
+# Social links
+social:
+  github: "abdgafartunde"
+  twitter: "[your_twitter]"
+  linkedin: "[your_linkedin]"
+  orcid: "[your_orcid]"
+  google_scholar: "[your_scholar_id]"
+
+# Academic info
+research_interests:
+  - "[Research Area 1]"
+  - "[Research Area 2]"
+  - "[Research Area 3]"
+
+# Exclude from processing
 exclude:
- - README.md
- - Gemfile
- - Gemfile.lock
- - node_modules
- - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

@@ -1,8 +1,25 @@
----
-title: "About"
-permalink: "/about/"
-layout: page
----
+# Academic Website
+
+This is the source code for my academic website, built with Jekyll and hosted on GitHub Pages.
+
+## Features
+
+- **Responsive Design**: Mobile-friendly layout using Bootstrap 5
+- **Academic Focus**: Sections for research, publications, teaching, and CV
+- **SEO Optimized**: Proper meta tags and structured data
+- **Fast Loading**: Optimized images and minimal dependencies
+- **Professional Styling**: Clean, academic-appropriate design
+
+## Structure
+
+- **Home Page**: Introduction and overview
+- **About Me**: Personal information and contact details
+- **Research**: Current projects and interests
+- **Publications**: List of publications with links
+- **Teaching**: Courses taught and teaching philosophy
+- **Presentations**: List of presentations
+- **CV**: Downloadable CV with detailed information
+- **Contact**: Social links and contact form
 
 ## Installation
 

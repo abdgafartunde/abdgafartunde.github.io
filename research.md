@@ -1,61 +1,75 @@
 ---
 layout: page
 title: "Research"
+description: "My research interests and current projects"
 ---
 
-## Research Focus
-My research addresses fundamental challenges in medical imaging through mathematical innovation and computational advancement. I specialize in:
+## Research Overview
 
-### Theoretical Foundations
-- **Inverse Problems Theory**
-  - Mathematical modeling of ill-posed problems
-  - Regularization theory and parameter selection
-  - Stability and convergence analysis
+My research focuses on [your main research area] with particular emphasis on [specific topics]. I employ [methodologies/approaches] to address [problems/questions] in [field/domain].
 
-- **Deep Learning Theory**
-  - Neural operator learning frameworks
-  - Theoretical guarantees for learned reconstructions
-  - Convergence analysis of deep learning methods
-
-### Applied Research
-- **Electrical Impedance Tomography (EIT)**
-  - Bilevel optimization for parameter learning
-  - Primal-dual algorithms with learned components
-  - Real-time reconstruction methods
-
-- **Scientific Computing**
-  - High-performance implementation strategies
-  - GPU-accelerated algorithms
-  - Parallel computing frameworks
+---
 
 ## Current Projects
 
-### Bilevel Learning for EIT
-Developing a novel framework that automatically learns optimal regularization parameters through:
-- Data-driven parameter optimization
-- End-to-end training strategies
-- Theoretical convergence guarantees
-- Practical implementation considerations
+### Project 1: [Project Title]
+**Duration:** [Start Date] - [End Date]  
+**Funding:** [Funding Source, Amount if appropriate]  
+**Collaborators:** [Names and affiliations]
 
-### Advanced Reconstruction Algorithms
-Creating next-generation reconstruction methods featuring:
-- Learned regularization components
-- Adaptive parameter selection
-- Real-time processing capabilities
-- Robust error handling
+Brief description of the project objectives, methodology, and expected outcomes.
+
+### Project 2: [Project Title]
+**Duration:** [Start Date] - [End Date]  
+**Funding:** [Funding Source]
+
+Brief description of the project.
+
+---
+
+## Research Areas
+
+<div class="row">
+    <div class="col-md-6 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-atom text-primary"></i> Research Area 1</h5>
+                <p class="card-text">Description of your first research area and its significance.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-brain text-primary"></i> Research Area 2</h5>
+                <p class="card-text">Description of your second research area and its applications.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+---
+
+## Methodologies
+
+- **[Method 1]:** Brief description
+- **[Method 2]:** Brief description  
+- **[Method 3]:** Brief description
+
+---
 
 ## Research Impact
-Our work contributes to:
-- Improved medical imaging accuracy
-- Faster reconstruction times
-- Reduced computational costs
-- Enhanced clinical applicability
+
+- [Number] publications in top-tier journals
+- [Number] citations (Google Scholar)
+- [Number] conference presentations
+- [Awards/Recognition received]
+
+---
 
 ## Collaborations
-- **The Chinese University of Hong Kong, Shatin, Hong Kong SAR**
-  - Prof. Jun Zou, Department of Mathematics
 
-- **University of Graz, Graz 8010, Austria**
-  - Prof. Kristian Bredies, Department of Mathematics and Scientific Computing
-
-[View Publications](/publications)
+I actively collaborate with researchers from:
+- [Institution 1] - [Collaborator Name]
+- [Institution 2] - [Collaborator Name]
+- [Institution 3] - [Collaborator Name]

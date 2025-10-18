@@ -1,41 +1,97 @@
 ---
 layout: page
 title: "Publications"
+description: "List of academic publications and preprints"
 ---
 
-## Research Profiles
+<div class="alert alert-info">
+    <i class="fas fa-info-circle"></i> For the most up-to-date list, please visit my 
+    <a href="https://scholar.google.com/citations?user={{ site.social.google_scholar }}" target="_blank">Google Scholar</a> profile.
+</div>
 
-For a complete and up-to-date list of my publications, please visit my research profiles:
+## Journal Articles
 
-- [Google Scholar Profile](https://scholar.google.com/citations?user=oZ3egAIAAAAJ&hl=en)
-- [ResearchGate Profile](https://www.researchgate.net/profile/Abdgafar-Tiamiyu)
+### 2024
 
-## Publications
+1. **[Your Name]**, Co-author Name. (2024). "Title of Your Recent Paper." 
+   *Journal Name*, Volume(Issue), pages. DOI: [link]
+   <span class="badge bg-success">Published</span>
 
-### Journal Articles
+2. Co-author Name, **[Your Name]**, Another Author. (2024). "Another Paper Title." 
+   *Another Journal*, Volume(Issue), pages. DOI: [link]
+   <span class="badge bg-success">Published</span>
 
-- [Physics-Informed Neural Networks in Iterative Form of Nonlinear Equations for Numerical Algorithms and Simulations of Delay Differential Equations](https://doi.org/10.1016/j.physa.2025.130368)  
-  Jilong He and Abd'gafar Tunde Tiamiyu, Physica A: Statistical Mechanics and its Applications, 2025 (DOI: 10.1016/j.physa.2025.130368)
+### 2023
 
-- [Numerical Simulation of Time-Dependent Non-Newtonian Compressible Fluid Flow in Porous Media: Finite Element Method and Time Integration Approach](https://doi.org/10.1016/j.icheatmasstransfer.2024.107934)  
-  Salman Ahmad and Abd'gafar Tunde Tiamiyu, International Communications in Heat and Mass Transfer, 2024 (DOI: 10.1016/j.icheatmasstransfer.2024.107934)
+3. **[Your Name]**, Collaborator Name. (2023). "Paper from Last Year." 
+   *Journal Name*, Volume(Issue), pages. DOI: [link]
+   <span class="badge bg-success">Published</span>
 
-### Conference Proceedings
+## Conference Papers
 
-- [Title of Conference Paper 1](Link to Paper 1)  
-  Authors, Conference, Year
+### 2024
 
-- [Title of Conference Paper 2](Link to Paper 2)  
-  Authors, Conference, Year
+1. **[Your Name]**, Co-author. (2024). "Conference Paper Title." 
+   In *Proceedings of Conference Name*, pages. Location: City, Country.
+   <span class="badge bg-primary">Conference</span>
 
-### Preprints
+### 2023
 
-- [Title of Preprint 1](Link to Preprint 1)  
-  Authors, Preprint Server, Year
+2. **[Your Name]**, Co-author. (2023). "Another Conference Paper." 
+   In *Proceedings of Another Conference*, pages. Location: City, Country.
+   <span class="badge bg-primary">Conference</span>
 
-- [Title of Preprint 2](Link to Preprint 2)  
-  Authors, Preprint Server, Year
+## Preprints & Under Review
 
-## Presentations
-- **[Conference Name]** (Month Year)  
-  Title of presentation: A Novel Approach to..., Location, *Brief description of the presentation.*
+1. **[Your Name]**, Co-author. "Paper Under Review." 
+   Submitted to *Target Journal*. 
+   <span class="badge bg-warning">Under Review</span>
+
+2. **[Your Name]**, Co-author. "Preprint Title." 
+   arXiv preprint arXiv:[number]. 
+   <span class="badge bg-info">Preprint</span>
+
+## Theses
+
+- **Ph.D. Dissertation:** "Title of Your Dissertation" (Year). 
+  *University Name*. Advisor: [Advisor Name].
+
+- **Master's Thesis:** "Title of Your Master's Thesis" (Year). 
+  *University Name*. Advisor: [Advisor Name].
+
+## Metrics
+
+<div class="row text-center">
+    <div class="col-md-3 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="text-primary">[X]</h3>
+                <p>Publications</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="text-primary">[Y]</h3>
+                <p>Citations</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="text-primary">[Z]</h3>
+                <p>h-index</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="text-primary">[W]</h3>
+                <p>i10-index</p>
+            </div>
+        </div>
+    </div>
+</div>

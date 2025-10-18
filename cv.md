@@ -1,7 +1,15 @@
 ---
 layout: page
 title: "Curriculum Vitae"
+description: "Academic CV and professional experience"
 ---
+
+<div class="text-center mb-4">
+    <a href="/CV.pdf" class="btn btn-primary btn-lg" target="_blank">
+        <i class="fas fa-download"></i> Download Full CV (PDF)
+    </a>
+    <p class="text-muted mt-2">Last updated: {{ 'now' | date: "%B %Y" }}</p>
+</div>
 
 # Abdgafar Tunde Tiamiyu
 PhD Candidate in Mathematics  

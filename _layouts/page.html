@@ -1,7 +1,17 @@
 ---
 layout: default
 ---
-<article>
-  <header><h1><a href="{{ page.url | relative_url }}">{{ page.title }}</a></h1></header>
-  {{ content }}
-</article>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-10 mx-auto">
+            {% if page.title %}
+            <h1 class="mb-4">{{ page.title }}</h1>
+            {% endif %}
+            
+            <div class="content">
+                {{ content }}
+            </div>
+        </div>
+    </div>
+</div>
