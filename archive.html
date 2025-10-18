@@ -1,7 +1,15 @@
 ---
 title: "Archive"
-layout: default
+layout: page
 sitemap: false
 ---
 
-{% include archive.html %}
+<ul>
+  {% assign posts = site.posts | sort: 'date' | reverse %}
+  {% for post in posts %}
+    <li>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <small> — {{ post.date | date: site.date_format }}</small>
+    </li>
+  {% endfor %}
+</ul>

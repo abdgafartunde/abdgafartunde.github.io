@@ -1,5 +1,18 @@
 ---
 layout: page
+title: "Blog"
 ---
 
-{% include archive.html %}
+<ul>
+  {% assign posts = site.posts | sort: 'date' | reverse %}
+  {% if posts.size == 0 %}
+    <li>No posts yet.</li>
+  {% else %}
+    {% for post in posts %}
+      <li>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <small> — {{ post.date | date: site.date_format }}</small>
+      </li>
+    {% endfor %}
+  {% endif %}
+</ul>
