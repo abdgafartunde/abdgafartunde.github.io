@@ -23,8 +23,6 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-redirect-from
-  - jekyll-archives
 
 # Navigation
 navigation:
@@ -52,9 +50,6 @@ social:
   github: "abdgafartunde"
   linkedin: "abdgafartunde"
   email: "abdgafartunde@link.cuhk.edu.hk"
-  orcid: # Add your ORCID ID when available
-  google_scholar: # Add your Google Scholar ID when available
-  researchgate: # Add your ResearchGate profile when available
 
 # Academic information
 academic:
@@ -64,194 +59,40 @@ academic:
   university: "The Chinese University of Hong Kong"
   advisor: "Professor Jun Zou"
   degree_progress: "PhD Candidate (2021-2025)"
-  
-research_interests:
-  - "Inverse problems and regularization"
-  - "Numerical optimization"
-  - "Scientific machine learning"
-  - "Deep learning for computational imaging"
-  - "Partial differential equations"
-  - "Electrical impedance tomography"
-  - "Physics-informed neural networks"
 
-# Current research focus
-current_research:
-  title: "Novel regularization and deep learning approaches for electrical impedance tomography (EIT) problems with partial measurement data"
-  keywords: ["EIT", "Deep Learning", "Inverse Problems", "Regularization", "Medical Imaging"]
-
-# Awards and funding
-funding:
-  - name: "Hong Kong PhD Fellowship Scheme"
-    period: "2021-2024"
-    amount: "HK$ 340,800/year"
-  - name: "Ernst Mach Grant"
-    period: "2023-2024"
-    amount: "EUR 1,150/month"
-  - name: "CUHK Vice-Chancellor's Scholarship"
-    period: "2021-2025"
-    amount: "HK$ 100,000 + monthly stipend"
-
-# Collections for better organization
+# Collections
 collections:
   posts:
     output: true
     permalink: /blog/:year/:month/:day/:title/
-  projects:
-    output: true
-    permalink: /projects/:name/
 
-# Archives plugin configuration
-jekyll-archives:
-  enabled:
-    - categories
-    - tags
-    - year
-    - month
-  layouts:
-    category: archive-taxonomy
-    tag: archive-taxonomy
-    year: archive-year
-    month: archive-month
-  permalinks:
-    category: '/blog/category/:name/'
-    tag: '/blog/tag/:name/'
-    year: '/blog/:year/'
-    month: '/blog/:year/:month/'
-
-# Defaults for better SEO and consistency
+# Defaults
 defaults:
   - scope:
       path: ""
       type: "pages"
     values:
       layout: "page"
-      author: "Abd'gafar Tunde Tiamiyu"
   - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
-      author: "Abd'gafar Tunde Tiamiyu"
-      show_sidebar: true
-  - scope:
-      path: ""
-      type: "projects"
-    values:
-      layout: "project"
-      author: "Abd'gafar Tunde Tiamiyu"
-
-# SEO settings
-twitter:
-  username: # Add your Twitter handle when available
-  card: summary_large_image
-
-facebook:
-  publisher: # Add your Facebook page when available
-
-# Analytics (add when ready)
-google_analytics: # Add your GA tracking ID
-google_site_verification: # Add verification code
-
-# Academic features
-show_downloads: true
-show_on_github: true
-repository: "abdgafartunde/abdgafartunde.github.io"
-
-# Blog settings
-blog:
-  show_excerpts: true
-  show_tags: true
-  show_categories: true
-  posts_per_page: 10
-
-# Site theme and styling
-theme_config:
-  primary_color: "#007bff"
-  accent_color: "#28a745"
-  background_color: "#ffffff"
-  text_color: "#333333"
-
-# Technical skills for display
-technical_skills:
-  programming:
-    - "Python"
-    - "MATLAB"
-    - "C++"
-    - "Git"
-    - "VS Code"
-  deep_learning:
-    - "PyTorch"
-    - "TensorFlow"
-  scientific_computing:
-    - "NumPy"
-    - "SciPy"
-    - "Pandas"
-    - "OpenCV"
-    - "scikit-image"
-
-# Professional memberships
-memberships:
-  - name: "Society for Industrial and Applied Mathematics (SIAM)"
-    period: "2021-Present"
-    role: "Member, CUHK Student Chapter"
-  - name: "Inverse Problems International Association (IPIA)"
-    period: "2022-Present"
-    role: "Member"
-
-# Leadership positions
-leadership:
-  - title: "Vice President"
-    organization: "SIAM Student Chapter, CUHK"
-    period: "2024-2025"
-  - title: "Secretary"
-    organization: "SIAM Student Chapter, CUHK"
-    period: "2023-2024"
 
 # Exclude from processing
 exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
+  - vendor/
   - README.md
   - LICENSE
   - CHANGELOG.md
   - content.txt
-
-# Include important files
-include:
-  - _pages
-  - _posts
-  - assets
-
-# Sass configuration
-sass:
-  sass_dir: _sass
-  style: compressed
 
 # Kramdown configuration
 kramdown:
   input: GFM
   hard_wrap: false
   auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  smart_quotes: lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
   syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    css_class: 'highlight'
-    span:
-      line_numbers: false
-    block:
-      line_numbers: true
-
-# Liquid configuration
-liquid:
-  error_mode: strict
-  strict_filters: true
-  strict_variables: false

@@ -2,63 +2,37 @@
 layout: default
 ---
 
-<div class="container my-5">
-    <div class="row">
-        <div class="col-lg-8 mx-auto">
-            <!-- Post Header -->
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <article>
             <header class="mb-4">
-                <h1 class="mb-3">{{ page.title }}</h1>
+                <h1 class="display-6 fw-bold">{{ page.title }}</h1>
+                {% if page.description %}
+                    <p class="lead text-muted">{{ page.description }}</p>
+                {% endif %}
                 <div class="text-muted mb-3">
-                    <i class="fas fa-calendar"></i> {{ page.date | date: "%B %d, %Y" }}
-                    {% if page.author %}
-                    <span class="mx-2">•</span>
-                    <i class="fas fa-user"></i> {{ page.author }}
-                    {% endif %}
-                    {% if page.read_time %}
-                    <span class="mx-2">•</span>
-                    <i class="fas fa-clock"></i> {{ page.read_time }} min read
-                    {% endif %}
+                    <small>
+                        <i class="fas fa-calendar me-1"></i>
+                        {{ page.date | date: "%B %d, %Y" }}
+                        {% if page.read_time %}
+                            <span class="mx-2">•</span>
+                            <i class="fas fa-clock me-1"></i>
+                            {{ page.read_time }} min read
+                        {% endif %}
+                    </small>
                 </div>
                 {% if page.tags.size > 0 %}
-                <div class="mb-3">
-                    {% for tag in page.tags %}
-                        <span class="badge bg-secondary me-1">{{ tag }}</span>
-                    {% endfor %}
-                </div>
+                    <div class="mb-3">
+                        {% for tag in page.tags %}
+                            <span class="badge bg-secondary me-1">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
                 {% endif %}
             </header>
-
-            <!-- Post Content -->
-            <article class="mb-5">
+            
+            <div class="content">
                 {{ content }}
-            </article>
-
-            <!-- Post Footer -->
-            <footer>
-                <hr>
-                <div class="row">
-                    <div class="col-md-6">
-                        {% if page.previous.url %}
-                        <div class="mb-3">
-                            <small class="text-muted">Previous Post</small><br>
-                            <a href="{{ page.previous.url }}" class="text-decoration-none">
-                                <i class="fas fa-chevron-left"></i> {{ page.previous.title }}
-                            </a>
-                        </div>
-                        {% endif %}
-                    </div>
-                    <div class="col-md-6 text-end">
-                        {% if page.next.url %}
-                        <div class="mb-3">
-                            <small class="text-muted">Next Post</small><br>
-                            <a href="{{ page.next.url }}" class="text-decoration-none">
-                                {{ page.next.title }} <i class="fas fa-chevron-right"></i>
-                            </a>
-                        </div>
-                        {% endif %}
-                    </div>
-                </div>
-            </footer>
-        </div>
+            </div>
+        </article>
     </div>
 </div>

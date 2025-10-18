@@ -19,6 +19,8 @@ body {
 
 .hero-section {
     border-bottom: 1px solid #e9ecef;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .main-content {
@@ -28,12 +30,12 @@ body {
 .card {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     border: none;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 .btn-primary {
@@ -54,15 +56,84 @@ body {
     background-color: var(--primary-color) !important;
 }
 
+/* Custom CSS for Academic Website */
+
+/* Custom gradient backgrounds */
+.bg-gradient-primary {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+}
+
+.bg-gradient-success {
+    background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
+}
+
+.bg-gradient-info {
+    background: linear-gradient(135deg, #17a2b8 0%, #117a8b 100%);
+}
+
+/* Hero sections */
+
+/* Card enhancements */
+.card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Timeline styling */
+.timeline {
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #dee2e6;
+}
+
+.timeline .card {
+    margin-left: 50px;
+    position: relative;
+}
+
+.timeline .card::before {
+    content: '';
+    position: absolute;
+    left: -35px;
+    top: 20px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #007bff;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 3px #dee2e6;
+}
+
 /* Academic-specific styles */
 .publication-item {
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid #e9ecef;
+    border-left: 4px solid #007bff;
+    padding-left: 1rem;
 }
 
 .publication-item:last-child {
     border-bottom: none;
+}
+
+.publication-item:hover {
+    border-left-color: #0056b3;
+    background-color: #f8f9fa;
 }
 
 .badge {
@@ -82,6 +153,30 @@ body {
     
     .display-4 {
         font-size: 2.5rem;
+    }
+    
+    .timeline {
+        margin-left: 0;
+    }
+    
+    .timeline::before {
+        left: 10px;
+    }
+    
+    .timeline .card {
+        margin-left: 30px;
+    }
+    
+    .timeline .card::before {
+        left: -25px;
+    }
+    
+    .hero-section {
+        text-align: center !important;
+    }
+    
+    .hero-section .col-md-4 {
+        margin-top: 1rem;
     }
 }
 
@@ -201,7 +296,14 @@ select:focus {
 
 /* Dark mode support (future enhancement) */
 @media (prefers-color-scheme: dark) {
-    /* This can be expanded later for dark mode support */
+    .card {
+        background-color: #2d3748;
+        color: #e2e8f0;
+    }
+    
+    .text-muted {
+        color: #a0aec0 !important;
+    }
 }
 
 /* Improved mobile navigation */
@@ -229,4 +331,47 @@ select:focus {
 
 .skip-link:focus {
     top: 0;
+}
+
+/* Alert styling */
+.alert {
+    border: none;
+    border-radius: 10px;
+}
+
+/* Button enhancements */
+.btn {
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Navigation enhancements */
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    transform: translateY(-1px);
+}
+
+/* Content spacing */
+.content h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #007bff;
+}
+
+.content h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #0056b3;
 }
