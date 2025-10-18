@@ -3,7 +3,7 @@ layout: page
 title: "Curriculum Vitae"
 ---
 
-# Abd'gafar Tunde Tiamiyu
+# Abdgafar Tunde Tiamiyu
 PhD Candidate in Mathematics  
 The Chinese University of Hong Kong
 

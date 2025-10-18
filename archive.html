@@ -4,12 +4,4 @@ layout: page
 sitemap: false
 ---
 
-<ul>
-  {% assign posts = site.posts | sort: 'date' | reverse %}
-  {% for post in posts %}
-    <li>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <small> — {{ post.date | date: site.date_format }}</small>
-    </li>
-  {% endfor %}
-</ul>
+{% include archive-list.html %}

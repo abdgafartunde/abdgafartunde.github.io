@@ -1,5 +1,5 @@
-title: "Abd'gafar Tunde Tiamiyu"
-author: "Abd'gafar Tunde Tiamiyu"
+title: "A.T. TIAMIYU"
+author: "A.T. TIAMIYU"
 description: "The Chinese University of Hong Kong"
 permalink: /:title/
 lang: "en"
@@ -32,10 +32,10 @@ navigation:                # accepts {file, title, url, icon, sidebaricon}
   - {file: "blog.md", title: "Blog"}
 
 external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
-  - {title: Mail, url: "mailto:abdgafartunde@yahoo.com"}
-  - {title: Github, url: "https://github.com/abdgafartunde"}
-  - {title: ResearchGate, url: "https://www.researchgate.net/profile/Abdgafar-Tiamiyu"}
-  - {title: Google Scholar, url: "https://scholar.google.com/citations?user=oZ3egAIAAAAJ&hl=en"}
+  - {title: Mail, icon: envelope, url: "mailto:abdgafartunde@yahoo.com"}
+  - {title: Github, icon: github, url: "https://github.com/abdgafartunde"}
+  - {title: ResearchGate, icon: researchgate, url: "https://www.researchgate.net/profile/Tiamiyu-Abdgafar"}
+  - {title: Google Scholar, icon: google, url: "https://scholar.google.com/citations?user=oZ3egAIAAAAJ&hl=en"}
 
 plugins:
  - jekyll-feed
