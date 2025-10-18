@@ -3,7 +3,7 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 vendor/
+.bundle/
+*.gem
+Gemfile.lock
 .DS_Store
-Thumbs.db
-node_modules/
-*.log

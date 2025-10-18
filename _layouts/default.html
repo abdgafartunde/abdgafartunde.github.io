@@ -1,69 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
-  <meta name="description" content="{{ page.excerpt | strip_html | default: site.description }}" />
-  <link rel="alternate" type="application/atom+xml" title="{{ site.title }} Feed" href="{{ '/feed.xml' | relative_url }}">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" crossorigin="anonymous">
-  {% seo %}
-  <style>
-    :root {
-      --bg: #ffffff; --fg: #1a1a1a; --muted: #666; --link: #0a69b7; --accent: #0a69b7; --border: #e6e6e6;
-      --maxw: 860px;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root { --bg:#0f1116; --fg:#e6e6e6; --muted:#a3a3a3; --link:#58a6ff; --accent:#58a6ff; --border:#2a2f3a; }
-    }
-    *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
-    a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
-    header{border-bottom:1px solid var(--border);background:rgba(0,0,0,0.02)}
-    .container{max-width:var(--maxw);margin:0 auto;padding:0 16px}
-    .brand{display:flex;align-items:center;gap:10px;padding:14px 0}
-    nav ul{display:flex;flex-wrap:wrap;gap:14px;margin:0;padding:0;list-style:none}
-    nav a{display:block;padding:8px 10px;border-radius:6px}
-    nav a.active, nav a:hover{background:rgba(10,105,183,0.1)}
-    main{padding:24px 0}
-    footer{border-top:1px solid var(--border);padding:16px 0;color:var(--muted);font-size:0.9em}
-    h1,h2,h3{line-height:1.25}
-    .hero{padding:10px 0 4px}
-    .meta{color:var(--muted);font-size:0.9em}
-    .list{padding-left:18px}
-    blockquote{margin:0;padding:0 16px;border-left:3px solid var(--border);color:var(--muted)}
-    code,kbd,pre{font-family:ui-monospace,SFMono-Regular,Consolas,Menlo,monospace;font-size:0.95em}
-    pre{background:rgba(127,127,127,.08);padding:12px;border-radius:6px;overflow:auto}
-    body { max-width: 900px; margin: 2rem auto; padding: 0 1rem; font-family: system-ui, Arial, sans-serif; }
-    header nav a { margin-right: .75rem; }
-    header h1 { margin: 0 0 .5rem 0; font-size: 1.25rem; }
-    footer { margin: 2rem 0; color: #666; font-size: .9rem; }
-  </style>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{ page.title }} | {{ site.title }}</title>
+	<meta name="description" content="{{ page.description | default: site.description }}">
+	<style>
+		* { margin: 0; padding: 0; box-sizing: border-box; }
+		body {
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+			line-height: 1.6;
+			color: #333;
+			background: #f5f5f5;
+		}
+		.container {
+			max-width: 960px;
+			margin: 0 auto;
+			padding: 0 20px;
+		}
+		header {
+			background: #2c3e50;
+			color: white;
+			padding: 1rem 0;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+		}
+		header h1 {
+			font-size: 1.8rem;
+			margin-bottom: 0.5rem;
+		}
+		header h1 a {
+			color: white;
+			text-decoration: none;
+		}
+		nav {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 1rem;
+		}
+		nav a {
+			color: #ecf0f1;
+			text-decoration: none;
+			padding: 0.5rem 0;
+			border-bottom: 2px solid transparent;
+			transition: border-color 0.3s;
+		}
+		nav a:hover, nav a.active {
+			border-bottom-color: #3498db;
+		}
+		main {
+			background: white;
+			min-height: calc(100vh - 200px);
+			padding: 2rem 0;
+			margin: 2rem 0;
+			box-shadow: 0 0 10px rgba(0,0,0,0.05);
+		}
+		footer {
+			background: #34495e;
+			color: #ecf0f1;
+			text-align: center;
+			padding: 1.5rem 0;
+			margin-top: 2rem;
+		}
+		@media (max-width: 768px) {
+			nav { flex-direction: column; gap: 0.5rem; }
+			header h1 { font-size: 1.4rem; }
+		}
+	</style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="brand">
-        <a href="{{ '/' | relative_url }}" style="font-weight:700">{{ site.title }}</a>
-        <span class="meta">{{ site.description }}</span>
-      </div>
-      <nav aria-label="Primary">
-        <ul>
-          {% for item in site.nav %}
-            {% assign is_active = item.url | relative_url == page.url | relative_url %}
-            <li><a href="{{ item.url | relative_url }}" class="{% if is_active %}active{% endif %}">{{ item.label }}</a></li>
-          {% endfor %}
-        </ul>
-      </nav>
-    </div>
-  </header>
-  <main class="container">
-    {{ content }}
-  </main>
-  <footer>
-    <div class="container">
-      <div>© {{ site.time | date: "%Y" }} {{ site.title }} · Built with Jekyll · <a href="{{ '/feed.xml' | relative_url }}">RSS</a></div>
-    </div>
-  </footer>
+	<header>
+		<div class="container">
+			<h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+			<nav>
+				<a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a>
+				<a href="{{ '/about/' | relative_url }}" {% if page.url contains '/about' %}class="active"{% endif %}>About</a>
+				<a href="{{ '/research/' | relative_url }}" {% if page.url contains '/research' %}class="active"{% endif %}>Research</a>
+				<a href="{{ '/publications/' | relative_url }}" {% if page.url contains '/publications' %}class="active"{% endif %}>Publications</a>
+				<a href="{{ '/teaching/' | relative_url }}" {% if page.url contains '/teaching' %}class="active"{% endif %}>Teaching</a>
+				<a href="{{ '/cv/' | relative_url }}" {% if page.url contains '/cv' %}class="active"{% endif %}>CV</a>
+				<a href="{{ '/blog/' | relative_url }}" {% if page.url contains '/blog' %}class="active"{% endif %}>Blog</a>
+			</nav>
+		</div>
+	</header>
+	
+	<main>
+		<div class="container">
+			{{ content }}
+		</div>
+	</main>
+	
+	<footer>
+		<div class="container">
+			<p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. All rights reserved.</p>
+		</div>
+	</footer>
 </body>
 </html>

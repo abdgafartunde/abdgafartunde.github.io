@@ -1,63 +1,46 @@
-title: "A.T. TIAMIYU"
-description: "The Chinese University of Hong Kong"
+title: "Abdulganiy Fashola"
+description: "Personal Academic Website"
 url: "https://abdgafartunde.github.io"
-baseurl: "" # keep empty for a user/org site
-
+baseurl: ""
 author:
-  name: "A.T. TIAMIYU"
+  name: "Abdulganiy Fashola"
   email: "abdgafartunde@yahoo.com"
-  affiliation: "The Chinese University of Hong Kong"
-  location: "Hong Kong"
-
-social:
-  github: "abdgafartunde"
-  linkedin: ""
-  twitter: ""
-  scholar: "https://scholar.google.com/citations?user=oZ3egAIAAAAJ&hl=en"
-
-nav:
-  - label: "Home"
-    url: "/"
-  - label: "About"
-    url: "/about/"
-  - label: "Research"
-    url: "/research/"
-  - label: "Publications"
-    url: "/publications/"
-  - label: "Teaching"
-    url: "/teaching/"
-  - label: "CV"
-    url: "/cv/"
-  - label: "Blog"
-    url: "/blog/"
-  - label: "Archive"
-    url: "/archive.html"
-
-markdown: kramdown
-highlighter: rouge
-
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-seo-tag
-
-permalink: /blog/:title/
-timezone: UTC
 
 # Build settings
+markdown: kramdown
+theme: minima
+permalink: /:title/
+
+# Exclude files
 exclude:
-  - README.md
   - Gemfile
   - Gemfile.lock
   - node_modules
   - vendor
-  - tmp
-  - scripts
+  - .git
+  - .gitignore
+  - README.md
 
+# Collections (if needed later)
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Defaults
 defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
   - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
-      comments: false
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag

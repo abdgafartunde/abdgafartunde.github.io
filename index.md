@@ -3,37 +3,27 @@ layout: page
 title: "Welcome"
 ---
 
-# Abd'gafar Tunde Tiamiyu
+## About Me
 
-### Applied Mathematics and Deep Learning Researcher
-Department of Mathematics, The Chinese University of Hong Kong
+I am [Your Title/Position] at [Your Institution]. My research focuses on [Your Research Area].
 
-## Research Vision
-Advancing medical imaging through mathematical innovation and computational excellence. As a PhD candidate at CUHK, I develop cutting-edge algorithms that bridge theoretical mathematics with practical healthcare applications.
+## Research Interests
 
-## Innovation Focus
-- **Next-Generation Medical Imaging**
-  - Developing faster, more accurate reconstruction methods
-  - Creating robust, clinically-viable solutions
-  - Advancing theoretical understanding of deep learning
+- Research Area 1
+- Research Area 2
+- Research Area 3
 
-- **Mathematical Foundations**
-  - Novel approaches to inverse problems
-  - Deep learning theory advancement
-  - Computational efficiency optimization
+## Recent News
 
-## Current Impact
-My research contributes to:
-- **Healthcare**: Improving medical diagnosis through enhanced imaging
-- **Technology**: Advancing deep learning applications in scientific computing
-- **Theory**: Bridging mathematical principles with practical applications
+- **[Date]**: [News item]
+- **[Date]**: [News item]
 
-## Recent Highlights
-- Visiting Researcher at University of Graz, Graz 8010, Austria
-- Ernst Mach Grant Recipient
-- Hong Kong PhD Fellowship Holder
+## Quick Links
 
-[Research Details](/research) | [Publications](/publications) | [Academic Profile](/about)
+- [View my CV]({{ '/cv/' | relative_url }})
+- [Browse Publications]({{ '/publications/' | relative_url }})
+- [Research Projects]({{ '/research/' | relative_url }})
+- [Contact Information]({{ '/about/' | relative_url }})
 
 ---
 
