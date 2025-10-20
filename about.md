@@ -6,12 +6,7 @@ description: "Learn more about my background and interests"
 
 ## About Me
 
-I am currently a Postdoctoral Research Fellow at JJJ University. My research interests include:
-
-- Inverse Problems
-- Computational and Applied Mathematics
-- Deep Learning
-- Numerical Analysis
+I am a [your position] at [your institution], where I focus on [your research area]. My work combines [methodology/approach] with [application area] to address [problems you're solving].
 
 ### Background
 
@@ -37,8 +32,3 @@ Feel free to reach out if you'd like to collaborate, have questions about my res
 - **Email**: [your.email@university.edu]
 - **Office**: [Your office location]
 - **Office Hours**: [Your office hours]
-
-## Academic Profiles
-
-- ORCID: [0000-0003-1641-7196](https://orcid.org/0000-0003-1641-7196)
-- [Research Gate Profile](https://www.researchgate.net/profile/Abdgafar-Tiamiyu?ev=hdr_xprf)
