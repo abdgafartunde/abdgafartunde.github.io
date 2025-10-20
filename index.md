@@ -40,6 +40,14 @@ My research centers on developing **novel computational methods** that combine t
     <div class="col-md-6 mb-3">
         <div class="card h-100">
             <div class="card-body">
+                <h5><i class="fas fa-calculator text-success me-2"></i>Inverse Problems</h5>
+                <p>Regularization techniques and optimization algorithms for electrical impedance tomography.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-3">
+        <div class="card h-100">
+            <div class="card-body">
                 <h5><i class="fas fa-brain text-primary me-2"></i>Deep Learning</h5>
                 <p>Physics-informed neural networks and scientific machine learning for computational imaging.</p>
             </div>
