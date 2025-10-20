@@ -1,35 +1,45 @@
 ---
 layout: page
-title: "Welcome"
-description: "PhD Researcher in Computational Mathematics and Deep Learning"
+title: "Home"
+description: "Postdoctoral Researcher at JJJ University"
 ---
 
-<div class="hero-section bg-gradient-primary text-white p-5 rounded mb-5">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-8">
-                <h1 class="display-4 fw-bold mb-3">Abd'gafar Tunde Tiamiyu</h1>
-                <p class="lead mb-4">
-                    PhD in Mathematics from The Chinese University of Hong Kong, 
-                    specializing in computational mathematics, deep learning, and inverse problems.
-                </p>
-                <div class="d-flex flex-wrap gap-2">
-                    <a href="/research" class="btn btn-light btn-lg">
-                        <i class="fas fa-microscope me-2"></i>Research
-                    </a>
-                    <a href="/publications" class="btn btn-outline-light btn-lg">
-                        <i class="fas fa-file-alt me-2"></i>Publications
-                    </a>
-                    <a href="/CV.pdf" class="btn btn-outline-light btn-lg" target="_blank">
-                        <i class="fas fa-download me-2"></i>Download CV
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-4 text-center">
-                <i class="fas fa-graduation-cap fa-6x opacity-75"></i>
-            </div>
-        </div>
-    </div>
+<div class="hero-section bg-gradient-primary text-white p-4 rounded mb-5">
+  <h1 class="display-6 mb-2">Abd'gafar Tunde Tiamiyu</h1>
+  <p class="lead mb-3">
+    Postdoctoral Researcher at <strong>JJJ University</strong>.
+  </p>
+  <p class="mb-0">
+    I work on <strong>Inverse Problems</strong>, <strong>Computational and Applied Mathematics</strong>, 
+    <strong>Deep Learning</strong>, and <strong>Numerical Analysis</strong>.
+  </p>
+</div>
+
+<div class="mb-4">
+  <a href="/research" class="btn btn-primary me-2">
+    <i class="fas fa-microscope"></i> Research
+  </a>
+  <a href="/publications" class="btn btn-outline-primary me-2">
+    <i class="fas fa-file-alt"></i> Publications
+  </a>
+  <a href="/cv" class="btn btn-outline-secondary">
+    <i class="fas fa-file-pdf"></i> CV
+  </a>
+</div>
+
+<div class="mt-3">
+  <span class="me-3">
+    <i class="fab fa-orcid text-success"></i>
+    <a class="text-decoration-none" href="https://orcid.org/0000-0003-1641-7196" target="_blank">
+      ORCID: 0000-0003-1641-7196
+    </a>
+  </span>
+  <span>
+    <i class="fab fa-researchgate text-info"></i>
+    <a class="text-decoration-none" href="https://www.researchgate.net/profile/Abdgafar-Tiamiyu?ev=hdr_xprf" target="_blank">
+      ResearchGate
+    </a>
+  </span>
 </div>
 
 ## Research Focus

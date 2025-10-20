@@ -6,29 +6,23 @@ description: "Learn more about my background and interests"
 
 ## About Me
 
-I am a [your position] at [your institution], where I focus on [your research area]. My work combines [methodology/approach] with [application area] to address [problems you're solving].
+I am a Postdoctoral Researcher at JJJ University. My work focuses on Inverse Problems, Computational and Applied Mathematics, Deep Learning, and Numerical Analysis.
 
 ### Background
 
-- **Education**: [Your degrees and institutions]
-- **Research Experience**: [Brief overview of your research journey]
-- **Industry Experience**: [Any relevant industry work]
+- **Education**: PhD in Mathematics, The Chinese University of Hong Kong (2021–2025)
+- **Research Experience**: Doctoral research on variational regularization and physics-informed deep learning for Electrical Impedance Tomography
+- **International Experience**: Visiting Researcher, University of Graz (2023–2024)
 
-### Research Philosophy
+### Research Focus
 
-I believe that [your research philosophy or approach]. My work aims to [your research goals].
+I develop principled algorithms at the intersection of numerical optimization and machine learning for imaging and inverse problems, emphasizing stability, efficiency, and reproducibility.
 
 ### Beyond Research
 
-When I'm not in the lab or writing papers, I enjoy:
-- [Hobby 1]
-- [Hobby 2]
-- [Hobby 3]
+When I'm not working, I enjoy reading, mentoring students, and learning new tools in scientific computing.
 
 ### Contact
 
-Feel free to reach out if you'd like to collaborate, have questions about my research, or just want to connect:
-
-- **Email**: [your.email@university.edu]
-- **Office**: [Your office location]
-- **Office Hours**: [Your office hours]
+- **Email**: abdgafartunde@link.cuhk.edu.hk
+- **LinkedIn**: https://linkedin.com/in/abdgafartunde
