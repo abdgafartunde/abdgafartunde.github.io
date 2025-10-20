@@ -27,7 +27,7 @@ description: "Peer-reviewed publications and research output"
 
 <div class="publications-list">
 
-<h3 class="text-center text-primary mb-4 mt-5">2025</h3>
+<h3 class="text-left text-primary mb-4 mt-5">2025</h3>
 
 <div class="card mb-3">
     <div class="card-body">
@@ -58,7 +58,7 @@ description: "Peer-reviewed publications and research output"
     </div>
 </div>
 
-<h3 class="text-center text-primary mb-4 mt-5">2024</h3>
+<h3 class="text-left text-primary mb-4 mt-5">2024</h3>
 
 <div class="card mb-3">
     <div class="card-body">
@@ -143,7 +143,7 @@ description: "Peer-reviewed publications and research output"
     </div>
 </div>
 
-<h3 class="text-center text-primary mb-4 mt-5">2022</h3>
+<h3 class="text-left text-primary mb-4 mt-5">2022</h3>
 
 <div class="card mb-3">
     <div class="card-body">
@@ -171,7 +171,7 @@ description: "Peer-reviewed publications and research output"
     </div>
 </div>
 
-<h3 class="text-center text-primary mb-4 mt-5">2021</h3>
+<h3 class="text-left text-primary mb-4 mt-5">2021</h3>
 
 <div class="card mb-3">
     <div class="card-body">
@@ -225,7 +225,7 @@ description: "Peer-reviewed publications and research output"
     </div>
 </div>
 
-<h3 class="text-center text-primary mb-4 mt-5">2020</h3>
+<h3 class="text-left text-primary mb-4 mt-5">2020</h3>
 
 <div class="card mb-3">
     <div class="card-body">
