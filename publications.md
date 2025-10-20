@@ -27,7 +27,7 @@ description: "Peer-reviewed publications and research output"
 
 <div class="publications-list">
 
-### 2025
+<h3 class="text-center text-primary mb-4 mt-5">2025</h3>
 
 <div class="card mb-3">
     <div class="card-body">
@@ -58,7 +58,7 @@ description: "Peer-reviewed publications and research output"
     </div>
 </div>
 
-### 2024
+<h3 class="text-center text-primary mb-4 mt-5">2024</h3>
 
 <div class="card mb-3">
     <div class="card-body">
@@ -115,7 +115,7 @@ description: "Peer-reviewed publications and research output"
     </div>
 </div>
 
-### 2023
+<h3 class="text-center text-primary mb-4 mt-5">2023</h3>
 
 <div class="card mb-3">
     <div class="card-body">
@@ -143,7 +143,7 @@ description: "Peer-reviewed publications and research output"
     </div>
 </div>
 
-### 2022
+<h3 class="text-center text-primary mb-4 mt-5">2022</h3>
 
 <div class="card mb-3">
     <div class="card-body">
@@ -171,7 +171,7 @@ description: "Peer-reviewed publications and research output"
     </div>
 </div>
 
-### 2021
+<h3 class="text-center text-primary mb-4 mt-5">2021</h3>
 
 <div class="card mb-3">
     <div class="card-body">
@@ -225,7 +225,7 @@ description: "Peer-reviewed publications and research output"
     </div>
 </div>
 
-### 2020
+<h3 class="text-center text-primary mb-4 mt-5">2020</h3>
 
 <div class="card mb-3">
     <div class="card-body">
@@ -295,7 +295,7 @@ description: "Peer-reviewed publications and research output"
     <div class="col-md-3 mb-3">
         <div class="card">
             <div class="card-body">
-                <h3 class="text-primary">9+</h3>
+                <h3 class="text-primary">10+</h3>
                 <p class="text-muted mb-0">Publications</p>
             </div>
         </div>
@@ -303,7 +303,7 @@ description: "Peer-reviewed publications and research output"
     <div class="col-md-3 mb-3">
         <div class="card">
             <div class="card-body">
-                <h3 class="text-success">5+</h3>
+                <h3 class="text-success">8+</h3>
                 <p class="text-muted mb-0">Co-authors</p>
             </div>
         </div>
@@ -311,7 +311,7 @@ description: "Peer-reviewed publications and research output"
     <div class="col-md-3 mb-3">
         <div class="card">
             <div class="card-body">
-                <h3 class="text-info">4</h3>
+                <h3 class="text-info">7</h3>
                 <p class="text-muted mb-0">Years Active</p>
             </div>
         </div>

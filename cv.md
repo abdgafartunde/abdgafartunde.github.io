@@ -69,7 +69,7 @@ description: "Academic CV and professional experience"
                     <h6 class="mb-0 opacity-75">JJJ University</h6>
                 </div>
                 <div class="col-md-4 text-end">
-                    <span class="badge bg-light text-success">Aug 2025 - Present</span>
+                    <span class="badge bg-light text-success">Nov 2025 - Present</span>
                 </div>
             </div>
         </div>
