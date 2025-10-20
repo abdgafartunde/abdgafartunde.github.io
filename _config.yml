@@ -1,5 +1,5 @@
 title: "Abd'gafar Tunde Tiamiyu"
-description: "Postdoctoral Researcher in Inverse Problems, Computational and Applied Mathematics, Deep Learning, and Numerical Analysis"
+description: "PhD Researcher in Computational Mathematics, Deep Learning, and Inverse Problems"
 baseurl: ""
 url: "https://abdgafartunde.github.io"
 
@@ -7,10 +7,10 @@ url: "https://abdgafartunde.github.io"
 author:
   name: "Abd'gafar Tunde Tiamiyu"
   email: "abdgafartunde@link.cuhk.edu.hk"
-  affiliation: "JJJ University"
-  position: "Postdoctoral Researcher"
+  affiliation: "The Chinese University of Hong Kong"
+  position: "PhD in Mathematics"
   location: "Hong Kong"
-  bio: "Postdoctoral researcher specializing in inverse problems, computational and applied mathematics, deep learning, and numerical analysis."
+  bio: "PhD researcher specializing in numerical analysis, computational mathematics, deep learning, and inverse problems with electrical impedance tomography."
 
 # Build settings
 markdown: kramdown
@@ -50,8 +50,6 @@ social:
   github: "abdgafartunde"
   linkedin: "abdgafartunde"
   email: "abdgafartunde@link.cuhk.edu.hk"
-  orcid: "0000-0003-1641-7196"
-  researchgate: "https://www.researchgate.net/profile/Abdgafar-Tiamiyu?ev=hdr_xprf"
 
 # Academic information
 academic:
