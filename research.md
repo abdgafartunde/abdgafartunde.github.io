@@ -219,8 +219,9 @@ My research focuses on developing novel computational and machine learning appro
             <div class="card-body">
                 <h6 class="card-title"><i class="fas fa-university text-success"></i> University of Graz, Austria</h6>
                 <p class="card-text text-muted">
-                    <strong>Collaboration:</strong> Ernst Mach Fellowship<br>
-                    <strong>Focus:</strong> GPU-accelerated imaging algorithms
+                    <strong>Advisor:</strong> Professor Kristian Bredies<br>
+                    <strong>Collaboration:</strong> Ernst Mach Grant (Worldwide)<br>
+                    <strong>Focus:</strong> Image reconstructions, computational optimization, and EIT
                 </p>
             </div>
         </div>

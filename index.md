@@ -102,4 +102,4 @@ My research centers on developing **novel computational methods** that combine t
 
 ---
 
-*Recently completed PhD from The Chinese University of Hong Kong with Hong Kong PhD Fellowship Scheme Funding. Now continuing research as a Postdoctoral Researcher at JJJ University.*
+*Recently completed PhD from *The Chinese University of Hong Kong* with Hong Kong PhD Fellowship Scheme Funding. Now continuing research as a Postdoctoral Researcher at JJJ University.*

@@ -115,7 +115,7 @@ description: "Peer-reviewed publications and research output"
     </div>
 </div>
 
-<h3 class="text-center text-primary mb-4 mt-5">2023</h3>
+<h3 class="text-left text-primary mb-4 mt-5">2023</h3>
 
 <div class="card mb-3">
     <div class="card-body">
