@@ -62,6 +62,29 @@ description: "Academic CV and professional experience"
 
 <div class="timeline">
     <div class="card mb-3">
+        <div class="card-header bg-success text-white">
+            <div class="row">
+                <div class="col-md-8">
+                    <h5 class="mb-0"><i class="fas fa-briefcase"></i> Postdoctoral Researcher</h5>
+                    <h6 class="mb-0 opacity-75">JJJ University</h6>
+                </div>
+                <div class="col-md-4 text-end">
+                    <span class="badge bg-light text-success">Aug 2025 - Present</span>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <ul class="list-unstyled">
+                <li><i class="fas fa-chevron-right text-success me-2"></i>Continuing research in inverse problems and computational mathematics</li>
+                <li><i class="fas fa-chevron-right text-success me-2"></i>Advancing deep learning applications in scientific computing</li>
+                <li><i class="fas fa-chevron-right text-success me-2"></i>Developing novel numerical analysis methods</li>
+                <li><i class="fas fa-chevron-right text-success me-2"></i>Collaborating on interdisciplinary research projects</li>
+            </ul>
+        </div>
+    </div>
+
+<!-- <div class="timeline"> -->
+    <div class="card mb-3">
         <div class="card-header bg-primary text-white">
             <div class="row">
                 <div class="col-md-8">

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Welcome"
-description: "PhD Researcher in Computational Mathematics and Deep Learning"
+description: "Postdoctoral Researcher in Computational Mathematics and Deep Learning"
 ---
 
 <div class="hero-section bg-gradient-primary text-white p-5 rounded mb-5">
@@ -10,8 +10,8 @@ description: "PhD Researcher in Computational Mathematics and Deep Learning"
             <div class="col-md-8">
                 <h1 class="display-4 fw-bold mb-3">Abd'gafar Tunde Tiamiyu</h1>
                 <p class="lead mb-4">
-                    PhD in Mathematics from The Chinese University of Hong Kong, 
-                    specializing in computational mathematics, deep learning, and inverse problems.
+                    Postdoctoral Researcher at JJJ University, 
+                    specializing in inverse problems, computational mathematics, deep learning, and numerical analysis.
                 </p>
                 <div class="d-flex flex-wrap gap-2">
                     <a href="/research" class="btn btn-light btn-lg">
@@ -34,7 +34,7 @@ description: "PhD Researcher in Computational Mathematics and Deep Learning"
 
 ## Research Focus
 
-My research centers on developing **novel computational methods** that combine traditional mathematical approaches with modern deep learning techniques. I specialize in:
+My research centers on developing **novel computational methods** that combine traditional mathematical approaches with modern deep learning techniques. As a postdoctoral researcher at JJJ University, I continue to specialize in:
 
 <div class="row mb-4">
     <div class="col-md-6 mb-3">
@@ -61,7 +61,7 @@ My research centers on developing **novel computational methods** that combine t
     <div class="col-md-3 mb-3">
         <div class="card">
             <div class="card-body">
-                <h3 class="text-primary">8+</h3>
+                <h3 class="text-primary">10+</h3>
                 <p class="mb-0">Publications</p>
             </div>
         </div>
@@ -77,7 +77,7 @@ My research centers on developing **novel computational methods** that combine t
     <div class="col-md-3 mb-3">
         <div class="card">
             <div class="card-body">
-                <h3 class="text-info">2</h3>
+                <h3 class="text-info">3</h3>
                 <p class="mb-0">Countries Researched</p>
             </div>
         </div>
@@ -85,7 +85,7 @@ My research centers on developing **novel computational methods** that combine t
     <div class="col-md-3 mb-3">
         <div class="card">
             <div class="card-body">
-                <h3 class="text-warning">50+</h3>
+                <h3 class="text-warning">150+</h3>
                 <p class="mb-0">Students Taught</p>
             </div>
         </div>
@@ -94,4 +94,4 @@ My research centers on developing **novel computational methods** that combine t
 
 ---
 
-*Currently funded by the Hong Kong PhD Fellowship Scheme and CUHK Vice-Chancellor's Scholarship*
+*Recently completed PhD from The Chinese University of Hong Kong with Hong Kong PhD Fellowship Scheme Funding. Now continuing research as a Postdoctoral Researcher at JJJ University.*

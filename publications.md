@@ -7,15 +7,15 @@ description: "Peer-reviewed publications and research output"
 <div class="row mb-4">
     <div class="col-md-8">
         <p class="lead">
-            My research has resulted in <strong>9+ peer-reviewed publications</strong> in computational mathematics, 
+            My research has resulted in <strong>10+ peer-reviewed publications</strong> in computational mathematics, 
             numerical analysis, and scientific computing. Below is a comprehensive list of my academic contributions.
         </p>
     </div>
     <div class="col-md-4 text-end">
-        <a href="https://scholar.google.com/citations?user=YOUR_ID" class="btn btn-outline-primary" target="_blank">
+        <a href="https://scholar.google.com/citations?user=Abdgafar-Tiamiyu" class="btn btn-outline-primary" target="_blank">
             <i class="ai ai-google-scholar"></i> Google Scholar
         </a>
-        <a href="https://orcid.org/YOUR_ORCID" class="btn btn-outline-success" target="_blank">
+        <a href="https://orcid.org/0000-0003-1641-7196" class="btn btn-outline-success" target="_blank">
             <i class="ai ai-orcid"></i> ORCID
         </a>
     </div>
@@ -335,10 +335,10 @@ description: "Peer-reviewed publications and research output"
         <a href="https://scholar.google.com/citations?user=YOUR_ID" class="btn btn-outline-primary" target="_blank">
             <i class="ai ai-google-scholar"></i> Google Scholar
         </a>
-        <a href="https://orcid.org/YOUR_ORCID" class="btn btn-outline-success" target="_blank">
+        <a href="https://orcid.org/0000-0003-1641-7196" class="btn btn-outline-success" target="_blank">
             <i class="ai ai-orcid"></i> ORCID
         </a>
-        <a href="https://www.researchgate.net/profile/YOUR_PROFILE" class="btn btn-outline-info" target="_blank">
+        <a href="https://www.researchgate.net/profile/Abdgafar-Tiamiyu" class="btn btn-outline-info" target="_blank">
             <i class="ai ai-researchgate"></i> ResearchGate
         </a>
     </div>

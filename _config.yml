@@ -56,11 +56,12 @@ social:
 # Academic information
 academic:
   field: "Mathematics"
-  specialization: "Computational Mathematics and Applied Mathematics"
+  specialization: "Computational and Applied Mathematics"
   department: "Department of Mathematics"
   university: "The Chinese University of Hong Kong"
   advisor: "Professor Jun Zou"
   degree_progress: "PhD (2021-2025)"
+  current_position: "Postdoctoral Researcher at JJJ University"
 
 # Collections
 collections:
