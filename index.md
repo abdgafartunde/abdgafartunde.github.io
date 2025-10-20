@@ -41,7 +41,7 @@ My research centers on developing **novel computational methods** that combine t
         <div class="card h-100">
             <div class="card-body">
                 <h5><i class="fas fa-calculator text-success me-2"></i>Inverse Problems</h5>
-                <p>Regularization techniques and optimization algorithms for electrical impedance tomography.</p>
+                <p>Regularization techniques and optimization algorithms for linear and nonlinear inverse problems.</p>
             </div>
         </div>
     </div>
@@ -49,15 +49,23 @@ My research centers on developing **novel computational methods** that combine t
         <div class="card h-100">
             <div class="card-body">
                 <h5><i class="fas fa-brain text-primary me-2"></i>Deep Learning</h5>
-                <p>Physics-informed neural networks and scientific machine learning for computational imaging.</p>
+                <p>Physics-informed neural networks and scientific machine learning for forward and inverse problems.</p>
             </div>
         </div>
     </div>
     <div class="col-md-6 mb-3">
         <div class="card h-100">
             <div class="card-body">
-                <h5><i class="fas fa-calculator text-success me-2"></i>Inverse Problems</h5>
-                <p>Regularization techniques and optimization algorithms for electrical impedance tomography.</p>
+                <h5><i class="fas fa-calculator text-success me-2"></i>Optimization</h5>
+                <p>Convex and non-convex optimization algorithms, regularization techniques, and iterative algorithms for inverse problems solutions</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-3">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5><i class="fas fa-calculator text-success me-2"></i>Imaging</h5>
+                <p>Electrical Impedance Tomography, Inverse Scattering Problems, Full-Waveform Inversion, and other Computational Imaging techniques</p>
             </div>
         </div>
     </div>

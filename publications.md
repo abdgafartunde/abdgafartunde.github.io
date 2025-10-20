@@ -263,7 +263,7 @@ description: "Peer-reviewed publications and research output"
     <div class="col-md-6 mb-3">
         <div class="card">
             <div class="card-body">
-                <h6 class="card-title">HK-SIAM Conference 2025</h6>
+                <h6 class="card-title">*HK-SIAM Conference 2025*</h6>
                 <p class="card-text">
                     <strong>Role:</strong> Minisymposium Co-organizer<br>
                     <strong>Topic:</strong> Computational and Applied Mathematics<br>
@@ -276,7 +276,7 @@ description: "Peer-reviewed publications and research output"
     <div class="col-md-6 mb-3">
         <div class="card">
             <div class="card-body">
-                <h6 class="card-title">SIAM Student Chapter Workshop</h6>
+                <h6 class="card-title">*SIAM Student Chapter Workshop*</h6>
                 <p class="card-text">
                     <strong>Role:</strong> Workshop Co-organizer<br>
                     <strong>Topic:</strong> Graduate Research Presentations<br>
@@ -332,7 +332,7 @@ description: "Peer-reviewed publications and research output"
     <h4>Stay Updated</h4>
     <p>Follow my latest research developments and publications:</p>
     <div class="btn-group" role="group">
-        <a href="https://scholar.google.com/citations?user=YOUR_ID" class="btn btn-outline-primary" target="_blank">
+        <a href="https://scholar.google.com/citations?user=Abdgafar-Tiamiyu" class="btn btn-outline-primary" target="_blank">
             <i class="ai ai-google-scholar"></i> Google Scholar
         </a>
         <a href="https://orcid.org/0000-0003-1641-7196" class="btn btn-outline-success" target="_blank">
