@@ -92,6 +92,11 @@ My research centers on developing **novel computational methods** that combine t
     </div>
 </div>
 
+## Connect with me
+
+- ORCID: [0000-0003-1641-7196](https://orcid.org/0000-0003-1641-7196)
+- [Research Gate Profile](https://www.researchgate.net/profile/Abdgafar-Tiamiyu?ev=hdr_xprf)
+
 ---
 
 *Currently funded by the Hong Kong PhD Fellowship Scheme and CUHK Vice-Chancellor's Scholarship*
