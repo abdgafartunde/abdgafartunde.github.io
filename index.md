@@ -65,7 +65,7 @@ My research centers on developing **novel computational methods** that combine t
         <div class="card h-100">
             <div class="card-body">
                 <h5><i class="fas fa-calculator text-success me-2"></i>Imaging</h5>
-                <p>Electrical impedance tomography, inverse scattering problems, full-waveform inversion, and other computational imaging problems</p>
+                <p>Electrical impedance tomography (EIT), inverse scattering problems (ISP), full-waveform inversion (FWI), and other computational imaging problems</p>
             </div>
         </div>
     </div>

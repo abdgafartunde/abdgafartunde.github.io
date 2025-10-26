@@ -6,8 +6,8 @@ url: "https://abdgafartunde.github.io"
 # Site settings
 author:
   name: "Abd'gafar Tunde Tiamiyu"
-  email: "abdgafartunde@link.cuhk.edu.hk"
-  affiliation: "The Chinese University of Hong Kong -- "
+  email: "abdgafartunde@yahoo.com"
+  affiliation: "The Chinese University of Hong Kong"
   position: "PhD in Mathematics"
   location: "Hong Kong"
   bio: "PhD researcher specializing in numerical analysis, computational mathematics, deep learning, and inverse problems with electrical impedance tomography."
@@ -49,7 +49,7 @@ navigation:
 social:
   github: "abdgafartunde"
   linkedin: "abdgafartunde"
-  email: "abdgafartunde@link.cuhk.edu.hk"
+  email: "abdgafartunde@yahoo.com"
   researchgate: "Abdgafar-Tiamiyu"
   orcid: "0000-0003-1641-7196"
 

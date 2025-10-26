@@ -313,7 +313,7 @@ description: "Teaching experience and educational philosophy"
             </p>
         </div>
         <div class="col-md-4 text-end">
-            <a href="mailto:abdgafartunde@link.cuhk.edu.hk" class="btn btn-primary">
+            <a href="mailto:abdgafartunde@yahoo.com" class="btn btn-primary">
                 <i class="fas fa-envelope"></i> Contact Me
             </a>
         </div>

@@ -1,12 +1,12 @@
 ---
 layout: page
 title: "Research"
-description: "Computational and applied mathematics"
+description: "Computational and Applied Mathematics"
 ---
 
 ## Research Overview
 
-My research focuses on developing novel computational and machine learning approaches for solving inverse problems, particularly in **Electrical Impedance Tomography (EIT)**. I work at the intersection of numerical analysis, optimization, and deep learning to create robust algorithms for medical imaging applications.
+My research focuses on developing novel computational and machine learning approaches for solving **forward and inverse problems**, especially nonlinear problems appearing in various applications. I work at the intersection of numerical analysis, optimization, and deep learning to create robust algorithms.
 
 ---
 
@@ -19,48 +19,45 @@ My research focuses on developing novel computational and machine learning appro
                 <h5 class="mb-0"><i class="fas fa-brain"></i> Inverse Problems & Regularization</h5>
             </div>
             <div class="card-body">
-                <p>Developing novel variational inversion schemes using adaptive primal-dual hybrid gradient methods to address ill-posedness and nonlinearity in EIT reconstructions.</p>
+                <p>Developing novel variational inversion frameworks using suitable optimization methods to address ill-posedness and nonlinearity for parameter and image reconstructions.</p>
                 <ul class="list-unstyled">
-                    <li><i class="fas fa-chevron-right text-primary me-2"></i>Multi-parameter total variation regularizers</li>
+                    <li><i class="fas fa-chevron-right text-primary me-2"></i>Multi-parameter regularizers</li>
                     <li><i class="fas fa-chevron-right text-primary me-2"></i>Convex optimization approaches</li>
                     <li><i class="fas fa-chevron-right text-primary me-2"></i>Data-driven regularization</li>
                 </ul>
             </div>
         </div>
     </div>
-    
     <div class="col-md-6 mb-4">
         <div class="card h-100">
             <div class="card-header bg-success text-white">
                 <h5 class="mb-0"><i class="fas fa-robot"></i> Scientific Machine Learning</h5>
             </div>
             <div class="card-body">
-                <p>Integrating deep neural networks with physics-oriented models to improve accuracy and robustness in computational imaging applications.</p>
+                <p>Integrating deep neural networks with physics-oriented models to improve accuracy and robustness in scientific and engineering applications.</p>
                 <ul class="list-unstyled">
                     <li><i class="fas fa-chevron-right text-success me-2"></i>Physics-informed neural networks</li>
-                    <li><i class="fas fa-chevron-right text-success me-2"></i>Deep learning for image reconstruction</li>
+                    <li><i class="fas fa-chevron-right text-success me-2"></i>Deep learning for image reconstructions</li>
                     <li><i class="fas fa-chevron-right text-success me-2"></i>Neural ODE methods</li>
                 </ul>
             </div>
         </div>
     </div>
-    
     <div class="col-md-6 mb-4">
         <div class="card h-100">
             <div class="card-header bg-info text-white">
                 <h5 class="mb-0"><i class="fas fa-heartbeat"></i> Medical Imaging</h5>
             </div>
             <div class="card-body">
-                <p>Advancing Electrical Impedance Tomography techniques for real-time medical imaging with emphasis on partial measurement scenarios.</p>
+                <p>Advancing imaging modality techniques for real-time medical imaging with emphasis on partial measurement scenarios. Applications in EIT, ISP, and FWI, among others</p>
                 <ul class="list-unstyled">
-                    <li><i class="fas fa-chevron-right text-info me-2"></i>EIT image reconstruction</li>
+                    <li><i class="fas fa-chevron-right text-info me-2"></i>Image reconstructions</li>
                     <li><i class="fas fa-chevron-right text-info me-2"></i>Partial measurement data handling</li>
                     <li><i class="fas fa-chevron-right text-info me-2"></i>Real-time processing algorithms</li>
                 </ul>
             </div>
         </div>
     </div>
-    
     <div class="col-md-6 mb-4">
         <div class="card h-100">
             <div class="card-header bg-warning text-dark">
@@ -94,13 +91,13 @@ My research focuses on developing novel computational and machine learning appro
                 </p>
                 <p><strong>Keywords:</strong> 
                     <span class="badge bg-light text-dark me-1">Deep Learning</span>
-                    <span class="badge bg-light text-dark me-1">Physics-Informed ML</span>
-                    <span class="badge bg-light text-dark me-1">Medical Imaging</span>
+                    <span class="badge bg-light text-dark me-1">PINN</span>
+                    <span class="badge bg-light text-dark me-1">EIT</span>
                 </p>
             </div>
             <div class="col-md-4">
                 <div class="text-muted">
-                    <small><i class="fas fa-calendar"></i> 2021 - Present</small><br>
+                    <small><i class="fas fa-calendar"></i> 2022 - present</small><br>
                     <small><i class="fas fa-map-marker-alt"></i> CUHK & University of Graz</small>
                 </div>
             </div>
@@ -125,8 +122,8 @@ My research focuses on developing novel computational and machine learning appro
             </div>
             <div class="col-md-4">
                 <div class="text-muted">
-                    <small><i class="fas fa-calendar"></i> 2022 - Present</small><br>
-                    <small><i class="fas fa-map-marker-alt"></i> CUHK</small>
+                    <small><i class="fas fa-calendar"></i> 2022 - present</small><br>
+                    <small><i class="fas fa-map-marker-alt"></i> CUHK &  University of Graz</small>
                 </div>
             </div>
         </div>
@@ -139,8 +136,7 @@ My research focuses on developing novel computational and machine learning appro
         <div class="row">
             <div class="col-md-8">
                 <p class="card-text">
-                    Implementing high-performance computing solutions for real-time EIT image reconstruction 
-                    using TensorFlow and custom CUDA kernels.
+                    Implementing high-performance computing solutions for real-time image reconstructions.
                 </p>
                 <p><strong>Keywords:</strong> 
                     <span class="badge bg-light text-dark me-1">High-Performance Computing</span>
@@ -166,7 +162,7 @@ My research focuses on developing novel computational and machine learning appro
     <div class="col-md-3 mb-3">
         <div class="card">
             <div class="card-body">
-                <h3 class="text-primary">9+</h3>
+                <h3 class="text-primary">10+</h3>
                 <p class="text-muted mb-0">Published Papers</p>
             </div>
         </div>
@@ -190,7 +186,7 @@ My research focuses on developing novel computational and machine learning appro
     <div class="col-md-3 mb-3">
         <div class="card">
             <div class="card-body">
-                <h3 class="text-warning">3</h3>
+                <h3 class="text-warning">6</h3>
                 <p class="text-muted mb-0">Awards & Grants</p>
             </div>
         </div>
@@ -207,20 +203,19 @@ My research focuses on developing novel computational and machine learning appro
             <div class="card-body">
                 <h6 class="card-title"><i class="fas fa-university text-primary"></i> The Chinese University of Hong Kong</h6>
                 <p class="card-text text-muted">
-                    <strong>Advisor:</strong> Professor Jun Zou<br>
-                    <strong>Focus:</strong> EIT algorithms and deep learning integration
+                    <strong>PhD Advisor:</strong> Professor Jun Zou<br>
+                    <strong>Focus:</strong> Computational inverse problems, deep learning, and learning theory
                 </p>
             </div>
         </div>
     </div>
-    
     <div class="col-md-6 mb-3">
         <div class="card">
             <div class="card-body">
                 <h6 class="card-title"><i class="fas fa-university text-success"></i> University of Graz, Austria</h6>
                 <p class="card-text text-muted">
                     <strong>Advisor:</strong> Professor Kristian Bredies<br>
-                    <strong>Collaboration:</strong> Ernst Mach Grant (Worldwide)<br>
+                    <strong>Funding:</strong> Ernst Mach Grant (Worldwide)<br>
                     <strong>Focus:</strong> Image reconstructions, computational optimization, and EIT
                 </p>
             </div>
@@ -232,7 +227,7 @@ My research focuses on developing novel computational and machine learning appro
 
 ## Research Philosophy
 
-> *"I believe in bridging the gap between theoretical mathematics and practical applications. My work aims to develop computationally efficient and theoretically sound methods that can make a real impact in medical imaging and beyond."*
+> *"I believe in bridging the gap between theoretical mathematics and practical applications. My work aims to develop computationally efficient and theoretically sound methods that can make a real impact in computational imaging and beyond."*
 
 ---
 
@@ -250,7 +245,7 @@ Looking ahead, my research will focus on:
 <div class="text-center mt-5">
     <h4>Interested in Collaboration?</h4>
     <p class="lead">I'm always open to discussing new research opportunities and collaborations.</p>
-    <a href="mailto:abdgafartunde@link.cuhk.edu.hk" class="btn btn-primary">
+    <a href="mailto:abdgafartunde@yahoo.com" class="btn btn-primary">
         <i class="fas fa-envelope"></i> Get in Touch
     </a>
 </div>
