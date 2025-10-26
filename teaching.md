@@ -241,19 +241,19 @@ description: "Teaching experience and educational philosophy"
                         </div>
                     </div>
                     <div class="col-md-3 mb-3">
-                        <div class="bg-light p-3 rounded">
+                        <div class="p-3 rounded">
                             <h3 class="text-success mb-1">85%</h3>
                             <p class="mb-0 small">Advancement Rate</p>
                         </div>
                     </div>
                     <div class="col-md-3 mb-3">
-                        <div class="bg-light p-3 rounded">
+                        <div class="p-3 rounded">
                             <h3 class="text-info mb-1">4+</h3>
                             <p class="mb-0 small">Years Experience</p>
                         </div>
                     </div>
                     <div class="col-md-3 mb-3">
-                        <div class="bg-light p-3 rounded">
+                        <div class="p-3 rounded">
                             <h3 class="text-warning mb-1">3</h3>
                             <p class="mb-0 small">Different Courses</p>
                         </div>
@@ -276,9 +276,9 @@ description: "Teaching experience and educational philosophy"
             </div>
             <div class="card-body">
                 <ul class="list-unstyled mb-0">
-                    <li class="mb-2">📘 <strong>Calculus:</strong> Stewart's Calculus: Early Transcendentals</li>
-                    <li class="mb-2">📗 <strong>Game Theory:</strong> Games of Strategy by Dixit & Nalebuff</li>
-                    <li class="mb-0">📙 <strong>Applied Math:</strong> Mathematical Methods in Engineering</li>
+                    <li class="mb-2">📘 <strong>Calculus:</strong> --- </li>
+                    <li class="mb-2">📗 <strong>Game Theory:</strong> --- </li>
+                    <li class="mb-0">📙 <strong>Applied Math:</strong> --- </li>
                 </ul>
             </div>
         </div>
@@ -290,8 +290,8 @@ description: "Teaching experience and educational philosophy"
             </div>
             <div class="card-body">
                 <ul class="list-unstyled mb-0">
-                    <li class="mb-2">💻 <strong>Software:</strong> MATLAB, Python, Wolfram Alpha</li>
-                    <li class="mb-2">📊 <strong>Visualization:</strong> GeoGebra, Desmos</li>
+                    <li class="mb-2">💻 <strong>Software/Language:</strong> Python, MATLAB, Maple</li>
+                    <li class="mb-2">📊 <strong>Visualization:</strong> GeoGebra</li>
                     <li class="mb-0">🎯 <strong>Assessment:</strong> Canvas, Google Classroom</li>
                 </ul>
             </div>
