@@ -1,17 +1,17 @@
 ---
 layout: page
 title: "Welcome"
-description: "Postdoctoral Researcher in Computational Mathematics and Deep Learning"
+description: "Postdoctoral Researcher in Computational and Applied Mathematics"
 ---
 
 <div class="hero-section bg-gradient-primary text-white p-5 rounded mb-5">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-8">
-                <h1 class="display-4 fw-bold mb-3">Abd'gafar Tunde Tiamiyu</h1>
+                <h1 class="display-4 fw-bold mb-3">Abd'gafar Tunde Tiamiyu, PhD</h1>
                 <p class="lead mb-4">
                     Postdoctoral Researcher at JJJ University, 
-                    specializing in inverse problems, computational mathematics, deep learning, and numerical analysis.
+                    specializing in inverse problems, computational and applied mathematics, and numerical analysis.
                 </p>
                 <div class="d-flex flex-wrap gap-2">
                     <a href="/research" class="btn btn-light btn-lg">
@@ -65,7 +65,7 @@ My research centers on developing **novel computational methods** that combine t
         <div class="card h-100">
             <div class="card-body">
                 <h5><i class="fas fa-calculator text-success me-2"></i>Imaging</h5>
-                <p>Electrical Impedance Tomography, Inverse Scattering Problems, Full-Waveform Inversion, and other Computational Imaging techniques</p>
+                <p>Electrical impedance tomography, inverse scattering problems, full-waveform inversion, and other computational imaging problems</p>
             </div>
         </div>
     </div>
@@ -85,7 +85,7 @@ My research centers on developing **novel computational methods** that combine t
     <div class="col-md-3 mb-3">
         <div class="card">
             <div class="card-body">
-                <h3 class="text-success">4</h3>
+                <h3 class="text-success">6</h3>
                 <p class="mb-0">Awards & Grants</p>
             </div>
         </div>
@@ -110,4 +110,4 @@ My research centers on developing **novel computational methods** that combine t
 
 ---
 
-*Recently completed PhD from *The Chinese University of Hong Kong* with Hong Kong PhD Fellowship Scheme Funding. Now continuing research as a Postdoctoral Researcher at JJJ University.*
+*Recently completed PhD from **The Chinese University of Hong Kong** with Hong Kong PhD Fellowship Scheme funding. Now continuing research as a Postdoctoral Researcher at JJJ University.*
