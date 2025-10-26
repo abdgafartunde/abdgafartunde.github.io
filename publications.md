@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Publications"
-description: "Peer-reviewed publications and research outputs"
+description: "Peer-Reviewed Publications and Research Outputs"
 ---
 
 <div class="row mb-4">

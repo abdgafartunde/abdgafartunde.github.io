@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Teaching"
-description: "Teaching experience and educational philosophy"
+description: "Teaching Experience and Educational Philosophy"
 ---
 
 <div class="hero-section bg-gradient-primary text-white p-4 rounded mb-5">
