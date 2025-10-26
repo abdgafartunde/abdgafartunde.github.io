@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Research Blog"
-description: "Exploring the intersection of mathematics, machine learning, and computational science"
+description: "Exploring the Intersection of Mathematics, Machine learning, and Computational Science"
 ---
 
 <div class="hero-section bg-gradient-primary text-white p-4 rounded mb-5">
@@ -60,8 +60,8 @@ description: "Exploring the intersection of mathematics, machine learning, and c
             <div class="card border-primary">
                 <div class="card-body text-center">
                     <i class="fas fa-edit fa-3x text-primary mb-3"></i>
-                    <h5>First Post Coming Soon!</h5>
-                    <p class="text-muted">I'm working on some exciting content about deep learning and physics-based modeling.</p>
+                    <h5>Next Post Coming Soon!</h5>
+                    <p class="text-muted">I'm working on some exciting content about computational and applied mathematics, deep learning and physics-based modeling.</p>
                 </div>
             </div>
         </div>
@@ -131,7 +131,7 @@ description: "Exploring the intersection of mathematics, machine learning, and c
     {% endif %}
 </div>
 
-## Explore by Category
+<!-- ## Explore by Category
 
 <div class="row mb-5">
     <div class="col-md-3 mb-3">
@@ -174,7 +174,7 @@ description: "Exploring the intersection of mathematics, machine learning, and c
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 ## All Posts
 
