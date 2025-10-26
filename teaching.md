@@ -205,7 +205,6 @@ description: "Teaching experience and educational philosophy"
             </div>
         </div>
     </div>
-    
     <div class="col-md-6 mb-4">
         <div class="card border-success">
             <div class="card-header bg-success text-white">
@@ -236,7 +235,7 @@ description: "Teaching experience and educational philosophy"
             <div class="card-body">
                 <div class="row text-center">
                     <div class="col-md-3 mb-3">
-                        <div class="bg-light p-3 rounded">
+                        <div class="p-3 rounded">
                             <h3 class="text-primary mb-1">150+</h3>
                             <p class="mb-0 small">Students Taught</p>
                         </div>
@@ -284,7 +283,6 @@ description: "Teaching experience and educational philosophy"
             </div>
         </div>
     </div>
-    
     <div class="col-md-6 mb-4">
         <div class="card">
             <div class="card-header">
