@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Research"
-description: "Computational mathematics and inverse problems in medical imaging"
+description: "Computational and applied mathematics"
 ---
 
 ## Research Overview
