@@ -19,11 +19,26 @@ My research focuses on developing novel computational and machine learning appro
                 <h5 class="mb-0"><i class="fas fa-brain"></i> Inverse Problems & Regularization</h5>
             </div>
             <div class="card-body">
-                <p>Developing novel variational inversion frameworks using suitable optimization methods to address ill-posedness and nonlinearity for parameter and image reconstructions.</p>
+                <p>Developing novel variational inversion frameworks using suitable optimization methods to address ill-posedness and nonlinearity for parameter identifications and image reconstructions.</p>
                 <ul class="list-unstyled">
                     <li><i class="fas fa-chevron-right text-primary me-2"></i>Multi-parameter regularizers</li>
                     <li><i class="fas fa-chevron-right text-primary me-2"></i>Convex optimization approaches</li>
                     <li><i class="fas fa-chevron-right text-primary me-2"></i>Data-driven regularization</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-4">
+        <div class="card h-100">
+            <div class="card-header bg-info text-white">
+                <h5 class="mb-0"><i class="fas fa-heartbeat"></i> Medical Imaging</h5>
+            </div>
+            <div class="card-body">
+                <p>Advancing reconstruction techniques for real-time medical imaging with emphasis on partial measurement scenarios. Applications in EIT, ISP, and FWI, among others</p>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-chevron-right text-info me-2"></i>Image reconstructions</li>
+                    <li><i class="fas fa-chevron-right text-info me-2"></i>Partial measurement data handling</li>
+                    <li><i class="fas fa-chevron-right text-info me-2"></i>Real-time processing algorithms</li>
                 </ul>
             </div>
         </div>
@@ -39,21 +54,6 @@ My research focuses on developing novel computational and machine learning appro
                     <li><i class="fas fa-chevron-right text-success me-2"></i>Physics-informed neural networks</li>
                     <li><i class="fas fa-chevron-right text-success me-2"></i>Deep learning for image reconstructions</li>
                     <li><i class="fas fa-chevron-right text-success me-2"></i>Neural ODE methods</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6 mb-4">
-        <div class="card h-100">
-            <div class="card-header bg-info text-white">
-                <h5 class="mb-0"><i class="fas fa-heartbeat"></i> Medical Imaging</h5>
-            </div>
-            <div class="card-body">
-                <p>Advancing imaging modality techniques for real-time medical imaging with emphasis on partial measurement scenarios. Applications in EIT, ISP, and FWI, among others</p>
-                <ul class="list-unstyled">
-                    <li><i class="fas fa-chevron-right text-info me-2"></i>Image reconstructions</li>
-                    <li><i class="fas fa-chevron-right text-info me-2"></i>Partial measurement data handling</li>
-                    <li><i class="fas fa-chevron-right text-info me-2"></i>Real-time processing algorithms</li>
                 </ul>
             </div>
         </div>
@@ -98,7 +98,7 @@ My research focuses on developing novel computational and machine learning appro
             <div class="col-md-4">
                 <div class="text-muted">
                     <small><i class="fas fa-calendar"></i> 2022 - present</small><br>
-                    <small><i class="fas fa-map-marker-alt"></i> CUHK & University of Graz</small>
+                    <small><i class="fas fa-map-marker-alt"></i> CUHK</small>
                 </div>
             </div>
         </div>
@@ -139,8 +139,8 @@ My research focuses on developing novel computational and machine learning appro
                     Implementing high-performance computing solutions for real-time image reconstructions.
                 </p>
                 <p><strong>Keywords:</strong> 
-                    <span class="badge bg-light text-dark me-1">High-Performance Computing</span>
-                    <span class="badge bg-light text-dark me-1">GPU Computing</span>
+                    <span class="badge bg-light text-dark me-1">HPC</span>
+                    <span class="badge bg-light text-dark me-1">GPU</span>
                     <span class="badge bg-light text-dark me-1">Real-time Processing</span>
                 </p>
             </div>
@@ -215,7 +215,7 @@ My research focuses on developing novel computational and machine learning appro
                 <h6 class="card-title"><i class="fas fa-university text-success"></i> University of Graz, Austria</h6>
                 <p class="card-text text-muted">
                     <strong>Advisor:</strong> Professor Kristian Bredies<br>
-                    <strong>Funding:</strong> Ernst Mach Grant (Worldwide)<br>
+                    <!-- <strong>Funding:</strong> Ernst Mach Grant (Worldwide)<br> -->
                     <strong>Focus:</strong> Image reconstructions, computational optimization, and EIT
                 </p>
             </div>
