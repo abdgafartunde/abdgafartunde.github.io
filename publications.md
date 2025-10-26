@@ -264,20 +264,43 @@ description: "Peer-reviewed publications and research outputs"
     <div class="col-md-6 mb-3">
         <div class="card">
             <div class="card-body">
-                <h6 class="card-title">*HK-SIAM Conference 2025*</h6>
+                <h6 class="card-title"> <strong>ANSHK Research Forum 2025</strong> </h6>
                 <p class="card-text">
-                    <strong>Role:</strong> Minisymposium Co-organizer<br>
-                    <strong>Topic:</strong> Computational and Applied Mathematics<br>
-                    <small class="text-muted">Hong Kong, 2025</small>
+                    <strong>Role:</strong> Guest Speaker<br>
+                    <strong>Topic:</strong> Harnessing AI for Innovative and Ethical Use in Academia<br>
+                    <small class="text-muted">August 2025</small>
                 </p>
             </div>
         </div>
     </div>
-    
     <div class="col-md-6 mb-3">
         <div class="card">
             <div class="card-body">
-                <h6 class="card-title">*SIAM Student Chapter Workshop*</h6>
+                <h6 class="card-title"> <strong>HK-SIAM Conference 2025</strong> </h6>
+                <p class="card-text">
+                    <strong>Role:</strong> Minisymposium Co-organizer<br>
+                    <strong>Topic:</strong> Industrial and Applied Mathematics<br>
+                    <small class="text-muted">Hong Kong, July 2025</small>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <h6 class="card-title"> <strong>Academic Discourse with MLA, Nigeria</strong> </h6>
+                <p class="card-text">
+                    <strong>Role:</strong> Speaker <br>
+                    <strong>Topic:</strong> Harnessing AI for Innovative Teaching and Ethical Research in Academia <br>
+                    <small class="text-muted">July 2025</small>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <h6 class="card-title"> <strong>SIAM Student Chapter Workshop</strong></h6>
                 <p class="card-text">
                     <strong>Role:</strong> Workshop Co-organizer<br>
                     <strong>Topic:</strong> Graduate Research Presentations<br>
