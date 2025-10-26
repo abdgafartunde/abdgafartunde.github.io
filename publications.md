@@ -1,14 +1,14 @@
 ---
 layout: page
 title: "Publications"
-description: "Peer-reviewed publications and research output"
+description: "Peer-reviewed publications and research outputs"
 ---
 
 <div class="row mb-4">
     <div class="col-md-8">
         <p class="lead">
             My research has resulted in <strong>10+ peer-reviewed publications</strong> in computational mathematics, 
-            numerical analysis, and scientific computing. Below is a comprehensive list of my academic contributions.
+            numerical analysis, and scientific computing. Below is a comprehensive list of my recent academic contributions.
         </p>
     </div>
     <div class="col-md-4 text-end">
@@ -43,9 +43,9 @@ description: "Peer-reviewed publications and research output"
             <span class="badge bg-light text-dark me-1">Numerical Methods</span>
         </p>
         <div class="publication-links">
-            <button class="btn btn-sm btn-outline-primary me-2" disabled>
+            <!-- <button class="btn btn-sm btn-outline-primary me-2" disabled>
                 <i class="fas fa-file-pdf"></i> PDF (Coming Soon)
-            </button>
+            </button> -->
             <button class="btn btn-sm btn-outline-secondary" onclick="toggleAbstract('abstract2025-1')">
                 <i class="fas fa-align-left"></i> Abstract
             </button>
@@ -74,9 +74,9 @@ description: "Peer-reviewed publications and research output"
             <span class="badge bg-light text-dark me-1">Porous Media</span>
         </p>
         <div class="publication-links">
-            <button class="btn btn-sm btn-outline-primary me-2" disabled>
-                <i class="fas fa-external-link-alt"></i> DOI (Coming Soon)
-            </button>
+            <!-- <button class="btn btn-sm btn-outline-primary me-2" disabled>
+                <i class="fas fa-external-link-alt"></i> PDF (Coming Soon)
+            </button> -->
             <button class="btn btn-sm btn-outline-secondary" onclick="toggleAbstract('abstract2024-1')">
                 <i class="fas fa-align-left"></i> Abstract
             </button>

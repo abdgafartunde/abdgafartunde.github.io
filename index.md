@@ -8,7 +8,7 @@ description: "Postdoctoral Researcher in Computational and Applied Mathematics"
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-8">
-                <h2 class="display-4 fw-bold mb-3">Abd'gafar Tunde Tiamiyu, PhD</h2>
+                <h1 class="display-4 fw-bold mb-3">Abd'gafar Tunde Tiamiyu, PhD</h1>
                 <p class="lead mb-4">
                     Postdoctoral Researcher at JJJ University, 
                     specializing in inverse problems, computational and applied mathematics, and numerical analysis.
