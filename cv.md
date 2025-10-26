@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Curriculum Vitae"
-description: "Academic CV and professional experience"
+description: "Academic CV and Professional Experience"
 ---
 
 <div class="text-center mb-5">
@@ -21,8 +21,8 @@ description: "Academic CV and professional experience"
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-8">
-                        <h5 class="card-title"><i class="fas fa-graduation-cap text-primary"></i> Ph.D. in Mathematics</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">The Chinese University of Hong Kong, Shatin, N.T. Hong Kong</h6>
+                        <h5 class="card-title"><i class="fas fa-graduation-cap text-primary"></i> PhD in Mathematics</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">The Chinese University of Hong Kong</h6>
                         <p class="card-text">
                             <strong>Dissertation:</strong> "Novel regularization and deep learning approaches for electrical impedance tomography (EIT) problems with partial measurement data"<br>
                             <strong>Advisor:</strong> Professor Jun Zou<br>
@@ -35,7 +35,6 @@ description: "Academic CV and professional experience"
                 </div>
             </div>
         </div>
-        
         <div class="card mb-3">
             <div class="card-body">
                 <div class="row">
@@ -82,7 +81,6 @@ description: "Academic CV and professional experience"
             </ul>
         </div>
     </div>
-
 <!-- <div class="timeline"> -->
     <div class="card mb-3">
         <div class="card-header bg-primary text-white">
@@ -105,7 +103,6 @@ description: "Academic CV and professional experience"
             </ul>
         </div>
     </div>
-    
     <div class="card mb-3">
         <div class="card-header bg-info text-white">
             <div class="row">
@@ -126,7 +123,6 @@ description: "Academic CV and professional experience"
             </ul>
         </div>
     </div>
-
     <div class="card mb-3">
         <div class="card-header bg-secondary text-white">
             <div class="row">
@@ -159,8 +155,8 @@ description: "Academic CV and professional experience"
             <div class="card-body">
                 <i class="fas fa-trophy fa-3x text-warning mb-3"></i>
                 <h6>Ernst Mach Grant</h6>
-                <p class="text-muted">Austria, 2023 – 2024</p>
-                <small class="text-muted">EUR 1150/month + travel</small>
+                <p class="text-muted"> OeAD Austria</p>
+                <!-- <small class="text-muted">EUR 1150/month + travel</small> -->
             </div>
         </div>
     </div>
@@ -169,8 +165,8 @@ description: "Academic CV and professional experience"
             <div class="card-body">
                 <i class="fas fa-medal fa-3x text-primary mb-3"></i>
                 <h6>Hong Kong PhD Fellowship</h6>
-                <p class="text-muted">RGC, Hong Kong, 2021 – 2024</p>
-                <small class="text-muted">HK$ 340,800/year</small>
+                <p class="text-muted">RGC, Hong Kong</p>
+                <!-- <small class="text-muted">HK$ 340,800/year</small> -->
             </div>
         </div>
     </div>
@@ -179,8 +175,8 @@ description: "Academic CV and professional experience"
             <div class="card-body">
                 <i class="fas fa-award fa-3x text-success mb-3"></i>
                 <h6>CUHK Vice-Chancellor's Scholarship</h6>
-                <p class="text-muted">CUHK, 2021 – 2025</p>
-                <small class="text-muted">HK$ 100,000 + monthly stipend</small>
+                <p class="text-muted">CUHK</p>
+                <!-- <small class="text-muted">HK$ 100,000 + monthly stipend</small> -->
             </div>
         </div>
     </div>
@@ -189,8 +185,8 @@ description: "Academic CV and professional experience"
             <div class="card-body">
                 <i class="fas fa-star fa-3x text-info mb-3"></i>
                 <h6>Best Graduating Student</h6>
-                <p class="text-muted">Sir Peter Ojongbede's Prize, Feb 2018</p>
-                <small class="text-muted">Mathematics Department</small>
+                <p class="text-muted">FUT-Minna</p>
+                <!-- <small class="text-muted">Mathematics Department</small> -->
             </div>
         </div>
     </div>
@@ -219,7 +215,6 @@ description: "Academic CV and professional experience"
             </div>
         </div>
     </div>
-    
     <div class="col-md-4 mb-3">
         <div class="card">
             <div class="card-header bg-success text-white">
@@ -237,7 +232,6 @@ description: "Academic CV and professional experience"
             </div>
         </div>
     </div>
-    
     <div class="col-md-4 mb-3">
         <div class="card">
             <div class="card-header bg-warning text-dark">
@@ -268,14 +262,13 @@ description: "Academic CV and professional experience"
             </div>
             <div class="card-body">
                 <ul class="list-unstyled">
-                    <li><i class="fas fa-user-tie text-primary me-2"></i><strong>Vice President</strong> (2024-2025)</li>
-                    <li><i class="fas fa-user-edit text-primary me-2"></i><strong>Secretary</strong> (2023-2024)</li>
+                    <li><i class="fas fa-user-tie text-primary me-2"></i><strong>Vice President</strong> (2024 - 2025)</li>
+                    <li><i class="fas fa-user-edit text-primary me-2"></i><strong>Secretary</strong> (2023 - 2024)</li>
                     <li><i class="fas fa-calendar text-primary me-2"></i>Co-organizer, SIAM Workshop (2024)</li>
                 </ul>
             </div>
         </div>
     </div>
-    
     <div class="col-md-6 mb-4">
         <div class="card">
             <div class="card-header">
@@ -283,7 +276,7 @@ description: "Academic CV and professional experience"
             </div>
             <div class="card-body">
                 <ul class="list-unstyled">
-                    <li><i class="fas fa-check text-success me-2"></i>Society for Industrial and Applied Mathematics (SIAM) - 2021-Present</li>
+                    <li><i class="fas fa-check text-success me-2"></i>Society for Industrial and Applied Mathematics (SIAM) CUHK Student Chapter- 2021-2025 </li>
                     <li><i class="fas fa-check text-success me-2"></i>Inverse Problems International Association (IPIA) - 2022-Present</li>
                 </ul>
             </div>
