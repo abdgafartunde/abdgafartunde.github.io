@@ -1,103 +1,39 @@
 ---
 layout: page
 title: "Teaching"
-description: "Teaching Experience and Educational Philosophy"
----
-
-<div class="hero-section bg-gradient-primary text-white p-4 rounded mb-5">
-    <div class="row align-items-center">
-        <div class="col-md-8">
-            <h1 class="display-6 mb-3">Teaching & Education</h1>
-            <p class="lead mb-0">
-                Passionate about making mathematics accessible and engaging through innovative teaching methods 
-                and real-world applications. Committed to fostering critical thinking and problem-solving skills.
-            </p>
-        </div>
-        <div class="col-md-4 text-center">
-            <i class="fas fa-chalkboard-teacher fa-4x opacity-50"></i>
-        </div>
-    </div>
-</div>
-
+description: "Teaching Experience"
 ---
 
 ## Teaching Philosophy
 
-<div class="row mb-5">
-    <div class="col-lg-8 mx-auto">
-        <div class="card border-0 shadow-sm">
-            <div class="card-body p-4">
-                <blockquote class="blockquote text-center">
-                    <p class="mb-4">
-                        "Mathematics is not just about numbers and formulas—it's about developing logical thinking, 
-                        problem-solving skills, and understanding the patterns that govern our world. I believe in 
-                        making abstract concepts tangible through real-world applications and interactive learning."
-                    </p>
-                    <footer class="blockquote-footer">My Teaching Philosophy</footer>
-                </blockquote>
-            </div>
-        </div>
-    </div>
-</div>
-
----
+I believe in making mathematics accessible through real-world applications and interactive problem-solving. My approach emphasizes developing logical thinking and connecting abstract concepts to practical scenarios.
 
 ## Teaching Experience
 
-<div class="timeline">
-    <div class="card mb-4">
-        <div class="card-header bg-primary text-white">
-            <div class="row align-items-center">
-                <div class="col-md-8">
-                    <h5 class="mb-0"><i class="fas fa-chalkboard-teacher"></i> Teaching Assistant</h5>
-                    <h6 class="mb-0 opacity-75">The Chinese University of Hong Kong</h6>
-                </div>
-                <div class="col-md-4 text-end">
-                    <span class="badge bg-light text-primary fs-6">Aug 2021 – July 2025</span>
-                </div>
-            </div>
-        </div>
-        <div class="card-body">
-            <div class="row">
-                <div class="col-md-6">
-                    <h6 class="text-primary mb-3"><i class="fas fa-calculator"></i> Calculus for Engineers</h6>
-                    <ul class="list-unstyled">
-                        <li><i class="fas fa-chevron-right text-primary me-2"></i>Fall 2022 and Fall 2023</li>
-                        <li><i class="fas fa-chevron-right text-primary me-2"></i>Led weekly tutorial sessions</li>
-                        <li><i class="fas fa-chevron-right text-primary me-2"></i>50+ students per session</li>
-                        <li><i class="fas fa-chevron-right text-primary me-2"></i>Focus on engineering applications</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <h6 class="text-success mb-3"><i class="fas fa-chess"></i> Games and Strategic Thinking</h6>
-                    <ul class="list-unstyled">
-                        <li><i class="fas fa-chevron-right text-success me-2"></i>Fall 2024</li>
-                        <li><i class="fas fa-chevron-right text-success me-2"></i>Interactive tutorial sessions</li>
-                        <li><i class="fas fa-chevron-right text-success me-2"></i>50+ students per session</li>
-                        <li><i class="fas fa-chevron-right text-success me-2"></i>Game theory applications</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="mt-3">
-                <h6 class="text-info mb-3"><i class="fas fa-tasks"></i> Key Responsibilities</h6>
-                <ul class="list-unstyled">
-                    <li><i class="fas fa-chevron-right text-info me-2"></i>Designed homework assignments incorporating real-world applications</li>
-                    <li><i class="fas fa-chevron-right text-info me-2"></i>Created and graded exams to assess student understanding</li>
-                    <li><i class="fas fa-chevron-right text-info me-2"></i>Improved student engagement through interactive problem-solving sessions</li>
-                    <li><i class="fas fa-chevron-right text-info me-2"></i>Provided individual support and mentoring to struggling students</li>
-                </ul>
-            </div>
-        </div>
-    </div>
+**Teaching Assistant**, The Chinese University of Hong Kong (Aug 2021 – July 2025)
 
-    <div class="card mb-4">
-        <div class="card-header bg-success text-white">
-            <div class="row align-items-center">
-                <div class="col-md-8">
-                    <h5 class="mb-0"><i class="fas fa-user-graduate"></i> Mathematics Tutor</h5>
-                    <h6 class="mb-0 opacity-75">KUST Staff School, Kano State, Nigeria</h6>
-                </div>
-                <div class="col-md-4 text-end">
+*Calculus for Engineers* (Fall 2022, Fall 2023)
+- Led weekly tutorial sessions for 50+ students
+- Designed homework assignments with engineering applications
+- Created and graded exams
+- Provided individual mentoring support
+
+*Games and Strategic Thinking* (Fall 2024)
+- Conducted interactive tutorial sessions for 50+ students
+- Applied game theory concepts to real-world scenarios
+- Facilitated problem-solving discussions
+
+**Mathematics Tutor**, KUST Staff School, Kano State, Nigeria (May 2019 – Dec 2020)
+- Taught 100+ high school students
+- Developed customized curricula for different skill levels
+- Achieved 85% student advancement rate to advanced mathematics tracks
+- Collaborated with school staff on curriculum development
+
+## Courses Taught
+
+- Calculus for Engineers
+- Games and Strategic Thinking
+- High School Mathematics (Algebra, Geometry, Pre-Calculus)
                     <span class="badge bg-light text-success fs-6">May 2019 – Dec 2020</span>
                 </div>
             </div>

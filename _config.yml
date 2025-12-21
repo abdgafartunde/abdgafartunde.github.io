@@ -1,5 +1,5 @@
 title: "Abd'gafar Tunde Tiamiyu"
-description: "PhD Researcher in Computational Mathematics, Deep Learning, and Inverse Problems"
+description: "Postdoctoral Researcher in Computational and Applied Mathematics"
 baseurl: ""
 url: "https://abdgafartunde.github.io"
 
@@ -7,10 +7,10 @@ url: "https://abdgafartunde.github.io"
 author:
   name: "Abd'gafar Tunde Tiamiyu"
   email: "abdgafartunde@yahoo.com"
-  affiliation: "The Chinese University of Hong Kong"
-  position: "PhD in Mathematics"
-  location: "Hong Kong"
-  bio: "PhD researcher specializing in numerical analysis, computational mathematics, deep learning, and inverse problems with electrical impedance tomography."
+  affiliation: "JJJ University"
+  position: "Postdoctoral Researcher"
+  location: ""
+  bio: "Postdoctoral researcher specializing in inverse problems, computational and applied mathematics, numerical analysis, and scientific machine learning."
 
 # Build settings
 markdown: kramdown
@@ -28,22 +28,10 @@ plugins:
 navigation:
   - title: "Home"
     url: "/"
-    icon: "fas fa-home"
-  - title: "Research"
+  - title: "Research & Publications"
     url: "/research"
-    icon: "fas fa-microscope"
-  - title: "Publications"
-    url: "/publications"
-    icon: "fas fa-file-alt"
   - title: "Teaching"
     url: "/teaching"
-    icon: "fas fa-chalkboard-teacher"
-  - title: "CV"
-    url: "/cv"
-    icon: "fas fa-file-pdf"
-  - title: "Blog"
-    url: "/blog"
-    icon: "fas fa-blog"
 
 # Social links
 social:

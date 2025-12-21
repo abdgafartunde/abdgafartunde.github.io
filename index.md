@@ -1,103 +1,45 @@
 ---
 layout: page
-title: "Welcome"
+title: "Abd'gafar Tunde Tiamiyu"
 description: "Postdoctoral Researcher in Computational and Applied Mathematics"
 ---
 
-<div class="hero-section bg-gradient-primary text-white p-5 rounded mb-5">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-8">
-                <h1 class="display-4 fw-bold mb-3">Abd'gafar Tunde Tiamiyu, PhD</h1>
-                <p class="lead mb-4">
-                    Postdoctoral Researcher at JJJ University, 
-                    specializing in inverse problems, computational and applied mathematics, and numerical analysis.
-                </p>
-                <div class="d-flex flex-wrap gap-2">
-                    <a href="/research" class="btn btn-light btn-lg">
-                        <i class="fas fa-microscope me-2"></i>Research
-                    </a>
-                    <a href="/publications" class="btn btn-outline-light btn-lg">
-                        <i class="fas fa-file-alt me-2"></i>Publications
-                    </a>
-                    <a href="/CV.pdf" class="btn btn-outline-light btn-lg" target="_blank">
-                        <i class="fas fa-download me-2"></i>Download CV
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-4 text-center">
-                <i class="fas fa-graduation-cap fa-6x opacity-75"></i>
-            </div>
-        </div>
-    </div>
-</div>
+# Abd'gafar Tunde Tiamiyu, PhD
 
-## Research Focus
+**Postdoctoral Researcher**  
+JJJ University
 
-My research centers on developing **novel computational methods** that combine traditional mathematical approaches with modern deep learning techniques. As a postdoctoral researcher at JJJ University, I continue to specialize in:
+## About
 
-<div class="row mb-4">
-    <div class="col-md-6 mb-3">
-        <div class="card h-100">
-            <div class="card-body">
-                <h5><i class="fas fa-calculator text-success me-2"></i>Inverse Problems</h5>
-                <p>Regularization techniques and optimization algorithms for linear and nonlinear inverse problems.</p>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6 mb-3">
-        <div class="card h-100">
-            <div class="card-body">
-                <h5><i class="fas fa-brain text-primary me-2"></i>Deep Learning</h5>
-                <p>Physics-informed neural networks and scientific machine learning for forward and inverse problems.</p>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6 mb-3">
-        <div class="card h-100">
-            <div class="card-body">
-                <h5><i class="fas fa-calculator text-success me-2"></i>Optimization</h5>
-                <p>Convex and non-convex optimization algorithms, regularization techniques, and iterative algorithms for inverse problems solutions</p>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6 mb-3">
-        <div class="card h-100">
-            <div class="card-body">
-                <h5><i class="fas fa-calculator text-success me-2"></i>Imaging</h5>
-                <p>Electrical impedance tomography (EIT), inverse scattering problems (ISP), full-waveform inversion (FWI), and other computational imaging problems</p>
-            </div>
-        </div>
-    </div>
-</div>
+I am a postdoctoral researcher specializing in computational and applied mathematics, with expertise in inverse problems, numerical analysis, and scientific machine learning. My research develops novel computational methods that integrate traditional mathematical approaches with deep learning techniques to solve complex problems in medical imaging and scientific computing.
 
-## Quick Facts
+## Education
 
-<div class="row text-center mb-5">
-    <div class="col-md-3 mb-3">
-        <div class="card">
-            <div class="card-body">
-                <h3 class="text-primary">10+</h3>
-                <p class="mb-0">Publications</p>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3 mb-3">
-        <div class="card">
-            <div class="card-body">
-                <h3 class="text-success">6</h3>
-                <p class="mb-0">Awards & Grants</p>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3 mb-3">
-        <div class="card">
-            <div class="card-body">
-                <h3 class="text-info">3</h3>
-                <p class="mb-0">Countries Researched</p>
-            </div>
-        </div>
-    </div>
+**PhD in Mathematics** (2021-2025)  
+The Chinese University of Hong Kong  
+Dissertation: Novel regularization and deep learning approaches for electrical impedance tomography (EIT) problems with partial measurement data  
+Advisor: Professor Jun Zou  
+Funding: Hong Kong PhD Fellowship Scheme
+
+**B.Tech in Mathematics** (2012-2017)  
+Federal University of Technology, Minna, Nigeria  
+First Class Honours
+
+## Research Interests
+
+- Inverse problems and regularization theory
+- Physics-informed neural networks and scientific machine learning
+- Computational imaging (EIT, inverse scattering, full-waveform inversion)
+- Numerical optimization and iterative algorithms
+- Medical imaging reconstruction
+
+## Contact
+
+Email: [your.email@university.edu]  
+Office: [Office location]  
+[Google Scholar](https://scholar.google.com/citations?user=Abdgafar-Tiamiyu) | [ORCID](https://orcid.org/0000-0003-1641-7196)
+
+[Download CV (PDF)](/CV.pdf)
     <div class="col-md-3 mb-3">
         <div class="card">
             <div class="card-body">

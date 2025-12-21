@@ -1,103 +1,82 @@
 ---
 layout: page
-title: "Research"
+title: "Research & Publications"
 description: "Computational and Applied Mathematics"
 ---
 
 ## Research Overview
 
-My research focuses on developing novel computational and machine learning approaches for solving **forward and inverse problems**, especially nonlinear problems appearing in various applications. I work at the intersection of numerical analysis, optimization, and deep learning to create robust algorithms.
+My research develops novel computational and machine learning approaches for solving forward and inverse problems in applied mathematics. I work at the intersection of numerical analysis, optimization, and deep learning to create robust and efficient algorithms for real-world applications.
+
+### Research Areas
+
+**Inverse Problems & Regularization**  
+Developing variational inversion frameworks using optimization methods to address ill-posedness and nonlinearity for parameter identification and image reconstruction. Focus on multi-parameter regularizers, convex optimization, and data-driven regularization.
+
+**Medical Imaging**  
+Advancing reconstruction techniques for real-time medical imaging applications including electrical impedance tomography (EIT), inverse scattering problems (ISP), and full-waveform inversion (FWI). Emphasis on partial measurement scenarios and real-time processing.
+
+**Scientific Machine Learning**  
+Integrating deep neural networks with physics-based models to improve accuracy and robustness. Research includes physics-informed neural networks, deep learning for image reconstruction, and neural ODE methods.
+
+**Numerical Methods**  
+Developing efficient numerical algorithms for differential equations and optimization problems, including finite element methods, iterative optimization algorithms, and high-performance computing implementations.
+
+### Current Projects
+
+**Physics-Informed Deep Learning for EIT** (2022-present)  
+Developing hybrid models combining physics-based constraints with deep learning architectures for improved EIT reconstruction, achieving 15% accuracy improvement over traditional methods in noisy environments.
+
+**Adaptive Regularization Techniques** (2022-present)  
+Investigating data-driven approaches for learning optimal regularization parameters in inverse problems, with applications to image restoration and medical imaging.
+
+**GPU-Accelerated Reconstruction Algorithms** (2023-2024)  
+Implementing high-performance computing solutions for real-time image reconstructions.
 
 ---
 
-## Research Areas
+## Publications
 
-<div class="row">
-    <div class="col-md-6 mb-4">
-        <div class="card h-100">
-            <div class="card-header bg-primary text-white">
-                <h5 class="mb-0"><i class="fas fa-brain"></i> Inverse Problems & Regularization</h5>
-            </div>
-            <div class="card-body">
-                <p>Developing novel variational inversion frameworks using suitable optimization methods to address ill-posedness and nonlinearity for parameter identifications and image reconstructions.</p>
-                <ul class="list-unstyled">
-                    <li><i class="fas fa-chevron-right text-primary me-2"></i>Multi-parameter regularizers</li>
-                    <li><i class="fas fa-chevron-right text-primary me-2"></i>Convex optimization approaches</li>
-                    <li><i class="fas fa-chevron-right text-primary me-2"></i>Data-driven regularization</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6 mb-4">
-        <div class="card h-100">
-            <div class="card-header bg-info text-white">
-                <h5 class="mb-0"><i class="fas fa-heartbeat"></i> Medical Imaging</h5>
-            </div>
-            <div class="card-body">
-                <p>Advancing reconstruction techniques for real-time medical imaging with emphasis on partial measurement scenarios. Applications in EIT, ISP, and FWI, among others</p>
-                <ul class="list-unstyled">
-                    <li><i class="fas fa-chevron-right text-info me-2"></i>Image reconstructions</li>
-                    <li><i class="fas fa-chevron-right text-info me-2"></i>Partial measurement data handling</li>
-                    <li><i class="fas fa-chevron-right text-info me-2"></i>Real-time processing algorithms</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6 mb-4">
-        <div class="card h-100">
-            <div class="card-header bg-success text-white">
-                <h5 class="mb-0"><i class="fas fa-robot"></i> Scientific Machine Learning</h5>
-            </div>
-            <div class="card-body">
-                <p>Integrating deep neural networks with physics-oriented models to improve accuracy and robustness in scientific and engineering applications.</p>
-                <ul class="list-unstyled">
-                    <li><i class="fas fa-chevron-right text-success me-2"></i>Physics-informed neural networks</li>
-                    <li><i class="fas fa-chevron-right text-success me-2"></i>Deep learning for image reconstructions</li>
-                    <li><i class="fas fa-chevron-right text-success me-2"></i>Neural ODE methods</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6 mb-4">
-        <div class="card h-100">
-            <div class="card-header bg-warning text-dark">
-                <h5 class="mb-0"><i class="fas fa-calculator"></i> Numerical Methods</h5>
-            </div>
-            <div class="card-body">
-                <p>Developing efficient numerical algorithms for differential equations and optimization problems in computational science.</p>
-                <ul class="list-unstyled">
-                    <li><i class="fas fa-chevron-right text-warning me-2"></i>Finite element methods</li>
-                    <li><i class="fas fa-chevron-right text-warning me-2"></i>Optimization algorithms</li>
-                    <li><i class="fas fa-chevron-right text-warning me-2"></i>High-performance computing</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+### Journal Publications
+
+**2025**
+
+He J., and **Tiamiyu A.T.** (2025). Physics-informed neural networks in iterative form of nonlinear equations for numerical algorithms and simulations of delay differential equations. *Physica A: Statistical Mechanics and its Applications*.
+
+**2024**
+
+Ahmad S. and **Tiamiyu A.T.** (2024). Numerical simulation of time-dependent non-Newtonian compressible fluid flow in porous media: finite element method and time-dependent approach. *International Communications in Heat and Mass Transfer*.
+
+Audu K.J., **Tiamiyu A.T.**, Akpabio J.N., Ahmad H., and Olabiyi M.A. (2024). Numerical assessment of some semi-analytical techniques for solving a fractional-order leptospirosis model. *Malaysian Journal of Science*.
+
+**2023**
+
+Yusuf A., Adekunle T.S., **Tiamiyu A.T.**, and Aliyu A.M. (2023). Double diffusive nonlinear convective MHD unsteady slip-flow regime in a rectangular channel. *WSEAS Transactions on Fluid Mechanics*.
+
+**2022**
+
+**Tiamiyu A.T.**, Falade K.I., and Abubakar A.S. (2022). Computational assessment of external force acting on beam elastic foundation. *Pamukkale University Journal of Engineering Sciences*.
+
+**2021**
+
+**Tiamiyu A.T.**, Cole A.T., and Audu K.J. (2021). A backward differentiation formular for third-order initial or boundary value problems using collocation method. *Iranian Journal of Optimization*.
+
+**Tiamiyu A.T.**, Falade K.I., Rauf Q.O., and Akande S.A. (2021). A numerical technique for direct solution of special fourth-order ordinary differential equation via hybrid linear multistep method. *Cankaya University Journal of Science and Engineering*.
+
+**2020**
+
+Falade K.I., Baoku I.G., **Tiamiyu A.T.**, and Isyaku I. (2020). On numerical computational solution of seventh order boundary value problems. *Journal of Nigerian Mathematical Society*.
+
+### Selected Conference Presentations
+
+- **Guest Speaker**, ANSHK Research Forum 2025: "Harnessing AI for Innovative and Ethical Use in Academia" (August 2025)
+- **Minisymposium Co-organizer**, HK-SIAM Conference 2025: Industrial and Applied Mathematics (July 2025)
+- **Speaker**, Academic Discourse with MLA, Nigeria: "Harnessing AI for Innovative Teaching and Ethical Research in Academia" (July 2025)
+- **Workshop Co-organizer**, SIAM Student Chapter Workshop, CUHK (2024)
 
 ---
 
-## Current Projects
-
-### 1. Physics-Informed Deep Learning for EIT
-<div class="card mb-4">
-    <div class="card-body">
-        <div class="row">
-            <div class="col-md-8">
-                <p class="card-text">
-                    Developing hybrid models that combine physics-based constraints with deep learning architectures 
-                    for improved EIT reconstruction. This approach has shown <strong>15% improvement in accuracy</strong> 
-                    over traditional methods in noisy environments.
-                </p>
-                <p><strong>Keywords:</strong> 
-                    <span class="badge bg-light text-dark me-1">Deep Learning</span>
-                    <span class="badge bg-light text-dark me-1">PINN</span>
-                    <span class="badge bg-light text-dark me-1">EIT</span>
-                </p>
-            </div>
-            <div class="col-md-4">
-                <div class="text-muted">
-                    <small><i class="fas fa-calendar"></i> 2022 - present</small><br>
+**Academic Profiles**: [Google Scholar](https://scholar.google.com/citations?user=Abdgafar-Tiamiyu) | [ORCID](https://orcid.org/0000-0003-1641-7196) | [ResearchGate](https://www.researchgate.net/profile/Abdgafar-Tiamiyu)
                     <small><i class="fas fa-map-marker-alt"></i> CUHK</small>
                 </div>
             </div>
