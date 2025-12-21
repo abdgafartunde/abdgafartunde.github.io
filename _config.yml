@@ -30,8 +30,8 @@ navigation:
     url: "/"
   - title: "Research"
     url: "/research"
-  - title: "Teaching"
-    url: "/teaching"
+  - title: "Blog"
+    url: "/blog"
 
 # Social links
 social:

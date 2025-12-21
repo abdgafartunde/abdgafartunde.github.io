@@ -4,8 +4,6 @@ title: "Abd'gafar Tunde Tiamiyu"
 description: "Postdoctoral Researcher in Computational and Applied Mathematics"
 ---
 
-# Abd'gafar Tunde Tiamiyu, PhD
-
 **Postdoctoral Researcher**  
 JJJ University
 
