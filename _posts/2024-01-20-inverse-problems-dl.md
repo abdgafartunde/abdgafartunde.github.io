@@ -5,6 +5,12 @@ date: 2024-01-20
 categories: [Research, Deep Learning, Mathematics]
 ---
 
+<style>
+p, li {
+  text-align: justify;
+}
+</style>
+
 The intersection of computational inverse problems and deep learning represents one of the most exciting frontiers in applied mathematics today. As someone deeply involved in this field, particularly in medical imaging applications, I've observed how this convergence is reshaping our approach to complex mathematical challenges.
 
 <!-- more -->

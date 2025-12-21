@@ -6,6 +6,12 @@ date: 2024-10-15
 tags: [deep-learning, physics, research, machine-learning, medical-imaging]
 ---
 
+<style>
+p, li {
+  text-align: justify;
+}
+</style>
+
 One of the most exciting frontiers in computational mathematics today is the intersection of deep learning and physics-based modeling. In my PhD research on electrical impedance tomography (EIT), I've had the opportunity to explore this intersection deeply, and I want to share some insights about what happens when we combine the power of neural networks with the rigor of physical laws.
 
 ## The Challenge: When Physics Meets Noise

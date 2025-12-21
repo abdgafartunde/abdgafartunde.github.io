@@ -4,6 +4,12 @@ title: "Understanding Inverse Problems: From Theory to Practice"
 date: 2024-01-25
 ---
 
+<style>
+p, li {
+  text-align: justify;
+}
+</style>
+
 Inverse problems form the mathematical foundation of many real-world applications, from medical imaging to geophysical exploration. While forward problems predict outcomes from known causes, inverse problems attempt to reconstruct causes from observed effects - a challenging task that often requires sophisticated mathematical frameworks.
 
 <!-- more -->

@@ -4,6 +4,12 @@ title: "Research"
 description: "Computational and Applied Mathematics"
 ---
 
+<style>
+p, li {
+  text-align: justify;
+}
+</style>
+
 ## Research Overview
 
 My research focuses on developing computational and machine learning approaches for solving inverse problems in applied mathematics. I work at the intersection of numerical analysis, optimization, and deep learning to create robust algorithms for medical imaging and scientific computing applications.
@@ -61,7 +67,7 @@ Yusuf A., Adekunle T.S., **Tiamiyu A.T.**, and Aliyu A.M. (2023). Double diffusi
 
 Falade K.I., Baoku I.G., **Tiamiyu A.T.**, and Isyaku I. (2020). On numerical computational solution of seventh order boundary value problems. *Journal of Nigerian Mathematical Society*.
 
-### Selected Conference Presentations
+## Selected Conference Presentations
 
 - **Guest Speaker**, ANSHK Research Forum 2025: "Harnessing AI for Innovative and Ethical Use in Academia" (August 2025)
 - **Minisymposium Co-organizer**, HK-SIAM Conference 2025: Industrial and Applied Mathematics (July 2025)

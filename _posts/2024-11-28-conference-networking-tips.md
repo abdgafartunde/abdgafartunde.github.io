@@ -6,6 +6,12 @@ date: 2024-11-28
 tags: [conferences, networking, academic-career, professional-development]
 ---
 
+<style>
+p, li {
+  text-align: justify;
+}
+</style>
+
 Academic conferences can be intimidating, especially for graduate students attending their first major event. Over the past three years, I've had the privilege of attending several international conferences, from SIAM meetings to specialized inverse problems workshops. Here are the strategies I've learned for making conferences both productive and enjoyable.
 
 ## Before You Go: Preparation is Key
