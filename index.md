@@ -28,28 +28,13 @@ First Class Honours
 ## Research Interests
 
 - Inverse problems and regularization theory
-- Physics-informed neural networks and scientific machine learning
-- Computational imaging (EIT, inverse scattering, full-waveform inversion)
-- Numerical optimization and iterative algorithms
-- Medical imaging reconstruction
+- Physics-informed neural networks
+- Medical imaging and computational imaging
+- Numerical optimization algorithms
 
 ## Contact
 
-Email: [your.email@university.edu]  
-Office: [Office location]  
-[Google Scholar](https://scholar.google.com/citations?user=Abdgafar-Tiamiyu) | [ORCID](https://orcid.org/0000-0003-1641-7196)
+Email: abdgafartunde@yahoo.com  
+[Google Scholar](https://scholar.google.com/citations?user=Abdgafar-Tiamiyu) | [ORCID](https://orcid.org/0000-0003-1641-7196) | [ResearchGate](https://www.researchgate.net/profile/Abdgafar-Tiamiyu)
 
 [Download CV (PDF)](/CV.pdf)
-    <div class="col-md-3 mb-3">
-        <div class="card">
-            <div class="card-body">
-                <h3 class="text-warning">150+</h3>
-                <p class="mb-0">Students Taught</p>
-            </div>
-        </div>
-    </div>
-</div>
-
----
-
-*Recently completed PhD from **The Chinese University of Hong Kong** with Hong Kong PhD Fellowship Scheme funding. Now continuing research as a Postdoctoral Researcher at JJJ University.*

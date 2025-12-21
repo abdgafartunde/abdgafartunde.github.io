@@ -28,7 +28,7 @@ plugins:
 navigation:
   - title: "Home"
     url: "/"
-  - title: "Research & Publications"
+  - title: "Research"
     url: "/research"
   - title: "Teaching"
     url: "/teaching"
