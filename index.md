@@ -1,11 +1,14 @@
 ---
 layout: page
-title: "Abd'gafar Tunde Tiamiyu"
+title: ""
 description: "Postdoctoral Researcher in Computational and Applied Mathematics"
 ---
 
-**Postdoctoral Researcher**  
-JJJ University
+<style>
+p, li {
+  text-align: justify;
+}
+</style>
 
 ## About
 

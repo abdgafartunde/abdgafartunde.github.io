@@ -95,5 +95,5 @@ I believe in making mathematics accessible through real-world applications and i
 - Achieved 85% student advancement rate to advanced mathematics tracks
 
 ---
-
-**Academic Profiles**: [Google Scholar](https://scholar.google.com/citations?user=Abdgafar-Tiamiyu) | [ORCID](https://orcid.org/0000-0003-1641-7196) | [ResearchGate](https://www.researchgate.net/profile/Abdgafar-Tiamiyu)
+<!-- 
+**Academic Profiles**: [Google Scholar](https://scholar.google.com/citations?user=Abdgafar-Tiamiyu) | [ORCID](https://orcid.org/0000-0003-1641-7196) | [ResearchGate](https://www.researchgate.net/profile/Abdgafar-Tiamiyu) -->
