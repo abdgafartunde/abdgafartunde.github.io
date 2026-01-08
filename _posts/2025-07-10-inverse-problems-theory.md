@@ -29,9 +29,9 @@ Most practical inverse problems fail at least one of these criteria—they are *
 
 To handle ill-posedness, we introduce regularization. The **Tikhonov method** replaces the original problem with:
 
-$$x_\alpha = \arg\min_x \left[ \|Ax - y^\delta\|^2 + \alpha R(x) \right]$$
+$$x\_\alpha = \arg\min\_x \left[ \|Ax - y^\delta\|^2 + \alpha R(x) \right]$$
 
-where $R(x)$ is a regularization functional (e.g., $\|x\|^2$ or $\|\nabla x\|_{TV}$) and $\alpha > 0$ is the regularization parameter that balances data fidelity against solution regularity.
+where $R(x)$ is a regularization functional (e.g., $\|x\|^2$ or $\|\nabla x\|\_{TV}$) and $\alpha > 0$ is the regularization parameter that balances data fidelity against solution regularity.
 
 ## Modern Approaches: Combining Math and ML
 

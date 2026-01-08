@@ -22,11 +22,11 @@ The inverse problem—recovering $\sigma$ from boundary data—is severely ill-p
 
 Rather than treating neural networks as black boxes, we incorporate physics directly. Consider the regularized reconstruction:
 
-$$\sigma^* = \arg\min_\sigma \|F(\sigma) - V^\delta\|^2 + \alpha R(\sigma)$$
+$$\sigma^\* = \arg\min\_\sigma \|F(\sigma) - V^\delta\|^2 + \alpha R(\sigma)$$
 
 where $F$ is the forward operator, $V^\delta$ are noisy measurements, and $R(\sigma)$ is a regularizer.
 
-**Learned regularization:** Instead of hand-crafting $R(\sigma)$, we parameterize it by a neural network $R_\theta$ trained to distinguish realistic conductivity distributions from artifacts.
+**Learned regularization:** Instead of hand-crafting $R(\sigma)$, we parameterize it by a neural network $R\_\theta$ trained to distinguish realistic conductivity distributions from artifacts.
 
 **Unrolled optimization:** We unfold iterative algorithms (e.g., gradient descent, ADMM) into neural network layers, learning optimal step sizes and regularization parameters.
 
