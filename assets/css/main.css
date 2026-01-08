@@ -415,13 +415,31 @@ article li {
 }
 
 /* Publications */
+.publications-list {
+    counter-reset: none;
+}
+
 .publication {
+    display: flex;
+    gap: 1rem;
     padding: 1.25rem;
     margin-bottom: 1rem;
     background: white;
     border-radius: 8px;
     border-left: 4px solid var(--secondary-color);
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.pub-number {
+    color: var(--secondary-color);
+    font-weight: 700;
+    font-size: 0.9rem;
+    min-width: 28px;
+    flex-shrink: 0;
+}
+
+.pub-content {
+    flex: 1;
 }
 
 .pub-title {

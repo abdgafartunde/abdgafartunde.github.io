@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Research"
-description: "<em>Computational and Applied Mathematics<em>"
+description: "Computational and Applied Mathematics"
 ---
 
 ## Overview
@@ -43,57 +43,84 @@ My research focuses on developing computational and machine learning approaches 
 <div class="publications-list">
 
 <div class="publication">
-  <div class="pub-title">Numerical solution of first and higher order IVPs via a single continuous block method</div>
-  <div class="pub-authors">Garba J., Audu K.J., Mohammed U., and <strong>Tiamiyu A.T.</strong></div>
-  <div class="pub-venue"><em>Scientific Journal of Mehmet Akif Ersoy University</em>, 2025</div>
+  <span class="pub-number">[1]</span>
+  <div class="pub-content">
+    <div class="pub-title">Numerical solution of first and higher order IVPs via a single continuous block method</div>
+    <div class="pub-authors">Garba J., Audu K.J., Mohammed U., and <strong>Tiamiyu A.T.</strong></div>
+    <div class="pub-venue"><em>Scientific Journal of Mehmet Akif Ersoy University</em>, 2025</div>
+  </div>
 </div>
 
 <div class="publication">
-  <div class="pub-title">Physics-informed neural networks in iterative form of nonlinear equations for numerical algorithms and simulations of delay differential equations</div>
-  <div class="pub-authors">He J., and <strong>Tiamiyu A.T.</strong></div>
-  <div class="pub-venue"><em>Physica A: Statistical Mechanics and its Applications</em>, 2025</div>
+  <span class="pub-number">[2]</span>
+  <div class="pub-content">
+    <div class="pub-title">Physics-informed neural networks in iterative form of nonlinear equations for numerical algorithms and simulations of delay differential equations</div>
+    <div class="pub-authors">He J., and <strong>Tiamiyu A.T.</strong></div>
+    <div class="pub-venue"><em>Physica A: Statistical Mechanics and its Applications</em>, 2025</div>
+  </div>
 </div>
 
 <div class="publication">
-  <div class="pub-title">Numerical simulation of time-dependent non-Newtonian compressible fluid flow in porous media: finite element method and time-dependent approach</div>
-  <div class="pub-authors">Ahmad S. and <strong>Tiamiyu A.T.</strong></div>
-  <div class="pub-venue"><em>International Communications in Heat and Mass Transfer</em>, 2024</div>
+  <span class="pub-number">[3]</span>
+  <div class="pub-content">
+    <div class="pub-title">Numerical simulation of time-dependent non-Newtonian compressible fluid flow in porous media: finite element method and time-dependent approach</div>
+    <div class="pub-authors">Ahmad S. and <strong>Tiamiyu A.T.</strong></div>
+    <div class="pub-venue"><em>International Communications in Heat and Mass Transfer</em>, 2024</div>
+  </div>
 </div>
 
 <div class="publication">
-  <div class="pub-title">Numerical assessment of some semi-analytical techniques for solving a fractional-order leptospirosis model</div>
-  <div class="pub-authors">Audu K.J., <strong>Tiamiyu A.T.</strong>, Akpabio J.N., Ahmad H., and Olabiyi M.A.</div>
-  <div class="pub-venue"><em>Malaysian Journal of Science</em>, 2024</div>
+  <span class="pub-number">[4]</span>
+  <div class="pub-content">
+    <div class="pub-title">Numerical assessment of some semi-analytical techniques for solving a fractional-order leptospirosis model</div>
+    <div class="pub-authors">Audu K.J., <strong>Tiamiyu A.T.</strong>, Akpabio J.N., Ahmad H., and Olabiyi M.A.</div>
+    <div class="pub-venue"><em>Malaysian Journal of Science</em>, 2024</div>
+  </div>
 </div>
 
 <div class="publication">
-  <div class="pub-title">Double diffusive nonlinear convective MHD unsteady slip-flow regime in a rectangular channel</div>
-  <div class="pub-authors">Yusuf A., Adekunle T.S., <strong>Tiamiyu A.T.</strong>, and Aliyu A.M.</div>
-  <div class="pub-venue"><em>WSEAS Transactions on Fluid Mechanics</em>, 2023</div>
+  <span class="pub-number">[5]</span>
+  <div class="pub-content">
+    <div class="pub-title">Double diffusive nonlinear convective MHD unsteady slip-flow regime in a rectangular channel</div>
+    <div class="pub-authors">Yusuf A., Adekunle T.S., <strong>Tiamiyu A.T.</strong>, and Aliyu A.M.</div>
+    <div class="pub-venue"><em>WSEAS Transactions on Fluid Mechanics</em>, 2023</div>
+  </div>
 </div>
 
 <div class="publication">
-  <div class="pub-title">Computational assessment of external force acting on beam elastic foundation</div>
-  <div class="pub-authors"><strong>Tiamiyu A.T.</strong>, Falade K.I., and Abubakar A.S.</div>
-  <div class="pub-venue"><em>Pamukkale University Journal of Engineering Sciences</em>, 2022</div>
+  <span class="pub-number">[6]</span>
+  <div class="pub-content">
+    <div class="pub-title">Computational assessment of external force acting on beam elastic foundation</div>
+    <div class="pub-authors"><strong>Tiamiyu A.T.</strong>, Falade K.I., and Abubakar A.S.</div>
+    <div class="pub-venue"><em>Pamukkale University Journal of Engineering Sciences</em>, 2022</div>
+  </div>
 </div>
 
 <div class="publication">
-  <div class="pub-title">A backward differentiation formula for third-order initial or boundary value problems using collocation method</div>
-  <div class="pub-authors"><strong>Tiamiyu A.T.</strong>, Cole A.T., and Audu K.J.</div>
-  <div class="pub-venue"><em>Iranian Journal of Optimization</em>, 2021</div>
+  <span class="pub-number">[7]</span>
+  <div class="pub-content">
+    <div class="pub-title">A backward differentiation formula for third-order initial or boundary value problems using collocation method</div>
+    <div class="pub-authors"><strong>Tiamiyu A.T.</strong>, Cole A.T., and Audu K.J.</div>
+    <div class="pub-venue"><em>Iranian Journal of Optimization</em>, 2021</div>
+  </div>
 </div>
 
 <div class="publication">
-  <div class="pub-title">A numerical technique for direct solution of special fourth-order ordinary differential equation via hybrid linear multistep method</div>
-  <div class="pub-authors"><strong>Tiamiyu A.T.</strong>, Falade K.I., Rauf Q.O., and Akande S.A.</div>
-  <div class="pub-venue"><em>Cankaya University Journal of Science and Engineering</em>, 2021</div>
+  <span class="pub-number">[8]</span>
+  <div class="pub-content">
+    <div class="pub-title">A numerical technique for direct solution of special fourth-order ordinary differential equation via hybrid linear multistep method</div>
+    <div class="pub-authors"><strong>Tiamiyu A.T.</strong>, Falade K.I., Rauf Q.O., and Akande S.A.</div>
+    <div class="pub-venue"><em>Cankaya University Journal of Science and Engineering</em>, 2021</div>
+  </div>
 </div>
 
 <div class="publication">
-  <div class="pub-title">On numerical computational solution of seventh order boundary value problems</div>
-  <div class="pub-authors">Falade K.I., Baoku I.G., <strong>Tiamiyu A.T.</strong>, and Isyaku I.</div>
-  <div class="pub-venue"><em>Journal of Nigerian Mathematical Society</em>, 2020</div>
+  <span class="pub-number">[9]</span>
+  <div class="pub-content">
+    <div class="pub-title">On numerical computational solution of seventh order boundary value problems</div>
+    <div class="pub-authors">Falade K.I., Baoku I.G., <strong>Tiamiyu A.T.</strong>, and Isyaku I.</div>
+    <div class="pub-venue"><em>Journal of Nigerian Mathematical Society</em>, 2020</div>
+  </div>
 </div>
 
 </div>
