@@ -19,9 +19,12 @@ highlighter: rouge
 permalink: pretty
 timezone: Asia/Shanghai
 
-# Kramdown settings for math
+# Kramdown settings
 kramdown:
-  math_engine: null
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  math_engine: mathjax
   syntax_highlighter: rouge
 
 # Plugins
@@ -88,10 +91,3 @@ exclude:
   - LICENSE
   - CHANGELOG.md
   - content.txt
-
-# Kramdown configuration
-kramdown:
-  input: GFM
-  hard_wrap: false
-  auto_ids: true
-  syntax_highlighter: rouge
