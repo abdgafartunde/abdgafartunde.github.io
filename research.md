@@ -4,12 +4,6 @@ title: "Research"
 description: "Computational and Applied Mathematics"
 ---
 
-<style>
-p, li {
-  text-align: justify;
-}
-</style>
-
 ## Research Overview
 
 My research focuses on developing computational and machine learning approaches for solving inverse problems in applied mathematics. I work at the intersection of numerical analysis, optimization, and deep learning to create robust algorithms for medical imaging and scientific computing applications.

@@ -7,9 +7,10 @@ url: "https://abdgafartunde.github.io"
 author:
   name: "Abd'gafar Tunde Tiamiyu"
   email: "abdgafartunde@yahoo.com"
-  affiliation: "JJJ University"
+  affiliation: "Jilin University"
   position: "Postdoctoral Researcher"
-  location: ""
+  location: "Changchun, Jilin, China"
+  department: "School of Mathematics"
   bio: "Postdoctoral researcher specializing in inverse problems, computational and applied mathematics, numerical analysis, and scientific machine learning."
 
 # Build settings
@@ -49,7 +50,7 @@ academic:
   university: "The Chinese University of Hong Kong"
   advisor: "Professor Jun Zou"
   degree_progress: "PhD (2021-2025)"
-  current_position: "Postdoctoral Researcher at JJJ University"
+  current_position: "Postdoctoral Researcher at School of Mathematics, Jilin University"
 
 # Collections
 collections:
