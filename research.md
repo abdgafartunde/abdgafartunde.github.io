@@ -4,96 +4,160 @@ title: "Research"
 description: "Computational and Applied Mathematics"
 ---
 
-## Research Overview
+## Overview
 
 My research focuses on developing computational and machine learning approaches for solving inverse problems in applied mathematics. I work at the intersection of numerical analysis, optimization, and deep learning to create robust algorithms for medical imaging and scientific computing applications.
 
-### Research Areas
+<div class="research-areas">
 
-**Inverse Problems & Regularization**  
-Developing variational inversion frameworks using optimization methods to address ill-posedness and nonlinearity for parameter identification and image reconstruction. Focus on multi-parameter regularizers, convex optimization, and data-driven regularization.
+<div class="research-card">
+  <div class="research-icon"><i class="fas fa-search-plus"></i></div>
+  <h3>Inverse Problems & Regularization</h3>
+  <p>Developing variational inversion frameworks using optimization methods to address ill-posedness and nonlinearity for parameter identification and image reconstruction.</p>
+</div>
 
-**Medical Imaging**  
-Advancing reconstruction techniques for real-time medical imaging applications including electrical impedance tomography (EIT), inverse scattering problems (ISP), and full-waveform inversion (FWI). Emphasis on partial measurement scenarios and real-time processing.
+<div class="research-card">
+  <div class="research-icon"><i class="fas fa-heartbeat"></i></div>
+  <h3>Medical Imaging</h3>
+  <p>Advancing reconstruction techniques for real-time medical imaging including electrical impedance tomography (EIT), inverse scattering, and full-waveform inversion.</p>
+</div>
 
-**Scientific Machine Learning**  
-Integrating deep neural networks with physics-based models to improve accuracy and robustness. Research includes physics-informed neural networks, deep learning for image reconstruction, and neural ODE methods.
+<div class="research-card">
+  <div class="research-icon"><i class="fas fa-robot"></i></div>
+  <h3>Scientific Machine Learning</h3>
+  <p>Integrating deep neural networks with physics-based models, including physics-informed neural networks and deep learning for image reconstruction.</p>
+</div>
 
-**Numerical Methods**  
-Developing efficient numerical algorithms for differential equations and optimization problems, including finite element methods, iterative optimization algorithms, and high-performance computing implementations.
+<div class="research-card">
+  <div class="research-icon"><i class="fas fa-calculator"></i></div>
+  <h3>Numerical Methods</h3>
+  <p>Developing efficient numerical algorithms for differential equations and optimization, including finite element methods and iterative solvers.</p>
+</div>
 
-### Current Projects
-
-**Physics-Informed Deep Learning for EIT** (2022-present)  
-Developing hybrid models combining physics-based constraints with deep learning architectures for improved EIT reconstruction, achieving 15% accuracy improvement over traditional methods in noisy environments.
+</div>
 
 ---
 
 ## Publications
 
-### Journal Publications
+### 2025
 
-**2025**
+<div class="publication">
+  <div class="pub-title">Physics-informed neural networks in iterative form of nonlinear equations for numerical algorithms and simulations of delay differential equations</div>
+  <div class="pub-authors">He J., and <strong>Tiamiyu A.T.</strong></div>
+  <div class="pub-venue"><em>Physica A: Statistical Mechanics and its Applications</em></div>
+</div>
 
-He J., and **Tiamiyu A.T.** (2025). Physics-informed neural networks in iterative form of nonlinear equations for numerical algorithms and simulations of delay differential equations. *Physica A: Statistical Mechanics and its Applications*.
+### 2024
 
-**2024**
+<div class="publication">
+  <div class="pub-title">Numerical simulation of time-dependent non-Newtonian compressible fluid flow in porous media: finite element method and time-dependent approach</div>
+  <div class="pub-authors">Ahmad S. and <strong>Tiamiyu A.T.</strong></div>
+  <div class="pub-venue"><em>International Communications in Heat and Mass Transfer</em></div>
+</div>
 
-Ahmad S. and **Tiamiyu A.T.** (2024). Numerical simulation of time-dependent non-Newtonian compressible fluid flow in porous media: finite element method and time-dependent approach. *International Communications in Heat and Mass Transfer*.
+<div class="publication">
+  <div class="pub-title">Numerical assessment of some semi-analytical techniques for solving a fractional-order leptospirosis model</div>
+  <div class="pub-authors">Audu K.J., <strong>Tiamiyu A.T.</strong>, Akpabio J.N., Ahmad H., and Olabiyi M.A.</div>
+  <div class="pub-venue"><em>Malaysian Journal of Science</em></div>
+</div>
 
-Audu K.J., **Tiamiyu A.T.**, Akpabio J.N., Ahmad H., and Olabiyi M.A. (2024). Numerical assessment of some semi-analytical techniques for solving a fractional-order leptospirosis model. *Malaysian Journal of Science*.
+### 2023
 
-**2023**
+<div class="publication">
+  <div class="pub-title">Double diffusive nonlinear convective MHD unsteady slip-flow regime in a rectangular channel</div>
+  <div class="pub-authors">Yusuf A., Adekunle T.S., <strong>Tiamiyu A.T.</strong>, and Aliyu A.M.</div>
+  <div class="pub-venue"><em>WSEAS Transactions on Fluid Mechanics</em></div>
+</div>
 
-Yusuf A., Adekunle T.S., **Tiamiyu A.T.**, and Aliyu A.M. (2023). Double diffusive nonlinear convective MHD unsteady slip-flow regime in a rectangular channel. *WSEAS Transactions on Fluid Mechanics*.
+### 2022
 
-**2022**
+<div class="publication">
+  <div class="pub-title">Computational assessment of external force acting on beam elastic foundation</div>
+  <div class="pub-authors"><strong>Tiamiyu A.T.</strong>, Falade K.I., and Abubakar A.S.</div>
+  <div class="pub-venue"><em>Pamukkale University Journal of Engineering Sciences</em></div>
+</div>
 
-**Tiamiyu A.T.**, Falade K.I., and Abubakar A.S. (2022). Computational assessment of external force acting on beam elastic foundation. *Pamukkale University Journal of Engineering Sciences*.
+### 2021
 
-**2021**
+<div class="publication">
+  <div class="pub-title">A backward differentiation formula for third-order initial or boundary value problems using collocation method</div>
+  <div class="pub-authors"><strong>Tiamiyu A.T.</strong>, Cole A.T., and Audu K.J.</div>
+  <div class="pub-venue"><em>Iranian Journal of Optimization</em></div>
+</div>
 
-**Tiamiyu A.T.**, Cole A.T., and Audu K.J. (2021). A backward differentiation formular for third-order initial or boundary value problems using collocation method. *Iranian Journal of Optimization*.
+<div class="publication">
+  <div class="pub-title">A numerical technique for direct solution of special fourth-order ordinary differential equation via hybrid linear multistep method</div>
+  <div class="pub-authors"><strong>Tiamiyu A.T.</strong>, Falade K.I., Rauf Q.O., and Akande S.A.</div>
+  <div class="pub-venue"><em>Cankaya University Journal of Science and Engineering</em></div>
+</div>
 
-**Tiamiyu A.T.**, Falade K.I., Rauf Q.O., and Akande S.A. (2021). A numerical technique for direct solution of special fourth-order ordinary differential equation via hybrid linear multistep method. *Cankaya University Journal of Science and Engineering*.
+### 2020
 
-**2020**
+<div class="publication">
+  <div class="pub-title">On numerical computational solution of seventh order boundary value problems</div>
+  <div class="pub-authors">Falade K.I., Baoku I.G., <strong>Tiamiyu A.T.</strong>, and Isyaku I.</div>
+  <div class="pub-venue"><em>Journal of Nigerian Mathematical Society</em></div>
+</div>
 
-Falade K.I., Baoku I.G., **Tiamiyu A.T.**, and Isyaku I. (2020). On numerical computational solution of seventh order boundary value problems. *Journal of Nigerian Mathematical Society*.
+---
 
-## Selected Conference Presentations
+## Presentations & Service
 
-- **Guest Speaker**, ANSHK Research Forum 2025: "Harnessing AI for Innovative and Ethical Use in Academia" (August 2025)
-- **Minisymposium Co-organizer**, HK-SIAM Conference 2025: Industrial and Applied Mathematics (July 2025)
-- **Speaker**, Academic Discourse with MLA, Nigeria: "Harnessing AI for Innovative Teaching and Ethical Research in Academia" (July 2025)
-- **Workshop Co-organizer**, SIAM Student Chapter Workshop, CUHK (2024)
+<div class="presentations-grid">
+
+<div class="presentation-item">
+  <div class="pres-type">Guest Speaker</div>
+  <div class="pres-title">Harnessing AI for Innovative and Ethical Use in Academia</div>
+  <div class="pres-venue">ANSHK Research Forum 2025 · August 2025</div>
+</div>
+
+<div class="presentation-item">
+  <div class="pres-type">Minisymposium Co-organizer</div>
+  <div class="pres-title">Industrial and Applied Mathematics</div>
+  <div class="pres-venue">HK-SIAM Conference 2025 · July 2025</div>
+</div>
+
+<div class="presentation-item">
+  <div class="pres-type">Speaker</div>
+  <div class="pres-title">Harnessing AI for Innovative Teaching and Ethical Research in Academia</div>
+  <div class="pres-venue">Academic Discourse with MLA, Nigeria · July 2025</div>
+</div>
+
+<div class="presentation-item">
+  <div class="pres-type">Workshop Co-organizer</div>
+  <div class="pres-title">SIAM Student Chapter Workshop</div>
+  <div class="pres-venue">CUHK · 2024</div>
+</div>
+
+</div>
 
 ---
 
 ## Teaching
 
-### Teaching Philosophy
+<div class="teaching-section">
 
-I believe in making mathematics accessible through real-world applications and interactive problem-solving. My approach emphasizes developing logical thinking and connecting abstract concepts to practical scenarios.
+<h3>Teaching Philosophy</h3>
+<p>I believe in making mathematics accessible through real-world applications and interactive problem-solving, emphasizing logical thinking and connecting abstract concepts to practical scenarios.</p>
 
-### Teaching Experience
+<h3>Experience</h3>
 
-**Teaching Assistant**, The Chinese University of Hong Kong (Aug 2021 – July 2025)
+<div class="teaching-item">
+  <div class="teach-role">Teaching Assistant</div>
+  <div class="teach-inst">The Chinese University of Hong Kong · 2021–2025</div>
+  <ul>
+    <li><strong>Calculus for Engineers</strong> (Fall 2022, Fall 2023) — Tutorial sessions for 50+ students</li>
+    <li><strong>Games and Strategic Thinking</strong> (Fall 2024) — Applied game theory to real-world scenarios</li>
+  </ul>
+</div>
 
-*Calculus for Engineers* (Fall 2022, Fall 2023)
-- Led weekly tutorial sessions for 50+ students
-- Designed homework assignments with engineering applications
-- Created and graded exams
+<div class="teaching-item">
+  <div class="teach-role">Mathematics Tutor</div>
+  <div class="teach-inst">KUST Staff School, Nigeria · 2019–2020</div>
+  <ul>
+    <li>Taught 100+ high school students with 85% advancement rate</li>
+  </ul>
+</div>
 
-*Games and Strategic Thinking* (Fall 2024)
-- Conducted interactive tutorial sessions for 50+ students
-- Applied game theory concepts to real-world scenarios
-
-**Mathematics Tutor**, KUST Staff School, Kano State, Nigeria (May 2019 – Dec 2020)
-- Taught 100+ high school students
-- Developed customized curricula for different skill levels
-- Achieved 85% student advancement rate to advanced mathematics tracks
-
----
-<!-- 
-**Academic Profiles**: [Google Scholar](https://scholar.google.com/citations?user=Abdgafar-Tiamiyu) | [ORCID](https://orcid.org/0000-0003-1641-7196) | [ResearchGate](https://www.researchgate.net/profile/Abdgafar-Tiamiyu) -->
+</div>
