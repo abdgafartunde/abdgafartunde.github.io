@@ -3,7 +3,7 @@ layout: post
 title: "A Beginner's Guide to Physics-Informed Neural Networks"
 description: "Understanding PINNs and their applications in scientific computing"
 date: 2025-11-05
-tags: [deep-learning, physics, tutorial, scientific-computing, PINNs]
+tags: [deep-learning, physics, tutorial, PINNs]
 ---
 
 Physics-Informed Neural Networks (PINNs) have emerged as a powerful paradigm that bridges traditional scientific computing with modern deep learning. In this post, I'll provide an accessible introduction to PINNs, explain why they matter, and discuss their applications.

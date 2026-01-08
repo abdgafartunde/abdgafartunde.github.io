@@ -158,7 +158,7 @@ If you're interested in exploring physics-ML combinations in your own research:
 
 The intersection of deep learning and physics is still in its early stages. As we develop better theoretical understanding and more sophisticated methods, I believe we'll see even more dramatic improvements in our ability to solve complex real-world problems.
 
-In my remaining time as a PhD student, I'm particularly excited about exploring:
+In my postdoctoral research, I'm particularly excited about exploring:
 - Self-supervised learning approaches that require even less labeled data
 - Real-time implementation of physics-informed networks
 - Applications to other inverse problems beyond EIT
@@ -167,4 +167,4 @@ The future is bright for this interdisciplinary field, and I'm grateful to be co
 
 ---
 
-*Are you working at the intersection of ML and physics? What challenges and opportunities are you seeing in your field? Let's discuss in the comments!*
+*Are you working at the intersection of ML and physics? I'd love to hear about the challenges and opportunities you're seeing in your field!*

@@ -2,8 +2,8 @@
 layout: post
 title: "Starting My Postdoc Journey: New Beginnings at Jilin University"
 description: "Reflections on transitioning from PhD to postdoctoral research in China"
-date: 2025-12-20
-tags: [postdoc, academic-career, china, new-beginnings]
+date: 2026-01-10
+tags: [postdoc, academic-career, china]
 ---
 
 After four transformative years at The Chinese University of Hong Kong, I am thrilled to embark on a new chapter as a postdoctoral researcher at the School of Mathematics, Jilin University in Changchun, China. This transition marks not just a geographic move, but a significant step in my academic career.

@@ -6,48 +6,44 @@ date: 2025-07-10
 tags: [mathematics, inverse-problems, theory, tutorial]
 ---
 
-Inverse problems form the mathematical foundation of many real-world applications, from medical imaging to geophysical exploration. While forward problems predict outcomes from known causes, inverse problems attempt to reconstruct causes from observed effects - a challenging task that often requires sophisticated mathematical frameworks.
-
-<!-- more -->
+Inverse problems form the mathematical foundation of many real-world applications, from medical imaging to geophysical exploration. While forward problems predict outcomes from known causes, inverse problems attempt to reconstruct causes from observed effects—a challenging task requiring sophisticated mathematical frameworks.
 
 ## Mathematical Framework
 
-The essence of inverse problems can be expressed through the operator equation:
+The essence of inverse problems can be expressed as finding $x$ from noisy observations:
 
-```
-Ax = y
-```
+$$Ax = y^\delta, \quad \|y - y^\delta\| \leq \delta$$
 
-where:
-- A represents the forward operator
-- x is the quantity we want to recover
-- y contains our measurements/observations
+where $A$ is the forward operator, $x$ is the unknown we seek, and $y^\delta$ represents noisy measurements with noise level $\delta$.
 
 ## Why Are Inverse Problems Challenging?
 
-Three key characteristics make inverse problems particularly challenging:
+According to Hadamard's definition, a problem is **well-posed** if:
+1. A solution exists
+2. The solution is unique
+3. The solution depends continuously on the data
 
-1. **Ill-Posedness**
-   - Solutions might not exist
-   - Solutions might not be unique
-   - Small data perturbations can lead to large solution changes
+Most practical inverse problems fail at least one of these criteria—they are **ill-posed**. In EIT, for example, small measurement errors can produce completely different reconstructions.
 
-2. **Regularization Requirements**
-   - Tikhonov regularization
-   - Total variation methods
-   - Learning-based approaches
+## Classical Regularization
 
-3. **Computational Complexity**
-   - Large-scale systems
-   - Real-time reconstruction needs
-   - Memory constraints
+To handle ill-posedness, we introduce regularization. The **Tikhonov method** replaces the original problem with:
 
-## Modern Approaches
+$$x_\alpha = \arg\min_x \left[ \|Ax - y^\delta\|^2 + \alpha R(x) \right]$$
 
-Current research focuses on combining classical regularization theory with deep learning:
+where $R(x)$ is a regularization functional (e.g., $\|x\|^2$ or $\|\nabla x\|_{TV}$) and $\alpha > 0$ is the regularization parameter that balances data fidelity against solution regularity.
 
-- Data-driven parameter selection
-- Learned regularization terms
-- Neural network-based reconstructions
+## Modern Approaches: Combining Math and ML
 
-This synthesis of traditional mathematics and modern machine learning offers promising directions for robust, efficient solutions in medical imaging and beyond.
+Current research focuses on combining classical theory with deep learning:
+
+- **Learned regularization**: Neural networks that learn optimal $R(x)$ from data
+- **Unrolled optimization**: Networks that mimic iterative algorithms
+- **Physics-informed learning**: Incorporating the forward model into network training
+
+This synthesis of traditional mathematics and modern machine learning offers promising directions for robust, efficient solutions.
+
+## Further Reading
+
+- Engl, Hanke, Neubauer: *Regularization of Inverse Problems*
+- Kaipio & Somersalo: *Statistical and Computational Inverse Problems*
