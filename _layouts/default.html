@@ -62,32 +62,30 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-4 mt-5">
+    <footer class="site-footer">
         <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <p class="mb-1">&copy; {{ 'now' | date: "%Y" }} {{ site.author.name }}. All rights reserved.</p>
-                    <p class="mb-0 text-muted">
-                        {{ site.author.position }} at {{ site.author.affiliation }}
-                    </p>
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p class="footer-name">{{ site.author.name }}</p>
+                    <p class="footer-position">{{ site.author.position }} · {{ site.author.affiliation }}</p>
                 </div>
-                <div class="col-md-4 text-end">
+                <div class="footer-social">
                     {% if site.social.email %}
-                        <a href="mailto:{{ site.social.email }}" class="text-white me-3">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    {% endif %}
-                    {% if site.social.linkedin %}
-                        <a href="https://linkedin.com/in/{{ site.social.linkedin }}" class="text-white me-3" target="_blank">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
+                        <a href="mailto:{{ site.social.email }}" title="Email"><i class="fas fa-envelope"></i></a>
                     {% endif %}
                     {% if site.social.github %}
-                        <a href="https://github.com/{{ site.social.github }}" class="text-white me-3" target="_blank">
-                            <i class="fab fa-github"></i>
-                        </a>
+                        <a href="https://github.com/{{ site.social.github }}" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    {% endif %}
+                    {% if site.social.linkedin %}
+                        <a href="https://linkedin.com/in/{{ site.social.linkedin }}" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    {% endif %}
+                    {% if site.social.orcid %}
+                        <a href="https://orcid.org/{{ site.social.orcid }}" target="_blank" title="ORCID"><i class="fab fa-orcid"></i></a>
                     {% endif %}
                 </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{ 'now' | date: "%Y" }} {{ site.author.name }}</p>
             </div>
         </div>
     </footer>
