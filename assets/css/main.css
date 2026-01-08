@@ -40,7 +40,7 @@ article li {
     height: 180px;
     border-radius: 50%;
     object-fit: cover;
-    object-position: top center;
+    object-position: center 15%;
     border: 4px solid var(--secondary-color);
     box-shadow: 0 8px 25px rgba(0,0,0,0.12);
     flex-shrink: 0;
@@ -56,8 +56,15 @@ article li {
 .home-intro .title {
     color: var(--secondary-color);
     font-size: 1.15rem;
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 0.3rem 0;
     font-weight: 500;
+}
+
+.home-intro .tagline {
+    color: var(--muted-color);
+    font-size: 1rem;
+    font-style: italic;
+    margin: 0 0 0.75rem 0;
 }
 
 .home-intro .affiliation {

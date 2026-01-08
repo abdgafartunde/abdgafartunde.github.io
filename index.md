@@ -9,6 +9,7 @@ description: ""
   <div class="home-intro">
     <h1>Abd'gafar Tunde Tiamiyu</h1>
     <p class="title">Postdoctoral Researcher</p>
+    <p class="tagline">Bridging mathematics and scientific computing for real-world applications</p>
     <p class="affiliation">
       <i class="fas fa-university"></i> School of Mathematics, Jilin University<br>
       <i class="fas fa-map-marker-alt"></i> Changchun, Jilin, China
@@ -25,16 +26,17 @@ description: ""
 
 ## About Me
 
-I am a postdoctoral researcher specializing in computational and applied mathematics. My research develops novel computational methods that integrate traditional mathematical approaches with deep learning techniques to solve complex problems in scientific computing and imaging.
+I am a postdoctoral researcher specializing in computational and applied mathematics. My work focuses on developing robust numerical methods and algorithms for solving challenging problems in scientific computing—from inverse problems and image reconstruction to differential equations and optimization. I combine classical mathematical theory with modern computational techniques, including scientific machine learning, to create practical solutions for applications in imaging, physics, and engineering.
+
+Previously, I completed my PhD at The Chinese University of Hong Kong under the supervision of [Professor Jun Zou](https://www.math.cuhk.edu.hk/~zou/), supported by the prestigious Hong Kong PhD Fellowship Scheme. I also spent nine months as a visiting researcher at the University of Graz, Austria, funded by the Ernst Mach Grant.
 
 <div class="research-interests">
   <h3>Research Interests</h3>
   <div class="interest-tags">
-    <span class="interest-tag"><i class="fas fa-search"></i> Inverse Problems</span>
-    <span class="interest-tag"><i class="fas fa-balance-scale"></i> Regularization Theory</span>
+    <span class="interest-tag"><i class="fas fa-search-plus"></i> Inverse Problems</span>
+    <span class="interest-tag"><i class="fas fa-cogs"></i> Numerical Methods & Optimization</span>
     <span class="interest-tag"><i class="fas fa-brain"></i> Scientific Machine Learning</span>
-    <span class="interest-tag"><i class="fas fa-chart-line"></i> Numerical Optimization</span>
-    <span class="interest-tag"><i class="fas fa-x-ray"></i> Medical Imaging</span>
+    <span class="interest-tag"><i class="fas fa-square-root-alt"></i> Differential Equations</span>
   </div>
 </div>
 
@@ -46,7 +48,8 @@ I am a postdoctoral researcher specializing in computational and applied mathema
   <div class="edu-year">2021 – 2025</div>
   <div class="edu-details">
     <em>Dissertation:</em> Novel regularization and deep learning approaches for electrical impedance tomography problems with partial measurement data<br>
-    <em>Advisor:</em> Professor Jun Zou &nbsp;·&nbsp; <em>Funding:</em> Hong Kong PhD Fellowship Scheme
+    <em>Advisor:</em> Professor Jun Zou<br>
+    <em>Funding:</em> Hong Kong PhD Fellowship Scheme, CUHK Vice-Chancellor's Scholarship
   </div>
 </div>
 
@@ -54,22 +57,30 @@ I am a postdoctoral researcher specializing in computational and applied mathema
   <div class="edu-degree">B.Tech in Mathematics</div>
   <div class="edu-school">Federal University of Technology, Minna, Nigeria</div>
   <div class="edu-year">2012 – 2017</div>
-  <div class="edu-details">First Class Honours</div>
+  <div class="edu-details">First Class Honours · MTN Foundation Scholarship · Sir Peter Ojongbede's Prize for Best Graduating Student</div>
 </div>
 
 ## Recent News
 
 <div class="news-list">
   <div class="news-item">
-    <span class="news-date">Dec 2025</span>
-    <span class="news-text">Started postdoctoral position at Jilin University</span>
+    <span class="news-date">Jan 2026</span>
+    <span class="news-text">Started postdoctoral position at Jilin University, China</span>
+  </div>
+  <div class="news-item">
+    <span class="news-date">Nov 2025</span>
+    <span class="news-text">Attended graduation ceremony at CUHK</span>
   </div>
   <div class="news-item">
     <span class="news-date">Aug 2025</span>
-    <span class="news-text">Successfully defended PhD dissertation at CUHK</span>
+    <span class="news-text">Guest speaker at ANSHK Research Forum on AI in Academia</span>
   </div>
   <div class="news-item">
     <span class="news-date">Jul 2025</span>
     <span class="news-text">Co-organized minisymposium at HK-SIAM Conference 2025</span>
+  </div>
+  <div class="news-item">
+    <span class="news-date">Jun 2025</span>
+    <span class="news-text">Successfully defended PhD dissertation at CUHK</span>
   </div>
 </div>
