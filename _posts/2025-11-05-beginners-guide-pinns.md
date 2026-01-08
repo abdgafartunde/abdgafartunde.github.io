@@ -1,53 +1,45 @@
 ---
 layout: post
 title: "A Beginner's Guide to Physics-Informed Neural Networks"
-description: "Understanding the mathematical foundations of PINNs"
+description: "Understanding the foundations of PINNs"
 date: 2025-11-05
 tags: [deep-learning, physics, tutorial, PINNs]
 ---
 
 Physics-Informed Neural Networks (PINNs) embed physical laws directly into the learning process, offering a principled approach to solving differential equations with neural networks.
 
-## Mathematical Formulation
+## The Core Idea
 
-Consider a general PDE of the form:
+Traditional neural networks learn purely from data. PINNs add a crucial ingredient: **physics constraints**.
 
-$$\mathcal{N}[u](x) = f(x), \quad x \in \Omega$$
+A PINN minimizes a combined loss function with two components:
+1. **Data loss**: How well does the network match observed measurements?
+2. **Physics loss**: How well does the network satisfy the governing equations?
 
-with boundary conditions $\mathcal{B}[u](x) = g(x)$ on $\partial\Omega$.
-
-A PINN approximates the solution $u(x)$ by a neural network $u\_\theta(x)$ and minimizes:
-
-$$\mathcal{L}(\theta) = \mathcal{L}\_{\text{PDE}} + \lambda\_b \mathcal{L}\_{\text{BC}} + \lambda\_d \mathcal{L}\_{\text{data}}$$
-
-where:
-- $\mathcal{L}\_{\text{PDE}} = \frac{1}{N\_r}\sum\_{i=1}^{N\_r} \|\mathcal{N}[u\_\theta](x\_i^r) - f(x\_i^r)\|^2$ enforces the PDE at collocation points
-- $\mathcal{L}\_{\text{BC}} = \frac{1}{N\_b}\sum\_{i=1}^{N\_b} \|\mathcal{B}[u\_\theta](x\_i^b) - g(x\_i^b)\|^2$ enforces boundary conditions
-- $\mathcal{L}\_{\text{data}} = \frac{1}{N\_d}\sum\_{i=1}^{N\_d} \|u\_\theta(x\_i^d) - u\_i^d\|^2$ fits available measurements
-
-The key insight is that derivatives $\partial u\_\theta / \partial x$ are computed exactly via automatic differentiation.
+By penalizing violations of known physics, we guide the network toward physically plausible solutions—even with limited data.
 
 ## Why PINNs Matter
 
-**Data efficiency:** The physics constraint acts as a strong regularizer, reducing the need for large datasets.
+**Data efficiency:** The physics constraint acts as a strong regularizer, dramatically reducing the amount of training data needed.
 
-**Physical consistency:** Solutions respect conservation laws and known physics by construction.
+**Physical consistency:** Solutions respect conservation laws and known physics by construction, making them more reliable for scientific applications.
 
-**Inverse problems:** Unknown parameters $\lambda$ in $\mathcal{N}\_\lambda[u] = f$ can be learned jointly with the solution by including them in the optimization.
+**Inverse problems:** PINNs naturally handle problems where we want to infer unknown parameters from observations—a central theme in my research on electrical impedance tomography.
 
-## Application to Inverse Problems
+## How It Works
 
-For parameter identification, we seek both $u$ and $\lambda$ such that the PDE residual vanishes while matching observations. The loss becomes:
+1. Define a neural network to approximate the solution
+2. Compute derivatives of the network output using automatic differentiation
+3. Evaluate how well the network satisfies the differential equation at many points
+4. Train by minimizing both data mismatch and equation residual
 
-$$\mathcal{L}(\theta, \lambda) = \mathcal{L}\_{\text{data}} + \alpha \mathcal{L}\_{\text{PDE}}(\lambda)$$
-
-This framework naturally handles my research in EIT, where we recover conductivity $\sigma$ from boundary measurements.
+The key insight is that modern deep learning frameworks compute exact derivatives automatically, making it easy to check whether the network respects the physics.
 
 ## Challenges
 
-- **Spectral bias:** Networks struggle with high-frequency components
-- **Loss balancing:** Choosing $\lambda\_b, \lambda\_d$ requires care
-- **Training difficulty:** Optimization can be challenging for stiff PDEs
+- **Training difficulty:** Balancing the data and physics losses requires careful tuning
+- **Spectral bias:** Networks may struggle with high-frequency solution components
+- **Computational cost:** Many evaluation points may be needed for complex domains
 
 ## Further Reading
 

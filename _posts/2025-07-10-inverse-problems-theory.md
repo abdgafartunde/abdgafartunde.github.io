@@ -8,40 +8,38 @@ tags: [mathematics, inverse-problems, theory, tutorial]
 
 Inverse problems form the mathematical foundation of many real-world applications, from medical imaging to geophysical exploration. While forward problems predict outcomes from known causes, inverse problems attempt to reconstruct causes from observed effects—a challenging task requiring sophisticated mathematical frameworks.
 
-## Mathematical Framework
+## What Are Inverse Problems?
 
-The essence of inverse problems can be expressed as finding $x$ from noisy observations:
+In a **forward problem**, we know the cause and compute the effect. In an **inverse problem**, we observe the effect and try to determine the cause.
 
-$$Ax = y^\delta, \quad \|y - y^\delta\| \leq \delta$$
+For example, in medical imaging:
+- **Forward**: Given the internal structure of the body, predict what measurements we'd observe
+- **Inverse**: Given measurements, reconstruct the internal structure
 
-where $A$ is the forward operator, $x$ is the unknown we seek, and $y^\delta$ represents noisy measurements with noise level $\delta$.
+## Why Are They Challenging?
 
-## Why Are Inverse Problems Challenging?
-
-According to Hadamard's definition, a problem is **well-posed** if:
+According to Hadamard, a problem is **well-posed** if:
 1. A solution exists
 2. The solution is unique
 3. The solution depends continuously on the data
 
-Most practical inverse problems fail at least one of these criteria—they are **ill-posed**. In EIT, for example, small measurement errors can produce completely different reconstructions.
+Most practical inverse problems fail at least one criterion—they are **ill-posed**. Small measurement errors can produce wildly different reconstructions.
 
 ## Classical Regularization
 
-To handle ill-posedness, we introduce regularization. The **Tikhonov method** replaces the original problem with:
+To handle ill-posedness, we add constraints. The **Tikhonov method** balances fitting the data against keeping the solution "regular" (smooth, small, etc.). This trades some accuracy for stability.
 
-$$x\_\alpha = \arg\min\_x \left[ \|Ax - y^\delta\|^2 + \alpha R(x) \right]$$
+The key challenge is choosing how much regularization to apply—too little and noise dominates; too much and we lose important details.
 
-where $R(x)$ is a regularization functional (e.g., $\|x\|^2$ or $\|\nabla x\|\_{TV}$) and $\alpha > 0$ is the regularization parameter that balances data fidelity against solution regularity.
+## Modern Approaches: Math Meets Machine Learning
 
-## Modern Approaches: Combining Math and ML
+Current research combines classical theory with deep learning:
 
-Current research focuses on combining classical theory with deep learning:
+- **Learned regularization**: Neural networks learn what "good" solutions look like from training data
+- **Unrolled optimization**: Networks mimic iterative algorithms, learning optimal parameters
+- **Physics-informed learning**: Incorporating known physics into network training
 
-- **Learned regularization**: Neural networks that learn optimal $R(x)$ from data
-- **Unrolled optimization**: Networks that mimic iterative algorithms
-- **Physics-informed learning**: Incorporating the forward model into network training
-
-This synthesis of traditional mathematics and modern machine learning offers promising directions for robust, efficient solutions.
+This synthesis offers promising directions for robust, efficient solutions.
 
 ## Further Reading
 
