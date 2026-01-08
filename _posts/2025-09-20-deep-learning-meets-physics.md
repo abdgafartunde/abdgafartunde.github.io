@@ -10,23 +10,23 @@ One of the most exciting frontiers in computational mathematics is integrating d
 
 ## The EIT Problem
 
-EIT seeks to reconstruct the internal conductivity distribution $$\sigma(x)$$ from boundary voltage measurements. The forward problem is governed by:
+EIT seeks to reconstruct the internal conductivity distribution $\sigma(x)$ from boundary voltage measurements. The forward problem is governed by:
 
 $$\nabla \cdot (\sigma \nabla u) = 0 \quad \text{in } \Omega$$
 
 with appropriate boundary conditions relating current injection to measured voltages.
 
-The inverse problem—recovering $$\sigma$$ from boundary data—is severely ill-posed. The Fréchet derivative of the forward map has eigenvalues decaying exponentially, meaning deep interior information is exponentially attenuated.
+The inverse problem—recovering $\sigma$ from boundary data—is severely ill-posed. The Fréchet derivative of the forward map has eigenvalues decaying exponentially, meaning deep interior information is exponentially attenuated.
 
 ## Physics-Informed Approaches
 
 Rather than treating neural networks as black boxes, we incorporate physics directly. Consider the regularized reconstruction:
 
-$$\sigma^\* = \arg\min\_\sigma \lVert F(\sigma) - V^\delta\rVert^2 + \alpha R(\sigma)$$
+$$\sigma^* = \arg\min_\sigma \|F(\sigma) - V^\delta\|^2 + \alpha R(\sigma)$$
 
-where $$F$$ is the forward operator, $$V^\delta$$ are noisy measurements, and $$R(\sigma)$$ is a regularizer.
+where $F$ is the forward operator, $V^\delta$ are noisy measurements, and $R(\sigma)$ is a regularizer.
 
-**Learned regularization:** Instead of hand-crafting $$R(\sigma)$$, we parameterize it by a neural network $$R\_\theta$$ trained to distinguish realistic conductivity distributions from artifacts.
+**Learned regularization:** Instead of hand-crafting $R(\sigma)$, we parameterize it by a neural network $R_\theta$ trained to distinguish realistic conductivity distributions from artifacts.
 
 **Unrolled optimization:** We unfold iterative algorithms (e.g., gradient descent, ADMM) into neural network layers, learning optimal step sizes and regularization parameters.
 
