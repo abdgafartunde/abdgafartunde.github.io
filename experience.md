@@ -13,7 +13,7 @@ description: "Professional and Academic Experience"
     <div class="exp-title">Postdoctoral Researcher</div>
     <div class="exp-period">Jan 2026 – Present</div>
   </div>
-  <div class="exp-institution">School of Mathematics, Jilin University, China</div>
+  <div class="exp-institution">School of Mathematics, <a href="https://www.jlu.edu.cn/" target="_blank">Jilin University</a>, China</div>
   <p class="exp-summary">Research on inverse problems and scientific machine learning</p>
 </div>
 
@@ -22,7 +22,7 @@ description: "Professional and Academic Experience"
     <div class="exp-title">Visiting Researcher</div>
     <div class="exp-period">Oct 2023 – Jun 2024</div>
   </div>
-  <div class="exp-institution">University of Graz, Austria</div>
+  <div class="exp-institution"><a href="https://www.uni-graz.at/" target="_blank">University of Graz</a>, Austria</div>
   <p class="exp-summary">Developed learned regularization methods for electrical impedance tomography. Funded by Ernst Mach Grant.</p>
 </div>
 
@@ -31,7 +31,7 @@ description: "Professional and Academic Experience"
     <div class="exp-title">Doctoral Researcher</div>
     <div class="exp-period">Aug 2021 – Jun 2025</div>
   </div>
-  <div class="exp-institution">The Chinese University of Hong Kong</div>
+  <div class="exp-institution"><a href="https://www.cuhk.edu.hk/" target="_blank">The Chinese University of Hong Kong</a></div>
   <p class="exp-summary">PhD research on variational methods and deep learning for inverse problems. Advised by <a href="https://www.math.cuhk.edu.hk/~zou/" target="_blank">Prof. Jun Zou</a>.</p>
 </div>
 
@@ -40,7 +40,7 @@ description: "Professional and Academic Experience"
     <div class="exp-title">Research Assistant</div>
     <div class="exp-period">Jun 2018 – Apr 2019</div>
   </div>
-  <div class="exp-institution">Kano University of Science and Technology, Nigeria</div>
+  <div class="exp-institution"><a href="https://kustwudil.edu.ng/" target="_blank">Kano University of Science and Technology</a>, Nigeria</div>
   <p class="exp-summary">Numerical methods for differential equations</p>
 </div>
 
@@ -54,7 +54,7 @@ description: "Professional and Academic Experience"
 
 <div class="teaching-item">
   <div class="teach-role">Teaching Assistant</div>
-  <div class="teach-inst">The Chinese University of Hong Kong · 2021–2025</div>
+  <div class="teach-inst"><a href="https://www.cuhk.edu.hk/" target="_blank">The Chinese University of Hong Kong</a> · 2021–2025</div>
   <ul>
     <li>Calculus for Engineers (Fall 2022, 2023) — Led tutorials for 50+ students</li>
     <li>Games and Strategic Thinking (Fall 2024) — Applied game theory to real-world scenarios</li>

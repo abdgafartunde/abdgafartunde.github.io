@@ -11,7 +11,7 @@ description: ""
     <p class="title">Postdoctoral Researcher</p>
     <p class="tagline">Bridging mathematics and scientific computing for real-world applications</p>
     <p class="affiliation">
-      <i class="fas fa-university"></i> School of Mathematics, Jilin University<br>
+      <i class="fas fa-university"></i> School of Mathematics, <a href="https://www.jlu.edu.cn/" target="_blank">Jilin University</a><br>
       <i class="fas fa-map-marker-alt"></i> Changchun, Jilin, China
     </p>
     <div class="social-links">
@@ -44,7 +44,7 @@ Previously, I completed my PhD at The Chinese University of Hong Kong under the 
 
 <div class="education-item">
   <div class="edu-degree">PhD in Mathematics</div>
-  <div class="edu-school">The Chinese University of Hong Kong</div>
+  <div class="edu-school"><a href="https://www.cuhk.edu.hk/" target="_blank">The Chinese University of Hong Kong</a></div>
   <div class="edu-year">2021 – 2025</div>
   <div class="edu-details">
     <em>Dissertation:</em> Novel regularization and deep learning approaches for electrical impedance tomography problems with partial measurement data<br>
@@ -55,7 +55,7 @@ Previously, I completed my PhD at The Chinese University of Hong Kong under the 
 
 <div class="education-item">
   <div class="edu-degree">Bachelor of Technology (B.Tech) in Mathematics</div>
-  <div class="edu-school">Federal University of Technology, Minna, Nigeria</div>
+  <div class="edu-school"><a href="https://futminna.edu.ng/" target="_blank">Federal University of Technology, Minna</a>, Nigeria</div>
   <div class="edu-year">2012 – 2017</div>
   <div class="edu-details">First Class Honours · MTN Foundation Scholarship · Sir Peter Ojongbede's Prize for Best Graduating Student</div>
 </div>
