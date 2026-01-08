@@ -31,6 +31,8 @@ navigation:
     url: "/"
   - title: "Research"
     url: "/research"
+  - title: "Experience"
+    url: "/experience"
   - title: "Blog"
     url: "/blog"
 

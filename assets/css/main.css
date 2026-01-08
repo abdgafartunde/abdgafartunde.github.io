@@ -207,6 +207,56 @@ article li {
     color: var(--text-color);
 }
 
+/* ============================================
+   AWARDS COMPACT SECTION (Homepage)
+   ============================================ */
+
+.awards-compact {
+    margin-top: 1rem;
+}
+
+.award-row {
+    display: grid;
+    grid-template-columns: 70px 1fr auto;
+    gap: 1rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--border-color);
+    align-items: center;
+}
+
+.award-row:last-child {
+    border-bottom: none;
+}
+
+.award-year {
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.award-title {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.award-source {
+    color: var(--muted-color);
+    font-size: 0.85rem;
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .award-row {
+        grid-template-columns: 1fr;
+        gap: 0.2rem;
+        padding: 0.75rem 0;
+    }
+    
+    .award-source {
+        text-align: left;
+    }
+}
+
 @media (max-width: 768px) {
     .home-header {
         flex-direction: column;
@@ -972,6 +1022,267 @@ select:focus {
     color: var(--text-color);
     margin: 0;
     line-height: 1.6;
+}
+
+/* ============================================
+   RESEARCH EXPERIENCE SECTION
+   ============================================ */
+
+.experience-section {
+    margin-bottom: 2rem;
+}
+
+.experience-item {
+    background: var(--light-bg);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+    border-left: 4px solid var(--secondary-color);
+    transition: all 0.2s ease;
+}
+
+.experience-item:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.exp-title {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.exp-period {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.exp-institution {
+    color: var(--muted-color);
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.exp-summary {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+    line-height: 1.5;
+}
+
+.exp-details {
+    margin: 0;
+    padding-left: 1.25rem;
+}
+
+.exp-details li {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+.exp-details li:last-child {
+    margin-bottom: 0;
+}
+
+/* ============================================
+   AWARDS & GRANTS SECTION
+   ============================================ */
+
+.awards-section {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.award-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: var(--light-bg);
+    padding: 1.25rem;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+.award-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.award-icon {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.award-content {
+    flex: 1;
+}
+
+.award-name {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.award-org {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.award-desc {
+    color: var(--muted-color);
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   PROFESSIONAL ACTIVITIES SECTION
+   ============================================ */
+
+.professional-section {
+    margin-bottom: 2rem;
+}
+
+.professional-section h3 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--light-bg);
+}
+
+.membership-list {
+    margin-bottom: 2rem;
+}
+
+.membership-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: var(--light-bg);
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.membership-item i {
+    color: var(--secondary-color);
+    font-size: 1rem;
+}
+
+.membership-item span {
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+.leadership-list {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.leadership-item {
+    padding: 1rem 1.25rem;
+    background: var(--light-bg);
+    border-radius: 8px;
+    border-left: 3px solid var(--secondary-color);
+}
+
+.lead-role {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 0.95rem;
+}
+
+.lead-org {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.lead-desc {
+    color: var(--muted-color);
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+/* ============================================
+   SKILLS SECTION
+   ============================================ */
+
+.skills-section {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.skill-category h4 {
+    color: var(--primary-color);
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.skill-category h4 i {
+    color: var(--secondary-color);
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-tag {
+    background: var(--light-bg);
+    color: var(--text-color);
+    padding: 0.4rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+    background: var(--secondary-color);
+    color: white;
+    border-color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+    .exp-header {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+    
+    .award-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .award-icon {
+        margin: 0 auto;
+    }
 }
 
 /* Research page styling */

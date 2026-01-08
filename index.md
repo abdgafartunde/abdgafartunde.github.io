@@ -26,7 +26,7 @@ description: ""
 
 ## About Me
 
-I am a postdoctoral researcher specializing in computational and applied mathematics. My work focuses on developing robust numerical methods and algorithms for solving challenging problems in scientific computing—from inverse problems and image reconstruction to differential equations and optimization. I combine classical mathematical theory with modern computational techniques, including scientific machine learning, to create practical solutions for applications in imaging, physics, and engineering.
+I am a postdoctoral researcher specializing in computational and applied mathematics. My work focuses on developing robust numerical methods and algorithms for solving challenging problems in scientific computing, including inverse problems, image reconstruction, partial differential equations, and optimization. I combine classical mathematical theory with modern computational techniques, including scientific machine learning, to create practical solutions for applications in imaging, physics, and engineering.
 
 Previously, I completed my PhD at The Chinese University of Hong Kong under the supervision of [Professor Jun Zou](https://www.math.cuhk.edu.hk/~zou/), supported by the prestigious Hong Kong PhD Fellowship Scheme. I also spent nine months as a visiting researcher at the University of Graz, Austria, funded by the Ernst Mach Grant.
 
@@ -36,7 +36,7 @@ Previously, I completed my PhD at The Chinese University of Hong Kong under the 
     <span class="interest-tag"><i class="fas fa-search-plus"></i> Inverse Problems</span>
     <span class="interest-tag"><i class="fas fa-cogs"></i> Numerical Methods & Optimization</span>
     <span class="interest-tag"><i class="fas fa-brain"></i> Scientific Machine Learning</span>
-    <span class="interest-tag"><i class="fas fa-square-root-alt"></i> Differential Equations</span>
+    <span class="interest-tag"><i class="fas fa-square-root-alt"></i> Partial Differential Equations</span>
   </div>
 </div>
 
@@ -54,7 +54,7 @@ Previously, I completed my PhD at The Chinese University of Hong Kong under the 
 </div>
 
 <div class="education-item">
-  <div class="edu-degree">B.Tech in Mathematics</div>
+  <div class="edu-degree">Bachelor of Technology (B.Tech) in Mathematics</div>
   <div class="edu-school">Federal University of Technology, Minna, Nigeria</div>
   <div class="edu-year">2012 – 2017</div>
   <div class="edu-details">First Class Honours · MTN Foundation Scholarship · Sir Peter Ojongbede's Prize for Best Graduating Student</div>
@@ -82,5 +82,35 @@ Previously, I completed my PhD at The Chinese University of Hong Kong under the 
   <div class="news-item">
     <span class="news-date">Jun 2025</span>
     <span class="news-text">Successfully defended PhD dissertation at CUHK</span>
+  </div>
+</div>
+
+## Awards & Honors
+
+<div class="awards-compact">
+  <div class="award-row">
+    <span class="award-year">2023–24</span>
+    <span class="award-title">Ernst Mach Grant</span>
+    <span class="award-source">OeAD, Austria</span>
+  </div>
+  <div class="award-row">
+    <span class="award-year">2021–24</span>
+    <span class="award-title">Hong Kong PhD Fellowship Scheme</span>
+    <span class="award-source">Research Grants Council</span>
+  </div>
+  <div class="award-row">
+    <span class="award-year">2021–25</span>
+    <span class="award-title">Vice-Chancellor's Scholarship</span>
+    <span class="award-source">CUHK</span>
+  </div>
+  <div class="award-row">
+    <span class="award-year">2014–17</span>
+    <span class="award-title">MTN Foundation Scholarship</span>
+    <span class="award-source">MTN Nigeria</span>
+  </div>
+  <div class="award-row">
+    <span class="award-year">2018</span>
+    <span class="award-title">Best Graduating Student in Mathematics</span>
+    <span class="award-source">Sir Peter Ojongbede's Prize</span>
   </div>
 </div>

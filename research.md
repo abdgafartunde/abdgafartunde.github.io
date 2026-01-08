@@ -6,32 +6,32 @@ description: "Computational and Applied Mathematics"
 
 ## Overview
 
-My research focuses on developing computational and machine learning approaches for solving inverse problems in applied mathematics. I work at the intersection of numerical analysis, optimization, and deep learning to create robust algorithms for medical imaging and scientific computing applications.
+My research focuses on developing computational and machine learning approaches for solving inverse problems in applied mathematics. I work at the intersection of numerical analysis, optimization, and deep learning to create robust algorithms for medical imaging and scientific computing applications. My PhD work on electrical impedance tomography (EIT) developed novel variational inversion schemes that improved reconstruction accuracy by 15% through integration of deep neural networks with physics-based models.
 
 <div class="research-areas">
 
 <div class="research-card">
   <div class="research-icon"><i class="fas fa-search-plus"></i></div>
   <h3>Inverse Problems & Regularization</h3>
-  <p>Developing variational inversion frameworks using optimization methods to address ill-posedness and nonlinearity for parameter identification and image reconstruction.</p>
+  <p>Developing variational inversion frameworks using adaptive primal-dual hybrid gradient methods to address ill-posedness and nonlinearity in parameter identification and image reconstruction.</p>
 </div>
 
 <div class="research-card">
   <div class="research-icon"><i class="fas fa-heartbeat"></i></div>
-  <h3>Medical Imaging</h3>
-  <p>Advancing reconstruction techniques for real-time medical imaging including electrical impedance tomography (EIT), inverse scattering, and full-waveform inversion.</p>
+  <h3>Electrical Impedance Tomography</h3>
+  <p>Advancing reconstruction techniques for EIT with partial measurement data, creating data-driven approaches for learning multi-parameter total variation-like regularizers.</p>
 </div>
 
 <div class="research-card">
   <div class="research-icon"><i class="fas fa-robot"></i></div>
   <h3>Scientific Machine Learning</h3>
-  <p>Integrating deep neural networks with physics-based models, including physics-informed neural networks and deep learning for image reconstruction.</p>
+  <p>Integrating deep neural networks with physics-oriented models, including physics-informed neural networks and GPU-accelerated deep learning for real-time imaging.</p>
 </div>
 
 <div class="research-card">
   <div class="research-icon"><i class="fas fa-calculator"></i></div>
   <h3>Numerical Methods</h3>
-  <p>Developing efficient numerical algorithms for differential equations and optimization, including finite element methods and iterative solvers.</p>
+  <p>Developing efficient numerical algorithms for differential equations and optimization, including finite element methods, iterative solvers, and collocation methods.</p>
 </div>
 
 </div>
@@ -41,6 +41,12 @@ My research focuses on developing computational and machine learning approaches 
 ## Publications
 
 ### 2025
+
+<div class="publication">
+  <div class="pub-title">Numerical solution of first and higher order IVPs via a single continuous block method</div>
+  <div class="pub-authors">Garba J., Audu K.J., Mohammed U., and <strong>Tiamiyu A.T.</strong></div>
+  <div class="pub-venue"><em>Scientific Journal of Mehmet Akif Ersoy University</em>, 8(1), 16-34</div>
+</div>
 
 <div class="publication">
   <div class="pub-title">Physics-informed neural networks in iterative form of nonlinear equations for numerical algorithms and simulations of delay differential equations</div>
@@ -102,7 +108,7 @@ My research focuses on developing computational and machine learning approaches 
 
 ---
 
-## Presentations & Service
+## Presentations & Talks
 
 <div class="presentations-grid">
 
@@ -128,36 +134,6 @@ My research focuses on developing computational and machine learning approaches 
   <div class="pres-type">Workshop Co-organizer</div>
   <div class="pres-title">SIAM Student Chapter Workshop</div>
   <div class="pres-venue">CUHK · 2024</div>
-</div>
-
-</div>
-
----
-
-## Teaching
-
-<div class="teaching-section">
-
-<h3>Teaching Philosophy</h3>
-<p>I believe in making mathematics accessible through real-world applications and interactive problem-solving, emphasizing logical thinking and connecting abstract concepts to practical scenarios.</p>
-
-<h3>Experience</h3>
-
-<div class="teaching-item">
-  <div class="teach-role">Teaching Assistant</div>
-  <div class="teach-inst">The Chinese University of Hong Kong · 2021–2025</div>
-  <ul>
-    <li><strong>Calculus for Engineers</strong> (Fall 2022, Fall 2023) — Tutorial sessions for 50+ students</li>
-    <li><strong>Games and Strategic Thinking</strong> (Fall 2024) — Applied game theory to real-world scenarios</li>
-  </ul>
-</div>
-
-<div class="teaching-item">
-  <div class="teach-role">Mathematics Tutor</div>
-  <div class="teach-inst">KUST Staff School, Nigeria · 2019–2020</div>
-  <ul>
-    <li>Taught 100+ high school students with 85% advancement rate</li>
-  </ul>
 </div>
 
 </div>
