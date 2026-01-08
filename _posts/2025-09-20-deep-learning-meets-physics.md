@@ -2,7 +2,7 @@
 layout: post
 title: "When Deep Learning Meets Physics: Lessons from EIT Research"
 description: "Exploring the intersection of machine learning and physics-based modeling in medical imaging"
-date: 2024-10-15
+date: 2025-09-20
 tags: [deep-learning, physics, research, machine-learning, medical-imaging]
 ---
 

@@ -57,25 +57,33 @@ article li {
 }
 
 .social-links {
-    margin-top: 1rem;
+    margin-top: 1.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .social-links a {
     display: inline-flex;
     align-items: center;
-    margin-right: 1rem;
+    margin-right: 1.5rem;
+    padding: 0.4rem 0.8rem;
     color: var(--secondary-color);
     text-decoration: none;
     font-size: 0.95rem;
-    transition: color 0.2s ease;
+    transition: all 0.2s ease;
+    border-radius: 4px;
+    background: rgba(43, 108, 176, 0.08);
 }
 
 .social-links a:hover {
-    color: var(--primary-color);
+    color: #fff;
+    background: var(--secondary-color);
 }
 
 .social-links a i {
-    margin-right: 0.4rem;
+    margin-right: 0.5rem;
+    font-size: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -453,11 +461,83 @@ select:focus {
 .content h2 {
     margin-top: 2rem;
     margin-bottom: 1rem;
-    color: #007bff;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
 }
 
 .content h3 {
     margin-top: 1.5rem;
     margin-bottom: 0.75rem;
-    color: #0056b3;
+    color: var(--secondary-color);
 }
+
+/* Blog post styling */
+.blog-posts {
+    max-width: 800px;
+}
+
+.blog-post-preview {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.blog-post-preview:last-child {
+    border-bottom: none;
+}
+
+.blog-post-preview h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.4rem;
+}
+
+.blog-post-preview h3 a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.blog-post-preview h3 a:hover {
+    color: var(--secondary-color);
+}
+
+.post-meta {
+    color: #718096;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.post-meta i {
+    margin-right: 0.4rem;
+}
+
+.post-tags {
+    margin-left: 1rem;
+}
+
+.post-tags .tag {
+    background: rgba(43, 108, 176, 0.1);
+    color: var(--secondary-color);
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    margin-left: 0.3rem;
+}
+
+.post-description {
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Research page styling */
+.research-section {
+    margin-bottom: 2rem;
+}
+
+.publication-year {
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;

@@ -2,7 +2,7 @@
 layout: post
 title: "Mastering Academic Conferences: A Graduate Student's Guide to Networking"
 description: "Practical tips for making the most of academic conferences as a PhD student"
-date: 2024-11-28
+date: 2025-10-15
 tags: [conferences, networking, academic-career, professional-development]
 ---
 

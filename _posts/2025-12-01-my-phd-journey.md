@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "Reflections on My PhD Journey: From Nigeria to Hong Kong"
-description: "A personal account of pursuing a PhD in Mathematics at CUHK"
-date: 2024-12-15
+description: "A personal account of completing a PhD in Mathematics at CUHK"
+date: 2025-12-01
 tags: [academic-life, phd, personal, international-student]
 ---
 
-As I approach the final stretch of my PhD journey at The Chinese University of Hong Kong, I find myself reflecting on the incredible path that brought me here from Nigeria. It's been a transformative experience filled with challenges, discoveries, and growth that I never could have imagined when I first stepped foot on campus in August 2021.
+Having recently completed my PhD journey at The Chinese University of Hong Kong, I find myself reflecting on the incredible path that brought me here from Nigeria. It has been a transformative experience filled with challenges, discoveries, and growth that I never could have imagined when I first stepped foot on campus in August 2021.
 
 ## The Beginning: From Minna to Hong Kong
 
