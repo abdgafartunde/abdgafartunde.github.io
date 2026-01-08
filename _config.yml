@@ -19,6 +19,11 @@ highlighter: rouge
 permalink: pretty
 timezone: Asia/Shanghai
 
+# Kramdown settings for math
+kramdown:
+  math_engine: null
+  syntax_highlighter: rouge
+
 # Plugins
 plugins:
   - jekyll-feed

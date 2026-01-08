@@ -14,18 +14,18 @@ Consider a general PDE of the form:
 
 $$\mathcal{N}[u](x) = f(x), \quad x \in \Omega$$
 
-with boundary conditions $\mathcal{B}[u](x) = g(x)$ on $\partial\Omega$.
+with boundary conditions $$\mathcal{B}[u](x) = g(x)$$ on $$\partial\Omega$$.
 
-A PINN approximates the solution $u(x)$ by a neural network $u_\theta(x)$ and minimizes:
+A PINN approximates the solution $$u(x)$$ by a neural network $$u\_\theta(x)$$ and minimizes:
 
-$$\mathcal{L}(\theta) = \mathcal{L}_{\text{PDE}} + \lambda_b \mathcal{L}_{\text{BC}} + \lambda_d \mathcal{L}_{\text{data}}$$
+$$\mathcal{L}(\theta) = \mathcal{L}\_{\text{PDE}} + \lambda\_b \mathcal{L}\_{\text{BC}} + \lambda\_d \mathcal{L}\_{\text{data}}$$
 
 where:
-- $\mathcal{L}_{\text{PDE}} = \frac{1}{N_r}\sum_{i=1}^{N_r} |\mathcal{N}[u_\theta](x_i^r) - f(x_i^r)|^2$ enforces the PDE at collocation points
-- $\mathcal{L}_{\text{BC}} = \frac{1}{N_b}\sum_{i=1}^{N_b} |\mathcal{B}[u_\theta](x_i^b) - g(x_i^b)|^2$ enforces boundary conditions
-- $\mathcal{L}_{\text{data}} = \frac{1}{N_d}\sum_{i=1}^{N_d} |u_\theta(x_i^d) - u_i^d|^2$ fits available measurements
+- $$\mathcal{L}\_{\text{PDE}} = \frac{1}{N\_r}\sum\_{i=1}^{N\_r} \lvert\mathcal{N}[u\_\theta](x\_i^r) - f(x\_i^r)\rvert^2$$ enforces the PDE at collocation points
+- $$\mathcal{L}\_{\text{BC}} = \frac{1}{N\_b}\sum\_{i=1}^{N\_b} \lvert\mathcal{B}[u\_\theta](x\_i^b) - g(x\_i^b)\rvert^2$$ enforces boundary conditions
+- $$\mathcal{L}\_{\text{data}} = \frac{1}{N\_d}\sum\_{i=1}^{N\_d} \lvert u\_\theta(x\_i^d) - u\_i^d\rvert^2$$ fits available measurements
 
-The key insight is that derivatives $\partial u_\theta / \partial x$ are computed exactly via automatic differentiation.
+The key insight is that derivatives $$\partial u\_\theta / \partial x$$ are computed exactly via automatic differentiation.
 
 ## Why PINNs Matter
 
@@ -33,20 +33,20 @@ The key insight is that derivatives $\partial u_\theta / \partial x$ are compute
 
 **Physical consistency:** Solutions respect conservation laws and known physics by construction.
 
-**Inverse problems:** Unknown parameters $\lambda$ in $\mathcal{N}_\lambda[u] = f$ can be learned jointly with the solution by including them in the optimization.
+**Inverse problems:** Unknown parameters $$\lambda$$ in $$\mathcal{N}\_\lambda[u] = f$$ can be learned jointly with the solution by including them in the optimization.
 
 ## Application to Inverse Problems
 
-For parameter identification, we seek both $u$ and $\lambda$ such that the PDE residual vanishes while matching observations. The loss becomes:
+For parameter identification, we seek both $$u$$ and $$\lambda$$ such that the PDE residual vanishes while matching observations. The loss becomes:
 
-$$\mathcal{L}(\theta, \lambda) = \mathcal{L}_{\text{data}} + \alpha \mathcal{L}_{\text{PDE}}(\lambda)$$
+$$\mathcal{L}(\theta, \lambda) = \mathcal{L}\_{\text{data}} + \alpha \mathcal{L}\_{\text{PDE}}(\lambda)$$
 
-This framework naturally handles my research in EIT, where we recover conductivity $\sigma$ from boundary measurements.
+This framework naturally handles my research in EIT, where we recover conductivity $$\sigma$$ from boundary measurements.
 
 ## Challenges
 
 - **Spectral bias:** Networks struggle with high-frequency components
-- **Loss balancing:** Choosing $\lambda_b, \lambda_d$ requires care
+- **Loss balancing:** Choosing $$\lambda\_b, \lambda\_d$$ requires care
 - **Training difficulty:** Optimization can be challenging for stiff PDEs
 
 ## Further Reading
