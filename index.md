@@ -48,7 +48,7 @@ Previously, I completed my PhD at The Chinese University of Hong Kong under the 
   <div class="edu-year">2021 – 2025</div>
   <div class="edu-details">
     <em>Dissertation:</em> Novel regularization and deep learning approaches for electrical impedance tomography problems with partial measurement data<br>
-    <em>Advisor:</em> Professor Jun Zou<br>
+    <em>Advisor:</em> <a href="https://www.math.cuhk.edu.hk/~zou/" target="_blank">Professor Jun Zou</a><br>
     <em>Funding:</em> Hong Kong PhD Fellowship Scheme, CUHK Vice-Chancellor's Scholarship
   </div>
 </div>
@@ -109,7 +109,7 @@ Previously, I completed my PhD at The Chinese University of Hong Kong under the 
     <span class="award-source">MTN Nigeria</span>
   </div>
   <div class="award-row">
-    <span class="award-year">2018</span>
+    <span class="award-year">2017</span>
     <span class="award-title">Best Graduating Student in Mathematics</span>
     <span class="award-source">Sir Peter Ojongbede's Prize</span>
   </div>

@@ -29,10 +29,10 @@ description: "Professional and Academic Experience"
 <div class="experience-item">
   <div class="exp-header">
     <div class="exp-title">Doctoral Researcher</div>
-    <div class="exp-period">Aug 2021 – Jul 2025</div>
+    <div class="exp-period">Aug 2021 – Jun 2025</div>
   </div>
   <div class="exp-institution">The Chinese University of Hong Kong</div>
-  <p class="exp-summary">PhD research on variational methods and deep learning for inverse problems. Advised by Prof. Jun Zou.</p>
+  <p class="exp-summary">PhD research on variational methods and deep learning for inverse problems. Advised by <a href="https://www.math.cuhk.edu.hk/~zou/" target="_blank">Prof. Jun Zou</a>.</p>
 </div>
 
 <div class="experience-item">
