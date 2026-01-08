@@ -17,7 +17,7 @@ author:
 markdown: kramdown
 highlighter: rouge
 permalink: pretty
-timezone: Asia/Hong_Kong
+timezone: Asia/Shanghai
 
 # Plugins
 plugins:
@@ -48,11 +48,11 @@ social:
 academic:
   field: "Mathematics"
   specialization: "Computational and Applied Mathematics"
-  department: "Department of Mathematics"
-  university: "The Chinese University of Hong Kong"
-  advisor: "Professor Jun Zou"
-  degree_progress: "PhD (2021-2025)"
-  current_position: "Postdoctoral Researcher at School of Mathematics, Jilin University"
+  department: "School of Mathematics"
+  university: "Jilin University"
+  phd_advisor: "Professor Jun Zou (CUHK)"
+  phd_degree: "PhD in Mathematics, CUHK (2021-2025)"
+  current_position: "Postdoctoral Researcher"
 
 # Collections
 collections:
