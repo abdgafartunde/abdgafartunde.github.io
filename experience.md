@@ -56,14 +56,17 @@ description: "Professional and Academic Experience"
   <div class="teach-role">Teaching Assistant</div>
   <div class="teach-inst">The Chinese University of Hong Kong · 2021–2025</div>
   <ul>
-    <li>Calculus for Engineers (Fall 2022, 2023)</li>
-    <li>Games and Strategic Thinking (Fall 2024)</li>
+    <li>Calculus for Engineers (Fall 2022, 2023) — Led tutorials for 50+ students</li>
+    <li>Games and Strategic Thinking (Fall 2024) — Applied game theory to real-world scenarios</li>
   </ul>
 </div>
 
 <div class="teaching-item">
   <div class="teach-role">Mathematics Tutor</div>
   <div class="teach-inst">KUST Staff School, Nigeria · 2019–2020</div>
+  <ul>
+    <li>Taught 100+ high school students; 85% advanced to higher tracks</li>
+  </ul>
 </div>
 
 </div>

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Research"
-description: "Computational and Applied Mathematics"
+description: "<em>Computational and Applied Mathematics<em>"
 ---
 
 ## Overview
