@@ -1,85 +1,55 @@
 ---
 layout: post
 title: "A Beginner's Guide to Physics-Informed Neural Networks"
-description: "Understanding PINNs and their applications in scientific computing"
+description: "Understanding the mathematical foundations of PINNs"
 date: 2025-11-05
 tags: [deep-learning, physics, tutorial, PINNs]
 ---
 
-Physics-Informed Neural Networks (PINNs) have emerged as a powerful paradigm that bridges traditional scientific computing with modern deep learning. In this post, I'll provide an accessible introduction to PINNs, explain why they matter, and discuss their applications.
+Physics-Informed Neural Networks (PINNs) embed physical laws directly into the learning process, offering a principled approach to solving differential equations with neural networks.
 
-## What Are Physics-Informed Neural Networks?
+## Mathematical Formulation
 
-At their core, PINNs are neural networks that incorporate physical laws—typically expressed as differential equations—directly into the training process. Instead of relying solely on data, PINNs use the governing equations as additional constraints.
+Consider a general PDE of the form:
 
-The key insight is elegant: we can embed physics into the loss function. A typical PINN loss consists of:
+$$\mathcal{N}[u](x) = f(x), \quad x \in \Omega$$
 
-$$\mathcal{L} = \mathcal{L}_{\text{data}} + \lambda \mathcal{L}_{\text{physics}}$$
+with boundary conditions $\mathcal{B}[u](x) = g(x)$ on $\partial\Omega$.
+
+A PINN approximates the solution $u(x)$ by a neural network $u_\theta(x)$ and minimizes:
+
+$$\mathcal{L}(\theta) = \mathcal{L}_{\text{PDE}} + \lambda_b \mathcal{L}_{\text{BC}} + \lambda_d \mathcal{L}_{\text{data}}$$
 
 where:
-- $\mathcal{L}_{\text{data}}$ measures how well the network fits observed data
-- $\mathcal{L}_{\text{physics}}$ penalizes violations of the physical equations
-- $\lambda$ balances these two objectives
+- $\mathcal{L}_{\text{PDE}} = \frac{1}{N_r}\sum_{i=1}^{N_r} |\mathcal{N}[u_\theta](x_i^r) - f(x_i^r)|^2$ enforces the PDE at collocation points
+- $\mathcal{L}_{\text{BC}} = \frac{1}{N_b}\sum_{i=1}^{N_b} |\mathcal{B}[u_\theta](x_i^b) - g(x_i^b)|^2$ enforces boundary conditions
+- $\mathcal{L}_{\text{data}} = \frac{1}{N_d}\sum_{i=1}^{N_d} |u_\theta(x_i^d) - u_i^d|^2$ fits available measurements
+
+The key insight is that derivatives $\partial u_\theta / \partial x$ are computed exactly via automatic differentiation.
 
 ## Why PINNs Matter
 
-**1. Data Efficiency**  
-Traditional deep learning requires massive datasets. PINNs can work with sparse data because the physics provides additional information.
+**Data efficiency:** The physics constraint acts as a strong regularizer, reducing the need for large datasets.
 
-**2. Physical Consistency**  
-Solutions respect conservation laws and other physical constraints, making them more reliable for scientific applications.
+**Physical consistency:** Solutions respect conservation laws and known physics by construction.
 
-**3. Inverse Problems**  
-PINNs naturally handle inverse problems where we want to infer unknown parameters from observations—a central theme in my research.
+**Inverse problems:** Unknown parameters $\lambda$ in $\mathcal{N}_\lambda[u] = f$ can be learned jointly with the solution by including them in the optimization.
 
-## A Simple Example
+## Application to Inverse Problems
 
-Consider solving the heat equation:
+For parameter identification, we seek both $u$ and $\lambda$ such that the PDE residual vanishes while matching observations. The loss becomes:
 
-$$\frac{\partial u}{\partial t} = \alpha \frac{\partial^2 u}{\partial x^2}$$
+$$\mathcal{L}(\theta, \lambda) = \mathcal{L}_{\text{data}} + \alpha \mathcal{L}_{\text{PDE}}(\lambda)$$
 
-A PINN would:
-1. Define a neural network $u_\theta(x, t)$ to approximate the solution
-2. Compute derivatives using automatic differentiation
-3. Minimize the residual of the PDE across the domain
+This framework naturally handles my research in EIT, where we recover conductivity $\sigma$ from boundary measurements.
 
-```python
-# Conceptual PyTorch pseudocode
-def physics_loss(model, x, t):
-    u = model(x, t)
-    u_t = grad(u, t)
-    u_xx = grad(grad(u, x), x)
-    residual = u_t - alpha * u_xx
-    return torch.mean(residual**2)
-```
+## Challenges
 
-## Applications in My Research
+- **Spectral bias:** Networks struggle with high-frequency components
+- **Loss balancing:** Choosing $\lambda_b, \lambda_d$ requires care
+- **Training difficulty:** Optimization can be challenging for stiff PDEs
 
-In electrical impedance tomography (EIT), we face a challenging inverse problem: reconstructing internal conductivity from boundary measurements. PINNs offer a promising approach because they can:
+## Further Reading
 
-- Enforce the underlying PDE governing current flow
-- Handle incomplete measurement scenarios
-- Learn regularization strategies from data
-
-## Challenges and Limitations
-
-PINNs are not without challenges:
-
-- **Training Difficulty:** Balancing data and physics losses can be tricky
-- **Spectral Bias:** Networks may struggle with high-frequency components
-- **Computational Cost:** Many collocation points may be needed for complex domains
-
-## Getting Started
-
-If you want to explore PINNs, I recommend:
-
-1. **DeepXDE** - A library specifically designed for PINNs
-2. **PyTorch/JAX** - For building custom implementations
-3. **Original Paper** - Raissi et al. (2019), "Physics-Informed Neural Networks"
-
-## Conclusion
-
-PINNs represent an exciting convergence of scientific computing and machine learning. They offer a principled way to incorporate domain knowledge into neural networks, making them particularly valuable for problems where data is scarce but physics is well-understood.
-
-As the field matures, I expect PINNs and related methods to become standard tools in computational science. Stay tuned for more posts exploring specific applications and advanced techniques!
-
+- Raissi, Perdikaris, Karniadakis (2019): *Physics-informed neural networks*
+- Karniadakis et al. (2021): *Physics-informed machine learning*, Nature Reviews Physics

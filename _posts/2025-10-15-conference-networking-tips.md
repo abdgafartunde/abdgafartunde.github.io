@@ -42,7 +42,7 @@ Academic conferences can be intimidating, especially for first-time attendees. A
 
 ## What Success Looks Like
 
-- A casual conversation at SIAM led to my visiting position in Austria
+- A casual conversation at conferences lead to various collaborations
 - A poster session interaction resulted in a collaboration and submitted paper
 - An early-career mixer introduced me to my current workshop co-organizers
 

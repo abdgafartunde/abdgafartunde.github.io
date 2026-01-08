@@ -2,7 +2,7 @@
 layout: post
 title: "Starting My Postdoc Journey: New Beginnings at Jilin University"
 description: "Reflections on transitioning from PhD to postdoctoral research in China"
-date: 2026-01-10
+date: 2026-01-09
 tags: [postdoc, academic-career, china]
 ---
 
