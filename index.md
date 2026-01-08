@@ -7,7 +7,7 @@ description: ""
 <div class="home-header">
   <img src="/assets/images/profile_pic.jpeg" alt="Abd'gafar Tunde Tiamiyu" class="profile-photo">
   <div class="home-intro">
-    <h1>Abd'gafar Tunde Tiamiyu</h1>
+    <h1>Abd'gafar Tunde TIAMIYU</h1>
     <p class="title">Postdoctoral Researcher</p>
     <p class="tagline">Bridging mathematics and scientific computing for real-world applications</p>
     <p class="affiliation">
