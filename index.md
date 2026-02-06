@@ -15,7 +15,7 @@ description: ""
       <i class="fas fa-map-marker-alt"></i> Changchun, Jilin, China
     </p>
     <div class="social-links">
-      <a href="mailto:abdgafartunde@yahoo.com" title="Email"><i class="fas fa-envelope"></i> Email</a>
+      <a href="mailto:tiamiyuabdgafar@jlu.edu.cn" title="Email"><i class="fas fa-envelope"></i> Email</a>
       <a href="https://scholar.google.com/citations?user=oZ3egAIAAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i> Scholar</a>
       <a href="https://github.com/abdgafartunde" target="_blank" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
       <a href="https://orcid.org/0000-0003-1641-7196" target="_blank" title="ORCID"><i class="fab fa-orcid"></i> ORCID</a>

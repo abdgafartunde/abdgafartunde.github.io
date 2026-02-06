@@ -1,67 +1,61 @@
 ---
 layout: post
-title: "The Great Deskilling: AI, Cognitive Scarcity, and Deep Thinking"
-description: "We solved cognitive scarcity with AI tools — and accidentally made deep thinking rare. Reflections on how to keep the skill of struggling alive."
+title: "We Fixed Cognitive Scarcity. Now What?"
+description: "Some scattered thoughts on AI tools, the disappearing art of struggling with ideas, and why I'm a little worried."
 date: 2026-02-06
-tags: [AI, Academia, Research, Deep Thinking]
+tags: [AI, Academia, Reflections]
 ---
 
-I've been thinking about this for months, and the more I watch PhD students, postdocs, and even senior colleagues interact with the new generation of AI tools, the clearer it becomes: we are living through one of the purest examples in history of a solution that births a brand-new, subtler problem.
+This has been bothering me for a while now.
 
-We spent centuries complaining that good thinking and good writing were too slow, too hard, too exclusive. Not enough people had the time, the training, or the raw horsepower to produce rigorous proofs, beautiful expositions, or genuinely novel analyses. Then, almost overnight, the large models arrived and removed every bottleneck at once.
+I keep watching people around me—PhD students, postdocs, professors—use LLMs. And I keep noticing something that doesn't sit right.
 
-Need a literature review? Here are 60 papers summarised in perfect academic English.  
-Stuck on a proof? Ask for a hint, an outline, or the whole thing in clean LaTeX.  
-Want a grant proposal that reads like it was written by a native English-speaking professor with 20 years of experience? Ten seconds.
+For centuries we complained that thinking deeply was too slow. Writing well was too hard. Not enough people had the training or the bandwidth to do rigorous work. Then ChatGPT showed up, and suddenly all those bottlenecks vanished.
 
-**Problem solved. Cognitive scarcity is dead.**
+Literature review? Done in minutes.  
+Stuck on a proof? Ask for hints.  
+Grant proposal in polished academic English? Just paste your notes.
 
-Except… something strange is happening.
+Okay. Great. Problem solved, right?
 
-I now see brilliant applied math PhD students who can generate a flawless 25-page survey on fractional PDEs in an afternoon, yet freeze when you take the model away and ask them to summarise three papers by hand. I see postdocs who have published four first-author papers in the last year but struggle to explain, without looking at their own LaTeX, why the adjoint method works, or why the homotopy method actually converges faster than fixed-point iteration in their specific case. I see referees complaining that the new submissions from young researchers are "too smooth" — suspiciously well-written, suspiciously average in insight.
+Here's what I'm actually seeing:
 
-We didn't just augment human intelligence. We replaced large parts of the slow, painful process that used to forge critical thinkers.
+A brilliant student in my department can produce a 25-page survey on fractional PDEs in a single afternoon. Ask him to summarize three papers *by hand* without any tools, and he freezes. Another postdoc published four papers last year but couldn't explain to me, off the top of his head, why the adjoint method actually works in his setup. He'd have to look at his own LaTeX.
 
-Let me be clear: I use these tools every day. I love them. They let me explore ideas ten times faster than five years ago. But love is not the same as blindness.
+Reviewers are starting to notice too. The manuscripts coming through are "too smooth"—clean prose, correct math, but weirdly generic. Like the edges got sanded off somewhere.
 
-## The Atrophied Muscle
+I don't think we augmented intelligence. I think we outsourced the struggle. And the struggle might have been the point.
 
-What we have done is the intellectual equivalent of inventing the car and then noticing, twenty years later, that hardly anyone under 30 knows how to walk long distances anymore. The muscle simply atrophied because it was no longer needed for daily survival.
+## What We Lost
 
-The old muscle was built through years of:
-- Staring at a blank page until it hurt  
-- Re-reading the same paragraph ten times to find the flaw  
-- Copying proofs by hand to internalise them  
-- Writing terrible first drafts and slowly chiselling them into something defensible  
-- Failing, again and again, in seminars and reading groups
+Think about how you actually learned to think:
 
-Those experiences were miserable, but they were also the gym where independent thinking was built.
+Staring at a blank page for hours. Reading the same paragraph eight times trying to find what's wrong. Copying proofs by hand because nothing else made them stick. Writing a terrible first draft, hating it, and slowly beating it into shape over weeks.
 
-**Remove the pain and you often remove the gain.**
+None of that was fun. But it was the gym.
 
-## A Phase Transition
+Now there's no reason to do any of it. Why stare at a blank page when you can ask for an outline? Why struggle with your exposition when the machine writes better English than you do?
 
-This is not an anti-AI rant. It is an observation of a phase transition. We have moved from a world where depth was limited by access to a world where depth is limited by deliberate resistance. The new scarce resource is not computational power or information — it is the ability and the will to think without a safety net.
+The mental muscle atrophies when you stop using it. We invented the car and now we've forgotten how to walk.
 
-The best young mathematicians I know now have a new, almost ascetic discipline: they force themselves to solve problems on paper first, to write the first draft without autocomplete, to read papers without asking Claude for a summary. They treat the models the way rock climbers treat bolts — useful protection, but you don't clip in until you absolutely have to. The goal is still to free-solo the hard parts when possible, because that is what keeps the skill alive.
+## What Actually Works
 
-And paradoxically, these are exactly the people who end up using AI the most effectively — because they understand what the machine is actually doing, where it is likely to hallucinate, and how to steer it toward genuine novelty instead of polished mediocrity.
+The sharpest young researchers I know have figured something out. They do the hard parts first—on paper, no autocomplete, no "help me structure this." They only reach for the tools *after* they've wrestled with the problem themselves.
 
-## The New Scarcity
+One friend described it like rock climbing: the bolts are there for protection, but you don't clip in unless you have to. Free-solo when you can, because that's what keeps you sharp.
 
-So yes, we solved the ancient problem of cognitive scarcity.  
-And in doing so we created a new, quieter scarcity: **the scarcity of humans who can still think deeply when the model is turned off.**
+These same people end up being the best at using AI, because they know where it breaks. They know what a hallucination smells like. They know how to push the model toward something real instead of something that just *sounds* real.
 
-If that doesn't scare you a little, it should.
+## I Don't Know What to Do About This
 
-Because in mathematics, more than almost anywhere else, the thing that separates the good from the great has never been speed of writing or breadth of literature coverage. It has always been the ability to sit alone with a problem long enough for something truly new to emerge.
+I'm not anti-AI. I use these tools constantly. They've made me faster.
 
-I'm not sure we have figured out yet how to keep that alive in a world where the easiest path is to never be alone with a problem again.
+But speed was never the hard part of math. The hard part was sitting with a problem long enough that something genuinely new could emerge. And now the default path is to never sit alone with a problem at all.
+
+I don't have answers. I just know that the prize used to go to whoever could think the deepest, and now I'm not sure that's true anymore. Maybe it goes to whoever still *chooses* to think deeply, even when they don't have to.
 
 ---
 
-*What do you think — are we training the last generation of deep thinkers who still know how to struggle, or are we simply forcing the struggle to move somewhere new, somewhere harder to see?*
+Is that sustainable? Can you train deep thinkers in a world where shallow thinking gets you 80% of the way there?
 
-Either way, the game has changed forever.
-
-And the new prize goes not to the smartest, not to the fastest, but to those disciplined enough to keep parts of their mind permanently offline.
+I honestly don't know. But it keeps me up at night.

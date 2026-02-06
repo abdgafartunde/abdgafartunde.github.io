@@ -1,0 +1,255 @@
+%% Academic CV - Clean Article-Based Style
+%% Abd'gafar Tunde Tiamiyu, PhD
+\documentclass[11pt,a4paper]{article}
+
+% Packages
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{fontawesome5}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+
+% Colors
+\definecolor{navyblue}{RGB}{0,51,102}
+\definecolor{linkblue}{RGB}{0,102,204}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=linkblue,
+    urlcolor=linkblue,
+    pdfauthor={Abd'gafar Tunde Tiamiyu},
+    pdftitle={CV - Abd'gafar Tunde Tiamiyu}
+}
+
+% Section formatting
+\titleformat{\section}
+    {\large\bfseries\color{navyblue}\scshape}
+    {}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+
+% Subsection formatting
+\titleformat{\subsection}
+    {\normalsize\bfseries}
+    {}{0em}{}
+\titlespacing*{\subsection}{0pt}{8pt}{4pt}
+
+% Custom commands
+\newcommand{\cventry}[4]{%
+    \noindent\textbf{#1}\hfill #2\\
+    \textit{#3}\hfill\textit{#4}\par\vspace{2pt}%
+}
+
+\newcommand{\publication}[4]{%
+    \item #1, ``#2,'' \textit{#3}, #4.%
+}
+
+% Header
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\thepage}
+
+\begin{document}
+
+%----------------------------------------------------------------------
+% HEADER
+%----------------------------------------------------------------------
+\begin{center}
+    {\LARGE\bfseries Abd'gafar Tunde Tiamiyu, PhD}\\[6pt]
+    {\large Postdoctoral Researcher in Computational and Applied Mathematics}\\[8pt]
+    \faEnvelope\ \href{mailto:tiamiyuabdgafar@jlu.edu.cn}{tiamiyuabdgafar@jlu.edu.cn} \quad
+    \faEnvelope\ \href{mailto:abdgafartunde@yahoo.com}{abdgafartunde@yahoo.com}\\[2pt]
+    \faGlobe\ \href{https://abdgafartunde.github.io}{abdgafartunde.github.io} \quad
+    \faOrcid\ \href{https://orcid.org/0000-0003-1641-7196}{0000-0003-1641-7196}\\[2pt]
+    \faLinkedin\ \href{https://linkedin.com/in/abdgafartunde}{abdgafartunde} \quad
+    \faGithub\ \href{https://github.com/abdgafartunde}{abdgafartunde}
+\end{center}
+
+%----------------------------------------------------------------------
+\section{Professional Summary}
+%----------------------------------------------------------------------
+
+Postdoctoral researcher with expertise in inverse problems, numerical analysis, computational mathematics, and scientific machine learning. PhD from The Chinese University of Hong Kong with dissertation on novel regularization and deep learning approaches for Electrical Impedance Tomography (EIT). Developed variational inversion schemes, primal-dual algorithms, and data-driven regularizers. Author of multiple peer-reviewed publications with experience in international collaboration. Proficient in Python, MATLAB, PyTorch, and TensorFlow.
+
+%----------------------------------------------------------------------
+\section{Research Interests}
+%----------------------------------------------------------------------
+
+Inverse problems and regularization theory \textbullet\ 
+Scientific machine learning \textbullet\ 
+Deep learning for computational imaging \textbullet\ 
+Numerical optimization \textbullet\ 
+Partial differential equations
+
+%----------------------------------------------------------------------
+\section{Education}
+%----------------------------------------------------------------------
+
+\cventry{PhD in Mathematics}{Aug 2021 -- Jul 2025}{The Chinese University of Hong Kong, Department of Mathematics}{Hong Kong}
+\begin{itemize}[nosep, leftmargin=1.5em]
+    \item \textit{Dissertation:} Novel regularization and deep learning approaches for electrical impedance tomography (EIT) problems with partial measurement data
+    \item \textit{Advisor:} Professor Jun Zou (Fellow of SIAM and AMS)
+    \item \textit{Funding:} Hong Kong PhD Fellowship Scheme (RGC)
+\end{itemize}
+\vspace{6pt}
+
+\cventry{B.Tech in Mathematics (First Class Honours)}{Oct 2012 -- Nov 2017}{Federal University of Technology, Department of Mathematics}{Minna, Nigeria}
+\begin{itemize}[nosep, leftmargin=1.5em]
+    \item MTN Foundation Scholarship for Academic Excellence
+\end{itemize}
+
+%----------------------------------------------------------------------
+\section{Research Experience}
+%----------------------------------------------------------------------
+
+\cventry{Postdoctoral Researcher}{Jan 2026 -- Present}{Jilin University, School of Mathematics}{Changchun, China}
+\begin{itemize}[nosep, leftmargin=1.5em]
+    \item Research on inverse problems, regularization methods, and scientific machine learning
+    \item Developing optimization techniques for variational and convex problems with applications in SciML
+    \item Deep learning approaches for computational imaging
+\end{itemize}
+\vspace{6pt}
+
+\cventry{Doctoral Researcher}{Aug 2021 -- Jul 2025}{The Chinese University of Hong Kong}{Hong Kong}
+\begin{itemize}[nosep, leftmargin=1.5em]
+    \item Developed novel variational inversion schemes using adaptive primal-dual hybrid gradient methods, mitigating ill-posedness and nonlinearity in EIT reconstructions
+    \item Integrated deep neural networks with physics-oriented models, improving accuracy by 15\% in noisy and incomplete measurement datasets
+    \item Devised data-driven approaches for learning multi-parameter total variation-like regularizers via convex optimization
+    \item Conducted numerical experiments on synthetic and experimental data, demonstrating robustness to high noise levels and partial measurements
+\end{itemize}
+\vspace{6pt}
+
+\cventry{Visiting Researcher}{Oct 2023 -- Jun 2024}{University of Graz}{Graz, Austria}
+\begin{itemize}[nosep, leftmargin=1.5em]
+    \item Developed primal-dual algorithms with learned regularizers for EIT, improving reconstruction accuracy by 5\% over traditional methods
+    \item Implemented GPU-accelerated TensorFlow models for real-time imaging
+    \item Collaborated with Professor Kristian Bredies on algorithm development for EIT
+\end{itemize}
+\vspace{6pt}
+
+\cventry{Research Assistant}{Jun 2018 -- Apr 2019}{Kano University of Science and Technology}{Kano, Nigeria}
+\begin{itemize}[nosep, leftmargin=1.5em]
+    \item Collaborated on numerical solutions for differential and integral equations
+    \item Conducted numerical experiments using MATLAB and Maple
+\end{itemize}
+
+%----------------------------------------------------------------------
+\section{Selected Publications}
+%----------------------------------------------------------------------
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=3pt]
+    \publication{He J. and \textbf{Tiamiyu A.T.}}{Physics-informed neural networks in iterative form of nonlinear equations for numerical algorithms and simulations of delay differential equations}{Physica A: Statistical Mechanics and its Applications}{2025}
+    
+    \publication{Ahmad S. and \textbf{Tiamiyu A.T.}}{Numerical simulation of time-dependent non-Newtonian compressible fluid flow in porous media: finite element method and time integration approach}{International Communications in Heat and Mass Transfer}{2024}
+    
+    \publication{Audu K.J., \textbf{Tiamiyu A.T.}, Akpabio J.N., Ahmad H., and Olabiyi M.A.}{Numerical assessment of some semi-analytical techniques for solving a fractional-order leptospirosis model}{Malaysian Journal of Science}{2024}
+    
+    \publication{Yusuf A., Adekunle T.S., \textbf{Tiamiyu A.T.}, and Aliyu A.M.}{Double diffusive nonlinear convective MHD unsteady slip-flow regime in a rectangular channel}{WSEAS Transactions on Fluid Mechanics}{2023}
+    
+    \publication{\textbf{Tiamiyu A.T.}, Falade K.I., and Abubakar A.S.}{Computational assessment of external force acting on beam elastic foundation}{Pamukkale University Journal of Engineering Sciences}{2022}
+    
+    \publication{\textbf{Tiamiyu A.T.}, Cole A.T., and Audu K.J.}{A backward differentiation formula for third-order initial or boundary value problems using collocation method}{Iranian Journal of Optimization}{2021}
+    
+    \publication{\textbf{Tiamiyu A.T.}, Falade K.I., Rauf Q.O., and Akande S.A.}{A numerical technique for direct solution of special fourth-order ordinary differential equation via hybrid linear multistep method}{Cankaya University Journal of Science and Engineering}{2021}
+    
+    \publication{Falade K.I., Baoku I.G., \textbf{Tiamiyu A.T.}, and Isyaku I.}{On numerical computational solution of seventh order boundary value problems}{Journal of Nigerian Mathematical Society}{2020}
+\end{enumerate}
+
+\vspace{4pt}
+\noindent\textit{Full publication list (27 papers): \href{https://www.researchgate.net/profile/Abdgafar-Tiamiyu}{ResearchGate} $\vert$ 97+ citations}
+
+%----------------------------------------------------------------------
+\section{Awards and Grants}
+%----------------------------------------------------------------------
+
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+    \item \textbf{Ernst Mach Grant}, OeAD Austria (Oct 2023 -- Jun 2024)\\
+    Research fellowship for visiting researcher position at University of Graz
+    
+    \item \textbf{Hong Kong PhD Fellowship Scheme}, Research Grants Council (Aug 2021 -- Jul 2024)\\
+    Prestigious competitive fellowship awarded to top PhD applicants in Hong Kong
+    
+    \item \textbf{Vice-Chancellor's Scholarship}, The Chinese University of Hong Kong (Aug 2021 -- Jul 2025)\\
+    Merit-based scholarship for outstanding doctoral students
+    
+    \item \textbf{MTN Foundation Scholarship}, Nigeria (2014 -- 2017)\\
+    National scholarship for academic excellence in science and technology
+    
+    \item \textbf{Sir Peter Ojongbede's Prize}, Federal University of Technology, Minna (2017)\\
+    Best graduating student in the Department of Mathematics, 2016/2017 academic session
+    
+    \item \textbf{Medal Award}, National Mathematics Competition for University Students (NAMCUS), 2017\\
+    Awarded by the National Mathematical Centre, Abuja, Nigeria
+\end{itemize}
+
+%----------------------------------------------------------------------
+\section{Teaching Experience}
+%----------------------------------------------------------------------
+
+\cventry{Teaching Assistant}{Aug 2021 -- Jul 2025}{The Chinese University of Hong Kong}{Hong Kong}
+\begin{itemize}[nosep, leftmargin=1.5em]
+    \item Calculus for Engineers (Fall 2022, 2023): Led weekly tutorials for 50+ students
+    \item Games and Strategic Thinking (Fall 2024): Tutorial instruction and exam design
+    \item Designed assignments incorporating real-world applications
+\end{itemize}
+\vspace{6pt}
+
+\cventry{Mathematics Tutor}{May 2019 -- Dec 2020}{KUST Staff School}{Kano, Nigeria}
+\begin{itemize}[nosep, leftmargin=1.5em]
+    \item Taught mathematics to 100+ high school students
+    \item 85\% of students advanced to higher-level tracks
+\end{itemize}
+
+%----------------------------------------------------------------------
+\section{Technical Skills}
+%----------------------------------------------------------------------
+
+\begin{tabular}{@{}ll@{}}
+\textbf{Programming:} & Python, MATLAB, C++, Git, VS Code \\
+\textbf{Deep Learning:} & PyTorch, TensorFlow \\
+\textbf{Scientific Computing:} & NumPy, SciPy, Pandas, OpenCV, scikit-image \\
+\textbf{Other:} & \LaTeX, data analysis, academic writing, project management
+\end{tabular}
+
+%----------------------------------------------------------------------
+\section{Professional Service}
+%----------------------------------------------------------------------
+
+\textbf{Memberships:}
+\begin{itemize}[nosep, leftmargin=1.5em]
+    \item Society for Industrial and Applied Mathematics (SIAM), 2021 -- Present
+    \item Inverse Problems International Association (IPIA), 2022 -- Present
+\end{itemize}
+
+\noindent\textbf{Leadership:}
+\begin{itemize}[nosep, leftmargin=1.5em]
+    \item Vice President, SIAM Student Chapter, CUHK (2024 -- 2025)
+    \item Co-organizer, Minisymposium at HK-SIAM Conference (2025): 30+ researchers from 10 institutions
+    \item Secretary, SIAM Student Chapter, CUHK (2023 -- 2024)
+    \item Co-organizer, SIAM Student Chapter Workshop, CUHK (2024)
+\end{itemize}
+
+%----------------------------------------------------------------------
+\section{References}
+%----------------------------------------------------------------------
+
+\begin{tabular}{@{}p{0.48\textwidth}p{0.48\textwidth}@{}}
+\textbf{Professor Jun Zou} & \textbf{Professor Bangti Jin} \\
+Fellow of SIAM and AMS & Global STEM Scholar \\
+Chairman, Choh-Ming Li Professor & Department of Mathematics \\
+Department of Mathematics, CUHK & The Chinese University of Hong Kong \\
+\href{mailto:zou@math.cuhk.edu.hk}{zou@math.cuhk.edu.hk} & \href{mailto:b.jin@cuhk.edu.hk}{b.jin@cuhk.edu.hk} \\[12pt]
+
+\textbf{Professor Kristian Bredies} & \\
+Department of Mathematics and & \\
+Scientific Computing & \\
+University of Graz, Austria & \\
+\href{mailto:kristian.bredies@uni-graz.at}{kristian.bredies@uni-graz.at} &
+\end{tabular}
+
+\end{document}
