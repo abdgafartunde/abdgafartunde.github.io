@@ -723,25 +723,22 @@ img {
 
 .publication {
     display: flex;
-    gap: 0.75rem;
-    padding: 1.1rem 1.25rem;
-    margin-bottom: 0.75rem;
-    background: var(--surface-alt);
-    border-radius: var(--radius-sm);
-    border-left: 3px solid var(--accent);
-    transition: box-shadow var(--transition);
+    gap: 0.85rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--gray-100);
 }
 
-.publication:hover {
-    box-shadow: var(--shadow-sm);
+.publication:last-child {
+    border-bottom: none;
 }
 
 .pub-number {
     color: var(--accent);
     font-weight: 700;
-    font-size: 0.85rem;
-    min-width: 26px;
+    font-size: 0.82rem;
+    min-width: 28px;
     flex-shrink: 0;
+    padding-top: 0.1rem;
 }
 
 .pub-content {
@@ -751,20 +748,26 @@ img {
 .pub-title {
     font-weight: 600;
     color: var(--heading);
-    font-size: 0.95rem;
-    margin-bottom: 0.3rem;
+    font-size: 0.93rem;
+    margin-bottom: 0.25rem;
     line-height: 1.5;
 }
 
 .pub-authors {
-    color: var(--text);
-    font-size: 0.85rem;
-    margin-bottom: 0.2rem;
+    color: var(--text-secondary);
+    font-size: 0.84rem;
+    margin-bottom: 0.15rem;
+    line-height: 1.5;
+}
+
+.pub-authors strong {
+    color: var(--heading);
 }
 
 .pub-venue {
     color: var(--text-muted);
-    font-size: 0.85rem;
+    font-size: 0.82rem;
+    font-style: normal;
 }
 
 /* Presentations */

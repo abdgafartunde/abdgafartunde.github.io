@@ -114,6 +114,6 @@ If we are designing a system that allows the next generation to skip that proces
 
 This is a question that stays with me — late at night, when the tools are closed and I sit alone with a notebook and a pen, working through a calculation by hand because I want to make sure I still can.
 
-I do not have the answer. But I believe the question is worth sitting with, worth taking seriously, worth letting discomfort.
+I do not have the answer. But I believe the question is worth sitting with, worth taking seriously, worth letting the discomfort linger.
 
 The hard problems have always been solved by people who were willing to think longer than felt comfortable. If we are building a world that makes that willingness unnecessary, we should at least be clear-eyed about the trade.
