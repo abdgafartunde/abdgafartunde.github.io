@@ -4,11 +4,14 @@ title: "Research"
 description: "Computational and Applied Mathematics"
 ---
 
-## Overview
+<section class="research-section">
+<h2 class="section-heading"><i class="fas fa-microscope"></i> Overview</h2>
 
-I work on inverse problems: mathematical problems where you observe indirect measurements and want to reconstruct the quantity that produced them. These problems arise naturally in medical imaging, non-destructive testing, and geophysics, and they are almost always ill-posed — small measurement errors can cause large reconstruction errors if not handled carefully.
+<div class="about-text">
+<p>I work on inverse problems: mathematical problems where you observe indirect measurements and want to reconstruct the quantity that produced them. These problems arise naturally in medical imaging, non-destructive testing, and geophysics, and they are almost always ill-posed — small measurement errors can cause large reconstruction errors if not handled carefully.</p>
 
-My approach combines variational methods and regularization theory with modern computational tools, including deep learning. During my PhD, I developed novel inversion frameworks for electrical impedance tomography with partial boundary data, integrating physics-based models with learned regularizers. My current postdoctoral work extends these ideas to broader classes of nonlinear inverse problems and explores the theoretical foundations of scientific machine learning.
+<p>My approach combines variational methods and regularization theory with modern computational tools, including deep learning. During my PhD, I developed novel inversion frameworks for electrical impedance tomography with partial boundary data, integrating physics-based models with learned regularizers. My current postdoctoral work extends these ideas to broader classes of nonlinear inverse problems and explores the theoretical foundations of scientific machine learning.</p>
+</div>
 
 <div class="research-areas">
 
@@ -37,10 +40,10 @@ My approach combines variational methods and regularization theory with modern c
 </div>
 
 </div>
+</section>
 
----
-
-## Publications
+<section class="research-section">
+<h2 class="section-heading"><i class="fas fa-book"></i> Publications</h2>
 
 <div class="publications-list">
 
@@ -126,10 +129,10 @@ My approach combines variational methods and regularization theory with modern c
 </div>
 
 </div>
+</section>
 
----
-
-## Presentations & Talks
+<section class="research-section">
+<h2 class="section-heading"><i class="fas fa-microphone-alt"></i> Presentations & Talks</h2>
 
 <div class="presentations-grid">
 
@@ -158,3 +161,4 @@ My approach combines variational methods and regularization theory with modern c
 </div>
 
 </div>
+</section>
