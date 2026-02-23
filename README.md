@@ -1,164 +1,82 @@
 # Abd'gafar Tunde Tiamiyu - Academic Website
 
-This is the source code for my personal academic website, built with Jekyll and hosted on GitHub Pages.
+Personal academic website built with Jekyll and hosted on [GitHub Pages](https://abdgafartunde.github.io).
 
-## 🎓 About
+## About
 
-PhD student in Mathematics at The Chinese University of Hong Kong, specializing in:
-- Inverse problems and regularization
-- Numerical optimization  
-- Scientific machine learning
-- Deep learning for computational imaging
-- Partial differential equations
+Postdoctoral Researcher in Computational and Applied Mathematics at Jilin University, specialising in:
+- Inverse problems and regularisation theory
+- Electrical impedance tomography
+- Scientific machine learning and physics-informed neural networks
+- Numerical methods for PDEs
 
-## 🚀 Quick Start
+## Site Structure
+
+```
+_config.yml          # Site configuration
+index.md             # Home page (profile, about, research interests, news)
+research.md          # Research overview and publications
+experience.md        # Education, positions, teaching, awards, skills
+blog.md              # Blog listing page
+_posts/              # Blog posts (Markdown with MathJax)
+_layouts/            # HTML templates (default, page, post)
+_includes/           # Reusable components (head)
+assets/
+  css/main.css       # Custom stylesheet
+  images/            # Profile photo and other images
+```
+
+## Local Development
 
 ### Prerequisites
-- Ruby (2.7.0 or higher)
-- Bundler gem
+- Ruby 2.7+ and Bundler
 - Git
 
-### Local Development
+### Setup
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/abdgafartunde/abdgafartunde.github.io.git
-   cd abdgafartunde.github.io
-   ```
-
-2. **Install dependencies**
-   ```bash
-   bundle install
-   ```
-
-3. **Run the development server**
-   ```bash
-   bundle exec jekyll serve
-   ```
-
-4. **Open your browser**
-   Navigate to `http://localhost:4000`
-
-### Making Changes
-
-1. Edit content in Markdown files
-2. Add new posts in `_posts/` directory
-3. Modify configuration in `_config.yml`
-4. Test locally before pushing to GitHub
-
-## 📁 Site Structure
-
-- **Home Page**: Introduction and overview
-- **About Me**: Personal information and contact details
-- **Research**: Current projects and interests
-- **Publications**: List of publications with links
-- **Teaching**: Courses taught and teaching philosophy
-- **Presentations**: List of presentations
-- **CV**: Downloadable CV with detailed information
-- **Contact**: Social links and contact form
-
-## Installation
-
-Just fork this [repository](https://github.com/niklasbuschmann/contrast) and adjust the `_config.yml` to use with [Github Pages](https://pages.github.com/) and your page is done.
-
-## Features
-
- - supports dark mode on macOS Mojave
- - optional sidebar
- - MathJax support
- - no external ressources
- - included archive page
- - supports pagination
- - feed generation
- - responsive
- - syntax highlighting
- - supports comments via [disqus](https://disqus.com/) or [isso](http://posativ.org/isso/)
-
-## Based on
-
-- [Hyde](https://github.com/poole/hyde)
-- [Minima](https://github.com/jekyll/minima)
-- [Lagrange](https://github.com/LeNPaul/Lagrange)
-- [Font Awesome](http://fontawesome.io/)
-- [KaTeX](https://katex.org/)
-- [Pygments](https://github.com/richleland/pygments-css)
-
-## Installation (jekyll-remote-theme method)
-
-You can use this theme with the `jekyll-remote-theme` plugin. Just create an empty repo, copy over the `index.html` file and add this to your `_config.yml`:
-
-```yaml
-remote_theme: niklasbuschmann/contrast@v2.11
-
-plugins:
-  - jekyll-remote-theme
+```bash
+git clone https://github.com/abdgafartunde/abdgafartunde.github.io.git
+cd abdgafartunde.github.io
+bundle install
+bundle exec jekyll serve
 ```
 
-Note: to enable icons you also need to copy over the `_data` folder.
+Open `http://localhost:4000` in your browser.
 
-## Config
+## Writing Blog Posts
 
-Your `_config.yml` could for example look like this:
+Create a new Markdown file in `_posts/` with the naming convention `YYYY-MM-DD-title.md`:
 
 ```yaml
-title: "Blog Title"
-author: "Blog Author"
-description: "My personal blog about ... something"
-permalink: /:title/
-lang: "en"
-excerpt_separator: "\n\n\n"
-date_format: "%B %d, %Y"
+---
+layout: post
+title: "Your Post Title"
+description: "A short description."
+date: 2026-03-01
+author: "Abd'gafar Tunde Tiamiyu"
+tags: [Mathematics, Topic]
+math: true
+---
 
-# Layout
-
-show_excerpts: true        # show article excerpts on the home page
-show_frame: true           # adds a gray frame to the site
-show_sidebar: false        # show a sidebar instead of the usual header
-
-# Menu
-
-navigation:                # accepts {file, title, url, icon, sidebaricon}
-  - {file: "index.html"}
-  - {file: "README.md"}
-
-external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
-  - {title: Mail, icon: envelope, url: "mailto:niklasbuschmann@users.noreply.github.com"}
-  - {title: Github, icon: github, url: "https://github.com/niklasbuschmann/contrast"}
-  - {title: Subscribe, icon: rss, url: "/feed.xml"}
-
-comments:
-#  disqus_shortname: ""    # see https://disqus.com/
-#  isso_domain: ""         # see https://posativ.org/isso/
-
-plugins:
- - jekyll-feed
-
+Your content here. Use $inline$ and $$display$$ math.
 ```
 
-## MathJax
+### Scheduled Publishing
 
-Contrast comes preinstalled with a leightweight alternative to MathJax called [KaTeX](https://katex.org/). To display equations in a post simply set `mathjax: true` in the article's front matter.
+Posts with future dates are hidden until their date arrives. A GitHub Actions workflow ([.github/workflows/scheduled-publish.yml](.github/workflows/scheduled-publish.yml)) triggers a site rebuild every Monday at 06:00 UTC, automatically publishing any post whose date has passed. You can also trigger a rebuild manually from the Actions tab.
+
+**Workflow:** Write several posts in advance with future dates, push them, and they will appear on schedule without further action.
+
+## Tech Stack
+
+- **Static site generator:** Jekyll with GitHub Pages gem
+- **CSS framework:** Bootstrap 5.3.3
+- **Icons:** Font Awesome 6.5.1
+- **Fonts:** Inter (sans-serif) + Source Serif 4 (serif), via Google Fonts
+- **Math rendering:** MathJax 3 (SVG output, loaded conditionally on posts)
+- **SEO:** jekyll-seo-tag, JSON-LD structured data, Open Graph meta tags
+- **Feed:** jekyll-feed (Atom)
 
 ## License
 
-[public domain](http://unlicense.org/)
-
-## Screenshots
-
-![screenshot](https://user-images.githubusercontent.com/4943215/109431850-cd711780-7a08-11eb-8601-2763f2ee6bb4.png)
-
-![screenshot](https://user-images.githubusercontent.com/4943215/109431832-b6cac080-7a08-11eb-9c5e-a058680c23a1.png)
-
-![screenshot](https://user-images.githubusercontent.com/4943215/73125194-5f0b8b80-3fa4-11ea-805c-8387187503ad.png)
-
-## Modifications
-
-This website has been modified to include the following:
-
-- Added a teaching page with teaching philosophy and courses taught.
-- Added a research page with research interests and projects.
-- Added a presentations page with a list of presentations.
-- Added a professional photo and skills section to the index page.
-- Added a link to download the CV on the about page.
-- Added more details to each section of the CV page.
-- Added a complete list of publications with links on the publications page.
+The website theme is based on [Contrast](https://github.com/niklasbuschmann/contrast) by Niklas Buschmann, released into the [public domain](http://unlicense.org/). Content (blog posts, research descriptions, CV) is copyrighted by Abd'gafar Tunde Tiamiyu.

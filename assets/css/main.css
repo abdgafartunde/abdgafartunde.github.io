@@ -1,5 +1,5 @@
 /* ============================================
-   Design System — Variables
+   Design System - Variables
    ============================================ */
 
 :root {
@@ -1665,7 +1665,7 @@ mjx-container[jax="SVG"][display="true"] .MathJax {
 }
 
 /* ============================================
-   Responsive — Tablet
+   Responsive - Tablet
    ============================================ */
 
 @media (max-width: 992px) {
@@ -1686,7 +1686,7 @@ mjx-container[jax="SVG"][display="true"] .MathJax {
 }
 
 /* ============================================
-   Responsive — Mobile
+   Responsive - Mobile
    ============================================ */
 
 @media (max-width: 768px) {

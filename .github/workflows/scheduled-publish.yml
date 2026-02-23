@@ -1,0 +1,36 @@
+# Scheduled Blog Publisher
+# Rebuilds the site on a weekly schedule so that future-dated posts
+# become visible once their publication date arrives.
+#
+# HOW TO USE:
+#   1. Write blog posts with future dates, e.g.:
+#        _posts/2026-03-09-my-upcoming-post.md  (date: 2026-03-09)
+#        _posts/2026-03-16-another-post.md      (date: 2026-03-16)
+#   2. Push them to the repo. They won't appear on the site yet
+#      because their dates are in the future.
+#   3. Every Monday at 06:00 UTC, this workflow triggers a rebuild.
+#      Any post whose date has passed will be published automatically.
+#
+# You can also trigger a rebuild manually from the Actions tab.
+
+name: Scheduled Blog Publish
+
+on:
+  schedule:
+    # Runs every Monday at 06:00 UTC (14:00 China Standard Time)
+    - cron: '0 6 * * 1'
+  workflow_dispatch:  # Allow manual trigger from Actions tab
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Trigger GitHub Pages rebuild
+        run: |
+          curl -X POST \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            "https://api.github.com/repos/${{ github.repository }}/pages/builds"
+          echo "Triggered GitHub Pages rebuild at $(date -u)"
