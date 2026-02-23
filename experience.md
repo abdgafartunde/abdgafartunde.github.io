@@ -14,7 +14,7 @@ description: "Professional and Academic Experience"
     <div class="exp-period">Jan 2026 – Present</div>
   </div>
   <div class="exp-institution">School of Mathematics, <a href="https://www.jlu.edu.cn/" target="_blank">Jilin University</a>, China</div>
-  <p class="exp-summary">Research on inverse problems and scientific machine learning</p>
+  <p class="exp-summary">Developing regularization methods and scientific machine learning approaches for nonlinear inverse problems, with applications in imaging and parameter identification.</p>
 </div>
 
 <div class="experience-item">
@@ -32,7 +32,7 @@ description: "Professional and Academic Experience"
     <div class="exp-period">Aug 2021 – Jun 2025</div>
   </div>
   <div class="exp-institution"><a href="https://www.cuhk.edu.hk/" target="_blank">The Chinese University of Hong Kong</a></div>
-  <p class="exp-summary">PhD research on variational methods and deep learning for inverse problems. Advised by <a href="https://www.math.cuhk.edu.hk/~zou/" target="_blank">Prof. Jun Zou</a>.</p>
+  <p class="exp-summary">PhD research on variational regularization and deep learning methods for electrical impedance tomography with partial measurement data. Developed novel inversion frameworks combining adaptive primal-dual methods with learned regularizers. Advised by <a href="https://www.math.cuhk.edu.hk/~zou/" target="_blank">Prof. Jun Zou</a>.</p>
 </div>
 
 <div class="experience-item">
@@ -41,7 +41,7 @@ description: "Professional and Academic Experience"
     <div class="exp-period">Jun 2018 – Apr 2019</div>
   </div>
   <div class="exp-institution"><a href="https://kustwudil.edu.ng/" target="_blank">Kano University of Science and Technology</a>, Nigeria</div>
-  <p class="exp-summary">Numerical methods for differential equations</p>
+  <p class="exp-summary">Developed and implemented numerical schemes for ordinary and partial differential equations, with focus on collocation-based and block methods for boundary value problems.</p>
 </div>
 
 </div>

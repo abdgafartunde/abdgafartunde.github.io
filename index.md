@@ -26,17 +26,17 @@ description: ""
 
 ## About Me
 
-I am a postdoctoral researcher specializing in computational and applied mathematics. My work focuses on developing robust numerical methods and algorithms for solving challenging problems in scientific computing, including inverse problems, image reconstruction, partial differential equations, and optimization. I combine classical mathematical theory with modern computational techniques, including scientific machine learning, to create practical solutions for applications in imaging, physics, and engineering.
+I am a postdoctoral researcher in computational and applied mathematics at Jilin University. My work centres on inverse problems — the challenge of recovering hidden quantities from indirect, noisy measurements — with applications in medical imaging, scientific computing, and parameter identification. I develop both classical variational methods and scientific machine learning approaches, with a particular focus on electrical impedance tomography.
 
-Previously, I completed my PhD at The Chinese University of Hong Kong under the supervision of [Professor Jun Zou](https://www.math.cuhk.edu.hk/~zou/), supported by the prestigious Hong Kong PhD Fellowship Scheme. I also spent nine months as a visiting researcher at the University of Graz, Austria, funded by the Ernst Mach Grant.
+I completed my PhD at The Chinese University of Hong Kong under the supervision of [Professor Jun Zou](https://www.math.cuhk.edu.hk/~zou/), supported by the Hong Kong PhD Fellowship Scheme. During my doctoral studies, I spent nine months as a visiting researcher at the University of Graz, Austria, funded by the Ernst Mach Grant.
 
 <div class="research-interests">
   <h3>Research Interests</h3>
   <div class="interest-tags">
-    <span class="interest-tag"><i class="fas fa-search-plus"></i> Inverse Problems</span>
-    <span class="interest-tag"><i class="fas fa-cogs"></i> Numerical Methods & Optimization</span>
+    <span class="interest-tag"><i class="fas fa-search-plus"></i> Inverse Problems & Regularization</span>
+    <span class="interest-tag"><i class="fas fa-heartbeat"></i> Electrical Impedance Tomography</span>
     <span class="interest-tag"><i class="fas fa-brain"></i> Scientific Machine Learning</span>
-    <span class="interest-tag"><i class="fas fa-square-root-alt"></i> Partial Differential Equations</span>
+    <span class="interest-tag"><i class="fas fa-calculator"></i> Numerical Methods & PDEs</span>
   </div>
 </div>
 

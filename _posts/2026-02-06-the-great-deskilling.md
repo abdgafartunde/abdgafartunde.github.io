@@ -3,16 +3,18 @@ layout: post
 title: "On the Quiet Erosion of Deep Thinking"
 description: "Reflections on AI tools in research, the disappearing art of struggle, and a question worth asking."
 date: 2026-02-06
+author: "Abd'gafar Tunde Tiamiyu"
 tags: [AI, Academia, Reflections]
+math: true
 ---
 
-Something has been quietly shifting in how we do research, and it troubles me.
+Something has been shifting in how we do research, and it troubles me more each semester.
 
-I watch colleagues across departments embrace large language models with enthusiasm. PhD students, postdocs, even seasoned professors. The productivity gains are undeniable. But I keep noticing something beneath the surface that gives me pause.
+I watch colleagues across departments reach for large language models as reflexively as they reach for coffee. PhD students, postdocs, seasoned professors — the adoption is nearly universal. The productivity gains are real. But I keep noticing something underneath the enthusiasm that unsettles me.
 
-For generations, we lamented that deep thinking was slow, that writing well required years of painful practice, that too few had the bandwidth for truly rigorous work. Then generative AI arrived and these constraints seemed to dissolve overnight.
+For generations, deep thinking was slow. Writing well demanded years of practice. Rigorous work required patience that not everyone could sustain. Then generative AI arrived and those constraints dissolved almost overnight.
 
-Literature reviews that once took weeks now take minutes. A stuck proof can receive hints on demand. Grant proposals emerge in polished prose from rough notes. By every measure of efficiency, we have won.
+Literature reviews that once took weeks now take minutes. A stuck proof can receive hints on demand. Grant proposals emerge in polished prose from rough notes. By every efficiency metric, we have won.
 
 And yet.
 
@@ -26,7 +28,7 @@ These are not minor gaps. In inverse problems, understanding the source of insta
 
 Reviewers are beginning to notice patterns too. Manuscripts arrive with impeccable prose and correct mathematics, yet something essential is missing. The writing is *too* smooth. The arguments feel strangely generic, as though every rough edge that once signaled genuine thought has been polished away. Technical terms are used correctly but without the confidence that comes from hard-won understanding.
 
-I find myself wondering: did we augment human intelligence, or did we simply outsource the struggle? And was that struggle perhaps the very thing that made us capable thinkers in the first place?
+I keep returning to a question I cannot shake: did we augment human intelligence, or did we simply outsource the struggle? And was that struggle perhaps the thing that made us capable thinkers in the first place?
 
 ## The Gymnasium of the Mind
 
@@ -34,13 +36,13 @@ Consider how any of us actually learned to think mathematically. Not the mechani
 
 These abilities came from repetition and failure. Staring at a blank page for hours. Reading the same paragraph eight times, hunting for the flaw in our reasoning. Copying proofs by hand because nothing else made them stick. Writing a terrible first draft, confronting how little we understood, then slowly beating that draft into something coherent over days and weeks.
 
-I remember working through stability estimates for my first inverse problem. The algebra was straightforward, but understanding *why* the condition number exploded in certain regimes took me months. I had to work through multiple toy examples, make wrong guesses, and slowly build a picture of how information propagates through ill-conditioned systems. No shortcut would have given me that understanding. The struggle was the learning.
+I remember working through stability estimates for my first inverse problem. The algebra was manageable, but understanding *why* the condition number exploded in certain regimes took me months. I worked through dozens of toy examples, made wrong guesses about the spectral behaviour, stared at plots that contradicted my intuition, and slowly built a mental picture of how information propagates — and degrades — through ill-conditioned systems. No shortcut would have given me that understanding. The months of confusion were not an obstacle to learning. They *were* the learning.
 
 None of that was pleasant. But it was the gymnasium where intellectual muscle was built.
 
 Now there is little incentive to endure any of it. Why face the blank page when an outline appears on request? Why wrestle with exposition when the machine writes more fluent English than most of us ever will? Why spend a week understanding a stability argument when you can generate plausible-looking analysis in an afternoon?
 
-The danger is clear: mental faculties atrophy when they go unused. We invented automobiles and gradually forgot how to walk long distances. I fear we are doing something similar with thought itself.
+The pattern is familiar: mental faculties atrophy when they go unused. We invented automobiles and gradually forgot how to walk long distances. Air conditioning made us less tolerant of heat. GPS eroded our sense of direction. I suspect we are doing something similar — quietly, incrementally — with sustained analytical thought.
 
 ## The Particular Danger in Computational Mathematics
 
@@ -52,9 +54,9 @@ But the core of our discipline is understanding *why* algorithms work, *when* th
 
 When a Newton iteration fails to converge, you need to understand the spectral properties of your Jacobian. When a regularization method produces artifacts, you need intuition about the null space of your forward operator. When a finite element solution oscillates, you need to reason about stability and the inf-sup condition.
 
-An AI can suggest fixes. It can propose alternative formulations. But if you lack the underlying understanding, you will never know whether the suggestion is genuinely correct or merely plausible. You become dependent on the tool in a way that undermines your ability to do independent research.
+An AI can suggest fixes. It can propose alternative formulations. But if you lack the underlying understanding, you cannot distinguish between a correct suggestion and a plausible-sounding wrong one. You become dependent on the tool in a way that is invisible to you until the moment it fails — during a seminar question, a referee's challenge, or an experiment that refuses to match prediction.
 
-I have seen students accept AI-generated explanations that were subtly wrong because they lacked the foundation to recognize the error. The explanation sounded reasonable. The mathematics looked correct. But there was a sign error, or a missing hypothesis, or an unjustified exchange of limits, and they could not see it.
+I have watched students accept AI-generated explanations that were subtly wrong because they lacked the foundation to spot the error. The explanation was fluent. The notation was consistent. But there was a sign error buried in line three, a missing hypothesis that invalidated the main estimate, an unjustified exchange of limits that happened to produce the right answer for the wrong reason. They could not see any of it, and they did not know to look.
 
 ## Those Who Are Getting It Right
 
@@ -110,6 +112,8 @@ What I do know is that the researchers I most admire, the ones who have made las
 
 If we are designing a system that allows the next generation to skip that process, we should at least be honest about what we might be giving up.
 
-This is a question that stays with me, late into the night, when the tools are closed and I am left alone with my thoughts. I do not have answers. But I believe the question is worth asking, worth sitting with, worth taking seriously.
+This is a question that stays with me — late at night, when the tools are closed and I sit alone with a notebook and a pen, working through a calculation by hand because I want to make sure I still can.
 
-Perhaps that is enough for now.
+I do not have the answer. But I believe the question is worth sitting with, worth taking seriously, worth letting discomfort.
+
+The hard problems have always been solved by people who were willing to think longer than felt comfortable. If we are building a world that makes that willingness unnecessary, we should at least be clear-eyed about the trade.

@@ -6,7 +6,9 @@ description: "Computational and Applied Mathematics"
 
 ## Overview
 
-My research focuses on developing computational and machine learning approaches for solving inverse problems in applied mathematics. I work at the intersection of numerical analysis, optimization, and deep learning to create robust algorithms for medical imaging and scientific computing applications. My PhD work on electrical impedance tomography (EIT) developed novel variational inversion schemes that improved reconstruction accuracy by 15% through integration of deep neural networks with physics-based models.
+I work on inverse problems: mathematical problems where you observe indirect measurements and want to reconstruct the quantity that produced them. These problems arise naturally in medical imaging, non-destructive testing, and geophysics, and they are almost always ill-posed — small measurement errors can cause large reconstruction errors if not handled carefully.
+
+My approach combines variational methods and regularization theory with modern computational tools, including deep learning. During my PhD, I developed novel inversion frameworks for electrical impedance tomography with partial boundary data, integrating physics-based models with learned regularizers. My current postdoctoral work extends these ideas to broader classes of nonlinear inverse problems and explores the theoretical foundations of scientific machine learning.
 
 <div class="research-areas">
 

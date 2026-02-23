@@ -1,4 +1,4 @@
-title: "abdgafartunde"
+title: "A.T. Tiamiyu"
 description: "Postdoctoral Researcher in Computational and Applied Mathematics"
 baseurl: ""
 url: "https://abdgafartunde.github.io"
@@ -11,7 +11,7 @@ author:
   position: "Postdoctoral Researcher"
   location: "Changchun, Jilin, China"
   department: "School of Mathematics"
-  bio: "Postdoctoral researcher specializing in inverse problems, computational and applied mathematics, numerical analysis, and scientific machine learning."
+  bio: "Postdoctoral researcher working on inverse problems, regularization theory, and scientific machine learning, with applications in medical imaging and scientific computing."
 
 # Build settings
 markdown: kramdown
