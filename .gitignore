@@ -14,6 +14,14 @@ vendor/
 ehthumbs.db
 Thumbs.db
 
+# LaTeX build artifacts
+*.fdb_latexmk
+*.fls
+*.aux
+*.log
+*.synctex.gz
+*.out
+
 # Editor files
 *.swp
 *.swo

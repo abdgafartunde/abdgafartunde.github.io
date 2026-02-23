@@ -38,11 +38,9 @@ layout: default
                     <small>
                         <i class="fas fa-calendar me-1"></i>
                         {{ page.date | date: "%B %d, %Y" }}
-                        {% if page.read_time %}
-                            <span class="mx-2">•</span>
-                            <i class="fas fa-clock me-1"></i>
-                            {{ page.read_time }} min read
-                        {% endif %}
+                        <span class="mx-2">&bull;</span>
+                        <i class="fas fa-clock me-1"></i>
+                        {% assign words = content | number_of_words %}{% assign read_time = words | divided_by: 200 %}{% if read_time < 1 %}1{% else %}{{ read_time }}{% endif %} min read
                     </small>
                 </div>
                 {% if page.tags.size > 0 %}
