@@ -617,38 +617,6 @@ img {
     font-size: 0.8rem;
 }
 
-/* Education Items */
-.education-item {
-    padding: 1.25rem 1.5rem;
-    margin-bottom: 0.75rem;
-    background: var(--surface-alt);
-    border-radius: var(--radius-sm);
-    border-left: 3px solid var(--accent);
-}
-
-.edu-degree {
-    font-weight: 600;
-    font-size: 1.02rem;
-    color: var(--heading);
-}
-
-.edu-school {
-    color: var(--accent);
-    font-size: 0.9rem;
-}
-
-.edu-year {
-    color: var(--text-muted);
-    font-size: 0.82rem;
-    margin-bottom: 0.4rem;
-}
-
-.edu-details {
-    font-size: 0.88rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-}
-
 /* News Section */
 .news-list {
     margin-top: 0.75rem;
@@ -691,42 +659,6 @@ img {
 .news-text {
     color: var(--text);
     font-size: 0.9rem;
-}
-
-/* Awards Compact (Homepage) */
-.awards-compact {
-    margin-top: 0.75rem;
-}
-
-.award-row {
-    display: grid;
-    grid-template-columns: 65px 1fr auto;
-    gap: 1rem;
-    padding: 0.55rem 0;
-    border-bottom: 1px solid var(--gray-100);
-    align-items: center;
-    font-size: 0.9rem;
-}
-
-.award-row:last-child {
-    border-bottom: none;
-}
-
-.award-year {
-    color: var(--accent);
-    font-weight: 600;
-    font-size: 0.8rem;
-}
-
-.award-title {
-    color: var(--text);
-    font-weight: 500;
-}
-
-.award-source {
-    color: var(--text-muted);
-    font-size: 0.8rem;
-    text-align: right;
 }
 
 /* ============================================
@@ -1800,20 +1732,14 @@ img {
         font-size: 1.3rem;
     }
 
-    /* News & Awards */
+    /* News */
     .news-item {
-        flex-direction: column;
-        gap: 0.15rem;
+        flex-wrap: wrap;
+        gap: 0.25rem;
     }
 
-    .award-row {
-        grid-template-columns: 1fr;
-        gap: 0.15rem;
-        padding: 0.6rem 0;
-    }
-
-    .award-source {
-        text-align: left;
+    .news-text {
+        flex-basis: 100%;
     }
 
     /* Research */
