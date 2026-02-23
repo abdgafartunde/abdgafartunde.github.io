@@ -4,7 +4,7 @@ title: "Blog"
 description: "Thoughts on Mathematics, Research, and Academic Life"
 ---
 
-<p class="blog-intro">Writing about the mathematics I work on, the tools I use, and the questions that interest me — from inverse problems and scientific computing to the broader role of mathematics in a changing research landscape.</p>
+<p class="blog-intro">Writing about the mathematics I work on, the tools I use, and the questions that interest me: from inverse problems and scientific computing to the broader role of mathematics in a changing research landscape.</p>
 
 <div class="blog-posts">
 {% assign sorted_posts = site.posts | sort: 'date' | reverse %}

@@ -10,7 +10,7 @@ math: true
 
 Something has been shifting in how we do research, and it troubles me more each semester.
 
-I watch colleagues across departments reach for large language models as reflexively as they reach for coffee. PhD students, postdocs, seasoned professors — the adoption is nearly universal. The productivity gains are real. But I keep noticing something underneath the enthusiasm that unsettles me.
+I watch colleagues across departments reach for large language models as reflexively as they reach for coffee. PhD students, postdocs, seasoned professors: the adoption is nearly universal. The productivity gains are real. But I keep noticing something underneath the enthusiasm that unsettles me.
 
 For generations, deep thinking was slow. Writing well demanded years of practice. Rigorous work required patience that not everyone could sustain. Then generative AI arrived and those constraints dissolved almost overnight.
 
@@ -36,13 +36,13 @@ Consider how any of us actually learned to think mathematically. Not the mechani
 
 These abilities came from repetition and failure. Staring at a blank page for hours. Reading the same paragraph eight times, hunting for the flaw in our reasoning. Copying proofs by hand because nothing else made them stick. Writing a terrible first draft, confronting how little we understood, then slowly beating that draft into something coherent over days and weeks.
 
-I remember working through stability estimates for my first inverse problem. The algebra was manageable, but understanding *why* the condition number exploded in certain regimes took me months. I worked through dozens of toy examples, made wrong guesses about the spectral behaviour, stared at plots that contradicted my intuition, and slowly built a mental picture of how information propagates — and degrades — through ill-conditioned systems. No shortcut would have given me that understanding. The months of confusion were not an obstacle to learning. They *were* the learning.
+I remember working through stability estimates for my first inverse problem. The algebra was manageable, but understanding *why* the condition number exploded in certain regimes took me months. I worked through dozens of toy examples, made wrong guesses about the spectral behaviour, stared at plots that contradicted my intuition, and slowly built a mental picture of how information propagates, and degrades, through ill-conditioned systems. No shortcut would have given me that understanding. The months of confusion were not an obstacle to learning. They *were* the learning.
 
 None of that was pleasant. But it was the gymnasium where intellectual muscle was built.
 
 Now there is little incentive to endure any of it. Why face the blank page when an outline appears on request? Why wrestle with exposition when the machine writes more fluent English than most of us ever will? Why spend a week understanding a stability argument when you can generate plausible-looking analysis in an afternoon?
 
-The pattern is familiar: mental faculties atrophy when they go unused. We invented automobiles and gradually forgot how to walk long distances. Air conditioning made us less tolerant of heat. GPS eroded our sense of direction. I suspect we are doing something similar — quietly, incrementally — with sustained analytical thought.
+The pattern is familiar: mental faculties atrophy when they go unused. We invented automobiles and gradually forgot how to walk long distances. Air conditioning made us less tolerant of heat. GPS eroded our sense of direction. I suspect we are doing something similar, quietly and incrementally, with sustained analytical thought.
 
 ## The Particular Danger in Computational Mathematics
 
@@ -54,7 +54,7 @@ But the core of our discipline is understanding *why* algorithms work, *when* th
 
 When a Newton iteration fails to converge, you need to understand the spectral properties of your Jacobian. When a regularization method produces artifacts, you need intuition about the null space of your forward operator. When a finite element solution oscillates, you need to reason about stability and the inf-sup condition.
 
-An AI can suggest fixes. It can propose alternative formulations. But if you lack the underlying understanding, you cannot distinguish between a correct suggestion and a plausible-sounding wrong one. You become dependent on the tool in a way that is invisible to you until the moment it fails — during a seminar question, a referee's challenge, or an experiment that refuses to match prediction.
+An AI can suggest fixes. It can propose alternative formulations. But if you lack the underlying understanding, you cannot distinguish between a correct suggestion and a plausible-sounding wrong one. You become dependent on the tool in a way that is invisible to you until the moment it fails: during a seminar question, a referee's challenge, or an experiment that refuses to match prediction.
 
 I have watched students accept AI-generated explanations that were subtly wrong because they lacked the foundation to spot the error. The explanation was fluent. The notation was consistent. But there was a sign error buried in line three, a missing hypothesis that invalidated the main estimate, an unjustified exchange of limits that happened to produce the right answer for the wrong reason. They could not see any of it, and they did not know to look.
 
@@ -112,7 +112,7 @@ What I do know is that the researchers I most admire, the ones who have made las
 
 If we are designing a system that allows the next generation to skip that process, we should at least be honest about what we might be giving up.
 
-This is a question that stays with me — late at night, when the tools are closed and I sit alone with a notebook and a pen, working through a calculation by hand because I want to make sure I still can.
+This is a question that stays with me late at night, when the tools are closed and I sit alone with a notebook and a pen, working through a calculation by hand because I want to make sure I still can.
 
 I do not have the answer. But I believe the question is worth sitting with, worth taking seriously, worth letting the discomfort linger.
 

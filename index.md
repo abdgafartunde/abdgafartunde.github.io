@@ -29,7 +29,7 @@ description: ""
 <h2 class="section-heading"><i class="fas fa-user"></i> About Me</h2>
 
 <div class="about-text">
-<p>I am a postdoctoral researcher in computational and applied mathematics at Jilin University. My work centers on inverse problems — the challenge of recovering hidden quantities from indirect, noisy measurements — with applications in medical imaging, scientific computing, and parameter identification. I develop both classical variational methods and scientific machine learning approaches, with a particular focus on electrical impedance tomography.</p>
+<p>I am a postdoctoral researcher in computational and applied mathematics at Jilin University. My work centers on inverse problems, specifically the challenge of recovering hidden quantities from indirect, noisy measurements, with applications in medical imaging, scientific computing, and parameter identification. I develop both classical variational methods and scientific machine learning approaches, with a particular focus on electrical impedance tomography.</p>
 
 <p>I completed my PhD at The Chinese University of Hong Kong under the supervision of <a href="https://www.math.cuhk.edu.hk/~zou/" target="_blank">Professor Jun Zou</a>, supported by the Hong Kong PhD Fellowship Scheme. During my doctoral studies, I spent nine months as a visiting researcher at the University of Graz, Austria, funded by the Ernst Mach Grant.</p>
 </div>

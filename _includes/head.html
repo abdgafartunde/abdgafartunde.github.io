@@ -46,10 +46,28 @@ MathJax = {
   tex: {
     inlineMath: [['$', '$'], ['\\(', '\\)']],
     displayMath: [['$$', '$$'], ['\\[', '\\]']],
-    processEscapes: true
+    processEscapes: true,
+    processEnvironments: true,
+    packages: {'[+]': ['ams', 'newcommand', 'configmacros']},
+    macros: {
+      R: '\\mathbb{R}',
+      N: '\\mathbb{N}',
+      norm: ['\\left\\lVert #1 \\right\\rVert', 1],
+      abs: ['\\left| #1 \\right|', 1],
+      inner: ['\\left\\langle #1, #2 \\right\\rangle', 2],
+      dd: ['\\frac{\\partial #1}{\\partial #2}', 2],
+      ddn: ['\\frac{\\partial^{#3} #1}{\\partial #2^{#3}}', 3]
+    },
+    tags: 'ams'
   },
   svg: {
-    fontCache: 'global'
+    fontCache: 'global',
+    scale: 1.0
+  },
+  options: {
+    renderActions: {
+      addMenu: [0, '', '']
+    }
   }
 };
 </script>

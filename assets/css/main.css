@@ -309,6 +309,25 @@ img {
     line-height: 1.6;
 }
 
+/* MathJax display equations: horizontal scroll on overflow */
+mjx-container[jax="SVG"][display="true"] {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+    padding: 0.5rem 0;
+}
+
+/* Inline math: prevent line-height jump */
+mjx-container[jax="SVG"]:not([display="true"]) {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Numbered equations */
+mjx-container[jax="SVG"][display="true"] .MathJax {
+    margin: 0 auto;
+}
+
 .content code {
     font-size: 0.88em;
     background: var(--gray-100);

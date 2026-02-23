@@ -8,7 +8,7 @@ description: "Computational and Applied Mathematics"
 <h2 class="section-heading"><i class="fas fa-microscope"></i> Overview</h2>
 
 <div class="about-text">
-<p>I work on inverse problems: mathematical problems where you observe indirect measurements and want to reconstruct the quantity that produced them. These problems arise naturally in medical imaging, non-destructive testing, and geophysics, and they are almost always ill-posed — small measurement errors can cause large reconstruction errors if not handled carefully.</p>
+<p>I work on inverse problems: mathematical problems where you observe indirect measurements and want to reconstruct the quantity that produced them. These problems arise naturally in medical imaging, non-destructive testing, and geophysics, and they are almost always ill-posed, meaning small measurement errors can cause large reconstruction errors if not handled carefully.</p>
 
 <p>My approach combines variational methods and regularization theory with modern computational tools, including deep learning. During my PhD, I developed novel inversion frameworks for electrical impedance tomography with partial boundary data, integrating physics-based models with learned regularizers. My current postdoctoral work extends these ideas to broader classes of nonlinear inverse problems and explores the theoretical foundations of scientific machine learning.</p>
 </div>
