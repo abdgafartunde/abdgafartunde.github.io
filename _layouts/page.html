@@ -2,21 +2,17 @@
 layout: default
 ---
 
-<div class="row">
-    <div class="col-lg-10 mx-auto">
-        <article>
-            {% if page.title %}
-                <header class="mb-4">
-                    <h1 class="display-5 fw-bold text-primary">{{ page.title }}</h1>
-                    {% if page.description %}
-                        <p class="lead text-muted">{{ page.description }}</p>
-                    {% endif %}
-                </header>
+<article class="page-article">
+    {% if page.title %}
+        <header class="page-header">
+            <h1>{{ page.title }}</h1>
+            {% if page.description %}
+                <p class="page-description">{{ page.description }}</p>
             {% endif %}
-            
-            <div class="content">
-                {{ content }}
-            </div>
-        </article>
+        </header>
+    {% endif %}
+    
+    <div class="content">
+        {{ content }}
     </div>
-</div>
+</article>

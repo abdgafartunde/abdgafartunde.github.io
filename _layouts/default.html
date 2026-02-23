@@ -2,46 +2,20 @@
 <html lang="en">
 <head>
     {% include head.html %}
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-        }
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            background-color: #f8f9fa;
-        }
-        main {
-            flex: 1 0 auto;
-        }
-        main.container {
-            background-color: white;
-            border: 1px solid #dee2e6;
-            border-radius: 8px;
-            padding: 2.5rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            margin-top: 2rem;
-            margin-bottom: 2rem;
-        }
-        footer {
-            flex-shrink: 0;
-        }
-    </style>
 </head>
 <body>
     <!-- Skip Navigation -->
     <a class="skip-link" href="#main-content">Skip to content</a>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="/">
-                A.T. Tiamiyu
+            <a class="navbar-brand" href="/">
+                <span class="brand-name">A.T. Tiamiyu</span>
+                <span class="brand-sub">Mathematics</span>
             </a>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
@@ -60,8 +34,10 @@
     </nav>
 
     <!-- Main Content -->
-    <main id="main-content" class="container my-4">
-        {{ content }}
+    <main id="main-content">
+        <div class="main-container">
+            {{ content }}
+        </div>
     </main>
 
     <!-- Footer -->
@@ -70,23 +46,23 @@
             <div class="footer-content">
                 <div class="footer-info">
                     <p class="footer-name">{{ site.author.name }}</p>
-                    <p class="footer-position">{{ site.author.position }} · {{ site.author.affiliation }}</p>
+                    <p class="footer-position">{{ site.author.position }} &middot; {{ site.author.affiliation }}</p>
                 </div>
                 <div class="footer-social">
                     {% if site.social.email %}
-                        <a href="mailto:{{ site.social.email }}" title="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="mailto:{{ site.social.email }}" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a>
                     {% endif %}
                     {% if site.social.google_scholar %}
-                        <a href="https://scholar.google.com/citations?user={{ site.social.google_scholar }}" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="https://scholar.google.com/citations?user={{ site.social.google_scholar }}" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
                     {% endif %}
                     {% if site.social.github %}
-                        <a href="https://github.com/{{ site.social.github }}" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://github.com/{{ site.social.github }}" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
                     {% endif %}
                     {% if site.social.linkedin %}
-                        <a href="https://linkedin.com/in/{{ site.social.linkedin }}" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://linkedin.com/in/{{ site.social.linkedin }}" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     {% endif %}
                     {% if site.social.orcid %}
-                        <a href="https://orcid.org/{{ site.social.orcid }}" target="_blank" title="ORCID"><i class="fab fa-orcid"></i></a>
+                        <a href="https://orcid.org/{{ site.social.orcid }}" target="_blank" rel="noopener" title="ORCID" aria-label="ORCID"><i class="fab fa-orcid"></i></a>
                     {% endif %}
                 </div>
             </div>
