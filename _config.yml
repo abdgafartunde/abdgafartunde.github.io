@@ -13,6 +13,9 @@ author:
   department: "School of Mathematics"
   bio: "Postdoctoral researcher working on inverse problems, regularization theory, and scientific machine learning, with applications in medical imaging and scientific computing."
 
+# Google Analytics (get your Measurement ID from https://analytics.google.com)
+# google_analytics: "G-XXXXXXXXXX"
+
 # Build settings
 markdown: kramdown
 highlighter: rouge

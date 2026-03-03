@@ -2,6 +2,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+<!-- Google Analytics -->
+{% if site.google_analytics and jekyll.environment == 'production' %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ site.google_analytics }}');
+</script>
+{% endif %}
+
 <!-- Primary Meta Tags -->
 <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
 <meta name="title" content="{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}">
