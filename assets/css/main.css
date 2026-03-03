@@ -46,6 +46,81 @@
 }
 
 /* ============================================
+   Dark Mode
+   ============================================ */
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --navy: #0b1a2b;
+        --navy-light: #14283f;
+        --blue: #60a5fa;
+        --blue-soft: #93c5fd;
+        --blue-pale: rgba(37, 99, 235, 0.15);
+        --slate: #e2e8f0;
+        --slate-light: #94a3b8;
+        --slate-pale: #64748b;
+        --gray-50: #0f172a;
+        --gray-100: #1e293b;
+        --gray-200: #334155;
+        --gray-300: #475569;
+        --white: #1e293b;
+
+        --text: #e2e8f0;
+        --text-secondary: #94a3b8;
+        --text-muted: #94a3b8;
+        --heading: #f1f5f9;
+        --accent: #60a5fa;
+        --accent-hover: #93c5fd;
+        --surface: #1e293b;
+        --surface-alt: #0f172a;
+        --border: #334155;
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+        --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.25);
+        --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.3);
+    }
+}
+
+[data-theme="dark"] {
+    --navy: #0b1a2b;
+    --navy-light: #14283f;
+    --blue: #60a5fa;
+    --blue-soft: #93c5fd;
+    --blue-pale: rgba(37, 99, 235, 0.15);
+    --slate: #e2e8f0;
+    --slate-light: #94a3b8;
+    --slate-pale: #64748b;
+    --gray-50: #0f172a;
+    --gray-100: #1e293b;
+    --gray-200: #334155;
+    --gray-300: #475569;
+    --white: #1e293b;
+
+    --text: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --text-muted: #94a3b8;
+    --heading: #f1f5f9;
+    --accent: #60a5fa;
+    --accent-hover: #93c5fd;
+    --surface: #1e293b;
+    --surface-alt: #0f172a;
+    --border: #334155;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.25);
+    --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode overrides for elements with hardcoded colors */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) img.profile-photo {
+        border-color: #334155;
+    }
+}
+
+[data-theme="dark"] img.profile-photo {
+    border-color: #334155;
+}
+
+/* ============================================
    Base
    ============================================ */
 
@@ -1936,4 +2011,39 @@ mjx-container[jax="SVG"][display="true"] .MathJax {
     .post-nav {
         grid-template-columns: 1fr;
     }
+}
+
+/* ============================================
+   Theme Toggle Button
+   ============================================ */
+
+.theme-toggle {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    padding: 0.35rem 0.55rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    transition: color var(--transition), border-color var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.5rem;
+}
+
+.theme-toggle:hover {
+    color: var(--white);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.theme-toggle .fa-moon { display: inline; }
+.theme-toggle .fa-sun { display: none; }
+
+[data-theme="dark"] .theme-toggle .fa-moon { display: none; }
+[data-theme="dark"] .theme-toggle .fa-sun { display: inline; }
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .theme-toggle .fa-moon { display: none; }
+    :root:not([data-theme="light"]) .theme-toggle .fa-sun { display: inline; }
 }

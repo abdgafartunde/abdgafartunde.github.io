@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OG Image Generator</title>
+<style>
+  body { font-family: system-ui, sans-serif; background: #f1f5f9; margin: 0; padding: 2rem; color: #1e293b; }
+  h1 { margin: 0 0 1rem; }
+  .preview { margin: 1.5rem 0; }
+  canvas { display: block; border: 1px solid #cbd5e1; border-radius: 8px; max-width: 100%; height: auto; }
+  button { padding: .6rem 1.5rem; font-size: 1rem; border: none; border-radius: 6px; cursor: pointer; background: #002855; color: #fff; margin-top: 1rem; }
+  button:hover { background: #003a7a; }
+  .hint { color: #64748b; font-size: .875rem; margin-top: .5rem; }
+</style>
+</head>
+<body>
+<h1>OG Image Generator</h1>
+<p>Generates a 1200 &times; 630 branded social-sharing image.<br>Click <strong>Download PNG</strong>, then save the file to <code>assets/images/og-default.png</code>.</p>
+
+<div class="preview">
+  <canvas id="c" width="1200" height="630"></canvas>
+</div>
+<button id="dl">Download PNG</button>
+<p class="hint">You can also right-click the canvas and choose &ldquo;Save image as&hellip;&rdquo;</p>
+
+<script>
+(function () {
+  var W = 1200, H = 630;
+  var canvas = document.getElementById('c');
+  var ctx = canvas.getContext('2d');
+
+  /* ---------- colours ---------- */
+  var navy   = '#002855';
+  var accent = '#3b82f6';
+  var gold   = '#f59e0b';
+  var white  = '#ffffff';
+
+  /* ---------- background ---------- */
+  var bg = ctx.createLinearGradient(0, 0, W, H);
+  bg.addColorStop(0, navy);
+  bg.addColorStop(1, '#001a3a');
+  ctx.fillStyle = bg;
+  ctx.fillRect(0, 0, W, H);
+
+  /* ---------- subtle grid ---------- */
+  ctx.strokeStyle = 'rgba(255,255,255,0.04)';
+  ctx.lineWidth = 1;
+  for (var x = 0; x <= W; x += 60) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke(); }
+  for (var y = 0; y <= H; y += 60) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke(); }
+
+  /* ---------- decorative circles ---------- */
+  ctx.globalAlpha = 0.06;
+  ctx.fillStyle = accent;
+  ctx.beginPath(); ctx.arc(1050, 120, 200, 0, Math.PI * 2); ctx.fill();
+  ctx.beginPath(); ctx.arc(150, 530, 160, 0, Math.PI * 2); ctx.fill();
+  ctx.globalAlpha = 1;
+
+  /* ---------- accent bar ---------- */
+  ctx.fillStyle = accent;
+  ctx.fillRect(80, 190, 5, 100);
+
+  /* ---------- text ---------- */
+  ctx.fillStyle = white;
+  ctx.textBaseline = 'top';
+
+  /* Title */
+  ctx.font = '700 52px "Inter", "Segoe UI", system-ui, sans-serif';
+  ctx.fillText("Abd'gafar Tunde Tiamiyu", 104, 195);
+
+  /* Subtitle */
+  ctx.font = '400 30px "Inter", "Segoe UI", system-ui, sans-serif';
+  ctx.fillStyle = '#94a3b8';
+  ctx.fillText('Postdoctoral Researcher in Computational', 104, 268);
+  ctx.fillText('and Applied Mathematics', 104, 308);
+
+  /* Affiliation */
+  ctx.font = '500 24px "Inter", "Segoe UI", system-ui, sans-serif';
+  ctx.fillStyle = accent;
+  ctx.fillText('Jilin University  |  School of Mathematics', 104, 375);
+
+  /* Keywords line */
+  ctx.font = '400 18px "Inter", "Segoe UI", system-ui, sans-serif';
+  ctx.fillStyle = '#64748b';
+  ctx.fillText('Inverse Problems  ·  Regularization  ·  Scientific Machine Learning  ·  PINNs', 104, 430);
+
+  /* Domain / URL */
+  ctx.font = '500 20px "Inter", "Segoe UI", system-ui, sans-serif';
+  ctx.fillStyle = '#94a3b8';
+  ctx.fillText('abdgafartunde.github.io', 104, 560);
+
+  /* Gold dot accent */
+  ctx.fillStyle = gold;
+  ctx.beginPath(); ctx.arc(80, 565, 5, 0, Math.PI * 2); ctx.fill();
+
+  /* ---------- download ---------- */
+  document.getElementById('dl').addEventListener('click', function () {
+    var a = document.createElement('a');
+    a.download = 'og-default.png';
+    a.href = canvas.toDataURL('image/png');
+    a.click();
+  });
+})();
+</script>
+</body>
+</html>

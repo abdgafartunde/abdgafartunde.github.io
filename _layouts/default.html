@@ -29,6 +29,10 @@
                     </li>
                     {% endfor %}
                 </ul>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
             </div>
         </div>
     </nav>
@@ -81,12 +85,29 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script>
     (function() {
+        // Back to top
         var btn = document.getElementById('backToTop');
         window.addEventListener('scroll', function() {
             btn.classList.toggle('visible', window.scrollY > 400);
         });
         btn.addEventListener('click', function() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Theme toggle
+        var toggle = document.getElementById('themeToggle');
+        var root = document.documentElement;
+        var stored = localStorage.getItem('theme');
+        if (stored) {
+            root.setAttribute('data-theme', stored);
+        }
+        toggle.addEventListener('click', function() {
+            var current = root.getAttribute('data-theme');
+            var isDark = current === 'dark' ||
+                (!current && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            var next = isDark ? 'light' : 'dark';
+            root.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
         });
     })();
     </script>
