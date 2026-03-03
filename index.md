@@ -1,7 +1,8 @@
 ---
 layout: page
 title: ""
-description: "Abd'gafar Tunde Tiamiyu - Postdoctoral researcher in computational and applied mathematics at Jilin University, working on inverse problems, regularization, and scientific machine learning."
+description: ""
+seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and writing on inverse problems and scientific computing."
 ---
 
 <div class="home-header">
