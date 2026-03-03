@@ -11,11 +11,11 @@ description: "Professional and Academic Experience"
   <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
   <div class="edu-body">
     <div class="edu-degree">PhD in Mathematics</div>
-    <div class="edu-school"><a href="https://www.cuhk.edu.hk/" target="_blank">The Chinese University of Hong Kong</a></div>
+    <div class="edu-school"><a href="https://www.cuhk.edu.hk/" target="_blank" rel="noopener">The Chinese University of Hong Kong</a></div>
     <div class="edu-year"><i class="far fa-calendar-alt"></i> 2021 – 2025</div>
     <div class="edu-details">
       <em>Dissertation:</em> Novel regularization and deep learning approaches for electrical impedance tomography problems with partial measurement data<br>
-      <em>Advisor:</em> <a href="https://www.math.cuhk.edu.hk/~zou/" target="_blank">Professor Jun Zou</a><br>
+      <em>Advisor:</em> <a href="https://www.math.cuhk.edu.hk/~zou/" target="_blank" rel="noopener">Professor Jun Zou</a><br>
       <em>Funding:</em> Hong Kong PhD Fellowship Scheme, CUHK Vice-Chancellor's Scholarship
     </div>
   </div>
@@ -25,7 +25,7 @@ description: "Professional and Academic Experience"
   <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
   <div class="edu-body">
     <div class="edu-degree">Bachelor of Technology (B.Tech) in Mathematics</div>
-    <div class="edu-school"><a href="https://futminna.edu.ng/" target="_blank">Federal University of Technology, Minna</a>, Nigeria</div>
+    <div class="edu-school"><a href="https://futminna.edu.ng/" target="_blank" rel="noopener">Federal University of Technology, Minna</a>, Nigeria</div>
     <div class="edu-year"><i class="far fa-calendar-alt"></i> 2012 – 2017</div>
     <div class="edu-details">First Class Honours · MTN Foundation Scholarship · Sir Peter Ojongbede's Prize for Best Graduating Student</div>
   </div>
@@ -44,7 +44,7 @@ description: "Professional and Academic Experience"
       <div class="exp-title">Postdoctoral Researcher</div>
       <span class="exp-badge">Current</span>
     </div>
-    <div class="exp-institution"><i class="fas fa-university"></i> School of Mathematics, <a href="https://www.jlu.edu.cn/" target="_blank">Jilin University</a>, China</div>
+    <div class="exp-institution"><i class="fas fa-university"></i> School of Mathematics, <a href="https://www.jlu.edu.cn/" target="_blank" rel="noopener">Jilin University</a>, China</div>
     <div class="exp-period"><i class="far fa-calendar-alt"></i> Jan 2026 – Present</div>
     <p class="exp-summary">Developing regularization methods and scientific machine learning approaches for nonlinear inverse problems, with applications in imaging and parameter identification.</p>
   </div>
@@ -56,7 +56,7 @@ description: "Professional and Academic Experience"
     <div class="exp-header">
       <div class="exp-title">Visiting Researcher</div>
     </div>
-    <div class="exp-institution"><i class="fas fa-university"></i> <a href="https://www.uni-graz.at/" target="_blank">University of Graz</a>, Austria</div>
+    <div class="exp-institution"><i class="fas fa-university"></i> <a href="https://www.uni-graz.at/" target="_blank" rel="noopener">University of Graz</a>, Austria</div>
     <div class="exp-period"><i class="far fa-calendar-alt"></i> Oct 2023 – Jun 2024</div>
     <p class="exp-summary">Developed learned regularization methods for electrical impedance tomography. Funded by Ernst Mach Grant.</p>
   </div>
@@ -68,9 +68,9 @@ description: "Professional and Academic Experience"
     <div class="exp-header">
       <div class="exp-title">Doctoral Researcher</div>
     </div>
-    <div class="exp-institution"><i class="fas fa-university"></i> <a href="https://www.cuhk.edu.hk/" target="_blank">The Chinese University of Hong Kong</a></div>
+    <div class="exp-institution"><i class="fas fa-university"></i> <a href="https://www.cuhk.edu.hk/" target="_blank" rel="noopener">The Chinese University of Hong Kong</a></div>
     <div class="exp-period"><i class="far fa-calendar-alt"></i> Aug 2021 – Jun 2025</div>
-    <p class="exp-summary">PhD research on variational regularization and deep learning methods for electrical impedance tomography with partial measurement data. Developed novel inversion frameworks combining adaptive primal-dual methods with learned regularizers. Advised by <a href="https://www.math.cuhk.edu.hk/~zou/" target="_blank">Prof. Jun Zou</a>.</p>
+    <p class="exp-summary">PhD research on variational regularization and deep learning methods for electrical impedance tomography with partial measurement data. Developed novel inversion frameworks combining adaptive primal-dual methods with learned regularizers. Advised by <a href="https://www.math.cuhk.edu.hk/~zou/" target="_blank" rel="noopener">Prof. Jun Zou</a>.</p>
   </div>
 </div>
 
@@ -80,7 +80,7 @@ description: "Professional and Academic Experience"
     <div class="exp-header">
       <div class="exp-title">Research Assistant</div>
     </div>
-    <div class="exp-institution"><i class="fas fa-university"></i> <a href="https://kustwudil.edu.ng/" target="_blank">Kano University of Science and Technology</a>, Nigeria</div>
+    <div class="exp-institution"><i class="fas fa-university"></i> <a href="https://kustwudil.edu.ng/" target="_blank" rel="noopener">Kano University of Science and Technology</a>, Nigeria</div>
     <div class="exp-period"><i class="far fa-calendar-alt"></i> Jun 2018 – Apr 2019</div>
     <p class="exp-summary">Developed and implemented numerical schemes for ordinary and partial differential equations, with focus on collocation-based and block methods for boundary value problems.</p>
   </div>
@@ -99,7 +99,7 @@ description: "Professional and Academic Experience"
     <div class="teach-role">Teaching Assistant</div>
     <span class="teach-period">2021–2025</span>
   </div>
-  <div class="teach-inst"><i class="fas fa-university"></i> <a href="https://www.cuhk.edu.hk/" target="_blank">The Chinese University of Hong Kong</a></div>
+  <div class="teach-inst"><i class="fas fa-university"></i> <a href="https://www.cuhk.edu.hk/" target="_blank" rel="noopener">The Chinese University of Hong Kong</a></div>
   <ul class="teach-courses">
     <li><span class="course-name">Calculus for Engineers</span> <span class="course-detail">Fall 2022, 2023 · Led tutorials for 50+ students</span></li>
     <li><span class="course-name">Games and Strategic Thinking</span> <span class="course-detail">Fall 2024 · Applied game theory to real-world scenarios</span></li>

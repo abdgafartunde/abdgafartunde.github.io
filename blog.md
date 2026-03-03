@@ -17,7 +17,7 @@ description: "Thoughts on Mathematics, Research, and Academic Life"
     </div>
     <div class="blog-card-text">
       {% if forloop.first %}<span class="featured-label">Latest</span>{% endif %}
-      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
       <p class="post-excerpt">{{ post.description }}</p>
       <div class="blog-card-footer">
         {% if post.tags.size > 0 %}

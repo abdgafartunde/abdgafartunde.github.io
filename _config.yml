@@ -103,6 +103,7 @@ exclude:
   - README.md
   - LICENSE
   - CHANGELOG.md
+  - UNLICENSE.txt
   - cv_academic.tex
   - "*.fdb_latexmk"
   - "*.fls"

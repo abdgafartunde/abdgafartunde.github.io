@@ -12,15 +12,15 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
     <p class="title">Postdoctoral Researcher</p>
     <p class="tagline">Bridging mathematics and scientific computing for real-world applications</p>
     <p class="affiliation">
-      <i class="fas fa-university"></i> School of Mathematics, <a href="https://www.jlu.edu.cn/" target="_blank">Jilin University</a><br>
+      <i class="fas fa-university"></i> School of Mathematics, <a href="https://www.jlu.edu.cn/" target="_blank" rel="noopener">Jilin University</a><br>
       <i class="fas fa-map-marker-alt"></i> Changchun, Jilin, China
     </p>
     <div class="social-links">
       <a href="mailto:tiamiyuabdgafar@jlu.edu.cn" title="Email"><i class="fas fa-envelope"></i> Email</a>
-      <a href="https://scholar.google.com/citations?user=oZ3egAIAAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i> Scholar</a>
-      <a href="https://github.com/abdgafartunde" target="_blank" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
-      <a href="https://orcid.org/0000-0003-1641-7196" target="_blank" title="ORCID"><i class="fab fa-orcid"></i> ORCID</a>
-      <a href="https://linkedin.com/in/abdgafartunde" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://scholar.google.com/citations?user=oZ3egAIAAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar"><i class="fas fa-graduation-cap"></i> Scholar</a>
+      <a href="https://github.com/abdgafartunde" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://orcid.org/0000-0003-1641-7196" target="_blank" rel="noopener" title="ORCID"><i class="fab fa-orcid"></i> ORCID</a>
+      <a href="https://linkedin.com/in/abdgafartunde" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a>
       <a href="/CV.pdf" title="Download CV"><i class="fas fa-file-pdf"></i> CV</a>
     </div>
   </div>
@@ -32,7 +32,7 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
 <div class="about-text">
 <p>I am a postdoctoral researcher in computational and applied mathematics at Jilin University. My work centers on inverse problems, specifically the challenge of recovering hidden quantities from indirect, noisy measurements, with applications in medical imaging, scientific computing, and parameter identification. I develop both classical variational methods and scientific machine learning approaches, with a particular focus on electrical impedance tomography.</p>
 
-<p>I completed my PhD at The Chinese University of Hong Kong under the supervision of <a href="https://www.math.cuhk.edu.hk/~zou/" target="_blank">Professor Jun Zou</a>, supported by the Hong Kong PhD Fellowship Scheme. During my doctoral studies, I spent nine months as a visiting researcher at the University of Graz, Austria, funded by the Ernst Mach Grant.</p>
+<p>I completed my PhD at The Chinese University of Hong Kong under the supervision of <a href="https://www.math.cuhk.edu.hk/~zou/" target="_blank" rel="noopener">Professor Jun Zou</a>, supported by the Hong Kong PhD Fellowship Scheme. During my doctoral studies, I spent nine months as a visiting researcher at the University of Graz, Austria, funded by the Ernst Mach Grant.</p>
 </div>
 
 <div class="research-interests">

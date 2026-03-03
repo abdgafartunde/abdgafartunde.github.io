@@ -22,7 +22,7 @@
     /* Semantic */
     --text: var(--slate);
     --text-secondary: var(--slate-light);
-    --text-muted: var(--slate-pale);
+    --text-muted: #64748b;
     --heading: var(--navy);
     --accent: var(--blue);
     --accent-hover: var(--blue-soft);
@@ -112,6 +112,34 @@ img {
 .skip-link:focus {
     top: 0;
     color: var(--white);
+}
+
+/* Focus-visible styles for keyboard navigation */
+a:focus-visible,
+button:focus-visible,
+.nav-link:focus-visible,
+.social-links a:focus-visible,
+.footer-social a:focus-visible,
+.back-to-top:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+}
+
+.navbar .nav-link:focus-visible {
+    outline-color: var(--white);
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
 /* ============================================
@@ -737,7 +765,7 @@ mjx-container[jax="SVG"][display="true"] .MathJax {
 
 /* Publications */
 .publications-list {
-    counter-reset: none;
+    /* No counter styles needed */
 }
 
 .publication {
