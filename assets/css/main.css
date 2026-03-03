@@ -789,6 +789,33 @@ mjx-container[jax="SVG"][display="true"] .MathJax {
     font-style: normal;
 }
 
+.pub-links {
+    margin-top: 0.35rem;
+}
+
+.pub-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    padding: 0.2rem 0.55rem;
+    border: 1px solid var(--accent);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition);
+}
+
+.pub-links a:hover {
+    background: var(--accent);
+    color: #fff;
+}
+
+.pub-links a i {
+    font-size: 0.7rem;
+}
+
 /* Presentations */
 .presentations-grid {
     display: grid;
@@ -1604,6 +1631,38 @@ mjx-container[jax="SVG"][display="true"] .MathJax {
 /* ============================================
    Buttons & UI
    ============================================ */
+
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
+    z-index: 999;
+    box-shadow: var(--shadow-sm);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    transform: translateY(-2px);
+    background: var(--accent);
+}
 
 .btn {
     border-radius: var(--radius-sm);

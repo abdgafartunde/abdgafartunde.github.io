@@ -53,6 +53,7 @@ description: "Computational and Applied Mathematics"
     <div class="pub-title">Numerical solution of first and higher order IVPs via a single continuous block method</div>
     <div class="pub-authors">Garba J., Audu K.J., Mohammed U., and <strong>Tiamiyu A.T.</strong></div>
     <div class="pub-venue"><em>Scientific Journal of Mehmet Akif Ersoy University</em>, 2025</div>
+    <div class="pub-links"><a href="https://doi.org/10.70030/sjmakeu.1611387" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> DOI</a></div>
   </div>
 </div>
 
@@ -62,6 +63,7 @@ description: "Computational and Applied Mathematics"
     <div class="pub-title">Physics-informed neural networks in iterative form of nonlinear equations for numerical algorithms and simulations of delay differential equations</div>
     <div class="pub-authors">He J., and <strong>Tiamiyu A.T.</strong></div>
     <div class="pub-venue"><em>Physica A: Statistical Mechanics and its Applications</em>, 2025</div>
+    <div class="pub-links"><a href="https://doi.org/10.1016/j.physa.2025.130368" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> DOI</a></div>
   </div>
 </div>
 
@@ -71,6 +73,7 @@ description: "Computational and Applied Mathematics"
     <div class="pub-title">Numerical simulation of time-dependent non-Newtonian compressible fluid flow in porous media: finite element method and time-dependent approach</div>
     <div class="pub-authors">Ahmad S. and <strong>Tiamiyu A.T.</strong></div>
     <div class="pub-venue"><em>International Communications in Heat and Mass Transfer</em>, 2024</div>
+    <div class="pub-links"><a href="https://doi.org/10.1016/j.icheatmasstransfer.2024.107934" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> DOI</a></div>
   </div>
 </div>
 
@@ -80,6 +83,7 @@ description: "Computational and Applied Mathematics"
     <div class="pub-title">Numerical assessment of some semi-analytical techniques for solving a fractional-order leptospirosis model</div>
     <div class="pub-authors">Audu K.J., <strong>Tiamiyu A.T.</strong>, Akpabio J.N., Ahmad H., and Olabiyi M.A.</div>
     <div class="pub-venue"><em>Malaysian Journal of Science</em>, 2024</div>
+    <div class="pub-links"><a href="https://doi.org/10.22452/mjs.vol43no3.9" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> DOI</a></div>
   </div>
 </div>
 
@@ -89,6 +93,7 @@ description: "Computational and Applied Mathematics"
     <div class="pub-title">Double diffusive nonlinear convective MHD unsteady slip-flow regime in a rectangular channel</div>
     <div class="pub-authors">Yusuf A., Adekunle T.S., <strong>Tiamiyu A.T.</strong>, and Aliyu A.M.</div>
     <div class="pub-venue"><em>WSEAS Transactions on Fluid Mechanics</em>, 2023</div>
+    <div class="pub-links"><a href="https://doi.org/10.37394/232013.2023.18.19" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> DOI</a></div>
   </div>
 </div>
 
@@ -98,6 +103,7 @@ description: "Computational and Applied Mathematics"
     <div class="pub-title">Computational assessment of external force acting on beam elastic foundation</div>
     <div class="pub-authors"><strong>Tiamiyu A.T.</strong>, Falade K.I., and Abubakar A.S.</div>
     <div class="pub-venue"><em>Pamukkale University Journal of Engineering Sciences</em>, 2022</div>
+    <div class="pub-links"><a href="https://doi.org/10.5505/pajes.2021.52383" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> DOI</a></div>
   </div>
 </div>
 
@@ -107,6 +113,7 @@ description: "Computational and Applied Mathematics"
     <div class="pub-title">A backward differentiation formula for third-order initial or boundary value problems using collocation method</div>
     <div class="pub-authors"><strong>Tiamiyu A.T.</strong>, Cole A.T., and Audu K.J.</div>
     <div class="pub-venue"><em>Iranian Journal of Optimization</em>, 2021</div>
+    <div class="pub-links"><a href="http://irepo.futminna.edu.ng:8080/jspui/handle/123456789/26990" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Article</a></div>
   </div>
 </div>
 
@@ -116,6 +123,7 @@ description: "Computational and Applied Mathematics"
     <div class="pub-title">A numerical technique for direct solution of special fourth-order ordinary differential equation via hybrid linear multistep method</div>
     <div class="pub-authors"><strong>Tiamiyu A.T.</strong>, Falade K.I., Rauf Q.O., and Akande S.A.</div>
     <div class="pub-venue"><em>Cankaya University Journal of Science and Engineering</em>, 2021</div>
+    <div class="pub-links"><a href="https://dergipark.org.tr/en/download/article-file/1376203" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> PDF</a></div>
   </div>
 </div>
 
@@ -125,6 +133,7 @@ description: "Computational and Applied Mathematics"
     <div class="pub-title">On numerical computational solution of seventh order boundary value problems</div>
     <div class="pub-authors">Falade K.I., Baoku I.G., <strong>Tiamiyu A.T.</strong>, and Isyaku I.</div>
     <div class="pub-venue"><em>Journal of Nigerian Mathematical Society</em>, 2020</div>
+    <div class="pub-links"><a href="https://ojs.ictp.it/jnms/index.php/jnms/article/view/342" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Article</a></div>
   </div>
 </div>
 

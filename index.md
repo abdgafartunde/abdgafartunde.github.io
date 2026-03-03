@@ -1,7 +1,7 @@
 ---
 layout: page
 title: ""
-description: ""
+description: "Abd'gafar Tunde Tiamiyu - Postdoctoral researcher in computational and applied mathematics at Jilin University, working on inverse problems, regularization, and scientific machine learning."
 ---
 
 <div class="home-header">

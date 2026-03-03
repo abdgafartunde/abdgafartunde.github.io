@@ -10,6 +10,9 @@ group :jekyll_plugins do
   gem "jekyll-redirect-from"
 end
 
+# Ruby 3+ dropped WEBrick from stdlib; needed for `jekyll serve`
+gem "webrick", "~> 1.8"
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
