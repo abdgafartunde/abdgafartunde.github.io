@@ -2,6 +2,7 @@
 layout: page
 title: "Experience"
 description: "Professional and Academic Experience"
+seo_description: "Academic and professional experience of A.T. Tiamiyu: postdoctoral researcher at Jilin University, PhD from CUHK, teaching, awards, and leadership in applied mathematics."
 ---
 
 <section class="exp-section">

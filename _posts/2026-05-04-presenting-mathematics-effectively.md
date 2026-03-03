@@ -5,7 +5,7 @@ description: "Lessons on giving clear, engaging mathematical talks, from confere
 date: 2026-05-04
 author: "Abd'gafar Tunde Tiamiyu"
 tags: [Academia, Communication, Advice]
-math: false
+math: true
 ---
 
 I have given what I consider a truly good mathematical talk perhaps three or four times. I have given mediocre talks more often than I would like to admit, and a few that I would classify as actively bad. The bad ones taught me more than the good ones, mostly because the specific ways in which they failed illuminated principles I had not previously understood.

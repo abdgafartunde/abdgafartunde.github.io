@@ -2,6 +2,7 @@
 layout: page
 title: "Blog"
 description: "Thoughts on Mathematics, Research, and Academic Life"
+seo_description: "Blog by A.T. Tiamiyu covering inverse problems, scientific computing, physics-informed neural networks, regularization, and reflections on academic life."
 ---
 
 <p class="blog-intro">Writing about the mathematics I work on, the tools I use, and the questions that interest me: from inverse problems and scientific computing to the broader role of mathematics in a changing research landscape.</p>

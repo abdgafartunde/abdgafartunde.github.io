@@ -6,7 +6,7 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
 ---
 
 <div class="home-header">
-  <img src="/assets/images/profile_pic.jpeg" alt="Abd'gafar Tunde Tiamiyu" class="profile-photo">
+  <img src="{{ '/assets/images/profile_pic.jpeg' | relative_url }}" alt="Abd'gafar Tunde Tiamiyu" class="profile-photo">
   <div class="home-intro">
     <h1>Abd'gafar Tunde TIAMIYU</h1>
     <p class="title">Postdoctoral Researcher</p>

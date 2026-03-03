@@ -5,7 +5,7 @@ description: "Reflections on AI tools in research, the disappearing art of strug
 date: 2026-02-06
 author: "Abd'gafar Tunde Tiamiyu"
 tags: [AI, Academia, Reflections]
-math: true
+math: false
 ---
 
 Something has been shifting in how we do research, and it troubles me more each semester.

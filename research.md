@@ -2,6 +2,7 @@
 layout: page
 title: "Research"
 description: "Computational and Applied Mathematics"
+seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical impedance tomography, regularization theory, and scientific machine learning. Publications and presentations."
 ---
 
 <section class="research-section">
