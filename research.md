@@ -51,6 +51,26 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
 <div class="publication">
   <span class="pub-number">[1]</span>
   <div class="pub-content">
+    <div class="pub-title">A new spectral conjugate gradient method for convex constrained monotone nonlinear equations with application to image restoration</div>
+    <div class="pub-authors">Abdullahi M., Pan K., Halilu A.S., Abubakar A.B., <strong>Tiamiyu A.T.</strong>, and Al-Yaari A.</div>
+    <div class="pub-venue"><em>Japan Journal of Industrial and Applied Mathematics</em>, Vol. 43, No. 2, 2026</div>
+    <div class="pub-links"><a href="https://doi.org/10.1007/s13160-026-00778-x" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> DOI</a></div>
+  </div>
+</div>
+
+<div class="publication">
+  <span class="pub-number">[2]</span>
+  <div class="pub-content">
+    <div class="pub-title">Accelerated double step-length method for solving monotone nonlinear equations with convex-constraint and application</div>
+    <div class="pub-authors">Abdullahi M., Halilu A.S., Saleh M.A., Almaymuni A.Z., Siamakani S.Y.M., <strong>Tiamiyu A.T.</strong>, and Ibrahim S.M.</div>
+    <div class="pub-venue"><em>AIMS Mathematics</em>, Vol. 11, No. 4, pp. 10908–10935, 2026</div>
+    <div class="pub-links"><a href="https://doi.org/10.3934/math.2026448" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> DOI</a></div>
+  </div>
+</div>
+
+<div class="publication">
+  <span class="pub-number">[3]</span>
+  <div class="pub-content">
     <div class="pub-title">Numerical solution of first and higher order IVPs via a single continuous block method</div>
     <div class="pub-authors">Garba J., Audu K.J., Mohammed U., and <strong>Tiamiyu A.T.</strong></div>
     <div class="pub-venue"><em>Scientific Journal of Mehmet Akif Ersoy University</em>, 2025</div>
@@ -59,7 +79,7 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
 </div>
 
 <div class="publication">
-  <span class="pub-number">[2]</span>
+  <span class="pub-number">[4]</span>
   <div class="pub-content">
     <div class="pub-title">Physics-informed neural networks in iterative form of nonlinear equations for numerical algorithms and simulations of delay differential equations</div>
     <div class="pub-authors">He J., and <strong>Tiamiyu A.T.</strong></div>
@@ -69,7 +89,7 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
 </div>
 
 <div class="publication">
-  <span class="pub-number">[3]</span>
+  <span class="pub-number">[5]</span>
   <div class="pub-content">
     <div class="pub-title">Numerical simulation of time-dependent non-Newtonian compressible fluid flow in porous media: finite element method and time-dependent approach</div>
     <div class="pub-authors">Ahmad S. and <strong>Tiamiyu A.T.</strong></div>
@@ -79,7 +99,7 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
 </div>
 
 <div class="publication">
-  <span class="pub-number">[4]</span>
+  <span class="pub-number">[6]</span>
   <div class="pub-content">
     <div class="pub-title">Numerical assessment of some semi-analytical techniques for solving a fractional-order leptospirosis model</div>
     <div class="pub-authors">Audu K.J., <strong>Tiamiyu A.T.</strong>, Akpabio J.N., Ahmad H., and Olabiyi M.A.</div>
@@ -89,7 +109,7 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
 </div>
 
 <div class="publication">
-  <span class="pub-number">[5]</span>
+  <span class="pub-number">[7]</span>
   <div class="pub-content">
     <div class="pub-title">Double diffusive nonlinear convective MHD unsteady slip-flow regime in a rectangular channel</div>
     <div class="pub-authors">Yusuf A., Adekunle T.S., <strong>Tiamiyu A.T.</strong>, and Aliyu A.M.</div>
@@ -99,7 +119,7 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
 </div>
 
 <div class="publication">
-  <span class="pub-number">[6]</span>
+  <span class="pub-number">[8]</span>
   <div class="pub-content">
     <div class="pub-title">Computational assessment of external force acting on beam elastic foundation</div>
     <div class="pub-authors"><strong>Tiamiyu A.T.</strong>, Falade K.I., and Abubakar A.S.</div>
@@ -109,7 +129,7 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
 </div>
 
 <div class="publication">
-  <span class="pub-number">[7]</span>
+  <span class="pub-number">[9]</span>
   <div class="pub-content">
     <div class="pub-title">A backward differentiation formula for third-order initial or boundary value problems using collocation method</div>
     <div class="pub-authors"><strong>Tiamiyu A.T.</strong>, Cole A.T., and Audu K.J.</div>
@@ -119,7 +139,7 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
 </div>
 
 <div class="publication">
-  <span class="pub-number">[8]</span>
+  <span class="pub-number">[10]</span>
   <div class="pub-content">
     <div class="pub-title">A numerical technique for direct solution of special fourth-order ordinary differential equation via hybrid linear multistep method</div>
     <div class="pub-authors"><strong>Tiamiyu A.T.</strong>, Falade K.I., Rauf Q.O., and Akande S.A.</div>
@@ -129,7 +149,7 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
 </div>
 
 <div class="publication">
-  <span class="pub-number">[9]</span>
+  <span class="pub-number">[11]</span>
   <div class="pub-content">
     <div class="pub-title">On numerical computational solution of seventh order boundary value problems</div>
     <div class="pub-authors">Falade K.I., Baoku I.G., <strong>Tiamiyu A.T.</strong>, and Isyaku I.</div>
