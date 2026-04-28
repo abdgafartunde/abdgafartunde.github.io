@@ -72,7 +72,7 @@ p^{n+1} = \operatorname{proj}_{\lVert \cdot \rVert_\infty \leq 1}\!\left( p^n + 
 $$
 
 $$
-f^{n+1} = \operatorname{prox}_{\tau \mathcal{D}}\!\left( f^n - \tau \alpha \, \operatorname{div}(p^{n+1}) \right),
+f^{n+1} = \operatorname{prox}_{\tau \mathcal{D}}\!\left( f^n + \tau \alpha \, \operatorname{div}(p^{n+1}) \right),
 $$
 
 $$
@@ -103,10 +103,10 @@ This decomposition encourages the reconstruction to be the sum of two components
 **Total Generalized Variation.** TGV extends TV to penalize not just the gradient but also higher-order derivatives, avoiding the staircasing effect that pure TV introduces on smooth regions. The second-order TGV functional:
 
 $$
-\operatorname{TGV}_\beta^2(f) = \min_w \; \alpha_1 \lVert \nabla f - w \rVert_1 + \alpha_0 \lVert \mathcal{E}(w) \rVert_1
+\operatorname{TGV}^2_{(\alpha_0,\, \alpha_1)}(f) = \min_{w} \; \alpha_1 \int_\Omega \lvert \nabla f - w \rvert \, dx + \alpha_0 \int_\Omega \lvert \mathcal{E}(w) \rvert \, dx,
 $$
 
-favours piecewise linear solutions (affine regions separated by edges) rather than piecewise constant ones. For many imaging problems, this produces more natural-looking reconstructions.
+where $w$ is an auxiliary vector field, $\mathcal{E}(w) = \tfrac{1}{2}(\nabla w + (\nabla w)^T)$ is the symmetrized gradient (a symmetric tensor), and $\lvert\cdot\rvert$ denotes the pointwise Frobenius norm. The first term penalises the discrepancy between the image gradient and $w$; the second term penalises the variation of $w$ itself. Together they favour piecewise linear (affine) solutions rather than piecewise constant ones. For many imaging problems this produces more natural-looking reconstructions, free of the staircase artefacts that pure TV introduces on smooth regions.
 
 **Dictionary-based sparsity.** If the image is sparse in a known transform domain (wavelets, curvelets, shearlets), the penalty $\mathcal{R}(f) = \lVert \Psi f \rVert_1$ promotes sparsity of the transform coefficients. The choice of dictionary $\Psi$ encodes a prior about the geometry of the image features: wavelets capture point singularities, curvelets capture curve singularities, and shearlets combine the two.
 

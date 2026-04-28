@@ -43,13 +43,13 @@ Training a neural ODE requires computing gradients of the loss with respect to t
 The adjoint method offers an alternative. Define the adjoint state $a(t) = \frac{dL}{dh(t)}$, where $L$ is the loss. The adjoint satisfies a backward ODE:
 
 $$
-\frac{da}{dt} = -a(t)^T \frac{\partial f_\theta}{\partial h}(h(t), t),
+\frac{da}{dt} = -\left(a(t)\right)^\top \frac{\partial f_\theta}{\partial h}(h(t), t),
 $$
 
 integrated backward from $t = T$ to $t = 0$, with the terminal condition $a(T) = \frac{dL}{dh(T)}$. The gradient with respect to $\theta$ is:
 
 $$
-\frac{dL}{d\theta} = -\int_0^T a(t)^T \frac{\partial f_\theta}{\partial \theta}(h(t), t) \, dt.
+\frac{dL}{d\theta} = -\int_0^T \left(a(t)\right)^\top \frac{\partial f_\theta}{\partial \theta}(h(t), t) \, dt.
 $$
 
 The adjoint method computes the gradient by solving another ODE backward in time, requiring only $O(1)$ memory (independent of the number of solver steps). This is the same adjoint method used in optimal control, data assimilation, and PDE-constrained optimization, applied here to the neural network training problem.
@@ -67,7 +67,13 @@ $$
 \frac{d \log p(h(t))}{dt} = -\operatorname{tr}\!\left( \frac{\partial f_\theta}{\partial h} \right).
 $$
 
-Computing the trace of the Jacobian is expensive for high-dimensional problems. The Hutchinson trace estimator (approximating the trace via random projections) makes this feasible, and flow matching (Lipman et al., 2023) provides an even more efficient training framework that avoids the trace computation entirely.
+Computing the trace of the Jacobian is expensive for high-dimensional problems. The Hutchinson trace estimator replaces it with an unbiased stochastic approximation: for any random vector $v$ with $\mathbb{E}[vv^\top] = I$,
+
+$$
+\operatorname{tr}\!\left( \frac{\partial f_\theta}{\partial h} \right) \approx v^\top \frac{\partial f_\theta}{\partial h}\, v, \qquad v \sim N(0, I).
+$$
+
+Each evaluation requires only a Jacobian-vector product (computable in $O(d)$ time via automatic differentiation) rather than the full Jacobian. Flow matching (Lipman et al., 2023) provides an even more efficient training framework that avoids the trace computation entirely by reframing training as regression on a vector field rather than maximum likelihood on the CNF.
 
 **Modeling physical systems.** When the data comes from a physical system governed by differential equations, parameterizing the right-hand side with a neural network lets you learn the dynamics directly. This is particularly useful when the governing equations are partially known: you model the known physics explicitly and use the neural network to capture the unknown or difficult-to-model components.
 
@@ -94,13 +100,13 @@ $$
 
 Energy conservation is built in by construction. The network learns the Hamiltonian, and the dynamics follow from the structure. For mechanical systems, this produces physically plausible long-term predictions that standard neural ODEs cannot match.
 
-**Neural Controlled Differential Equations.** CDEs (Kidger et al., 2020) generalize Neural ODEs to handle sequential input data naturally:
+**Neural Controlled Differential Equations.** CDEs (Kidger et al., 2020) generalize Neural ODEs to handle sequential input data naturally. Written in integral form:
 
 $$
-\frac{dh}{dt} = f_\theta(h(t)) \frac{dX}{dt}(t),
+h(t) = h(0) + \int_0^t f_\theta(h(s))\, dX(s),
 $$
 
-where $X(t)$ is a continuous interpolation of the input data. This provides a principled continuous-time analogue of RNNs and has shown strong performance on time series tasks.
+or equivalently as the differential equation $dh = f_\theta(h(t))\, dX(t)$, where $X(t)$ is a continuous interpolation of the input data and $dX(t) = \dot{X}(t)\, dt$ is its differential. This provides a principled continuous-time analogue of RNNs, where the network's hidden state responds to increments of the input signal rather than to its values. The formulation naturally handles missing or irregularly timed observations and has shown strong performance on time series tasks.
 
 
 ## Connections to Numerical Analysis

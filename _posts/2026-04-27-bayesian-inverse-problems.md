@@ -21,7 +21,11 @@ The setup is familiar. You have an unknown quantity $f$, a forward operator $\ma
 
 In the Bayesian framework, both $f$ and $\eta$ are treated as random variables. The components are:
 
-**The prior distribution $\pi_{\text{prior}}(f)$:** your belief about $f$ before seeing any data. This encodes the same information as the regularizer in the variational framework. A Gaussian prior $\pi_{\text{prior}}(f) \propto \exp\!\left(-\frac{1}{2}\lVert Lf \rVert^2\right)$ corresponds to Tikhonov regularization with penalty operator $L$. A Laplace prior corresponds to $\ell^1$ regularization.
+**The prior distribution $\pi_{\text{prior}}(f)$:** your belief about $f$ before seeing any data. This encodes the same information as the regularizer in the variational framework. A Gaussian prior
+$$
+\pi_{\text{prior}}(f) \propto \exp\!\left(-\tfrac{1}{2}\lVert Lf \rVert^2\right),
+$$
+where $L$ is a differential or smoothness operator (for example, $L = -\Delta$ or a first-order difference operator), corresponds exactly to Tikhonov regularization with penalty $\lVert Lf\rVert^2$. The prior encodes the belief that $f$ is smooth in the sense penalised by $L$. A Laplace prior, $\pi_{\text{prior}}(f) \propto \exp(-\alpha\lVert f\rVert_1)$, corresponds to $\ell^1$ regularization and favours sparse solutions.
 
 **The likelihood $\pi(g^\delta | f)$:** the probability of observing the data $g^\delta$ given a particular value of $f$. For Gaussian noise with covariance $\Gamma$, this is:
 
@@ -29,7 +33,7 @@ $$
 \pi(g^\delta | f) \propto \exp\!\left(-\frac{1}{2} \lVert \mathcal{A}(f) - g^\delta \rVert_\Gamma^2 \right),
 $$
 
-where $\lVert \cdot \rVert_\Gamma^2 = \langle \cdot, \Gamma^{-1} \cdot \rangle$.
+where $\lVert v \rVert_\Gamma^2 := \langle v, \Gamma^{-1} v \rangle$ is the Mahalanobis norm induced by the noise covariance $\Gamma$. This norm down-weights components of the residual $\mathcal{A}(f) - g^\delta$ that lie in directions with large noise variance, and up-weights those in directions where the noise is small. When $\Gamma = \sigma^2 I$ (isotropic noise), the weighted norm reduces to $\sigma^{-2}\lVert \mathcal{A}(f) - g^\delta \rVert^2$, recovering the standard least-squares fidelity.
 
 **The posterior distribution $\pi_{\text{post}}(f | g^\delta)$:** computed via Bayes' theorem:
 
@@ -54,9 +58,13 @@ where $\mathcal{R}(f) = -\log \pi_{\text{prior}}(f)$. This is precisely the vari
 
 **The posterior mean** $\mathbb{E}_{\text{post}}[f]$ is the average over the posterior. It is often smoother than the MAP estimate and has optimal properties in certain loss functions (squared error loss).
 
-**Credible regions** quantify uncertainty. A 95% credible region is a set $C$ such that $\int_C \pi_{\text{post}}(f | g^\delta) \, df = 0.95$. If some feature of the reconstruction (say, the presence of an inclusion in a particular location) falls outside a credible region, you have reason to doubt it. If it falls inside, the data supports it.
+**Credible regions** quantify uncertainty. A 95% credible region is a set $C$ such that $\int_C \pi_{\text{post}}(f | g^\delta) \, df = 0.95$. The Bayesian credible interval has a direct probabilistic interpretation: given the model and the prior, there is a 95% probability that $f$ lies in $C$. This is subtly different from a frequentist 95% confidence interval, which says only that if you repeated the experiment many times, 95% of the constructed intervals would contain the true parameter. In practice many applied scientists find the Bayesian interpretation more natural, even if they are agnostic about the philosophical commitments it entails.
 
-**Marginal distributions** describe uncertainty about specific features. Want to know how well the average conductivity in a particular region is determined? Integrate the posterior over all other variables. The resulting marginal tells you the uncertainty about that specific quantity.
+**Marginal distributions** describe uncertainty about specific features. Want to know how well the average conductivity in a particular region is determined? Integrate the posterior over all other variables:
+$$
+\pi(\bar{f}_R \,|\, g^\delta) = \int \pi_{\text{post}}(f \,|\, g^\delta) \, \delta\!\left(\bar{f}_R - \tfrac{1}{|R|}\int_R f(x)\, dx\right) df.
+$$
+The resulting marginal tells you the uncertainty about that specific scalar quantity, accounting for all the other unknown aspects of $f$. In high-dimensional problems, computing marginals exactly is as expensive as the full posterior; in practice one approximates them from MCMC samples or via the Laplace approximation.
 
 
 ## The Gaussian Case
@@ -75,7 +83,43 @@ $$
 
 The posterior mean $f_{\text{post}}$ is the Tikhonov solution (with $\alpha$ determined by the prior and noise covariances), and the posterior covariance $\Sigma_{\text{post}}$ gives a complete description of the uncertainty. The diagonal entries of $\Sigma_{\text{post}}$ are the variances at each point, telling you how much uncertainty remains after incorporating the data.
 
-This closed-form solution is elegant and instructive. The posterior covariance shrinks in directions where the data provides information (large singular values of $A$) and remains close to the prior covariance in directions where the data is uninformative (small singular values). The uncertainty is inherently anisotropic and problem-dependent.
+This closed-form solution is elegant and instructive. To see why, write the SVD of the prior-preconditioned forward operator $\tilde{A} = \Sigma_0^{1/2} A^T \Gamma^{-1/2}$ and let $\sigma_1 \geq \sigma_2 \geq \cdots$ be its singular values. In the basis of the right singular vectors, the posterior variance in direction $i$ is proportional to $1/(1 + \sigma_i^2)$. When $\sigma_i \gg 1$ (the data is very informative in that direction), the posterior variance is approximately $\sigma_i^{-2} \ll 1$: the data tightly constrains that component. When $\sigma_i \ll 1$ (the data is nearly blind to that direction), the posterior variance approaches 1: the posterior is almost the prior, and the data adds nothing. The uncertainty is inherently anisotropic and problem-dependent; there is no single number that captures it.
+
+
+## The Laplace Approximation
+
+For problems where the prior is not Gaussian or the forward operator is nonlinear, the posterior does not have a closed form. The Laplace approximation provides a computationally cheap way to obtain an approximate Gaussian posterior without sampling.
+
+The idea is to expand the negative log-posterior around the MAP estimate. Define
+$$
+\Phi(f) := -\log\pi_{\text{post}}(f \,|\, g^\delta) = \frac{1}{2}\lVert \mathcal{A}(f) - g^\delta \rVert_\Gamma^2 + \mathcal{R}(f) + \text{const},
+$$
+where $\mathcal{R}(f) = -\log\pi_{\text{prior}}(f)$. A second-order Taylor expansion around $f_{\text{MAP}}$ gives
+$$
+\Phi(f) \approx \Phi(f_{\text{MAP}}) + \tfrac{1}{2}(f - f_{\text{MAP}})^T\, \mathcal{H}\, (f - f_{\text{MAP}}),
+$$
+where the Hessian at the MAP is
+$$
+\mathcal{H} = \nabla^2 \Phi(f_{\text{MAP}}) = A^T \Gamma^{-1} A + \mathcal{R}''(f_{\text{MAP}}).
+$$
+Here $A = \mathcal{A}'(f_{\text{MAP}})$ is the Jacobian of the forward operator (for linear $\mathcal{A}$, simply $A$), and $\mathcal{R}''$ is the second derivative of the regularizer. The resulting Gaussian approximation is
+$$
+\pi_{\text{post}}(f \,|\, g^\delta) \approx N\!\left(f_{\text{MAP}},\; \mathcal{H}^{-1}\right).
+$$
+
+For the linear-Gaussian problem, this is exact: $f_{\text{MAP}} = f_{\text{post}}$ and $\mathcal{H}^{-1} = \Sigma_{\text{post}}$. For nonlinear problems, the approximation is accurate when the posterior is well-concentrated around the MAP and nearly Gaussian there, which is often true when the noise level $\delta$ is small.
+
+In practice, forming and storing $\mathcal{H}^{-1}$ is infeasible for large problems. Instead, one computes a low-rank approximation. The Hessian can be split as
+$$
+\mathcal{H} = \mathcal{H}_{\text{misfit}} + \Sigma_0^{-1}, \qquad \mathcal{H}_{\text{misfit}} = A^T \Gamma^{-1} A,
+$$
+where the misfit Hessian $\mathcal{H}_{\text{misfit}}$ has limited rank when the data dimension is much smaller than the parameter dimension (which is the typical setting for ill-posed inverse problems). A randomised eigendecomposition identifies the dominant eigenpairs of the prior-preconditioned misfit Hessian $\Sigma_0^{1/2}\mathcal{H}_{\text{misfit}}\Sigma_0^{1/2}$, giving a low-rank update
+$$
+\mathcal{H}^{-1} \approx \Sigma_0 - \Sigma_0 \hat{V} D \hat{V}^T \Sigma_0,
+$$
+where $\hat{V}$ and $D$ encode the dominant eigenpairs. This is the *low-rank Gauss-Newton approximation*, and it allows one to draw approximate posterior samples and compute approximate posterior variances without ever forming the full $\mathcal{H}^{-1}$.
+
+The Laplace approximation is the method I reach for when I want uncertainty estimates but MCMC is too expensive. It requires solving the forward problem and computing a Jacobian-vector product (via the adjoint), rather than thousands of forward solves. For EIT the cost is roughly twice the MAP computation, which is manageable.
 
 
 ## The Computational Challenge
@@ -88,24 +132,30 @@ The challenge is computational cost. Each step of the chain requires evaluating 
 
 Several strategies address this bottleneck:
 
-**Efficient proposals.** The standard random-walk Metropolis algorithm explores high-dimensional parameter spaces slowly. More sophisticated algorithms use gradient information to propose better moves. The MALA (Metropolis-adjusted Langevin algorithm) uses the gradient of the log-posterior to inform the proposal:
+**Efficient proposals.** The standard random-walk Metropolis algorithm proposes $f^* = f^n + \sqrt{\tau}\, \xi$ with $\xi \sim N(0, I)$ and accepts or rejects based on the likelihood ratio. In high dimensions, this requires an extremely small step size $\tau$ to achieve a reasonable acceptance rate, and the mixing time (the number of steps needed to explore the posterior) grows rapidly with dimension.
+
+More sophisticated algorithms use gradient information to propose better moves. The MALA (Metropolis-adjusted Langevin algorithm) adds a drift term proportional to the gradient of the log-posterior:
 
 $$
 f^* = f^n + \frac{\tau}{2} \nabla \log \pi_{\text{post}}(f^n) + \sqrt{\tau} \, \xi, \qquad \xi \sim N(0, I).
 $$
 
-Hamiltonian Monte Carlo (HMC) goes further, using the geometry of the posterior to make long-range proposals that are accepted with high probability. The cost is computing gradients (and sometimes Hessians) of the forward model, which for PDE problems requires adjoint methods.
+The drift pushes the proposal toward regions of higher posterior probability, substantially improving acceptance rates compared to the random walk. For PDE-based problems, computing $\nabla \log \pi_{\text{post}}$ requires solving an adjoint PDE, which doubles the cost per step but is almost always worthwhile.
+
+Hamiltonian Monte Carlo (HMC) introduces an auxiliary momentum variable and simulates Hamiltonian dynamics to propose long-range moves that are accepted with high probability. It requires computing several gradient evaluations per proposal but explores the posterior far more efficiently than MALA for posteriors with complex geometry. The No-U-Turn Sampler (NUTS) automates the tuning of HMC, making it practical for applied problems.
 
 **Surrogate models.** Replace the expensive forward operator with a fast surrogate (a neural operator, a reduced-order model, or a polynomial chaos expansion) and sample from the resulting approximate posterior. The surrogate introduces bias, but if it is accurate enough, the bias is small compared to the uncertainty.
 
-**Dimension reduction.** In many inverse problems, the data informs only a low-dimensional subspace of the parameter space. Identifying this subspace (for instance, through the singular value decomposition of the prior-preconditioned Hessian of the negative log-likelihood) allows you to sample only the informed directions and draw the uninformed directions directly from the prior.
+**Dimension reduction.** In many inverse problems, the data informs only a low-dimensional subspace of the parameter space. Identifying this subspace (for instance, through the dominant eigenpairs of the prior-preconditioned Hessian $\Sigma_0^{1/2}\mathcal{H}_{\text{misfit}}\Sigma_0^{1/2}$) allows you to sample only the informed directions at full posterior resolution and draw the uninformed directions directly from the prior. The resulting method, called *likelihood-informed subspace* (LIS) MCMC, achieves a mixing rate that depends on the effective dimension of the data-informed subspace rather than on the full (possibly infinite) dimension of the parameter space.
 
 
 ## Infinite-Dimensional Bayesian Inference
 
 A subtlety that took me a while to appreciate: the Bayesian formulation for function-valued unknowns requires care with the mathematical framework. You cannot simply define a Gaussian distribution on an infinite-dimensional function space by specifying a covariance matrix, because the Lebesgue measure does not exist in infinite dimensions.
 
-The rigorous framework, developed extensively by Andrew Stuart and collaborators, works with Gaussian measures on function spaces. The prior is a Gaussian measure $\mu_0 = N(f_0, \mathcal{C})$ where $\mathcal{C}$ is a covariance operator. The posterior is defined via the Radon-Nikodym derivative:
+The rigorous framework, developed extensively by Andrew Stuart and collaborators, works with Gaussian measures on function spaces. The prior is a Gaussian measure $\mu_0 = N(f_0, \mathcal{C})$ where $\mathcal{C}$ is a *covariance operator*: a positive, self-adjoint, trace-class operator on the function space. Common choices include $\mathcal{C} = (-\Delta + \kappa^2 I)^{-s}$ for some $\kappa > 0$ and $s > d/2$ (where $d$ is the spatial dimension), which generates samples that are almost surely in $H^{s - d/2}(\Omega)$. The parameters $\kappa$ and $s$ control the correlation length and smoothness of the prior samples.
+
+The posterior is defined via the Radon-Nikodym derivative:
 
 $$
 \frac{d\mu_{\text{post}}}{d\mu_0}(f) \propto \exp\!\left(-\Phi(f; g^\delta)\right),
@@ -115,7 +165,17 @@ where $\Phi(f; g^\delta) = \frac{1}{2}\lVert \mathcal{A}(f) - g^\delta \rVert_\G
 
 The key result is that the posterior is well-defined (absolutely continuous with respect to the prior) under mild conditions on the forward operator. This is not obvious, and it fails if the prior or likelihood is chosen carelessly.
 
-This framework has practical consequences. MCMC algorithms designed for finite-dimensional problems can behave pathologically when applied to discretized versions of infinite-dimensional problems: the acceptance rate may go to zero as the discretization refines. Algorithms that are formulated directly in function space (like the preconditioned Crank-Nicolson algorithm) maintain a mesh-independent acceptance rate, making them far more robust.
+This framework has practical consequences. MCMC algorithms designed for finite-dimensional problems can behave pathologically when applied to discretized versions of infinite-dimensional problems: the acceptance rate may go to zero as the discretization refines, a phenomenon sometimes called *dimension dependence* of the MCMC. Intuitively, as the discretization becomes finer, the random-walk proposal moves in progressively more dimensions, and almost all proposals land in regions of negligible posterior mass.
+
+The *preconditioned Crank-Nicolson* (pCN) algorithm resolves this. Its proposal is
+$$
+f^* = \sqrt{1 - \beta^2}\, f^n + \beta\, \xi, \qquad \xi \sim \mu_0 = N(0, \mathcal{C}),
+$$
+where $\beta \in (0,1)$ is a step-size parameter. This blends the current state $f^n$ with a fresh draw from the prior in a way that *preserves the prior measure exactly*: if $f^n \sim \mu_0$ then $f^* \sim \mu_0$ regardless of $\beta$. The Metropolis-Hastings acceptance step then only involves the likelihood ratio:
+$$
+\alpha(f^n, f^*) = \min\!\left(1,\; \exp\!\left(\Phi(f^n; g^\delta) - \Phi(f^*; g^\delta)\right)\right),
+$$
+where $\Phi(f; g^\delta) = \frac{1}{2}\lVert \mathcal{A}(f) - g^\delta \rVert_\Gamma^2$. Because the proposal preserves the prior, the normalisation constant in the Radon-Nikodym derivative cancels, and the acceptance probability depends only on how much better or worse the proposal explains the data. As the discretization refines, $\beta$ can be held fixed and the acceptance rate converges to a positive limit, making pCN far more robust than its finite-dimensional analogues.
 
 
 ## Connections to Deterministic Methods
