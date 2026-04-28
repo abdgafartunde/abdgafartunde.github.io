@@ -40,7 +40,7 @@ $$
 \min_f \; \frac{1}{2}\lVert f - g^\delta \rVert_2^2 + \alpha \operatorname{TV}(f),
 $$
 
-where $\operatorname{TV}(f) = \int_\Omega |\nabla f| \, dx$ is the total variation.
+where $\operatorname{TV}(f) = \int_\Omega \lvert\nabla f\rvert \, dx$ is the total variation.
 
 The genius of the ROF model is that the TV penalty preserves edges. Unlike the quadratic penalty $\lVert \nabla f \rVert_2^2$, which penalizes all gradients equally and smears edges, the TV penalty penalizes the total magnitude of the gradient without squaring. A sharp edge with a large gradient concentrated at one location incurs only a finite cost. By contrast, a smooth transition spread over a large region can incur the same total variation as a sharp edge. The functional is indifferent between the two, allowing the data fidelity term to decide which is more consistent with the observations.
 
@@ -56,10 +56,13 @@ The most effective algorithms for these problems are primal-dual methods, partic
 The TV functional can be written as:
 
 $$
-\operatorname{TV}(f) = \sup_{\lVert p \rVert_\infty \leq 1} \int_\Omega p \cdot \nabla f \, dx = \sup_{\lVert p \rVert_\infty \leq 1} \langle p, \nabla f \rangle,
+\begin{aligned}
+\operatorname{TV}(f) &= \sup_{\lVert p \rVert_\infty \leq 1} \int_\Omega p \cdot \nabla f \, dx \\\\
+&= \sup_{\lVert p \rVert_\infty \leq 1} \langle p, \nabla f \rangle,
+\end{aligned}
 $$
 
-where the supremum is over vector fields $p$ with $|p(x)| \leq 1$ pointwise. Substituting this into the minimization yields a saddle-point problem:
+where the supremum is over vector fields $p$ with $\lvert p(x)\rvert \leq 1$ pointwise. Substituting this into the minimization yields a saddle-point problem:
 
 $$
 \min_f \max_{\lVert p \rVert_\infty \leq 1} \; \frac{1}{2}\lVert f - g^\delta \rVert_2^2 + \alpha \langle p, \nabla f \rangle.
@@ -72,7 +75,7 @@ p^{n+1} = \operatorname{proj}_{\lVert \cdot \rVert_\infty \leq 1}\!\left( p^n + 
 $$
 
 $$
-f^{n+1} = \operatorname{prox}_{\tau \mathcal{D}}\!\left( f^n + \tau \alpha \, \operatorname{div}(p^{n+1}) \right),
+f^{n+1} = \operatorname{prox}_{\tau \mathcal{D}}\!\left( f^n - \tau \alpha \, \operatorname{div}(p^{n+1}) \right),
 $$
 
 $$
@@ -90,7 +93,7 @@ I use primal-dual methods extensively in my EIT work. The adaptivity of the step
 
 The variational framework is not limited to total variation. Different regularization terms capture different structural priors.
 
-**Directional TV.** When edges have a preferred orientation (as in some geological imaging problems), the isotropic TV norm $|\nabla f| = \sqrt{f_x^2 + f_y^2}$ can be replaced with an anisotropic version $|f_x| + |f_y|$ or a weighted version that penalizes gradients in different directions differently. This allows you to incorporate directional prior knowledge into the reconstruction.
+**Directional TV.** When edges have a preferred orientation (as in some geological imaging problems), the isotropic TV norm $\lvert\nabla f\rvert = \sqrt{f_x^2 + f_y^2}$ can be replaced with an anisotropic version $\lvert f_x\rvert + \lvert f_y\rvert$ or a weighted version that penalizes gradients in different directions differently. This allows you to incorporate directional prior knowledge into the reconstruction.
 
 **Infimal convolution.** The infimal convolution of two functionals $\mathcal{R}_1$ and $\mathcal{R}_2$ is defined as:
 
@@ -103,10 +106,10 @@ This decomposition encourages the reconstruction to be the sum of two components
 **Total Generalized Variation.** TGV extends TV to penalize not just the gradient but also higher-order derivatives, avoiding the staircasing effect that pure TV introduces on smooth regions. The second-order TGV functional:
 
 $$
-\operatorname{TGV}^2_{(\alpha_0,\, \alpha_1)}(f) = \min_{w} \; \alpha_1 \int_\Omega \lvert \nabla f - w \rvert \, dx + \alpha_0 \int_\Omega \lvert \mathcal{E}(w) \rvert \, dx,
+\operatorname{TGV}_\beta^2(f) = \min_w \; \alpha_1 \lVert \nabla f - w \rVert_1 + \alpha_0 \lVert \mathcal{E}(w) \rVert_1
 $$
 
-where $w$ is an auxiliary vector field, $\mathcal{E}(w) = \tfrac{1}{2}(\nabla w + (\nabla w)^T)$ is the symmetrized gradient (a symmetric tensor), and $\lvert\cdot\rvert$ denotes the pointwise Frobenius norm. The first term penalises the discrepancy between the image gradient and $w$; the second term penalises the variation of $w$ itself. Together they favour piecewise linear (affine) solutions rather than piecewise constant ones. For many imaging problems this produces more natural-looking reconstructions, free of the staircase artefacts that pure TV introduces on smooth regions.
+favours piecewise linear solutions (affine regions separated by edges) rather than piecewise constant ones. For many imaging problems, this produces more natural-looking reconstructions.
 
 **Dictionary-based sparsity.** If the image is sparse in a known transform domain (wavelets, curvelets, shearlets), the penalty $\mathcal{R}(f) = \lVert \Psi f \rVert_1$ promotes sparsity of the transform coefficients. The choice of dictionary $\Psi$ encodes a prior about the geometry of the image features: wavelets capture point singularities, curvelets capture curve singularities, and shearlets combine the two.
 

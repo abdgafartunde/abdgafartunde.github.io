@@ -18,20 +18,20 @@ This connection has been productive in both directions. It has given the deep le
 A standard residual network applies a sequence of transformations:
 
 $$
-h_{k+1} = h_k + f_\theta(h_k, t_k), \qquad k = 0, 1, \ldots, K-1,
+h_{k+1} = h_k + f_\theta(h_k, t_k),
 $$
 
-where $h_k$ is the hidden state at layer $k$, $f_\theta$ is a parameterized transformation (typically a small neural network), and $t_k$ is a "time" label for layer $k$.
+for $k = 0, 1, \ldots, K-1$, where $h_k$ is the hidden state at layer $k$, $f_\theta$ is a parameterized transformation (typically a small neural network), and $t_k$ is a "time" label for layer $k$.
 
 This is the forward Euler method applied to the ODE $\dot{h}(t) = f_\theta(h(t), t)$ with step size 1. The connection is immediate: a residual network with $K$ layers is a $K$-step numerical solution of a dynamical system.
 
 Chen, Rubanova, Bettencourt, and Duvenaud made this precise in their 2018 NeurIPS paper on Neural ODEs. Instead of stacking a fixed number of layers, they define the network as the continuous-time ODE:
 
 $$
-\frac{dh}{dt} = f_\theta(h(t), t), \qquad h(0) = x,
+\frac{dh}{dt} = f_\theta(h(t), t),
 $$
 
-where $x$ is the input and the output is $h(T)$ for some terminal time $T$. The ODE is solved numerically during both the forward pass (to compute the output) and the backward pass (to compute gradients), using an adaptive ODE solver.
+with initial condition $h(0) = x$, where $x$ is the input and the output is $h(T)$ for some terminal time $T$. The ODE is solved numerically during both the forward pass (to compute the output) and the backward pass (to compute gradients), using an adaptive ODE solver.
 
 The elegance of this formulation is that the model has no fixed depth. The ODE solver automatically determines how many function evaluations (analogous to layers) are needed, allocating more computation where the dynamics are complex and less where they are simple. The number of parameters is independent of the effective depth, which can reduce memory costs substantially.
 
@@ -43,13 +43,13 @@ Training a neural ODE requires computing gradients of the loss with respect to t
 The adjoint method offers an alternative. Define the adjoint state $a(t) = \frac{dL}{dh(t)}$, where $L$ is the loss. The adjoint satisfies a backward ODE:
 
 $$
-\frac{da}{dt} = -\left(a(t)\right)^\top \frac{\partial f_\theta}{\partial h}(h(t), t),
+\frac{da}{dt} = -a(t)^T \frac{\partial f_\theta}{\partial h}(h(t), t),
 $$
 
 integrated backward from $t = T$ to $t = 0$, with the terminal condition $a(T) = \frac{dL}{dh(T)}$. The gradient with respect to $\theta$ is:
 
 $$
-\frac{dL}{d\theta} = -\int_0^T \left(a(t)\right)^\top \frac{\partial f_\theta}{\partial \theta}(h(t), t) \, dt.
+\frac{dL}{d\theta} = -\int_0^T a(t)^T \frac{\partial f_\theta}{\partial \theta}(h(t), t) \, dt.
 $$
 
 The adjoint method computes the gradient by solving another ODE backward in time, requiring only $O(1)$ memory (independent of the number of solver steps). This is the same adjoint method used in optimal control, data assimilation, and PDE-constrained optimization, applied here to the neural network training problem.
@@ -67,13 +67,7 @@ $$
 \frac{d \log p(h(t))}{dt} = -\operatorname{tr}\!\left( \frac{\partial f_\theta}{\partial h} \right).
 $$
 
-Computing the trace of the Jacobian is expensive for high-dimensional problems. The Hutchinson trace estimator replaces it with an unbiased stochastic approximation: for any random vector $v$ with $\mathbb{E}[vv^\top] = I$,
-
-$$
-\operatorname{tr}\!\left( \frac{\partial f_\theta}{\partial h} \right) \approx v^\top \frac{\partial f_\theta}{\partial h}\, v, \qquad v \sim N(0, I).
-$$
-
-Each evaluation requires only a Jacobian-vector product (computable in $O(d)$ time via automatic differentiation) rather than the full Jacobian. Flow matching (Lipman et al., 2023) provides an even more efficient training framework that avoids the trace computation entirely by reframing training as regression on a vector field rather than maximum likelihood on the CNF.
+Computing the trace of the Jacobian is expensive for high-dimensional problems. The Hutchinson trace estimator (approximating the trace via random projections) makes this feasible, and flow matching (Lipman et al., 2023) provides an even more efficient training framework that avoids the trace computation entirely.
 
 **Modeling physical systems.** When the data comes from a physical system governed by differential equations, parameterizing the right-hand side with a neural network lets you learn the dynamics directly. This is particularly useful when the governing equations are partially known: you model the known physics explicitly and use the neural network to capture the unknown or difficult-to-model components.
 
@@ -95,18 +89,21 @@ where $dW$ is a Wiener process, adds stochasticity to the model. This is useful 
 **Hamiltonian and Lagrangian Neural Networks.** When the system you are modeling has conserved quantities (energy, momentum), encoding these conservation laws into the architecture can dramatically improve both accuracy and generalization. Hamiltonian Neural Networks (Greydanus et al., 2019) parameterize the Hamiltonian $H_\theta(q, p)$ and evolve the system via Hamilton's equations:
 
 $$
-\dot{q} = \frac{\partial H_\theta}{\partial p}, \qquad \dot{p} = -\frac{\partial H_\theta}{\partial q}.
+\begin{aligned}
+\dot{q} &= \frac{\partial H_\theta}{\partial p}, \\[4pt]
+\dot{p} &= -\frac{\partial H_\theta}{\partial q}.
+\end{aligned}
 $$
 
 Energy conservation is built in by construction. The network learns the Hamiltonian, and the dynamics follow from the structure. For mechanical systems, this produces physically plausible long-term predictions that standard neural ODEs cannot match.
 
-**Neural Controlled Differential Equations.** CDEs (Kidger et al., 2020) generalize Neural ODEs to handle sequential input data naturally. Written in integral form:
+**Neural Controlled Differential Equations.** CDEs (Kidger et al., 2020) generalize Neural ODEs to handle sequential input data naturally:
 
 $$
-h(t) = h(0) + \int_0^t f_\theta(h(s))\, dX(s),
+\frac{dh}{dt} = f_\theta(h(t)) \frac{dX}{dt}(t),
 $$
 
-or equivalently as the differential equation $dh = f_\theta(h(t))\, dX(t)$, where $X(t)$ is a continuous interpolation of the input data and $dX(t) = \dot{X}(t)\, dt$ is its differential. This provides a principled continuous-time analogue of RNNs, where the network's hidden state responds to increments of the input signal rather than to its values. The formulation naturally handles missing or irregularly timed observations and has shown strong performance on time series tasks.
+where $X(t)$ is a continuous interpolation of the input data. This provides a principled continuous-time analogue of RNNs and has shown strong performance on time series tasks.
 
 
 ## Connections to Numerical Analysis

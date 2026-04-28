@@ -414,21 +414,37 @@ button:focus-visible,
 
 /* MathJax display equations: horizontal scroll on overflow */
 mjx-container[jax="SVG"][display="true"] {
+    display: block;
     overflow-x: auto;
     overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
     max-width: 100%;
-    padding: 0.5rem 0;
+    min-width: 0;
+    padding: 0.75rem 0;
+    text-align: center;
 }
 
-/* Inline math: prevent line-height jump */
+mjx-container[jax="SVG"][display="true"] svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Inline math: keep on the text baseline */
 mjx-container[jax="SVG"]:not([display="true"]) {
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: -0.2em;
+    max-width: 100%;
 }
 
-/* Numbered equations */
-mjx-container[jax="SVG"][display="true"] .MathJax {
-    margin: 0 auto;
+/* Dark mode: MathJax SVG inherits text colour */
+[data-theme="dark"] mjx-container[jax="SVG"] svg {
+    color: var(--text);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) mjx-container[jax="SVG"] svg {
+        color: var(--text);
+    }
 }
 
 .content code {
