@@ -52,6 +52,16 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
 <div class="news-list">
   <div class="news-item">
     <span class="news-dot"></span>
+    <span class="news-date">Apr 2026</span>
+    <span class="news-text">New paper published in <em>Japan Journal of Industrial and Applied Mathematics</em>: <a href="https://doi.org/10.1007/s13160-026-00778-x" target="_blank" rel="noopener">A new spectral conjugate gradient method for convex constrained monotone nonlinear equations with application to image restoration</a></span>
+  </div>
+  <div class="news-item">
+    <span class="news-dot"></span>
+    <span class="news-date">Apr 2026</span>
+    <span class="news-text">New paper published in <em>AIMS Mathematics</em>: <a href="https://doi.org/10.3934/math.2026448" target="_blank" rel="noopener">Accelerated double step-length method for solving monotone nonlinear equations with convex-constraint and application</a></span>
+  </div>
+  <div class="news-item">
+    <span class="news-dot"></span>
     <span class="news-date">Jan 2026</span>
     <span class="news-text">Started postdoctoral position at Jilin University, China</span>
   </div>
