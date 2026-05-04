@@ -37,8 +37,8 @@ seo_description: "Academic and professional experience of A.T. Tiamiyu: postdoct
 <h2 class="section-heading"><i class="fas fa-flask"></i> Research Experience</h2>
 
 <div class="about-text" style="margin-bottom: 1.5rem;">
-<p>My research centres on the mathematical theory and computational practice of inverse problems — recovering hidden quantities from indirect, noisy measurements. I work across both linear inverse problems (sparse-view CT, undersampled MRI, X-ray tomography) and nonlinear ones (electrical impedance tomography, full waveform seismic inversion, ultrasound tomography), combining variational regularization theory, numerical analysis, and scientific machine learning. My work integrates rigorous mathematical analysis with practical algorithmic development: I am interested in both proving that methods converge and in building implementations that work on real data.</p>
-<p>I am broadly interested in problems where physics and data need to be integrated — where a forward model exists and encodes genuine structure, but where measurements are incomplete, corrupted, or expensive to acquire. Applications I have worked on include medical imaging (EIT), fluid and heat flow simulation, and seismic and subsurface imaging.</p>
+<p>My research centres on the mathematical theory and computational practice of inverse problems (recovering hidden quantities from indirect, noisy measurements). I work across both linear inverse problems (sparse-view CT, undersampled MRI, X-ray tomography) and nonlinear ones (electrical impedance tomography, full waveform seismic inversion, ultrasound tomography), combining variational regularization theory, numerical analysis, and scientific machine learning. My work integrates rigorous mathematical analysis with practical algorithmic development: I am interested in both proving that methods converge and in building implementations that work on real data.</p>
+<p>I am broadly interested in problems where physics and data need to be integrated: where a forward model exists and encodes genuine structure, but where measurements are incomplete, corrupted, or expensive to acquire. Applications I have worked on include medical imaging (EIT), fluid and heat flow simulation, and seismic and subsurface imaging.</p>
 </div>
 
 <div class="timeline">
@@ -99,7 +99,7 @@ seo_description: "Academic and professional experience of A.T. Tiamiyu: postdoct
 <h2 class="section-heading"><i class="fas fa-chalkboard-teacher"></i> Teaching</h2>
 
 <div class="about-text" style="margin-bottom: 1.5rem;">
-<p>I believe that mathematical ideas become most useful when they can be explained clearly to people who will actually apply them. My teaching approach emphasises intuition first — understanding why a method works before dwelling on the technical details — without sacrificing rigour when it matters. I have taught students ranging from engineering undergraduates encountering calculus to PhD students working through the subtleties of applied optimization.</p>
+<p>I believe that mathematical ideas become most useful when they can be explained clearly to people who will actually apply them. My teaching approach emphasises intuition first (understanding why a method works before dwelling on the technical details) without sacrificing rigour when it matters. I have taught students ranging from engineering undergraduates encountering calculus to PhD students working through the subtleties of applied optimization.</p>
 <p>I am interested in developing short courses and workshops on inverse problems, scientific computing, and data-driven modelling for graduate students and professionals, particularly in contexts where these methods have direct applied relevance.</p>
 </div>
 

@@ -10,16 +10,16 @@ math: true
 
 Every field has a paper that changed the terms of the conversation. For the theory of ill-posed problems, that paper is Andrei Nikolaevich Tikhonov's 1963 note in *Doklady Akademii Nauk SSSR*, translated into English as "On the regularization of ill-posed problems." It is three and a half pages long. It introduced an idea that now bears his name, solved a problem that had been considered essentially intractable, and established the framework within which an entire subfield still operates.
 
-I have cited this paper scores of times. When I finally sat down to read it carefully — not skim it, not rely on the secondary literature's description of it, but actually read it — I was surprised by several things: what it said precisely, what it did not say, and how much conceptual content fits in so few pages. This post is a record of that close reading.
+I have cited this paper scores of times. When I finally sat down to read it carefully (not skim it, not rely on the secondary literature's description of it, but actually read it), I was surprised by several things: what it said precisely, what it did not say, and how much conceptual content fits in so few pages. This post is a record of that close reading.
 
 
 ## The Problem Tikhonov Was Solving
 
 By 1963, the difficulty of ill-posed problems was well understood. Hadamard had articulated the concept of well-posedness in 1902 and used it, notoriously, to argue that ill-posed problems were not physically meaningful. His view was that a legitimate physical problem must have a solution that depends continuously on the data; problems that fail this continuity requirement were, in his view, wrongly formulated.
 
-This position had become a genuine obstruction. Many problems of practical scientific interest — particularly problems of recovering internal structure from surface measurements — are ill-posed in Hadamard's sense. The observed data determine the solution uniquely (in principle), but small errors in the data can produce arbitrarily large errors in the solution. If Hadamard was right that ill-posed problems were illegitimate, then these problems were unsolvable by design.
+This position had become a genuine obstruction. Many problems of practical scientific interest (particularly problems of recovering internal structure from surface measurements) are ill-posed in Hadamard's sense. The observed data determine the solution uniquely (in principle), but small errors in the data can produce arbitrarily large errors in the solution. If Hadamard was right that ill-posed problems were illegitimate, then these problems were unsolvable by design.
 
-Tikhonov's response was not to argue that Hadamard was wrong but to reframe the problem. His starting point: if the set of admissible solutions is constrained to a compact subset of the function space, then the inverse mapping is automatically continuous. The solution does depend stably on the data — but only among solutions that satisfy the constraint.
+Tikhonov's response was not to argue that Hadamard was wrong but to reframe the problem. His starting point: if the set of admissible solutions is constrained to a compact subset of the function space, then the inverse mapping is automatically continuous. The solution does depend stably on the data, but only among solutions that satisfy the constraint.
 
 This is the conceptual core of regularization, stated in the very first paragraph of the 1963 paper.
 
@@ -57,18 +57,18 @@ This is the formula that now appears in every textbook on inverse problems. It i
 
 Reading the paper carefully, a few things stand out that are sometimes obscured in textbook treatments.
 
-**The parameter $\alpha$ is not determined by the paper.** Tikhonov proves that *some* parameter choice strategy works (any $\alpha(\delta)$ with $\alpha \to 0$ and $\delta^2/\alpha \to 0$), but the paper gives no guidance on how to choose $\alpha$ in practice. The parameter choice problem — given actual noisy data $u^\delta$, how do you choose $\alpha$? — is entirely separate from the existence and convergence results. Methods for this (Morozov discrepancy principle, L-curve, generalized cross-validation) came later and are still active areas of research.
+**The parameter $\alpha$ is not determined by the paper.** Tikhonov proves that *some* parameter choice strategy works (any $\alpha(\delta)$ with $\alpha \to 0$ and $\delta^2/\alpha \to 0$), but the paper gives no guidance on how to choose $\alpha$ in practice. The parameter choice problem (given actual noisy data $u^\delta$, how do you choose $\alpha$?) is entirely separate from the existence and convergence results. Methods for this (Morozov discrepancy principle, L-curve, generalized cross-validation) came later and are still active areas of research.
 
-**The compact sublevel set assumption is strong.** The convergence analysis relies on the sublevel sets of $\Omega$ being compact. For the $L^2$ norm in an infinite-dimensional Hilbert space, $\{z : \lVert z \rVert^2 \leq M\}$ is the closed ball — which is *not* compact. Tikhonov's proof requires choosing $\Omega$ to be something like a Sobolev norm, whose sublevel sets are compact by the Rellich-Kondrachov theorem. The paper states this condition abstractly, but later textbooks sometimes state "Tikhonov regularization with $\Omega[z] = \lVert z \rVert^2$" without noting that the basic compactness argument no longer applies. The result is still true, but for different reasons.
+**The compact sublevel set assumption is strong.** The convergence analysis relies on the sublevel sets of $\Omega$ being compact. For the $L^2$ norm in an infinite-dimensional Hilbert space, $\{z : \lVert z \rVert^2 \leq M\}$ is the closed ball, which is *not* compact. Tikhonov's proof requires choosing $\Omega$ to be something like a Sobolev norm, whose sublevel sets are compact by the Rellich-Kondrachov theorem. The paper states this condition abstractly, but later textbooks sometimes state "Tikhonov regularization with $\Omega[z] = \lVert z \rVert^2$" without noting that the basic compactness argument no longer applies. The result is still true, but for different reasons.
 
-**The word "regularization" is not in the title as a method, but as a process.** Tikhonov is not proposing "a regularization method"; he is proving that ill-posed problems can be regularized — made well-posed — by a particular construction. The shift in meaning (from "regularization" as a property to "Tikhonov regularization" as a specific algorithm) happened gradually in the subsequent literature.
+**The word "regularization" is not in the title as a method, but as a process.** Tikhonov is not proposing "a regularization method"; he is proving that ill-posed problems can be regularized (made well-posed) by a particular construction. The shift in meaning (from "regularization" as a property to "Tikhonov regularization" as a specific algorithm) happened gradually in the subsequent literature.
 
 
 ## What the Paper Did Not Say
 
 The 1963 paper does not discuss:
 
-- **Convergence rates.** The paper proves that $z_\alpha^\delta \to z^\dagger$ as $\delta \to 0$ but does not quantify how fast. Convergence rate analysis — showing that $\lVert z_\alpha^\delta - z^\dagger \rVert = O(\delta^{2\nu/(2\nu+1)})$ under a source condition $z^\dagger \in \mathcal{R}((A^*A)^\nu)$ — came in the 1970s and 1980s, in work by Nashed, Vainikko, Tikhonov and Arsenin (in their 1977 book), and many others.
+- **Convergence rates.** The paper proves that $z_\alpha^\delta \to z^\dagger$ as $\delta \to 0$ but does not quantify how fast. Convergence rate analysis (showing that $\lVert z_\alpha^\delta - z^\dagger \rVert = O(\delta^{2\nu/(2\nu+1)})$ under a source condition $z^\dagger \in \mathcal{R}((A^*A)^\nu)$) came in the 1970s and 1980s, in work by Nashed, Vainikko, Tikhonov and Arsenin (in their 1977 book), and many others.
 
 - **Nonlinear problems.** The 1963 paper treats linear operators. Extending regularization theory to nonlinear operators is a much harder problem, and the general theory (convergence, rates, parameter choice for nonlinear Tikhonov) was developed primarily in the 1990s.
 
@@ -83,7 +83,7 @@ One aspect of the paper that is easy to miss from a modern Western perspective i
 
 Tikhonov was not primarily an inverse problems theorist; he was a mathematical physicist who had made fundamental contributions to topology, differential equations, and computational mathematics. His work on ill-posed problems was driven by real computational problems: the inversion of gravitational and electromagnetic data in geophysics, problems that the Soviet scientific establishment had strong incentives to solve.
 
-The Soviet school of ill-posed problems — which included Tikhonov, Ivanov, Lavrentiev, and their students — developed in parallel with and largely independently of Western numerical analysis. The result was a body of theory that approached the same problems from a different angle, emphasizing functional analysis and operator theory rather than matrix computation. The convergence of the two traditions in the 1980s and 1990s enriched both.
+The Soviet school of ill-posed problems (which included Tikhonov, Ivanov, Lavrentiev, and their students) developed in parallel with and largely independently of Western numerical analysis. The result was a body of theory that approached the same problems from a different angle, emphasizing functional analysis and operator theory rather than matrix computation. The convergence of the two traditions in the 1980s and 1990s enriched both.
 
 Tikhonov's 1963 paper was published in Russian; the English translation appeared in *Soviet Mathematics Doklady* the same year. The rapid availability of translations was partly a feature of the Cold War scientific communication apparatus, which made Soviet mathematics relatively accessible to Western readers despite the political context.
 
@@ -94,7 +94,7 @@ By the standards of what we know now, the 1963 paper is incomplete. It addresses
 
 And yet the paper is still worth reading, for two reasons.
 
-First, the core insight is elegant and clear: compactness restores stability. Once you have seen this, the whole framework of regularization makes sense. You are not applying an algorithm; you are enforcing a constraint that makes the problem well-posed. Every subsequent development — sparsity constraints, total variation, machine-learned regularizers — is a different way of choosing what that constraint should be.
+First, the core insight is elegant and clear: compactness restores stability. Once you have seen this, the whole framework of regularization makes sense. You are not applying an algorithm; you are enforcing a constraint that makes the problem well-posed. Every subsequent development (sparsity constraints, total variation, machine-learned regularizers) is a different way of choosing what that constraint should be.
 
 Second, the paper is a model of how to introduce a new framework. Tikhonov states the problem clearly, identifies the key obstruction (unboundedness of the inverse), introduces the minimal modification needed to restore stability, proves the fundamental theorem, and gives an example. There is no unnecessary generality, no anticipation of future extensions, no hedging. The result fills three and a half pages and answers the question it set out to answer.
 

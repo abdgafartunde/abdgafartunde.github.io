@@ -10,7 +10,7 @@ math: true
 
 Most discussions of inverse problems take the measurement setup as given. You have a set of electrodes, or a set of transducers, or a set of sensors, and you work with whatever data they produce. But there is a prior question: which measurements should you take in the first place?
 
-This is the problem of **optimal experimental design** (OED). Given a model, a class of possible experiments, and a criterion for what "good" information looks like, OED asks: which experiment — which choice of measurement operator — extracts the most useful information about the unknown?
+This is the problem of **optimal experimental design** (OED). Given a model, a class of possible experiments, and a criterion for what "good" information looks like, OED asks: which experiment (which choice of measurement operator) extracts the most useful information about the unknown?
 
 The question has a long history in statistics, going back at least to work by Kiefer and Wolfowitz in the 1950s. In recent years, it has become practically significant in inverse problems, where the measurement geometry is often a design choice, not a physical constraint. In EIT, you can choose which electrode pairs to stimulate and in what pattern. In seismic surveys, you can choose the shot locations. In MRI, you can choose the $k$-space trajectory. In each case, making the right choices can dramatically improve the quality of the reconstruction.
 
@@ -79,7 +79,7 @@ $$
 
 This is a combinatorial optimization problem: there are $\binom{N}{k}$ possible designs, which for $N = 100$ and $k = 10$ is about $1.7 \times 10^{13}$. Exhaustive search is hopeless.
 
-**Greedy methods.** Add sensors one at a time, choosing at each step the sensor that maximally decreases the design criterion. For submodular criteria (and A-optimality, D-optimality, and E-optimality are all submodular functions of the sensor set), the greedy algorithm achieves a $(1 - 1/e) \approx 63\%$ approximation of the global optimum — a classical result of Nemhauser, Wolsey, and Fisher.
+**Greedy methods.** Add sensors one at a time, choosing at each step the sensor that maximally decreases the design criterion. For submodular criteria (and A-optimality, D-optimality, and E-optimality are all submodular functions of the sensor set), the greedy algorithm achieves a $(1 - 1/e) \approx 63\%$ approximation of the global optimum, a classical result of Nemhauser, Wolsey, and Fisher.
 
 **Convex relaxation.** Replace the binary sensor selection indicator by a continuous weight $w_i \in [0, 1]$:
 
@@ -94,7 +94,7 @@ For A-optimality, this is a semidefinite program. Once the relaxed weights are o
 
 ## Adaptive and Sequential Design
 
-Static design — choosing all measurements before any data is collected — discards information. Sequential design interleaves measurement with inference: after each batch of measurements, the posterior is updated, and the next measurement is chosen based on the current posterior.
+Static design, choosing all measurements before any data is collected, discards information. Sequential design interleaves measurement with inference: after each batch of measurements, the posterior is updated, and the next measurement is chosen based on the current posterior.
 
 The optimal sequential design is the solution of a Bellman equation: at each step, choose the measurement that maximizes the expected information gain over all future steps. This is, in general, computationally intractable for non-trivial numbers of steps.
 
@@ -118,7 +118,7 @@ The challenge in applying OED to EIT is that the forward model is nonlinear (the
 
 ## What I Find Compelling
 
-OED is, at its core, a question about the structure of information: which features of the unknown can be recovered from which types of data? Understanding this is not only practically useful; it is theoretically clarifying.
+OED is fundamentally a question about the structure of information: which features of the unknown can be recovered from which types of data? Understanding this is not only practically useful; it is theoretically clarifying.
 
 In my own work, thinking about optimal designs has changed how I think about the ill-posedness of EIT. The problem is not merely that the forward operator maps many conductivities to similar data; it is that the standard measurement protocols do not extract the information that would distinguish them. This is a design choice, and it can be improved.
 

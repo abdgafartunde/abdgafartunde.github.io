@@ -8,7 +8,7 @@ tags: [Mathematics, Optimal Transport, Inverse Problems]
 math: true
 ---
 
-Imagine you have a pile of earth and a hole of the same volume. You want to fill the hole by moving the earth, and you want to do it as cheaply as possible — where cost is measured by mass times distance travelled. What is the optimal transport plan?
+Imagine you have a pile of earth and a hole of the same volume. You want to fill the hole by moving the earth, and you want to do it as cheaply as possible, where cost is measured by mass times distance travelled. What is the optimal transport plan?
 
 This is Monge's problem, posed in 1781. It took nearly 200 years to resolve satisfactorily. The resolution, due primarily to Kantorovich in the 1940s and later refined by Brenier, Benamou, Villani, and many others, produced a theory of extraordinary richness. Optimal transport is now central to analysis, probability, PDEs, image processing, statistics, and machine learning. If you have encountered Wasserstein distances in generative models or geometric measure theory, you have seen one corner of this theory.
 

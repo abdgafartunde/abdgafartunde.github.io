@@ -10,7 +10,7 @@ math: true
 
 Physics-informed neural networks have become one of the most discussed ideas in scientific computing. The concept is elegant: train a neural network to approximate the solution of a partial differential equation by encoding the PDE directly into the loss function. No mesh, no finite element assembly, no basis functions. Just a network, automatic differentiation, and gradient descent.
 
-Since Raissi, Perdikaris, and Karpathy's influential 2019 paper, the literature has exploded. Thousands of papers have applied PINNs to fluid dynamics, heat transfer, solid mechanics, electromagnetics, inverse problems, and a growing list of other domains. The pitch is appealing: mesh-free solvers that handle complex geometries naturally, integrate observational data with physical laws seamlessly, and scale to high-dimensional problems where classical methods choke on the curse of dimensionality.
+Since Raissi, Perdikaris, and Karpathy's influential 2019 paper, the literature has exploded. Thousands of papers have applied PINNs to fluid dynamics, heat transfer, solid mechanics, electromagnetics, inverse problems, and a growing list of other domains. The pitch is appealing: mesh-free solvers that handle complex geometries naturally, integrate observational data with physical laws directly, and scale to high-dimensional problems where classical methods choke on the curse of dimensionality.
 
 I have spent considerable time working with PINNs, particularly for inverse problems and parameter identification. What follows is an honest account of what I have found, not the version you would write for a grant application, but the version you would share with a colleague over coffee.
 

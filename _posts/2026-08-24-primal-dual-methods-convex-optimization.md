@@ -1,16 +1,16 @@
 ---
 layout: post
 title: "Primal-Dual Methods for Convex Optimization"
-description: "How saddle-point formulations and primal-dual splitting algorithms handle the non-smooth objectives that arise in imaging and inverse problems — and why total variation regularization requires going beyond gradient descent."
+description: "How saddle-point formulations and primal-dual splitting algorithms handle the non-smooth objectives that arise in imaging and inverse problems; total variation regularization requires going beyond gradient descent."
 date: 2026-08-24
 author: "Abd'gafar Tunde Tiamiyu"
 tags: [Mathematics, Optimization, Inverse Problems, Scientific Computing]
 math: true
 ---
 
-Gradient descent is the workhorse of smooth optimization, and much of machine learning runs on it or variants of it. But the objectives that arise naturally in imaging and inverse problems are often not smooth. Total variation regularization, $\ell^1$ norms, indicator functions of convex sets — these are non-differentiable, and gradient descent simply does not apply.
+Gradient descent is the workhorse of smooth optimization, and much of machine learning runs on it or variants of it. But the objectives that arise naturally in imaging and inverse problems are often not smooth. Total variation regularization, $\ell^1$ norms, indicator functions of convex sets: these are non-differentiable, and gradient descent simply does not apply.
 
-The standard workaround is to replace the non-smooth term with a smooth approximation. This works, but it introduces a smoothing parameter that must be tuned and that alters the problem being solved. For applications where the non-smooth structure matters — edge-preserving regularization, exact sparsity, or hard constraints — this is not ideal.
+The standard workaround is to replace the non-smooth term with a smooth approximation. This works, but it introduces a smoothing parameter that must be tuned and that alters the problem being solved. For applications where the non-smooth structure matters (edge-preserving regularization, exact sparsity, or hard constraints), this is not ideal.
 
 Primal-dual methods offer an alternative: algorithms designed specifically for non-smooth convex objectives that converge to the exact solution of the original problem. They are the basis of the optimization algorithms I use in my own EIT reconstruction work, and understanding their structure is useful for anyone working on imaging or variational inverse problems.
 
@@ -60,7 +60,7 @@ where $\sigma, \tau > 0$ are step sizes, $\theta \in [0, 1]$ is an over-relaxati
 
 The proximal operator $\mathrm{prox}_{\lambda f}(v) = \arg\min_u \frac{1}{2}\|u - v\|^2 + \lambda f(u)$ is the key computational primitive. For many common functions, it has a closed-form expression:
 
-- **$F^* = \iota_{\|p\|_\infty \leq 1}$** (total variation): $\mathrm{prox}_{\sigma F^*}(q) = q / \max(1, |q|)$ — pointwise projection onto the $\ell^\infty$ ball. This is the TV proximal step.
+- **$F^* = \iota_{\|p\|_\infty \leq 1}$** (total variation): $\mathrm{prox}_{\sigma F^*}(q) = q / \max(1, |q|)$, the pointwise projection onto the $\ell^\infty$ ball. This is the TV proximal step.
 - **$G(u) = \frac{1}{2}\|Au - b\|^2$** (least-squares fidelity): the proximal operator is $(I + \tau A^\top A)^{-1}(u + \tau A^\top b)$, which requires solving a linear system. For small problems this is direct; for large problems this inner solve is done iteratively (often with CG, linking back to the previous post).
 - **$G = \iota_C$** (indicator of a convex set $C$): $\mathrm{prox}$ is projection onto $C$.
 
@@ -85,8 +85,8 @@ This separation is the key to handling composite non-smooth objectives: by worki
 
 ## Why This Matters for Inverse Problems
 
-In regularized inversion, the choice of regularizer is a modelling choice: it encodes prior belief about the structure of the unknown. Total variation says the unknown is piecewise smooth with sharp edges. The $\ell^1$ norm of coefficients in a dictionary says the unknown is sparse in that dictionary. These structural priors frequently reflect genuine knowledge about the problem — and they happen to be non-smooth.
+In regularized inversion, the choice of regularizer is a modelling choice: it encodes prior belief about the structure of the unknown. Total variation says the unknown is piecewise smooth with sharp edges. The $\ell^1$ norm of coefficients in a dictionary says the unknown is sparse in that dictionary. These structural priors frequently reflect genuine knowledge about the problem, and they happen to be non-smooth.
 
-Primal-dual methods are the natural algorithmic framework for exploiting these priors without approximation. They handle the non-smoothness directly, converge to the exact regularized solution, and require only matrix-vector products with the forward operator and its adjoint — exactly what is available in most inverse problem settings.
+Primal-dual methods are the natural algorithmic framework for exploiting these priors without approximation. They handle the non-smoothness directly, converge to the exact regularized solution, and require only matrix-vector products with the forward operator and its adjoint, exactly what is available in most inverse problem settings.
 
 The combination of variational regularization with primal-dual algorithms is, in my view, one of the most useful and underappreciated toolsets in computational mathematics. It is worth understanding well.

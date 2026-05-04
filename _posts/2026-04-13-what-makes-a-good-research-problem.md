@@ -34,7 +34,7 @@ Beyond the standard criteria, I have developed some informal tests for whether a
 
 **Can I explain why it matters in two sentences?** If I cannot articulate, briefly and without jargon, why a problem is interesting, I probably do not understand it well enough to work on it effectively. This test is also practical: grant applications, seminar introductions, and conversations with colleagues all require a clear pitch.
 
-**Does it connect to other things I work on?** Research is cumulative. A problem that leverages my existing expertise in regularization theory and EIT is one where I have a genuine advantage over someone starting from scratch. Problems that are completely disconnected from my background require a larger upfront investment and carry more risk.
+**Does it connect to other things I work on?** Research is cumulative. A problem that builds on my existing expertise in regularization theory and EIT is one where I have a genuine advantage over someone starting from scratch. Problems that are completely disconnected from my background require a larger upfront investment and carry more risk.
 
 
 ## Patterns I Have Observed

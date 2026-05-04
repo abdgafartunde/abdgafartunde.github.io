@@ -8,7 +8,7 @@ Built with [Jekyll](https://jekyllrb.com/) and [GitHub Pages](https://pages.gith
 
 Postdoctoral Researcher in Computational and Applied Mathematics at Jilin University. Research areas:
 - Inverse problems and regularisation theory (linear and nonlinear)
-- Computational imaging — EIT, CT, MRI, ultrasound, seismic FWI
+- Computational imaging: EIT, CT, MRI, ultrasound, seismic FWI
 - Scientific machine learning and physics-informed neural networks
 - Numerical methods for PDEs and large-scale optimisation
 

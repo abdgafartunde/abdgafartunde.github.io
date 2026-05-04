@@ -107,7 +107,7 @@ The two approaches are closely related and have similar convergence properties. 
 
 ## Why I Know This
 
-Most of my direct numerical work uses finite element methods, because EIT involves complex boundary shapes and potentially discontinuous conductivities — exactly the settings where FEM excels over spectral methods. But spectral methods appear indirectly in my work in two ways.
+Most of my direct numerical work uses finite element methods, because EIT involves complex boundary shapes and potentially discontinuous conductivities, exactly the settings where FEM excels over spectral methods. But spectral methods appear indirectly in my work in two ways.
 
 First, the theory of spectral approximation underpins the analysis of Fourier-based regularization. When you regularize by truncating a singular value decomposition or by spectral cutoff, you are working in the language of spectral approximation, and the convergence theory is the same.
 

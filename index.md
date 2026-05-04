@@ -10,7 +10,7 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
   <div class="home-intro">
     <h1>Abd'gafar Tunde TIAMIYU</h1>
     <p class="title">Postdoctoral Researcher</p>
-    <p class="tagline">Inverse problems, scientific machine learning, and computational methods — applied to subsurface imaging, medical diagnostics, and engineering simulation</p>
+    <p class="tagline">Inverse problems, scientific machine learning, and computational methods: applied to subsurface imaging, medical diagnostics, and engineering simulation</p>
     <p class="affiliation">
       <i class="fas fa-university"></i> School of Mathematics, <a href="https://www.jlu.edu.cn/" target="_blank" rel="noopener">Jilin University</a><br>
       <i class="fas fa-map-marker-alt"></i> Changchun, Jilin, China
@@ -30,7 +30,7 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
 <h2 class="section-heading"><i class="fas fa-user"></i> About Me</h2>
 
 <div class="about-text">
-<p>I am a postdoctoral researcher in computational and applied mathematics at Jilin University. My work centres on inverse problems — recovering hidden quantities from indirect, noisy measurements — with applications spanning medical imaging (EIT, CT, MRI, ultrasound), geophysical imaging (seismic inversion), and engineering simulation. I develop both classical variational methods and scientific machine learning approaches, working across the full range from linear to strongly nonlinear inverse problems.</p>
+<p>I am a postdoctoral researcher in computational and applied mathematics at Jilin University. My work centres on inverse problems (recovering hidden quantities from indirect, noisy measurements), with applications spanning medical imaging (EIT, CT, MRI, ultrasound), geophysical imaging (seismic inversion), and engineering simulation. I develop both classical variational methods and scientific machine learning approaches, working across the full range from linear to strongly nonlinear inverse problems.</p>
 
 <p>I completed my PhD at The Chinese University of Hong Kong under the supervision of <a href="https://www.math.cuhk.edu.hk/~zou/" target="_blank" rel="noopener">Professor Jun Zou</a>, supported by the Hong Kong PhD Fellowship Scheme. During my doctoral studies, I spent nine months as a visiting researcher at the University of Graz, Austria, funded by the Ernst Mach Grant.</p>
 </div>
@@ -52,9 +52,9 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
 <h2 class="section-heading"><i class="fas fa-door-open"></i> Open To</h2>
 
 <div class="about-text">
-<p><strong>Research Collaborations</strong> — Inverse problems, scientific machine learning, PDE-constrained optimization, and computational imaging. I welcome joint projects with academic groups and interdisciplinary teams working on problems where rigorous mathematical modelling matters.</p>
-<p><strong>Industry Consulting</strong> — Geophysical and seismic imaging, medical image reconstruction, parameter identification in engineering models, and applied scientific computing. If your problem involves indirect measurements, large-scale simulation, or physics-constrained data analysis, <a href="mailto:abdgafartunde@yahoo.com">get in touch</a>.</p>
-<p><strong>Speaking &amp; Teaching</strong> — Conference presentations, workshop lectures, and short courses on inverse problems, scientific machine learning, and computational applied mathematics.</p>
+<p><strong>Research Collaborations:</strong> Inverse problems, scientific machine learning, PDE-constrained optimization, and computational imaging. I welcome joint projects with academic groups and interdisciplinary teams working on problems where rigorous mathematical modelling matters.</p>
+<p><strong>Industry Consulting:</strong> Geophysical and seismic imaging, medical image reconstruction, parameter identification in engineering models, and applied scientific computing. If your problem involves indirect measurements, large-scale simulation, or physics-constrained data analysis, <a href="mailto:abdgafartunde@yahoo.com">get in touch</a>.</p>
+<p><strong>Speaking &amp; Teaching:</strong> Conference presentations, workshop lectures, and short courses on inverse problems, scientific machine learning, and computational applied mathematics.</p>
 </div>
 </section>
 

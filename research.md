@@ -11,7 +11,7 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
 <div class="about-text">
 <p>I work on inverse problems: mathematical problems where you observe indirect measurements and want to reconstruct the quantity that produced them. These problems arise naturally in medical imaging, non-destructive testing, and geophysics, and they are almost always ill-posed, meaning small measurement errors can cause large reconstruction errors if not handled carefully.</p>
 
-<p>My approach combines variational methods and regularization theory with modern computational tools, including deep learning. During my PhD, I developed novel inversion frameworks for electrical impedance tomography with partial boundary data, integrating physics-based models with learned regularizers. My current postdoctoral work extends these ideas to broader classes of both linear and nonlinear inverse problems — spanning medical imaging modalities such as CT, MRI, ultrasound and EIT, and geophysical modalities such as full waveform inversion — and explores the theoretical foundations of scientific machine learning for inversion.</p>
+<p>My approach combines variational methods and regularization theory with modern computational tools, including deep learning. During my PhD, I developed novel inversion frameworks for electrical impedance tomography with partial boundary data, integrating physics-based models with learned regularizers. My current postdoctoral work extends these ideas to broader classes of both linear and nonlinear inverse problems, spanning medical imaging modalities (CT, MRI, ultrasound, EIT) and geophysical modalities (full waveform inversion), and explores the theoretical foundations of scientific machine learning for inversion.</p>
 </div>
 
 <div class="research-areas">
@@ -43,7 +43,7 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
   <div class="research-icon"><i class="fas fa-calculator"></i></div>
   <h3>Numerical Methods</h3>
   <p>Developing efficient numerical algorithms for differential equations and optimization, including finite element methods, iterative solvers, and collocation methods.</p>
-  <p class="pub-annotation"><strong>Applied to:</strong> Discretising and solving forward models in imaging, fluid dynamics, and heat transfer — the computational foundation that makes large-scale inversion tractable.</p>
+  <p class="pub-annotation"><strong>Applied to:</strong> Discretising and solving forward models in imaging, fluid dynamics, and heat transfer: the computational foundation that makes large-scale inversion tractable.</p>
   <p class="pub-annotation"><strong>Industry connection:</strong> Finite element solvers and iterative linear algebra underpin reservoir simulation, structural analysis codes, and climate modelling used throughout industry and government.</p>
 </div>
 
@@ -151,7 +151,7 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
 <h2 class="section-heading"><i class="fas fa-code"></i> Projects &amp; Code</h2>
 
 <div class="about-text">
-<p>Open-source implementations of the methods developed in my research. Repositories are in active development — see <a href="https://github.com/abdgafartunde" target="_blank" rel="noopener">GitHub</a> for the latest status.</p>
+<p>Open-source implementations of the methods developed in my research. Repositories are in active development; see <a href="https://github.com/abdgafartunde" target="_blank" rel="noopener">GitHub</a> for the latest status.</p>
 </div>
 
 <div class="research-areas">
@@ -166,7 +166,7 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
 <div class="research-card">
   <div class="research-icon"><i class="fas fa-wave-square"></i></div>
   <h3>Seismic Inversion ML <span class="badge-dev">in development</span></h3>
-  <p>Physics-informed and data-driven methods for full waveform inversion — recovering subsurface velocity models from seismic measurements.</p>
+  <p>Physics-informed and data-driven methods for full waveform inversion, recovering subsurface velocity models from seismic measurements.</p>
   <p class="pub-annotation"><a href="https://github.com/abdgafartunde/seismic-inversion-ml" target="_blank" rel="noopener"><i class="fab fa-github"></i> abdgafartunde/seismic-inversion-ml</a></p>
 </div>
 
@@ -193,7 +193,7 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
 <div class="about-text">
 <p>I am open to research collaborations and consulting engagements with academic groups, industry partners, and government bodies working on problems where computational mathematics and scientific machine learning can make a meaningful difference.</p>
 
-<p>My technical expertise spans inverse problems and regularization theory, physics-informed machine learning, finite element and spectral methods for PDEs, and data-driven reconstruction algorithms. On the applied side, I have worked on problems in medical imaging (electrical impedance tomography), parameter identification in subsurface and fluid flow models, and computational methods for nonlinear optimization. I am comfortable working across sectors — from academic research collaborations to applied industrial problems.</p>
+<p>My technical expertise spans inverse problems and regularization theory, physics-informed machine learning, finite element and spectral methods for PDEs, and data-driven reconstruction algorithms. On the applied side, I have worked on problems in medical imaging (electrical impedance tomography), parameter identification in subsurface and fluid flow models, and computational methods for nonlinear optimization. I am comfortable working across sectors, from academic research collaborations to applied industrial problems.</p>
 
 <p>If your work involves indirect measurements, large-scale simulation, data-sparse inversion, or the integration of physical models with data, I would be glad to discuss how computational mathematics can contribute.</p>
 
