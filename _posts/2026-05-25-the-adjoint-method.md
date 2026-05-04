@@ -157,3 +157,19 @@ The adjoint method is not a trick or a shortcut. It is the correct way to think 
 The mathematical content is simple (the chain rule, applied carefully), but the computational payoff is enormous. Problems that would be computationally intractable with finite differences become routine once the adjoint is in place. In my EIT reconstruction work, moving to adjoint-based gradients reduced the per-iteration cost from minutes to seconds, making iterative algorithms that require hundreds of gradient evaluations genuinely practical.
 
 Understanding the adjoint method is, in my view, one of the most valuable things a researcher working at the interface of computation and PDEs can do.
+
+---
+
+## Where This Mathematics Gets Used
+
+The adjoint method is not an academic exercise. It is embedded in some of the largest-scale computational workflows in industry and science.
+
+**Seismic exploration in the Americas.** Full waveform inversion (FWI) — the standard method for building subsurface velocity models from seismic data — is an adjoint-based algorithm. The forward problem simulates acoustic or elastic wave propagation from a source; the adjoint equation propagates residuals backward in time to produce a gradient. In the Gulf of Mexico, where deepwater reservoirs sit beneath complex salt structures, a single FWI run on a 3D survey can involve tens of thousands of PDE solves. Without the adjoint method, the gradient computation alone would be computationally infeasible. The same framework is used in Brazil's pre-salt exploration (among the world's largest deepwater discoveries), in Canada's shale plays, and across virtually every major producing basin globally. Every major seismic processing company — CGG, TGS, Schlumberger — has adjoint-based FWI at the core of its imaging workflows.
+
+**Aerodynamic design in North America and Europe.** Aircraft wing shapes at Boeing, Airbus, and NASA are optimized using adjoint-based CFD solvers. The adjoint of the Navier-Stokes equations computes the sensitivity of drag or lift to every parameter of the wing geometry in a single backward solve. This has reduced the computational cost of aerodynamic optimization by several orders of magnitude compared to finite-difference approaches, making high-fidelity shape optimization practical in industrial design cycles.
+
+**Climate model calibration.** Adjoint models of ocean circulation and atmospheric dynamics are used by institutions including NOAA, Environment and Climate Change Canada, and the European Centre for Medium-Range Weather Forecasts (ECMWF) to assimilate observational data into climate and weather models. The adjoint propagates measurement misfits backward through decades of simulated ocean circulation to identify the most sensitive initial conditions and parameter values. The same mathematical structure that computes gradients for PDE-constrained optimization does this across the entire coupled climate system.
+
+**Medical imaging.** In computed tomography and EIT reconstruction, the adjoint of the forward model maps data residuals back to the image domain, providing the gradient used in iterative reconstruction. This is how modern CT scanners produce images from raw projection data, and it is how my own EIT reconstruction work produces conductivity images from boundary voltage measurements.
+
+The common thread is this: whenever you need to optimize or fit a model governed by a PDE — whether that PDE describes wave propagation, fluid flow, heat transfer, or electrical conduction — the adjoint method is how you compute the necessary gradients at a cost that does not scale with the number of parameters. That is why it appears across industries and scientific disciplines that might otherwise seem to have nothing in common.

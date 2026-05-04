@@ -10,13 +10,13 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
   <div class="home-intro">
     <h1>Abd'gafar Tunde TIAMIYU</h1>
     <p class="title">Postdoctoral Researcher</p>
-    <p class="tagline">Bridging mathematics and scientific computing for real-world applications</p>
+    <p class="tagline">Inverse problems, scientific machine learning, and computational methods — applied to subsurface imaging, medical diagnostics, and engineering simulation</p>
     <p class="affiliation">
       <i class="fas fa-university"></i> School of Mathematics, <a href="https://www.jlu.edu.cn/" target="_blank" rel="noopener">Jilin University</a><br>
       <i class="fas fa-map-marker-alt"></i> Changchun, Jilin, China
     </p>
     <div class="social-links">
-      <a href="mailto:tiamiyuabdgafar@jlu.edu.cn" title="Email"><i class="fas fa-envelope"></i> Email</a>
+      <a href="mailto:abdgafartunde@yahoo.com" title="Email"><i class="fas fa-envelope"></i> Email</a>
       <a href="https://scholar.google.com/citations?user=oZ3egAIAAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar"><i class="fas fa-graduation-cap"></i> Scholar</a>
       <a href="https://github.com/abdgafartunde" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
       <a href="https://orcid.org/0000-0003-1641-7196" target="_blank" rel="noopener" title="ORCID"><i class="fab fa-orcid"></i> ORCID</a>
@@ -30,7 +30,7 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
 <h2 class="section-heading"><i class="fas fa-user"></i> About Me</h2>
 
 <div class="about-text">
-<p>I am a postdoctoral researcher in computational and applied mathematics at Jilin University. My work centers on inverse problems, specifically the challenge of recovering hidden quantities from indirect, noisy measurements, with applications in medical imaging, scientific computing, and parameter identification. I develop both classical variational methods and scientific machine learning approaches, with a particular focus on electrical impedance tomography.</p>
+<p>I am a postdoctoral researcher in computational and applied mathematics at Jilin University. My work centres on inverse problems — recovering hidden quantities from indirect, noisy measurements — with applications spanning medical imaging (EIT, CT, MRI, ultrasound), geophysical imaging (seismic inversion), and engineering simulation. I develop both classical variational methods and scientific machine learning approaches, working across the full range from linear to strongly nonlinear inverse problems.</p>
 
 <p>I completed my PhD at The Chinese University of Hong Kong under the supervision of <a href="https://www.math.cuhk.edu.hk/~zou/" target="_blank" rel="noopener">Professor Jun Zou</a>, supported by the Hong Kong PhD Fellowship Scheme. During my doctoral studies, I spent nine months as a visiting researcher at the University of Graz, Austria, funded by the Ernst Mach Grant.</p>
 </div>
@@ -40,9 +40,21 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
   <div class="interest-tags">
     <span class="interest-tag"><i class="fas fa-search-plus"></i> Inverse Problems & Regularization</span>
     <span class="interest-tag"><i class="fas fa-heartbeat"></i> Electrical Impedance Tomography</span>
+    <span class="interest-tag"><i class="fas fa-mountain"></i> Seismic & Subsurface Imaging</span>
     <span class="interest-tag"><i class="fas fa-brain"></i> Scientific Machine Learning</span>
+    <span class="interest-tag"><i class="fas fa-project-diagram"></i> Physics-Informed Neural Networks</span>
     <span class="interest-tag"><i class="fas fa-calculator"></i> Numerical Methods & PDEs</span>
   </div>
+</div>
+</section>
+
+<section class="home-section">
+<h2 class="section-heading"><i class="fas fa-door-open"></i> Open To</h2>
+
+<div class="about-text">
+<p><strong>Research Collaborations</strong> — Inverse problems, scientific machine learning, PDE-constrained optimization, and computational imaging. I welcome joint projects with academic groups and interdisciplinary teams working on problems where rigorous mathematical modelling matters.</p>
+<p><strong>Industry Consulting</strong> — Geophysical and seismic imaging, medical image reconstruction, parameter identification in engineering models, and applied scientific computing. If your problem involves indirect measurements, large-scale simulation, or physics-constrained data analysis, <a href="mailto:abdgafartunde@yahoo.com">get in touch</a>.</p>
+<p><strong>Speaking &amp; Teaching</strong> — Conference presentations, workshop lectures, and short courses on inverse problems, scientific machine learning, and computational applied mathematics.</p>
 </div>
 </section>
 

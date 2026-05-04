@@ -138,3 +138,21 @@ Compressed sensing taught me to take sparsity seriously as a modelling assumptio
 The theory also clarified for me why $\ell^1$ regularization works better than $\ell^2$ regularization for recovering sharp features. The geometric reason is simple: the $\ell^1$ ball has corners that align with the coordinate axes, and minimizing over the $\ell^1$ ball naturally pushes solutions toward sparse vectors. The $\ell^2$ ball is smooth and rotationally symmetric, with no preference for sparse solutions. This geometric intuition explains empirical experience before the formal theory was in place.
 
 In my EIT work, the conductivities I want to recover are often nearly piecewise constant: a background with a few inclusions. This is approximately sparse in a total variation sense. $\ell^1$-type regularization consistently outperforms $\ell^2$ in this setting. The compressed sensing literature provides a partial explanation for why, even if the RIP conditions are not directly applicable.
+
+---
+
+## Compressed Sensing in Practice
+
+The theory was worked out in lecture halls and journals, but compressed sensing is now embedded in systems used by millions of people every day.
+
+**MRI acceleration across European healthcare.** Magnetic resonance imaging is inherently slow: each measurement samples one line of Fourier space, and filling k-space fully takes time — time during which the patient must remain still, time that limits throughput in busy radiology departments. Compressed sensing MRI acquires only a random subset of k-space measurements and recovers the full image by exploiting sparsity in a wavelet basis. The technique was approved for clinical use and has been deployed in scanner software by Siemens Healthineers (Germany) and Philips Healthcare (Netherlands), among others. The National Health Service in the UK has used this to reduce scan times and improve patient experience in high-demand units. Compressed sensing cardiac MRI — where motion makes conventional acquisition impractical — is now routine in specialist centres across Germany, France, and the Netherlands.
+
+**Radio astronomy.** The Event Horizon Telescope (EHT), which produced the first image of a black hole in 2019, combines observations from telescopes on multiple continents into a sparse measurement of the Fourier domain of the sky. The reconstruction problem — recovering an image from very few, irregularly sampled Fourier measurements — is exactly the compressed sensing problem. The CLEAN algorithm used in radio astronomy since the 1970s is an early instance of sparse recovery. Modern variants explicitly solve the $\ell^1$-regularized problem. LOFAR (Low-Frequency Array), located primarily in the Netherlands and connecting stations across Europe, faces the same mathematical challenge at a different frequency and scale.
+
+**Industrial inspection and non-destructive testing.** Ultrasonic inspection of welds, castings, and composite structures — widely used in European aerospace and automotive manufacturing — generates tomographic data that is sparse in appropriate bases. Compressed sensing approaches reduce the number of transducers required and the time needed for a full inspection sweep. This has practical consequences for production-line testing, where scan time directly affects throughput.
+
+**Seismic acquisition.** Conventional 3D seismic surveys require dense, regular grids of receivers — expensive to deploy offshore and impractical in some land environments. Compressed sensing approaches to seismic acquisition (developed partly at academic groups in Canada and the UK, and adopted by companies including Shell and Total) allow irregular, subsampled acquisition with full reconstruction guarantees. The mathematics is the same; the medium is rock rather than tissue.
+
+The pattern is consistent. Any domain where measurements are expensive, slow, invasive, or constrained by physical geometry, and where the signal to be reconstructed is sparse in some transform domain, is a candidate for compressed sensing. The theory provides the rigorous foundation; the practice shows up in hospitals, telescopes, and production lines.
+
+*For code and implementations related to sparse reconstruction methods, see the [medical-imaging GitHub repository](https://github.com/abdgafartunde/medical-imaging) — to be updated.*

@@ -6,7 +6,7 @@ url: "https://abdgafartunde.github.io"
 # Site settings
 author:
   name: "Abd'gafar Tunde Tiamiyu"
-  email: "tiamiyuabdgafar@jlu.edu.cn"
+  email: "abdgafartunde@yahoo.com"
   affiliation: "Jilin University"
   position: "Postdoctoral Researcher"
   location: "Changchun, Jilin, China"
@@ -21,6 +21,18 @@ markdown: kramdown
 highlighter: rouge
 permalink: pretty
 timezone: Asia/Shanghai
+future: true
+
+# Exclude LaTeX source and build artefacts from the site
+exclude:
+  - CV.tex
+  - cv_academic.aux
+  - cv_academic.fdb_latexmk
+  - cv_academic.fls
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - career/
 
 # Kramdown settings
 kramdown:
@@ -52,7 +64,7 @@ navigation:
 social:
   github: "abdgafartunde"
   linkedin: "abdgafartunde"
-  email: "tiamiyuabdgafar@jlu.edu.cn"
+  email: "abdgafartunde@yahoo.com"
   google_scholar: "oZ3egAIAAAAJ"
   researchgate: "Abdgafar-Tiamiyu"
   orcid: "0000-0003-1641-7196"

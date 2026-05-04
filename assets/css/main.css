@@ -935,6 +935,32 @@ mjx-container[jax="SVG"]:not([display="true"]) {
     font-size: 0.7rem;
 }
 
+.pub-annotation {
+    margin-top: 0.5rem;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.pub-footnote {
+    margin-top: 1rem;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.badge-dev {
+    font-size: 0.68rem;
+    font-weight: normal;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 0.1rem 0.35rem;
+    vertical-align: middle;
+    margin-left: 0.4rem;
+    letter-spacing: 0.02em;
+}
+
 /* Presentations */
 .presentations-grid {
     display: grid;
