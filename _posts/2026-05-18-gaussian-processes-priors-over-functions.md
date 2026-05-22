@@ -56,7 +56,7 @@ The Matérn family is widely used in practice because the smoothness parameter a
 
 The canonical use of a GP is regression. Given observations $y_i = f(x_i) + \varepsilon_i$ with noise $\varepsilon_i \sim \mathcal{N}(0, \sigma_n^2)$, and a GP prior $f \sim \mathcal{GP}(0, k)$, the posterior distribution over $f$ is also a GP.
 
-At any test point $x_*$, the posterior mean and variance are:
+At any test point $x_{\ast}$, the posterior mean and variance are:
 
 $$
 \mu(x_*) = k(x_*, \mathbf{x})^\top \left( K + \sigma_n^2 I \right)^{-1} \mathbf{y},
@@ -66,11 +66,11 @@ $$
 \sigma^2(x_*) = k(x_*, x_*) - k(x_*, \mathbf{x})^\top \left( K + \sigma_n^2 I \right)^{-1} k(\mathbf{x}, x_*),
 $$
 
-where $k(x_*, \mathbf{x})$ is the vector of covariances between the test point and the training points, and $K$ is the training kernel matrix.
+where $k(x_{\ast}, \mathbf{x})$ is the vector of covariances between the test point and the training points, and $K$ is the training kernel matrix.
 
-The posterior mean $\mu(x_*)$ is the best estimate of $f$ at $x_*$ given the data. It is, in fact, exactly the minimizer of a variational problem with Tikhonov regularization in a reproducing kernel Hilbert space (RKHS). This is the formal connection between GP regression and classical regularization: the two frameworks produce identical point estimates when the prior is Gaussian and the likelihood is also Gaussian.
+The posterior mean $\mu(x_{\ast})$ is the best estimate of $f$ at $x_{\ast}$ given the data. It is, in fact, exactly the minimizer of a variational problem with Tikhonov regularization in a reproducing kernel Hilbert space (RKHS). This is the formal connection between GP regression and classical regularization: the two frameworks produce identical point estimates when the prior is Gaussian and the likelihood is also Gaussian.
 
-The posterior variance $\sigma^2(x_*)$ is what Tikhonov regularization alone cannot provide: a principled measure of uncertainty. In regions where training data is dense, $\sigma^2(x_*)$ is small. In regions where data is sparse or the function must extrapolate, the uncertainty is large. This is free, coming directly from the probabilistic framework.
+The posterior variance $\sigma^2(x_{\ast})$ is what Tikhonov regularization alone cannot provide: a principled measure of uncertainty. In regions where training data is dense, $\sigma^2(x_{\ast})$ is small. In regions where data is sparse or the function must extrapolate, the uncertainty is large. This is free, coming directly from the probabilistic framework.
 
 
 ## The Reproducing Kernel Hilbert Space Connection
