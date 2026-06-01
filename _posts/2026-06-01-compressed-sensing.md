@@ -124,7 +124,7 @@ $$
 f^{k+1} = \mathcal{S}_{\alpha/L}\!\left(f^k - \frac{1}{L}\Phi^\top(\Phi f^k - y)\right),
 $$
 
-where $\mathcal{S}_\tau(x)_i = \text{sign}(x_i)\max(|x_i| - \tau, 0)$ is the soft-threshold operator and $L$ is the Lipschitz constant of the gradient. This is ISTA (iterative shrinkage-thresholding algorithm). Its accelerated variant, FISTA, converges as $O(1/k^2)$.
+where $$\mathcal{S}_\tau(x)_i = \text{sign}(x_i)\max(\lvert x_i \rvert - \tau, 0)$$ is the soft-threshold operator and $L$ is the Lipschitz constant of the gradient. This is ISTA (iterative shrinkage-thresholding algorithm). Its accelerated variant, FISTA, converges as $O(1/k^2)$.
 
 **Alternating Direction Method of Multipliers (ADMM).** ADMM splits the problem into a sequence of subproblems that are individually easy to solve. It is widely used for structured convex programs and handles the constraint form of basis pursuit naturally.
 
