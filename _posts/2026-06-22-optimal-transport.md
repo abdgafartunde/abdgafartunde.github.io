@@ -56,7 +56,7 @@ $$
 
 where $\Pi(\mu, \nu)$ is the set of all couplings with marginals $\mu$ and $\nu$. This is a *linear* program over an infinite-dimensional space. It always has a solution (under mild conditions), and its value is called the **optimal transport cost**.
 
-When $\mu$ is absolutely continuous with respect to Lebesgue measure, the Kantorovich and Monge problems are equivalent: the optimal plan is supported on the graph of an optimal map $T$, and $\pi = (\text{id}, T)_\# \mu$.
+When $\mu$ is absolutely continuous with respect to Lebesgue measure, the Kantorovich and Monge problems are equivalent: the optimal plan is supported on the graph of an optimal map $T$, and $\pi = (\text{id}, T)_{\#} \mu$.
 
 
 ## The Wasserstein Distance
@@ -128,6 +128,6 @@ Optimal transport appears in several places adjacent to my research.
 
 **Generative priors.** Learned priors for inverse problems often model the distribution of plausible solutions. Wasserstein distances provide a natural way to measure discrepancy between the model's output distribution and the training distribution, and to formulate the training objective in a way that is less sensitive to mode collapse than KL-divergence-based methods.
 
-**Interpolation between measures.** The Wasserstein geodesic (the optimal interpolation between $\mu$ and $\nu$ under the $W_2$ metric) is the displacement interpolation: at time $t \in [0,1]$, the interpolated measure is $(T_t)_\# \mu$ where $T_t(x) = (1-t)x + tT(x)$. This provides a geometrically meaningful way to interpolate between conductivity distributions in EIT or between imaging data from different patients.
+**Interpolation between measures.** The Wasserstein geodesic (the optimal interpolation between $\mu$ and $\nu$ under the $W_2$ metric) is the displacement interpolation: at time $t \in [0,1]$, the interpolated measure is $(T_t)_{\#} \mu$ where $T_t(x) = (1-t)x + tT(x)$. This provides a geometrically meaningful way to interpolate between conductivity distributions in EIT or between imaging data from different patients.
 
 The theory is deep enough to occupy a career, and I am only beginning to understand it. But the connections to problems I care about are direct enough that I expect optimal transport to become a more central part of my toolkit over the next few years.
