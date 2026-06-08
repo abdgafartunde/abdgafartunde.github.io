@@ -8,11 +8,11 @@ tags: [Academia, Collaboration, Reflections]
 math: false
 ---
 
-I spent the first year of my PhD largely inside mathematics. The problems were posed mathematically, the seminars were mathematical, and my sense of progress was measured in theorems. Then, about eighteen months in, my advisor suggested I attend a workshop where engineers and clinicians would be discussing medical imaging. I went mostly out of obligation. I left confused and, for the first time, genuinely excited about my research.
+For most of a mathematics PhD, the world is fairly contained. The problems are posed mathematically, the seminars are mathematical, and progress is measured in theorems. The crossing into other disciplines tends to come gradually: workshops where engineers and clinicians discuss the same objects using entirely different vocabulary; conversations that leave you confused and, for the first time, genuinely curious about what the mathematics might connect to outside the subject.
 
-That experience started a slow reorientation that I am still in the middle of. Most of what I work on now sits at the boundary between mathematics, electrical engineering, and medical imaging. Some of my most useful collaborations have been with people whose technical training is entirely different from mine. And some of my biggest professional frustrations have come from the friction that interdisciplinary work almost inevitably produces.
+That crossing has meant a slow reorientation that I am still in the middle of. Most of what I work on now sits at the boundary between mathematics, electrical engineering, and medical imaging. Some of my most useful collaborations have been with people whose technical training is entirely different from mine. And some of my biggest professional frustrations have come from the friction that interdisciplinary work almost inevitably produces.
 
-This post is an attempt to think honestly about what working across disciplines actually involves. Not the promotional version, where collaboration sounds effortless and everybody learns from each other seamlessly. The version where you regularly feel like you are speaking different languages and have to decide whether the mutual incomprehension is a temporary obstacle or a signal to stop.
+This post is an attempt to think honestly about what working across disciplines actually involves. Not the promotional version, where collaboration sounds effortless and everybody learns from each other without friction. The version where you regularly feel like you are speaking different languages and have to decide whether the mutual incomprehension is a temporary obstacle or a signal to stop.
 
 
 ## The Language Problem
@@ -21,7 +21,7 @@ Every discipline has a vocabulary that its practitioners use with precision. Wor
 
 Early in collaborations, I have learned to expect a lengthy calibration phase where you discover which shared words mean different things and which different words mean the same thing. A clinician might use "artifact" to describe any feature of an image that does not correspond to tissue, including numerical errors, noise, and algorithmic distortions. A mathematician would distinguish these carefully. A signal processing engineer might use "regularization" to mean any smoothing operation, where a mathematical analyst means something much more specific.
 
-These are not just semantic differences. They reflect different conceptual structures, and misaligned concepts can silently corrupt a collaboration for months before anyone notices. I have been in situations where my collaborators and I believed we agreed on the problem formulation only to discover, when looking at results, that we had been solving subtly different problems.
+These are not just semantic differences. They reflect different conceptual structures, and misaligned concepts can silently corrupt a collaboration for months before anyone notices. It is entirely possible for both parties to believe they have agreed on the problem formulation, only to discover, when looking at results, that they have been solving subtly different problems.
 
 The solution I have found is to invest in explicit, even pedantic, alignment early. Write down what you mean. Ask what your collaborator means by the same term. Draw pictures if the mathematics feels inaccessible. This is time-consuming and occasionally awkward, but it saves much more time than it costs.
 
@@ -58,7 +58,7 @@ The traffic flows in both directions. Some of the most interesting mathematical 
 
 EIT is mathematically rich partly because it is genuinely hard as an applied problem. The data acquisition constraints (a fixed number of electrodes, limited measurement precision, safety limits on current) impose structure that a purely mathematical treatment would not have thought to impose. The insistence on real-time imaging (seconds, not hours) rules out any algorithm that does not scale. The requirement to work with patient anatomy, which violates most of the smooth, nice-boundary assumptions you would make in a textbook, forces you to think about robustness in ways that pure theory does not demand.
 
-I have been led to mathematical questions I would not have asked otherwise by trying to understand what was actually happening in my numerical experiments. Why does the reconstruction quality degrade much faster than the regularization theory predicts when the number of electrodes drops below a threshold? That question came from data, not from a proof strategy. The answer involved a deeper look at the conditioning of the measurement operator that turned out to be interesting in its own right.
+The path to new mathematical questions can run through numerical experiments that refuse to behave as the theory predicts. Why does reconstruction quality degrade much faster than regularization theory predicts when the number of electrodes drops below a threshold? That kind of question comes from data, not from a proof strategy. The answer can require a deeper look at the conditioning of the measurement operator that turns out to be interesting in its own right.
 
 The best applied problems have this property: they generate mathematical questions that are hard, deep, and important even when stripped of the application context. When that is true, the collaboration is genuinely productive for both parties.
 
@@ -74,6 +74,6 @@ I have found I need to hold this ambiguity without resolving it prematurely. The
 
 ## An Honest Assessment
 
-After four years of PhD and seven months of postdoc, I would describe my interdisciplinary competence as still developing. I am more comfortable than I was. I understand the clinician and engineer perspectives better than I did. I have a few productive cross-disciplinary collaborations that I value. But I still sometimes misjudge which aspects of my work will be legible to a non-mathematical audience, and I still sometimes fail to ask the right questions early enough to avoid wasted effort.
+After four years of PhD and five months of postdoc, I would describe my interdisciplinary competence as still developing. I am more comfortable than I was. I understand the clinician and engineer perspectives better than I did. I have a few productive cross-disciplinary collaborations that I value. But I still sometimes misjudge which aspects of my work will be legible to a non-mathematical audience, and I still sometimes fail to ask the right questions early enough to avoid wasted effort.
 
 The experience has also changed what I find interesting mathematically. Problems that connect to real, difficult applications feel more urgent to me than problems that are purely internally motivated. This is a preference, not a prescription: I know mathematicians who do beautiful, deep work with no application in sight, and I do not think they are misguided. But for me, the constraint of a genuine application has been productive, and I expect to keep working at this boundary for as long as it continues to be.
