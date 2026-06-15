@@ -58,7 +58,7 @@ The procedure is:
 
 1. **Snapshot generation.** Choose $n_s$ parameter samples $\mu_1, \ldots, \mu_{n_s}$ and solve the full-order problem for each, collecting the snapshots $\{u(\mu_1), \ldots, u(\mu_{n_s})\} \subset \mathbb{R}^N$.
 
-2. **SVD.** Form the snapshot matrix $S = [u(\mu_1) \, | \, \cdots \, | \, u(\mu_{n_s})] \in \mathbb{R}^{N \times n_s}$ and compute its singular value decomposition $S = U \Sigma V^\top$.
+2. **SVD.** Form the snapshot matrix $S = [u(\mu_1) \mid \cdots \mid u(\mu_{n_s})] \in \mathbb{R}^{N \times n_s}$ and compute its singular value decomposition $S = U \Sigma V^\top$.
 
 3. **Basis selection.** The POD basis of dimension $k$ consists of the first $k$ left singular vectors: $V_k = [u_1, \ldots, u_k]$. The singular values $\sigma_1 \geq \sigma_2 \geq \cdots$ measure the energy captured by each mode. The relative truncation error satisfies
 
@@ -79,7 +79,7 @@ The reduced basis (RB) method shares the POD framework but adds two important in
 
 1. Start with an arbitrary $\mu_1$; add $u(\mu_1)$ to the basis.
 2. For the current basis $V_k$, compute the error indicator $\Delta_k(\mu)$ for all $\mu$ in a fine training set.
-3. Add $u(\mu_{k+1})$ to the basis, where $\mu_{k+1} = \argmax_\mu \Delta_k(\mu)$.
+3. Add $u(\mu_{k+1})$ to the basis, where $\mu_{k+1} = \operatorname{argmax}_\mu \Delta_k(\mu)$.
 4. Repeat until the maximum error indicator falls below a tolerance.
 
 The error indicator $\Delta_k(\mu)$ is the key ingredient. It must be (a) computable using the reduced model alone, without solving the full problem, and (b) a reliable upper bound for the true error $\lVert u(\mu) - u_r(\mu) \rVert$.
