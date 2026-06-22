@@ -60,7 +60,7 @@ where $\sigma, \tau > 0$ are step sizes, $\theta \in [0, 1]$ is an over-relaxati
 
 The proximal operator $\mathrm{prox}_{\lambda f}(v) = \arg\min_u \frac{1}{2}\|u - v\|^2 + \lambda f(u)$ is the key computational primitive. For many common functions, it has a closed-form expression:
 
-- **$F^* = \iota_{\|p\|_\infty \leq 1}$** (total variation): $\mathrm{prox}_{\sigma F^*}(q) = q / \max(1, |q|)$, the pointwise projection onto the $\ell^\infty$ ball. This is the TV proximal step.
+- **$F^* = \iota_{\|p\|_\infty \leq 1}$** (total variation): $\mathrm{prox}_{\sigma F^*}(q) = q / \max(1, \lvert q \rvert)$, the pointwise projection onto the $\ell^\infty$ ball. This is the TV proximal step.
 - **$G(u) = \frac{1}{2}\|Au - b\|^2$** (least-squares fidelity): the proximal operator is $(I + \tau A^\top A)^{-1}(u + \tau A^\top b)$, which requires solving a linear system. For small problems this is direct; for large problems this inner solve is done iteratively (often with CG, linking back to the previous post).
 - **$G = \iota_C$** (indicator of a convex set $C$): $\mathrm{prox}$ is projection onto $C$.
 
