@@ -25,15 +25,15 @@ $$
 \nu(B) = \mu(T^{-1}(B)).
 $$
 
-This is written $T_\# \mu = \nu$: the pushforward of $\mu$ under $T$ is $\nu$.
+This is written $T_\sharp \mu = \nu$: the pushforward of $\mu$ under $T$ is $\nu$.
 
 Given a cost function $c(x, y)$ measuring the cost of moving a unit of mass from $x$ to $y$, Monge's problem is:
 
 $$
-\inf_{T : T_\# \mu = \nu} \int_{\mathcal{X}} c(x, T(x))\, d\mu(x).
+\inf_{T : T_\sharp \mu = \nu} \int_{\mathcal{X}} c(x, T(x))\, d\mu(x).
 $$
 
-This is elegant but problematic. The constraint $T_\# \mu = \nu$ is nonlinear (it is a PDE constraint on $T$). Worse, a transport map may not exist at all when $\mu$ is a discrete measure: you cannot split a point mass and send it to two different locations using a single map.
+This is elegant but problematic. The constraint $T_\sharp \mu = \nu$ is nonlinear (it is a PDE constraint on $T$). Worse, a transport map may not exist at all when $\mu$ is a discrete measure: you cannot split a point mass and send it to two different locations using a single map.
 
 
 ## The Kantorovich Relaxation
@@ -56,7 +56,7 @@ $$
 
 where $\Pi(\mu, \nu)$ is the set of all couplings with marginals $\mu$ and $\nu$. This is a *linear* program over an infinite-dimensional space. It always has a solution (under mild conditions), and its value is called the **optimal transport cost**.
 
-When $\mu$ is absolutely continuous with respect to Lebesgue measure, the Kantorovich and Monge problems are equivalent: the optimal plan is supported on the graph of an optimal map $T$, and $\pi = (\text{id}, T)_{\#} \mu$.
+When $\mu$ is absolutely continuous with respect to Lebesgue measure, the Kantorovich and Monge problems are equivalent: the optimal plan is supported on the graph of an optimal map $T$, and $\pi = (\text{id}, T)_{\sharp} \mu$.
 
 
 ## The Wasserstein Distance
@@ -114,7 +114,7 @@ The regularized problem has a unique solution, and it can be solved by iterative
 **Sliced Wasserstein distance.** For measures on $\mathbb{R}^d$ with large $d$, the Wasserstein distance is expensive even with Sinkhorn. The sliced Wasserstein distance averages one-dimensional Wasserstein distances over random projections:
 
 $$
-\text{SW}_p(\mu, \nu) = \int_{S^{d-1}} W_p(\Pi_\theta{}_\# \mu, \Pi_\theta{}_\# \nu)\, d\theta,
+\text{SW}_p(\mu, \nu) = \int_{S^{d-1}} W_p((\Pi_\theta)_\sharp \mu, (\Pi_\theta)_\sharp \nu)\, d\theta,
 $$
 
 where $\Pi_\theta$ is the projection onto direction $\theta$. In one dimension, the Wasserstein distance is computable in $O(n \log n)$ by sorting. The sliced approximation is not a true Wasserstein distance, but it metrizes the same convergence, is much faster to compute, and often works well in practice.
@@ -128,6 +128,6 @@ Optimal transport appears in several places adjacent to my research.
 
 **Generative priors.** Learned priors for inverse problems often model the distribution of plausible solutions. Wasserstein distances provide a natural way to measure discrepancy between the model's output distribution and the training distribution, and to formulate the training objective in a way that is less sensitive to mode collapse than KL-divergence-based methods.
 
-**Interpolation between measures.** The Wasserstein geodesic (the optimal interpolation between $\mu$ and $\nu$ under the $W_2$ metric) is the displacement interpolation: at time $t \in [0,1]$, the interpolated measure is $(T_t)_{\#} \mu$ where $T_t(x) = (1-t)x + tT(x)$. This provides a geometrically meaningful way to interpolate between conductivity distributions in EIT or between imaging data from different patients.
+**Interpolation between measures.** The Wasserstein geodesic (the optimal interpolation between $\mu$ and $\nu$ under the $W_2$ metric) is the displacement interpolation: at time $t \in [0,1]$, the interpolated measure is $(T_t)_{\sharp} \mu$ where $T_t(x) = (1-t)x + tT(x)$. This provides a geometrically meaningful way to interpolate between conductivity distributions in EIT or between imaging data from different patients.
 
 The theory is deep enough to occupy a career, and I am only beginning to understand it. But the connections to problems I care about are direct enough that I expect optimal transport to become a more central part of my toolkit over the next few years.
