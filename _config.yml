@@ -47,10 +47,10 @@ navigation:
     url: "/research"
   - title: "Experience"
     url: "/experience"
-  - title: "Blog"
-    url: "/blog"
   - title: "Services"
     url: "/services"
+  - title: "Blog"
+    url: "/blog"
 
 # Social links
 social:
