@@ -16,6 +16,9 @@ author:
 # Google Analytics
 google_analytics: "G-QYTDPVFH7B"
 
+# Google Search Console — paste your verification code here when you have it
+# google_site_verification: "paste-your-code-here"
+
 # Build settings
 markdown: kramdown
 highlighter: rouge
