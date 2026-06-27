@@ -83,7 +83,7 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
     <div class="pub-title">Combined Effects of Anisotropic Permeability, Chemical Reaction, and Dual Stratifications on Unsteady Free Convection Around a Vertical Circular Cylinder</div>
     <div class="pub-authors">Adeniyan A., Rauf Q.O., and <strong>Tiamiyu A.T.</strong></div>
     <div class="pub-venue"><em>International Journal of Mathematical Sciences and Optimization: Theory and Applications</em>, Vol. 12, No. 1, pp. 104&ndash;128, 2026</div>
-    <div class="pub-links"><a href="https://ijmso.unilag.edu.ng/article/view/3174" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Journal</a> &nbsp; <a href="https://doi.org/10.5281/zenodo.20467246" target="_blank" rel="noopener"><i class="fas fa-lock-open"></i> Zenodo OA</a></div>
+    <div class="pub-links"><a href="https://doi.org/10.5281/zenodo.20467246" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> DOI</a></div>
     <div class="pub-annotation">Studies unsteady free convection past a translating vertical cylinder embedded in an anisotropic porous medium under simultaneous thermal and solutal stratifications with first-order chemical reaction; solved by an adaptive Lobatto IIIa collocation scheme with global sensitivity analysis ranking parameter influence on heat, mass, and momentum transfer.</div>
   </div>
 </div>
