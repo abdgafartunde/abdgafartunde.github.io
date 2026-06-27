@@ -49,6 +49,8 @@ navigation:
     url: "/experience"
   - title: "Blog"
     url: "/blog"
+  - title: "Services"
+    url: "/services"
 
 # Social links
 social:

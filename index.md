@@ -55,6 +55,7 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
 <p><strong>Research Collaborations:</strong> Inverse problems, scientific machine learning, PDE-constrained optimization, and computational imaging. I welcome joint projects with academic groups and interdisciplinary teams working on problems where rigorous mathematical modelling matters.</p>
 <p><strong>Industry Consulting:</strong> Geophysical and seismic imaging, medical image reconstruction, parameter identification in engineering models, and applied scientific computing. If your problem involves indirect measurements, large-scale simulation, or physics-constrained data analysis, <a href="mailto:abdgafartunde@yahoo.com">get in touch</a>.</p>
 <p><strong>Speaking &amp; Teaching:</strong> Conference presentations, workshop lectures, and short courses on inverse problems, scientific machine learning, and computational applied mathematics.</p>
+<p>For structured mentorship, coursework tutoring, or consulting engagements, see the <a href="/services/">Services page</a>.</p>
 </div>
 </section>
 
