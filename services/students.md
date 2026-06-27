@@ -46,6 +46,7 @@ seo_description: "Research mentorship and coursework tutoring by A.T. Tiamiyu in
 <p>I read drafts and give direct, structured feedback: what is clear, what is not, where the argument has gaps, and what a referee is likely to push back on. This is open to anyone, worldwide, with no requirement to be at a particular institution or enrolled in a specific programme.</p>
 
 <p>The constraint is my expertise. I can give technically grounded feedback on work in inverse problems, regularization theory, scientific machine learning (PINNs, neural operators, physics-constrained networks), electrical impedance tomography, seismic inversion and FWI, numerical methods for PDEs, and applied optimization. For work outside those areas I would be giving generic comments that are not worth much to anyone.</p>
+<p>For a short feedback request on a draft, you can reach me directly by <a href="mailto:abdgafartunde@yahoo.com">email</a> rather than scheduling a call.</p>
 </div>
 </section>
 

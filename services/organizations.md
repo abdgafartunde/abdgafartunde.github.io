@@ -34,7 +34,7 @@ seo_description: "Workshops and consulting by A.T. Tiamiyu for engineering and R
   <li><strong>Scientific machine learning integration.</strong> Evaluating where PINNs or neural operators fit into an existing simulation or inversion pipeline, and (equally important) where they do not. My research on this includes both empirical and theoretical aspects; see my <a href="/blog/">recent writing</a> for a direct account of what works and what does not.</li>
 </ul>
 
-<p>I approach consulting problems as a mathematician: forward model first, data acquisition and noise structure second, inversion framework third. If your problem involves a forward model I am not familiar with, I will say so rather than guess.</p>
+<p>I approach consulting problems as a mathematician: forward model first, data acquisition and noise structure second, inversion framework third. If your problem involves a forward model I am not familiar with, I will say so rather than guess. The published work underpinning these areas is on my <a href="/research/">research page</a>.</p>
 </div>
 </section>
 
