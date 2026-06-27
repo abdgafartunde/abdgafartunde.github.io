@@ -80,6 +80,17 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
 <div class="publication">
   <span class="pub-number">[3]</span>
   <div class="pub-content">
+    <div class="pub-title">Combined Effects of Anisotropic Permeability, Chemical Reaction, and Dual Stratifications on Unsteady Free Convection Around a Vertical Circular Cylinder</div>
+    <div class="pub-authors">Adeniyan A., Rauf Q.O., and <strong>Tiamiyu A.T.</strong></div>
+    <div class="pub-venue"><em>International Journal of Mathematical Sciences and Optimization: Theory and Applications</em>, Vol. 12, No. 1, pp. 104&ndash;128, 2026</div>
+    <div class="pub-links"><a href="https://ijmso.unilag.edu.ng/article/view/3174" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Journal</a> &nbsp; <a href="https://doi.org/10.5281/zenodo.20467246" target="_blank" rel="noopener"><i class="fas fa-lock-open"></i> Zenodo OA</a></div>
+    <div class="pub-annotation">Studies unsteady free convection past a translating vertical cylinder embedded in an anisotropic porous medium under simultaneous thermal and solutal stratifications with first-order chemical reaction; solved by an adaptive Lobatto IIIa collocation scheme with global sensitivity analysis ranking parameter influence on heat, mass, and momentum transfer.</div>
+  </div>
+</div>
+
+<div class="publication">
+  <span class="pub-number">[4]</span>
+  <div class="pub-content">
     <div class="pub-title">Physics-informed neural networks in iterative form of nonlinear equations for numerical algorithms and simulations of delay differential equations</div>
     <div class="pub-authors">He J., and <strong>Tiamiyu A.T.</strong></div>
     <div class="pub-venue"><em>Physica A: Statistical Mechanics and its Applications</em>, 2025</div>
@@ -89,7 +100,7 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
 </div>
 
 <div class="publication">
-  <span class="pub-number">[4]</span>
+  <span class="pub-number">[5]</span>
   <div class="pub-content">
     <div class="pub-title">Numerical simulation of time-dependent non-Newtonian compressible fluid flow in porous media: finite element method and time-dependent approach</div>
     <div class="pub-authors">Ahmad S. and <strong>Tiamiyu A.T.</strong></div>
@@ -100,7 +111,7 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
 </div>
 
 <div class="publication">
-  <span class="pub-number">[5]</span>
+  <span class="pub-number">[6]</span>
   <div class="pub-content">
     <div class="pub-title">Numerical assessment of some semi-analytical techniques for solving a fractional-order leptospirosis model</div>
     <div class="pub-authors">Audu K.J., <strong>Tiamiyu A.T.</strong>, Akpabio J.N., Ahmad H., and Olabiyi M.A.</div>
