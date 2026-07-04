@@ -2,7 +2,7 @@
 layout: post
 title: "Medical Imaging Mathematics and the Radiology Gap in Africa"
 description: "Sub-Saharan Africa faces a severe shortage of radiologists and imaging infrastructure. The mathematics of low-cost, low-data imaging (inverse problems and EIT) has a direct role to play."
-date: 2026-09-07
+date: 2026-11-02
 author: "Abd'gafar Tunde Tiamiyu"
 tags: [Inverse Problems, Medical Imaging, EIT, Applied Mathematics]
 math: true

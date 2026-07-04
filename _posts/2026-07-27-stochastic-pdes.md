@@ -2,7 +2,7 @@
 layout: post
 title: "Stochastic PDEs: When the Equations Themselves Are Random"
 description: "An introduction to PDEs with random inputs: why randomness arises, how solutions are defined, and the connections to uncertainty quantification and inverse problems."
-date: 2026-07-13
+date: 2026-07-27
 author: "Abd'gafar Tunde Tiamiyu"
 tags: [Mathematics, Stochastic PDEs, Uncertainty Quantification]
 math: true

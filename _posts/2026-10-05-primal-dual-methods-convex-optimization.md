@@ -2,7 +2,7 @@
 layout: post
 title: "Primal-Dual Methods for Convex Optimization"
 description: "How saddle-point formulations and primal-dual splitting algorithms handle the non-smooth objectives that arise in imaging and inverse problems; total variation regularization requires going beyond gradient descent."
-date: 2026-08-24
+date: 2026-10-05
 author: "Abd'gafar Tunde Tiamiyu"
 tags: [Mathematics, Optimization, Inverse Problems, Scientific Computing]
 math: true

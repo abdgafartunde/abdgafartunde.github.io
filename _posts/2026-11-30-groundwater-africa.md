@@ -2,7 +2,7 @@
 layout: post
 title: "Groundwater Mathematics: Finding Water in a Drying Continent"
 description: "Over 300 million people in sub-Saharan Africa lack access to safe water. The inverse problem of finding groundwater from surface geophysical measurements has both mathematical depth and direct human consequences."
-date: 2026-10-05
+date: 2026-11-30
 author: "Abd'gafar Tunde Tiamiyu"
 tags: [Inverse Problems, Geophysics, Applied Mathematics, Water]
 math: true

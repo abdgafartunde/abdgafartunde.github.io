@@ -2,7 +2,7 @@
 layout: post
 title: "Electrical Impedance Tomography in Clinical Practice: From Research to Bedside"
 description: "How EIT moved from a mathematical inverse problem into intensive care units and diagnostic centres; the gap between current clinical use and its full potential remains wide open."
-date: 2026-08-17
+date: 2026-09-21
 author: "Abd'gafar Tunde Tiamiyu"
 tags: [Inverse Problems, Medical Imaging, EIT, Applied Mathematics]
 math: true

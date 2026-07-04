@@ -2,7 +2,7 @@
 layout: post
 title: "Full Waveform Inversion: The Mathematics Behind Finding Oil"
 description: "How a PDE-constrained optimization problem sits at the heart of modern seismic exploration; solving it is one of the most computationally demanding inverse problems in industry."
-date: 2026-07-27
+date: 2026-08-24
 author: "Abd'gafar Tunde Tiamiyu"
 tags: [Inverse Problems, Geophysics, Scientific Machine Learning, Applied Mathematics]
 math: true

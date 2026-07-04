@@ -2,7 +2,7 @@
 layout: post
 title: "Finding Water Underground: Geophysical Inverse Problems and the Global Groundwater Crisis"
 description: "How electrical resistivity tomography turns surface measurements into subsurface maps, and why solving this inverse problem more cheaply could matter for billions of people."
-date: 2026-08-31
+date: 2026-10-19
 author: "Abd'gafar Tunde Tiamiyu"
 tags: [Inverse Problems, Geophysics, Applied Mathematics, Water]
 math: true

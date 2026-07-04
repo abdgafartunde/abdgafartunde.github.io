@@ -2,7 +2,7 @@
 layout: post
 title: "Spectral Methods: Exponential Accuracy from Smooth Solutions"
 description: "An introduction to spectral methods for PDEs: why they achieve exponential convergence for smooth problems, how they compare to finite elements, and where they struggle."
-date: 2026-07-06
+date: 2026-07-13
 author: "Abd'gafar Tunde Tiamiyu"
 tags: [Mathematics, Scientific Computing, Spectral Methods]
 math: true

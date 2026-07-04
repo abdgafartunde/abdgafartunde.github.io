@@ -2,7 +2,7 @@
 layout: post
 title: "Reading Tikhonov (1963): The Paper That Made Ill-Posed Problems Solvable"
 description: "A close reading of Tikhonov's 1963 paper on the regularization of ill-posed problems: what it actually says, what it assumed, and why it changed how we think about inverse problems."
-date: 2026-07-20
+date: 2026-08-10
 author: "Abd'gafar Tunde Tiamiyu"
 tags: [Mathematics, Inverse Problems, History of Mathematics]
 math: true

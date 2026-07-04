@@ -2,7 +2,7 @@
 layout: post
 title: "Seismic Inversion and the Mathematics of Oil Exploration in Africa"
 description: "Nigeria sits on 37 billion barrels of estimated oil reserves. The computational mathematics of seismic inversion (inverse problems, PDE-constrained optimization, and scientific machine learning) determines how well those reserves can be found and characterized."
-date: 2026-09-21
+date: 2026-11-16
 author: "Abd'gafar Tunde Tiamiyu"
 tags: [Inverse Problems, Geophysics, Scientific Machine Learning, Applied Mathematics]
 math: true

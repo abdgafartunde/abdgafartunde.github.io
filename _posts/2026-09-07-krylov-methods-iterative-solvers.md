@@ -2,7 +2,7 @@
 layout: post
 title: "Krylov Methods: Solving Large Linear Systems Without Forming the Matrix"
 description: "An introduction to Krylov subspace methods: the iterative solvers that make large-scale scientific computing possible, and why they work so well for the linear systems that arise in inverse problems and PDE discretizations."
-date: 2026-08-03
+date: 2026-09-07
 author: "Abd'gafar Tunde Tiamiyu"
 tags: [Mathematics, Scientific Computing, Numerical Methods]
 math: true
