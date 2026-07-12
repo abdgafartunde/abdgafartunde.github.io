@@ -70,7 +70,7 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
   </div>
   <div class="news-item">
     <span class="news-dot"></span>
-    <span class="news-date">Jul 2026</span>
+    <span class="news-date">Jun 2026</span>
     <span class="news-text">Released <a href="https://github.com/abdgafartunde/eit-reconstruction-toolkit" target="_blank" rel="noopener"><strong>eitkit</strong></a> v0.1.1: 2-D Electrical Impedance Tomography reconstruction toolkit &nbsp;<a href="https://doi.org/10.5281/zenodo.21037312" target="_blank" rel="noopener"><img src="https://zenodo.org/badge/1231635377.svg" alt="DOI"></a></span>
   </div>
   <div class="news-item">
