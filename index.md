@@ -70,6 +70,11 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
   </div>
   <div class="news-item">
     <span class="news-dot"></span>
+    <span class="news-date">Jul 2026</span>
+    <span class="news-text">Released <a href="https://github.com/abdgafartunde/eit-reconstruction-toolkit" target="_blank" rel="noopener"><strong>eitkit</strong></a> v0.1.1: 2-D Electrical Impedance Tomography reconstruction toolkit &nbsp;<a href="https://doi.org/10.5281/zenodo.21037312" target="_blank" rel="noopener"><img src="https://zenodo.org/badge/1231635377.svg" alt="DOI"></a></span>
+  </div>
+  <div class="news-item">
+    <span class="news-dot"></span>
     <span class="news-date">Apr 2026</span>
     <span class="news-text">New paper published in <em>Japan Journal of Industrial and Applied Mathematics</em>: <a href="https://doi.org/10.1007/s13160-026-00778-x" target="_blank" rel="noopener">A new spectral conjugate gradient method for convex constrained monotone nonlinear equations with application to image restoration</a></span>
   </div>
@@ -82,11 +87,6 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
     <span class="news-dot"></span>
     <span class="news-date">Jan 2026</span>
     <span class="news-text">Started postdoctoral position at Jilin University, China</span>
-  </div>
-  <div class="news-item">
-    <span class="news-dot"></span>
-    <span class="news-date">Nov 2025</span>
-    <span class="news-text">Attended graduation ceremony at CUHK</span>
   </div>
 </div>
 </section>
