@@ -88,20 +88,5 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
     <span class="news-date">Nov 2025</span>
     <span class="news-text">Attended graduation ceremony at CUHK</span>
   </div>
-  <div class="news-item">
-    <span class="news-dot"></span>
-    <span class="news-date">Aug 2025</span>
-    <span class="news-text">Guest speaker at ANSHK Research Forum on AI in Academia</span>
-  </div>
-  <div class="news-item">
-    <span class="news-dot"></span>
-    <span class="news-date">Jul 2025</span>
-    <span class="news-text">Co-organized minisymposium at HK-SIAM Conference 2025</span>
-  </div>
-  <div class="news-item">
-    <span class="news-dot"></span>
-    <span class="news-date">Jun 2025</span>
-    <span class="news-text">Successfully defended PhD dissertation at CUHK</span>
-  </div>
 </div>
 </section>
