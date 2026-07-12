@@ -60,9 +60,37 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
 </section>
 
 <section class="home-section">
+<h2 class="section-heading"><i class="fas fa-code"></i> Software</h2>
+
+<div class="about-text">
+<ul style="list-style: none; padding-left: 0;">
+  <li style="margin-bottom: 1em;">
+    <a href="https://github.com/abdgafartunde/eit-reconstruction-toolkit" target="_blank" rel="noopener"><strong>eit-reconstruction-toolkit</strong></a> — 2-D EIT reconstruction: P1 FEM, adjoint Jacobian, Tikhonov + TV/ADMM<br>
+    <a href="https://doi.org/10.5281/zenodo.21037312" target="_blank" rel="noopener"><img src="https://zenodo.org/badge/1231635377.svg" alt="DOI"></a>
+  </li>
+  <li style="margin-bottom: 1em;">
+    <a href="https://github.com/abdgafartunde/medical-imaging" target="_blank" rel="noopener"><strong>medical-imaging</strong></a> — compressed sensing for accelerated MRI and CT<br>
+    <a href="https://doi.org/10.5281/zenodo.21321376" target="_blank" rel="noopener"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.21321376.svg" alt="DOI"></a>
+  </li>
+  <li style="margin-bottom: 1em;">
+    <a href="https://github.com/abdgafartunde/seismic-inversion-ml" target="_blank" rel="noopener"><strong>seismic-inversion-ml</strong></a> — physics-informed seismic FWI with OpenFWI (in progress)
+  </li>
+  <li style="margin-bottom: 1em;">
+    <a href="https://github.com/abdgafartunde/groundwater-detection" target="_blank" rel="noopener"><strong>groundwater-detection</strong></a> — ERT inversion for groundwater mapping (in progress)
+  </li>
+</ul>
+</div>
+</section>
+
+<section class="home-section">
 <h2 class="section-heading"><i class="fas fa-newspaper"></i> Recent News</h2>
 
 <div class="news-list">
+  <div class="news-item">
+    <span class="news-dot"></span>
+    <span class="news-date">Jul 2026</span>
+    <span class="news-text">Released <a href="https://github.com/abdgafartunde/medical-imaging" target="_blank" rel="noopener"><strong>medimg</strong></a> v0.1.1: compressed sensing reconstruction for accelerated MRI and CT &nbsp;<a href="https://doi.org/10.5281/zenodo.21321376" target="_blank" rel="noopener"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.21321376.svg" alt="DOI"></a></span>
+  </div>
   <div class="news-item">
     <span class="news-dot"></span>
     <span class="news-date">Apr 2026</span>
