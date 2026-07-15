@@ -2215,6 +2215,7 @@ a {
 
 .navbar-brand {
     display: inline-flex;
+    flex-direction: row;
     align-items: center;
     gap: 0.75rem;
     color: var(--heading) !important;
@@ -2391,80 +2392,111 @@ a {
 .home-header {
     position: relative;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 280px;
+    grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
     align-items: center;
-    gap: clamp(2.5rem, 8vw, 6rem);
-    min-height: 520px;
-    margin: -3rem -2rem 4.5rem;
-    padding: clamp(3rem, 8vw, 6rem) 2rem;
+    gap: clamp(3rem, 6vw, 4.5rem);
+    min-height: 0;
+    margin: -3rem -2rem 4rem;
+    padding: clamp(3.5rem, 6vw, 4.75rem) 2rem;
     border-bottom: 1px solid var(--border);
 }
 
 .home-header::after {
+    display: none;
+}
+
+.portrait-panel {
+    position: relative;
+    grid-column: 1;
+    grid-row: 1;
+    width: min(100%, 280px);
+    justify-self: start;
+    isolation: isolate;
+}
+
+.portrait-panel::after {
     content: "";
     position: absolute;
-    right: 5%;
-    bottom: 12%;
+    inset: 14px -14px -14px 14px;
     z-index: -1;
-    width: 230px;
-    height: 230px;
-    border: 1px solid color-mix(in srgb, var(--warm) 30%, transparent);
-    border-radius: 50%;
+    border: 1px solid color-mix(in srgb, var(--warm) 42%, var(--border));
+    border-radius: 22px;
+    background: color-mix(in srgb, var(--warm-pale) 55%, transparent);
 }
 
 .profile-photo {
-    grid-column: 2;
-    grid-row: 1;
-    width: 260px;
-    height: 320px;
-    border: 0;
-    border-radius: 140px 140px 28px 28px;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    border: 1px solid color-mix(in srgb, var(--heading) 12%, var(--border));
+    border-radius: 18px;
     box-shadow: var(--shadow-lg);
+    object-fit: cover;
     object-position: center 10%;
 }
 
 .home-intro {
-    grid-column: 1;
+    grid-column: 2;
     grid-row: 1;
+    max-width: 640px;
 }
 
-.hero-kicker {
+.content .hero-kicker {
     margin: 0 0 1.25rem;
     color: var(--warm);
-    font-size: 0.74rem;
+    font-size: 0.76rem;
     font-weight: 700;
+    line-height: 1.4;
     letter-spacing: 0.15em;
+    text-align: left;
     text-transform: uppercase;
 }
 
-.home-intro h1 {
-    max-width: 720px;
+.content .home-intro h1 {
+    max-width: 640px;
     margin: 0 0 1rem;
     color: var(--heading);
-    font-size: clamp(3rem, 7vw, 5.6rem);
+    font-size: clamp(3.25rem, 5.8vw, 5rem);
     font-weight: 600;
-    line-height: 0.92;
-    letter-spacing: -0.055em;
+    line-height: 0.9;
+    letter-spacing: -0.05em;
 }
 
-.home-intro .title {
+.hero-name-primary,
+.hero-name-family {
+    display: block;
+}
+
+.hero-name-family {
+    margin-top: 0.12em;
+    font-size: 0.82em;
+    letter-spacing: 0.015em;
+}
+
+.content .home-intro .title {
     color: var(--accent);
     font-size: 1rem;
     font-weight: 700;
+    line-height: 1.4;
     letter-spacing: 0.04em;
+    text-align: left;
     text-transform: uppercase;
 }
 
-.home-intro .tagline {
-    max-width: 650px;
+.content .home-intro .tagline {
+    max-width: 620px;
     color: var(--text-secondary);
     font-family: var(--font-serif);
-    font-size: clamp(1.18rem, 2.2vw, 1.5rem);
-    line-height: 1.5;
+    font-size: clamp(1.1rem, 1.7vw, 1.35rem);
+    line-height: 1.48;
+    text-align: left;
 }
 
-.home-intro .affiliation {
+.content .home-intro .affiliation {
     color: var(--text-muted);
+    text-align: left;
 }
 
 .social-links {
@@ -2924,6 +2956,8 @@ textarea.form-control {
     }
 
     .home-header {
+        grid-template-columns: minmax(200px, 240px) minmax(0, 1fr);
+        gap: 2.75rem;
         margin: -2rem -1.5rem 4rem;
         padding-inline: 1.5rem;
     }
@@ -2959,22 +2993,40 @@ textarea.form-control {
     .home-header {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
+        gap: 2.5rem;
         min-height: 0;
         margin: 0 -1.15rem 3.5rem;
-        padding: 3rem 1.15rem;
+        padding: 2.75rem 1.15rem 3rem;
         text-align: left;
     }
 
-    .profile-photo {
+    .portrait-panel {
         order: -1;
-        width: 132px;
-        height: 156px;
-        border-radius: 72px 72px 18px 18px;
+        width: 184px;
+        justify-self: auto;
+        align-self: center;
     }
 
-    .home-intro h1 {
-        font-size: clamp(2.8rem, 15vw, 4rem);
+    .portrait-panel::after {
+        inset: 10px -10px -10px 10px;
+        border-radius: 18px;
+    }
+
+    .profile-photo {
+        width: 100%;
+        height: auto;
+        border-radius: 14px;
+    }
+
+    .content .home-intro h1 {
+        font-size: clamp(3rem, 14vw, 3.65rem);
+    }
+
+    .content .hero-kicker {
+        margin-bottom: 1rem;
+        font-size: 0.7rem;
+        letter-spacing: 0.12em;
     }
 
     .home-intro .affiliation,

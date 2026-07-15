@@ -6,10 +6,12 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
 ---
 
 <div class="home-header">
-  <img src="{{ '/assets/images/profile_pic.jpeg' | relative_url }}" alt="Portrait of Abd'gafar Tunde Tiamiyu" class="profile-photo" width="260" height="320" fetchpriority="high">
+  <div class="portrait-panel">
+    <img src="{{ '/assets/images/profile_pic.jpeg' | relative_url }}" alt="Portrait of Abd'gafar Tunde Tiamiyu" class="profile-photo" width="280" height="350" fetchpriority="high">
+  </div>
   <div class="home-intro">
     <p class="hero-kicker">Mathematics for difficult measurements</p>
-    <h1>Abd'gafar Tunde TIAMIYU</h1>
+    <h1><span class="hero-name-primary">Abd'gafar Tunde</span><span class="hero-name-family">TIAMIYU</span></h1>
     <p class="title">Postdoctoral Researcher</p>
     <p class="tagline">Inverse problems, scientific machine learning, and computational methods: applied to subsurface imaging, medical diagnostics, and engineering simulation</p>
     <p class="affiliation">
