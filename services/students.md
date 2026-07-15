@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "For Students and Researchers"
+eyebrow: "Mentorship and teaching"
 description: "Research guidance, coursework tutoring, and thesis feedback in inverse problems and applied mathematics."
 seo_description: "Research mentorship and coursework tutoring by A.T. Tiamiyu in inverse problems, scientific machine learning, PINNs, numerical methods, and PDEs. Thesis and paper feedback open worldwide to anyone working in these areas."
 ---
@@ -55,37 +56,37 @@ seo_description: "Research mentorship and coursework tutoring by A.T. Tiamiyu in
 
 <div class="about-text">
 
-<details style="margin-bottom:1rem;">
+<details>
 <summary><strong>Will you write my assignment, thesis chapter, or paper?</strong></summary>
-<p style="margin-top:0.5rem;">No. Feedback, direction, and guidance: yes. Doing the work: no. This applies to everything: thesis chapters, problem sets, take-home exams, grant applications, and code. If you want a collaborator who contributes intellectually and gets credited, that is a different conversation and worth raising on the call.</p>
+<p>No. Feedback, direction, and guidance: yes. Doing the work: no. This applies to everything: thesis chapters, problem sets, take-home exams, grant applications, and code. If you want a collaborator who contributes intellectually and gets credited, that is a different conversation and worth raising on the call.</p>
 </details>
 
-<details style="margin-bottom:1rem;">
+<details>
 <summary><strong>Is thesis and paper feedback limited to students at certain institutions?</strong></summary>
-<p style="margin-top:0.5rem;">No. It is open to anyone, worldwide. The limit is topic scope, not location or affiliation.</p>
+<p>No. It is open to anyone, worldwide. The limit is topic scope, not location or affiliation.</p>
 </details>
 
-<details style="margin-bottom:1rem;">
+<details>
 <summary><strong>My topic is adjacent to your areas but not directly in them. Can I still reach out?</strong></summary>
-<p style="margin-top:0.5rem;">Ask. If the distance is small enough that I can engage with the technical content rather than just the surface structure of the writing, it usually works.</p>
+<p>Ask. If the distance is small enough that I can engage with the technical content rather than just the surface structure of the writing, it usually works.</p>
 </details>
 
-<details style="margin-bottom:1rem;">
+<details>
 <summary><strong>What does a research guidance engagement look like in practice?</strong></summary>
-<p style="margin-top:0.5rem;">We agree on scope and schedule on the call. A structured reading engagement typically means bi-weekly sessions over 2–3 months with problems in between. An open-ended arrangement is more irregular: we meet when you have something specific to discuss and there are genuine questions to work through.</p>
+<p>We agree on scope and schedule on the call. A structured reading engagement typically means bi-weekly sessions over 2–3 months with problems in between. An open-ended arrangement is more irregular: we meet when you have something specific to discuss and there are genuine questions to work through.</p>
 </details>
 
-<details style="margin-bottom:1rem;">
+<details>
 <summary><strong>What are the rates?</strong></summary>
-<p style="margin-top:0.5rem;">I do not post rates here because the structure varies by type and duration. We work it out on the call.</p>
+<p>I do not post rates here because the structure varies by type and duration. We work it out on the call.</p>
 </details>
 
 </div>
 </section>
 
 <section class="exp-section">
-<div class="about-text" style="text-align:center;padding:1.5rem 0;">
+<div class="about-text cta-block">
 <p>The intro call is free, no-obligation, and takes 20–30 minutes.</p>
-<p><a href="/services/book-a-call/" style="display:inline-block;padding:0.6rem 1.4rem;background:#2563eb;color:#fff;border-radius:4px;text-decoration:none;font-weight:600;">Book a Call &rarr;</a></p>
+<p><a class="button button-primary" href="/services/book-a-call/">Book a Call &rarr;</a></p>
 </div>
 </section>

@@ -19,8 +19,8 @@
 {% endif %}
 
 <!-- Primary Meta Tags -->
-<title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-<meta name="title" content="{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+<title>{% if page.title and page.title != '' %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+<meta name="title" content="{% if page.title and page.title != '' %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
 <meta name="description" content="{{ page.seo_description | default: page.description | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
 <meta name="author" content="{{ page.author | default: site.author.name }}">
 <meta name="keywords" content="{% if page.keywords %}{{ page.keywords | join: ', ' }}{% elsif site.academic.keywords %}{{ site.academic.keywords | join: ', ' }}{% endif %}">
@@ -32,19 +32,22 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+<meta property="og:site_name" content="{{ site.title }}">
 <meta property="og:url" content="{{ page.url | absolute_url }}">
-<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+<meta property="og:title" content="{% if page.title and page.title != '' %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
 <meta property="og:description" content="{{ page.seo_description | default: page.description | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
 <meta property="og:image" content="{{ page.image | default: '/assets/images/og-default.png' | absolute_url }}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{ page.title | default: site.title }}">
 
 <!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="{{ page.url | absolute_url }}">
-<meta property="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-<meta property="twitter:description" content="{{ page.seo_description | default: page.description | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
-<meta property="twitter:image" content="{{ page.image | default: '/assets/images/og-default.png' | absolute_url }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="{{ page.url | absolute_url }}">
+<meta name="twitter:title" content="{% if page.title and page.title != '' %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+<meta name="twitter:description" content="{{ page.seo_description | default: page.description | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+<meta name="twitter:image" content="{{ page.image | default: '/assets/images/og-default.png' | absolute_url }}">
+<meta name="twitter:image:alt" content="{{ page.title | default: site.title }}">
 
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/favicon.svg' | relative_url }}">
@@ -64,6 +67,9 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous">
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+{% if page.url contains '/services/book-a-call' %}
+<link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
+{% endif %}
 
 {% if page.math %}
 <!-- MathJax for Math Rendering (loaded only when math: true) -->
@@ -102,32 +108,40 @@ MathJax = {
 
 <!-- JSON-LD Structured Data -->
 <script type="application/ld+json">
+{% if page.layout == 'post' %}
 {
   "@context": "https://schema.org",
-  "@type": "{% if page.layout == 'post' %}BlogPosting{% else %}Person{% endif %}",
-  {% if page.layout == 'post' %}
-  "headline": "{{ page.title }}",
-  "datePublished": "{{ page.date | date_to_xmlschema }}",
-  "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
-  "author": {
-    "@type": "Person",
-    "name": "{{ page.author | default: site.author.name }}"
-  },
-  {% else %}
-  "name": "{{ site.author.name }}",
-  "jobTitle": "{{ site.author.position }}",
-  "affiliation": {
-    "@type": "Organization",
-    "name": "{{ site.author.affiliation }}"
-  },
-  "email": "{{ site.author.email }}",
-  {% endif %}
-  "url": "{{ page.url | absolute_url }}"
+  "@type": "BlogPosting",
+  "headline": {{ page.title | jsonify }},
+  "description": {{ page.seo_description | default: page.description | jsonify }},
+  "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+  "dateModified": {{ page.last_modified_at | default: page.date | date_to_xmlschema | jsonify }},
+  "author": { "@type": "Person", "name": {{ page.author | default: site.author.name | jsonify }} },
+  "image": {{ page.image | default: '/assets/images/og-default.png' | absolute_url | jsonify }},
+  "url": {{ page.url | absolute_url | jsonify }}
 }
+{% elsif page.url == '/' %}
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": {{ site.author.name | jsonify }},
+  "jobTitle": {{ site.author.position | jsonify }},
+  "description": {{ site.author.bio | jsonify }},
+  "affiliation": { "@type": "Organization", "name": {{ site.author.affiliation | jsonify }} },
+  "email": {{ site.author.email | jsonify }},
+  "url": {{ page.url | absolute_url | jsonify }}
+}
+{% else %}
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": {{ page.title | jsonify }},
+  "description": {{ page.seo_description | default: page.description | default: site.description | jsonify }},
+  "author": { "@type": "Person", "name": {{ site.author.name | jsonify }} },
+  "url": {{ page.url | absolute_url | jsonify }}
+}
+{% endif %}
 </script>
 
 <!-- RSS Feed -->
 {% feed_meta %}
-
-<!-- SEO Plugin -->
-{% seo %}

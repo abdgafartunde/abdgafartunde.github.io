@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Services"
+eyebrow: "Ways to work together"
 description: "Research mentorship, coursework tutoring, consulting, and workshops."
 seo_description: "Services offered by A.T. Tiamiyu: research mentorship in inverse problems and scientific machine learning, coursework tutoring in numerical methods and PDEs, domain workshops for engineering and R&D teams, and applied consulting on parameter identification and inverse problem pipelines."
 ---

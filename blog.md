@@ -1,7 +1,8 @@
 ---
 layout: page
 title: "Blog"
-description: "Thoughts on Mathematics, Research, and Academic Life"
+eyebrow: "Notes and essays"
+description: "Writing on mathematics, research, computation, and academic life."
 seo_description: "Blog by A.T. Tiamiyu covering inverse problems, scientific computing, physics-informed neural networks, regularization, and reflections on academic life."
 ---
 

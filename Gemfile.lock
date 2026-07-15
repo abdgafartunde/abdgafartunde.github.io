@@ -284,7 +284,6 @@ DEPENDENCIES
   github-pages
   jekyll-feed
   jekyll-redirect-from
-  jekyll-seo-tag
   jekyll-sitemap
   tzinfo-data
   webrick (~> 1.8)

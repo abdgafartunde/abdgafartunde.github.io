@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Book a Call"
+eyebrow: "A short first conversation"
 description: "Free 20–30 minute intro conversation. No obligation."
 seo_description: "Book a free 20–30 minute intro call with A.T. Tiamiyu to discuss research mentorship, coursework tutoring, consulting, or workshops in inverse problems and scientific machine learning."
 ---
@@ -19,15 +20,14 @@ seo_description: "Book a free 20–30 minute intro call with A.T. Tiamiyu to dis
 <p>Tell me a bit about what you are looking for. This helps me come to the call prepared rather than spending the first ten minutes on context-setting.</p>
 </div>
 
-<div id="calendly-intake" style="max-width:600px;">
+<div id="calendly-intake" class="booking-panel">
   <form id="intake-form" onsubmit="launchCalendly(event)" novalidate>
 
-    <div style="margin-bottom:1.2rem;">
-      <label for="calendly-reason" style="display:block;font-weight:600;margin-bottom:0.4rem;">
-        What brings you here? <span aria-hidden="true" style="color:#c0392b;">*</span>
+    <div class="form-field">
+      <label for="calendly-reason">
+        What brings you here? <span aria-hidden="true" class="required-mark">*</span>
       </label>
-      <select id="calendly-reason" name="reason" required
-        style="width:100%;padding:0.5rem 0.6rem;border:1px solid #ccc;border-radius:4px;font-size:1rem;">
+      <select id="calendly-reason" name="reason" class="form-control" required>
         <option value="">Select one...</option>
         <option value="Mentorship">Mentorship</option>
         <option value="Coursework tutoring">Coursework tutoring</option>
@@ -37,28 +37,29 @@ seo_description: "Book a free 20–30 minute intro call with A.T. Tiamiyu to dis
       </select>
     </div>
 
-    <div style="margin-bottom:1.2rem;">
-      <label for="calendly-context" style="display:block;font-weight:600;margin-bottom:0.4rem;">
-        What would you like to discuss? <span aria-hidden="true" style="color:#c0392b;">*</span>
+    <div class="form-field">
+      <label for="calendly-context">
+        What would you like to discuss? <span aria-hidden="true" class="required-mark">*</span>
       </label>
       <textarea id="calendly-context" name="context" rows="4" required
         placeholder="A few sentences is enough: the topic, where you are in your work, and what you are hoping to get out of the conversation."
-        style="width:100%;padding:0.5rem 0.6rem;border:1px solid #ccc;border-radius:4px;font-size:1rem;resize:vertical;box-sizing:border-box;"></textarea>
-      <p id="context-error" style="color:#c0392b;font-size:0.875rem;margin-top:0.25rem;display:none;">
+        class="form-control"></textarea>
+      <p id="context-error" class="form-error" role="alert">
         Please describe what you would like to discuss.
       </p>
     </div>
 
-    <button type="submit"
-      style="padding:0.6rem 1.4rem;background:#2563eb;color:#fff;border:none;border-radius:4px;font-size:1rem;font-weight:600;cursor:pointer;">
+    <button type="submit" class="button button-primary">
       Continue to scheduling &rarr;
     </button>
 
+    <p class="booking-fallback">Prefer to skip the questions? <a href="https://calendly.com/abdgafartunde/30min" target="_blank" rel="noopener">Open Calendly directly</a>.</p>
+
   </form>
+  <p id="calendly-status" class="booking-status" aria-live="polite"></p>
 </div>
 
-<div id="calendly-widget"
-  style="min-width:320px;height:700px;display:none;">
+<div id="calendly-widget" class="calendly-widget">
 </div>
 
 <script>
@@ -68,12 +69,13 @@ function launchCalendly(e) {
   var reasonEl  = document.getElementById('calendly-reason');
   var contextEl = document.getElementById('calendly-context');
   var errorEl   = document.getElementById('context-error');
+  var statusEl  = document.getElementById('calendly-status');
   var context   = contextEl.value.trim();
   var reason    = reasonEl.value;
 
   // Reset validation state
   errorEl.style.display = 'none';
-  contextEl.style.borderColor = '#ccc';
+  contextEl.removeAttribute('aria-invalid');
 
   if (!reason) {
     reasonEl.reportValidity();
@@ -82,7 +84,7 @@ function launchCalendly(e) {
 
   if (!context) {
     errorEl.style.display = 'block';
-    contextEl.style.borderColor = '#c0392b';
+    contextEl.setAttribute('aria-invalid', 'true');
     contextEl.focus();
     return;
   }
@@ -92,17 +94,27 @@ function launchCalendly(e) {
     + '&a2=' + encodeURIComponent(context);
 
   var widgetEl = document.getElementById('calendly-widget');
-  document.getElementById('calendly-intake').style.display = 'none';
-  widgetEl.style.display = 'block';
-  widgetEl.scrollIntoView({ behavior: 'smooth' });
+
+  function showWidget() {
+    try {
+      window.Calendly.initInlineWidget({ url: url, parentElement: widgetEl });
+      widgetEl.style.display = 'block';
+      document.getElementById('intake-form').style.display = 'none';
+      statusEl.textContent = 'The scheduling calendar is ready below.';
+      widgetEl.scrollIntoView({ behavior: 'smooth' });
+    } catch (error) {
+      statusEl.innerHTML = 'The calendar could not be loaded. <a href="' + url + '" target="_blank" rel="noopener">Open Calendly in a new tab</a>.';
+    }
+  }
 
   if (window.Calendly && typeof window.Calendly.initInlineWidget === 'function') {
-    window.Calendly.initInlineWidget({ url: url, parentElement: widgetEl });
+    showWidget();
   } else {
     var script = document.createElement('script');
     script.src = 'https://assets.calendly.com/assets/external/widget.js';
-    script.onload = function () {
-      window.Calendly.initInlineWidget({ url: url, parentElement: widgetEl });
+    script.onload = showWidget;
+    script.onerror = function () {
+      statusEl.innerHTML = 'The calendar could not be loaded. <a href="' + url + '" target="_blank" rel="noopener">Open Calendly in a new tab</a>.';
     };
     document.head.appendChild(script);
   }

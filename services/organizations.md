@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "For Organizations and Teams"
+eyebrow: "Consulting and workshops"
 description: "Domain workshops, applied consulting, and literature sessions for engineering and R&D teams."
 seo_description: "Workshops and consulting by A.T. Tiamiyu for engineering and R&D teams: domain lectures on EIT, seismic inversion, and inverse problems; applied consulting on parameter identification and forward/inverse pipelines; and recurring scientific machine learning literature sessions."
 ---
@@ -49,8 +50,8 @@ seo_description: "Workshops and consulting by A.T. Tiamiyu for engineering and R
 </section>
 
 <section class="exp-section">
-<div class="about-text" style="text-align:center;padding:1.5rem 0;">
+<div class="about-text cta-block">
 <p>The intro call is free, no-obligation, and takes 20–30 minutes.</p>
-<p><a href="/services/book-a-call/" style="display:inline-block;padding:0.6rem 1.4rem;background:#2563eb;color:#fff;border-radius:4px;text-decoration:none;font-weight:600;">Book a Call &rarr;</a></p>
+<p><a class="button button-primary" href="/services/book-a-call/">Book a Call &rarr;</a></p>
 </div>
 </section>

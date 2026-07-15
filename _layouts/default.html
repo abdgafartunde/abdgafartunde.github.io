@@ -8,11 +8,14 @@
     <a class="skip-link" href="#main-content">Skip to content</a>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg sticky-top">
+    <nav class="navbar navbar-expand-lg sticky-top" aria-label="Primary navigation">
         <div class="container">
             <a class="navbar-brand" href="{{ '/' | relative_url }}">
-                <span class="brand-name">A.T. Tiamiyu</span>
-                <span class="brand-sub">Mathematics</span>
+                <span class="brand-mark" aria-hidden="true">AT</span>
+                <span class="brand-lockup">
+                    <span class="brand-name">A.T. Tiamiyu</span>
+                    <span class="brand-sub">Applied Mathematics</span>
+                </span>
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,14 +25,20 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     {% for item in site.navigation %}
+                    {% assign item_active = false %}
+                    {% if item.url == '/' and page.url == '/' %}
+                        {% assign item_active = true %}
+                    {% elsif item.url != '/' and page.url contains item.url %}
+                        {% assign item_active = true %}
+                    {% endif %}
                     <li class="nav-item">
-                        <a class="nav-link {% if page.url == item.url %}active{% endif %}" href="{{ item.url | relative_url }}">
+                        <a class="nav-link {% if item_active %}active{% endif %}" href="{{ item.url | relative_url }}"{% if item_active %} aria-current="page"{% endif %}>
                             {{ item.title }}
                         </a>
                     </li>
                     {% endfor %}
                 </ul>
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                <button class="theme-toggle" id="themeToggle" aria-label="Use dark mode" aria-pressed="false" title="Use dark mode">
                     <i class="fas fa-moon"></i>
                     <i class="fas fa-sun"></i>
                 </button>
@@ -91,7 +100,8 @@
             btn.classList.toggle('visible', window.scrollY > 400);
         });
         btn.addEventListener('click', function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            var behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+            window.scrollTo({ top: 0, behavior: behavior });
         });
 
         // Theme toggle
@@ -101,6 +111,13 @@
         if (stored) {
             root.setAttribute('data-theme', stored);
         }
+        function updateThemeToggle(theme) {
+            var dark = theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            toggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
+            toggle.setAttribute('aria-label', dark ? 'Use light mode' : 'Use dark mode');
+            toggle.title = dark ? 'Use light mode' : 'Use dark mode';
+        }
+        updateThemeToggle(stored);
         toggle.addEventListener('click', function() {
             var current = root.getAttribute('data-theme');
             var isDark = current === 'dark' ||
@@ -108,6 +125,7 @@
             var next = isDark ? 'light' : 'dark';
             root.setAttribute('data-theme', next);
             localStorage.setItem('theme', next);
+            updateThemeToggle(next);
         });
     })();
     </script>

@@ -1,7 +1,8 @@
 ---
 layout: page
 title: "Research"
-description: "Computational and Applied Mathematics"
+eyebrow: "Research programme"
+description: "Computational and applied mathematics for inverse problems, imaging, and scientific machine learning."
 seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical impedance tomography, regularization theory, and scientific machine learning. Publications and presentations."
 ---
 
@@ -208,7 +209,7 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
 
 <p>If your work involves indirect measurements, large-scale simulation, data-sparse inversion, or the integration of physical models with data, I would be glad to discuss how computational mathematics can contribute.</p>
 
-<div class="interest-tags" style="margin-top: 1rem;">
+<div class="interest-tags interest-tags-spaced">
   <span class="interest-tag"><i class="fas fa-search"></i> Inverse Problems & Imaging</span>
   <span class="interest-tag"><i class="fas fa-wave-square"></i> Geophysical & Seismic Inversion</span>
   <span class="interest-tag"><i class="fas fa-heartbeat"></i> Medical Imaging</span>
@@ -217,6 +218,6 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
   <span class="interest-tag"><i class="fas fa-flask"></i> Research Consulting</span>
 </div>
 
-<p style="margin-top: 1.2rem;"><i class="fas fa-envelope"></i> Get in touch: <a href="mailto:abdgafartunde@yahoo.com">abdgafartunde@yahoo.com</a> &middot; <a href="mailto:tiamiyuabdgafar@jlu.edu.cn">tiamiyuabdgafar@jlu.edu.cn</a> <span style="font-size:0.82rem; color:var(--text-muted);">(institutional)</span></p>
+<p class="contact-line"><i class="fas fa-envelope"></i> Get in touch: <a href="mailto:abdgafartunde@yahoo.com">abdgafartunde@yahoo.com</a> &middot; <a href="mailto:tiamiyuabdgafar@jlu.edu.cn">tiamiyuabdgafar@jlu.edu.cn</a> <span class="institutional-note">(institutional)</span></p>
 </div>
 </section>

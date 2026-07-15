@@ -6,8 +6,9 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
 ---
 
 <div class="home-header">
-  <img src="{{ '/assets/images/profile_pic.jpeg' | relative_url }}" alt="Abd'gafar Tunde Tiamiyu" class="profile-photo">
+  <img src="{{ '/assets/images/profile_pic.jpeg' | relative_url }}" alt="Portrait of Abd'gafar Tunde Tiamiyu" class="profile-photo" width="260" height="320" fetchpriority="high">
   <div class="home-intro">
+    <p class="hero-kicker">Mathematics for difficult measurements</p>
     <h1>Abd'gafar Tunde TIAMIYU</h1>
     <p class="title">Postdoctoral Researcher</p>
     <p class="tagline">Inverse problems, scientific machine learning, and computational methods: applied to subsurface imaging, medical diagnostics, and engineering simulation</p>
@@ -22,6 +23,10 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
       <a href="https://orcid.org/0000-0003-1641-7196" target="_blank" rel="noopener" title="ORCID"><i class="fab fa-orcid"></i> ORCID</a>
       <a href="https://linkedin.com/in/abdgafartunde" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a>
       <a href="/CV.pdf" title="Download CV"><i class="fas fa-file-pdf"></i> CV</a>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="{{ '/research/' | relative_url }}">Explore my research <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+      <a class="button button-secondary" href="mailto:abdgafartunde@yahoo.com">Start a conversation</a>
     </div>
   </div>
 </div>

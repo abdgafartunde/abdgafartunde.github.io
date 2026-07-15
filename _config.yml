@@ -1,4 +1,4 @@
-title: "Tiamiyu | Mathematics Researcher"
+title: "A.T. Tiamiyu"
 description: "Postdoctoral Researcher in Computational and Applied Mathematics"
 baseurl: ""
 url: "https://abdgafartunde.github.io"
@@ -39,7 +39,6 @@ kramdown:
 plugins:
   - jekyll-feed
   - jekyll-sitemap
-  - jekyll-seo-tag
   - jekyll-redirect-from
 
 # Navigation
