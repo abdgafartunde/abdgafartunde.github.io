@@ -23,7 +23,7 @@ $$
 \mathcal{N}[u](x) = 0, \quad x \in \Omega,
 $$
 
-subject to boundary conditions $\mathcal{B}[u](x) = 0$ on $\partial\Omega$.
+subject to boundary conditions $\mathcal{B}\mathopen{\lbrack}u\mathclose{\rbrack}(x) = 0$ on $\partial\Omega$.
 
 You parameterise the unknown $u$ with a neural network $u_\theta(x)$. Concretely, $u_\theta : \mathbb{R}^d \to \mathbb{R}$ is a fully connected network of the form
 

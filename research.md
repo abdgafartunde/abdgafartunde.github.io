@@ -6,7 +6,16 @@ description: "Computational and applied mathematics for inverse problems, imagin
 seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical impedance tomography, regularization theory, and scientific machine learning. Publications and presentations."
 ---
 
-<section class="research-section">
+<nav class="section-nav" aria-label="Research page sections">
+  <span class="section-nav-label">On this page</span>
+  <a href="#overview">Overview</a>
+  <a href="#publications">Publications</a>
+  <a href="#talks">Talks</a>
+  <a href="#projects">Projects</a>
+  <a href="#collaborations">Collaborations</a>
+</nav>
+
+<section class="research-section" id="overview">
 <h2 class="section-heading"><i class="fas fa-microscope"></i> Overview</h2>
 
 <div class="about-text">
@@ -21,37 +30,50 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
   <div class="research-icon"><i class="fas fa-search-plus"></i></div>
   <h3>Inverse Problems & Regularization</h3>
   <p>Developing variational inversion frameworks using adaptive primal-dual hybrid gradient methods to address ill-posedness and nonlinearity in parameter identification and image reconstruction.</p>
-  <p class="pub-annotation"><strong>Applied to:</strong> Seismic exploration and full waveform inversion, anomaly detection in medical imaging, material characterisation in non-destructive testing, and parameter recovery in fluid and heat flow models.</p>
-  <p class="pub-annotation"><strong>Industry connection:</strong> The same mathematical structure underlies velocity model building in oil &amp; gas, image reconstruction in medical devices, and model calibration in engineering simulation.</p></div>
+  <details class="research-card-details">
+    <summary>Applications and industry relevance</summary>
+    <p class="pub-annotation"><strong>Applied to:</strong> Seismic exploration and full waveform inversion, anomaly detection in medical imaging, material characterisation in non-destructive testing, and parameter recovery in fluid and heat flow models.</p>
+    <p class="pub-annotation"><strong>Industry connection:</strong> The same mathematical structure underlies velocity model building in oil &amp; gas, image reconstruction in medical devices, and model calibration in engineering simulation.</p>
+  </details>
+</div>
 
 <div class="research-card">
   <div class="research-icon"><i class="fas fa-x-ray"></i></div>
   <h3>Computational Imaging &amp; Tomography</h3>
   <p>Developing reconstruction algorithms for both linear and nonlinear imaging inverse problems. Linear modalities (CT, MRI, X-ray tomography) admit efficient Fourier and filtered-backprojection methods but require careful regularization under noise and incomplete data. Nonlinear modalities (EIT, ultrasound, full waveform inversion) require iterative inversion of a nonlinear forward map, combining adjoint-based gradient computation with variational or learned regularizers.</p>
-  <p class="pub-annotation"><strong>Applied to:</strong> EIT lung monitoring, sparse-view CT reconstruction, undersampled MRI, ultrasound tomography for soft-tissue imaging, and seismic full waveform inversion for subsurface velocity recovery.</p>
-  <p class="pub-annotation"><strong>Industry connection:</strong> Every major medical imaging manufacturer (Siemens, GE, Philips) and every seismic processing company depends on reconstruction algorithms of exactly this type as the core of their imaging pipeline.</p>
+  <details class="research-card-details">
+    <summary>Applications and industry relevance</summary>
+    <p class="pub-annotation"><strong>Applied to:</strong> EIT lung monitoring, sparse-view CT reconstruction, undersampled MRI, ultrasound tomography for soft-tissue imaging, and seismic full waveform inversion for subsurface velocity recovery.</p>
+    <p class="pub-annotation"><strong>Industry connection:</strong> Every major medical imaging manufacturer (Siemens, GE, Philips) and every seismic processing company depends on reconstruction algorithms of exactly this type as the core of their imaging pipeline.</p>
+  </details>
 </div>
 
 <div class="research-card">
   <div class="research-icon"><i class="fas fa-robot"></i></div>
   <h3>Scientific Machine Learning</h3>
   <p>Integrating deep neural networks with physics-oriented models, including physics-informed neural networks and GPU-accelerated deep learning for real-time imaging.</p>
-  <p class="pub-annotation"><strong>Applied to:</strong> Accelerating PDE-constrained simulations, enabling real-time inversion where classical iterative methods are too slow, and learning regularisers from data for improved reconstruction quality.</p>
-  <p class="pub-annotation"><strong>Industry connection:</strong> Physics-informed neural networks and neural operators are being adopted in computational fluid dynamics, seismic processing pipelines, and industrial digital twin systems.</p>
+  <details class="research-card-details">
+    <summary>Applications and industry relevance</summary>
+    <p class="pub-annotation"><strong>Applied to:</strong> Accelerating PDE-constrained simulations, enabling real-time inversion where classical iterative methods are too slow, and learning regularisers from data for improved reconstruction quality.</p>
+    <p class="pub-annotation"><strong>Industry connection:</strong> Physics-informed neural networks and neural operators are being adopted in computational fluid dynamics, seismic processing pipelines, and industrial digital twin systems.</p>
+  </details>
 </div>
 
 <div class="research-card">
   <div class="research-icon"><i class="fas fa-calculator"></i></div>
   <h3>Numerical Methods</h3>
   <p>Developing efficient numerical algorithms for differential equations and optimization, including finite element methods, iterative solvers, and collocation methods.</p>
-  <p class="pub-annotation"><strong>Applied to:</strong> Discretising and solving forward models in imaging, fluid dynamics, and heat transfer: the computational foundation that makes large-scale inversion tractable.</p>
-  <p class="pub-annotation"><strong>Industry connection:</strong> Finite element solvers and iterative linear algebra underpin reservoir simulation, structural analysis codes, and climate modelling used throughout industry and government.</p>
+  <details class="research-card-details">
+    <summary>Applications and industry relevance</summary>
+    <p class="pub-annotation"><strong>Applied to:</strong> Discretising and solving forward models in imaging, fluid dynamics, and heat transfer: the computational foundation that makes large-scale inversion tractable.</p>
+    <p class="pub-annotation"><strong>Industry connection:</strong> Finite element solvers and iterative linear algebra underpin reservoir simulation, structural analysis codes, and climate modelling used throughout industry and government.</p>
+  </details>
 </div>
 
 </div>
 </section>
 
-<section class="research-section">
+<section class="research-section" id="publications">
 <h2 class="section-heading"><i class="fas fa-book"></i> Publications</h2>
 
 <div class="publications-list">
@@ -127,7 +149,7 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
 </div>
 </section>
 
-<section class="research-section">
+<section class="research-section" id="talks">
 <h2 class="section-heading"><i class="fas fa-microphone-alt"></i> Presentations & Talks</h2>
 
 <div class="presentations-grid">
@@ -159,7 +181,7 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
 </div>
 </section>
 
-<section class="research-section">
+<section class="research-section" id="projects">
 <h2 class="section-heading"><i class="fas fa-code"></i> Projects &amp; Code</h2>
 
 <div class="about-text">
@@ -199,7 +221,7 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
 </div>
 </section>
 
-<section class="research-section">
+<section class="research-section" id="collaborations">
 <h2 class="section-heading"><i class="fas fa-handshake"></i> Collaborations &amp; Consulting</h2>
 
 <div class="about-text">

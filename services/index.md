@@ -23,14 +23,14 @@ seo_description: "Services offered by A.T. Tiamiyu: research mentorship in inver
   <div class="research-icon"><i class="fas fa-user-graduate"></i></div>
   <h3>For Students and Researchers</h3>
   <p>Coursework tutoring in numerical methods, PDEs, and applied optimization; research guidance into inverse problems, scientific machine learning, and PINNs; and thesis or paper feedback for anyone working in these areas, worldwide.</p>
-  <p><a href="/services/students/">Full details and FAQ &rarr;</a></p>
+  <p class="card-action"><a href="/services/students/">Full details and FAQ <i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>
 </div>
 
 <div class="research-card">
   <div class="research-icon"><i class="fas fa-building"></i></div>
   <h3>For Organizations and Teams</h3>
   <p>Domain lectures and workshops on EIT, seismic inversion, and the mathematics of ill-posed inverse problems; applied consulting on parameter identification, uncertainty quantification, and pipeline review; and recurring literature sessions for R&amp;D teams tracking scientific machine learning.</p>
-  <p><a href="/services/organizations/">Full details &rarr;</a></p>
+  <p class="card-action"><a href="/services/organizations/">Full details <i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>
 </div>
 
 </div>

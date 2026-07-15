@@ -6,7 +6,17 @@ description: "Research, teaching, awards, and professional experience across app
 seo_description: "Academic and professional experience of A.T. Tiamiyu: postdoctoral researcher at Jilin University, PhD from CUHK, teaching, awards, and leadership in applied mathematics."
 ---
 
-<section class="exp-section">
+<nav class="section-nav" aria-label="Experience page sections">
+  <span class="section-nav-label">On this page</span>
+  <a href="#education">Education</a>
+  <a href="#research-experience">Research</a>
+  <a href="#teaching">Teaching</a>
+  <a href="#awards">Awards</a>
+  <a href="#leadership">Leadership</a>
+  <a href="#skills">Skills</a>
+</nav>
+
+<section class="exp-section" id="education">
 <h2 class="section-heading"><i class="fas fa-graduation-cap"></i> Education</h2>
 
 <div class="education-item">
@@ -34,7 +44,7 @@ seo_description: "Academic and professional experience of A.T. Tiamiyu: postdoct
 </div>
 </section>
 
-<section class="exp-section">
+<section class="exp-section" id="research-experience">
 <h2 class="section-heading"><i class="fas fa-flask"></i> Research Experience</h2>
 
 <div class="about-text section-intro">
@@ -96,7 +106,7 @@ seo_description: "Academic and professional experience of A.T. Tiamiyu: postdoct
 </div>
 </section>
 
-<section class="exp-section">
+<section class="exp-section" id="teaching">
 <h2 class="section-heading"><i class="fas fa-chalkboard-teacher"></i> Teaching</h2>
 
 <div class="about-text section-intro">
@@ -132,7 +142,7 @@ seo_description: "Academic and professional experience of A.T. Tiamiyu: postdoct
 </div>
 </section>
 
-<section class="exp-section">
+<section class="exp-section" id="awards">
 <h2 class="section-heading"><i class="fas fa-trophy"></i> Awards & Honors</h2>
 
 <div class="awards-list">
@@ -174,7 +184,7 @@ seo_description: "Academic and professional experience of A.T. Tiamiyu: postdoct
 </div>
 </section>
 
-<section class="exp-section">
+<section class="exp-section" id="leadership">
 <h2 class="section-heading"><i class="fas fa-hands-helping"></i> Leadership & Service</h2>
 
 <div class="service-grid">
@@ -213,7 +223,7 @@ seo_description: "Academic and professional experience of A.T. Tiamiyu: postdoct
 </div>
 </section>
 
-<section class="exp-section">
+<section class="exp-section" id="skills">
 <h2 class="section-heading"><i class="fas fa-code"></i> Technical Skills</h2>
 
 <div class="skills-grouped">

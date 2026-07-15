@@ -61,6 +61,11 @@
                     <p class="footer-name">{{ site.author.name }}</p>
                     <p class="footer-position">{{ site.author.position }} &middot; {{ site.author.affiliation }}</p>
                 </div>
+                <nav class="footer-nav" aria-label="Footer navigation">
+                    {% for item in site.navigation %}
+                    <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+                    {% endfor %}
+                </nav>
                 <div class="footer-social">
                     {% if site.social.email %}
                         <a href="mailto:{{ site.social.email }}" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a>

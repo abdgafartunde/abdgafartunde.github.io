@@ -8,9 +8,12 @@ seo_description: "Blog by A.T. Tiamiyu covering inverse problems, scientific com
 
 <p class="blog-intro">Writing about the mathematics I work on, the tools I use, and the questions that interest me: from inverse problems and scientific computing to the broader role of mathematics in a changing research landscape.</p>
 
+<section class="blog-recent" aria-labelledby="recent-writing-heading">
+<h2 class="section-heading" id="recent-writing-heading"><i class="fas fa-pen-nib"></i> Latest Writing</h2>
+
 <div class="blog-posts">
 {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
-{% for post in sorted_posts %}
+{% for post in sorted_posts limit:6 %}
 <article class="blog-card {% if forloop.first %}blog-card-featured{% endif %}">
   <div class="blog-card-content">
     <div class="blog-card-date">
@@ -36,6 +39,21 @@ seo_description: "Blog by A.T. Tiamiyu covering inverse problems, scientific com
 </article>
 {% endfor %}
 </div>
+</section>
+
+{% if site.posts.size > 6 %}
+<section class="blog-archive" aria-labelledby="archive-heading">
+  <h2 class="section-heading" id="archive-heading"><i class="fas fa-box-archive"></i> Archive</h2>
+  <ol class="archive-list">
+  {% for post in sorted_posts offset:6 %}
+    <li>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %Y" }}</time>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+  </ol>
+</section>
+{% endif %}
 
 {% if site.posts.size == 0 %}
 <p class="text-muted">No posts yet. Check back soon for updates on computational mathematics, inverse problems, and scientific computing.</p>
