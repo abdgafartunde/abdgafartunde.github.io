@@ -36,13 +36,13 @@ $$
 u_N(x) = \sum_{k=-N/2}^{N/2} \hat{u}_k e^{ikx}.
 $$
 
-The coefficients $\hat{u}_k$ are the Fourier coefficients of $u$. The quality of the approximation is controlled by how fast these coefficients decay. For a function with $p$ continuous derivatives, $|\hat{u}_k| = O(|k|^{-p})$ as $|k| \to \infty$, giving algebraic decay. For a real analytic function (one that extends to a holomorphic function in a strip around the real axis), the coefficients decay exponentially: $|\hat{u}_k| \leq C e^{-\sigma |k|}$ for some $\sigma > 0$. This exponential decay of coefficients is the origin of spectral convergence.
+The coefficients $\hat{u}_k$ are the Fourier coefficients of $u$. The quality of the approximation is controlled by how fast these coefficients decay. For a function with $p$ continuous derivatives, $\lvert\hat{u}_k\rvert = O(\lvert k\rvert^{-p})$ as $\lvert k\rvert \to \infty$, giving algebraic decay. For a real analytic function (one that extends to a holomorphic function in a strip around the real axis), the coefficients decay exponentially: $\lvert\hat{u}_k\rvert \leq C e^{-\sigma \lvert k\rvert}$ for some $\sigma > 0$. This exponential decay of coefficients is the origin of spectral convergence.
 
 **Differentiation.** In Fourier space, differentiation is multiplication: the $k$-th Fourier coefficient of $u'$ is $ik\hat{u}_k$. This is exact at the spectral level and allows PDE operators to be applied without the numerical differentiation errors that plague finite difference or finite element methods at low resolutions.
 
 **The FFT.** Evaluating a Fourier series at $N$ equally spaced points, and computing the Fourier coefficients from $N$ function values, costs $O(N \log N)$ via the Fast Fourier Transform. This makes Fourier spectral methods exceptionally efficient: the cost per degree of freedom is nearly optimal.
 
-**Gibbs phenomenon.** Fourier methods pay a price for discontinuities. Near a jump discontinuity, the partial sum overshoots by about 9% of the jump height, regardless of $N$. This Gibbs phenomenon means that Fourier methods are poorly suited to problems with sharp gradients or discontinuous solutions. The exponential convergence disappears: for a function with a jump, the Fourier coefficients decay as $O(|k|^{-1})$, giving only first-order convergence.
+**Gibbs phenomenon.** Fourier methods pay a price for discontinuities. Near a jump discontinuity, the partial sum overshoots by about 9% of the jump height, regardless of $N$. This Gibbs phenomenon means that Fourier methods are poorly suited to problems with sharp gradients or discontinuous solutions. The exponential convergence disappears: for a function with a jump, the Fourier coefficients decay as $O(\lvert k\rvert^{-1})$, giving only first-order convergence.
 
 
 ## Chebyshev and Legendre Methods on Bounded Intervals
