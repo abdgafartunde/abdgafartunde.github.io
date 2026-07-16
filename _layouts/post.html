@@ -2,77 +2,73 @@
 layout: default
 ---
 
-<div class="post-layout">
-    <!-- Sidebar with other posts -->
-    <aside class="post-sidebar">
-        <div class="sidebar-inner">
-            <h6 class="sidebar-heading">
-                <i class="fas fa-newspaper"></i>Other Posts
-            </h6>
-            <ul class="sidebar-posts">
-                {% assign other_posts = site.posts | where_exp: "post", "post.url != page.url" %}
-                {% for post in other_posts limit: 8 %}
-                <li>
-                    <a href="{{ post.url | relative_url }}" class="sidebar-post-link">
-                        <span class="sidebar-post-title">{{ post.title }}</span>
-                        <span class="sidebar-post-date">{{ post.date | date: "%b %d, %Y" }}</span>
-                    </a>
-                </li>
-                {% endfor %}
-            </ul>
-            <a href="{{ '/blog' | relative_url }}" class="sidebar-back">
-                <i class="fas fa-arrow-left"></i>All Posts
-            </a>
-        </div>
-    </aside>
-    
-    <!-- Main content -->
+<div class="post-shell">
+    <nav class="post-breadcrumb" aria-label="Article navigation">
+        <a href="{{ '/blog/' | relative_url }}"><span aria-hidden="true">&larr;</span> All writing</a>
+    </nav>
+
     <article class="post-article">
         <header class="post-header">
             <div class="post-meta-top">
-                <time datetime="{{ page.date | date_to_xmlschema }}">
-                    {{ page.date | date: "%B %d, %Y" }}
-                </time>
-                <span class="meta-sep">&middot;</span>
-                <span>
-                    {% assign words = content | number_of_words %}{% assign read_time = words | divided_by: 200 %}{% if read_time < 1 %}1{% else %}{{ read_time }}{% endif %} min read
-                </span>
+                <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d %B %Y" }}</time>
+                <span class="meta-sep" aria-hidden="true">/</span>
+                <span>{% assign words = content | number_of_words %}{% assign read_time = words | divided_by: 200 %}{% if read_time < 1 %}1{% else %}{{ read_time }}{% endif %} min read</span>
             </div>
+
             <h1 class="post-title">{{ page.title }}</h1>
-            {% if page.description %}
-                <p class="post-description">{{ page.description }}</p>
-            {% endif %}
+
+            {% if page.description %}<p class="post-description">{{ page.description }}</p>{% endif %}
+
             {% if page.tags.size > 0 %}
-                <div class="post-tags">
-                    {% for tag in page.tags %}
-                        <span class="tag">{{ tag }}</span>
-                    {% endfor %}
-                </div>
+            <ul class="post-topic-list" aria-label="Article topics">
+                {% for tag in page.tags %}<li>{{ tag }}</li>{% endfor %}
+            </ul>
             {% endif %}
         </header>
-        
-        <div class="content">
+
+        <div class="content post-content">
             {{ content }}
         </div>
-        
-        <!-- Post navigation -->
-        <nav class="post-nav" aria-label="Post navigation">
+
+        <footer class="post-author-note">
+            <p>Written by <strong>{{ page.author | default: site.author.name }}</strong></p>
+            <a href="mailto:{{ site.social.email }}">Discuss this article <span aria-hidden="true">&rarr;</span></a>
+        </footer>
+
+        <nav class="post-nav{% unless page.previous.url and page.next.url %} post-nav-single{% endunless %}" aria-label="Adjacent articles">
             <div class="post-nav-item post-nav-prev">
                 {% if page.previous.url %}
                 <a href="{{ page.previous.url | relative_url }}">
-                    <span class="post-nav-label"><i class="fas fa-chevron-left"></i> Previous</span>
-                    <span class="post-nav-title">{{ page.previous.title | truncate: 50 }}</span>
+                    <span class="post-nav-label"><span aria-hidden="true">&larr;</span> Previous</span>
+                    <span class="post-nav-title">{{ page.previous.title | truncate: 62 }}</span>
                 </a>
                 {% endif %}
             </div>
             <div class="post-nav-item post-nav-next">
                 {% if page.next.url %}
                 <a href="{{ page.next.url | relative_url }}">
-                    <span class="post-nav-label">Next <i class="fas fa-chevron-right"></i></span>
-                    <span class="post-nav-title">{{ page.next.title | truncate: 50 }}</span>
+                    <span class="post-nav-label">Next <span aria-hidden="true">&rarr;</span></span>
+                    <span class="post-nav-title">{{ page.next.title | truncate: 62 }}</span>
                 </a>
                 {% endif %}
             </div>
         </nav>
     </article>
+
+    <aside class="post-related" aria-labelledby="related-writing-heading">
+        <div class="post-related-heading">
+            <p>From the archive</p>
+            <h2 id="related-writing-heading">More writing</h2>
+        </div>
+        <div class="post-related-list">
+            {% assign other_posts = site.posts | where_exp: "post", "post.url != page.url" %}
+            {% for post in other_posts limit:3 %}
+            <article>
+                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
+                <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            </article>
+            {% endfor %}
+        </div>
+        <a class="post-all-writing" href="{{ '/blog/' | relative_url }}">Browse the complete archive <span aria-hidden="true">&rarr;</span></a>
+    </aside>
 </div>

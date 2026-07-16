@@ -1,260 +1,202 @@
 ---
 layout: page
+page_class: experience-page
 title: "Experience"
-eyebrow: "Academic path"
-description: "Research, teaching, awards, and professional experience across applied mathematics."
+eyebrow: "Academic record"
+description: "Research, education, teaching, and service across applied mathematics and scientific computing."
 seo_description: "Academic and professional experience of A.T. Tiamiyu: postdoctoral researcher at Jilin University, PhD from CUHK, teaching, awards, and leadership in applied mathematics."
 ---
 
-<nav class="section-nav" aria-label="Experience page sections">
-  <span class="section-nav-label">On this page</span>
-  <a href="#education">Education</a>
-  <a href="#research-experience">Research</a>
-  <a href="#teaching">Teaching</a>
-  <a href="#awards">Awards</a>
-  <a href="#leadership">Leadership</a>
-  <a href="#skills">Skills</a>
-</nav>
+<div class="experience-editorial">
+  <nav class="experience-page-nav" aria-label="Experience page sections">
+    <span>On this page</span>
+    <a href="#appointments">Appointments</a>
+    <a href="#education">Education</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#recognition">Recognition</a>
+    <a href="#service">Service</a>
+    <a href="#skills">Skills</a>
+  </nav>
 
-<section class="exp-section" id="education">
-<h2 class="section-heading"><i class="fas fa-graduation-cap"></i> Education</h2>
+  <section class="editorial-section" id="appointments" aria-labelledby="appointments-heading">
+    <div class="editorial-label"><p>Appointments</p></div>
+    <div class="editorial-content">
+      <h2 id="appointments-heading">Research across inverse problems and numerical analysis</h2>
+      <p class="experience-introduction">My work combines mathematical analysis, scientific computing, and machine learning. I develop regularization and numerical methods for inverse problems, with applications in medical imaging, parameter identification, and subsurface reconstruction.</p>
 
-<div class="education-item">
-  <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
-  <div class="edu-body">
-    <div class="edu-degree">PhD in Mathematics</div>
-    <div class="edu-school"><a href="https://www.cuhk.edu.hk/" target="_blank" rel="noopener">The Chinese University of Hong Kong</a></div>
-    <div class="edu-year"><i class="far fa-calendar-alt"></i> 2021 – 2025</div>
-    <div class="edu-details">
-      <em>Dissertation:</em> Novel regularization and deep learning approaches for electrical impedance tomography problems with partial measurement data<br>
-      <em>Advisor:</em> <a href="https://www.math.cuhk.edu.hk/~zou/" target="_blank" rel="noopener">Professor Jun Zou</a><br>
-      <em>Funding:</em> Hong Kong PhD Fellowship Scheme, CUHK Vice-Chancellor's Scholarship
+      <div class="experience-records">
+        <article class="experience-record experience-record-current">
+          <div class="experience-record-meta">
+            <time datetime="2026-01">2026 to present</time>
+            <span>Changchun, China</span>
+          </div>
+          <div>
+            <div class="experience-title-line">
+              <h3>Postdoctoral Researcher</h3>
+              <span class="experience-status">Current</span>
+            </div>
+            <p class="experience-institution">School of Mathematics, <a href="https://www.jlu.edu.cn/" target="_blank" rel="noopener">Jilin University</a></p>
+            <p>Developing regularization methods and scientific machine learning approaches for nonlinear inverse problems in imaging and parameter identification.</p>
+          </div>
+        </article>
+
+        <article class="experience-record">
+          <div class="experience-record-meta">
+            <time datetime="2021-08">2021 to 2025</time>
+            <span>Hong Kong</span>
+          </div>
+          <div>
+            <h3>Doctoral Researcher</h3>
+            <p class="experience-institution"><a href="https://www.cuhk.edu.hk/" target="_blank" rel="noopener">The Chinese University of Hong Kong</a></p>
+            <p>Studied variational regularization and deep learning methods for electrical impedance tomography with partial measurements, advised by <a href="https://www.math.cuhk.edu.hk/~zou/" target="_blank" rel="noopener">Professor Jun Zou</a>.</p>
+          </div>
+        </article>
+
+        <article class="experience-record">
+          <div class="experience-record-meta">
+            <time datetime="2023-10">2023 to 2024</time>
+            <span>Graz, Austria</span>
+          </div>
+          <div>
+            <h3>Visiting Researcher</h3>
+            <p class="experience-institution"><a href="https://www.uni-graz.at/" target="_blank" rel="noopener">University of Graz</a></p>
+            <p>Developed learned regularization methods for electrical impedance tomography through an Ernst Mach Grant.</p>
+          </div>
+        </article>
+
+        <article class="experience-record">
+          <div class="experience-record-meta">
+            <time datetime="2018-06">2018 to 2019</time>
+            <span>Wudil, Nigeria</span>
+          </div>
+          <div>
+            <h3>Research Assistant</h3>
+            <p class="experience-institution"><a href="https://kustwudil.edu.ng/" target="_blank" rel="noopener">Kano University of Science and Technology</a></p>
+            <p>Developed numerical schemes for ordinary and partial differential equations, including collocation and block methods for boundary value problems.</p>
+          </div>
+        </article>
+      </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<div class="education-item">
-  <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
-  <div class="edu-body">
-    <div class="edu-degree">Bachelor of Technology (B.Tech) in Mathematics</div>
-    <div class="edu-school"><a href="https://futminna.edu.ng/" target="_blank" rel="noopener">Federal University of Technology, Minna</a>, Nigeria</div>
-    <div class="edu-year"><i class="far fa-calendar-alt"></i> 2012 – 2017</div>
-    <div class="edu-details">First Class Honours · MTN Foundation Scholarship · Sir Peter Ojongbede's Prize for Best Graduating Student</div>
-  </div>
-</div>
-</section>
+  <section class="editorial-section" id="education" aria-labelledby="education-heading">
+    <div class="editorial-label"><p>Education</p></div>
+    <div class="editorial-content">
+      <h2 id="education-heading">Mathematical training</h2>
+      <div class="experience-records experience-education-records">
+        <article class="experience-record">
+          <div class="experience-record-meta">
+            <time datetime="2025">2021 to 2025</time>
+            <span>Hong Kong</span>
+          </div>
+          <div>
+            <h3>PhD in Mathematics</h3>
+            <p class="experience-institution"><a href="https://www.cuhk.edu.hk/" target="_blank" rel="noopener">The Chinese University of Hong Kong</a></p>
+            <dl class="experience-details">
+              <div><dt>Dissertation</dt><dd>Novel regularization and deep learning approaches for electrical impedance tomography problems with partial measurement data</dd></div>
+              <div><dt>Advisor</dt><dd><a href="https://www.math.cuhk.edu.hk/~zou/" target="_blank" rel="noopener">Professor Jun Zou</a></dd></div>
+              <div><dt>Funding</dt><dd>Hong Kong PhD Fellowship Scheme and CUHK Vice-Chancellor's Scholarship</dd></div>
+            </dl>
+          </div>
+        </article>
 
-<section class="exp-section" id="research-experience">
-<h2 class="section-heading"><i class="fas fa-flask"></i> Research Experience</h2>
-
-<div class="about-text section-intro">
-<p>My research centres on the mathematical theory and computational practice of inverse problems (recovering hidden quantities from indirect, noisy measurements). I work across both linear inverse problems (sparse-view CT, undersampled MRI, X-ray tomography) and nonlinear ones (electrical impedance tomography, full waveform seismic inversion, ultrasound tomography), combining variational regularization theory, numerical analysis, and scientific machine learning. My work integrates rigorous mathematical analysis with practical algorithmic development: I am interested in both proving that methods converge and in building implementations that work on real data.</p>
-<p>I am broadly interested in problems where physics and data need to be integrated: where a forward model exists and encodes genuine structure, but where measurements are incomplete, corrupted, or expensive to acquire. Applications I have worked on include medical imaging (EIT), fluid and heat flow simulation, and seismic and subsurface imaging.</p>
-</div>
-
-<div class="timeline">
-
-<div class="timeline-item">
-  <div class="timeline-marker"></div>
-  <div class="timeline-content">
-    <div class="exp-header">
-      <div class="exp-title">Postdoctoral Researcher</div>
-      <span class="exp-badge">Current</span>
+        <article class="experience-record">
+          <div class="experience-record-meta">
+            <time datetime="2017">2012 to 2017</time>
+            <span>Minna, Nigeria</span>
+          </div>
+          <div>
+            <h3>BTech in Mathematics</h3>
+            <p class="experience-institution"><a href="https://futminna.edu.ng/" target="_blank" rel="noopener">Federal University of Technology, Minna</a></p>
+            <p>First Class Honours. Recipient of the MTN Foundation Scholarship and Sir Peter Ojongbede's Prize for Best Graduating Student in Mathematics.</p>
+          </div>
+        </article>
+      </div>
     </div>
-    <div class="exp-institution"><i class="fas fa-university"></i> School of Mathematics, <a href="https://www.jlu.edu.cn/" target="_blank" rel="noopener">Jilin University</a>, China</div>
-    <div class="exp-period"><i class="far fa-calendar-alt"></i> Jan 2026 – Present</div>
-    <p class="exp-summary">Developing regularization methods and scientific machine learning approaches for nonlinear inverse problems, with applications in imaging and parameter identification.</p>
-  </div>
-</div>
+  </section>
 
-<div class="timeline-item">
-  <div class="timeline-marker"></div>
-  <div class="timeline-content">
-    <div class="exp-header">
-      <div class="exp-title">Visiting Researcher</div>
+  <section class="editorial-section" id="teaching" aria-labelledby="teaching-heading">
+    <div class="editorial-label"><p>Teaching</p></div>
+    <div class="editorial-content">
+      <h2 id="teaching-heading">Teaching mathematics through intuition and rigour</h2>
+      <p class="experience-introduction">I have taught engineering undergraduates, mathematics students, and secondary-school learners. My teaching begins with the structure and purpose of a method, then develops the analysis needed to use it correctly.</p>
+
+      <div class="experience-records">
+        <article class="experience-record">
+          <div class="experience-record-meta">
+            <time datetime="2021">2021 to 2025</time>
+            <span>CUHK</span>
+          </div>
+          <div>
+            <h3>Teaching Assistant</h3>
+            <p class="experience-institution">The Chinese University of Hong Kong</p>
+            <ul class="experience-course-list">
+              <li><strong>Calculus for Engineers</strong><span>Tutorials for more than 50 students, 2022 and 2023</span></li>
+              <li><strong>Games and Strategic Thinking</strong><span>Applied game theory, 2024</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="experience-record">
+          <div class="experience-record-meta">
+            <time datetime="2019">2019 to 2020</time>
+            <span>Nigeria</span>
+          </div>
+          <div>
+            <h3>Mathematics Tutor</h3>
+            <p class="experience-institution">KUST Staff School</p>
+            <p>Taught secondary mathematics to more than 100 students, with 85 percent advancing to higher mathematics tracks.</p>
+          </div>
+        </article>
+      </div>
     </div>
-    <div class="exp-institution"><i class="fas fa-university"></i> <a href="https://www.uni-graz.at/" target="_blank" rel="noopener">University of Graz</a>, Austria</div>
-    <div class="exp-period"><i class="far fa-calendar-alt"></i> Oct 2023 – Jun 2024</div>
-    <p class="exp-summary">Developed learned regularization methods for electrical impedance tomography. Funded by Ernst Mach Grant.</p>
-  </div>
-</div>
+  </section>
 
-<div class="timeline-item">
-  <div class="timeline-marker"></div>
-  <div class="timeline-content">
-    <div class="exp-header">
-      <div class="exp-title">Doctoral Researcher</div>
+  <section class="editorial-section" id="recognition" aria-labelledby="recognition-heading">
+    <div class="editorial-label"><p>Recognition</p></div>
+    <div class="editorial-content">
+      <h2 id="recognition-heading">Awards and scholarships</h2>
+      <div class="experience-awards">
+        <article><time>2023 to 2024</time><div><h3>Ernst Mach Grant</h3><p>OeAD, Austria</p></div></article>
+        <article><time>2021 to 2024</time><div><h3>Hong Kong PhD Fellowship Scheme</h3><p>Research Grants Council, Hong Kong</p></div></article>
+        <article><time>2021 to 2025</time><div><h3>Vice-Chancellor's Scholarship</h3><p>The Chinese University of Hong Kong</p></div></article>
+        <article><time>2014 to 2017</time><div><h3>MTN Foundation Scholarship</h3><p>MTN Nigeria</p></div></article>
+        <article><time>2017</time><div><h3>Best Graduating Student in Mathematics</h3><p>Sir Peter Ojongbede's Prize, Federal University of Technology, Minna</p></div></article>
+      </div>
     </div>
-    <div class="exp-institution"><i class="fas fa-university"></i> <a href="https://www.cuhk.edu.hk/" target="_blank" rel="noopener">The Chinese University of Hong Kong</a></div>
-    <div class="exp-period"><i class="far fa-calendar-alt"></i> Aug 2021 – Jun 2025</div>
-    <p class="exp-summary">PhD research on variational regularization and deep learning methods for electrical impedance tomography with partial measurement data. Developed novel inversion frameworks combining adaptive primal-dual methods with learned regularizers. Advised by <a href="https://www.math.cuhk.edu.hk/~zou/" target="_blank" rel="noopener">Prof. Jun Zou</a>.</p>
-  </div>
-</div>
+  </section>
 
-<div class="timeline-item">
-  <div class="timeline-marker"></div>
-  <div class="timeline-content">
-    <div class="exp-header">
-      <div class="exp-title">Research Assistant</div>
+  <section class="editorial-section" id="service" aria-labelledby="service-heading">
+    <div class="editorial-label"><p>Service</p></div>
+    <div class="editorial-content">
+      <h2 id="service-heading">Academic leadership and professional service</h2>
+      <div class="experience-service-list">
+        <article><time>2024 to 2025</time><div><h3>Vice President</h3><p>SIAM Student Chapter, CUHK</p></div></article>
+        <article><time>2023 to 2024</time><div><h3>Secretary</h3><p>SIAM Student Chapter, CUHK</p></div></article>
+        <article><time>2025</time><div><h3>Minisymposium Co-organizer</h3><p>Hong Kong SIAM Conference</p></div></article>
+        <article><time>2024</time><div><h3>Workshop Co-organizer</h3><p>SIAM Student Chapter, CUHK</p></div></article>
+      </div>
+
+      <div class="experience-memberships">
+        <p class="experience-small-label">Professional memberships</p>
+        <ul>
+          <li>Society for Industrial and Applied Mathematics</li>
+          <li>Inverse Problems International Association</li>
+        </ul>
+      </div>
     </div>
-    <div class="exp-institution"><i class="fas fa-university"></i> <a href="https://kustwudil.edu.ng/" target="_blank" rel="noopener">Kano University of Science and Technology</a>, Nigeria</div>
-    <div class="exp-period"><i class="far fa-calendar-alt"></i> Jun 2018 – Apr 2019</div>
-    <p class="exp-summary">Developed and implemented numerical schemes for ordinary and partial differential equations, with focus on collocation-based and block methods for boundary value problems.</p>
-  </div>
-</div>
+  </section>
 
-</div>
-</section>
-
-<section class="exp-section" id="teaching">
-<h2 class="section-heading"><i class="fas fa-chalkboard-teacher"></i> Teaching</h2>
-
-<div class="about-text section-intro">
-<p>I believe that mathematical ideas become most useful when they can be explained clearly to people who will actually apply them. My teaching approach emphasises intuition first (understanding why a method works before dwelling on the technical details) without sacrificing rigour when it matters. I have taught students ranging from engineering undergraduates encountering calculus to PhD students working through the subtleties of applied optimization.</p>
-<p>I am interested in developing short courses and workshops on inverse problems, scientific computing, and data-driven modelling for graduate students and professionals, particularly in contexts where these methods have direct applied relevance.</p>
-</div>
-
-<div class="teaching-grid">
-
-<div class="teaching-card">
-  <div class="teach-header">
-    <div class="teach-role">Teaching Assistant</div>
-    <span class="teach-period">2021–2025</span>
-  </div>
-  <div class="teach-inst"><i class="fas fa-university"></i> <a href="https://www.cuhk.edu.hk/" target="_blank" rel="noopener">The Chinese University of Hong Kong</a></div>
-  <ul class="teach-courses">
-    <li><span class="course-name">Calculus for Engineers</span> <span class="course-detail">Fall 2022, 2023 · Led tutorials for 50+ students</span></li>
-    <li><span class="course-name">Games and Strategic Thinking</span> <span class="course-detail">Fall 2024 · Applied game theory to real-world scenarios</span></li>
-  </ul>
-</div>
-
-<div class="teaching-card">
-  <div class="teach-header">
-    <div class="teach-role">Mathematics Tutor</div>
-    <span class="teach-period">2019–2020</span>
-  </div>
-  <div class="teach-inst"><i class="fas fa-school"></i> KUST Staff School, Nigeria</div>
-  <ul class="teach-courses">
-    <li><span class="course-name">Secondary Mathematics</span> <span class="course-detail">Taught 100+ students; 85% advanced to higher tracks</span></li>
-  </ul>
-</div>
-
-</div>
-</section>
-
-<section class="exp-section" id="awards">
-<h2 class="section-heading"><i class="fas fa-trophy"></i> Awards & Honors</h2>
-
-<div class="awards-list">
-  <div class="award-item">
-    <div class="award-icon"><i class="fas fa-award"></i></div>
-    <div class="award-body">
-      <div class="award-title">Ernst Mach Grant</div>
-      <div class="award-meta"><span class="award-source">OeAD, Austria</span> <span class="award-year">2023–2024</span></div>
+  <section class="editorial-section experience-skills-section" id="skills" aria-labelledby="skills-heading">
+    <div class="editorial-label"><p>Skills</p></div>
+    <div class="editorial-content">
+      <h2 id="skills-heading">Technical practice</h2>
+      <div class="experience-skill-groups">
+        <article><h3>Programming</h3><p>Python, MATLAB, C++</p></article>
+        <article><h3>Machine learning</h3><p>PyTorch, TensorFlow</p></article>
+        <article><h3>Scientific computing</h3><p>NumPy, SciPy, finite element methods, numerical optimization</p></article>
+        <article><h3>Research tools</h3><p>Git, LaTeX, reproducible computational workflows</p></article>
+      </div>
     </div>
-  </div>
-  <div class="award-item">
-    <div class="award-icon"><i class="fas fa-award"></i></div>
-    <div class="award-body">
-      <div class="award-title">Hong Kong PhD Fellowship Scheme</div>
-      <div class="award-meta"><span class="award-source">Research Grants Council</span> <span class="award-year">2021–2024</span></div>
-    </div>
-  </div>
-  <div class="award-item">
-    <div class="award-icon"><i class="fas fa-award"></i></div>
-    <div class="award-body">
-      <div class="award-title">Vice-Chancellor's Scholarship</div>
-      <div class="award-meta"><span class="award-source">CUHK</span> <span class="award-year">2021–2025</span></div>
-    </div>
-  </div>
-  <div class="award-item">
-    <div class="award-icon"><i class="fas fa-award"></i></div>
-    <div class="award-body">
-      <div class="award-title">MTN Foundation Scholarship</div>
-      <div class="award-meta"><span class="award-source">MTN Nigeria</span> <span class="award-year">2014–2017</span></div>
-    </div>
-  </div>
-  <div class="award-item">
-    <div class="award-icon"><i class="fas fa-medal"></i></div>
-    <div class="award-body">
-      <div class="award-title">Best Graduating Student in Mathematics</div>
-      <div class="award-meta"><span class="award-source">Sir Peter Ojongbede's Prize, FUT Minna</span> <span class="award-year">2017</span></div>
-    </div>
-  </div>
+  </section>
 </div>
-</section>
-
-<section class="exp-section" id="leadership">
-<h2 class="section-heading"><i class="fas fa-hands-helping"></i> Leadership & Service</h2>
-
-<div class="service-grid">
-  <div class="service-card">
-    <div class="service-role">Vice President</div>
-    <div class="service-org">SIAM Student Chapter, CUHK</div>
-    <div class="service-period">2024–2025</div>
-  </div>
-  <div class="service-card">
-    <div class="service-role">Secretary</div>
-    <div class="service-org">SIAM Student Chapter, CUHK</div>
-    <div class="service-period">2023–2024</div>
-  </div>
-  <div class="service-card">
-    <div class="service-role">Minisymposium Co-organizer</div>
-    <div class="service-org">HK-SIAM Conference</div>
-    <div class="service-period">July 2025</div>
-  </div>
-  <div class="service-card">
-    <div class="service-role">Workshop Co-organizer</div>
-    <div class="service-org">SIAM Student Chapter, CUHK</div>
-    <div class="service-period">2024</div>
-  </div>
-</div>
-
-<h3 class="subsection-heading">Professional Memberships</h3>
-<div class="membership-badges">
-  <div class="membership-badge">
-    <i class="fas fa-id-card"></i>
-    <span>Society for Industrial and Applied Mathematics (SIAM)</span>
-  </div>
-  <div class="membership-badge">
-    <i class="fas fa-id-card"></i>
-    <span>Inverse Problems International Association (IPIA)</span>
-  </div>
-</div>
-</section>
-
-<section class="exp-section" id="skills">
-<h2 class="section-heading"><i class="fas fa-code"></i> Technical Skills</h2>
-
-<div class="skills-grouped">
-  <div class="skill-group">
-    <div class="skill-group-label"><i class="fas fa-laptop-code"></i> Programming</div>
-    <div class="skill-tags">
-      <span class="skill-tag">Python</span>
-      <span class="skill-tag">MATLAB</span>
-      <span class="skill-tag">C++</span>
-    </div>
-  </div>
-  <div class="skill-group">
-    <div class="skill-group-label"><i class="fas fa-brain"></i> ML / Deep Learning</div>
-    <div class="skill-tags">
-      <span class="skill-tag">PyTorch</span>
-      <span class="skill-tag">TensorFlow</span>
-    </div>
-  </div>
-  <div class="skill-group">
-    <div class="skill-group-label"><i class="fas fa-cogs"></i> Scientific Computing</div>
-    <div class="skill-tags">
-      <span class="skill-tag">NumPy</span>
-      <span class="skill-tag">SciPy</span>
-    </div>
-  </div>
-  <div class="skill-group">
-    <div class="skill-group-label"><i class="fas fa-tools"></i> Tools</div>
-    <div class="skill-tags">
-      <span class="skill-tag">Git</span>
-      <span class="skill-tag">LaTeX</span>
-    </div>
-  </div>
-</div>
-</section>

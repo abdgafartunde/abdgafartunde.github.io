@@ -5,95 +5,134 @@ description: ""
 seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and writing on inverse problems and scientific computing."
 ---
 
-<div class="home-header">
-  <div class="portrait-panel">
-    <img src="{{ '/assets/images/profile_pic.jpeg' | relative_url }}" alt="Portrait of Abd'gafar Tunde Tiamiyu" class="profile-photo" width="280" height="350" fetchpriority="high">
-  </div>
-  <div class="home-intro">
-    <p class="hero-kicker">Mathematics for difficult measurements</p>
-    <h1><span class="hero-name-primary">Abd'gafar Tunde</span><span class="hero-name-family">TIAMIYU</span></h1>
-    <p class="title">Postdoctoral Researcher</p>
-    <p class="tagline">Inverse problems, scientific machine learning, and computational methods: applied to subsurface imaging, medical diagnostics, and engineering simulation</p>
-    <p class="affiliation">
-      <i class="fas fa-university"></i> School of Mathematics, <a href="https://www.jlu.edu.cn/" target="_blank" rel="noopener">Jilin University</a><br>
-      <i class="fas fa-map-marker-alt"></i> Changchun, Jilin, China
-    </p>
-    <div class="social-links">
-      <a href="mailto:abdgafartunde@yahoo.com" title="Email"><i class="fas fa-envelope"></i> Email</a>
-      <a href="https://scholar.google.com/citations?user=oZ3egAIAAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar"><i class="fas fa-graduation-cap"></i> Scholar</a>
-      <a href="https://github.com/abdgafartunde" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
-      <a href="https://orcid.org/0000-0003-1641-7196" target="_blank" rel="noopener" title="ORCID"><i class="fab fa-orcid"></i> ORCID</a>
-      <a href="https://linkedin.com/in/abdgafartunde" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a>
-      <a href="/CV.pdf" title="Download CV"><i class="fas fa-file-pdf"></i> CV</a>
+<div class="homepage-editorial">
+  <header class="home-hero">
+    <div class="home-portrait-wrap">
+      <img src="{{ '/assets/images/profile_pic.jpeg' | relative_url }}" alt="Portrait of Abd'gafar Tunde Tiamiyu" class="home-portrait" width="995" height="1280" fetchpriority="high">
     </div>
-    <div class="hero-actions">
-      <a class="button button-primary" href="{{ '/research/' | relative_url }}">Explore my research <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-      <a class="button button-secondary" href="mailto:abdgafartunde@yahoo.com">Start a conversation</a>
+
+    <div class="home-hero-copy">
+      <p class="home-eyebrow">Computational and applied mathematician</p>
+      <h1>Abd'gafar Tunde <span>TIAMIYU</span></h1>
+      <p class="home-lede">I develop mathematical and computational methods for recovering hidden structure from incomplete and noisy measurements.</p>
+      <p class="home-position">Postdoctoral Researcher, School of Mathematics<br><a href="https://www.jlu.edu.cn/" target="_blank" rel="noopener">Jilin University</a>, Changchun, China</p>
+
+      <div class="home-actions">
+        <a class="home-primary-action" href="{{ '/research/' | relative_url }}">View research <span aria-hidden="true">→</span></a>
+        <a class="home-text-action" href="{{ '/CV.pdf' | relative_url }}">Curriculum vitae</a>
+      </div>
+
+      <nav class="home-profile-links" aria-label="Professional profiles">
+        <a href="mailto:abdgafartunde@yahoo.com">Email</a>
+        <a href="https://scholar.google.com/citations?user=oZ3egAIAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+        <a href="https://github.com/abdgafartunde" target="_blank" rel="noopener">GitHub</a>
+      </nav>
     </div>
-  </div>
+  </header>
+
+  <section class="home-editorial-section" aria-labelledby="profile-heading">
+    <div class="home-section-label">
+      <p>Profile</p>
+    </div>
+    <div class="home-section-content home-profile-copy">
+      <h2 id="profile-heading">Mathematics for difficult measurements</h2>
+      <p>I am a postdoctoral researcher in computational and applied mathematics at Jilin University. My research combines inverse problems, regularization theory, numerical analysis, and scientific machine learning.</p>
+      <p>My work is motivated by applications in medical imaging, subsurface imaging, and engineering simulation. I study both classical variational methods and learned computational approaches, from linear models to strongly nonlinear problems.</p>
+      <a class="home-inline-link" href="{{ '/experience/' | relative_url }}">Background and experience <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <section class="home-editorial-section" aria-labelledby="focus-heading">
+    <div class="home-section-label">
+      <p>Research focus</p>
+    </div>
+    <div class="home-section-content">
+      <h2 id="focus-heading">Three connected areas</h2>
+      <ol class="home-focus-list">
+        <li>
+          <span class="home-item-number" aria-hidden="true">01</span>
+          <div>
+            <h3>Inverse problems and regularization</h3>
+            <p>Stable recovery from indirect and noisy data, including convergence analysis, parameter identification, and constrained optimization.</p>
+          </div>
+        </li>
+        <li>
+          <span class="home-item-number" aria-hidden="true">02</span>
+          <div>
+            <h3>Computational imaging</h3>
+            <p>Electrical impedance tomography, medical image reconstruction, seismic inversion, and subsurface inference.</p>
+          </div>
+        </li>
+        <li>
+          <span class="home-item-number" aria-hidden="true">03</span>
+          <div>
+            <h3>Scientific machine learning</h3>
+            <p>Physics-informed methods, learned solvers, and computational techniques for PDE-constrained problems.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="home-editorial-section" aria-labelledby="work-heading">
+    <div class="home-section-label">
+      <p>Selected work</p>
+    </div>
+    <div class="home-section-content">
+      <h2 id="work-heading">Software and publications</h2>
+      <div class="home-work-list">
+        <article class="home-work-item">
+          <p class="home-work-meta">Open-source software · 2026</p>
+          <h3><a href="https://github.com/abdgafartunde/medical-imaging" target="_blank" rel="noopener">medimg</a></h3>
+          <p>Compressed sensing reconstruction methods for accelerated MRI and CT.</p>
+          <a class="home-work-link" href="https://doi.org/10.5281/zenodo.21321376" target="_blank" rel="noopener">Software record <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="home-work-item">
+          <p class="home-work-meta">Open-source software · 2026</p>
+          <h3><a href="https://github.com/abdgafartunde/eit-reconstruction-toolkit" target="_blank" rel="noopener">eitkit</a></h3>
+          <p>A two-dimensional Electrical Impedance Tomography reconstruction toolkit.</p>
+          <a class="home-work-link" href="https://doi.org/10.5281/zenodo.21037312" target="_blank" rel="noopener">Software record <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="home-work-item">
+          <p class="home-work-meta">Journal article · 2026</p>
+          <h3><a href="https://doi.org/10.1007/s13160-026-00778-x" target="_blank" rel="noopener">A spectral conjugate gradient method for constrained nonlinear equations</a></h3>
+          <p>Published in the <em>Japan Journal of Industrial and Applied Mathematics</em>, with an application to image restoration.</p>
+          <a class="home-work-link" href="{{ '/research/' | relative_url }}">See all research <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-editorial-section" aria-labelledby="updates-heading">
+    <div class="home-section-label">
+      <p>Recent activity</p>
+    </div>
+    <div class="home-section-content">
+      <h2 id="updates-heading">Latest updates</h2>
+      <div class="home-update-list">
+        <article>
+          <time datetime="2026-07">July 2026</time>
+          <p>Released <a href="https://github.com/abdgafartunde/medical-imaging" target="_blank" rel="noopener">medimg v0.1.1</a> for compressed sensing reconstruction in MRI and CT.</p>
+        </article>
+        <article>
+          <time datetime="2026-06">June 2026</time>
+          <p>Released <a href="https://github.com/abdgafartunde/eit-reconstruction-toolkit" target="_blank" rel="noopener">eitkit v0.1.1</a>, a reconstruction toolkit for Electrical Impedance Tomography.</p>
+        </article>
+        <article>
+          <time datetime="2026-04">April 2026</time>
+          <p>Published new work on constrained monotone nonlinear equations in two applied mathematics journals.</p>
+        </article>
+        <article>
+          <time datetime="2026-01">January 2026</time>
+          <p>Started a postdoctoral research position at Jilin University.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-contact-band" aria-labelledby="contact-heading">
+    <p class="home-eyebrow">Collaborations and enquiries</p>
+    <h2 id="contact-heading">Interested in a research problem involving indirect measurements or computational imaging?</h2>
+    <a href="mailto:abdgafartunde@yahoo.com">abdgafartunde@yahoo.com <span aria-hidden="true">→</span></a>
+  </section>
 </div>
-
-<section class="home-section">
-<h2 class="section-heading"><i class="fas fa-user"></i> About Me</h2>
-
-<div class="about-text">
-<p>I am a postdoctoral researcher in computational and applied mathematics at Jilin University. My work centres on inverse problems (recovering hidden quantities from indirect, noisy measurements), with applications spanning medical imaging (EIT, CT, MRI, ultrasound), geophysical imaging (seismic inversion), and engineering simulation. I develop both classical variational methods and scientific machine learning approaches, working across the full range from linear to strongly nonlinear inverse problems.</p>
-
-<p>I completed my PhD at The Chinese University of Hong Kong under the supervision of <a href="https://www.math.cuhk.edu.hk/~zou/" target="_blank" rel="noopener">Professor Jun Zou</a>, supported by the Hong Kong PhD Fellowship Scheme. During my doctoral studies, I spent nine months as a visiting researcher at the University of Graz, Austria, funded by the Ernst Mach Grant.</p>
-</div>
-
-<div class="research-interests">
-  <h3>Research Interests</h3>
-  <div class="interest-tags">
-    <span class="interest-tag"><i class="fas fa-search-plus"></i> Inverse Problems & Regularization</span>
-    <span class="interest-tag"><i class="fas fa-heartbeat"></i> Electrical Impedance Tomography</span>
-    <span class="interest-tag"><i class="fas fa-mountain"></i> Seismic & Subsurface Imaging</span>
-    <span class="interest-tag"><i class="fas fa-brain"></i> Scientific Machine Learning</span>
-    <span class="interest-tag"><i class="fas fa-project-diagram"></i> Physics-Informed Neural Networks</span>
-    <span class="interest-tag"><i class="fas fa-calculator"></i> Numerical Methods & PDEs</span>
-  </div>
-</div>
-</section>
-
-<section class="home-section">
-<h2 class="section-heading"><i class="fas fa-door-open"></i> Open To</h2>
-
-<div class="about-text">
-<p><strong>Research Collaborations:</strong> Inverse problems, scientific machine learning, PDE-constrained optimization, and computational imaging. I welcome joint projects with academic groups and interdisciplinary teams working on problems where rigorous mathematical modelling matters.</p>
-<p><strong>Industry Consulting:</strong> Geophysical and seismic imaging, medical image reconstruction, parameter identification in engineering models, and applied scientific computing. If your problem involves indirect measurements, large-scale simulation, or physics-constrained data analysis, <a href="mailto:abdgafartunde@yahoo.com">get in touch</a>.</p>
-<p><strong>Speaking &amp; Teaching:</strong> Conference presentations, workshop lectures, and short courses on inverse problems, scientific machine learning, and computational applied mathematics.</p>
-<p>For structured mentorship, coursework tutoring, or consulting engagements, see the <a href="/services/">Services page</a>.</p>
-</div>
-</section>
-
-<section class="home-section">
-<h2 class="section-heading"><i class="fas fa-newspaper"></i> Recent News</h2>
-
-<div class="news-list">
-  <div class="news-item">
-    <span class="news-dot"></span>
-    <span class="news-date">Jul 2026</span>
-    <span class="news-text">Released <a href="https://github.com/abdgafartunde/medical-imaging" target="_blank" rel="noopener"><strong>medimg</strong></a> v0.1.1: compressed sensing reconstruction for accelerated MRI and CT &nbsp;<a href="https://doi.org/10.5281/zenodo.21321376" target="_blank" rel="noopener"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.21321376.svg" alt="DOI"></a></span>
-  </div>
-  <div class="news-item">
-    <span class="news-dot"></span>
-    <span class="news-date">Jun 2026</span>
-    <span class="news-text">Released <a href="https://github.com/abdgafartunde/eit-reconstruction-toolkit" target="_blank" rel="noopener"><strong>eitkit</strong></a> v0.1.1: 2-D Electrical Impedance Tomography reconstruction toolkit &nbsp;<a href="https://doi.org/10.5281/zenodo.21037312" target="_blank" rel="noopener"><img src="https://zenodo.org/badge/1231635377.svg" alt="DOI"></a></span>
-  </div>
-  <div class="news-item">
-    <span class="news-dot"></span>
-    <span class="news-date">Apr 2026</span>
-    <span class="news-text">New paper published in <em>Japan Journal of Industrial and Applied Mathematics</em>: <a href="https://doi.org/10.1007/s13160-026-00778-x" target="_blank" rel="noopener">A new spectral conjugate gradient method for convex constrained monotone nonlinear equations with application to image restoration</a></span>
-  </div>
-  <div class="news-item">
-    <span class="news-dot"></span>
-    <span class="news-date">Apr 2026</span>
-    <span class="news-text">New paper published in <em>AIMS Mathematics</em>: <a href="https://doi.org/10.3934/math.2026448" target="_blank" rel="noopener">Accelerated double step-length method for solving monotone nonlinear equations with convex-constraint and application</a></span>
-  </div>
-  <div class="news-item">
-    <span class="news-dot"></span>
-    <span class="news-date">Jan 2026</span>
-    <span class="news-text">Started postdoctoral position at Jilin University, China</span>
-  </div>
-</div>
-</section>

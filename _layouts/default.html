@@ -14,7 +14,7 @@
                 <span class="brand-mark" aria-hidden="true">AT</span>
                 <span class="brand-lockup">
                     <span class="brand-name">A.T. Tiamiyu</span>
-                    <span class="brand-sub">Applied Mathematics</span>
+                    <span class="brand-sub">Computational &amp; Applied Mathematics</span>
                 </span>
             </a>
             
@@ -38,16 +38,16 @@
                     </li>
                     {% endfor %}
                 </ul>
-                <button class="theme-toggle" id="themeToggle" aria-label="Use dark mode" aria-pressed="false" title="Use dark mode">
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-sun"></i>
+                <button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" title="Switch to dark mode">
+                    <span class="theme-option theme-option-light" aria-hidden="true">Light</span>
+                    <span class="theme-option theme-option-dark" aria-hidden="true">Dark</span>
                 </button>
             </div>
         </div>
     </nav>
 
     <!-- Main Content -->
-    <main id="main-content">
+    <main id="main-content" tabindex="-1">
         <div class="main-container">
             {{ content }}
         </div>
@@ -56,43 +56,41 @@
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <p class="footer-name">{{ site.author.name }}</p>
-                    <p class="footer-position">{{ site.author.position }} &middot; {{ site.author.affiliation }}</p>
+            <div class="footer-introduction">
+                <div>
+                    <p class="footer-kicker">Research and collaboration</p>
+                    <p class="footer-statement">Mathematics for inverse problems, imaging, and scientific computing.</p>
                 </div>
+                <a class="footer-email" href="mailto:{{ site.social.email }}">{{ site.social.email }} <span aria-hidden="true">&rarr;</span></a>
+            </div>
+
+            <div class="footer-directory">
+                <div class="footer-identity">
+                    <p class="footer-name">{{ site.author.name }}</p>
+                    <p class="footer-position">{{ site.author.position }} at {{ site.author.affiliation }}</p>
+                </div>
+
                 <nav class="footer-nav" aria-label="Footer navigation">
                     {% for item in site.navigation %}
                     <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
                     {% endfor %}
                 </nav>
-                <div class="footer-social">
-                    {% if site.social.email %}
-                        <a href="mailto:{{ site.social.email }}" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                    {% endif %}
-                    {% if site.social.google_scholar %}
-                        <a href="https://scholar.google.com/citations?user={{ site.social.google_scholar }}" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-                    {% endif %}
-                    {% if site.social.github %}
-                        <a href="https://github.com/{{ site.social.github }}" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    {% endif %}
-                    {% if site.social.linkedin %}
-                        <a href="https://linkedin.com/in/{{ site.social.linkedin }}" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    {% endif %}
-                    {% if site.social.orcid %}
-                        <a href="https://orcid.org/{{ site.social.orcid }}" target="_blank" rel="noopener" title="ORCID" aria-label="ORCID"><i class="fab fa-orcid"></i></a>
-                    {% endif %}
-                </div>
+
+                <nav class="footer-profiles" aria-label="Research and professional profiles">
+                    {% if site.social.google_scholar %}<a href="https://scholar.google.com/citations?user={{ site.social.google_scholar }}" target="_blank" rel="noopener">Scholar</a>{% endif %}
+                    {% if site.social.github %}<a href="https://github.com/{{ site.social.github }}" target="_blank" rel="noopener">GitHub</a>{% endif %}
+                    {% if site.social.linkedin %}<a href="https://linkedin.com/in/{{ site.social.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
+                    {% if site.social.orcid %}<a href="https://orcid.org/{{ site.social.orcid }}" target="_blank" rel="noopener">ORCID</a>{% endif %}
+                </nav>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; {{ 'now' | date: "%Y" }} {{ site.author.name }}</p>
-            </div>
+
+            <p class="footer-copyright">&copy; {{ 'now' | date: "%Y" }} {{ site.author.name }}</p>
         </div>
     </footer>
 
     <!-- Back to Top -->
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
-        <i class="fas fa-chevron-up"></i>
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
     </button>
 
     <!-- Scripts -->
@@ -112,17 +110,22 @@
         // Theme toggle
         var toggle = document.getElementById('themeToggle');
         var root = document.documentElement;
+        var systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
         var stored = localStorage.getItem('theme');
         if (stored) {
             root.setAttribute('data-theme', stored);
         }
         function updateThemeToggle(theme) {
-            var dark = theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches);
-            toggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
-            toggle.setAttribute('aria-label', dark ? 'Use light mode' : 'Use dark mode');
-            toggle.title = dark ? 'Use light mode' : 'Use dark mode';
+            var dark = theme === 'dark' || (!theme && systemTheme.matches);
+            toggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+            toggle.title = dark ? 'Switch to light mode' : 'Switch to dark mode';
         }
         updateThemeToggle(stored);
+        systemTheme.addEventListener('change', function() {
+            if (!root.getAttribute('data-theme')) {
+                updateThemeToggle(null);
+            }
+        });
         toggle.addEventListener('click', function() {
             var current = root.getAttribute('data-theme');
             var isDark = current === 'dark' ||

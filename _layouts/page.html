@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<article class="page-article">
+<article class="page-article{% if page.page_class %} {{ page.page_class }}{% endif %}">
     {% if page.title and page.title != "" %}
         <header class="page-header">
             <p class="page-kicker">{{ page.eyebrow | default: "A.T. Tiamiyu" }}</p>

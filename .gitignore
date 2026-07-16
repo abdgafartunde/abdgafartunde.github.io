@@ -29,8 +29,11 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Copilot/Claude instructions (local only)
+# Local assistant instructions and state
+AGENTS.md
 CLAUDE.md
+.agents/
+.codex/
 
 # Logs
 *.log

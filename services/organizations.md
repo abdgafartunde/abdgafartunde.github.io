@@ -1,57 +1,120 @@
 ---
 layout: page
+page_class: service-detail-page organization-services-page
 title: "For Organizations and Teams"
 eyebrow: "Consulting and workshops"
-description: "Domain workshops, applied consulting, and literature sessions for engineering and R&D teams."
+description: "Technical workshops, applied consulting, and literature sessions for research and engineering teams."
 seo_description: "Workshops and consulting by A.T. Tiamiyu for engineering and R&D teams: domain lectures on EIT, seismic inversion, and inverse problems; applied consulting on parameter identification and forward/inverse pipelines; and recurring scientific machine learning literature sessions."
 ---
 
-<section class="exp-section">
-<h2 class="section-heading"><i class="fas fa-chalkboard"></i> Domain Lectures and Workshops</h2>
+<div class="service-detail-editorial">
+  <nav class="service-detail-nav" aria-label="Organization services page sections">
+    <a class="service-back-link" href="/services/"><span aria-hidden="true">&larr;</span> Services</a>
+    <span class="service-nav-divider" aria-hidden="true"></span>
+    <a href="#workshops">Workshops</a>
+    <a href="#consulting">Consulting</a>
+    <a href="#literature">Literature</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-<div class="about-text">
-<p>I design and deliver lectures for engineering and R&amp;D teams who need to understand inverse-problem-based methods well enough to work with them, evaluate them, or direct their development. The areas I can cover at the level of both the mathematics and the practical implications:</p>
+  <section class="editorial-section" id="workshops" aria-labelledby="workshops-heading">
+    <div class="editorial-label"><p>Workshops</p></div>
+    <div class="editorial-content">
+      <h2 id="workshops-heading">Build a working understanding of inverse methods</h2>
+      <p class="service-detail-intro">I design technical lectures and workshops for engineering and research teams that need to evaluate, use, or direct the development of inverse-problem methods.</p>
 
-<ul>
-  <li><strong>Electrical impedance tomography</strong>: sensing hardware, the complete electrode model, reconstruction and its fundamental limitations under noise and partial boundary access.</li>
-  <li><strong>Full waveform inversion and seismic processing</strong>: the PDE-governed forward problem, adjoint-based gradient computation, regularization choices in high-dimensional velocity model estimation, and where the method characteristically fails.</li>
-  <li><strong>Ill-posed inverse problems generally</strong>: why small errors in measurement data can cause large errors in reconstruction, what regularization does and does not fix, and how to recognize when an inversion workflow is underdetermined or numerically unstable.</li>
-</ul>
+      <div class="service-offer-list">
+        <article>
+          <span>01</span>
+          <div>
+            <h3>Electrical impedance tomography</h3>
+            <p>Sensing hardware, the complete electrode model, reconstruction methods, and the limitations imposed by noise and partial boundary measurements.</p>
+          </div>
+        </article>
+        <article>
+          <span>02</span>
+          <div>
+            <h3>Full waveform inversion and seismic imaging</h3>
+            <p>PDE-governed forward models, adjoint-based gradients, regularization for velocity-model estimation, and common failure modes.</p>
+          </div>
+        </article>
+        <article>
+          <span>03</span>
+          <div>
+            <h3>Ill-posed inverse problems</h3>
+            <p>Why small data errors can produce large reconstruction errors, what regularization can achieve, and how to identify an unstable inversion workflow.</p>
+          </div>
+        </article>
+      </div>
 
-<p>Format is flexible: a one-day intensive, a short series over several weeks, or a focused session on a single method or application. The goal is that attendees come away understanding the machinery well enough to ask the right questions of their computational colleagues, not just knowing the name of the technique.</p>
+      <p class="service-evidence">Formats range from a focused seminar to a one-day intensive or a short series. The intended outcome is practical technical judgment, not familiarity with terminology alone.</p>
+    </div>
+  </section>
+
+  <section class="editorial-section" id="consulting" aria-labelledby="consulting-heading">
+    <div class="editorial-label"><p>Consulting</p></div>
+    <div class="editorial-content">
+      <h2 id="consulting-heading">Review the mathematical structure before committing to a pipeline</h2>
+      <p class="service-detail-intro">My consulting work begins with the forward model, measurement process, and noise structure. Only then do we assess an inversion method, computational strategy, or learned component.</p>
+
+      <div class="service-topic-grid service-consulting-grid">
+        <article>
+          <h3>Parameter identification</h3>
+          <p>Recovering conductivity, velocity fields, source terms, or other model parameters from indirect measurements.</p>
+        </article>
+        <article>
+          <h3>Pipeline review</h3>
+          <p>Discretization, adjoint consistency, regularization, stopping criteria, and parameter-selection strategy.</p>
+        </article>
+        <article>
+          <h3>Uncertainty analysis</h3>
+          <p>Bayesian formulations, sensitivity analysis, credible intervals, and the limits of Gaussian approximations.</p>
+        </article>
+        <article>
+          <h3>Scientific machine learning</h3>
+          <p>Assessing whether PINNs, neural operators, or learned regularizers are appropriate for an existing workflow.</p>
+        </article>
+      </div>
+
+      <div class="service-boundary">
+        <p class="service-small-label">Working boundary</p>
+        <p>If a problem depends on a forward model outside my background, I will identify that limitation directly. The initial conversation is used to establish technical fit before any engagement.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="editorial-section" id="literature" aria-labelledby="literature-heading">
+    <div class="editorial-label"><p>Literature</p></div>
+    <div class="editorial-content">
+      <h2 id="literature-heading">Track research without mistaking novelty for readiness</h2>
+      <div class="service-detail-copy">
+        <p>I run recurring sessions for teams following scientific machine learning, inverse problems, and computational methods. Sessions examine recent papers, distinguish substantial advances from incremental results, and connect findings to the team's actual technical problems.</p>
+        <p>A monthly cadence is typical. This format works best for teams with existing computational infrastructure that need a rigorous view of which methods are mature enough to test or adopt.</p>
+      </div>
+
+      <div class="service-expertise">
+        <p class="service-small-label">Typical coverage</p>
+        <ul>
+          <li>PINNs for forward and inverse problems</li>
+          <li>Neural operators and surrogate models</li>
+          <li>Physics-constrained learning</li>
+          <li>Learned regularization and deep unrolling</li>
+          <li>Reproducibility and benchmark quality</li>
+          <li>Evidence required for applied deployment</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="editorial-section service-detail-contact" id="contact" aria-labelledby="organization-contact-heading">
+    <div class="editorial-label"><p>Contact</p></div>
+    <div class="editorial-content">
+      <h2 id="organization-contact-heading">Start with the technical problem</h2>
+      <p>Send a short description of the model, measurements, current workflow, and decision your team needs to make. The introductory call is free and takes 20&ndash;30 minutes.</p>
+      <div class="service-detail-actions">
+        <a class="service-detail-primary" href="/services/book-a-call/">Book an introductory call <span aria-hidden="true">&rarr;</span></a>
+        <a href="mailto:abdgafartunde@yahoo.com">abdgafartunde@yahoo.com</a>
+      </div>
+    </div>
+  </section>
 </div>
-</section>
-
-<section class="exp-section">
-<h2 class="section-heading"><i class="fas fa-tools"></i> Applied Consulting</h2>
-
-<div class="about-text">
-<p>My research sits at the intersection of mathematical inverse theory and computational methods. There are specific classes of engineering and applied science problems where that background applies directly:</p>
-
-<ul>
-  <li><strong>Parameter identification in PDE-governed systems.</strong> Recovering conductivity distributions, velocity fields, or source terms from boundary or remote measurements. My work covers both variational formulations (Tikhonov-type regularization, total variation, primal-dual methods) and learned approaches (deep unrolling, physics-informed networks). I can help assess which class of method is appropriate for a given data regime and forward model.</li>
-  <li><strong>Forward/inverse pipeline review.</strong> Assessing whether a proposed inversion workflow is mathematically well-posed, correctly discretized, and regularized appropriately for the data quality you have. This includes reviewing discretization choices, adjoint consistency, stopping criteria, and whether regularization parameters are being selected in a principled way.</li>
-  <li><strong>Uncertainty quantification for inverse problems.</strong> Bayesian formulations, credible interval construction, and sensitivity analysis for parameter estimates. Including the practical question of when a Gaussian approximation is reasonable and when it is not.</li>
-  <li><strong>Scientific machine learning integration.</strong> Evaluating where PINNs or neural operators fit into an existing simulation or inversion pipeline, and (equally important) where they do not. My research on this includes both empirical and theoretical aspects; see my <a href="/blog/">recent writing</a> for a direct account of what works and what does not.</li>
-</ul>
-
-<p>I approach consulting problems as a mathematician: forward model first, data acquisition and noise structure second, inversion framework third. If your problem involves a forward model I am not familiar with, I will say so rather than guess. The published work underpinning these areas is on my <a href="/research/">research page</a>.</p>
-</div>
-</section>
-
-<section class="exp-section">
-<h2 class="section-heading"><i class="fas fa-book-reader"></i> Recurring Literature Sessions</h2>
-
-<div class="about-text">
-<p>For R&amp;D teams who need to stay current on scientific machine learning and related computational methods, but do not have someone internally tracking the literature full-time: I run regular sessions reviewing recent work (PINNs for inverse problems, neural operators, physics-constrained networks, data-driven regularization), discussing what is genuinely new versus incremental, and connecting results to problems the team actually works on. Monthly cadence is typical; the frequency and depth can adjust based on what is useful.</p>
-
-<p>These sessions work best for teams who already have some computational infrastructure and want to understand which recent methods are worth integrating into their pipeline, and which are not ready for applied use outside of academic benchmarks.</p>
-</div>
-</section>
-
-<section class="exp-section">
-<div class="about-text cta-block">
-<p>The intro call is free, no-obligation, and takes 20–30 minutes.</p>
-<p><a class="button button-primary" href="/services/book-a-call/">Book a Call &rarr;</a></p>
-</div>
-</section>

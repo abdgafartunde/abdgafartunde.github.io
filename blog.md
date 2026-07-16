@@ -1,60 +1,77 @@
 ---
 layout: page
+page_class: blog-page
 title: "Blog"
 eyebrow: "Notes and essays"
 description: "Writing on mathematics, research, computation, and academic life."
 seo_description: "Blog by A.T. Tiamiyu covering inverse problems, scientific computing, physics-informed neural networks, regularization, and reflections on academic life."
 ---
 
-<p class="blog-intro">Writing about the mathematics I work on, the tools I use, and the questions that interest me: from inverse problems and scientific computing to the broader role of mathematics in a changing research landscape.</p>
-
-<section class="blog-recent" aria-labelledby="recent-writing-heading">
-<h2 class="section-heading" id="recent-writing-heading"><i class="fas fa-pen-nib"></i> Latest Writing</h2>
-
-<div class="blog-posts">
 {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
-{% for post in sorted_posts limit:6 %}
-<article class="blog-card {% if forloop.first %}blog-card-featured{% endif %}">
-  <div class="blog-card-content">
-    <div class="blog-card-date">
-      <span class="date-day">{{ post.date | date: "%d" }}</span>
-      <span class="date-month">{{ post.date | date: "%b %Y" }}</span>
-    </div>
-    <div class="blog-card-text">
-      {% if forloop.first %}<span class="featured-label">Latest</span>{% endif %}
-      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-      <p class="post-excerpt">{{ post.description }}</p>
-      <div class="blog-card-footer">
-        {% if post.tags.size > 0 %}
-        <div class="post-tags">
-          {% for tag in post.tags limit:3 %}
-          <span class="tag">{{ tag }}</span>
-          {% endfor %}
+
+<div class="blog-editorial">
+  <nav class="blog-page-nav" aria-label="Blog page sections">
+    <span>On this page</span>
+    <a href="#writing">Writing</a>
+    {% if site.posts.size > 6 %}<a href="#archive">Archive</a>{% endif %}
+  </nav>
+
+  <section class="editorial-section" id="writing" aria-labelledby="writing-heading">
+    <div class="editorial-label"><p>Writing</p></div>
+    <div class="editorial-content">
+      <h2 id="writing-heading">Mathematics in theory and practice</h2>
+      <p class="blog-editorial-intro">Notes on inverse problems, scientific computing, and the process of doing mathematical research. I also write about teaching, academic work, and applications that matter beyond the university.</p>
+
+      {% if site.posts.size > 0 %}
+      {% for post in sorted_posts limit:1 %}
+      <article class="blog-lead">
+        <div class="blog-lead-meta">
+          <span>Latest essay</span>
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %B %Y" }}</time>
         </div>
-        {% endif %}
-        <span class="read-time"><i class="far fa-clock"></i> {% assign words = post.content | number_of_words %}{% assign mins = words | divided_by: 200 %}{% if mins < 1 %}1{% else %}{{ mins }}{% endif %} min read</span>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p>{{ post.description }}</p>
+        <div class="blog-lead-footer">
+          <a href="{{ post.url | relative_url }}">Read the essay <span aria-hidden="true">&rarr;</span></a>
+          <span>{% assign words = post.content | number_of_words %}{% assign mins = words | divided_by: 200 %}{% if mins < 1 %}1{% else %}{{ mins }}{% endif %} min read</span>
+        </div>
+      </article>
+      {% endfor %}
+
+      <div class="blog-reading-list" aria-label="Recent essays">
+        {% for post in sorted_posts offset:1 limit:5 %}
+        <article>
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
+          <div>
+            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            <p>{{ post.description }}</p>
+            {% if post.tags.size > 0 %}
+            <p class="blog-topic">{{ post.tags | first }}</p>
+            {% endif %}
+          </div>
+        </article>
+        {% endfor %}
       </div>
+      {% else %}
+      <p class="blog-empty">No posts yet. New writing on computational mathematics and inverse problems will appear here.</p>
+      {% endif %}
     </div>
-  </div>
-</article>
-{% endfor %}
+  </section>
+
+  {% if site.posts.size > 6 %}
+  <section class="editorial-section blog-archive-section" id="archive" aria-labelledby="archive-heading">
+    <div class="editorial-label"><p>Archive</p></div>
+    <div class="editorial-content">
+      <h2 id="archive-heading">Earlier essays</h2>
+      <ol class="blog-editorial-archive">
+        {% for post in sorted_posts offset:6 %}
+        <li>
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %Y" }}</time>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </section>
+  {% endif %}
 </div>
-</section>
-
-{% if site.posts.size > 6 %}
-<section class="blog-archive" aria-labelledby="archive-heading">
-  <h2 class="section-heading" id="archive-heading"><i class="fas fa-box-archive"></i> Archive</h2>
-  <ol class="archive-list">
-  {% for post in sorted_posts offset:6 %}
-    <li>
-      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %Y" }}</time>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    </li>
-  {% endfor %}
-  </ol>
-</section>
-{% endif %}
-
-{% if site.posts.size == 0 %}
-<p class="text-muted">No posts yet. Check back soon for updates on computational mathematics, inverse problems, and scientific computing.</p>
-{% endif %}

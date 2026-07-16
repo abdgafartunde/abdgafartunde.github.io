@@ -1,92 +1,129 @@
 ---
 layout: page
+page_class: service-detail-page student-services-page
 title: "For Students and Researchers"
 eyebrow: "Mentorship and teaching"
-description: "Research guidance, coursework tutoring, and thesis feedback in inverse problems and applied mathematics."
+description: "Research guidance, coursework support, and manuscript feedback in applied mathematics."
 seo_description: "Research mentorship and coursework tutoring by A.T. Tiamiyu in inverse problems, scientific machine learning, PINNs, numerical methods, and PDEs. Thesis and paper feedback open worldwide to anyone working in these areas."
 ---
 
-<section class="exp-section">
-<h2 class="section-heading"><i class="fas fa-microscope"></i> Research Guidance</h2>
+<div class="service-detail-editorial">
+  <nav class="service-detail-nav" aria-label="Student services page sections">
+    <a class="service-back-link" href="/services/"><span aria-hidden="true">&larr;</span> Services</a>
+    <span class="service-nav-divider" aria-hidden="true"></span>
+    <a href="#guidance">Guidance</a>
+    <a href="#coursework">Coursework</a>
+    <a href="#feedback">Feedback</a>
+    <a href="#questions">FAQ</a>
+  </nav>
 
-<div class="about-text">
-<p>I work with students on problems in inverse problems, regularization theory, scientific machine learning, PINNs, and computational methods for PDEs. Level ranges from late undergraduate through PhD. What varies more than level is the type of engagement, so I describe both below.</p>
+  <section class="editorial-section" id="guidance" aria-labelledby="guidance-heading">
+    <div class="editorial-label"><p>Guidance</p></div>
+    <div class="editorial-content">
+      <h2 id="guidance-heading">Develop the judgment required for independent research</h2>
+      <p class="service-detail-intro">I work with late-undergraduate, master's, and doctoral researchers on inverse problems, regularization, scientific machine learning, and computational methods for differential equations.</p>
 
-<p><strong>Structured coursework support.</strong> If you want to work through the material in a disciplined way (a reading list, problem sets on core topics, preparation for qualifying exams in applied analysis or numerical methods), I can design and run that. A typical progression might move from Tikhonov regularization through total variation and iterative methods, then into the forward problem, adjoint-based inversion, and learned regularizers. You work actual problems rather than just read, and we review your work between sessions.</p>
+      <div class="service-offer-list">
+        <article>
+          <span>01</span>
+          <div>
+            <h3>Structured research preparation</h3>
+            <p>A disciplined programme of reading, problems, and computational exercises. A typical sequence may move from Tikhonov regularization and total variation to forward models, adjoint methods, and learned regularizers.</p>
+            <p class="service-offer-fit"><strong>Useful for:</strong> qualifying-exam preparation, entering a new research area, or building the mathematical foundation for a thesis.</p>
+          </div>
+        </article>
 
-<p><strong>Open-ended research guidance.</strong> If you have a research question and need a knowledgeable sounding board, that is also something I do: what has been tried in the literature, why your current approach may or may not work, what the next experiment should be. This is less structured and more conversational. It suits students who are past the coursework stage and need someone who will engage with the technical content of what they are working on.</p>
+        <article>
+          <span>02</span>
+          <div>
+            <h3>Open-ended research discussion</h3>
+            <p>Technical conversations about an active project: what the literature already establishes, where an argument is weak, which experiment should come next, and whether the proposed method fits the available data.</p>
+            <p class="service-offer-fit"><strong>Useful for:</strong> researchers who are past the coursework stage and need a technically informed sounding board.</p>
+          </div>
+        </article>
+      </div>
 
-<p>The areas I know well enough to be useful: inverse problems (linear and nonlinear), regularization theory (Tikhonov, total variation, Bayesian formulations), electrical impedance tomography, full waveform inversion and seismic imaging, physics-informed neural networks, neural operators, and numerical methods for PDEs (finite elements, iterative solvers, spectral methods).</p>
+      <div class="service-expertise">
+        <p class="service-small-label">Areas where I can help</p>
+        <ul>
+          <li>Linear and nonlinear inverse problems</li>
+          <li>Regularization theory and variational methods</li>
+          <li>Electrical impedance tomography</li>
+          <li>Seismic imaging and full waveform inversion</li>
+          <li>Physics-informed neural networks and neural operators</li>
+          <li>Numerical methods for partial differential equations</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="editorial-section" id="coursework" aria-labelledby="coursework-heading">
+    <div class="editorial-label"><p>Coursework</p></div>
+    <div class="editorial-content">
+      <h2 id="coursework-heading">Understand why a method works, then learn to use it correctly</h2>
+      <p class="service-detail-intro">My teaching begins with the mathematical structure of a problem, then develops the analysis and computation needed to solve it. Sessions use worked problems and direct feedback rather than passive explanation alone.</p>
+
+      <div class="service-topic-grid">
+        <article><h3>Analysis</h3><p>Calculus, multivariable calculus, real analysis, and linear algebra</p></article>
+        <article><h3>Differential equations</h3><p>Ordinary and partial differential equations, including numerical solution methods</p></article>
+        <article><h3>Scientific computing</h3><p>Numerical analysis, iterative methods, discretization, and computational implementation</p></article>
+        <article><h3>Optimization</h3><p>Convex optimization, variational methods, and constrained problems</p></article>
+      </div>
+
+      <p class="service-evidence">At CUHK, I led Calculus for Engineers tutorials for cohorts of more than 50 students and assisted with Games and Strategic Thinking. Earlier, I taught secondary mathematics to more than 100 students at KUST Staff School in Nigeria.</p>
+    </div>
+  </section>
+
+  <section class="editorial-section" id="feedback" aria-labelledby="feedback-heading">
+    <div class="editorial-label"><p>Feedback</p></div>
+    <div class="editorial-content">
+      <h2 id="feedback-heading">Direct feedback on theses and manuscripts</h2>
+      <div class="service-detail-copy">
+        <p>I read drafts and identify what is clear, where an argument has gaps, what evidence is missing, and which points a referee is likely to question. Feedback is available worldwide and is not tied to any institution.</p>
+        <p>The work must fall within or close to my areas of expertise. For topics outside those areas, generic comments would not be a useful service.</p>
+      </div>
+
+      <div class="service-boundary">
+        <p class="service-small-label">Academic integrity</p>
+        <p>I provide feedback, direction, and technical discussion. I do not write assignments, thesis chapters, papers, examinations, or code on a student's behalf.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="editorial-section" id="questions" aria-labelledby="questions-heading">
+    <div class="editorial-label"><p>FAQ</p></div>
+    <div class="editorial-content">
+      <h2 id="questions-heading">Practical questions</h2>
+      <div class="service-faq">
+        <details>
+          <summary>Is support limited to students at particular institutions?</summary>
+          <p>No. Research guidance and feedback are available worldwide. The relevant limitation is topic fit, not location or affiliation.</p>
+        </details>
+        <details>
+          <summary>What if my topic is adjacent to your research?</summary>
+          <p>Send a short description. If I can engage with the technical content rather than only the surface structure, the work may still be a good fit.</p>
+        </details>
+        <details>
+          <summary>What does a longer engagement look like?</summary>
+          <p>A structured programme often uses sessions every two weeks over two to three months, with reading and problems between meetings. Open-ended guidance is arranged around specific research questions.</p>
+        </details>
+        <details>
+          <summary>How are rates determined?</summary>
+          <p>Rates depend on the scope, preparation required, and duration. We agree on the arrangement in writing before any paid work begins.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="editorial-section service-detail-contact" aria-labelledby="student-contact-heading">
+    <div class="editorial-label"><p>Contact</p></div>
+    <div class="editorial-content">
+      <h2 id="student-contact-heading">Describe what you are working on</h2>
+      <p>For a short manuscript question, email a concise description. For mentorship or coursework support, begin with a free 20&ndash;30 minute conversation.</p>
+      <div class="service-detail-actions">
+        <a class="service-detail-primary" href="/services/book-a-call/">Book an introductory call <span aria-hidden="true">&rarr;</span></a>
+        <a href="mailto:abdgafartunde@yahoo.com">abdgafartunde@yahoo.com</a>
+      </div>
+    </div>
+  </section>
 </div>
-</section>
-
-<section class="exp-section">
-<h2 class="section-heading"><i class="fas fa-chalkboard-teacher"></i> Coursework Tutoring</h2>
-
-<div class="about-text">
-<p>I have tutored and TA'd students across a range of applied mathematics topics. At CUHK I ran tutorials for Calculus for Engineers (Fall 2022 and 2023, 50+ students per cohort) and assisted with Games and Strategic Thinking (Fall 2024). Earlier, I taught secondary-level mathematics to 100+ students at KUST Staff School in Nigeria, where 85% of that cohort advanced to higher tracks.</p>
-
-<p>My approach: intuition first, without skipping the rigor when it matters. A student who understands <em>why</em> Newton's method converges quadratically near a simple root will remember the result and use it correctly; one who has only memorized the iteration usually won't. I try to find the explanation that makes a result feel inevitable rather than arbitrary, and then make sure the formal argument follows from that understanding rather than replaces it.</p>
-
-<p>Topics I cover with confidence:</p>
-<ul>
-  <li>Calculus, multivariable calculus, and real analysis</li>
-  <li>Linear algebra</li>
-  <li>Numerical methods and scientific computing</li>
-  <li>Ordinary and partial differential equations</li>
-  <li>Convex optimization and variational methods</li>
-  <li>Basic probability and statistics</li>
-</ul>
-</div>
-</section>
-
-<section class="exp-section">
-<h2 class="section-heading"><i class="fas fa-file-alt"></i> Thesis and Paper Feedback</h2>
-
-<div class="about-text">
-<p>I read drafts and give direct, structured feedback: what is clear, what is not, where the argument has gaps, and what a referee is likely to push back on. This is open to anyone, worldwide, with no requirement to be at a particular institution or enrolled in a specific programme.</p>
-
-<p>The constraint is my expertise. I can give technically grounded feedback on work in inverse problems, regularization theory, scientific machine learning (PINNs, neural operators, physics-constrained networks), electrical impedance tomography, seismic inversion and FWI, numerical methods for PDEs, and applied optimization. For work outside those areas I would be giving generic comments that are not worth much to anyone.</p>
-<p>For a short feedback request on a draft, you can reach me directly by <a href="mailto:abdgafartunde@yahoo.com">email</a> rather than scheduling a call.</p>
-</div>
-</section>
-
-<section class="exp-section">
-<h2 class="section-heading"><i class="fas fa-question-circle"></i> FAQ</h2>
-
-<div class="about-text">
-
-<details>
-<summary><strong>Will you write my assignment, thesis chapter, or paper?</strong></summary>
-<p>No. Feedback, direction, and guidance: yes. Doing the work: no. This applies to everything: thesis chapters, problem sets, take-home exams, grant applications, and code. If you want a collaborator who contributes intellectually and gets credited, that is a different conversation and worth raising on the call.</p>
-</details>
-
-<details>
-<summary><strong>Is thesis and paper feedback limited to students at certain institutions?</strong></summary>
-<p>No. It is open to anyone, worldwide. The limit is topic scope, not location or affiliation.</p>
-</details>
-
-<details>
-<summary><strong>My topic is adjacent to your areas but not directly in them. Can I still reach out?</strong></summary>
-<p>Ask. If the distance is small enough that I can engage with the technical content rather than just the surface structure of the writing, it usually works.</p>
-</details>
-
-<details>
-<summary><strong>What does a research guidance engagement look like in practice?</strong></summary>
-<p>We agree on scope and schedule on the call. A structured reading engagement typically means bi-weekly sessions over 2–3 months with problems in between. An open-ended arrangement is more irregular: we meet when you have something specific to discuss and there are genuine questions to work through.</p>
-</details>
-
-<details>
-<summary><strong>What are the rates?</strong></summary>
-<p>I do not post rates here because the structure varies by type and duration. We work it out on the call.</p>
-</details>
-
-</div>
-</section>
-
-<section class="exp-section">
-<div class="about-text cta-block">
-<p>The intro call is free, no-obligation, and takes 20–30 minutes.</p>
-<p><a class="button button-primary" href="/services/book-a-call/">Book a Call &rarr;</a></p>
-</div>
-</section>

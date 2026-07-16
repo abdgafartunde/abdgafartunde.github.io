@@ -1,28 +1,21 @@
 ---
 layout: default
+title: "Page not found"
+description: "The requested page could not be found."
 permalink: /404.html
 ---
 
-<div class="container my-5">
-    <div class="row">
-        <div class="col-lg-8 mx-auto text-center">
-            <h1 class="display-1">404</h1>
-            <h2 class="mb-4">Page Not Found</h2>
-            <p class="lead">
-                Sorry, the page you're looking for doesn't exist. 
-                It might have been moved, deleted, or you entered the wrong URL.
-            </p>
-            <div class="mt-4">
-                <a href="{{ '/' | relative_url }}" class="btn btn-primary me-2">
-                    <i class="fas fa-home"></i> Go Home
-                </a>
-                <a href="{{ '/research' | relative_url }}" class="btn btn-outline-primary me-2">
-                    <i class="fas fa-microscope"></i> View Research
-                </a>
-                <a href="{{ '/blog' | relative_url }}" class="btn btn-outline-secondary">
-                    <i class="fas fa-pen-nib"></i> Read Blog
-                </a>
-            </div>
-        </div>
+<article class="not-found-page">
+    <p class="not-found-code" aria-hidden="true">404</p>
+    <div class="not-found-copy">
+        <p class="not-found-kicker">Page not found</p>
+        <h1>This address does not lead to a page.</h1>
+        <p>The page may have moved, or the address may be incomplete. Continue from one of the main sections below.</p>
+
+        <nav class="not-found-links" aria-label="Continue browsing">
+            <a class="not-found-primary" href="{{ '/' | relative_url }}">Return home <span aria-hidden="true">&rarr;</span></a>
+            <a href="{{ '/research/' | relative_url }}">Research</a>
+            <a href="{{ '/blog/' | relative_url }}">Writing</a>
+        </nav>
     </div>
-</div>
+</article>

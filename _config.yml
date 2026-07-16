@@ -109,6 +109,10 @@ exclude:
   - vendor/
   - _tools/
   - README.md
+  - AGENTS.md
+  - CLAUDE.md
+  - .agents/
+  - .codex/
   - LICENSE
   - CHANGELOG.md
   - UNLICENSE.txt
