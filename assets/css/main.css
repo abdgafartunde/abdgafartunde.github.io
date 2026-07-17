@@ -6570,3 +6570,26 @@ main:focus {
 .post-author-note strong {
     font-size: 0.8rem;
 }
+
+/* Maintain a 12px floor for compact labels and secondary navigation. */
+.not-found-kicker,
+.not-found-links a,
+.blog-lead-footer > span,
+.content .research-theme-details summary,
+.content .service-detail-nav a,
+.service-offer-list article > span,
+.booking-expectations article > span,
+.content .service-small-label,
+.content .booking-note,
+.content .booking-panel-editorial .booking-fallback,
+.content .booking-panel-editorial .booking-status {
+    font-size: 0.75rem;
+}
+
+.content .service-offer-list .service-offer-fit {
+    font-size: 0.8rem;
+}
+
+.content .service-expertise li {
+    font-size: 0.75rem;
+}

@@ -38,15 +38,19 @@ where $K_{ij} = k(x_i, x_j)$ is the $n \times n$ kernel (Gram) matrix.
 The kernel is where the real modelling happens. Different kernels correspond to different beliefs about the function.
 
 **Squared exponential (SE) kernel:**
+
 $$
 k_{\text{SE}}(x, x') = \sigma^2 \exp\!\left(-\frac{\lVert x - x' \rVert^2}{2\ell^2}\right).
 $$
+
 This produces infinitely differentiable sample paths. The length scale $\ell$ controls how quickly correlations decay: small $\ell$ means the function can vary rapidly, large $\ell$ means it is nearly flat. The variance $\sigma^2$ controls the marginal scale. If you believe your function is very smooth, this is a natural choice.
 
 **Matérn kernel:**
+
 $$
 k_{\nu}(x, x') = \frac{2^{1-\nu}}{\Gamma(\nu)}\left(\frac{\sqrt{2\nu}\lVert x - x' \rVert}{\ell}\right)^\nu K_\nu\!\left(\frac{\sqrt{2\nu}\lVert x - x' \rVert}{\ell}\right),
 $$
+
 where $K_\nu$ is the modified Bessel function of the second kind and $\nu>0$ controls regularity. A Matérn field is $k$ times mean-square differentiable when $\nu>k$, while almost-sure sample regularity requires a dimension-dependent statement. For $\nu=1/2$ the kernel is exponential. With the usual rescaling, Matérn kernels approach the squared-exponential kernel as $\nu\to\infty$.
 
 The Matérn family lets the modeller vary prior regularity. A stationary Matérn GP still does not represent jump interfaces directly. EIT models with sharp inclusions may require level-set, geometric, Besov, or other non-Gaussian priors rather than selecting a smaller Matérn parameter alone.
