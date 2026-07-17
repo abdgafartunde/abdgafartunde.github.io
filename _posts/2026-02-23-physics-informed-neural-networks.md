@@ -8,9 +8,9 @@ tags: [Scientific Machine Learning, PINNs, Numerical Methods]
 math: true
 ---
 
-Physics-informed neural networks have become one of the most discussed ideas in scientific computing. The concept is elegant: train a neural network to approximate the solution of a partial differential equation by encoding the PDE directly into the loss function. No mesh, no finite element assembly, no basis functions. Just a network, automatic differentiation, and gradient descent.
+Physics-informed neural networks approximate PDE solutions by placing the differential equation and auxiliary conditions in a training objective. They avoid finite-element assembly and a fixed trial basis, but they still discretize the loss through collocation or quadrature points and solve a finite-dimensional optimization problem.
 
-Since Raissi, Perdikaris, and Karpathy's influential 2019 paper, the literature has exploded. Thousands of papers have applied PINNs to fluid dynamics, heat transfer, solid mechanics, electromagnetics, inverse problems, and a growing list of other domains. The pitch is appealing: mesh-free solvers that handle complex geometries naturally, integrate observational data with physical laws directly, and scale to high-dimensional problems where classical methods choke on the curse of dimensionality.
+Since the 2019 PINN paper by Raissi, Perdikaris, and Karniadakis, the method has been studied across many PDE applications. PINNs can combine observational data with differential constraints in one objective. Complex geometry, high dimension, optimization error, and accurate quadrature remain difficult rather than being solved automatically by the architecture.
 
 I have spent considerable time working with PINNs, particularly for inverse problems and parameter identification. What follows is an honest account of what I have found, not the version you would write for a grant application, but the version you would share with a colleague over coffee.
 
@@ -31,7 +31,7 @@ $$
 u_\theta(x) = W_L \circ \phi \circ W_{L-1} \circ \cdots \circ \phi \circ W_1(x),
 $$
 
-where each $W_\ell(z) = A_\ell z + b_\ell$ is an affine map with weight matrix $A_\ell$ and bias $b_\ell$, and $\phi$ is a nonlinear activation applied element-wise. The parameter vector $\theta$ collects all the weights and biases. Using automatic differentiation, you compute whatever partial derivatives $\mathcal{N}$ requires, directly through the computational graph of the network. No discretization of the differential operator, no stiffness matrices, no mesh.
+where each $W_\ell(z)=A_\ell z+b_\ell$ is affine and $\phi$ is applied componentwise. Automatic differentiation evaluates derivatives of the network exactly up to floating-point error at selected points. The differential operator is not assembled as a stiffness matrix, but its residual norm is still approximated from a finite set of points.
 
 The training loss is typically a weighted sum:
 
@@ -60,11 +60,11 @@ Simple in principle. The trouble is in the long list of things that can go wrong
 
 Let me start with where I have found them most useful, because the method does have a legitimate place.
 
-**Inverse problems with sparse data.** This is the setting where PINNs have impressed me most. Suppose you have a PDE governing some physical process and you have scattered, noisy observations of the solution. You want to identify unknown parameters: a spatially varying coefficient, a source term, a boundary condition. PINNs give you a natural framework for fusing the physics with data. The PDE residual acts as a regulariser, constraining the solution to be physically plausible, while the observations pin down the specific case. I have obtained genuinely good results in parameter identification problems using this approach, results that would have required significantly more effort with classical methods.
+**Inverse problems with sparse data.** PINNs provide one framework for combining scattered observations with a differential model when estimating coefficients, sources, or boundary data. The PDE residual penalizes violations of the model between observation points. Its value depends on correct physics, suitable sampling, and balanced loss terms; it is not a substitute for identifiability analysis.
 
 **Problems where meshing is prohibitive.** If your domain is geometrically complex, moving, or defined implicitly, mesh generation can dominate the entire workflow. I once spent longer generating and debugging a mesh for a 3D domain with internal inclusions than I spent on the actual solve. PINNs sidestep this entirely. You scatter collocation points and move on. For domains that change shape during the computation (free boundary problems, shape optimisation) this is a meaningful practical advantage.
 
-**High-dimensional problems.** The curse of dimensionality is real and it is vicious. Finite element methods in six or ten spatial dimensions are simply not feasible. Neural networks, at least empirically, can represent high-dimensional functions without the exponential cost blowup. For certain classes of PDEs in high dimensions (Hamilton-Jacobi-Bellman equations in optimal control, Fokker-Planck equations in many-particle systems) PINNs and related methods have produced results that no mesh-based approach could match.
+**High-dimensional problems.** Tensor-product grids become impractical as dimension grows. Neural approximations avoid storing such grids, but their sample and optimization complexity can still grow rapidly with dimension. Results for selected high-dimensional Hamilton-Jacobi-Bellman and stochastic PDE problems do not establish dimension-independent performance for PINNs in general.
 
 **Exploratory work.** When I am trying to understand a new problem, test a hypothesis about the solution structure, or quickly explore a parameter space, the low setup cost of a PINN is valuable. Thirty lines of PyTorch and you have a working solver. The feedback loop is fast. The results are approximate, but for building intuition and deciding where to invest serious computational effort, that is fine.
 
@@ -91,7 +91,7 @@ Here is a common failure mode. You set up the loss, start training, and the PDE 
 
 Tuning the weights $\lambda_r$, $\lambda_b$, $\lambda_d$ is the standard response, but it amounts to introducing three hyperparameters that interact in non-obvious ways and whose optimal values shift during training. Adaptive weighting schemes (gradient-normalisation, neural tangent kernel-inspired methods) help in some cases. In others, they introduce their own instabilities. I have spent entire weeks on a single problem doing nothing but adjusting these weights and watching the training dynamics, trying to find a configuration where all the terms decrease together.
 
-And then there is the optimiser. Adam alone rarely delivers high accuracy. The usual recipe is Adam for the first phase (get roughly into the right region of parameter space) followed by L-BFGS for the fine convergence. L-BFGS is more powerful but also more fragile: it is sensitive to noise in the gradients, it requires substantial memory for large networks, and the handoff from Adam to L-BFGS is one more decision point where things can go wrong. When the handoff works, the improvement in accuracy can be dramatic. When it does not, the L-BFGS phase diverges and you lose progress.
+Optimizer performance depends on the PDE, scaling, sampling, and architecture. Adam followed by L-BFGS is a common heuristic, not a universally superior schedule. Full-batch L-BFGS can improve deterministic objectives, while stochastic gradients and large parameter counts can make it expensive or unstable.
 
 **You have no reliable error certificate.** This is what unsettles me most as someone trained in numerical analysis. When I solve a problem with finite elements, I have theory: convergence rates, a priori error estimates, a posteriori error indicators. I know, within quantifiable bounds, how good my solution is. I can refine the mesh and prove that the solution improves at a predictable rate.
 
@@ -114,11 +114,11 @@ Concrete things I have learned, mostly the hard way.
 
 **Collocation point placement deserves serious thought.** Uniform random sampling is a reasonable default but rarely optimal. If the solution has boundary layers, concentrate points there. If there are internal interfaces or singularities, refine around them. Residual-based adaptive sampling (periodically evaluating the residual on a fine grid and adding collocation points where it is large) is effective but adds complexity to the training loop. Latin hypercube sampling is a simple improvement over pure random sampling that provides better space-filling coverage.
 
-**Hard-enforce what you can.** The boundary condition loss term is often the weakest link. If you can enforce boundary conditions analytically, do it. For Dirichlet conditions $u = 0$ on $\partial\Omega$, write $u_\theta(x) = d(x) \cdot v_\theta(x)$, where $d(x)$ is a distance function vanishing on the boundary and $v_\theta$ is a free network. The boundary condition is then satisfied by construction, regardless of the parameters. One fewer term in the loss means one fewer knob to tune and one fewer potential source of conflict during training.
+**Hard-enforce what you can.** For a homogeneous Dirichlet condition, an ansatz $u_\theta(x)=d(x)v_\theta(x)$ enforces the boundary values when $d$ vanishes on the entire Dirichlet boundary and is sufficiently regular for the PDE derivatives. Nonhomogeneous, mixed, and complicated boundary conditions require a suitable lifting or a different construction.
 
 The same idea extends to initial conditions in time-dependent problems. If $u(x,0) = g(x)$, write $u_\theta(x,t) = g(x) + t \cdot v_\theta(x,t)$. At $t=0$, the initial condition is exactly satisfied. More generally, for Robin boundary conditions $\partial_n u + \beta u = h$ on $\partial\Omega$, one can construct trial functions that satisfy these conditions by design, though the construction becomes problem-specific.
 
-The mathematical benefit is concrete. With $L$ terms in the loss, the gradient at each step is a linear combination of $L$ competing directions. Removing one term from the loss reduces the dimension of the optimisation conflict. In practice, hard-enforced PINNs often converge in a fraction of the iterations.
+Removing an exactly enforced boundary term eliminates its weighting parameter and its gradient contribution. This can improve conditioning, but it can also make the ansatz harder to optimize. There is no general iteration-count guarantee.
 
 **Keep the network modest.** Bigger is not always better. I have found that networks with 4 to 6 hidden layers and 40 to 60 neurons per layer work well for a wide range of problems. Going deeper can make training harder without improving accuracy. $\tanh$ is a reliable activation function for PDE problems because it is smooth and its derivatives are well-behaved; you are, after all, differentiating through this network multiple times. ReLU and its variants introduce issues at the points where derivatives are discontinuous. This matters less in classification but matters a lot when your loss function involves second-order derivatives.
 
@@ -137,4 +137,4 @@ What the field needs most right now, in my view, is honest reporting. More paper
 
 For anyone beginning to work with PINNs, my strongest recommendation is this: learn finite elements and classical regularisation theory first. Understand the PDEs you are solving at a mathematical level. Then use PINNs where they add value, with full awareness of their limitations. The researchers I have seen make the most effective use of these tools are invariably those who could also solve the problem without them. That foundation is not optional.
 
-The tools are powerful. They are also young, imperfect, and poorly understood in important ways. Treating them honestly, as capable tools with real limitations, not as a revolution that renders classical methods obsolete, is the clearest path to using them well.
+PINNs are useful when their data-integration and differentiable-model structure matches the problem. They should be compared against suitable numerical baselines and validated with independent error measurements.

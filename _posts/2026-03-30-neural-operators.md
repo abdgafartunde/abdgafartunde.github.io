@@ -23,7 +23,7 @@ A neural network in the standard sense learns a function $f : \mathbb{R}^n \to \
 
 A neural operator learns a mapping $\mathcal{G} : \mathcal{U} \to \mathcal{S}$ between function spaces. The input is a function (say, a spatially varying coefficient $a(x)$), and the output is a function (say, the solution $u(x)$ of a PDE with that coefficient). Both $a$ and $u$ are, in principle, infinite-dimensional objects.
 
-The distinction matters because the operator $\mathcal{G}$ should be *discretization-invariant*. Once trained, it should work regardless of how finely you represent the input and output functions. A network trained on a $64 \times 64$ grid should, in principle, be evaluable on a $256 \times 256$ grid without retraining. This property, called resolution independence, is what separates neural operators from standard neural networks applied to PDE data.
+The intended object is an operator between function spaces rather than a map tied to one vector dimension. Some architectures can therefore be evaluated on grids finer than those used for training. Accurate zero-shot super-resolution is not automatic: quadrature, aliasing, retained modes, normalization, and the training distribution still determine whether predictions converge as the evaluation grid is refined.
 
 
 ## DeepONet: The Operator Approximation Theorem
@@ -55,7 +55,7 @@ where $\mathcal{F}$ is the Fourier transform, $R_\phi$ is a learnable weight ten
 
 The idea is that many PDE solutions have structure that is naturally expressed in the frequency domain. Low-frequency modes capture large-scale behaviour, and the truncation of high-frequency modes provides an implicit regularization. By learning the transformation in Fourier space, the network can capture global interactions at each layer, unlike convolutional networks that see only local patches.
 
-FNO has three attractive properties. First, the Fourier transform is computed via FFT, making it efficient. Second, the architecture is inherently discretization-invariant: the Fourier modes are defined independently of the grid resolution. Third, the model has far fewer parameters than a comparable fully connected network, because it only learns weights for a truncated set of Fourier modes.
+The FFT makes each spectral layer efficient on regular grids, and the learned mode weights do not grow with the number of evaluation points. This parameterization supports resolution transfer, but the discrete implementation and learned approximation are not automatically invariant to grid changes. Parameter-count comparisons also depend on the channel width, number of retained modes, and baseline architecture.
 
 The practical results have been impressive for certain classes of problems. For the Navier-Stokes equations in turbulent regimes, FNO produces solutions that are orders of magnitude faster than classical solvers with comparable accuracy. For Darcy flow (a linear elliptic problem with heterogeneous coefficients), the method generalizes well across different coefficient realizations.
 
@@ -71,13 +71,13 @@ The practical results have been impressive for certain classes of problems. For 
 
 ## What the Enthusiasm Obscures
 
-Neural operators are powerful, but the current discourse sometimes oversells them. Here are the caveats I think are important.
+Neural operators are useful surrogates, but their limitations need to be stated explicitly.
 
 **Training data is expensive.** You need thousands of input-output pairs to train a neural operator effectively. Each pair requires solving the PDE with a classical method. If your classical solver takes five minutes per solve and you need 10,000 training samples, the data generation alone takes over a month of compute time. The speedup is only realized at inference, not during training. For problems you only need to solve a few times, the classical solver wins.
 
 **Generalization is not guaranteed.** A neural operator trained on smooth coefficients may fail on discontinuous ones. A model trained for low Reynolds number flows may produce nonsense at high Reynolds numbers. The input distribution matters, and out-of-distribution inputs can produce confidently wrong answers. There is, at present, no general theory of generalization error for neural operators in the sense that we have for finite element methods.
 
-**Accuracy ceilings.** Neural operators typically achieve relative errors in the range of 1-5% for well-behaved problems. This is adequate for many applications but insufficient for others. If you need six digits of accuracy, classical methods remain the only option. The accuracy tends to degrade for problems with sharp features, thin boundary layers, or strong nonlinearities, precisely the problems where classical methods also struggle but where decades of adaptive strategies provide systematic remedies.
+**Accuracy is problem dependent.** Relative error depends on the PDE, data distribution, discretization, norm, architecture, and training budget. A single percentage range is not meaningful across benchmarks. Sharp features, boundary layers, conservation constraints, and distribution shift can degrade accuracy. Classical solvers remain preferable when a posteriori control or tight tolerances are required.
 
 **The comparison is not always fair.** Many papers compare neural operator inference time against classical solver time without accounting for the training cost. A fair comparison includes data generation time, training time, and amortization over the expected number of queries. When the number of queries is small, the break-even point may never be reached.
 
@@ -99,6 +99,6 @@ I find neural operators interesting because they address a real computational bo
 
 The results so far are mixed. For conductivities in the training distribution, the surrogate is fast and reasonably accurate. For conductivities that fall outside the training distribution (the ones that tend to appear during iterative inversion, when the algorithm explores regions of parameter space far from the initial guess), the accuracy drops noticeably. This is not surprising, but it limits the usefulness of the approach.
 
-I think the path forward involves hybrid methods: use the neural operator as a warm start or preconditioner, and refine with a classical solver when accuracy is critical. Or use the operator within a regularized inversion framework that can absorb and compensate for approximation errors in the forward model. This is an active area of research, and I expect we will see significant progress in the coming years.
+Hybrid methods can use a neural operator as a warm start or preconditioner, followed by a classical solver when accuracy is critical. In inverse problems, surrogate error must be estimated or represented explicitly; regularization does not automatically absorb a biased forward model.
 
 The tools are not yet mature enough to replace classical methods, but they are mature enough to complement them in useful ways. Understanding both the potential and the limitations is what allows you to use them effectively.

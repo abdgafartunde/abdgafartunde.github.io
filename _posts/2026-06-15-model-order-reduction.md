@@ -23,7 +23,7 @@ $$
 A(\mu) u(\mu) = f(\mu).
 $$
 
-Here $N$ is the dimension of the discretized state space, which might be $10^5$ or $10^6$ for a fine mesh in three dimensions. Solving this system for each $\mu$ takes $O(N^\alpha)$ operations (with $\alpha = 1$ for sparse direct solvers or iterative methods in favourable cases).
+Here $N$ is the dimension of the discretized state space. The solve complexity depends on dimension, sparsity, conditioning, preconditioning, and the solver. Near-linear complexity is possible for some optimally preconditioned iterative or multilevel methods, but sparse direct solvers are not generally $O(N)$, especially in three dimensions.
 
 The key observation: for many parametric PDE problems, the solution $u(\mu)$ does not vary arbitrarily as $\mu$ changes. The set of all solutions,
 
@@ -36,7 +36,7 @@ called the **solution manifold**, is a low-dimensional structure embedded in the
 If $\mathcal{M}$ is well-approximated by a $k$-dimensional subspace $V_k = \text{span}\{v_1, \ldots, v_k\}$ with $k \ll N$, then we can seek the reduced solution
 
 $$
-u(\mu) \approx u_{r}(\mu) = \sum_{j=1}^k c_j(\mu) v_j = V_k c(\mu),
+u(\mu) \approx u_k(\mu) = \sum_{j=1}^k c_j(\mu) v_j = V_k c(\mu),
 $$
 
 and reduce the problem to determining $c(\mu) \in \mathbb{R}^k$ rather than $u(\mu) \in \mathbb{R}^N$. The Galerkin projection of the full system onto $V_k$ gives
@@ -45,7 +45,7 @@ $$
 V_k^\top A(\mu) V_k c(\mu) = V_k^\top f(\mu),
 $$
 
-a $k \times k$ system. If $k = 50$, this costs $O(k^3) = O(125{,}000)$ operations, instead of the $O(N)$ operations required for the full system. The speedup can be factors of hundreds or thousands.
+a $k\times k$ system. A dense reduced solve costs $O(k^3)$, but online speed also requires reduced assembly whose cost is independent of $N$. The full-order comparison depends on its solver and cannot be summarized as $O(N)$ in general.
 
 The challenge is twofold: constructing the subspace $V_k$ (the offline phase) and ensuring that the $k \times k$ system can be assembled efficiently without reference to the full system (the online phase).
 
@@ -82,17 +82,18 @@ The reduced basis (RB) method shares the POD framework but adds two important in
 3. Add $u(\mu_{k+1})$ to the basis, where $\mu_{k+1} = \operatorname{argmax}_\mu \Delta_k(\mu)$.
 4. Repeat until the maximum error indicator falls below a tolerance.
 
-The error indicator $\Delta_k(\mu)$ is the key ingredient. It must be (a) computable using the reduced model alone, without solving the full problem, and (b) a reliable upper bound for the true error $\lVert u(\mu) - u_r(\mu) \rVert$.
+The error indicator $\Delta_k(\mu)$ must be computable without a new full solve and must bound the error $\lVert u(\mu)-u_k(\mu)\rVert$ in a specified norm.
 
 **A posteriori error bounds.** For parametric problems with affine parameter dependence (the matrix $A(\mu) = \sum_q \theta_q(\mu) A_q$ is a sum of parameter-independent matrices weighted by scalar functions $\theta_q$), rigorous error bounds can be derived using the residual:
 
 $$
-\lVert u(\mu) - u_r(\mu) \rVert \leq \frac{\lVert A(\mu) u_r(\mu) - f(\mu) \rVert}{\alpha_{\text{LB}}(\mu)},
+\lVert u(\mu)-u_k(\mu)\rVert_V
+\leq \frac{\lVert f(\mu)-A(\mu)u_k(\mu)\rVert_{V'}}{\alpha_{\mathrm{LB}}(\mu)},
 $$
 
-where $\alpha_{\text{LB}}(\mu)$ is a computable lower bound for the coercivity constant of $A(\mu)$. This bound is sharp enough to be useful and can be evaluated at reduced cost if the affine decomposition is exploited.
+where the variational operator is coercive with constant $\alpha(\mu)$ and $0<\alpha_{\mathrm{LB}}(\mu)\leq\alpha(\mu)$. The residual is measured in the dual norm $V'$. Noncoercive and nonsymmetric problems require inf-sup or stability-factor variants.
 
-The combination of greedy basis construction and error bounds makes the RB method more reliable than POD for certified computations. You can guarantee, offline, that the online reduced model will achieve a specified accuracy. This is important in safety-critical applications.
+The estimator certifies queries for which its assumptions and stability lower bound are valid. Testing a finite training set during the offline stage does not by itself guarantee a tolerance over the entire parameter domain.
 
 
 ## The Offline-Online Decomposition
@@ -129,7 +130,7 @@ In EIT reconstruction, the forward problem is solved many times for varying cond
 
 One approach is to use MOR within a parametrized family. If the conductivity is constrained to a low-dimensional manifold (e.g., piecewise constant with varying values and interfaces, described by a small number of parameters), the RB method can be applied to this reduced parameter space efficiently.
 
-A more flexible approach, which I have been exploring, is to combine MOR with a learned parameterization of the conductivity. A generative model maps a low-dimensional latent code to a conductivity distribution; the RB method is applied in the latent space. This hybrid uses the generative model's flexibility to represent a rich class of conductivities while leveraging the RB method's efficiency and error control for the forward solves.
+A possible hybrid combines MOR with a learned parameterization of conductivity. A generative model maps a low-dimensional latent code to a conductivity distribution, and the RB method is constructed over that latent parameter set. Certification must then include both reduced-basis error and representation error from the learned parameterization.
 
 The integration is not straightforward, and the error analysis is more involved when the parameterization is itself approximate. But the potential speedups are significant, and the certified component of the reduced basis gives a handle on the forward model error that purely data-driven surrogates lack.
 

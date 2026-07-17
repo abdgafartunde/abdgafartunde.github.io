@@ -8,7 +8,7 @@ tags: [Mathematics, Inverse Problems, Tutorial]
 math: true
 ---
 
-Suppose a doctor places electrodes around a patient's chest and measures tiny electrical currents on the skin. From those surface measurements alone, she wants to reconstruct what is happening inside: locate a tumour, identify damaged tissue, map the electrical conductivity of the body.
+Suppose clinicians place electrodes around a patient's chest, apply small currents, and measure the resulting surface voltages. From these boundary measurements, they want to estimate changes in the body's electrical conductivity, for example regional changes associated with ventilation or fluid content.
 
 This is an inverse problem. And it is, in a precise mathematical sense, extraordinarily difficult.
 
@@ -31,7 +31,7 @@ $$
 
 where $\mathcal{A}$ is some operator (often involving a partial differential equation) that models the underlying physics.
 
-Forward problems are generally well-behaved. If you know $f$ and you know $\mathcal{A}$, computing $g$ is usually a matter of standard numerical analysis (though it can be computationally expensive).
+Many forward models are well posed after appropriate initial and boundary conditions are specified, although some forward problems are themselves ill posed. When the model is well posed, computing $g$ is a numerical approximation problem that may still be expensive.
 
 An inverse problem reverses the direction: given the measurements $g$, recover the unknown $f$. You want to solve
 
@@ -54,16 +54,16 @@ A problem that violates any of these conditions is called *ill-posed*. Most inve
 
 The third condition is the one that causes the most grief in practice. In plain terms, it says that small errors in your measurements should produce only small changes in your reconstruction. But in many inverse problems, the opposite happens. A tiny perturbation in the data, a fraction of a percent of noise, can change the reconstructed solution completely.
 
-This instability is not a bug in your code. It is not a numerical glitch you can fix by using more decimal places. It is a fundamental property of the mathematical problem itself. The operator $\mathcal{A}$ typically maps a large, rich space of possible internal structures to a much smaller space of measurements. Information is irretrievably lost in the forward process. No algorithm, no matter how clever, can conjure that information back into existence.
+This instability is not a numerical glitch. In many inverse problems, $\mathcal{A}$ is compact or smoothing, so components of $f$ associated with small singular values have little effect on the data. Those components cannot be recovered stably without additional assumptions, even when the parameter and data spaces are both infinite-dimensional.
 
-To see why mathematically, consider the singular value decomposition of a compact linear operator $\mathcal{A} : X \to Y$ between Hilbert spaces. The singular values $\sigma_n$ satisfy $\sigma_n \to 0$ as $n \to \infty$. When we try to invert, the components of the solution corresponding to small singular values are amplified by a factor of $1/\sigma_n$. If the data contains noise at level $\delta$, these amplified noise components dominate the reconstruction:
+To see why mathematically, consider an injective compact operator $\mathcal{A}:X\to Y$ with a singular system $(\sigma_n,u_n,v_n)$ and infinite-dimensional range. Then $\sigma_n\to0$. For data in the domain of the unbounded generalized inverse, the formal expansion is
 
 $$
-f_{\text{naive}} = \mathcal{A}^{-1} g^\delta
+f_{\text{naive}} = \mathcal{A}^{\dagger} g^\delta
   = \sum_{n=1}^{\infty} \frac{\langle g^\delta, v_n \rangle}{\sigma_n} \, u_n,
 $$
 
-where $\\{u_n\\}$ and $\\{v_n\\}$ are the singular functions. The terms with $\sigma_n \ll \delta$ contribute essentially pure noise to the sum. This is the spectral anatomy of ill-posedness: the operator compresses information into components that become indistinguishable from noise when we try to recover them.
+Noise coefficient $\langle g^\delta-g,v_n\rangle$ is amplified by $1/\sigma_n$. A norm bound $\lVert g^\delta-g\rVert\leq\delta$ does not determine each coefficient, but it allows severe amplification in small-singular-value directions. This is the spectral mechanism of instability.
 
 What it means in practice: if you naively try to invert your data, say, by least squares, the result will be dominated by amplified noise. Instead of recovering the true signal, you reconstruct whatever pattern in $f$ most effectively fits the noise in $g$. The output looks like chaos.
 
@@ -92,7 +92,7 @@ $$
 
 for some $\eta > 0$, which means you need exponentially precise data to recover even moderately detailed features. Compare this with, say, differentiation (where errors grow polynomially) and you appreciate the severity of the problem.
 
-What does this look like in practice? Two very different conductivity distributions (one with a tumour, one without) can produce boundary voltages that differ by less than the measurement noise. Your data physically cannot distinguish them. If you apply a naive solver, it will oscillate wildly between the possibilities, producing a reconstruction that looks nothing like either.
+In EIT, distinct conductivity perturbations can produce voltage differences below the measurement and modelling error. The data then cannot distinguish those perturbations reliably. An unregularized discretized inverse can amplify noise in weakly observed directions and produce unstable images.
 
 You cannot solve this problem without bringing something extra to the table.
 
@@ -109,7 +109,7 @@ $$
 J_\alpha(f) = \lVert \mathcal{A}(f) - g \rVert^2 + \alpha \lVert f \rVert^2,
 $$
 
-where $\alpha > 0$ is a regularization parameter. The second term penalises solutions that are too large or too rough, pulling the reconstruction toward something reasonable.
+where $\alpha > 0$ is a regularization parameter. The penalty $\lVert f\rVert^2$ controls the magnitude of the solution. A roughness penalty instead uses a derivative or other operator, for example $\lVert Lf\rVert^2$.
 
 There is a satisfying way to understand Tikhonov regularization through the lens of the SVD. The regularized solution takes the form
 
@@ -121,13 +121,13 @@ $$
 
 The filter factor $\sigma_n / (\sigma_n^2 + \alpha)$ smoothly damps the components corresponding to small singular values. When $\sigma_n \gg \sqrt{\alpha}$, the factor is approximately $1/\sigma_n$ and the component is faithfully recovered. When $\sigma_n \ll \sqrt{\alpha}$, the factor is approximately $\sigma_n / \alpha$, and the noisy component is suppressed. The parameter $\alpha$ controls the transition between recovery and damping.
 
-The choice of $\alpha$ is critical. Too large, and you over-smooth: edges and fine features vanish. Too small, and the noise creeps back in. The optimal choice depends on the noise level $\delta$ in your data and the smoothness of the true solution. Under appropriate *source conditions* on the true solution $f^\dagger$ (for example, $f^\dagger = (\mathcal{A}^* \mathcal{A})^\mu w$ for some $w$ and $\mu > 0$), one can show convergence rates of the form
+The choice of $\alpha$ balances approximation and noise amplification. For quadratic Tikhonov regularization with a bounded linear operator, a noise bound $\lVert g^\delta-g\rVert\leq\delta$, and the source condition $f^\dagger=(\mathcal{A}^*\mathcal{A})^\mu w$ with $0<\mu\leq1$, one obtains a norm-error bound of the form
 
 $$
 \lVert f_\alpha^\delta - f^\dagger \rVert = O\!\left( \delta^{2\mu/(2\mu+1)} \right) \quad \text{as } \delta \to 0,
 $$
 
-provided $\alpha$ is chosen as $\alpha \sim \delta^{2/(2\mu+1)}$. This rate is provably optimal in a minimax sense. There is a rich theory (the Morozov discrepancy principle, the L-curve method, generalised cross-validation) addressing how to choose $\alpha$ in practice when $\mu$ is unknown.
+provided $\alpha\asymp\delta^{2/(2\mu+1)}$. Optimality statements require a specified source set and loss. Morozov's discrepancy principle has convergence theory under suitable assumptions; the L-curve and generalized cross-validation are practical selection heuristics whose behaviour depends on the problem.
 
 Tikhonov is not the only option. Total variation regularization replaces the quadratic penalty with the TV seminorm:
 
@@ -142,7 +142,7 @@ $$
 \min_f \; \lVert \mathcal{A}(f) - g \rVert^2 + \alpha \sum_n \lvert c_n \rvert, \quad f = \sum_n c_n \psi_n.
 $$
 
-Iterative methods (Landweber iteration, conjugate gradient applied to the normal equations) use early stopping as a form of implicit regularization: the first few iterations recover large-scale features, and you stop at iteration $k^*$ before the iteration begins amplifying noise. The iteration index $k$ plays the role of $1/\alpha$, and optimal stopping rules mirror the parameter choice theory for Tikhonov.
+Iterative methods such as Landweber iteration and conjugate gradients for the normal equations can be regularized by early stopping. The stopping index controls noise amplification and is analogous to, but not identical with, a Tikhonov parameter. Discrepancy-based stopping rules have their own convergence theory.
 
 Each approach encodes different assumptions, and choosing the right regularization for a given problem requires understanding both the mathematics and the physics. It is a discipline of intellectual honesty: you must confront the limits of what your data can tell you and make your modelling choices explicit.
 
@@ -159,7 +159,7 @@ I have focused on EIT because it is my home territory, but the same structure ap
 
 **Astronomy.** The Event Horizon Telescope produced the first image of a black hole in 2019. The reconstruction was a massive inverse problem: recovering an image from sparse, noisy Fourier measurements taken by a network of radio telescopes spread across the globe. The algorithms that made this possible draw directly on the theory of ill-posed problems and regularization.
 
-**Machine learning.** Though rarely framed this way, training a neural network is itself an inverse problem. You observe input-output pairs and seek the underlying function. The problem is massively ill-posed (many different networks fit the training data equally well) and the standard practical tools (weight decay, dropout, early stopping) are, mathematically, forms of regularization.
+**Machine learning.** Supervised learning can be formulated as recovering a predictor from finite observations, so it shares non-uniqueness and stability questions with inverse problems. Weight decay is an explicit penalty, while early stopping and dropout can have regularizing effects. Their mathematical roles depend on the model, optimizer, and training regime.
 
 The mathematical structure is the same in every case: incomplete, noisy observations; a desire to recover something not directly measured; instability that demands additional assumptions. The specifics (different PDEs, different measurement physics, different noise models) change, but the core challenge does not.
 

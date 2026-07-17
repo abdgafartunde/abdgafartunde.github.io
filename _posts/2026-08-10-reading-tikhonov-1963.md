@@ -28,11 +28,11 @@ This is the conceptual core of regularization, stated in the very first paragrap
 
 The paper is short enough to describe precisely. Let me go through it.
 
-**Section 1: The setting.** Tikhonov considers a linear operator equation $Az = u$ where $A$ is a compact operator from one Banach space to another, $z$ is the unknown, and $u$ is the data. He assumes the problem is ill-posed: the inverse $A^{-1}$ is unbounded, so small errors in $u$ can produce large errors in $z$.
+**The setting.** Tikhonov formulates the problem using an operator equation $Az = u$ between metric spaces. In the linear Banach-space specialization familiar today, $z$ is the unknown, $u$ is the data, and ill-posedness means that the inverse is not continuous on its range. Compact linear operators on infinite-dimensional spaces provide the standard example, but compactness of $A$ is not the general starting assumption.
 
-He introduces a **stabilizing functional** $\Omega[z]$, a lower semi-continuous functional on the domain of $A$ whose sublevel sets $\{z : \Omega[z] \leq M\}$ are compact. These compact sets are the "admissible" solutions. The constraint $\Omega[z] \leq M$ encodes prior knowledge: you believe the true solution is regular in whatever sense $\Omega$ measures.
+He introduces a **stabilizing functional** $\Omega[z]$, a lower semicontinuous functional on the domain of $A$ whose sublevel sets $\{z : \Omega[z] \leq M\}$ are compact. These compact sets are the "admissible" solutions. The constraint $\Omega[z] \leq M$ encodes prior knowledge: you believe the true solution is regular in whatever sense $\Omega$ measures.
 
-**Section 2: The key theorem.** On the compact set $M_\alpha = \{z : \Omega[z] \leq 1/\alpha\}$, the problem $Az = u$ has (at most) a unique solution, and this solution depends continuously on $u$. Tikhonov proves that the functional
+**The key construction.** If $A$ is continuous and one-to-one on a compact admissible set, its inverse on the image of that set is continuous. Tikhonov then studies a regularizing functional that balances data discrepancy and the stabilizing functional. In Hilbert-space notation, the familiar quadratic form is
 
 $$
 R[z, u^\delta] = \lVert Az - u^\delta \rVert^2 + \alpha \Omega[z]
@@ -42,7 +42,7 @@ has a minimizer for each $\alpha > 0$ and $u^\delta$. This minimizer $z_\alpha^\
 
 He then states the convergence result: if $\alpha = \alpha(\delta)$ is chosen so that $\alpha(\delta) \to 0$ and $\delta^2 / \alpha(\delta) \to 0$ as the noise level $\delta \to 0$, then $z_\alpha^\delta \to z^\dagger$ in norm, where $z^\dagger$ is the true solution.
 
-**Section 3: The functional form.** For the specific case where $A$ is a compact operator between Hilbert spaces and $\Omega[z] = \lVert Lz \rVert^2$ for some closed linear operator $L$, Tikhonov shows that the minimizer $z_\alpha^\delta$ satisfies the normal equation
+**The Hilbert-space quadratic specialization.** If $A$ is a bounded linear operator between Hilbert spaces and $\Omega[z] = \lVert Lz \rVert^2$, the first-order optimality condition has the familiar form
 
 $$
 (\alpha L^*L + A^*A) z = A^* u^\delta.
@@ -50,7 +50,7 @@ $$
 
 This is the formula that now appears in every textbook on inverse problems. It is the equation whose solution produces the Tikhonov regularized estimate.
 
-**Section 4: An example.** The paper closes with a numerical example illustrating the method on a first-kind Fredholm integral equation. The example is simple, but it demonstrates that the regularization produces reasonable reconstructions for noisy data.
+**An example.** The paper closes with an example involving a first-kind integral equation. It illustrates how the stabilizing functional selects a stable approximate solution from noisy data.
 
 
 ## What Is Subtle About the Result
@@ -68,7 +68,7 @@ Reading the paper carefully, a few things stand out that are sometimes obscured 
 
 The 1963 paper does not discuss:
 
-- **Convergence rates.** The paper proves that $z_\alpha^\delta \to z^\dagger$ as $\delta \to 0$ but does not quantify how fast. Convergence rate analysis (showing that $\lVert z_\alpha^\delta - z^\dagger \rVert = O(\delta^{2\nu/(2\nu+1)})$ under a source condition $z^\dagger \in \mathcal{R}((A^*A)^\nu)$) came in the 1970s and 1980s, in work by Nashed, Vainikko, Tikhonov and Arsenin (in their 1977 book), and many others.
+- **Convergence rates.** The paper proves that $z_\alpha^\delta \to z^\dagger$ as $\delta \to 0$ but does not quantify how fast. For standard quadratic Tikhonov regularization, the source condition $z^\dagger \in \mathcal{R}((A^*A)^\nu)$ gives the rate $\lVert z_\alpha^\delta - z^\dagger \rVert = O(\delta^{2\nu/(2\nu+1)})$ for $0 < \nu \leq 1$, with an appropriate parameter choice. Later work developed these rate results and their extensions.
 
 - **Nonlinear problems.** The 1963 paper treats linear operators. Extending regularization theory to nonlinear operators is a much harder problem, and the general theory (convergence, rates, parameter choice for nonlinear Tikhonov) was developed primarily in the 1990s.
 
@@ -103,4 +103,4 @@ That clarity is harder to achieve than it appears, and it is worth studying inde
 
 ## Further Context
 
-For a modern, comprehensive treatment of regularization theory that follows directly from Tikhonov's framework, Engl, Hanke, and Neubauer's *Regularization of Inverse Problems* (1996) is the standard reference. For the historical context and the Soviet school more broadly, Langer's survey "Inverse problems: a selected bibliography and chronology" is useful. For the Bayesian counterpart and the modern synthesis, Stuart's 2010 *Acta Numerica* paper "Inverse problems in a Bayesian setting" is authoritative.
+The bibliographic record and Russian full text of Tikhonov's note are available from [Math-Net.Ru](https://www.mathnet.ru/eng/dan/v153/i1/p49). For a modern treatment of regularization theory, Engl, Hanke, and Neubauer's *Regularization of Inverse Problems* (1996) is a standard reference. For the Bayesian counterpart, Stuart's 2010 *Acta Numerica* paper ["Inverse problems: a Bayesian perspective"](https://doi.org/10.1017/S0962492910000061) is a useful entry point.

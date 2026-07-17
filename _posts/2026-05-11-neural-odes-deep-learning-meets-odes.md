@@ -49,10 +49,10 @@ $$
 integrated backward from $t = T$ to $t = 0$, with the terminal condition $a(T) = \frac{dL}{dh(T)}$. The gradient with respect to $\theta$ is:
 
 $$
-\frac{dL}{d\theta} = -\int_0^T a(t)^T \frac{\partial f_\theta}{\partial \theta}(h(t), t) \, dt.
+\frac{dL}{d\theta} = \int_0^T a(t)^T \frac{\partial f_\theta}{\partial \theta}(h(t), t) \, dt.
 $$
 
-The adjoint method computes the gradient by solving another ODE backward in time, requiring only $O(1)$ memory (independent of the number of solver steps). This is the same adjoint method used in optimal control, data assimilation, and PDE-constrained optimization, applied here to the neural network training problem.
+The continuous-adjoint formulation can avoid storing every internal solver step by reconstructing or checkpointing the forward trajectory. The idealized state-memory cost can be independent of the accepted step count, but solver workspaces, checkpoints, and parameter gradients still consume memory.
 
 In practice, the theoretical memory savings are partially offset by the need to recompute (or checkpoint) the forward trajectory during the backward solve. Interpolation errors and numerical instability of the backward ODE can also introduce inaccuracies in the gradient. These are active areas of research.
 
@@ -103,27 +103,27 @@ $$
 \frac{dh}{dt} = f_\theta(h(t)) \frac{dX}{dt}(t),
 $$
 
-where $X(t)$ is a continuous interpolation of the input data. This provides a principled continuous-time analogue of RNNs and has shown strong performance on time series tasks.
+where $X(t)$ is a differentiable interpolation of the input data. More generally, a neural CDE is written $dh(t)=f_\theta(h(t))\,dX(t)$ and does not require a classical derivative at every time.
 
 
 ## Connections to Numerical Analysis
 
 What I find most interesting about the neural ODE framework is how it connects deep learning design choices to well-understood concepts from numerical analysis.
 
-**Stability.** A residual network $h_{k+1} = h_k + f_\theta(h_k)$ is stable in the numerical analysis sense when the dynamics do not amplify perturbations. The condition for stability of the forward Euler method is that the eigenvalues of the Jacobian $\partial f_\theta / \partial h$ lie within the stability region. This constraint informs architecture design: networks with controlled spectral properties train more stably.
+**Stability.** For the scalar linear test equation, forward Euler is absolutely stable when the scaled eigenvalue lies in its stability region. For nonlinear, nonnormal, or time-varying networks, Jacobian eigenvalues alone do not guarantee perturbation stability; Lipschitz bounds, matrix measures, and transient growth can also matter.
 
 **Order of accuracy.** Different architectures correspond to different numerical integrators. A ResNet is forward Euler (first order). Multi-step architectures correspond to multi-step methods. The theoretical accuracy of the integrator affects how well the discrete network approximates its continuous limit.
 
 **Adaptivity.** Adaptive ODE solvers automatically adjust the step size based on local error estimates. In the neural ODE framework, this means the effective depth of the network varies with the input. Inputs that require more computation (complex dynamics) get more solver steps; simple inputs get fewer. This is a form of computational efficiency that fixed-depth architectures cannot achieve.
 
-**Reversibility.** Using a reversible ODE solver (or the adjoint method) entirely avoids storing intermediate activations, which is the dominant memory cost in training deep networks. This connection between time-reversibility in ODEs and memory-efficient training is elegant and practically useful.
+**Reversibility.** Reversible architectures can reconstruct selected states instead of storing every activation. Generic adaptive ODE solvers are not exactly reversible in floating-point arithmetic, and the continuous-adjoint method may need recomputation or checkpoints to control gradient error.
 
 
 ## Limitations
 
 Neural ODEs are not without drawbacks.
 
-**Training is slow.** Each forward pass requires solving an ODE, and each backward pass requires solving the adjoint ODE. Adaptive solvers make this robust, but the wall-clock time per training step is significantly higher than for a standard residual network with a fixed number of layers. For large-scale problems (image classification on ImageNet, for instance), this overhead is often prohibitive.
+**Training can be slow.** Each pass requires numerical integration, and tight tolerances or stiff learned dynamics can demand many function evaluations. The wall-clock comparison with a fixed-depth residual network depends on solver tolerances, architecture, hardware, and the required accuracy.
 
 **Stiff dynamics are problematic.** If the learned dynamics $f_\theta$ produces stiff equations, implicit solvers are needed, which substantially increase the cost per step. During training, the dynamics can become stiff as the parameters change, causing the solver to slow down unpredictably.
 

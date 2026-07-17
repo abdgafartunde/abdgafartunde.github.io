@@ -10,7 +10,7 @@ math: true
 
 In my earlier post on Bayesian inverse problems, I described how a Gaussian prior over the unknown corresponds, through Bayes' theorem, to Tikhonov regularization. I mentioned the connection briefly and moved on. But Gaussian priors over functions deserve a post of their own, because they are far more structured and computationally tractable than the brief mention suggested.
 
-A Gaussian process is not just a prior. It is a language for expressing beliefs about functions: how smooth they are, how they behave at different scales, whether they are stationary or vary in character across the domain. Understanding Gaussian processes well gives you a powerful tool for encoding prior knowledge in a principled way, and it connects regularization theory to a broader statistical framework that has produced some of the most elegant mathematics in modern applied probability.
+A Gaussian process is a probability model for functions. Its mean and covariance encode assumptions about scale, smoothness, stationarity, and correlation length. Those assumptions are modelling choices that must be checked against the application.
 
 
 ## What a Gaussian Process Is
@@ -47,9 +47,9 @@ This produces infinitely differentiable sample paths. The length scale $\ell$ co
 $$
 k_{\nu}(x, x') = \frac{2^{1-\nu}}{\Gamma(\nu)}\left(\frac{\sqrt{2\nu}\lVert x - x' \rVert}{\ell}\right)^\nu K_\nu\!\left(\frac{\sqrt{2\nu}\lVert x - x' \rVert}{\ell}\right),
 $$
-where $K_\nu$ is the modified Bessel function of the second kind and $\nu > 0$ is a smoothness parameter. For $\nu = 1/2$, the kernel becomes the exponential kernel $k(x,x') = \exp(-\|x-x'\|/\ell)$, and the sample paths are continuous but not differentiable. For $\nu = 3/2$ and $\nu = 5/2$, the paths are once and twice differentiable, respectively. As $\nu \to \infty$, the Matérn kernel converges to the SE kernel.
+where $K_\nu$ is the modified Bessel function of the second kind and $\nu>0$ controls regularity. A Matérn field is $k$ times mean-square differentiable when $\nu>k$, while almost-sure sample regularity requires a dimension-dependent statement. For $\nu=1/2$ the kernel is exponential. With the usual rescaling, Matérn kernels approach the squared-exponential kernel as $\nu\to\infty$.
 
-The Matérn family is widely used in practice because the smoothness parameter allows a calibrated model: you can choose $\nu$ based on how much smoothness you expect in the application. For conductivity distributions in EIT, which can have sharp interfaces, the exponential ($\nu = 1/2$) or Matérn $3/2$ kernels are often more appropriate than the infinitely smooth SE kernel.
+The Matérn family lets the modeller vary prior regularity. A stationary Matérn GP still does not represent jump interfaces directly. EIT models with sharp inclusions may require level-set, geometric, Besov, or other non-Gaussian priors rather than selecting a smaller Matérn parameter alone.
 
 
 ## GP Regression
@@ -68,20 +68,20 @@ $$
 
 where $k(x_{\ast}, \mathbf{x})$ is the vector of covariances between the test point and the training points, and $K$ is the training kernel matrix.
 
-The posterior mean $\mu(x_{\ast})$ is the best estimate of $f$ at $x_{\ast}$ given the data. It is, in fact, exactly the minimizer of a variational problem with Tikhonov regularization in a reproducing kernel Hilbert space (RKHS). This is the formal connection between GP regression and classical regularization: the two frameworks produce identical point estimates when the prior is Gaussian and the likelihood is also Gaussian.
+The posterior mean minimizes posterior expected squared-error loss. For Gaussian regression with the stated kernel and noise model, it also equals the kernel-ridge solution in the associated RKHS, with the scaling fixed by the likelihood and prior.
 
-The posterior variance $\sigma^2(x_{\ast})$ is what Tikhonov regularization alone cannot provide: a principled measure of uncertainty. In regions where training data is dense, $\sigma^2(x_{\ast})$ is small. In regions where data is sparse or the function must extrapolate, the uncertainty is large. This is free, coming directly from the probabilistic framework.
+The posterior variance is conditional on the kernel, hyperparameters, observation locations, and noise model. Nearby observations often reduce it, but correlation structure and noise determine how much. It does not include kernel misspecification or unmodelled data error.
 
 
 ## The Reproducing Kernel Hilbert Space Connection
 
-Every positive definite kernel $k$ defines a reproducing kernel Hilbert space (RKHS) $\mathcal{H}_k$: the space of functions $f$ for which
+Every positive-definite kernel defines an RKHS $\mathcal{H}_k$. For a stationary kernel on $\mathbb{R}^d$ with an appropriate positive spectral density $S$, its norm can be represented schematically as
 
 $$
 \lVert f \rVert_{\mathcal{H}_k}^2 = \int \frac{|\hat{f}(\xi)|^2}{S(\xi)}\, d\xi < \infty,
 $$
 
-where $S(\xi)$ is the spectral density of the kernel (its Fourier transform). The RKHS norm measures smoothness relative to the kernel: functions in $\mathcal{H}_k$ are at least as regular as the kernel suggests.
+with Fourier-normalization constants suppressed. This formula is not the definition for an arbitrary kernel or domain. A central distinction is that sample paths drawn from a nondegenerate GP usually lie outside its RKHS with probability one; the RKHS describes Cameron-Martin shifts and the geometry of the posterior mean.
 
 The GP posterior mean is the minimizer of
 
@@ -91,7 +91,7 @@ $$
 
 This is precisely Tikhonov regularization with the RKHS norm as the regularizer. The kernel determines the norm, which determines what kind of functions are penalized. Choosing the SE kernel penalizes rough functions heavily. Choosing the exponential kernel allows functions with more irregular behaviour.
 
-This connection is not merely aesthetic. It gives GP practitioners access to the convergence theory of regularization methods, and it gives regularization practitioners access to the probabilistic interpretation and uncertainty quantification of GPs.
+The shared point estimator connects kernel regularization with Gaussian conditioning, but uncertainty statements require the full probabilistic model and its calibration.
 
 
 ## Learning the Hyperparameters

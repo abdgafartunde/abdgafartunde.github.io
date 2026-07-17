@@ -35,7 +35,7 @@ I keep most of my research code in plain NumPy/SciPy and bring in PyTorch only w
 
 ## Mesh Generation: Gmsh
 
-For finite element work, you need meshes. Gmsh is the tool I use most, and it has become remarkably powerful over the years. It handles 2D and 3D mesh generation, supports complex geometries through its built-in CAD kernel or via STEP/IGES files, and provides fine-grained control over element sizes.
+For finite element work, you need meshes. Gmsh is the tool I use most. It handles two- and three-dimensional mesh generation, supports CAD geometry through its built-in kernels and imported STEP or IGES files, and provides control over element sizes.
 
 The Python API (`gmsh` package on PyPI) lets you script everything. I define my geometries programmatically, set mesh size fields to concentrate elements near regions of interest (electrodes, inclusions, boundaries), generate the mesh, and extract the node coordinates and element connectivity as NumPy arrays. This makes the mesh generation fully reproducible and easy to integrate into a computational pipeline.
 
@@ -82,9 +82,9 @@ For managing Python environments, I use conda with explicit environment files. P
 
 **MATLAB.** I used MATLAB extensively during my undergraduate years and early PhD. It is excellent for linear algebra and quick prototyping, and many inverse problems codes are written in it. I gradually switched to Python because the ecosystem is broader, the tools are free, and the integration with deep learning frameworks is native. I still read MATLAB code (much of the EIT community uses it), but I no longer write new projects in it.
 
-**Julia.** I have experimented with Julia and found it impressive for computational speed. The multiple dispatch system is elegant, and packages like DifferentialEquations.jl are state-of-the-art. I have not made the full switch because my existing codebase is in Python, my collaborators use Python, and the ecosystem, while growing rapidly, is still smaller. For someone starting fresh in scientific computing, Julia is a serious option.
+**Julia.** I have experimented with Julia and found its multiple-dispatch model and differential-equation ecosystem useful. I have not switched because my existing code and collaborators use Python. For a new scientific-computing project, Julia is an option worth evaluating against the required libraries and collaborators' workflows.
 
-**C++ for everything.** Early in my PhD, I tried writing performance-critical code in C++ and calling it from Python. This is powerful but the development cycle is slow. I now use this only when profiling shows that Python is genuinely the bottleneck, which is rarer than you might expect if you write properly vectorized NumPy code.
+**C++ for everything.** Early in my PhD, I wrote performance-critical code in C++ and called it from Python. The development cycle was slower, so I now do this only when profiling identifies Python-level overhead that vectorization or an existing compiled library cannot remove.
 
 
 ## Closing Thoughts

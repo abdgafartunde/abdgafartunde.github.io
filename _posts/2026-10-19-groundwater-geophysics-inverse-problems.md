@@ -1,14 +1,14 @@
 ---
 layout: post
 title: "Finding Water Underground: Geophysical Inverse Problems and the Global Groundwater Crisis"
-description: "How electrical resistivity tomography turns surface measurements into subsurface maps, and why solving this inverse problem more cheaply could matter for billions of people."
+description: "How electrical resistivity tomography uses surface measurements to estimate subsurface resistivity and support groundwater investigations."
 date: 2026-10-19
 author: "Abd'gafar Tunde Tiamiyu"
 tags: [Inverse Problems, Geophysics, Applied Mathematics, Water]
 math: true
 ---
 
-There is a reasonable probability that the water you drank today came from underground. Approximately two billion people worldwide rely on groundwater as their primary drinking water source. In rural South Asia (India, Bangladesh, Pakistan), it is the dominant source for both drinking and irrigation. In China's North China Plain, one of the world's most intensively farmed regions, groundwater depletion from decades of extraction for agriculture is measurable from space: NASA's GRACE satellites have documented falling water tables across aquifer systems that support hundreds of millions of people. In the Middle East and North Africa, where rainfall is low and rivers are scarce, groundwater is not an alternative to surface water; it is all there is.
+Groundwater supplies drinking water, irrigation, and industry across much of the world. Its importance is especially visible in rural South Asia, the North China Plain, and arid parts of the Middle East and North Africa. Satellite gravimetry and well records show depletion in several heavily pumped aquifer systems, although the balance between recharge and abstraction varies by region.
 
 Finding groundwater, mapping its extent, and understanding its quality is a geophysical inverse problem. The mathematical structure is closely related to the inverse problem I work on in EIT. The difference is scale, medium, and application, but the core mathematics is the same: recovering subsurface electrical conductivity from surface measurements of electric potential.
 
@@ -20,28 +20,23 @@ $$
 -\nabla \cdot (\sigma(x) \nabla u) = f,
 $$
 
-where $\sigma(x)$ is the electrical conductivity of the subsurface (or equivalently, the inverse of the resistivity $\rho = 1/\sigma$), $u(x)$ is the electric potential, and $f$ represents the injected current sources. This is the same PDE that governs EIT in medical imaging; the domain is the Earth's subsurface rather than a patient's thorax, and the electrodes are at the surface rather than around a cross-section, but the mathematical structure is identical.
+where $\sigma(x)$ is the electrical conductivity of the subsurface, $\rho=1/\sigma$ is resistivity, $u(x)$ is the electric potential, and $f$ represents a balanced source and sink at the current electrodes. Medical EIT uses the same conductivity equation, but surface ERT has different domains, boundary conditions, electrode geometries, and observation operators. These differences affect sensitivity and identifiability.
 
-Different rock and soil materials have characteristic electrical resistivities:
-- Dry sand and gravel: high resistivity (hundreds to thousands of ohm-metres)
-- Saturated sand (groundwater-bearing): low resistivity (tens of ohm-metres)
-- Clay: low resistivity (often indistinguishable from saturated sediments, which creates ambiguity)
-- Bedrock: variable, generally higher than saturated sediments
-- Saltwater intrusion (a major problem in coastal aquifers): very low resistivity, easily distinguishable
+Different rock and soil materials occupy broad, overlapping resistivity ranges. Dry sand and gravel are often more resistive than water-saturated sediments, while clay and saline water can both produce low resistivity. Bedrock varies with mineralogy, porosity, weathering, and fracture saturation. These overlaps are why an ERT image requires geological interpretation and, where possible, supporting borehole or geophysical data.
 
-The contrast between dry and saturated sediments is what makes ERT useful for groundwater mapping. By measuring the apparent resistivity along survey lines and inverting for the subsurface conductivity distribution, hydrogeologists can identify the depth, extent, and structure of aquifer systems without drilling.
+Resistivity contrasts make ERT useful for groundwater investigations. By measuring apparent resistivity and constructing a regularized subsurface model, hydrogeologists can constrain possible aquifer geometry and select drilling targets. ERT does not by itself prove that a low-resistivity feature contains usable groundwater.
 
 ## The Inverse Problem
 
-Given a set of surface electrode configurations and the corresponding potential measurements $u_{\text{meas}}$, the inverse problem is to recover $\sigma(x)$ from
+Given a set of surface electrode configurations and a data vector $d$, a regularized inverse problem can be written as
 
 $$
-\min_{\sigma} \; \frac{1}{2}\|F(\sigma) - u_{\text{meas}}\|^2 + \alpha R(\sigma),
+\min_{\sigma>0} \; \frac{1}{2}\|F(\sigma) - d\|^2 + \alpha R(\sigma),
 $$
 
 where $F(\sigma)$ maps the conductivity distribution to predicted surface potentials (by solving the forward PDE), and $R(\sigma)$ is a regularization term.
 
-The problem is nonlinear (the forward operator $F$ is nonlinear in $\sigma$), ill-posed (the solution is not unique without regularization, and is unstable to noise), and large-scale in practice (a 3D ERT survey can have thousands of measurements and an unknown field $\sigma$ discretized on a grid with millions of nodes).
+The problem is nonlinear because $F$ depends nonlinearly on $\sigma$, and it is ill-posed because finite, noisy surface data provide weak sensitivity to some subsurface variations. Regularization and physical constraints select a stable estimate, but they do not remove all geological ambiguity. Three-dimensional surveys can also produce large computational problems.
 
 The same algorithmic approaches used in EIT apply here: iteratively regularized Gauss-Newton methods, total variation regularization for sharp interfaces, and increasingly deep learning components to encode geological prior information. The main algorithmic difference is depth. EIT images a domain of tens of centimeters; ERT images depths of tens to hundreds of meters. Sensitivity to deep structure decreases with depth, making deep aquifer characterization inherently harder than shallow imaging.
 
@@ -63,10 +58,12 @@ Current operational ERT is limited in three ways that better algorithms could ad
 
 **3D reconstruction from 2D survey lines.** Most ERT surveys are conducted along 1D or 2D transects and interpreted as 2D cross-sections. True 3D aquifer geometry requires 3D inversion of areal survey data, which is computationally more demanding but geometrically more informative. Scalable 3D ERT inversion algorithms are an active research area.
 
-**Integration with borehole and geological data.** ERT images have inherent ambiguity (clay and saturated sediment can look similar electrically). Incorporating complementary information (borehole lithology logs, geological maps, seismic refraction data) as structured prior information in the inverse problem can resolve this ambiguity. Bayesian approaches that formally integrate these data sources are more rigorous than the ad hoc adjustments currently made in practice.
+**Integration with borehole and geological data.** ERT images have inherent ambiguity because clay and saturated sediment can look similar electrically. Borehole lithology, geological maps, induced-polarization measurements, and seismic data can supply complementary constraints. Joint or Bayesian inversion provides an explicit way to state how these data and their uncertainties enter the reconstruction.
 
 The mathematical structure of these problems is the same as the inverse problems I work on in other contexts. The forward operator differs (subsurface ERT versus thoracic EIT), the scale differs, the noise characteristics differ, and the available prior information differs. But the regularization theory, the computational algorithms, and the trade-offs between resolution and stability are common across all of them.
 
-Water scarcity is not an abstract problem. The geophysical inverse problem that helps locate groundwater is tractable, well-posed enough to be solvable with good algorithms, and consequential enough to be worth working on. It is one of the clearest examples I know of where improvements in computational mathematics translate directly into real-world impact, not at some indeterminate future point, but in the next survey season.
+Water scarcity is not an abstract problem. ERT inversion is ill-posed, but regularized estimates can still inform survey interpretation and drilling decisions when combined with hydrogeological evidence. Improvements in uncertainty quantification, joint inversion, and accessible software can therefore affect practical field decisions.
 
 *For code related to geophysical inversion for groundwater detection, see the [groundwater-detection GitHub repository](https://github.com/abdgafartunde/groundwater-detection) (to be updated).*
+
+For continental groundwater context, see MacDonald et al., ["Quantitative maps of groundwater resources in Africa"](https://nora.nerc.ac.uk/id/eprint/17892/) (2012). The World Bank's [Horn of Africa groundwater programme](https://documents1.worldbank.org/curated/en/099072825051511982/pdf/P174867-5dc0b9fe-165f-4c0e-b8d2-9d681440d7a1.pdf) discusses how target depth and geology determine whether ERT, TDEM, or controlled-source electromagnetic methods are appropriate.

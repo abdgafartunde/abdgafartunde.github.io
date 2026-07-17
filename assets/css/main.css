@@ -6420,3 +6420,153 @@ main:focus {
         flex-direction: column;
     }
 }
+
+/* Readability floor for navigation, editorial labels, and long-form articles. */
+.brand-name {
+    font-size: 0.94rem;
+}
+
+.brand-sub {
+    font-size: 0.68rem;
+}
+
+.nav-link {
+    font-size: 0.84rem;
+}
+
+.content .home-eyebrow,
+.home-eyebrow,
+.home-section-label p {
+    font-size: 0.75rem;
+}
+
+.content .home-primary-action,
+.content .home-text-action,
+.content .home-inline-link,
+.content .home-profile-links a {
+    font-size: 0.84rem;
+}
+
+.footer-nav a,
+.footer-profiles a,
+.footer-copyright {
+    font-size: 0.78rem;
+}
+
+.post-breadcrumb a,
+.post-meta-top,
+.post-topic-list li,
+.post-nav-label,
+.post-all-writing {
+    font-size: 0.75rem;
+}
+
+.post-title {
+    font-size: clamp(2.35rem, 5vw, 3.5rem);
+    line-height: 1.06;
+}
+
+.post-description {
+    font-size: 1.05rem;
+}
+
+.post-content,
+.content.post-content p {
+    font-size: 1.0625rem;
+    line-height: 1.82;
+}
+
+.content.post-content li {
+    font-size: 1rem;
+}
+
+.post-nav-title {
+    font-size: 0.9rem;
+}
+
+@media (max-width: 700px) {
+    .brand-name {
+        font-size: 0.88rem;
+    }
+
+    .brand-sub {
+        max-width: 190px;
+        font-size: 0.66rem;
+        letter-spacing: 0.08em;
+    }
+}
+
+@media (max-width: 520px) {
+    .post-title {
+        font-size: clamp(2.05rem, 10.5vw, 2.65rem);
+    }
+
+    .post-description,
+    .content.post-content p {
+        font-size: 1rem;
+    }
+}
+
+/* Keep secondary information legible without weakening the editorial hierarchy. */
+.brand-mark,
+.brand-sub,
+.page-kicker,
+.footer-kicker,
+.home-item-number,
+.content .home-work-meta,
+.home-update-list time,
+.research-theme-number,
+.experience-status,
+.content .services-pathway-label,
+.blog-topic {
+    font-size: 0.75rem;
+}
+
+.research-page-nav span,
+.experience-page-nav span,
+.services-page-nav span,
+.blog-page-nav span,
+.content .research-page-nav a,
+.content .experience-page-nav a,
+.content .services-page-nav a,
+.content .blog-page-nav a,
+.editorial-label p,
+.experience-record-meta,
+.experience-record-meta time,
+.experience-record-meta span,
+.services-principles article > span,
+.services-process li > span,
+.blog-lead-meta,
+.blog-lead-meta span,
+.blog-lead-meta time,
+.blog-reading-list article > time {
+    font-size: 0.75rem;
+}
+
+.content .services-pathways li,
+.research-theme-details summary {
+    font-size: 0.8rem;
+}
+
+.research-publication > time,
+.content .research-talk-meta,
+.content .research-project-meta,
+.experience-details dt,
+.experience-awards time,
+.experience-service-list time,
+.content .experience-small-label,
+.content .blog-reading-list .blog-topic,
+.blog-reading-list article > time,
+.blog-editorial-archive time,
+.post-related-heading p,
+.post-related-list time {
+    font-size: 0.75rem;
+}
+
+.experience-details dd,
+.content .experience-awards p,
+.content .experience-service-list p,
+.post-related-list h3,
+.post-author-note strong {
+    font-size: 0.8rem;
+}

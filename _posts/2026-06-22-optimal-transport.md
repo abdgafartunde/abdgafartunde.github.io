@@ -56,7 +56,7 @@ $$
 
 where $\Pi(\mu, \nu)$ is the set of all couplings with marginals $\mu$ and $\nu$. This is a *linear* program over an infinite-dimensional space. It always has a solution (under mild conditions), and its value is called the **optimal transport cost**.
 
-When $\mu$ is absolutely continuous with respect to Lebesgue measure, the Kantorovich and Monge problems are equivalent: the optimal plan is supported on the graph of an optimal map $T$, and $\pi = (\text{id}, T)_{\sharp} \mu$.
+For costs satisfying suitable structural conditions, absolute continuity of $\mu$ can imply that an optimal Kantorovich plan is induced by a map. For the quadratic cost on $\mathbb{R}^d$, Brenier's theorem gives this conclusion: the optimal plan is supported on the graph of an optimal map $T$, and $\pi = (\operatorname{id},T)_\sharp\mu$.
 
 
 ## The Wasserstein Distance
@@ -72,8 +72,10 @@ The resulting $W_p$ is a genuine metric on the space of probability measures wit
 The case $p = 2$ is especially tractable. By Brenier's theorem (1991), when $\mu$ is absolutely continuous, the optimal transport map for the quadratic cost is the gradient of a convex function: $T = \nabla \varphi$ for some convex $\varphi : \mathbb{R}^d \to \mathbb{R}$. This characterization connects optimal transport to convex analysis and to the Monge-Ampère PDE:
 
 $$
-\det(D^2 \varphi(x)) = \frac{d\mu(x)}{d\nu(\nabla \varphi(x))}.
+\det(D^2 \varphi(x)) = \frac{\rho_\mu(x)}{\rho_\nu(\nabla \varphi(x))},
 $$
+
+where $\rho_\mu$ and $\rho_\nu$ are the source and target densities. This formula requires sufficient regularity and positivity of the densities, together with the convexity of $\varphi$.
 
 For $p = 1$, the Wasserstein distance has a dual representation (the Kantorovich-Rubinstein formula):
 
@@ -92,32 +94,34 @@ $$
 \lVert f - g \rVert_{L^2}^2 = \int |f(x) - g(x)|^2\, dx.
 $$
 
-This measures pointwise discrepancy. If $f$ is a single spike at position $x_0$ and $g$ is the same spike shifted slightly to $x_0 + \varepsilon$, the $L^2$ distance is $2\lVert f \rVert_{L^2}^2$ regardless of how small $\varepsilon$ is. The metric is completely insensitive to the geometric relationship between the two signals.
+This measures pointwise amplitude discrepancy. For a translated profile $g(x)=f(x-\varepsilon)$, the $L^2$ distance depends on the overlap between the two profiles and tends to zero as $\varepsilon\to0$ for every $f\in L^2$. It can nevertheless remain large relative to the displacement when narrow, weakly overlapping features are shifted.
 
-The Wasserstein distance, by contrast, sees the shift. For the same $f$ and $g$, $W_p(f, g) = \varepsilon$: the cost reflects the actual displacement. This makes Wasserstein distances much more natural for comparing signals with geometric structure (images, point patterns, spectral distributions), and for defining misfit functionals in inverse problems where the unknown has geometric features.
+The Wasserstein distance records the displacement directly. If $\nu$ is the translation of a probability measure $\mu$ by a vector $a$, then $W_p(\mu,\nu)=\lVert a\rVert$. This can make Wasserstein distances useful for comparing normalized nonnegative signals whose geometry matters.
 
-This is not purely conceptual. In seismic full-waveform inversion, using a Wasserstein-based misfit instead of the $L^2$ misfit dramatically reduces the cycle-skipping problem: the $L^2$ objective has many spurious local minima corresponding to half-period shifts of the wave, while the Wasserstein objective is more convex. The translation invariance of the Wasserstein distance is a feature, not an accident.
+In seismic full-waveform inversion, suitably constructed optimal-transport misfits can have a wider basin of attraction than an $L^2$ misfit for translated signals. This can reduce cycle skipping in model problems. Seismic traces are signed and oscillatory, so the data must be transformed or compared with an unbalanced or signed transport formulation before a Wasserstein distance is applied.
 
 
 ## Computing Optimal Transport
 
-For discrete measures on $n$ support points, the Kantorovich problem reduces to a linear program with $n^2$ variables and $O(n)$ constraints. The Hungarian algorithm solves this in $O(n^3)$ time. For $n = 10^4$, this is expensive but feasible. For $n = 10^6$, it is not.
+For two discrete measures with $n$ support points each, the Kantorovich problem is a linear program with $n^2$ transport variables and $2n$ marginal constraints. The Hungarian algorithm applies to the special assignment problem with uniform atomic masses. General discrete transport uses network-flow, linear-programming, or regularized methods, and storing a dense $n\times n$ cost matrix is already prohibitive for large $n$.
 
 **Entropic regularization.** Cuturi's 2013 paper introduced Sinkhorn's algorithm for optimal transport by adding an entropy term:
 
 $$
-\inf_{\pi \in \Pi(\mu, \nu)} \int c\, d\pi + \varepsilon \int \pi \log \pi\, d\pi.
+\inf_{\pi \in \Pi(\mu, \nu)} \int c\,d\pi
++ \varepsilon\,\operatorname{KL}(\pi\,\|\,\mu\otimes\nu).
 $$
 
-The regularized problem has a unique solution, and it can be solved by iterative row and column normalization (the Sinkhorn iterations), which converges in $O(n^2 / \varepsilon)$ operations using GPU parallelism. The approximation error is $O(\varepsilon)$. For $\varepsilon$ not too small, this is far faster than exact LP solvers and scales to millions of points.
+For strictly positive Gibbs kernels in the discrete setting, the regularized problem has a unique coupling and Sinkhorn iterations compute its scaling factors. Each dense iteration costs $O(n^2)$. The iteration count and regularization bias depend on the cost scale, the desired accuracy, and $\varepsilon$; small values of $\varepsilon$ can cause slow convergence and numerical underflow. Stabilized and multiscale implementations extend the practical range of the method.
 
 **Sliced Wasserstein distance.** For measures on $\mathbb{R}^d$ with large $d$, the Wasserstein distance is expensive even with Sinkhorn. The sliced Wasserstein distance averages one-dimensional Wasserstein distances over random projections:
 
 $$
-\text{SW}_p(\mu, \nu) = \int_{S^{d-1}} W_p((\Pi_\theta)_\sharp \mu, (\Pi_\theta)_\sharp \nu)\, d\theta,
+\operatorname{SW}_p(\mu,\nu)
+= \left(\int_{S^{d-1}} W_p^p((\Pi_\theta)_\sharp\mu,(\Pi_\theta)_\sharp\nu)\,d\theta\right)^{1/p},
 $$
 
-where $\Pi_\theta$ is the projection onto direction $\theta$. In one dimension, the Wasserstein distance is computable in $O(n \log n)$ by sorting. The sliced approximation is not a true Wasserstein distance, but it metrizes the same convergence, is much faster to compute, and often works well in practice.
+where $\Pi_\theta$ is projection onto direction $\theta$ and the sphere measure is normalized. For empirical measures with equal weights, each one-dimensional Wasserstein distance is computed by sorting. Sliced Wasserstein is itself a metric under the usual moment assumptions. A Monte Carlo average over finitely many directions approximates the sphere integral.
 
 
 ## Connections to Other Areas I Work On

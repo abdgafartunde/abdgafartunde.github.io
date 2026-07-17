@@ -73,7 +73,7 @@ End with a clear statement of what you showed and what questions remain open. "W
 
 **The notation avalanche.** Introducing ten symbols in the first five minutes, with no time to absorb any of them. If your problem requires complex notation, introduce it gradually. Better yet, simplify the notation for the talk, even if the paper uses a more general version.
 
-**The missing example.** Abstract frameworks are powerful but hard to absorb without a concrete instance. Always have at least one worked example ready. For a regularization method, show what it does on a specific test problem. For a convergence result, plot the convergence curve. The example makes the abstract tangible.
+**The missing example.** Abstract frameworks are hard to absorb without a concrete instance. Include at least one worked example. For a regularization method, show a specific test problem. For a convergence result, plot the measured convergence curve.
 
 **The overlong introduction.** Spending fifteen minutes of a twenty-minute talk on background and related work, then rushing through your contribution in five minutes. The audience came to learn about *your* work. Give the background concisely and get to the point.
 

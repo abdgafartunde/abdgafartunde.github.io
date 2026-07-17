@@ -29,7 +29,7 @@ $$
 \mathcal{D}(\mathcal{A} f, g^\delta) = \frac{1}{2}\lVert \mathcal{A} f - g^\delta \rVert_2^2.
 $$
 
-For Poisson noise (common in photon-counting imaging like PET and fluorescence microscopy), the Kullback-Leibler divergence is more appropriate. For impulsive noise, $L^1$ fidelity is robust. The correct choice matters: using a Gaussian fidelity term on Poisson data leads to biased reconstructions that systematically underestimate intensities in low-count regions.
+For Poisson noise, which occurs in photon-counting modalities such as PET and fluorescence microscopy, the corresponding Poisson negative log-likelihood is usually more appropriate. An $L^1$ fidelity term is less sensitive than a squared $L^2$ term to isolated large residuals. A Gaussian approximation to low-count Poisson data can distort the weighting of residuals and bias the reconstruction, but the direction and magnitude of the bias depend on the estimator and forward model.
 
 
 ## The ROF Model
@@ -51,7 +51,7 @@ The mathematical properties are well-understood. The minimizer exists and is uni
 
 The main computational challenge with TV-based models is non-smoothness. The TV functional is convex but not differentiable at points where $\nabla f = 0$. Standard gradient descent does not apply directly.
 
-The most effective algorithms for these problems are primal-dual methods, particularly the Chambolle-Pock algorithm (2011). The idea is to reformulate the problem using convex duality.
+Primal-dual methods, including the Chambolle-Pock algorithm, are well suited to these problems. The idea is to reformulate the problem using convex duality.
 
 The TV functional can be written as:
 
@@ -71,20 +71,20 @@ $$
 The Chambolle-Pock algorithm alternates between updating the dual variable $p$ (an ascent step in $p$) and the primal variable $f$ (a descent step in $f$):
 
 $$
-p^{n+1} = \operatorname{proj}_{\lVert \cdot \rVert_\infty \leq 1}\!\left( p^n + \sigma \nabla \bar{f}^n \right),
+p^{n+1} = \operatorname{proj}_{\lVert \cdot \rVert_\infty \leq 1}\!\left( p^n + \sigma\alpha \nabla \bar{f}^n \right),
 $$
 
 $$
-f^{n+1} = \operatorname{prox}_{\tau \mathcal{D}}\!\left( f^n - \tau \alpha \, \operatorname{div}(p^{n+1}) \right),
+f^{n+1} = \operatorname{prox}_{\tau \mathcal{D}}\!\left( f^n + \tau \alpha \, \operatorname{div}(p^{n+1}) \right),
 $$
 
 $$
 \bar{f}^{n+1} = f^{n+1} + \theta (f^{n+1} - f^n),
 $$
 
-where $\sigma$ and $\tau$ are step sizes satisfying $\sigma \tau \lVert \nabla \rVert^2 < 1$, $\theta \in [0,1]$ is an extrapolation parameter (typically $\theta = 1$), and $\operatorname{prox}$ denotes the proximal operator.
+where $\sigma$ and $\tau$ satisfy $\sigma\tau\alpha^2\lVert\nabla\rVert^2<1$, $\theta\in[0,1]$ is an extrapolation parameter, and $\operatorname{prox}$ denotes the proximal operator. Equivalently, one can absorb $\alpha$ into the dual variable and project onto a ball of radius $\alpha$.
 
-The algorithm converges at rate $O(1/N)$ in the primal-dual gap, where $N$ is the iteration count. With acceleration (varying $\theta$ and the step sizes), the rate improves to $O(1/N^2)$.
+For the basic convex formulation, an ergodic primal-dual gap bound of order $O(1/N)$ holds when the step sizes satisfy the stated condition. An $O(1/N^2)$ rate requires additional uniform convexity and the corresponding accelerated step-size updates; it is not a generic property of the basic scheme.
 
 I use primal-dual methods extensively in my EIT work. The adaptivity of the step sizes, and the ability to handle non-smooth penalties without smoothing approximations, makes these algorithms well-suited to the TV and TGV regularization strategies I employ.
 
@@ -106,7 +106,7 @@ This decomposition encourages the reconstruction to be the sum of two components
 **Total Generalized Variation.** TGV extends TV to penalize not just the gradient but also higher-order derivatives, avoiding the staircasing effect that pure TV introduces on smooth regions. The second-order TGV functional:
 
 $$
-\operatorname{TGV}_\beta^2(f) = \min_w \; \alpha_1 \lVert \nabla f - w \rVert_1 + \alpha_0 \lVert \mathcal{E}(w) \rVert_1
+\operatorname{TGV}_{\alpha_0,\alpha_1}^2(f) = \min_w \; \alpha_1 \lVert \nabla f - w \rVert_1 + \alpha_0 \lVert \mathcal{E}(w) \rVert_1
 $$
 
 favours piecewise linear solutions (affine regions separated by edges) rather than piecewise constant ones. For many imaging problems, this produces more natural-looking reconstructions.
@@ -126,7 +126,7 @@ The logic is that you should fit the data only as well as the noise allows. Fitt
 
 In practice, implementing the discrepancy principle requires knowing (or estimating) the noise level $\delta$. When $\delta$ is unknown, alternatives include the L-curve method (plotting the data fidelity against the regularization term as $\alpha$ varies and choosing the corner of the resulting curve) and generalized cross-validation.
 
-For nonlinear problems, the parameter choice becomes more delicate because the data residual depends on $\alpha$ in a non-monotone way. Continuation strategies (starting with a large $\alpha$ and gradually decreasing it, using the solution at each level as a warm start for the next) are effective and add robustness.
+For nonlinear problems, nonconvexity and local minima make parameter selection more delicate. A continuation strategy starts with a large $\alpha$ and decreases it gradually, using each solution as the next initial point. This is a computational heuristic, not a guarantee of convergence to a global minimizer.
 
 
 ## Connections to Machine Learning
@@ -135,7 +135,7 @@ The variational framework has deep connections to machine learning that I find i
 
 **Weight decay is Tikhonov regularization.** Training a neural network with $L^2$ weight decay amounts to minimizing $\text{loss}(\theta) + \lambda \lVert \theta \rVert^2$, which is exactly the Tikhonov framework applied to the parameter estimation problem. Dropout, data augmentation, and early stopping are all, in a generalized sense, forms of regularization.
 
-**Unrolled algorithms.** A powerful idea in learned image reconstruction is to "unroll" an iterative optimization algorithm into a neural network. Each layer of the network corresponds to one iteration of the algorithm, with the step sizes and regularization parameters replaced by learnable weights. The resulting network preserves the structure of the variational approach while adapting its parameters from training data.
+**Unrolled algorithms.** Learned image reconstruction can "unroll" an iterative optimization algorithm into a neural network. Each layer of the network corresponds to one iteration of the algorithm, with the step sizes and regularization parameters replaced by learnable weights. The resulting network preserves the structure of the variational approach while adapting its parameters from training data.
 
 **Plug-and-Play methods.** These replace the proximal step of a variational algorithm with a learned denoiser, combining the data fidelity structure of the variational approach with the image prior learned by the denoiser. The convergence theory is still developing, but the practical results are strong.
 

@@ -22,9 +22,9 @@ $$
 \min_{u \in \mathcal{X}} \; F(Ku) + G(u),
 $$
 
-where $\mathcal{X}$ is a Hilbert space, $K: \mathcal{X} \to \mathcal{Y}$ is a bounded linear operator, $F: \mathcal{Y} \to \mathbb{R} \cup \{+\infty\}$ and $G: \mathcal{X} \to \mathbb{R} \cup \{+\infty\}$ are proper, convex, lower-semicontinuous functions.
+where $\mathcal{X}$ and $\mathcal{Y}$ are Hilbert spaces, $K: \mathcal{X} \to \mathcal{Y}$ is a bounded linear operator, and $F: \mathcal{Y} \to \mathbb{R} \cup \{+\infty\}$ and $G: \mathcal{X} \to \mathbb{R} \cup \{+\infty\}$ are proper, convex, lower semicontinuous functions.
 
-For Tikhonov regularization with total variation: $u$ is the unknown image, $G(u) = \frac{\alpha}{2}\|Au - b\|^2$ is the data fidelity term (smooth), and $F(Ku) = \|Ku\|_1$ where $K = \nabla$ is the gradient operator and the $\ell^1$ norm of the gradient field is the total variation. Neither term alone is the problem; it is their combination through the linear operator that creates the difficulty.
+For variational reconstruction with total variation, $u$ is the unknown image, $G(u) = \frac{1}{2}\|Au - b\|^2$ is the data-fidelity term, $K = \nabla$ is the gradient operator, and $F(z)=\alpha\|z\|_1$. Thus $F(Ku)=\alpha\|\nabla u\|_1$. The operator composition and nonsmooth regularizer make ordinary gradient descent inapplicable.
 
 ## The Saddle-Point Reformulation
 
@@ -40,9 +40,9 @@ $$
 \min_{u} \; F(Ku) + G(u) = \min_u \max_p \; \langle Ku, p \rangle - F^*(p) + G(u).
 $$
 
-This saddle-point formulation introduces a **dual variable** $p$. The primal problem is the original minimization over $u$; the dual variable $p$ lives in the dual space $\mathcal{Y}^*$.
+This saddle-point formulation introduces a **dual variable** $p$. In a Hilbert space, the Riesz representation identifies $\mathcal{Y}$ with its dual, which is why the same space appears in the supremum.
 
-For total variation with the $\ell^1$ norm, the Fenchel conjugate is the indicator function of the unit ball: $F^*(p) = \iota_{\|p\|_\infty \leq 1}(p)$, which is zero if $\|p\|_\infty \leq 1$ and $+\infty$ otherwise. The dual variable $p$ is a vector field constrained to lie in the $\ell^\infty$ unit ball.
+For $F(z)=\alpha\|z\|_1$, the Fenchel conjugate is the indicator function $F^*(p)=\iota_{\|p\|_\infty\leq\alpha}(p)$. The dual variable is therefore constrained to the corresponding pointwise dual-norm ball. For isotropic TV, the norm at each pixel is the Euclidean norm of the discrete gradient vector.
 
 ## The Primal-Dual Hybrid Gradient Algorithm
 
@@ -51,7 +51,7 @@ The **primal-dual hybrid gradient** (PDHG) algorithm, introduced by Chambolle an
 $$
 \begin{aligned}
 p^{k+1} &= \mathrm{prox}_{\sigma F^*}\!\left(p^k + \sigma K \bar{u}^k\right) \\
-u^{k+1} &= \mathrm{prox}_{\tau G}\!\left(u^k - \tau K^\top p^{k+1}\right) \\
+u^{k+1} &= \mathrm{prox}_{\tau G}\!\left(u^k - \tau K^* p^{k+1}\right) \\
 \bar{u}^{k+1} &= u^{k+1} + \theta(u^{k+1} - u^k)
 \end{aligned}
 $$
@@ -60,16 +60,16 @@ where $\sigma, \tau > 0$ are step sizes, $\theta \in [0, 1]$ is an over-relaxati
 
 The proximal operator $\mathrm{prox}_{\lambda f}(v) = \arg\min_u \frac{1}{2}\|u - v\|^2 + \lambda f(u)$ is the key computational primitive. For many common functions, it has a closed-form expression:
 
-- **$F^* = \iota_{\|p\|_\infty \leq 1}$** (total variation): $\mathrm{prox}_{\sigma F^*}(q) = q / \max(1, \lvert q \rvert)$, the pointwise projection onto the $\ell^\infty$ ball. This is the TV proximal step.
+- **$F^* = \iota_{\|p\|_\infty \leq \alpha}$** (total variation): for isotropic TV, $\mathrm{prox}_{\sigma F^*}(q) = q / \max(1, \lvert q \rvert/\alpha)$ pointwise, where $\lvert q \rvert$ is the Euclidean norm of the local gradient vector. The result is the projection onto the dual ball.
 - **$G(u) = \frac{1}{2}\|Au - b\|^2$** (least-squares fidelity): the proximal operator is $(I + \tau A^\top A)^{-1}(u + \tau A^\top b)$, which requires solving a linear system. For small problems this is direct; for large problems this inner solve is done iteratively (often with CG, linking back to the previous post).
 - **$G = \iota_C$** (indicator of a convex set $C$): $\mathrm{prox}$ is projection onto $C$.
 
 ## Convergence
 
-Under the condition $\sigma \tau \|K\|^2 < 1$, PDHG converges for any convex $F$ and $G$. The convergence rate is $O(1/N)$ in the ergodic sense (for the running average), and $O(1/N^2)$ for strongly convex $G$ or $F^*$. These rates are optimal for first-order methods applied to this problem class.
+Assume that the saddle-point problem has a solution. For the standard Chambolle-Pock update with $\theta=1$, the condition $\sigma\tau\|K\|^2<1$ gives convergence, and the ergodic primal-dual gap decays as $O(1/N)$ under the usual finite-dimensional assumptions. When the primal or dual objective is uniformly convex, modified accelerated step-size rules can improve the corresponding rate to $O(1/N^2)$. Linear rates require stronger assumptions on both sides.
 
 The algorithm requires only:
-- Matrix-vector products with $K$ and $K^\top$ (never the full matrix)
+- Operator products with $K$ and $K^*$, without forming a dense matrix
 - Proximal operators of $F^*$ and $G$ separately
 - No joint evaluation of $F$ and $G$ together
 
@@ -77,9 +77,9 @@ This separation is the key to handling composite non-smooth objectives: by worki
 
 ## Extensions and Variants
 
-**Multiple non-smooth terms.** Many imaging problems have more than two terms: data fidelity + TV + a positivity constraint, for instance. The Douglas-Rachford splitting and ADMM (alternating direction method of multipliers) handle multiple terms by introducing one dual variable per term and alternating proximal steps. ADMM in particular has become extremely popular in signal processing and statistics.
+**Multiple nonsmooth terms.** An objective containing data fidelity, TV, and a positivity constraint can be lifted to a product space with one operator block per composite term. Primal-dual splitting, Douglas-Rachford splitting, and ADMM provide different ways to handle the resulting structure; their updates and convergence assumptions are not interchangeable.
 
-**Strongly convex acceleration.** When one or both of $F, G$ is strongly convex, PDHG can be accelerated to achieve $O(1/N^2)$ convergence even in the non-strongly-convex regime, by using an adaptive step size strategy.
+**Strongly convex acceleration.** When the primal or dual objective is uniformly convex, PDHG can use iteration-dependent primal and dual step sizes to obtain an accelerated $O(1/N^2)$ rate for the relevant error measure. Without strong convexity, the general ergodic gap rate remains $O(1/N)$.
 
 **Nonlinear extensions.** For non-convex problems (which arise in nonlinear inverse problems), primal-dual methods can still be applied as heuristics or extended via linearization strategies. In my EIT reconstruction work, I use a linearize-and-solve approach: the nonlinear forward operator is linearized around the current iterate, and the resulting quadratic subproblem is solved with PDHG. This is a Gauss-Newton outer loop with PDHG as the inner solver.
 
@@ -87,6 +87,8 @@ This separation is the key to handling composite non-smooth objectives: by worki
 
 In regularized inversion, the choice of regularizer is a modelling choice: it encodes prior belief about the structure of the unknown. Total variation says the unknown is piecewise smooth with sharp edges. The $\ell^1$ norm of coefficients in a dictionary says the unknown is sparse in that dictionary. These structural priors frequently reflect genuine knowledge about the problem, and they happen to be non-smooth.
 
-Primal-dual methods are the natural algorithmic framework for exploiting these priors without approximation. They handle the non-smoothness directly, converge to the exact regularized solution, and require only matrix-vector products with the forward operator and its adjoint, exactly what is available in most inverse problem settings.
+Primal-dual methods handle nonsmooth terms without replacing them by smooth approximations. Under their convergence assumptions, the iterates approach a minimizer of the regularized objective. Implementations use operator evaluations, adjoints, and separate proximal maps or proximal subproblem solves.
 
 The combination of variational regularization with primal-dual algorithms is, in my view, one of the most useful and underappreciated toolsets in computational mathematics. It is worth understanding well.
+
+The convergence statements above follow Chambolle and Pock, ["A first-order primal-dual algorithm for convex problems with applications to imaging"](https://doi.org/10.1007/s10851-010-0251-1).

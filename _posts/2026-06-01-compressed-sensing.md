@@ -8,9 +8,9 @@ tags: [Mathematics, Inverse Problems, Sparse Recovery]
 math: true
 ---
 
-Classical sampling theory says that to recover a signal of bandwidth $W$, you must sample at a rate of at least $2W$ samples per second (the Nyquist rate). For decades this was treated as a fundamental limit. Then, in a series of papers by Candès, Romberg, Tao, and Donoho published around 2004–2006, it became clear that the Nyquist rate is not a fundamental limit at all. It is only a limit for the wrong class of signals.
+The Shannon-Nyquist theorem concerns uniform time samples of a bandlimited signal and requires a sampling frequency above twice the highest frequency under its standard assumptions. Compressed sensing addresses a different measurement model: recovery of a sparse or compressible finite-dimensional representation from designed linear measurements. It does not invalidate the sampling theorem.
 
-If a signal is *sparse*, meaning it has few nonzero components relative to its ambient dimension, then it can be recovered from a number of measurements that is proportional to its sparsity, not its bandwidth. The number of measurements required can be dramatically smaller than the Nyquist rate would suggest. This is the core claim of compressed sensing (also called compressive sensing or CS).
+If a signal is $s$-sparse in a known representation and the measurement operator is sufficiently incoherent or satisfies a suitable recovery condition, then roughly $s$ times a logarithmic factor in the ambient dimension can suffice. The guarantee concerns that sparse model and measurement ensemble, not every signal with few apparent features.
 
 The theory is beautiful and the implications are significant. MRI scanning times can be reduced by acquiring fewer $k$-space measurements. Cameras can be designed that capture images at a fraction of the traditional pixel count. Seismic surveys can use sparser shot patterns without losing resolution. And the mathematical framework connects directly to the regularization theory I work with in inverse problems.
 
@@ -54,13 +54,13 @@ $$
 \min_{f \in \mathbb{R}^n} \lVert f \rVert_1 \quad \text{subject to} \quad \lVert \Phi f - y \rVert_2 \leq \delta,
 $$
 
-or equivalently (via Lagrangian duality) to the LASSO:
+An alternative penalized formulation is the LASSO:
 
 $$
 \min_{f \in \mathbb{R}^n} \frac{1}{2}\lVert \Phi f - y \rVert_2^2 + \alpha \lVert f \rVert_1.
 $$
 
-This is precisely $\ell^1$ regularization, the same total variation prior that appears in imaging, the same Laplace prior that appears in Bayesian inverse problems. Compressed sensing is not a separate theory; it is one instance of the broader $\ell^1$ regularization framework, studied in a setting where the sparsity of the signal and the structure of the measurement operator can be made precise.
+This is $\ell^1$ regularization. Total variation instead applies an $\ell^1$ penalty to a discrete gradient, and a finite-dimensional Laplace prior can produce an $\ell^1$ MAP penalty. Constrained and penalized formulations are related, but a particular $\delta$ does not determine the same solution as an arbitrary $\alpha$; the parameter correspondence depends on the solution and constraint activity.
 
 
 ## The Restricted Isometry Property
@@ -77,13 +77,14 @@ Intuitively, $\Phi$ acts as a near-isometry on every $s$-dimensional subspace. I
 
 The main recovery guarantee states: if $\Phi$ satisfies the RIP of order $2s$ with $\delta_{2s} < \sqrt{2} - 1 \approx 0.41$, then every $s$-sparse signal is the unique solution of basis pursuit.
 
-For noisy measurements with noise level $\delta$, the recovery error satisfies
+Under an appropriate RIP or related recovery condition, basis-pursuit denoising satisfies a bound of the form
 
 $$
-\lVert \hat{f} - f \rVert_2 \lesssim \delta,
+\lVert \hat{f}-f\rVert_2
+\leq C_0\frac{\sigma_s(f)_1}{\sqrt{s}}+C_1\delta,
 $$
 
-meaning the recovery error is proportional to the noise level. This is the best one can hope for.
+where $\sigma_s(f)_1$ is the best $s$-term approximation error in $\ell^1$. For exactly $s$-sparse signals, the first term vanishes. The constants depend on the recovery condition.
 
 
 ## When Does $\Phi$ Satisfy the RIP?
@@ -96,9 +97,9 @@ The key result is that **random matrices** satisfy the RIP with high probability
 - Bernoulli matrices with i.i.d. $\pm 1/\sqrt{m}$ entries.
 - Subsampled random orthogonal matrices (e.g., random rows of a Fourier matrix, suitably normalized).
 
-The last class is particularly important for applications, because the DFT can be applied in $O(n \log n)$ time. For MRI, the measurement matrix is precisely a subsampled Fourier matrix, and the patient's anatomy is approximately sparse in wavelet space. Compressed sensing provides a theoretical justification for acquiring fewer Fourier measurements than the Nyquist rate would require.
+Subsampled Fourier operators are important in MRI, where measurements are acquired in $k$-space and images can be compressible in wavelet or learned representations. Practical guarantees depend on variable-density sampling, the sparsifying transform, coil sensitivities, noise, and the measurement model.
 
-The $m \gtrsim s \log(n/s)$ bound is nearly optimal. One can show that any method, regardless of its computational cost, requires at least $\Omega(s \log(n/s))$ measurements to recover all $s$-sparse signals. The gap between the random matrix result and the information-theoretic lower bound is at most a constant factor.
+For uniform stable recovery of all $s$-sparse vectors with common random ensembles, $m$ of order $s\log(n/s)$ is near the relevant lower bounds. Different guarantees, such as recovery of one fixed signal or structured sparsity models, can have different sample complexity.
 
 
 ## Connections to Regularization Theory
@@ -124,11 +125,11 @@ $$
 f^{k+1} = \mathcal{S}_{\alpha/L}\!\left(f^k - \frac{1}{L}\Phi^\top(\Phi f^k - y)\right),
 $$
 
-where $$\mathcal{S}_\tau(x)_i = \text{sign}(x_i)\max(\lvert x_i \rvert - \tau, 0)$$ is the soft-threshold operator and $L$ is the Lipschitz constant of the gradient. This is ISTA (iterative shrinkage-thresholding algorithm). Its accelerated variant, FISTA, converges as $O(1/k^2)$.
+where $$\mathcal{S}_\tau(x)_i=\operatorname{sign}(x_i)\max(\lvert x_i\rvert-\tau,0)$$ and $L\geq\lVert\Phi\rVert_2^2$ is a valid Lipschitz bound. ISTA has an $O(1/k)$ objective-gap rate for this convex problem. FISTA improves the objective-gap rate to $O(1/k^2)$ under the standard fixed-step assumptions.
 
 **Alternating Direction Method of Multipliers (ADMM).** ADMM splits the problem into a sequence of subproblems that are individually easy to solve. It is widely used for structured convex programs and handles the constraint form of basis pursuit naturally.
 
-**Greedy methods.** Matching pursuit and its variants (OMP, CoSaMP) iteratively identify the support of the sparse signal without explicitly solving a convex program. They are computationally cheaper but come with weaker theoretical guarantees.
+**Greedy methods.** Matching pursuit and its variants, including OMP and CoSaMP, identify a support iteratively. Their cost and guarantees differ from basis pursuit rather than being uniformly weaker; RIP or coherence conditions also provide exact and stable recovery results for several greedy methods.
 
 
 ## What I Take from It
@@ -151,7 +152,7 @@ The theory was worked out in lecture halls and journals, but compressed sensing 
 
 **Industrial inspection and non-destructive testing.** Ultrasonic inspection of welds, castings, and composite structures (widely used in European aerospace and automotive manufacturing) generates tomographic data that is sparse in appropriate bases. Compressed sensing approaches reduce the number of transducers required and the time needed for a full inspection sweep. This has practical consequences for production-line testing, where scan time directly affects throughput.
 
-**Seismic acquisition.** Conventional 3D seismic surveys require dense, regular grids of receivers, which are expensive to deploy offshore and impractical in some land environments. Compressed sensing approaches to seismic acquisition (developed partly at academic groups in Canada and the UK, and adopted by companies including Shell and Total) allow irregular, subsampled acquisition with full reconstruction guarantees. The mathematics is the same; the medium is rock rather than tissue.
+**Seismic acquisition.** Randomized or jittered source and receiver sampling can reduce acquisition density when seismic data are compressible in a suitable transform domain. Reconstruction quality depends on wavefield complexity, sampling geometry, coherent noise, and model mismatch. Standard compressed-sensing guarantees do not automatically provide exact recovery for a field survey.
 
 The pattern is consistent. Any domain where measurements are expensive, slow, invasive, or constrained by physical geometry, and where the signal to be reconstructed is sparse in some transform domain, is a candidate for compressed sensing. The theory provides the rigorous foundation; the practice shows up in hospitals, telescopes, and production lines.
 

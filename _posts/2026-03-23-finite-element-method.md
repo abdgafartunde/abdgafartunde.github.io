@@ -63,13 +63,13 @@ The simplest choice is piecewise linear functions on triangles. Each basis funct
 
 Sparsity is crucial. A mesh with $N$ nodes produces an $N \times N$ stiffness matrix, but because each basis function interacts only with its neighbours, the matrix has $O(N)$ nonzero entries rather than $O(N^2)$. This is what makes FEM computationally tractable for large problems. Sparse direct solvers or iterative methods (conjugate gradient, multigrid) can solve the resulting system efficiently.
 
-Higher-order elements (quadratic, cubic polynomials on each triangle) improve accuracy without refining the mesh. The convergence rate for piecewise polynomial elements of degree $p$ on a mesh with element size $h$ is, for a smooth solution:
+For a conforming degree-$p$ method applied to a coercive elliptic problem, assume a shape-regular mesh and $u\in H^{p+1}(\Omega)$. Then the standard estimates have the form
 
 $$
 \lVert u - u_h \rVert_{L^2(\Omega)} = O(h^{p+1}), \qquad \lVert u - u_h \rVert_{H^1(\Omega)} = O(h^p).
 $$
 
-This is one of the beautiful results in numerical analysis: the approximation error is controlled entirely by the element size and polynomial degree, and the convergence rate is optimal in a well-defined sense (Céa's lemma guarantees that the FEM solution is the best approximation from $V_h$ in the energy norm).
+Céa's lemma gives quasi-optimality in the energy norm: the finite-element error is bounded by the best-approximation error multiplied by the continuity-to-coercivity ratio. The displayed $L^2$ rate additionally requires an elliptic dual-regularity argument and can deteriorate on nonconvex domains, irregular meshes, or nonsmooth solutions.
 
 
 ## Where Things Get Interesting

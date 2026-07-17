@@ -65,7 +65,7 @@ $$
 \min_f \; \frac{1}{2}\lVert f - g^\delta \rVert^2 + \alpha \operatorname{TV}(f).
 $$
 
-The theory guarantees that minimizers exist and that edges in the data can be recovered in the reconstruction, something Tikhonov provably cannot do.
+Under standard coercivity and lower-semicontinuity assumptions, the TV problem has minimizers. TV can preserve discontinuities better than a quadratic gradient penalty, but it can also reduce contrast and create staircasing. Edge recovery requires assumptions on the forward operator, data, noise, and source structure.
 
 The practical difficulty with TV is the non-differentiability at points where $\nabla f = 0$. The functional is convex but not smooth, which rules out standard gradient descent. Efficient algorithms exist (primal-dual methods, split Bregman, ADMM) but they require more careful implementation than Tikhonov. In my own work on EIT, I use primal-dual hybrid gradient methods, and getting the step sizes right is often the difference between fast convergence and stagnation.
 
@@ -92,10 +92,10 @@ If the assumption is wrong, if the solution genuinely requires contributions fro
 For solutions that are smooth except at a few isolated features, higher-order regularization can outperform both Tikhonov and TV. The Total Generalized Variation (TGV), introduced by Bredies, Kunisch, and Pock, uses a penalty of the form:
 
 $$
-\operatorname{TGV}_\beta^2(f) = \min_w \; \alpha_1 \int_\Omega |\nabla f - w| \, dx + \alpha_0 \int_\Omega |\mathcal{E}(w)| \, dx,
+\operatorname{TGV}_{\alpha_0,\alpha_1}^2(f) = \min_w \; \alpha_1 \int_\Omega |\nabla f - w| \, dx + \alpha_0 \int_\Omega |\mathcal{E}(w)| \, dx,
 $$
 
-where $\mathcal{E}(w) = \frac{1}{2}(\nabla w + \nabla w^T)$ is the symmetrized gradient. TGV penalizes the deviation of $\nabla f$ from an auxiliary vector field $w$, which is itself penalized through its symmetrized gradient. The effect is that piecewise affine (rather than piecewise constant) functions are favoured, eliminating the staircasing effect of TV while still preserving edges.
+where $\mathcal{E}(w)=\frac12(\nabla w+\nabla w^T)$ is the symmetrized gradient. Second-order TGV favours piecewise-affine structure and often reduces TV staircasing, but it does not eliminate artifacts in every inverse problem.
 
 In practice, TGV produces more natural-looking reconstructions for many imaging problems. The cost is two additional parameters and a more complex optimization structure.
 
@@ -107,10 +107,12 @@ A direction I find particularly promising, and one I worked on during my time in
 The simplest version learns a denoising prior. If $D_\theta$ is a neural network trained to denoise images, you can use it implicitly as a regularizer by iterating:
 
 $$
-f_{k+1} = D_\theta\!\left( f_k + \mathcal{A}^*\!(g^\delta - \mathcal{A} f_k) \right).
+f_{k+1} = D_\theta\!\left( f_k + \tau\mathcal{A}^*\!(g^\delta - \mathcal{A} f_k) \right),
 $$
 
-This is a Plug-and-Play approach: alternating between a data fidelity step and a learned denoising step. The convergence theory is still catching up with the practice, but the results can be impressive, especially when you have access to training data that captures the statistics of the solutions you expect to encounter.
+where $\tau>0$ is a data-consistency step size.
+
+This is a plug-and-play iteration. Convergence requires properties such as averagedness, nonexpansiveness, or a suitable equilibrium interpretation of the denoiser; a generic trained network does not satisfy these conditions automatically.
 
 The deeper question, one the community is actively working on, is whether learned regularizers can provide the same convergence and stability guarantees as classical methods. Early theoretical results are encouraging but far from complete.
 
@@ -119,7 +121,7 @@ The deeper question, one the community is actively working on, is whether learne
 
 There is no universal answer, but there are useful guidelines.
 
-**Start with what you know about the solution.** If it is smooth, use Tikhonov. If it has edges, use TV or TGV. If it is sparse in a known basis, use $\ell^1$. If you have training data, consider learned approaches.
+**Start with a testable structural model.** Quadratic derivative penalties encode smoothness, TV and TGV encode bounded-variation structure, and $\ell^1$ penalties encode sparsity in a specified representation. Training data can support learned regularizers, but validation must include distribution shift and modelling error.
 
 **Look at the artifacts.** Every regularizer has a characteristic failure mode. Tikhonov over-smooths. TV staircases. Sparsity creates ringing near edges. If you see these artifacts in your reconstruction, it is the regularizer telling you that the prior does not match the solution.
 

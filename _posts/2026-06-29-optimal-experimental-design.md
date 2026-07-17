@@ -52,12 +52,12 @@ $$
 \Phi_A(C) = \text{tr}(\Gamma_\text{post}) = \text{tr}\!\left(\left(\Gamma_\text{prior}^{-1} + C^\top \Gamma_\text{noise}^{-1} C\right)^{-1}\right).
 $$
 
-Minimizing trace minimizes the average squared error of the posterior mean as an estimator of $m$. It is the most common criterion in practice.
+Under the assumed linear-Gaussian model and squared Euclidean loss, minimizing the trace minimizes the Bayes risk of the posterior mean.
 
 **D-optimality** minimizes the log-determinant of $\Gamma_\text{post}$, equivalently maximizing the information gain (the reduction in differential entropy from prior to posterior):
 
 $$
-\Phi_D(C) = \log\det(\Gamma_\text{post}) = -\log\det\!\left(\Gamma_\text{prior}^{-1} + C^\top \Gamma_\text{noise}^{-1} C\right) + \text{const}.
+\Phi_D(C) = \log\det(\Gamma_\text{post}) = -\log\det\!\left(\Gamma_\text{prior}^{-1} + C^\top \Gamma_\text{noise}^{-1} C\right).
 $$
 
 The information gain is $\frac{1}{2}\log\det(\Gamma_\text{prior}) - \frac{1}{2}\log\det(\Gamma_\text{post})$, which measures (in nats) how much entropy is removed by the experiment. D-optimal designs maximize this reduction, and they have a Bayesian-invariance property: the optimal design is the same regardless of the prior's mean $m_0$.
@@ -74,20 +74,22 @@ A concrete instance of OED: you have $N$ candidate sensor locations and a budget
 Formally, let $C_i \in \mathbb{R}^{1 \times n}$ be the measurement row corresponding to sensor $i$. You seek a subset $\mathcal{S} \subset \{1, \ldots, N\}$ of size $k$ that minimizes
 
 $$
-\text{tr}\!\left(\left(\Gamma_\text{prior}^{-1} + \sum_{i \in \mathcal{S}} C_i^\top \Gamma_\text{noise}^{-1} C_i\right)^{-1}\right).
+\operatorname{tr}\!\left(\left(\Gamma_\text{prior}^{-1} + \sum_{i \in \mathcal{S}} \sigma_i^{-2} C_i^\top C_i\right)^{-1}\right),
 $$
+
+where the sensor noises are assumed independent with variances $\sigma_i^2$. Correlated noise requires assembling the covariance for the selected sensor set rather than summing independent contributions.
 
 This is a combinatorial optimization problem: there are $\binom{N}{k}$ possible designs, which for $N = 100$ and $k = 10$ is about $1.7 \times 10^{13}$. Exhaustive search is hopeless.
 
-**Greedy methods.** Add sensors one at a time, choosing at each step the sensor that maximally decreases the design criterion. For submodular criteria (and A-optimality, D-optimality, and E-optimality are all submodular functions of the sensor set), the greedy algorithm achieves a $(1 - 1/e) \approx 63\%$ approximation of the global optimum, a classical result of Nemhauser, Wolsey, and Fisher.
+**Greedy methods.** Add sensors one at a time, choosing the sensor that gives the largest decrease in the design criterion. Log-determinant information gain is monotone submodular under common independent-noise assumptions, so the classical greedy algorithm has a $1-1/e$ guarantee for the associated cardinality-constrained maximization problem. A-optimality and E-optimality are not submodular in general, although weaker or problem-specific guarantees are available.
 
 **Convex relaxation.** Replace the binary sensor selection indicator by a continuous weight $w_i \in [0, 1]$:
 
 $$
-\min_{w \in [0,1]^N,\, \mathbf{1}^\top w \leq k} \;\text{tr}\!\left(\left(\Gamma_\text{prior}^{-1} + \sum_{i=1}^N w_i C_i^\top \Gamma_\text{noise}^{-1} C_i\right)^{-1}\right).
+\min_{w \in [0,1]^N,\, \mathbf{1}^\top w \leq k} \;\operatorname{tr}\!\left(\left(\Gamma_\text{prior}^{-1} + \sum_{i=1}^N w_i\sigma_i^{-2} C_i^\top C_i\right)^{-1}\right).
 $$
 
-For A-optimality, this is a semidefinite program. Once the relaxed weights are obtained, they can be rounded to a binary selection. The convex relaxation often produces better designs than greedy methods when $k$ is small, at the cost of higher computational effort.
+The relaxed A-optimal objective is convex and admits a semidefinite epigraph formulation. The resulting fractional weights must be rounded or sampled to obtain a binary design, and that step can degrade the relaxed optimum.
 
 **Randomized methods.** Sample sensor subsets with probability proportional to their approximate contribution to the information gain. These are scalable and often produce near-optimal designs for large $N$, though without the approximation guarantees of greedy algorithms.
 
@@ -102,7 +104,7 @@ Approximate strategies that work well in practice include:
 
 **Myopic (one-step-ahead) design.** At each step, choose the single measurement that maximally reduces the current criterion. This ignores future steps but is cheap and often effective.
 
-**Expected information gain.** When the model is nonlinear or the prior is non-Gaussian, the information gain cannot be computed in closed form. It can be estimated by Monte Carlo: draw samples from the prior, simulate observations, compute the posterior, and average the reduction in entropy. This is expensive but general, and it is the method of choice in Bayesian OED for nonlinear inverse problems.
+**Expected information gain.** For nonlinear models or non-Gaussian priors, closed forms are rarely available. Nested Monte Carlo and variational approximations estimate the expected Kullback-Leibler divergence from posterior to prior. Their computational cost and bias must be assessed for the problem at hand.
 
 
 ## Application to EIT
@@ -111,7 +113,7 @@ In EIT, the measurement protocol specifies which electrode pairs inject current 
 
 OED for EIT asks: for a given number of stimulation patterns, which patterns carry the most information about the conductivity? The answer depends on the prior: if you expect a single circular inclusion, the optimal patterns differ from those optimal for a diffuse anomaly.
 
-Several groups have explored this question. The general finding is that the standard adjacent protocol is not optimal for any standard prior, and that tailored protocols can improve reconstruction quality by 20–40% (in terms of posterior variance reduction) with the same number of measurements. For real-time imaging where measurement bandwidth is limited, this improvement is consequential.
+The preferred protocol depends on the conductivity model, prior, electrode geometry, noise covariance, and design criterion. Adjacent stimulation is therefore not a universal optimum. A quantitative comparison should report all of these choices; percentage improvements from one study do not transfer automatically to another EIT system.
 
 The challenge in applying OED to EIT is that the forward model is nonlinear (the sensitivity of the measurements to the conductivity depends on the conductivity itself), so the information matrix changes as the estimate of the conductivity changes. Adaptive protocols that update the stimulation pattern during the measurement sequence are theoretically superior but require fast online computation. This is an active area of research.
 

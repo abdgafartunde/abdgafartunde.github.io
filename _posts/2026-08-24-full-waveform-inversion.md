@@ -31,16 +31,16 @@ The forward solve is expensive. For a 3D survey, the domain can be tens of kilom
 FWI is formulated as a least-squares minimization:
 
 $$
-\min_{v} \; \mathcal{J}(v) = \frac{1}{2} \sum_{s} \| u_s(v) - d_s \|^2,
+\min_{v} \; \mathcal{J}(v) = \frac{1}{2} \sum_{s} \| P_su_s(v) - d_s \|^2,
 $$
 
-where the sum is over seismic sources $s$, $u_s(v)$ are the predicted seismograms at receiver locations (which depend on $v$ through the wave equation), and $d_s$ are the observed seismograms.
+where the sum is over seismic sources $s$, $u_s(v)$ is the simulated wavefield, $P_s$ restricts that wavefield to the receiver locations and sampled times, and $d_s$ is the observed seismogram.
 
 This is a nonlinear, large-scale optimization problem. The state variable (the wavefield) satisfies a PDE that depends on the parameter $v$. Computing the gradient $\nabla_v \mathcal{J}$ by finite differences would require one forward solve per parameter, and $v$ is discretized on a grid with millions of nodes. This is computationally impossible.
 
-The solution is the **adjoint method**. For each source $s$, the gradient can be computed with exactly two PDE solves: the forward solve to compute $u_s(v)$, and the adjoint solve, which propagates the data residual $u_s(v) - d_s$ backward in time through the adjoint wave equation. The gradient contribution from source $s$ is a cross-correlation of the forward wavefield with the adjoint wavefield, integrated over time. The full gradient over all sources can be computed with $2N_s$ PDE solves, regardless of the number of parameters.
+The solution is the **adjoint method**. For each source $s$, the gradient can be computed with one forward solve to obtain $u_s(v)$ and one adjoint solve driven by the receiver residual $P_su_s(v)-d_s$, injected into the wave equation through $P_s^*$. The gradient contribution is a time integral of products of the forward and adjoint wavefields. The cost is therefore proportional to the number of sources, not the number of model parameters.
 
-This is why the adjoint method is not optional in FWI: it is the only way the computation can be done at all.
+This is why adjoint-state differentiation is the standard scalable approach in FWI. Reverse-mode automatic differentiation computes the same mathematical adjoint, although its implementation and memory requirements may differ.
 
 ## Why It Is Hard
 
@@ -48,7 +48,7 @@ FWI is a highly nonlinear, non-convex optimization problem. The objective functi
 
 A significant research effort over the past decade has gone into alternative misfit functions that are more convex than the $\ell^2$ norm: optimal transport distances (Wasserstein metrics), envelope-based misfits, and waveform-specific distance measures that are less sensitive to phase errors. The choice of misfit function turns out to matter enormously for whether gradient descent converges to a useful solution.
 
-Ill-posedness is also a serious issue. The mapping from velocity model to seismograms is not injective: different velocity models can produce very similar seismograms, particularly when only reflected arrivals are recorded (as is typically the case in marine surveys). Regularization is essential, and the choice of regularizer encodes geological priors: smoothness in the background velocity, sharpness at interfaces, or more structured priors for salt geometries.
+Ill-posedness is also a serious issue. With finite bandwidth, limited acquisition geometry, noise, and incomplete illumination, different velocity models can produce very similar recorded seismograms. Regularization is therefore essential, and the choice of regularizer encodes geological priors: smoothness in the background velocity, sharpness at interfaces, or more structured priors for salt geometries.
 
 ## Where This Is Used
 
@@ -66,10 +66,10 @@ Classical FWI is iterative and gradient-based. The emerging research direction c
 
 **Neural network velocity parametrization.** Instead of optimizing $v(x)$ on a grid, parametrize it as the output of a neural network: $v(x) = \mathcal{N}_\theta(x)$. The optimization then runs over the network weights $\theta$. The implicit regularization of neural networks (their bias toward smooth functions) can act as a natural regularizer, and the network can be pretrained on geological databases to encode prior information.
 
-**Physics-informed neural networks for forward modeling.** PINNs can be trained to solve the wave equation for a given velocity model, providing a differentiable forward solver that can be used within a gradient-based inversion loop. This is particularly promising for irregular geometries and multi-physics coupling.
+**Physics-informed neural networks for forward modeling.** PINNs can approximate solutions of wave equations and provide differentiable surrogates for inversion. However, high-frequency and multiscale wavefields remain difficult to train accurately, so PINNs do not yet replace established finite-difference, finite-element, or spectral solvers for large-scale FWI.
 
 **Deep learning-based inversion.** Train a neural network directly on pairs (seismograms, velocity models) to learn the inverse mapping. This requires large training datasets but can be extremely fast at inference time. The challenge is generalization: a network trained on a particular geological style may fail on a different basin.
 
-Each of these directions is active, and none has yet displaced classical FWI in production workflows. But the combination of adjoint-based optimization with learned components is where much of the frontier research currently sits.
+Each of these directions is active, and none has displaced classical FWI in production workflows. Hybrid methods that combine adjoint-based optimization with learned components are a focused research direction because they retain the governing physics while using data to improve initialization, parametrization, or regularization.
 
 *For code related to seismic inversion and FWI, see the [seismic-inversion-ml GitHub repository](https://github.com/abdgafartunde/seismic-inversion-ml) (to be updated).*

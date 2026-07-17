@@ -42,7 +42,7 @@ The normalizing constant $\pi(g^\delta)$ (the evidence) is typically intractable
 
 ## What the Posterior Tells You
 
-The posterior distribution is a complete solution to the inverse problem in the sense that it contains all the information about $f$ that can be extracted from the data and the prior.
+The posterior summarizes inference under the chosen forward model, likelihood, and prior. It does not account automatically for model discrepancy or misspecified prior information.
 
 **The MAP estimate** (maximum a posteriori) is the mode of the posterior:
 
@@ -53,11 +53,11 @@ f_{\text{MAP}} &= \arg\max_f \; \pi_{\text{post}}(f \mid g^\delta) \\\\
 \end{aligned}
 $$
 
-where $\mathcal{R}(f) = -\log \pi_{\text{prior}}(f)$. This is precisely the variational formulation. The deterministic and Bayesian approaches agree on this point: the MAP estimate is the regularized solution.
+where $\mathcal{R}(f)=-\log\pi_{\text{prior}}(f)$ in a finite-dimensional setting with densities. The MAP then coincides with the corresponding variational estimator. In function spaces, MAP points and prior penalties require a definition based on small-ball probabilities or the Onsager-Machlup functional; a formal density with respect to infinite-dimensional Lebesgue measure does not exist.
 
 **The posterior mean** $\mathbb{E}_{\text{post}}[f]$ is the average over the posterior. It is often smoother than the MAP estimate and has optimal properties in certain loss functions (squared error loss).
 
-**Credible regions** quantify uncertainty. A 95% credible region is a set $C$ such that $\int_C \pi_{\text{post}}(f \mid g^\delta) \, df = 0.95$. If some feature of the reconstruction (say, the presence of an inclusion in a particular location) falls outside a credible region, you have reason to doubt it. If it falls inside, the data supports it.
+**Credible regions** quantify posterior uncertainty. A 95% credible region is a set $C$ with posterior probability $0.95$. For a scalar quantity of interest, a credible interval describes its posterior range. This probability statement is conditional on the model and prior; it is not a frequentist coverage guarantee and does not by itself establish that a reconstructed feature is physically present.
 
 **Marginal distributions** describe uncertainty about specific features. Want to know how well the average conductivity in a particular region is determined? Integrate the posterior over all other variables. The resulting marginal tells you the uncertainty about that specific quantity.
 
@@ -108,15 +108,15 @@ $$
 \pi_{\text{post}}(f \mid g^\delta) \approx N\!\left(f_{\text{MAP}},\; \mathcal{H}^{-1}\right).
 $$
 
-This is exact when the posterior is Gaussian (recovering the closed-form result above) and is a good approximation when the posterior is approximately Gaussian near its mode. For problems where the data is informative, the likelihood concentrates the posterior near the MAP as the noise level decreases, so the Gaussian approximation improves with data quality.
+This is exact for a Gaussian posterior. In nonlinear problems it is a local approximation and can fail for skewed, multimodal, truncated, or weakly identified posteriors. Decreasing the noise improves the approximation only under identifiability, regularity, and posterior-concentration conditions.
 
-**Hessian structure.** For a Gaussian prior with covariance $\Sigma_0$ and Gaussian noise with covariance $\Gamma$, the Hessian at the MAP is
+**Gauss-Newton structure.** For a Gaussian prior with covariance $\Sigma_0$ and Gaussian noise with covariance $\Gamma$, the Gauss-Newton approximation to the Hessian at the MAP is
 
 $$
 \mathcal{H} = J^T \Gamma^{-1} J + \Sigma_0^{-1},
 $$
 
-where $J = \nabla_f \mathcal{A}(f_{\text{MAP}})$ is the Jacobian of the forward operator at the MAP. For a linear forward operator ($J = A$), this is $\Sigma_{\text{post}}^{-1}$, consistent with the linear-Gaussian analysis. For a nonlinear problem, $\mathcal{H}$ also includes second-order contributions from $\mathcal{A}$, but these are often small when the noise level is low and the nonlinearity is mild.
+where $J=\nabla_f\mathcal{A}(f_{\text{MAP}})$. For a linear operator this equals $\Sigma_{\text{post}}^{-1}$. For a nonlinear operator, the exact Hessian also contains residual-weighted second derivatives of $\mathcal{A}$. Neglecting them is justified only when the residual and nonlinearity make those terms small enough for the intended calculation.
 
 **Low-rank posterior covariance.** For large-scale problems, $\mathcal{H}^{-1}$ cannot be formed explicitly. Instead, solve the generalised eigenvalue problem
 
@@ -124,7 +124,7 @@ $$
 J^T \Gamma^{-1} J \; v_k = \lambda_k \; \Sigma_0^{-1} v_k, \qquad k = 1, \ldots, r,
 $$
 
-retaining the $r$ largest eigenvalues (the data-informed directions). Each Hessian-vector product costs one forward and one adjoint PDE solve. With $v_k$ normalised so that $v_k^T \Sigma_0^{-1} v_k = 1$, the posterior covariance approximation is
+retaining the $r$ largest eigenvalues. Applying the data-misfit Hessian usually requires incremental forward and adjoint solves after the state and adjoint fields have been computed. With $v_k$ normalised so that $v_k^T \Sigma_0^{-1}v_k=1$, the covariance approximation is
 
 $$
 \mathcal{H}^{-1} \approx \Sigma_0 - \sum_{k=1}^r \frac{\lambda_k}{1 + \lambda_k}\, v_k v_k^T.
@@ -132,7 +132,7 @@ $$
 
 In directions $v_k$, the posterior variance is reduced from the prior by the factor $\lambda_k/(1+\lambda_k)$: large $\lambda_k$ means tight posterior (data strongly constrains this direction), small $\lambda_k$ means the posterior equals the prior (data says nothing). In all other directions, the posterior simply inherits the prior covariance.
 
-This low-rank Laplace approximation is the method I use in practice for EIT. Around $r = 50$–$100$ eigenpairs are typically sufficient to characterise the dominant uncertainty structure, making the computation tractable. Each MAP reconstruction is accompanied by this approximate posterior covariance, which immediately shows which features of the image are data-supported and which are regularisation artefacts.
+This low-rank Laplace approximation is useful in large EIT discretizations when the prior-preconditioned spectrum decays. The truncation rank must be selected from that spectrum and a stated tolerance; a fixed number of eigenpairs is not reliable across measurement protocols, meshes, or priors. The result describes local Gaussian uncertainty around the MAP, not the full nonlinear posterior.
 
 
 ## The Computational Challenge
@@ -151,9 +151,9 @@ $$
 f^* = f^n + \frac{\tau}{2} \nabla \log \pi_{\text{post}}(f^n) + \sqrt{\tau}\,\xi,
 $$
 
-where $\xi \sim N(0, I)$ is a standard Gaussian perturbation.
+where $\xi\sim N(0,I)$. MALA then accepts or rejects $f^*$ using the Metropolis-Hastings probability built from the posterior density and the asymmetric proposal density. Omitting this correction gives the unadjusted Langevin algorithm, not MALA.
 
-Hamiltonian Monte Carlo (HMC) goes further, using the geometry of the posterior to make long-range proposals that are accepted with high probability. The cost is computing gradients (and sometimes Hessians) of the forward model, which for PDE problems requires adjoint methods.
+Hamiltonian Monte Carlo uses gradients and an auxiliary momentum to construct long proposals, followed by a Metropolis correction. Standard HMC does not require Hessians. Riemannian and other metric-based variants may use Hessian information, which increases the cost.
 
 **Surrogate models.** Replace the expensive forward operator with a fast surrogate (a neural operator, a reduced-order model, or a polynomial chaos expansion) and sample from the resulting approximate posterior. The surrogate introduces bias, but if it is accurate enough, the bias is small compared to the uncertainty.
 
@@ -181,16 +181,16 @@ This framework has practical consequences. MCMC algorithms designed for finite-d
 
 The Bayesian and deterministic approaches are not competitors; they are complementary perspectives on the same underlying problem.
 
-The MAP estimate is the variational solution. The posterior covariance (at the MAP) approximates the local uncertainty. The evidence (marginal likelihood) provides a principled way to compare models and select regularization parameters.
+Under the finite-dimensional density assumptions above, the MAP is a variational solution. The inverse Hessian at the MAP is a local Laplace covariance, not the posterior covariance unless the posterior is Gaussian. Marginal likelihood can compare models or hyperparameters within the specified probabilistic model.
 
-One insight I find particularly useful: the posterior covariance at the MAP point tells you which features of the MAP reconstruction are reliable. If the posterior variance is small at a particular location, the data constrains the solution there. If the variance is large, the feature you see in the reconstruction may be an artifact of the regularization rather than a genuine signal.
+A local Laplace covariance identifies directions of weak and strong curvature near the MAP. Small local variance indicates concentration under the assumed model, not a guarantee that a feature is correct. Prior assumptions, modelling error, and non-Gaussian posterior structure can change that interpretation.
 
 In my own work, I primarily compute MAP estimates using variational methods. But I increasingly compute the posterior covariance (or local approximations to it) to assess which features of the reconstruction are trustworthy. For EIT with partial data, this is especially relevant: the uncertainty is much larger in regions far from the electrodes, and the posterior covariance quantifies exactly how much larger.
 
 
 ## When to Go Bayesian
 
-The Bayesian approach is most valuable when uncertainty quantification is important (medical diagnosis, safety-critical engineering), when you have genuine prior information that is naturally expressed as a distribution, or when model comparison and parameter selection are needed.
+The Bayesian approach is useful when decisions require uncertainty quantification, prior information has a defensible probabilistic form, or model and hyperparameter comparisons are part of the analysis. In medical and safety-critical settings, posterior uncertainty is only one component of validation and cannot replace clinical or engineering evidence.
 
 For problems where a single reconstruction suffices and speed is paramount, deterministic methods are more practical. The computational overhead of MCMC, even with the best algorithms, is substantial.
 

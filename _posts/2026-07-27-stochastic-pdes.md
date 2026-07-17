@@ -12,7 +12,7 @@ Most of the PDEs I work with are deterministic: given a fixed conductivity $\sig
 
 One response to this is what I normally do: treat the PDE deterministically and handle uncertainty through the inversion process: Bayesian inference, regularization, error bounds. But there is an alternative: incorporate the randomness directly into the PDE. The result is a **stochastic PDE** (SPDE), a PDE whose coefficients, forcing, or boundary conditions are random processes.
 
-This framework is useful whenever the uncertainty in the inputs is large enough that its effect on the solution cannot be captured by a linearization around a single point estimate, or whenever the statistical properties of the solution are themselves of interest. It also provides a principled mathematical model for certain physical phenomena (turbulence, reaction-diffusion in heterogeneous media, wave propagation in random media) where randomness is intrinsic rather than merely a modelling artefact.
+This framework is useful whenever a linearization around a single point estimate does not capture the effect of uncertain inputs, or whenever the statistical properties of the solution are themselves of interest. It also provides a mathematical model for physical phenomena such as reaction-diffusion in heterogeneous media and wave propagation in random media, where randomness is part of the model rather than only measurement error.
 
 
 ## Two Flavours of Stochastic PDEs
@@ -35,7 +35,7 @@ $$
 \frac{\partial u}{\partial t} = \mathcal{L} u + \dot{W}(t, x),
 $$
 
-where $\dot{W}$ is spacetime white noise: a Gaussian process with covariance $\mathbb{E}[\dot{W}(t,x)\dot{W}(s,y)] = \delta(t-s)\delta(x-y)$. This is the setting of SPDEs in the sense of Walsh (1986) and Da Prato and Zabczyk (1992), where the solutions are genuine random fields driven by stochastic forcing.
+where $\dot{W}$ denotes spacetime white noise, interpreted as a generalized Gaussian random field with formal covariance $\mathbb{E}[\dot{W}(t,x)\dot{W}(s,y)] = \delta(t-s)\delta(x-y)$. Depending on the equation and the spatial dimension, the solution may be a function-valued stochastic process or only a distribution-valued one.
 
 The two settings require different mathematical tools, though they share themes. I will focus primarily on the parametric setting, which is more directly connected to my work.
 
@@ -56,7 +56,7 @@ $$
 (C\psi)(x) = \int_D C(x, x') \psi(x')\, dx',
 $$
 
-and $\xi_k(\omega) \sim \mathcal{N}(0, 1)$ are independent standard Gaussians. Mercer's theorem guarantees this expansion converges in $L^2(\Omega_\text{prob} \times D)$.
+and $\xi_k(\omega) \sim \mathcal{N}(0, 1)$ are independent standard Gaussians. For a square-integrable random field with a trace-class covariance operator, the KL expansion converges in mean square. Mercer's theorem gives the corresponding eigenfunction expansion when the covariance kernel is continuous and positive definite on a compact domain.
 
 The KL expansion separates the randomness (the $\xi_k$) from the spatial structure (the $\psi_k$). If the covariance is smooth, the eigenvalues $\lambda_k$ decay rapidly, and the field is well-approximated by truncating the series at $K$ terms:
 
@@ -71,7 +71,7 @@ This truncation is the key step: it replaces the infinite-dimensional random fie
 
 **Forward UQ** propagates input uncertainty to output uncertainty. Given the random coefficient $a(\omega, x)$, what is the distribution of the solution $u(\omega, x)$, or of a quantity of interest $Q(\omega) = \mathcal{Q}(u(\omega))$?
 
-The simplest approach is **Monte Carlo**: sample $\boldsymbol{\xi}^{(1)}, \ldots, \boldsymbol{\xi}^{(M)}$ from their distribution, solve the PDE for each sample, and average. The expected value is approximated by $\bar{Q} \approx \frac{1}{M}\sum_{i=1}^M Q(\boldsymbol{\xi}^{(i)})$. The mean square error decays as $O(M^{-1/2})$, independent of the dimension $K$. Monte Carlo is robust, dimension-independent, and embarrassingly parallel. Its weakness is slow convergence: achieving three digits of accuracy requires $M \approx 10^6$ samples.
+The simplest approach is **Monte Carlo**: sample $\boldsymbol{\xi}^{(1)}, \ldots, \boldsymbol{\xi}^{(M)}$ from their distribution, solve the PDE for each sample, and average. The expected value is approximated by $\bar{Q} \approx \frac{1}{M}\sum_{i=1}^M Q(\boldsymbol{\xi}^{(i)})$. The root-mean-square sampling error decays as $O(M^{-1/2})$, while the mean-square error decays as $O(M^{-1})$, provided $Q$ has finite variance. These rates do not depend explicitly on the dimension $K$. Monte Carlo is easy to parallelize, but its sampling error decreases slowly.
 
 **Stochastic Galerkin methods** represent $u(\boldsymbol{\xi}, x)$ as a polynomial in $\boldsymbol{\xi}$:
 
@@ -81,7 +81,7 @@ $$
 
 where $\Psi_\alpha$ are multivariate Hermite (or Legendre) polynomials and $\alpha$ is a multi-index. The coefficients $u_\alpha(x)$ are deterministic functions, solved for by a Galerkin projection of the SPDE. The resulting system couples all polynomial modes, producing a large but structured linear system. For smooth dependence of $u$ on $\boldsymbol{\xi}$, the polynomial approximation achieves spectral convergence in the stochastic dimension.
 
-**Stochastic collocation** evaluates the PDE at a set of quadrature points in $\boldsymbol{\xi}$-space, then interpolates or averages. Unlike Galerkin, it is non-intrusive: it reuses the deterministic PDE solver as a black box, which makes it far easier to implement in practice. Sparse grid quadrature rules (Smolyak grids) extend collocation to moderate dimensions ($K \leq 20$) with manageable cost.
+**Stochastic collocation** evaluates the PDE at a set of quadrature points in $\boldsymbol{\xi}$-space, then interpolates or averages. Unlike Galerkin, it is non-intrusive: it reuses the deterministic PDE solver as a black box. Sparse-grid quadrature rules can reduce the cost when the solution depends smoothly and anisotropically on a moderate number of influential parameters. There is no universal dimension threshold; feasibility depends on regularity and effective dimension.
 
 **Inverse UQ** combines the forward UQ framework with Bayesian inference. The unknown coefficient $a(\omega, x)$ is treated as a random field to be inferred from data. The KL expansion parameterizes the unknown, the Bayesian posterior gives the distribution of $\boldsymbol{\xi}$ given the measurements, and MCMC or deterministic inference methods (Laplace approximation, transport maps) are used to characterize the posterior. This is the framework I described in the Bayesian inverse problems post, extended to the function-space setting.
 
@@ -92,9 +92,9 @@ The SPDE setting raises mathematical issues that finite-dimensional stochastic a
 
 For the stochastic heat equation $\partial_t u = \Delta u + \dot{W}$ in dimension $d$, the solution is a pointwise-defined function for $d = 1$, a distribution for $d \geq 2$. In the stochastic wave equation and nonlinear SPDEs, the situation is more delicate.
 
-This is not merely a mathematical abstraction. It affects how you model physical phenomena and how you interpret numerical results. A discretization of spacetime white noise is mesh-dependent: as you refine the mesh, the noise becomes more violent. If your numerical scheme does not handle this correctly, the computed solution does not converge as the mesh is refined; it blows up. Getting this right requires understanding the renormalization (Wick products, paracontrolled distributions) that the mathematics demands.
+This affects how numerical results are interpreted. A discretization of spacetime white noise is mesh-dependent, and convergence must be understood in an appropriate function or distribution space. Linear equations with additive noise can often be treated through mild or weak solutions. Singular nonlinear SPDEs are harder because products of distributions may be undefined; renormalization techniques such as Wick products, regularity structures, or paracontrolled distributions are then required.
 
-The development of a theory of singular SPDEs, most significantly the theory of regularity structures by Martin Hairer, for which he received the Fields Medal in 2014, resolved long-standing questions about the well-posedness of nonlinear SPDEs with rough noise. The theory is technically demanding but represents one of the major mathematical achievements of the past decade.
+The development of a theory of singular SPDEs, including Martin Hairer's theory of regularity structures, resolved long-standing questions about nonlinear equations driven by rough noise. Hairer received the Fields Medal in 2014 in part for this work. The theory is technically demanding and has reshaped the modern analysis of singular stochastic equations.
 
 
 ## Connection to Gaussian Process Priors
@@ -122,12 +122,14 @@ Whether this framework is appropriate depends on the application. For quality co
 
 Randomness in equations is not a limitation to be apologized for. In many of the most consequential scientific and engineering systems operating today, it is simply an accurate description of reality.
 
-**Earthquake early warning in Japan.** The Japan Meteorological Agency operates the world's most advanced seismic early warning system, providing alerts seconds to tens of seconds before strong shaking arrives at a given location. The system solves a form of the stochastic wave equation: seismic waves propagate through a heterogeneous crust whose properties are known only statistically, with variability in density, wave speed, and attenuation. Probabilistic PDE models characterize not just the expected wave arrival time but the uncertainty around it, which determines the decision threshold for issuing an alert. The Nankai Trough megathrust zone (one of the world's highest seismic hazard regions) is monitored by a dense seafloor sensor network whose data is fed into exactly this kind of stochastic inversion framework.
+**Earthquake hazard in Japan.** Seismic waves propagate through a heterogeneous crust whose density, wave speed, and attenuation are not known exactly. Probabilistic wave-propagation and uncertainty-quantification models can therefore complement deterministic simulations when estimating arrival times and shaking intensity. Operational early-warning systems also depend on rapid detection, empirical prediction models, and real-time sensor data, so they should not be described as direct SPDE solvers.
 
-**Flood and typhoon modeling in China and Southeast Asia.** China's National Meteorological Centre runs ensemble weather prediction systems in which the atmospheric state equations (effectively stochastic PDEs driven by model uncertainty and observational noise) are integrated forward from multiple perturbed initial conditions. The spread of the ensemble characterizes forecast uncertainty. For flood risk along the Yangtze and Yellow rivers (which affects hundreds of millions of people and requires decisions about reservoir releases and evacuation orders), the uncertainty quantification provided by stochastic PDE methods directly informs engineering decisions. Similar frameworks are used across Southeast Asia for typhoon track prediction, where ensemble spread from the Japan Meteorological Agency and the Korean Meteorological Administration provides probabilistic forecasts that shipping, aviation, and disaster management authorities rely on.
+**Flood and typhoon modelling.** Operational weather centres use ensemble prediction, integrating atmospheric models from perturbed initial states and sometimes with perturbed model parameters. These are often ensembles of deterministic PDE solves rather than direct discretizations of an SPDE. The ensemble spread is nevertheless an important estimate of forecast uncertainty for rainfall, river flow, and tropical-cyclone tracks. Stochastic parameterizations provide one way to represent unresolved processes within such models.
 
-**Semiconductor manufacturing in South Korea and Taiwan.** Depositing thin films and etching features at nanometre scales in the fabrication of advanced logic and memory chips involves surface reactions and transport processes that are inherently stochastic. Samsung and TSMC use stochastic simulation methods (closely related to SPDEs at the continuum limit) to model process variation: the random fluctuations in feature size and position that determine yield. Managing this variability is one of the central engineering challenges in sub-5nm node fabrication. Stochastic PDE models of plasma etching and chemical vapour deposition underpin the process control strategies that keep yields high enough for these chips to be economically viable.
+**Semiconductor manufacturing.** Depositing thin films and etching features at nanometre scales involves uncertain reaction and transport processes. Stochastic continuum and particle models are used in research to study how fluctuations in feature size and position affect manufacturing yield. Claims about the internal process-control models used by particular companies require public technical sources and should not be inferred from the research literature alone.
 
-**Financial mathematics (a global application, noted for completeness).** The Black-Scholes equation (the PDE of modern mathematical finance) is derived as the Itô stochastic differential equation for a diffusion process. Stochastic volatility models (Heston, SABR) are SPDEs. The entire infrastructure of options pricing, risk management, and derivative valuation rests on stochastic PDE theory. This is not science at the frontier; it is a mature engineering discipline that processes trillions of dollars of transactions daily.
+**Financial mathematics.** The Black-Scholes pricing equation is a deterministic PDE derived from a stochastic differential equation for the underlying asset. Heston and SABR are stochastic differential equation models, not SPDEs. SPDEs arise in more elaborate models where the evolving state is itself a function, for example a stochastic forward-rate curve.
 
 The stochastic PDE framework provides the mathematical language for any system where the governing equations are themselves subject to uncertainty, whether that uncertainty arises from incomplete knowledge of material properties, chaotic dynamics, external forcing, or intrinsic randomness at the molecular scale.
+
+For the link between Matérn fields and sparse precision operators, see Lindgren, Rue, and Lindström, ["An explicit link between Gaussian fields and Gaussian Markov random fields: the stochastic partial differential equation approach"](https://doi.org/10.1111/j.1467-9868.2011.00777.x) (2011).
