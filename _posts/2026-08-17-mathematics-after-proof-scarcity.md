@@ -20,9 +20,9 @@ I have been thinking about this question since reading the slides, partly becaus
 
 ## The Question Is No Longer Only Whether AI Can Do Mathematics
 
-A large fraction of the current debate is about capability. Can a language model really reason? Was a benchmark contaminated? Did the system solve a genuinely new problem? How much prompting was involved? Was the proof checked by a human or by a proof assistant? These are important questions. Tao formulates the issue as a family of "AI capability conjectures," each a template whose key terms are left as placeholders: at some point, some AI tools will, at some expense, and with some level of human supervision, be able to accomplish some research-level mathematical tasks in some fields, with some non-trivial success rate and at some level of correctness. There is not one claim called "AI can do mathematics" — there are many, depending on which placeholders you fill in.
+A large fraction of the current debate is about capability. Can a language model really reason? Was a benchmark contaminated? Did the system solve a genuinely new problem? How much prompting was involved? Was the proof checked by a human or by a proof assistant? These are important questions. Tao formulates the issue as a family of "AI capability conjectures," each a template whose key terms are left as placeholders: at some point, some AI tools will, at some expense, and with some level of human supervision, be able to accomplish some research-level mathematical tasks in some fields, with some non-trivial success rate and at some level of correctness. There is not one claim called "AI can do mathematics"; there are many, depending on which placeholders you fill in.
 
-That distinction matters. Solving a carefully selected research problem after extensive human guidance is very different from autonomously developing a new mathematical theory. But Tao deliberately puts that dispute to one side. His argument is conditional. Suppose a reasonably strong version of the capability claim turns out to be true — and he offers one controlled data point: a second batch of ten novel research-level problems, assessed under scientific conditions against four AI systems in May 2026, with seven of the ten solved at publication-level quality, at compute costs of $10–$1000 per problem. Conditioning on that working hypothesis exposes a question that remains important even if one is sceptical about the strongest claims made by AI companies. The fact that a machine *can* perform a task does not tell us whether the task should be delegated to it, how its output should be evaluated, or what responsibilities remain with the mathematician. Capability is one question; value is another.
+That distinction matters. Solving a carefully selected research problem after extensive human guidance is very different from autonomously developing a new mathematical theory. But Tao deliberately puts that dispute to one side. His argument is conditional. Suppose a reasonably strong version of the capability claim turns out to be true, and he offers one controlled data point: a second batch of ten novel research-level problems, assessed under scientific conditions against four AI systems in May 2026, with seven of the ten solved at publication-level quality, at compute costs of $10–$1000 per problem. Conditioning on that working hypothesis exposes a question that remains important even if one is sceptical about the strongest claims made by AI companies. The fact that a machine *can* perform a task does not tell us whether the task should be delegated to it, how its output should be evaluated, or what responsibilities remain with the mathematician. Capability is one question; value is another.
 
 ## Mathematics Has Never Had Only One Objective
 
@@ -136,7 +136,7 @@ $$
 \text{answer}.
 $$
 
-Then the student receives the result without developing the machinery that would have produced it. The interesting question is therefore not "Should mathematicians use AI?" — that question is already becoming outdated. The more important question is:
+Then the student receives the result without developing the machinery that would have produced it. The interesting question is therefore not "Should mathematicians use AI?" (that question is already becoming outdated). The more important question is:
 
 > **Which cognitive operations must remain ours if we want to retain mathematical independence?**
 
@@ -179,25 +179,7 @@ x_{\alpha,\theta}^{\delta}
 \right\}.
 $$
 
-An AI system could help derive this method, implement it, run the experiments, and perhaps even prove a convergence theorem.
-
-But none of that automatically answers the scientific questions:
-
-Is $F$ a sufficiently accurate model of the physical experiment?
-
-Is $\mathcal{D}$ the right model for the noise?
-
-What prior information is encoded in $\mathcal{R}_{\theta}$?
-
-Is the reconstruction identifiable from the available data?
-
-What happens under model mismatch?
-
-Does the discrete algorithm faithfully approximate the continuum formulation?
-
-Are the theoretical stability constants meaningful at computationally relevant scales?
-
-Does a learned regularizer still behave sensibly outside the training distribution?
+An AI system could help derive this method, implement it, run the experiments, and perhaps even prove a convergence theorem. But none of that automatically answers the scientific questions: Is $F$ a sufficiently accurate model of the physical experiment? Is $\mathcal{D}$ the right model for the noise? What prior information is encoded in $\mathcal{R}_{\theta}$? Is the reconstruction identifiable from the available data? What happens under model mismatch? Does the discrete algorithm faithfully approximate the continuum formulation? Are the theoretical stability constants meaningful at computationally relevant scales? Does a learned regularizer still behave sensibly outside the training distribution?
 
 These questions require judgment that lies outside the local correctness of the proof. This is one reason I think applied mathematicians should be especially careful about confusing AI-generated mathematical fluency with scientific understanding. The machine can manipulate the model we give it; we remain responsible for deciding whether it is the right model.
 
@@ -225,7 +207,7 @@ There is an interesting reversal here. The activities that have historically rec
 
 ## How I Want to Use AI in My Own Research
 
-After reading Tao's lecture, I do not feel any less inclined to use AI — if anything, I think mathematicians should become much better at using these systems. But I want the division of labour to be deliberate. I am comfortable delegating more of the mechanical work: code boilerplate, syntax, routine symbolic manipulation, literature discovery, formatting, preliminary numerical experiments, and checks that can be independently verified. I am much less comfortable delegating the parts that determine what the work *means*.
+After reading Tao's lecture, I do not feel any less inclined to use AI; if anything, I think mathematicians should become much better at using these systems. But I want the division of labour to be deliberate. I am comfortable delegating more of the mechanical work: code boilerplate, syntax, routine symbolic manipulation, literature discovery, formatting, preliminary numerical experiments, and checks that can be independently verified. I am much less comfortable delegating the parts that determine what the work *means*.
 
 Before I accept an AI-assisted result as part of my own research, I want to be able to answer:
 
@@ -244,11 +226,11 @@ That final question may be the most useful test. If the answer is no, then I may
 
 ## What I Think Tao's Lecture Is Really About
 
-The title is *Mathematics in the Age of AI*, but Tao frames the lecture explicitly as describing a crisis in the foundations of mathematical values and practices — not a crisis of capability. This is an important distinction. The foundational crisis of roughly 1900–1930 forced mathematicians to make the foundations of reasoning explicit and ended by producing a rigorous, standardized framework. The present turbulence is, he argues, something different: it forces us to make explicit the values that were easy to leave implicit when human mathematical labour was the limiting resource.
+The title is *Mathematics in the Age of AI*, but Tao frames the lecture explicitly as describing a crisis in the foundations of mathematical values and practices, not a crisis of capability. This is an important distinction. The foundational crisis of roughly 1900–1930 forced mathematicians to make the foundations of reasoning explicit and ended by producing a rigorous, standardized framework. The present turbulence is, he argues, something different: it forces us to make explicit the values that were easy to leave implicit when human mathematical labour was the limiting resource.
 
 What counts as understanding? What makes someone an author? What is a proof for? Why do we train mathematicians? What kinds of work should receive prestige? What turns an isolated theorem into mathematical knowledge? These questions were always there; AI makes them harder to avoid. And the urgency is real: Tao argues that mathematicians have only a narrow window to define what the profession means before those definitions get made for them by technology companies and financial incentives.
 
-From this diagnosis he draws three concrete recommendations. First, normalize the responsible disclosure of AI assistance — covert use, concealed to dodge peer criticism, is the case to prevent, not AI use itself. Second, shift prestige away from proof generation and being "first," and toward the slower human stages of exposition, publication, and canonicalization. Third, establish a publication gate: if authors cannot convincingly present their result at expert level, answer questions about it, and demonstrate command of the argument, the result should not be published under their names.
+From this diagnosis he draws three concrete recommendations. First, normalize the responsible disclosure of AI assistance (covert use, concealed to dodge peer criticism, is the case to prevent, not AI use itself). Second, shift prestige away from proof generation and being "first," and toward the slower human stages of exposition, publication, and canonicalization. Third, establish a publication gate: if authors cannot convincingly present their result at expert level, answer questions about it, and demonstrate command of the argument, the result should not be published under their names.
 
 I do not think the answer is that mathematicians should compete with machines at symbolic speed, nor that we should retreat from AI and preserve an artificial version of twentieth-century mathematical practice. The more promising path is to use these systems aggressively where they extend our capabilities, while protecting the forms of reasoning, judgment, responsibility, and education on which meaningful mathematics depends. The future mathematician may perform fewer routine deductive steps manually; that does not necessarily make the mathematician less important. It may make the distinctly human parts of the job easier to see.
 
