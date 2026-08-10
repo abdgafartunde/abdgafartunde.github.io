@@ -110,7 +110,7 @@ Tao makes another observation that connects closely with something I wrote earli
 
 In a human-written proof, the places where the author struggled often leave traces. There may be an extra paragraph explaining a subtle point, an awkward but revealing decomposition, a warning about a tempting false argument, or an example inserted exactly where intuition becomes difficult. These irregularities tell the reader where to slow down. A heavily AI-polished argument can remove both bad friction and useful friction: routine algebra and the genuinely new idea may be presented with the same confidence and at the same pace. The result is easy to read line by line while being surprisingly difficult to learn from.
 
-This is a subtle point. We should not romanticize bad writing — confusing notation and unnecessary complication do not create depth. But there is a difference between removing obstacles to understanding and removing the evidence of where understanding is required. The best exposition does not make everything look easy; it makes the structure of the difficulty visible.
+This is a subtle point. We should not romanticize bad writing: confusing notation and unnecessary complication do not create depth. But there is a difference between removing obstacles to understanding and removing the evidence of where understanding is required. The best exposition does not make everything look easy; it makes the structure of the difficulty visible.
 
 ## This Is Also a Training Problem
 
@@ -185,9 +185,7 @@ These questions require judgment that lies outside the local correctness of the 
 
 ## What Should Become More Valuable?
 
-If proof generation becomes cheaper, then the activities that remain scarce should become more valuable.
-
-I suspect we will need to place greater weight on:
+If proof generation becomes cheaper, the activities that remain scarce should become more valuable. I suspect we will need to place greater weight on the following.
 
 **Problem selection.** Knowing which questions are worth spending time on may become more important than executing every technical step of the solution.
 
