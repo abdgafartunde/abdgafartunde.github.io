@@ -2,7 +2,7 @@
 layout: post
 title: "Mathematics After Proof Scarcity: What Terence Tao's ICM 2026 Lecture Means for Mathematicians"
 description: "Reflections on Terence Tao's ICM 2026 lecture on mathematics in the age of AI: proof abundance, mathematical understanding, authorship, and what researchers should preserve as AI becomes more capable."
-date: 2026-08-13
+date: 2026-08-17
 author: "Abd'gafar Tunde Tiamiyu"
 tags: [Mathematics, Artificial Intelligence, Research, Reflections]
 math: true
