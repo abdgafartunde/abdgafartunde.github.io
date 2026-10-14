@@ -4,7 +4,8 @@
 # HOW SCHEDULED POSTS ARE PUBLISHED:
 #   Posts dated in the future stay hidden (`future: false` in _config.yml).
 #   A daily build at 00:07 China Standard Time (the site's timezone) publishes
-#   each post on the date in its front matter. No commits are needed.
+#   each post on the date in its front matter. No commits are needed. A second
+#   run 90 minutes later covers the occasional scheduled run GitHub drops.
 #
 # CV.pdf is compiled from CV.tex during every build, so the site always has
 # the latest CV. Edit CV.tex; the PDF in your working copy is for local preview.
@@ -20,8 +21,9 @@ on:
   pull_request:
     branches: [master]
   schedule:
-    # 16:07 UTC = 00:07 China Standard Time
+    # 16:07 UTC = 00:07 China Standard Time; 17:37 UTC is a backup run.
     - cron: '7 16 * * *'
+    - cron: '37 17 * * *'
   workflow_dispatch:
 
 permissions:
@@ -37,7 +39,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -46,7 +48,7 @@ jobs:
 
       - name: Configure Pages
         if: github.event_name != 'pull_request'
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       # CV.pdf is compiled from CV.tex on every build. A CV problem must never
       # block the site, so if TeX Live or the compile fails, the CV.pdf that
@@ -78,7 +80,7 @@ jobs:
 
       - name: Upload site artifact
         if: github.event_name != 'pull_request'
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
 
   deploy:
     if: github.event_name != 'pull_request'
@@ -105,7 +107,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Push an empty commit after 50 quiet days
         run: |
@@ -115,5 +117,6 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
             git commit --allow-empty -m "chore: keep scheduled publishing active"
-            git push
+            # If a push landed after checkout, rebase onto it and retry.
+            git push || { git pull --rebase && git push; }
           fi

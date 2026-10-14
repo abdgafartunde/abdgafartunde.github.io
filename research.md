@@ -219,7 +219,7 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
         <article>
           <p class="research-project-meta">Reconstruction toolkit · Active</p>
           <h3><a href="https://github.com/abdgafartunde/eit-reconstruction-toolkit" target="_blank" rel="noopener">eitkit: EIT Reconstruction Toolkit</a></h3>
-          <p>Forward simulation, adjoint-based Jacobians, and classical reconstruction for two-dimensional Electrical Impedance Tomography, including Tikhonov regularization and total variation (ADMM) with L-curve parameter selection.</p>
+          <p>Forward simulation, adjoint-based Jacobians, and classical reconstruction for two-dimensional Electrical Impedance Tomography, including Tikhonov regularization with L-curve parameter selection, and total variation (ADMM).</p>
           <div class="research-project-links">
             <a href="https://github.com/abdgafartunde/eit-reconstruction-toolkit" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
             <a href="https://doi.org/10.5281/zenodo.21037312" target="_blank" rel="noopener">Zenodo <span aria-hidden="true">↗</span></a>
