@@ -240,6 +240,7 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
           <p>Adaptive gradient descent, inertial quasi-Newton forward-backward splitting, and primal-dual algorithms with linesearch for total-variation image denoising and deblurring, reimplemented from four research papers.</p>
           <div class="research-project-links">
             <a href="https://github.com/abdgafartunde/image-restoration-toolkit" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+            <a href="https://doi.org/10.5281/zenodo.23363421" target="_blank" rel="noopener">Zenodo <span aria-hidden="true">↗</span></a>
           </div>
         </article>
         <article>

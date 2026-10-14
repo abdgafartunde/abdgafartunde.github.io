@@ -112,6 +112,14 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
       <h2 id="updates-heading">Latest updates</h2>
       <div class="home-update-list">
         <article>
+          <time datetime="2026-10">October 2026</time>
+          <p>Released <a href="https://github.com/abdgafartunde/image-restoration-toolkit" target="_blank" rel="noopener">imrestore v0.1.0</a>, adaptive and quasi-Newton first-order methods for image denoising and deblurring.</p>
+        </article>
+        <article>
+          <time datetime="2026-10">October 2026</time>
+          <p>Released <a href="https://github.com/abdgafartunde/eit-reconstruction-toolkit" target="_blank" rel="noopener">eitkit v0.2.0</a> and <a href="https://github.com/abdgafartunde/medical-imaging" target="_blank" rel="noopener">medimg v0.2.0</a>, with corrected solvers, tutorials, and expanded technical notes.</p>
+        </article>
+        <article>
           <time datetime="2026-07">July 2026</time>
           <p>Released <a href="https://github.com/abdgafartunde/medical-imaging" target="_blank" rel="noopener">medimg v0.1.1</a> for compressed sensing reconstruction in MRI and CT.</p>
         </article>
