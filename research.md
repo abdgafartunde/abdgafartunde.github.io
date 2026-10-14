@@ -250,8 +250,8 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
         </article>
         <article>
           <p class="research-project-meta">Geophysical inversion · In development</p>
-          <h3><a href="https://github.com/abdgafartunde/groundwater-detection" target="_blank" rel="noopener">Groundwater Detection</a></h3>
-          <p>Electrical resistivity inversion for identifying water-bearing zones from surface measurements.</p>
+          <h3><a href="https://github.com/abdgafartunde/ertkit" target="_blank" rel="noopener">ertkit: Resistivity Imaging for Groundwater</a></h3>
+          <p>Vertical electrical sounding and 2.5-D electrical resistivity tomography for groundwater exploration, with depth-of-investigation and uncertainty estimates for every model.</p>
         </article>
       </div>
     </div>
