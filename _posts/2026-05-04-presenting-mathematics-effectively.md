@@ -53,7 +53,7 @@ End with a clear statement of what you showed and what questions remain open. "W
 
 **Animate sparingly.** Slide animations can reveal information progressively, which is sometimes useful for building up a complex figure or equation. But excessive animation creates a disjointed experience. If every click changes something, the audience spends cognitive energy tracking transitions instead of absorbing content.
 
-**Consistent notation.** Define notation once, early, and use it consistently throughout. If $\alpha$ is the regularization parameter on slide 5, it should still be the regularization parameter on slide 15. This sounds obvious; violations are surprisingly common.
+**Consistent notation.** Define notation once, early, and use it consistently throughout. If $$\alpha$$ is the regularization parameter on slide 5, it should still be the regularization parameter on slide 15. This sounds obvious; violations are surprisingly common.
 
 
 ## Delivery

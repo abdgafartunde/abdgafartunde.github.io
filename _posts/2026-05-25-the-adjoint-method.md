@@ -23,7 +23,7 @@ $$
 F(u, m) = 0
 $$
 
-where $u$ is the state (the PDE solution, e.g., a potential or a wave field), $m$ is the parameter (e.g., a coefficient, an initial condition, a boundary shape), and $F$ is the PDE operator.
+where $$u$$ is the state (the PDE solution, e.g., a potential or a wave field), $$m$$ is the parameter (e.g., a coefficient, an initial condition, a boundary shape), and $$F$$ is the PDE operator.
 
 We want to minimize an objective functional
 
@@ -31,14 +31,14 @@ $$
 J(m) = \mathcal{J}(u(m), m),
 $$
 
-where $u(m)$ is the unique solution of the PDE for a given $m$, and $\mathcal{J}$ measures how well the state matches the data or satisfies a design criterion.
+where $$u(m)$$ is the unique solution of the PDE for a given $$m$$, and $$\mathcal{J}$$ measures how well the state matches the data or satisfies a design criterion.
 
-To minimize $J$, we need the gradient $\nabla_m J$. Computing this gradient is the problem the adjoint method solves.
+To minimize $$J$$, we need the gradient $$\nabla_m J$$. Computing this gradient is the problem the adjoint method solves.
 
 
 ## The Naive Approach and Its Cost
 
-The simplest way to compute $\nabla_m J$ is through the implicit function theorem. Differentiating $F(u(m), m) = 0$ with respect to $m$ gives
+The simplest way to compute $$\nabla_m J$$ is through the implicit function theorem. Differentiating $$F(u(m), m) = 0$$ with respect to $$m$$ gives
 
 $$
 \frac{\partial F}{\partial u} \frac{\partial u}{\partial m} + \frac{\partial F}{\partial m} = 0,
@@ -56,9 +56,9 @@ $$
 \nabla_m J = \frac{\partial \mathcal{J}}{\partial u} \frac{\partial u}{\partial m} + \frac{\partial \mathcal{J}}{\partial m} = -\frac{\partial \mathcal{J}}{\partial u} \left(\frac{\partial F}{\partial u}\right)^{-1} \frac{\partial F}{\partial m} + \frac{\partial \mathcal{J}}{\partial m}.
 $$
 
-The problem is the term $\left(\frac{\partial F}{\partial u}\right)^{-1} \frac{\partial F}{\partial m}$. This is the *sensitivity matrix* $\partial u / \partial m$. If $m$ has $p$ components and $u$ is discretized into $n$ unknowns, this matrix is $n \times p$. Computing it requires solving a linear system with $\frac{\partial F}{\partial u}$ (the Jacobian of the PDE) once for each column: $p$ solves in total.
+The problem is the term $$\left(\frac{\partial F}{\partial u}\right)^{-1} \frac{\partial F}{\partial m}$$. This is the *sensitivity matrix* $$\partial u / \partial m$$. If $$m$$ has $$p$$ components and $$u$$ is discretized into $$n$$ unknowns, this matrix is $$n \times p$$. Computing it requires solving a linear system with $$\frac{\partial F}{\partial u}$$ (the Jacobian of the PDE) once for each column: $$p$$ solves in total.
 
-For inverse problems in EIT, the parameter $m$ is the conductivity distribution, discretized into thousands of pixels. Solving thousands of PDE systems to get one gradient is not feasible in practice.
+For inverse problems in EIT, the parameter $$m$$ is the conductivity distribution, discretized into thousands of pixels. Solving thousands of PDE systems to get one gradient is not feasible in practice.
 
 
 ## The Adjoint Method
@@ -69,9 +69,9 @@ $$
 \frac{\partial \mathcal{J}}{\partial u} \cdot \frac{\partial u}{\partial m},
 $$
 
-which is a row vector times a matrix: a single vector of length $p$. Rather than computing the full matrix and then multiplying, we can compute this product directly by reversing the order of operations.
+which is a row vector times a matrix: a single vector of length $$p$$. Rather than computing the full matrix and then multiplying, we can compute this product directly by reversing the order of operations.
 
-Introduce the **adjoint variable** $\lambda$ (sometimes called the adjoint state or the co-state), defined as the solution of the **adjoint equation**:
+Introduce the **adjoint variable** $$\lambda$$ (sometimes called the adjoint state or the co-state), defined as the solution of the **adjoint equation**:
 
 $$
 \left(\frac{\partial F}{\partial u}\right)^\top \lambda = -\left(\frac{\partial \mathcal{J}}{\partial u}\right)^\top.
@@ -79,18 +79,18 @@ $$
 
 This is a single linear system with the transpose of the linearized forward operator. A self-adjoint interior differential operator can use the same differential expression as the forward equation, but the adjoint forcing and boundary conditions are determined by the objective and need not match the forward data.
 
-Once $\lambda$ is available, the gradient can be written as:
+Once $$\lambda$$ is available, the gradient can be written as:
 
 $$
 \nabla_m J = \lambda^\top \frac{\partial F}{\partial m} + \frac{\partial \mathcal{J}}{\partial m}.
 $$
 
 This requires only:
-1. One forward solve to compute $u(m)$.
-2. One adjoint solve to compute $\lambda$.
-3. One cheap post-processing step to assemble $\nabla_m J$.
+1. One forward solve to compute $$u(m)$$.
+2. One adjoint solve to compute $$\lambda$$.
+3. One cheap post-processing step to assemble $$\nabla_m J$$.
 
-For one experiment and one scalar objective, the usual calculation consists of one state solve and one adjoint solve. The cost is independent of the number of parameter components $p$, although it still depends on the state dimension, the number of experiments, and the cost of assembling the gradient.
+For one experiment and one scalar objective, the usual calculation consists of one state solve and one adjoint solve. The cost is independent of the number of parameter components $$p$$, although it still depends on the state dimension, the number of experiments, and the cost of assembling the gradient.
 
 
 ## A Concrete Example: EIT
@@ -101,9 +101,9 @@ $$
 -\nabla \cdot (\sigma \nabla u) = 0 \quad \text{in } \Omega,
 $$
 
-with appropriate boundary conditions encoding the applied currents. The parameter $m = \sigma$ is the conductivity, and the state $u$ is the electric potential. The measurements are the voltages on the boundary.
+with appropriate boundary conditions encoding the applied currents. The parameter $$m = \sigma$$ is the conductivity, and the state $$u$$ is the electric potential. The measurements are the voltages on the boundary.
 
-Given measured voltages $g^\delta$ and simulated voltages $\mathcal{M}(u)$ (the measurement operator applied to the forward solution), the data misfit objective is
+Given measured voltages $$g^\delta$$ and simulated voltages $$\mathcal{M}(u)$$ (the measurement operator applied to the forward solution), the data misfit objective is
 
 $$
 J(\sigma) = \frac{1}{2}\lVert \mathcal{M}(u(\sigma)) - g^\delta \rVert^2.
@@ -111,7 +111,7 @@ $$
 
 The gradient is the quantity needed for iterative descent methods (gradient descent, L-BFGS, Gauss-Newton). The adjoint method computes it as follows.
 
-**Forward solves:** For each applied current pattern, solve $-\nabla\cdot(\sigma^k\nabla u_j)=0$ with the corresponding electrode boundary conditions.
+**Forward solves:** For each applied current pattern, solve $$-\nabla\cdot(\sigma^k\nabla u_j)=0$$ with the corresponding electrode boundary conditions.
 
 **Adjoint solves:** For each residual term, solve an adjoint equation with the same interior differential operator:
 
@@ -119,15 +119,15 @@ $$
 -\nabla \cdot (\sigma^k \nabla \lambda) = 0 \quad \text{in } \Omega,
 $$
 
-but with boundary data driven by the data residual $\mathcal{M}(u) - g^\delta$ rather than the applied current.
+but with boundary data driven by the data residual $$\mathcal{M}(u) - g^\delta$$ rather than the applied current.
 
-**Gradient assembly:** The gradient of $J$ with respect to $\sigma$ at any point $x$ in the domain is
+**Gradient assembly:** The gradient of $$J$$ with respect to $$\sigma$$ at any point $$x$$ in the domain is
 
 $$
 \nabla_\sigma J(x) = \sum_j \nabla u_j(x)\cdot\nabla\lambda_j(x),
 $$
 
-The sign of this formula follows the convention $F(u,\sigma)=-\nabla\cdot(\sigma\nabla u)$ and the adjoint definition above. Other Lagrangian conventions produce a minus sign. A regularized objective also contributes the derivative of its penalty. The sum extends over all current patterns used in the data misfit.
+The sign of this formula follows the convention $$F(u,\sigma)=-\nabla\cdot(\sigma\nabla u)$$ and the adjoint definition above. Other Lagrangian conventions produce a minus sign. A regularized objective also contributes the derivative of its penalty. The sum extends over all current patterns used in the data misfit.
 
 In the discretized setting, this formula gives a vector of the same dimension as the conductivity discretization, regardless of the resolution.
 

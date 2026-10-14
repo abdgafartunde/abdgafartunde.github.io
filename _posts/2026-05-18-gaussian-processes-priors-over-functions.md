@@ -15,22 +15,22 @@ A Gaussian process is a probability model for functions. Its mean and covariance
 
 ## What a Gaussian Process Is
 
-A Gaussian process (GP) is a probability distribution over functions. Formally, a random function $f : \mathcal{X} \to \mathbb{R}$ is a GP if, for any finite collection of points $x_1, \ldots, x_n \in \mathcal{X}$, the vector $(f(x_1), \ldots, f(x_n))$ follows a multivariate Gaussian distribution.
+A Gaussian process (GP) is a probability distribution over functions. Formally, a random function $$f : \mathcal{X} \to \mathbb{R}$$ is a GP if, for any finite collection of points $$x_1, \ldots, x_n \in \mathcal{X}$$, the vector $$(f(x_1), \ldots, f(x_n))$$ follows a multivariate Gaussian distribution.
 
 A GP is specified by two objects:
 
-- A **mean function** $m(x) = \mathbb{E}[f(x)]$, which encodes the expected behaviour of $f$.
-- A **covariance function** (kernel) $k(x, x') = \text{Cov}(f(x), f(x'))$, which encodes how values of $f$ at different points are correlated.
+- A **mean function** $$m(x) = \mathbb{E}[f(x)]$$, which encodes the expected behaviour of $$f$$.
+- A **covariance function** (kernel) $$k(x, x') = \text{Cov}(f(x), f(x'))$$, which encodes how values of $$f$$ at different points are correlated.
 
-Typically one sets $m \equiv 0$ and lets the kernel carry all the structure. The kernel completely determines the properties of the GP: the smoothness of its sample paths, the length scale over which correlations decay, and the marginal variance at each point.
+Typically one sets $$m \equiv 0$$ and lets the kernel carry all the structure. The kernel completely determines the properties of the GP: the smoothness of its sample paths, the length scale over which correlations decay, and the marginal variance at each point.
 
-Writing $f \sim \mathcal{GP}(0, k)$ means that for any set of evaluation points,
+Writing $$f \sim \mathcal{GP}(0, k)$$ means that for any set of evaluation points,
 
 $$
 \begin{pmatrix} f(x_1) \\ \vdots \\ f(x_n) \end{pmatrix} \sim \mathcal{N}\!\left(0, K\right),
 $$
 
-where $K_{ij} = k(x_i, x_j)$ is the $n \times n$ kernel (Gram) matrix.
+where $$K_{ij} = k(x_i, x_j)$$ is the $$n \times n$$ kernel (Gram) matrix.
 
 
 ## The Role of the Kernel
@@ -43,7 +43,7 @@ $$
 k_{\text{SE}}(x, x') = \sigma^2 \exp\!\left(-\frac{\lVert x - x' \rVert^2}{2\ell^2}\right).
 $$
 
-This produces infinitely differentiable sample paths. The length scale $\ell$ controls how quickly correlations decay: small $\ell$ means the function can vary rapidly, large $\ell$ means it is nearly flat. The variance $\sigma^2$ controls the marginal scale. If you believe your function is very smooth, this is a natural choice.
+This produces infinitely differentiable sample paths. The length scale $$\ell$$ controls how quickly correlations decay: small $$\ell$$ means the function can vary rapidly, large $$\ell$$ means it is nearly flat. The variance $$\sigma^2$$ controls the marginal scale. If you believe your function is very smooth, this is a natural choice.
 
 **Matérn kernel:**
 
@@ -51,16 +51,16 @@ $$
 k_{\nu}(x, x') = \frac{2^{1-\nu}}{\Gamma(\nu)}\left(\frac{\sqrt{2\nu}\lVert x - x' \rVert}{\ell}\right)^\nu K_\nu\!\left(\frac{\sqrt{2\nu}\lVert x - x' \rVert}{\ell}\right),
 $$
 
-where $K_\nu$ is the modified Bessel function of the second kind and $\nu>0$ controls regularity. A Matérn field is $k$ times mean-square differentiable when $\nu>k$, while almost-sure sample regularity requires a dimension-dependent statement. For $\nu=1/2$ the kernel is exponential. With the usual rescaling, Matérn kernels approach the squared-exponential kernel as $\nu\to\infty$.
+where $$K_\nu$$ is the modified Bessel function of the second kind and $$\nu>0$$ controls regularity. A Matérn field is $$k$$ times mean-square differentiable when $$\nu>k$$, while almost-sure sample regularity requires a dimension-dependent statement. For $$\nu=1/2$$ the kernel is exponential. With the usual rescaling, Matérn kernels approach the squared-exponential kernel as $$\nu\to\infty$$.
 
 The Matérn family lets the modeller vary prior regularity. A stationary Matérn GP still does not represent jump interfaces directly. EIT models with sharp inclusions may require level-set, geometric, Besov, or other non-Gaussian priors rather than selecting a smaller Matérn parameter alone.
 
 
 ## GP Regression
 
-The canonical use of a GP is regression. Given observations $y_i = f(x_i) + \varepsilon_i$ with noise $\varepsilon_i \sim \mathcal{N}(0, \sigma_n^2)$, and a GP prior $f \sim \mathcal{GP}(0, k)$, the posterior distribution over $f$ is also a GP.
+The canonical use of a GP is regression. Given observations $$y_i = f(x_i) + \varepsilon_i$$ with noise $$\varepsilon_i \sim \mathcal{N}(0, \sigma_n^2)$$, and a GP prior $$f \sim \mathcal{GP}(0, k)$$, the posterior distribution over $$f$$ is also a GP.
 
-At any test point $x_{\ast}$, the posterior mean and variance are:
+At any test point $$x_{\ast}$$, the posterior mean and variance are:
 
 $$
 \mu(x_*) = k(x_*, \mathbf{x})^\top \left( K + \sigma_n^2 I \right)^{-1} \mathbf{y},
@@ -70,7 +70,7 @@ $$
 \sigma^2(x_*) = k(x_*, x_*) - k(x_*, \mathbf{x})^\top \left( K + \sigma_n^2 I \right)^{-1} k(\mathbf{x}, x_*),
 $$
 
-where $k(x_{\ast}, \mathbf{x})$ is the vector of covariances between the test point and the training points, and $K$ is the training kernel matrix.
+where $$k(x_{\ast}, \mathbf{x})$$ is the vector of covariances between the test point and the training points, and $$K$$ is the training kernel matrix.
 
 The posterior mean minimizes posterior expected squared-error loss. For Gaussian regression with the stated kernel and noise model, it also equals the kernel-ridge solution in the associated RKHS, with the scaling fixed by the likelihood and prior.
 
@@ -79,7 +79,7 @@ The posterior variance is conditional on the kernel, hyperparameters, observatio
 
 ## The Reproducing Kernel Hilbert Space Connection
 
-Every positive-definite kernel defines an RKHS $\mathcal{H}_k$. For a stationary kernel on $\mathbb{R}^d$ with an appropriate positive spectral density $S$, its norm can be represented schematically as
+Every positive-definite kernel defines an RKHS $$\mathcal{H}_k$$. For a stationary kernel on $$\mathbb{R}^d$$ with an appropriate positive spectral density $$S$$, its norm can be represented schematically as
 
 $$
 \lVert f \rVert_{\mathcal{H}_k}^2 = \int \frac{|\hat{f}(\xi)|^2}{S(\xi)}\, d\xi < \infty,
@@ -100,7 +100,7 @@ The shared point estimator connects kernel regularization with Gaussian conditio
 
 ## Learning the Hyperparameters
 
-A GP prior is specified up to hyperparameters: the length scale $\ell$, the marginal variance $\sigma^2$, the noise level $\sigma_n^2$, and, in the Matérn family, the smoothness $\nu$. In practice, these must be estimated from data.
+A GP prior is specified up to hyperparameters: the length scale $$\ell$$, the marginal variance $$\sigma^2$$, the noise level $$\sigma_n^2$$, and, in the Matérn family, the smoothness $$\nu$$. In practice, these must be estimated from data.
 
 The standard approach is maximum likelihood, maximizing the log marginal likelihood of the data under the GP model:
 
@@ -110,9 +110,9 @@ $$
 
 The first term rewards good fit to the data. The second term penalizes complexity. Together they implement Occam's razor: the hyperparameters are chosen to explain the data with the simplest function consistent with the prior.
 
-This marginal likelihood optimisation is usually done with gradient methods. The gradients are computable but the dominant cost is the $O(n^3)$ Cholesky factorisation of the kernel matrix, which limits standard GP regression to problems with at most a few thousand observations.
+This marginal likelihood optimisation is usually done with gradient methods. The gradients are computable but the dominant cost is the $$O(n^3)$$ Cholesky factorisation of the kernel matrix, which limits standard GP regression to problems with at most a few thousand observations.
 
-For larger datasets, sparse approximations (inducing point methods, Nyström approximation) reduce the cost to $O(nm^2)$ where $m \ll n$ is the number of inducing points. These approximations introduce their own errors, but they make GP methods applicable at scales that were previously inaccessible.
+For larger datasets, sparse approximations (inducing point methods, Nyström approximation) reduce the cost to $$O(nm^2)$$ where $$m \ll n$$ is the number of inducing points. These approximations introduce their own errors, but they make GP methods applicable at scales that were previously inaccessible.
 
 
 ## Where I Find Them Useful

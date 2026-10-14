@@ -22,7 +22,7 @@ I have been thinking about this question since reading the slides, partly becaus
 
 A large fraction of the current debate is about capability. Can a language model really reason? Was a benchmark contaminated? Did the system solve a genuinely new problem? How much prompting was involved? Was the proof checked by a human or by a proof assistant? These are important questions. Tao formulates the issue as a family of "AI capability conjectures," each a template whose key terms are left as placeholders: at some point, some AI tools will, at some expense, and with some level of human supervision, be able to accomplish some research-level mathematical tasks in some fields, with some non-trivial success rate and at some level of correctness. There is not one claim called "AI can do mathematics"; there are many, depending on which placeholders you fill in.
 
-That distinction matters. Solving a carefully selected research problem after extensive human guidance is very different from autonomously developing a new mathematical theory. But Tao deliberately puts that dispute to one side. His argument is conditional. Suppose a reasonably strong version of the capability claim turns out to be true, and he offers one controlled data point: a second batch of ten novel research-level problems, assessed under scientific conditions against four AI systems in May 2026, with seven of the ten solved at publication-level quality, at compute costs of $10–$1000 per problem. Conditioning on that working hypothesis exposes a question that remains important even if one is sceptical about the strongest claims made by AI companies. The fact that a machine *can* perform a task does not tell us whether the task should be delegated to it, how its output should be evaluated, or what responsibilities remain with the mathematician. Capability is one question; value is another.
+That distinction matters. Solving a carefully selected research problem after extensive human guidance is very different from autonomously developing a new mathematical theory. But Tao deliberately puts that dispute to one side. His argument is conditional. Suppose a reasonably strong version of the capability claim turns out to be true, and he offers one controlled data point: a second batch of ten novel research-level problems, assessed under scientific conditions against four AI systems in May 2026, with seven of the ten solved at publication-level quality, at compute costs of $$10–$$1000 per problem. Conditioning on that working hypothesis exposes a question that remains important even if one is sceptical about the strongest claims made by AI companies. The fact that a machine *can* perform a task does not tell us whether the task should be delegated to it, how its output should be evaluated, or what responsibilities remain with the mathematician. Capability is one question; value is another.
 
 ## Mathematics Has Never Had Only One Objective
 
@@ -88,7 +88,7 @@ I find this picture much more useful than the common debate about whether an AI 
 
 Tao's phrase that stayed with me most is the transition from **proof scarcity** to **proof abundance**. Our current mathematical institutions were built in a world where generating a serious new proof was expensive. The difficulty of creating the proof acted as a natural filter. There were still too many papers to read, of course, but the production rate was limited by the amount of human mathematical labour available. Suppose AI removes much of that bottleneck. Then the rate of proof generation could increase much faster than the rates of verification, exposition, peer review, and mathematical digestion.
 
-One can think of the research system as a sequence of queues. Let $\lambda_g$ be the rate at which candidate proofs are generated, while $\mu_v$, $\mu_e$, $\mu_r$, $\mu_c$ represent our effective capacities for verification, exposition, review, and canonicalization. If AI makes $\lambda_g \gg \mu_v$, then unverified proofs accumulate. If verification is also automated but exposition remains slow, the bottleneck simply moves: $\lambda_v \gg \mu_e$. If AI becomes good at exposition too, journals and referees may become the limiting stage. And if reviewing is partially automated, we eventually encounter what seems to me the hardest bottleneck of all: human attention. There is only so much mathematics that a research community can genuinely absorb.
+One can think of the research system as a sequence of queues. Let $$\lambda_g$$ be the rate at which candidate proofs are generated, while $$\mu_v$$, $$\mu_e$$, $$\mu_r$$, $$\mu_c$$ represent our effective capacities for verification, exposition, review, and canonicalization. If AI makes $$\lambda_g \gg \mu_v$$, then unverified proofs accumulate. If verification is also automated but exposition remains slow, the bottleneck simply moves: $$\lambda_v \gg \mu_e$$. If AI becomes good at exposition too, journals and referees may become the limiting stage. And if reviewing is partially automated, we eventually encounter what seems to me the hardest bottleneck of all: human attention. There is only so much mathematics that a research community can genuinely absorb.
 
 Tao calls the resulting phenomenon **proof indigestion**, and the term captures the problem well. Producing more mathematical objects does not automatically increase the amount of mathematics that the community understands. In fact, beyond some point, abundance can make understanding harder. Important results compete with thousands of technically correct but less consequential ones. Researchers spend more time filtering. The literature becomes harder to navigate. Priority becomes more difficult to establish. Expert refereeing becomes an increasingly scarce resource. The bottleneck shifts from *generation* to *judgment*.
 
@@ -100,7 +100,7 @@ $$
 \Gamma \vdash T,
 $$
 
-where $\Gamma$ contains the assumptions and $T$ is the theorem. This establishes something very important: the formal derivation is valid relative to the encoded assumptions and definitions. But it does not answer why $T$ is true, which assumptions in $\Gamma$ are actually doing the work, what the central mechanism of the proof is, where the difficult step is, what would fail if one assumption were weakened, whether there is a stronger theorem hiding behind the argument, whether the proof reveals a reusable idea, or how it connects to the existing theory. These are not secondary questions. They are often where the mathematics lives.
+where $$\Gamma$$ contains the assumptions and $$T$$ is the theorem. This establishes something very important: the formal derivation is valid relative to the encoded assumptions and definitions. But it does not answer why $$T$$ is true, which assumptions in $$\Gamma$$ are actually doing the work, what the central mechanism of the proof is, where the difficult step is, what would fail if one assumption were weakened, whether there is a stronger theorem hiding behind the argument, whether the proof reveals a reusable idea, or how it connects to the existing theory. These are not secondary questions. They are often where the mathematics lives.
 
 When I read a good proof, I am rarely trying to memorize the sequence of deductions. I am trying to compress it into a mental model. Maybe the key is compactness. Maybe there is a hidden coercivity estimate. Maybe the right variable makes a convex structure visible. Maybe the whole argument is really exploiting an invariant. Maybe an apparently analytic theorem is ultimately geometric. Understanding occurs when the long derivation can be reorganized around a relatively small number of structural ideas. AI may become extremely good at producing derivations; whether that automatically produces this kind of conceptual compression is a separate question.
 
@@ -158,7 +158,7 @@ $$
 F(x)=y,
 $$
 
-where $F$ is the forward operator, $x$ is an unknown parameter or field, and $y$ is observed data.
+where $$F$$ is the forward operator, $$x$$ is an unknown parameter or field, and $$y$$ is observed data.
 
 With noisy measurements,
 
@@ -166,7 +166,7 @@ $$
 \lVert y^\delta-y\rVert_Y\leq\delta,
 $$
 
-we might reconstruct $x$ by solving
+we might reconstruct $$x$$ by solving
 
 $$
 x_{\alpha,\theta}^{\delta}
@@ -179,7 +179,7 @@ x_{\alpha,\theta}^{\delta}
 \right\}.
 $$
 
-An AI system could help derive this method, implement it, run the experiments, and perhaps even prove a convergence theorem. But none of that automatically answers the scientific questions: Is $F$ a sufficiently accurate model of the physical experiment? Is $\mathcal{D}$ the right model for the noise? What prior information is encoded in $\mathcal{R}_{\theta}$? Is the reconstruction identifiable from the available data? What happens under model mismatch? Does the discrete algorithm faithfully approximate the continuum formulation? Are the theoretical stability constants meaningful at computationally relevant scales? Does a learned regularizer still behave sensibly outside the training distribution?
+An AI system could help derive this method, implement it, run the experiments, and perhaps even prove a convergence theorem. But none of that automatically answers the scientific questions: Is $$F$$ a sufficiently accurate model of the physical experiment? Is $$\mathcal{D}$$ the right model for the noise? What prior information is encoded in $$\mathcal{R}_{\theta}$$? Is the reconstruction identifiable from the available data? What happens under model mismatch? Does the discrete algorithm faithfully approximate the continuum formulation? Are the theoretical stability constants meaningful at computationally relevant scales? Does a learned regularizer still behave sensibly outside the training distribution?
 
 These questions require judgment that lies outside the local correctness of the proof. This is one reason I think applied mathematicians should be especially careful about confusing AI-generated mathematical fluency with scientific understanding. The machine can manipulate the model we give it; we remain responsible for deciding whether it is the right model.
 

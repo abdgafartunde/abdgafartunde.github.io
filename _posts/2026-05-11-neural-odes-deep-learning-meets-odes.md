@@ -21,9 +21,9 @@ $$
 h_{k+1} = h_k + f_\theta(h_k, t_k),
 $$
 
-for $k = 0, 1, \ldots, K-1$, where $h_k$ is the hidden state at layer $k$, $f_\theta$ is a parameterized transformation (typically a small neural network), and $t_k$ is a "time" label for layer $k$.
+for $$k = 0, 1, \ldots, K-1$$, where $$h_k$$ is the hidden state at layer $$k$$, $$f_\theta$$ is a parameterized transformation (typically a small neural network), and $$t_k$$ is a "time" label for layer $$k$$.
 
-This is the forward Euler method applied to the ODE $\dot{h}(t) = f_\theta(h(t), t)$ with step size 1. The connection is immediate: a residual network with $K$ layers is a $K$-step numerical solution of a dynamical system.
+This is the forward Euler method applied to the ODE $$\dot{h}(t) = f_\theta(h(t), t)$$ with step size 1. The connection is immediate: a residual network with $$K$$ layers is a $$K$$-step numerical solution of a dynamical system.
 
 Chen, Rubanova, Bettencourt, and Duvenaud made this precise in their 2018 NeurIPS paper on Neural ODEs. Instead of stacking a fixed number of layers, they define the network as the continuous-time ODE:
 
@@ -31,22 +31,22 @@ $$
 \frac{dh}{dt} = f_\theta(h(t), t),
 $$
 
-with initial condition $h(0) = x$, where $x$ is the input and the output is $h(T)$ for some terminal time $T$. The ODE is solved numerically during both the forward pass (to compute the output) and the backward pass (to compute gradients), using an adaptive ODE solver.
+with initial condition $$h(0) = x$$, where $$x$$ is the input and the output is $$h(T)$$ for some terminal time $$T$$. The ODE is solved numerically during both the forward pass (to compute the output) and the backward pass (to compute gradients), using an adaptive ODE solver.
 
 The elegance of this formulation is that the model has no fixed depth. The ODE solver automatically determines how many function evaluations (analogous to layers) are needed, allocating more computation where the dynamics are complex and less where they are simple. The number of parameters is independent of the effective depth, which can reduce memory costs substantially.
 
 
 ## Training: The Adjoint Method
 
-Training a neural ODE requires computing gradients of the loss with respect to the parameters $\theta$. The naive approach (backpropagating through the operations of the ODE solver) stores all intermediate states, making the memory cost proportional to the number of solver steps.
+Training a neural ODE requires computing gradients of the loss with respect to the parameters $$\theta$$. The naive approach (backpropagating through the operations of the ODE solver) stores all intermediate states, making the memory cost proportional to the number of solver steps.
 
-The adjoint method offers an alternative. Define the adjoint state $a(t) = \frac{dL}{dh(t)}$, where $L$ is the loss. The adjoint satisfies a backward ODE:
+The adjoint method offers an alternative. Define the adjoint state $$a(t) = \frac{dL}{dh(t)}$$, where $$L$$ is the loss. The adjoint satisfies a backward ODE:
 
 $$
 \frac{da}{dt} = -a(t)^T \frac{\partial f_\theta}{\partial h}(h(t), t),
 $$
 
-integrated backward from $t = T$ to $t = 0$, with the terminal condition $a(T) = \frac{dL}{dh(T)}$. The gradient with respect to $\theta$ is:
+integrated backward from $$t = T$$ to $$t = 0$$, with the terminal condition $$a(T) = \frac{dL}{dh(T)}$$. The gradient with respect to $$\theta$$ is:
 
 $$
 \frac{dL}{d\theta} = \int_0^T a(t)^T \frac{\partial f_\theta}{\partial \theta}(h(t), t) \, dt.
@@ -84,9 +84,9 @@ $$
 dh = f_\theta(h, t) \, dt + g_\phi(h, t) \, dW,
 $$
 
-where $dW$ is a Wiener process, adds stochasticity to the model. This is useful for modeling systems with intrinsic noise and for uncertainty quantification: the distribution of the SDE's output reflects uncertainty in the prediction. Training requires stochastic adjoint methods and is more expensive, but the added expressiveness is valuable for certain applications.
+where $$dW$$ is a Wiener process, adds stochasticity to the model. This is useful for modeling systems with intrinsic noise and for uncertainty quantification: the distribution of the SDE's output reflects uncertainty in the prediction. Training requires stochastic adjoint methods and is more expensive, but the added expressiveness is valuable for certain applications.
 
-**Hamiltonian and Lagrangian Neural Networks.** When the system you are modeling has conserved quantities (energy, momentum), encoding these conservation laws into the architecture can dramatically improve both accuracy and generalization. Hamiltonian Neural Networks (Greydanus et al., 2019) parameterize the Hamiltonian $H_\theta(q, p)$ and evolve the system via Hamilton's equations:
+**Hamiltonian and Lagrangian Neural Networks.** When the system you are modeling has conserved quantities (energy, momentum), encoding these conservation laws into the architecture can dramatically improve both accuracy and generalization. Hamiltonian Neural Networks (Greydanus et al., 2019) parameterize the Hamiltonian $$H_\theta(q, p)$$ and evolve the system via Hamilton's equations:
 
 $$
 \begin{aligned}
@@ -103,7 +103,7 @@ $$
 \frac{dh}{dt} = f_\theta(h(t)) \frac{dX}{dt}(t),
 $$
 
-where $X(t)$ is a differentiable interpolation of the input data. More generally, a neural CDE is written $dh(t)=f_\theta(h(t))\,dX(t)$ and does not require a classical derivative at every time.
+where $$X(t)$$ is a differentiable interpolation of the input data. More generally, a neural CDE is written $$dh(t)=f_\theta(h(t))\,dX(t)$$ and does not require a classical derivative at every time.
 
 
 ## Connections to Numerical Analysis
@@ -125,7 +125,7 @@ Neural ODEs are not without drawbacks.
 
 **Training can be slow.** Each pass requires numerical integration, and tight tolerances or stiff learned dynamics can demand many function evaluations. The wall-clock comparison with a fixed-depth residual network depends on solver tolerances, architecture, hardware, and the required accuracy.
 
-**Stiff dynamics are problematic.** If the learned dynamics $f_\theta$ produces stiff equations, implicit solvers are needed, which substantially increase the cost per step. During training, the dynamics can become stiff as the parameters change, causing the solver to slow down unpredictably.
+**Stiff dynamics are problematic.** If the learned dynamics $$f_\theta$$ produces stiff equations, implicit solvers are needed, which substantially increase the cost per step. During training, the dynamics can become stiff as the parameters change, causing the solver to slow down unpredictably.
 
 **Expressiveness limitations.** The homeomorphism constraint of ODE flows limits what neural ODEs can represent without augmentation. For classification tasks, this is a real limitation. For modeling physical systems, it is less of an issue because physical dynamics are typically continuous.
 

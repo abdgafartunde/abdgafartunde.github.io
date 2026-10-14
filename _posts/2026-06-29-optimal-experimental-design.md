@@ -12,20 +12,20 @@ Most discussions of inverse problems take the measurement setup as given. You ha
 
 This is the problem of **optimal experimental design** (OED). Given a model, a class of possible experiments, and a criterion for what "good" information looks like, OED asks: which experiment (which choice of measurement operator) extracts the most useful information about the unknown?
 
-The question has a long history in statistics, going back at least to work by Kiefer and Wolfowitz in the 1950s. In recent years, it has become practically significant in inverse problems, where the measurement geometry is often a design choice, not a physical constraint. In EIT, you can choose which electrode pairs to stimulate and in what pattern. In seismic surveys, you can choose the shot locations. In MRI, you can choose the $k$-space trajectory. In each case, making the right choices can dramatically improve the quality of the reconstruction.
+The question has a long history in statistics, going back at least to work by Kiefer and Wolfowitz in the 1950s. In recent years, it has become practically significant in inverse problems, where the measurement geometry is often a design choice, not a physical constraint. In EIT, you can choose which electrode pairs to stimulate and in what pattern. In seismic surveys, you can choose the shot locations. In MRI, you can choose the $$k$$-space trajectory. In each case, making the right choices can dramatically improve the quality of the reconstruction.
 
 
 ## The Setup
 
-Suppose the unknown parameter $m$ takes values in $\mathbb{R}^n$, and we observe linear data
+Suppose the unknown parameter $$m$$ takes values in $$\mathbb{R}^n$$, and we observe linear data
 
 $$
 y = Cm + \eta,
 $$
 
-where $C \in \mathbb{R}^{k \times n}$ is the measurement operator (determined by the experimental design), and $\eta \sim \mathcal{N}(0, \Gamma_\text{noise})$ is Gaussian noise.
+where $$C \in \mathbb{R}^{k \times n}$$ is the measurement operator (determined by the experimental design), and $$\eta \sim \mathcal{N}(0, \Gamma_\text{noise})$$ is Gaussian noise.
 
-We adopt a Bayesian viewpoint. The prior is $m \sim \mathcal{N}(m_0, \Gamma_\text{prior})$. Given data $y$, the posterior is also Gaussian:
+We adopt a Bayesian viewpoint. The prior is $$m \sim \mathcal{N}(m_0, \Gamma_\text{prior})$$. Given data $$y$$, the posterior is also Gaussian:
 
 $$
 m \mid y \sim \mathcal{N}(m_\text{post}, \Gamma_\text{post}),
@@ -37,16 +37,16 @@ $$
 \Gamma_\text{post}^{-1} = \Gamma_\text{prior}^{-1} + C^\top \Gamma_\text{noise}^{-1} C.
 $$
 
-The posterior covariance $\Gamma_\text{post}$ is the key object. It measures the remaining uncertainty after the experiment. A good experiment drives $\Gamma_\text{post}$ toward zero in the directions we care about; a bad experiment leaves large posterior variance.
+The posterior covariance $$\Gamma_\text{post}$$ is the key object. It measures the remaining uncertainty after the experiment. A good experiment drives $$\Gamma_\text{post}$$ toward zero in the directions we care about; a bad experiment leaves large posterior variance.
 
-The problem of OED is to choose $C$ (subject to a budget constraint) to minimize a scalar summary of $\Gamma_\text{post}$.
+The problem of OED is to choose $$C$$ (subject to a budget constraint) to minimize a scalar summary of $$\Gamma_\text{post}$$.
 
 
 ## Design Criteria
 
-Several scalar criteria for $\Gamma_\text{post}$ are standard.
+Several scalar criteria for $$\Gamma_\text{post}$$ are standard.
 
-**A-optimality** minimizes the trace of $\Gamma_\text{post}$, which is the average posterior variance across all components of $m$:
+**A-optimality** minimizes the trace of $$\Gamma_\text{post}$$, which is the average posterior variance across all components of $$m$$:
 
 $$
 \Phi_A(C) = \text{tr}(\Gamma_\text{post}) = \text{tr}\!\left(\left(\Gamma_\text{prior}^{-1} + C^\top \Gamma_\text{noise}^{-1} C\right)^{-1}\right).
@@ -54,36 +54,36 @@ $$
 
 Under the assumed linear-Gaussian model and squared Euclidean loss, minimizing the trace minimizes the Bayes risk of the posterior mean.
 
-**D-optimality** minimizes the log-determinant of $\Gamma_\text{post}$, equivalently maximizing the information gain (the reduction in differential entropy from prior to posterior):
+**D-optimality** minimizes the log-determinant of $$\Gamma_\text{post}$$, equivalently maximizing the information gain (the reduction in differential entropy from prior to posterior):
 
 $$
 \Phi_D(C) = \log\det(\Gamma_\text{post}) = -\log\det\!\left(\Gamma_\text{prior}^{-1} + C^\top \Gamma_\text{noise}^{-1} C\right).
 $$
 
-The information gain is $\frac{1}{2}\log\det(\Gamma_\text{prior}) - \frac{1}{2}\log\det(\Gamma_\text{post})$, which measures (in nats) how much entropy is removed by the experiment. D-optimal designs maximize this reduction, and they have a Bayesian-invariance property: the optimal design is the same regardless of the prior's mean $m_0$.
+The information gain is $$\frac{1}{2}\log\det(\Gamma_\text{prior}) - \frac{1}{2}\log\det(\Gamma_\text{post})$$, which measures (in nats) how much entropy is removed by the experiment. D-optimal designs maximize this reduction, and they have a Bayesian-invariance property: the optimal design is the same regardless of the prior's mean $$m_0$$.
 
-**E-optimality** minimizes the largest eigenvalue of $\Gamma_\text{post}$, reducing the worst-case posterior variance direction. This is more conservative than A-optimality and appropriate when the largest uncertainty matters more than the average.
+**E-optimality** minimizes the largest eigenvalue of $$\Gamma_\text{post}$$, reducing the worst-case posterior variance direction. This is more conservative than A-optimality and appropriate when the largest uncertainty matters more than the average.
 
-**Goal-oriented design** targets a specific quantity of interest $Q(m) = q^\top m$ and minimizes $q^\top \Gamma_\text{post} q$, the posterior variance of that quantity. This is appropriate when only part of the unknown is relevant; global design criteria can allocate measurement effort to directions that do not affect $Q$.
+**Goal-oriented design** targets a specific quantity of interest $$Q(m) = q^\top m$$ and minimizes $$q^\top \Gamma_\text{post} q$$, the posterior variance of that quantity. This is appropriate when only part of the unknown is relevant; global design criteria can allocate measurement effort to directions that do not affect $$Q$$.
 
 
 ## The Sensor Placement Problem
 
-A concrete instance of OED: you have $N$ candidate sensor locations and a budget of $k \ll N$ sensors. Which $k$ locations should you choose?
+A concrete instance of OED: you have $$N$$ candidate sensor locations and a budget of $$k \ll N$$ sensors. Which $$k$$ locations should you choose?
 
-Formally, let $C_i \in \mathbb{R}^{1 \times n}$ be the measurement row corresponding to sensor $i$. You seek a subset $\mathcal{S} \subset \{1, \ldots, N\}$ of size $k$ that minimizes
+Formally, let $$C_i \in \mathbb{R}^{1 \times n}$$ be the measurement row corresponding to sensor $$i$$. You seek a subset $$\mathcal{S} \subset \{1, \ldots, N\}$$ of size $$k$$ that minimizes
 
 $$
 \operatorname{tr}\!\left(\left(\Gamma_\text{prior}^{-1} + \sum_{i \in \mathcal{S}} \sigma_i^{-2} C_i^\top C_i\right)^{-1}\right),
 $$
 
-where the sensor noises are assumed independent with variances $\sigma_i^2$. Correlated noise requires assembling the covariance for the selected sensor set rather than summing independent contributions.
+where the sensor noises are assumed independent with variances $$\sigma_i^2$$. Correlated noise requires assembling the covariance for the selected sensor set rather than summing independent contributions.
 
-This is a combinatorial optimization problem: there are $\binom{N}{k}$ possible designs, which for $N = 100$ and $k = 10$ is about $1.7 \times 10^{13}$. Exhaustive search is hopeless.
+This is a combinatorial optimization problem: there are $$\binom{N}{k}$$ possible designs, which for $$N = 100$$ and $$k = 10$$ is about $$1.7 \times 10^{13}$$. Exhaustive search is hopeless.
 
-**Greedy methods.** Add sensors one at a time, choosing the sensor that gives the largest decrease in the design criterion. Log-determinant information gain is monotone submodular under common independent-noise assumptions, so the classical greedy algorithm has a $1-1/e$ guarantee for the associated cardinality-constrained maximization problem. A-optimality and E-optimality are not submodular in general, although weaker or problem-specific guarantees are available.
+**Greedy methods.** Add sensors one at a time, choosing the sensor that gives the largest decrease in the design criterion. Log-determinant information gain is monotone submodular under common independent-noise assumptions, so the classical greedy algorithm has a $$1-1/e$$ guarantee for the associated cardinality-constrained maximization problem. A-optimality and E-optimality are not submodular in general, although weaker or problem-specific guarantees are available.
 
-**Convex relaxation.** Replace the binary sensor selection indicator by a continuous weight $w_i \in [0, 1]$:
+**Convex relaxation.** Replace the binary sensor selection indicator by a continuous weight $$w_i \in [0, 1]$$:
 
 $$
 \min_{w \in [0,1]^N,\, \mathbf{1}^\top w \leq k} \;\operatorname{tr}\!\left(\left(\Gamma_\text{prior}^{-1} + \sum_{i=1}^N w_i\sigma_i^{-2} C_i^\top C_i\right)^{-1}\right).
@@ -91,7 +91,7 @@ $$
 
 The relaxed A-optimal objective is convex and admits a semidefinite epigraph formulation. The resulting fractional weights must be rounded or sampled to obtain a binary design, and that step can degrade the relaxed optimum.
 
-**Randomized methods.** Sample sensor subsets with probability proportional to their approximate contribution to the information gain. These are scalable and often produce near-optimal designs for large $N$, though without the approximation guarantees of greedy algorithms.
+**Randomized methods.** Sample sensor subsets with probability proportional to their approximate contribution to the information gain. These are scalable and often produce near-optimal designs for large $$N$$, though without the approximation guarantees of greedy algorithms.
 
 
 ## Adaptive and Sequential Design

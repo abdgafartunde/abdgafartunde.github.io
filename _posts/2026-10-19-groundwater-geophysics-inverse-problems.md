@@ -22,7 +22,7 @@ $$
 -\nabla \cdot (\sigma(x) \nabla u) = f,
 $$
 
-where $\sigma(x)$ is the electrical conductivity of the subsurface, $\rho=1/\sigma$ is resistivity, $u(x)$ is the electric potential, and $f$ represents a balanced source and sink at the current electrodes. Medical EIT uses the same conductivity equation, but the domain, boundary conditions, electrode geometry, observation operator, dimensionality, and prior information all change. Surface-only measurements also produce weak sensitivity to deep or poorly illuminated structures. These differences affect sensitivity and identifiability.
+where $$\sigma(x)$$ is the electrical conductivity of the subsurface, $$\rho=1/\sigma$$ is resistivity, $$u(x)$$ is the electric potential, and $$f$$ represents a balanced source and sink at the current electrodes. Medical EIT uses the same conductivity equation, but the domain, boundary conditions, electrode geometry, observation operator, dimensionality, and prior information all change. Surface-only measurements also produce weak sensitivity to deep or poorly illuminated structures. These differences affect sensitivity and identifiability.
 
 Water saturation often lowers resistivity, but pore-water salinity, clay content, porosity, temperature, and mineralogy also affect the measurement. Different rock and soil materials occupy broad, overlapping resistivity ranges. Dry sand and gravel are often more resistive than water-saturated sediments, while clay and saline water can both produce low resistivity. Bedrock varies with mineralogy, porosity, weathering, and fracture saturation. ERT therefore maps electrical contrasts that must be interpreted hydrogeologically, not water content directly, and an ERT image needs geological interpretation and, where possible, supporting borehole or geophysical data.
 
@@ -30,15 +30,15 @@ Resistivity contrasts make ERT useful for groundwater investigations. By measuri
 
 ## The Inverse Problem
 
-Given a set of surface electrode configurations and a data vector $d$, a regularized inverse problem can be written as
+Given a set of surface electrode configurations and a data vector $$d$$, a regularized inverse problem can be written as
 
 $$
 \min_{\sigma>0} \; \frac{1}{2}\|F(\sigma) - d\|^2 + \alpha R(\sigma),
 $$
 
-where $F(\sigma)$ maps the conductivity distribution to predicted surface potentials (by solving the forward PDE), and $R(\sigma)$ is a regularization term.
+where $$F(\sigma)$$ maps the conductivity distribution to predicted surface potentials (by solving the forward PDE), and $$R(\sigma)$$ is a regularization term.
 
-The problem is nonlinear because $F$ depends nonlinearly on $\sigma$, and it is ill-posed because finite, noisy surface data provide weak sensitivity to some subsurface variations. Regularization and physical constraints select a stable estimate, but they do not remove all geological ambiguity. Three-dimensional surveys can also produce large computational problems.
+The problem is nonlinear because $$F$$ depends nonlinearly on $$\sigma$$, and it is ill-posed because finite, noisy surface data provide weak sensitivity to some subsurface variations. Regularization and physical constraints select a stable estimate, but they do not remove all geological ambiguity. Three-dimensional surveys can also produce large computational problems.
 
 The same algorithmic approaches used in EIT apply here. The standard algorithm is a regularized Gauss-Newton method: linearize the forward operator around the current resistivity model, solve the regularized linear system for the model update, and repeat until convergence. Total variation regularization is common when sharp boundaries (e.g., the top of a weathered zone or a sediment-filled valley) are expected, and deep learning components are increasingly used to encode geological prior information.
 
@@ -58,7 +58,7 @@ Step 4 is the mathematical core, and two features of it shape what the final ima
 
 Mathematically, this is a non-uniqueness problem. The forward operator maps the conductivity distribution to the surface measurements; multiple conductivity distributions can produce nearly identical surface data. Regularization reduces the non-uniqueness but cannot eliminate it when the fundamental physics does not distinguish between the ambiguous cases. Joint inversion of ERT and induced polarization data, treating the conductivity and chargeability as coupled unknowns and inverting them simultaneously, addresses this at the cost of a larger, more complex inverse problem.
 
-**Depth sensitivity.** EIT images a domain of tens of centimeters; ERT images depths of tens to hundreds of meters. Surface ERT generally loses sensitivity and resolution with depth, which makes deep aquifer characterization harder than shallow imaging. There is no universal $1/d^2$ law: the sensitivity kernel depends on array type, electrode spacing, domain geometry, background conductivity, noise, and the target. Depth of investigation should therefore be assessed for the actual survey, for example through sensitivity analysis or depth-of-investigation diagnostics.
+**Depth sensitivity.** EIT images a domain of tens of centimeters; ERT images depths of tens to hundreds of meters. Surface ERT generally loses sensitivity and resolution with depth, which makes deep aquifer characterization harder than shallow imaging. There is no universal $$1/d^2$$ law: the sensitivity kernel depends on array type, electrode spacing, domain geometry, background conductivity, noise, and the target. Depth of investigation should therefore be assessed for the actual survey, for example through sensitivity analysis or depth-of-investigation diagnostics.
 
 ## The Global Water Context
 

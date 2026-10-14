@@ -8,7 +8,7 @@ tags: [Scientific Machine Learning, Neural Operators, Deep Learning]
 math: true
 ---
 
-In my earlier post on physics-informed neural networks, I described a method that trains a neural network to approximate the solution of a single PDE instance. You fix the coefficients, the domain, the boundary conditions, and you train a network to produce $u(x)$ at any point $x$.
+In my earlier post on physics-informed neural networks, I described a method that trains a neural network to approximate the solution of a single PDE instance. You fix the coefficients, the domain, the boundary conditions, and you train a network to produce $$u(x)$$ at any point $$x$$.
 
 This works, but it has a fundamental limitation: every time you change the problem (a different forcing term, a different boundary condition, a different coefficient), you have to retrain from scratch. For inverse problems, where you need to solve the forward problem hundreds or thousands of times with different parameter values, this is prohibitively expensive.
 
@@ -19,9 +19,9 @@ This is an ambitious goal. It requires learning a mapping between infinite-dimen
 
 ## From Functions to Operators
 
-A neural network in the standard sense learns a function $f : \mathbb{R}^n \to \mathbb{R}^m$. The input and output are finite-dimensional vectors. This is the setting of image classification, regression, and most of traditional deep learning.
+A neural network in the standard sense learns a function $$f : \mathbb{R}^n \to \mathbb{R}^m$$. The input and output are finite-dimensional vectors. This is the setting of image classification, regression, and most of traditional deep learning.
 
-A neural operator learns a mapping $\mathcal{G} : \mathcal{U} \to \mathcal{S}$ between function spaces. The input is a function (say, a spatially varying coefficient $a(x)$), and the output is a function (say, the solution $u(x)$ of a PDE with that coefficient). Both $a$ and $u$ are, in principle, infinite-dimensional objects.
+A neural operator learns a mapping $$\mathcal{G} : \mathcal{U} \to \mathcal{S}$$ between function spaces. The input is a function (say, a spatially varying coefficient $$a(x)$$), and the output is a function (say, the solution $$u(x)$$ of a PDE with that coefficient). Both $$a$$ and $$u$$ are, in principle, infinite-dimensional objects.
 
 The intended object is an operator between function spaces rather than a map tied to one vector dimension. Some architectures can therefore be evaluated on grids finer than those used for training. Accurate zero-shot super-resolution is not automatic: quadrature, aliasing, retained modes, normalization, and the training distribution still determine whether predictions converge as the evaluation grid is refined.
 
@@ -30,13 +30,13 @@ The intended object is an operator between function spaces rather than a map tie
 
 DeepONet, introduced by Lu, Jin, Pang, Zhang, and Karniadakis in 2021, is built on a mathematical foundation: the universal approximation theorem for operators, proved by Chen and Chen in 1995. The theorem states that a sufficiently wide network can approximate any continuous nonlinear operator to arbitrary accuracy.
 
-The architecture has two subnetworks. The *branch net* processes the input function $a(x)$, evaluated at a fixed set of sensor locations $\{x_1, \ldots, x_m\}$, and produces a vector of coefficients $b_1, \ldots, b_p$. The *trunk net* takes a query point $y$ (where you want to evaluate the output) and produces another vector $t_1, \ldots, t_p$. The output is their inner product:
+The architecture has two subnetworks. The *branch net* processes the input function $$a(x)$$, evaluated at a fixed set of sensor locations $$\{x_1, \ldots, x_m\}$$, and produces a vector of coefficients $$b_1, \ldots, b_p$$. The *trunk net* takes a query point $$y$$ (where you want to evaluate the output) and produces another vector $$t_1, \ldots, t_p$$. The output is their inner product:
 
 $$
 \mathcal{G}_\theta(a)(y) = \sum_{k=1}^{p} b_k(a(x_1), \ldots, a(x_m)) \cdot t_k(y).
 $$
 
-The branch net encodes how the input function $a$ determines the solution, and the trunk net encodes the spatial structure of the output. Training uses input-output pairs $\{(a_i, u_i)\}$ from data or a PDE solver.
+The branch net encodes how the input function $$a$$ determines the solution, and the trunk net encodes the spatial structure of the output. Training uses input-output pairs $$\{(a_i, u_i)\}$$ from data or a PDE solver.
 
 The architecture is simple and general. It applies to any operator, not just those arising from PDEs. The practical limitation is that the branch net sees the input function only through its values at fixed sensor locations, which introduces a discretization dependence that the theory claims to avoid.
 
@@ -45,13 +45,13 @@ The architecture is simple and general. It applies to any operator, not just tho
 
 The Fourier Neural Operator (FNO), introduced by Li, Kovachki, Azizzadenesheli, Liu, Bhatt, Stuard, and Anandkumar in 2021, takes a different approach. Instead of learning an operator through pointwise evaluations, it operates in the frequency domain.
 
-The key building block is the spectral convolution layer. Given an input function $v(x)$, represented as a discretized field, the layer computes:
+The key building block is the spectral convolution layer. Given an input function $$v(x)$$, represented as a discretized field, the layer computes:
 
 $$
 (\mathcal{K}(v))(x) = \mathcal{F}^{-1}\!\left( R_\phi \cdot \mathcal{F}(v) \right)(x) + W v(x),
 $$
 
-where $\mathcal{F}$ is the Fourier transform, $R_\phi$ is a learnable weight tensor applied in Fourier space (truncated to a finite number of modes), and $W$ is a linear transformation applied in physical space. A nonlinear activation is applied after each layer.
+where $$\mathcal{F}$$ is the Fourier transform, $$R_\phi$$ is a learnable weight tensor applied in Fourier space (truncated to a finite number of modes), and $$W$$ is a linear transformation applied in physical space. A nonlinear activation is applied after each layer.
 
 The idea is that many PDE solutions have structure that is naturally expressed in the frequency domain. Low-frequency modes capture large-scale behaviour, and the truncation of high-frequency modes provides an implicit regularization. By learning the transformation in Fourier space, the network can capture global interactions at each layer, unlike convolutional networks that see only local patches.
 

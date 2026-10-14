@@ -17,7 +17,7 @@ This post is about that choice: what the main options are, what each one assumes
 
 ## The General Framework
 
-The setup is standard. You have a forward operator $\mathcal{A}$ mapping the unknown quantity $f$ to data $g$, and you observe noisy data $g^\delta$ with $\lVert g^\delta - g \rVert \leq \delta$. You want to recover $f$ from $g^\delta$.
+The setup is standard. You have a forward operator $$\mathcal{A}$$ mapping the unknown quantity $$f$$ to data $$g$$, and you observe noisy data $$g^\delta$$ with $$\lVert g^\delta - g \rVert \leq \delta$$. You want to recover $$f$$ from $$g^\delta$$.
 
 The variational approach frames this as an optimization problem:
 
@@ -25,9 +25,9 @@ $$
 \min_f \; \mathcal{D}(f, g^\delta) + \alpha \, \mathcal{R}(f),
 $$
 
-where $\mathcal{D}$ is a data fidelity term (how well $f$ explains the data), $\mathcal{R}$ is the regularization functional (your prior), and $\alpha > 0$ controls the trade-off.
+where $$\mathcal{D}$$ is a data fidelity term (how well $$f$$ explains the data), $$\mathcal{R}$$ is the regularization functional (your prior), and $$\alpha > 0$$ controls the trade-off.
 
-Every choice of $\mathcal{R}$ encodes a belief. The question is: what do you believe about the solution?
+Every choice of $$\mathcal{R}$$ encodes a belief. The question is: what do you believe about the solution?
 
 
 ## Tikhonov: Smooth and Well-Behaved
@@ -38,9 +38,9 @@ $$
 \mathcal{R}(f) = \lVert f \rVert_{L^2}^2 = \int_\Omega |f(x)|^2 \, dx.
 $$
 
-This penalizes large values. The implicit assumption is that the true solution is not too far from zero (or from some reference $f_0$ if you use $\lVert f - f_0 \rVert^2$) and that all frequencies in the solution are equally important.
+This penalizes large values. The implicit assumption is that the true solution is not too far from zero (or from some reference $$f_0$$ if you use $$\lVert f - f_0 \rVert^2$$) and that all frequencies in the solution are equally important.
 
-Through the SVD lens, Tikhonov regularization acts as a smooth low-pass filter. It damps the high-frequency components that carry mostly noise, and it does so gracefully: no sharp cutoff, just a gradual rolloff controlled by $\alpha$.
+Through the SVD lens, Tikhonov regularization acts as a smooth low-pass filter. It damps the high-frequency components that carry mostly noise, and it does so gracefully: no sharp cutoff, just a gradual rolloff controlled by $$\alpha$$.
 
 Tikhonov is appropriate when you genuinely expect the solution to be smooth and you have no reason to believe it contains sharp features. Diffusion coefficients in heat conduction, for instance, often vary smoothly in space. In those cases, Tikhonov works well and the theory is mature: convergence rates are known, parameter choice rules are well-established, and the computational cost is modest.
 
@@ -55,7 +55,7 @@ $$
 \mathcal{R}(f) = \operatorname{TV}(f) = \int_\Omega |\nabla f| \, dx.
 $$
 
-The key insight is that TV measures the total amount of variation in the solution without squaring it. The $L^1$ nature of the penalty allows $\nabla f$ to be large at isolated points (edges) without incurring excessive cost, while still penalizing oscillations elsewhere.
+The key insight is that TV measures the total amount of variation in the solution without squaring it. The $$L^1$$ nature of the penalty allows $$\nabla f$$ to be large at isolated points (edges) without incurring excessive cost, while still penalizing oscillations elsewhere.
 
 This makes TV the natural choice for piecewise constant or piecewise smooth solutions: images with distinct regions separated by sharp boundaries, conductivity distributions with inclusions, geological models with layered structures.
 
@@ -67,20 +67,20 @@ $$
 
 Under standard coercivity and lower-semicontinuity assumptions, the TV problem has minimizers. TV can preserve discontinuities better than a quadratic gradient penalty, but it can also reduce contrast and create staircasing. Edge recovery requires assumptions on the forward operator, data, noise, and source structure.
 
-The practical difficulty with TV is the non-differentiability at points where $\nabla f = 0$. The functional is convex but not smooth, which rules out standard gradient descent. Efficient algorithms exist (primal-dual methods, split Bregman, ADMM) but they require more careful implementation than Tikhonov. In my own work on EIT, I use primal-dual hybrid gradient methods, and getting the step sizes right is often the difference between fast convergence and stagnation.
+The practical difficulty with TV is the non-differentiability at points where $$\nabla f = 0$$. The functional is convex but not smooth, which rules out standard gradient descent. Efficient algorithms exist (primal-dual methods, split Bregman, ADMM) but they require more careful implementation than Tikhonov. In my own work on EIT, I use primal-dual hybrid gradient methods, and getting the step sizes right is often the difference between fast convergence and stagnation.
 
 TV also has a well-known artifact: the *staircasing effect*. Because the penalty favours piecewise constant solutions, smooth gradients in the true solution tend to be reconstructed as a series of flat steps. If your solution is genuinely smooth, TV can introduce artificial jumps that are not present in the truth.
 
 
-## Sparsity and $\ell^1$ Penalties
+## Sparsity and $$\ell^1$$ Penalties
 
-When the solution has a concise representation in some basis or dictionary $\{\psi_n\}$, sparsity-promoting regularization is appropriate. You write $f = \sum_n c_n \psi_n$ and penalize the coefficients:
+When the solution has a concise representation in some basis or dictionary $$\{\psi_n\}$$, sparsity-promoting regularization is appropriate. You write $$f = \sum_n c_n \psi_n$$ and penalize the coefficients:
 
 $$
 \mathcal{R}(f) = \sum_n |c_n|.
 $$
 
-The $\ell^1$ norm encourages most coefficients to be exactly zero, yielding a sparse representation. This is the mathematical foundation of compressed sensing and has had enormous impact in signal processing, medical imaging, and beyond.
+The $$\ell^1$$ norm encourages most coefficients to be exactly zero, yielding a sparse representation. This is the mathematical foundation of compressed sensing and has had enormous impact in signal processing, medical imaging, and beyond.
 
 The assumption is explicit: the solution is well-approximated by a small number of basis elements. If this is true, the results can be striking. LASSO-type methods can recover a signal from far fewer measurements than classical sampling theory would suggest.
 
@@ -95,22 +95,22 @@ $$
 \operatorname{TGV}_{\alpha_0,\alpha_1}^2(f) = \min_w \; \alpha_1 \int_\Omega |\nabla f - w| \, dx + \alpha_0 \int_\Omega |\mathcal{E}(w)| \, dx,
 $$
 
-where $\mathcal{E}(w)=\frac12(\nabla w+\nabla w^T)$ is the symmetrized gradient. Second-order TGV favours piecewise-affine structure and often reduces TV staircasing, but it does not eliminate artifacts in every inverse problem.
+where $$\mathcal{E}(w)=\frac12(\nabla w+\nabla w^T)$$ is the symmetrized gradient. Second-order TGV favours piecewise-affine structure and often reduces TV staircasing, but it does not eliminate artifacts in every inverse problem.
 
 In practice, TGV produces more natural-looking reconstructions for many imaging problems. The cost is two additional parameters and a more complex optimization structure.
 
 
 ## Learned Regularizers
 
-A direction I find particularly promising, and one I worked on during my time in Graz, is the idea of learning the regularizer from data. Instead of hand-crafting $\mathcal{R}$ based on mathematical intuition, you train a neural network to act as the regularizer or as part of the reconstruction pipeline.
+A direction I find particularly promising, and one I worked on during my time in Graz, is the idea of learning the regularizer from data. Instead of hand-crafting $$\mathcal{R}$$ based on mathematical intuition, you train a neural network to act as the regularizer or as part of the reconstruction pipeline.
 
-The simplest version learns a denoising prior. If $D_\theta$ is a neural network trained to denoise images, you can use it implicitly as a regularizer by iterating:
+The simplest version learns a denoising prior. If $$D_\theta$$ is a neural network trained to denoise images, you can use it implicitly as a regularizer by iterating:
 
 $$
 f_{k+1} = D_\theta\!\left( f_k + \tau\mathcal{A}^*\!(g^\delta - \mathcal{A} f_k) \right),
 $$
 
-where $\tau>0$ is a data-consistency step size.
+where $$\tau>0$$ is a data-consistency step size.
 
 This is a plug-and-play iteration. Convergence requires properties such as averagedness, nonexpansiveness, or a suitable equilibrium interpretation of the denoiser; a generic trained network does not satisfy these conditions automatically.
 
@@ -121,11 +121,11 @@ The deeper question, one the community is actively working on, is whether learne
 
 There is no universal answer, but there are useful guidelines.
 
-**Start with a testable structural model.** Quadratic derivative penalties encode smoothness, TV and TGV encode bounded-variation structure, and $\ell^1$ penalties encode sparsity in a specified representation. Training data can support learned regularizers, but validation must include distribution shift and modelling error.
+**Start with a testable structural model.** Quadratic derivative penalties encode smoothness, TV and TGV encode bounded-variation structure, and $$\ell^1$$ penalties encode sparsity in a specified representation. Training data can support learned regularizers, but validation must include distribution shift and modelling error.
 
 **Look at the artifacts.** Every regularizer has a characteristic failure mode. Tikhonov over-smooths. TV staircases. Sparsity creates ringing near edges. If you see these artifacts in your reconstruction, it is the regularizer telling you that the prior does not match the solution.
 
-**Use parameter choice wisely.** The regularization parameter $\alpha$ is not a tuning knob to be adjusted until the result looks good. It encodes the noise level and your confidence in the prior. The Morozov discrepancy principle says to choose $\alpha$ so that the residual $\lVert \mathcal{A}(f_\alpha) - g^\delta \rVert \approx \delta$, matching the misfit to the noise level. This is principled and avoids overfitting.
+**Use parameter choice wisely.** The regularization parameter $$\alpha$$ is not a tuning knob to be adjusted until the result looks good. It encodes the noise level and your confidence in the prior. The Morozov discrepancy principle says to choose $$\alpha$$ so that the residual $$\lVert \mathcal{A}(f_\alpha) - g^\delta \rVert \approx \delta$$, matching the misfit to the noise level. This is principled and avoids overfitting.
 
 **Validate against known cases.** Before trusting a regularization strategy on real data, test it on synthetic problems where you know the ground truth. This is the only reliable way to understand what your method sees and what it misses.
 

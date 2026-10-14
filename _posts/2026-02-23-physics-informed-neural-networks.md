@@ -23,15 +23,15 @@ $$
 \mathcal{N}[u](x) = 0, \quad x \in \Omega,
 $$
 
-subject to boundary conditions $\mathcal{B}\mathopen{\lbrack}u\mathclose{\rbrack}(x) = 0$ on $\partial\Omega$.
+subject to boundary conditions $$\mathcal{B}\mathopen{\lbrack}u\mathclose{\rbrack}(x) = 0$$ on $$\partial\Omega$$.
 
-You parameterise the unknown $u$ with a neural network $u_\theta(x)$. Concretely, $u_\theta : \mathbb{R}^d \to \mathbb{R}$ is a fully connected network of the form
+You parameterise the unknown $$u$$ with a neural network $$u_\theta(x)$$. Concretely, $$u_\theta : \mathbb{R}^d \to \mathbb{R}$$ is a fully connected network of the form
 
 $$
 u_\theta(x) = W_L \circ \phi \circ W_{L-1} \circ \cdots \circ \phi \circ W_1(x),
 $$
 
-where each $W_\ell(z)=A_\ell z+b_\ell$ is affine and $\phi$ is applied componentwise. Automatic differentiation evaluates derivatives of the network exactly up to floating-point error at selected points. The differential operator is not assembled as a stiffness matrix, but its residual norm is still approximated from a finite set of points.
+where each $$W_\ell(z)=A_\ell z+b_\ell$$ is affine and $$\phi$$ is applied componentwise. Automatic differentiation evaluates derivatives of the network exactly up to floating-point error at selected points. The differential operator is not assembled as a stiffness matrix, but its residual norm is still approximated from a finite set of points.
 
 The training loss is typically a weighted sum:
 
@@ -49,7 +49,7 @@ $$
 \end{aligned}
 $$
 
-The first term $\mathcal{L}_r$ measures how well the PDE is satisfied at collocation points scattered through the domain. The second $\mathcal{L}_b$ enforces boundary conditions. The third $\mathcal{L}_d$, present only when you have observational data, fits the network to measurements.
+The first term $$\mathcal{L}_r$$ measures how well the PDE is satisfied at collocation points scattered through the domain. The second $$\mathcal{L}_b$$ enforces boundary conditions. The third $$\mathcal{L}_d$$, present only when you have observational data, fits the network to measurements.
 
 You minimise this compound loss with some gradient-based optimiser and hope the result approximates the true solution to acceptable accuracy.
 
@@ -73,7 +73,7 @@ Let me start with where I have found them most useful, because the method does h
 
 **Spectral bias is a persistent headache.** Standard neural networks learn low-frequency components of the target function much more readily than high-frequency ones. This is not a minor nuance; it is a fundamental limitation that affects nearly every PDE with sharp gradients, boundary layers, or oscillatory solutions.
 
-Mathematically, if we decompose the target function in the Fourier basis, $u(x) = \sum_k \hat{u}_k e^{i k \cdot x}$, gradient descent on a standard MLP will reduce the error in the low-$\lvert k \rvert$ modes long before it begins to fit the high-frequency content. This is related to the eigenvalue spectrum of the neural tangent kernel (NTK): for smooth activations like $\tanh$, the NTK eigenvalues decay rapidly for high-frequency eigenfunctions, meaning those components converge at much slower rates during training.
+Mathematically, if we decompose the target function in the Fourier basis, $$u(x) = \sum_k \hat{u}_k e^{i k \cdot x}$$, gradient descent on a standard MLP will reduce the error in the low-$$\lvert k \rvert$$ modes long before it begins to fit the high-frequency content. This is related to the eigenvalue spectrum of the neural tangent kernel (NTK): for smooth activations like $$\tanh$$, the NTK eigenvalues decay rapidly for high-frequency eigenfunctions, meaning those components converge at much slower rates during training.
 
 Here is what it looks like in practice. You train a PINN on a singularly perturbed convection-diffusion problem. The loss decreases nicely. The solution looks smooth and plausible. You compare against a reference computed with a fine-grid classical method, and the boundary layer is either absent or smeared beyond recognition. The network has learned the smooth large-scale behaviour and quietly ignored the thin region where the solution changes rapidly.
 
@@ -83,19 +83,19 @@ $$
 \gamma(x) = \bigl[\cos(2\pi B x), \, \sin(2\pi B x)\bigr]^T,
 $$
 
-where $B$ is a matrix of learnable or random frequencies, effectively lifting the input into a space where the NTK has a more uniform spectrum; multi-scale architectures; adaptive activation functions. These can help considerably. But each one introduces new hyperparameters and design choices, and none of them fully resolve the issue. My experience is that spectral bias can be managed for specific problems, but you never truly eliminate it. You learn to watch for it and compensate.
+where $$B$$ is a matrix of learnable or random frequencies, effectively lifting the input into a space where the NTK has a more uniform spectrum; multi-scale architectures; adaptive activation functions. These can help considerably. But each one introduces new hyperparameters and design choices, and none of them fully resolve the issue. My experience is that spectral bias can be managed for specific problems, but you never truly eliminate it. You learn to watch for it and compensate.
 
 **The loss function is adversarial.** This is the single issue I would most like prospective PINN users to understand. The compound loss (PDE residual plus boundary plus data) is not a friendly optimisation landscape. The three terms routinely have different magnitudes, different gradient scales, and competing optima.
 
 Here is a common failure mode. You set up the loss, start training, and the PDE residual term decreases beautifully. You feel encouraged. Then you check the boundary condition term and find it has barely moved, or even increased. The optimiser is satisfying the PDE in the interior by adopting a solution that violates the boundary conditions. Or vice versa: boundary conditions are perfectly met, but the PDE residual stalls because the network is locked into a shape that cannot simultaneously satisfy both.
 
-Tuning the weights $\lambda_r$, $\lambda_b$, $\lambda_d$ is the standard response, but it amounts to introducing three hyperparameters that interact in non-obvious ways and whose optimal values shift during training. Adaptive weighting schemes (gradient-normalisation, neural tangent kernel-inspired methods) help in some cases. In others, they introduce their own instabilities. I have spent entire weeks on a single problem doing nothing but adjusting these weights and watching the training dynamics, trying to find a configuration where all the terms decrease together.
+Tuning the weights $$\lambda_r$$, $$\lambda_b$$, $$\lambda_d$$ is the standard response, but it amounts to introducing three hyperparameters that interact in non-obvious ways and whose optimal values shift during training. Adaptive weighting schemes (gradient-normalisation, neural tangent kernel-inspired methods) help in some cases. In others, they introduce their own instabilities. I have spent entire weeks on a single problem doing nothing but adjusting these weights and watching the training dynamics, trying to find a configuration where all the terms decrease together.
 
 Optimizer performance depends on the PDE, scaling, sampling, and architecture. Adam followed by L-BFGS is a common heuristic, not a universally superior schedule. Full-batch L-BFGS can improve deterministic objectives, while stochastic gradients and large parameter counts can make it expensive or unstable.
 
 **You have no reliable error certificate.** This is what unsettles me most as someone trained in numerical analysis. When I solve a problem with finite elements, I have theory: convergence rates, a priori error estimates, a posteriori error indicators. I know, within quantifiable bounds, how good my solution is. I can refine the mesh and prove that the solution improves at a predictable rate.
 
-PINNs provide nothing comparable. The loss value is a measure of residual at the collocation points, not a measure of solution quality. A loss of $10^{-6}$ does not mean the solution is accurate to six digits. The network can perfectly satisfy the PDE at every training point while being wildly wrong in between. I have seen cases (not pathological toy examples, but real problems I was working on) where the loss was small, the training curves looked healthy, and the solution had qualitatively wrong features that only became apparent when I compared against a reference.
+PINNs provide nothing comparable. The loss value is a measure of residual at the collocation points, not a measure of solution quality. A loss of $$10^{-6}$$ does not mean the solution is accurate to six digits. The network can perfectly satisfy the PDE at every training point while being wildly wrong in between. I have seen cases (not pathological toy examples, but real problems I was working on) where the loss was small, the training curves looked healthy, and the solution had qualitatively wrong features that only became apparent when I compared against a reference.
 
 If you do not have a reference solution, you are flying blind. This is the hardest limitation to work around.
 
@@ -114,13 +114,13 @@ Concrete things I have learned, mostly the hard way.
 
 **Collocation point placement deserves serious thought.** Uniform random sampling is a reasonable default but rarely optimal. If the solution has boundary layers, concentrate points there. If there are internal interfaces or singularities, refine around them. Residual-based adaptive sampling (periodically evaluating the residual on a fine grid and adding collocation points where it is large) is effective but adds complexity to the training loop. Latin hypercube sampling is a simple improvement over pure random sampling that provides better space-filling coverage.
 
-**Hard-enforce what you can.** For a homogeneous Dirichlet condition, an ansatz $u_\theta(x)=d(x)v_\theta(x)$ enforces the boundary values when $d$ vanishes on the entire Dirichlet boundary and is sufficiently regular for the PDE derivatives. Nonhomogeneous, mixed, and complicated boundary conditions require a suitable lifting or a different construction.
+**Hard-enforce what you can.** For a homogeneous Dirichlet condition, an ansatz $$u_\theta(x)=d(x)v_\theta(x)$$ enforces the boundary values when $$d$$ vanishes on the entire Dirichlet boundary and is sufficiently regular for the PDE derivatives. Nonhomogeneous, mixed, and complicated boundary conditions require a suitable lifting or a different construction.
 
-The same idea extends to initial conditions in time-dependent problems. If $u(x,0) = g(x)$, write $u_\theta(x,t) = g(x) + t \cdot v_\theta(x,t)$. At $t=0$, the initial condition is exactly satisfied. More generally, for Robin boundary conditions $\partial_n u + \beta u = h$ on $\partial\Omega$, one can construct trial functions that satisfy these conditions by design, though the construction becomes problem-specific.
+The same idea extends to initial conditions in time-dependent problems. If $$u(x,0) = g(x)$$, write $$u_\theta(x,t) = g(x) + t \cdot v_\theta(x,t)$$. At $$t=0$$, the initial condition is exactly satisfied. More generally, for Robin boundary conditions $$\partial_n u + \beta u = h$$ on $$\partial\Omega$$, one can construct trial functions that satisfy these conditions by design, though the construction becomes problem-specific.
 
 Removing an exactly enforced boundary term eliminates its weighting parameter and its gradient contribution. This can improve conditioning, but it can also make the ansatz harder to optimize. There is no general iteration-count guarantee.
 
-**Keep the network modest.** Bigger is not always better. I have found that networks with 4 to 6 hidden layers and 40 to 60 neurons per layer work well for a wide range of problems. Going deeper can make training harder without improving accuracy. $\tanh$ is a reliable activation function for PDE problems because it is smooth and its derivatives are well-behaved; you are, after all, differentiating through this network multiple times. ReLU and its variants introduce issues at the points where derivatives are discontinuous. This matters less in classification but matters a lot when your loss function involves second-order derivatives.
+**Keep the network modest.** Bigger is not always better. I have found that networks with 4 to 6 hidden layers and 40 to 60 neurons per layer work well for a wide range of problems. Going deeper can make training harder without improving accuracy. $$\tanh$$ is a reliable activation function for PDE problems because it is smooth and its derivatives are well-behaved; you are, after all, differentiating through this network multiple times. ReLU and its variants introduce issues at the points where derivatives are discontinuous. This matters less in classification but matters a lot when your loss function involves second-order derivatives.
 
 **Monitor everything, not just the loss.** Track the PDE residual, the boundary residual, and the data fit separately. Compute the solution at validation points *not* used in training and watch whether the error there tracks the training loss. If the training loss decreases but the validation error does not, you are overfitting to your collocation points. Check conservation laws, symmetries, or other known properties of the exact solution. These sanity checks have saved me from accepting wrong solutions more times than I would like to admit.
 

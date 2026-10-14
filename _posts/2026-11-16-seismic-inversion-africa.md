@@ -30,21 +30,21 @@ $$
 \frac{1}{v(x)^2} \frac{\partial^2 u}{\partial t^2} - \nabla^2 u = f(x, t),
 $$
 
-where $v(x)$ is the compressional wave velocity at position $x$ (the quantity we want to find), $u(x,t)$ is the pressure wavefield, and $f$ is the source term. Given $v(x)$, solving this PDE for $u$ and evaluating it at receiver positions gives the predicted seismograms.
+where $$v(x)$$ is the compressional wave velocity at position $$x$$ (the quantity we want to find), $$u(x,t)$$ is the pressure wavefield, and $$f$$ is the source term. Given $$v(x)$$, solving this PDE for $$u$$ and evaluating it at receiver positions gives the predicted seismograms.
 
 In the Niger Delta, thick mobile shales, growth faults, shale diapirs, detachment folds, and deep-water fold-and-thrust structures create complex imaging targets. These are shale-tectonic structures, not the evaporite salt bodies familiar from the Gulf of Mexico or offshore Angola. Shallow gas and incomplete illumination can further degrade deeper reflections.
 
 ## The Inverse Problem: Recovering Velocity
 
-Full waveform inversion (FWI) solves the inverse problem: given observed seismograms $d_{\text{obs}}$, find the velocity model $v(x)$ that minimises the misfit between predicted and observed data:
+Full waveform inversion (FWI) solves the inverse problem: given observed seismograms $$d_{\text{obs}}$$, find the velocity model $$v(x)$$ that minimises the misfit between predicted and observed data:
 
 $$
 \min_{v} \; \mathcal{J}(v) = \frac{1}{2} \sum_s \| P_su_s(v) - d_s \|^2 + \alpha R(v),
 $$
 
-where $u_s(v)$ is the simulated wavefield, $P_s$ samples it at the receivers, $d_s$ is the observed data, and $R(v)$ is a regularisation term.
+where $$u_s(v)$$ is the simulated wavefield, $$P_s$$ samples it at the receivers, $$d_s$$ is the observed data, and $$R(v)$$ is a regularisation term.
 
-The gradient of $\mathcal{J}$ with respect to $v$ is computed via the adjoint method, the subject of an earlier post. Each gradient evaluation requires two wave equation solves per source: one forward and one adjoint. For a 3D survey with thousands of sources and a velocity model discretised on a grid with millions of nodes, this is one of the largest routine computational problems in applied science.
+The gradient of $$\mathcal{J}$$ with respect to $$v$$ is computed via the adjoint method, the subject of an earlier post. Each gradient evaluation requires two wave equation solves per source: one forward and one adjoint. For a 3D survey with thousands of sources and a velocity model discretised on a grid with millions of nodes, this is one of the largest routine computational problems in applied science.
 
 **Why it is hard in the Niger Delta.** The objective function for FWI is notoriously non-convex. Gradient descent can converge to a local minimum (a velocity model that fits the data but is geologically wrong) if the initial model is not close to the truth. This "cycle-skipping" problem, where the predicted and observed waveforms are offset by more than half a wavelength, is particularly severe in complex geology where the initial velocity model is uncertain. Shallow gas clouds in the Niger Delta complicate matters further: they attenuate the signal and make the first-arrival picks that are used to build the initial model unreliable.
 

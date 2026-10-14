@@ -23,23 +23,23 @@ The clearest way to understand an inverse problem is to first understand a forwa
 
 A forward problem starts with a cause and computes an effect. You know the internal structure of an object, and you predict what measurements you would observe. Given the conductivity distribution inside a body, compute the voltages you would measure on the surface when you inject known currents.
 
-Mathematically, if we denote the unknown quantity by $f$ and the measurements by $g$, a forward problem means evaluating
+Mathematically, if we denote the unknown quantity by $$f$$ and the measurements by $$g$$, a forward problem means evaluating
 
 $$
 g = \mathcal{A}(f),
 $$
 
-where $\mathcal{A}$ is some operator (often involving a partial differential equation) that models the underlying physics.
+where $$\mathcal{A}$$ is some operator (often involving a partial differential equation) that models the underlying physics.
 
-Many forward models are well posed after appropriate initial and boundary conditions are specified, although some forward problems are themselves ill posed. When the model is well posed, computing $g$ is a numerical approximation problem that may still be expensive.
+Many forward models are well posed after appropriate initial and boundary conditions are specified, although some forward problems are themselves ill posed. When the model is well posed, computing $$g$$ is a numerical approximation problem that may still be expensive.
 
-An inverse problem reverses the direction: given the measurements $g$, recover the unknown $f$. You want to solve
+An inverse problem reverses the direction: given the measurements $$g$$, recover the unknown $$f$$. You want to solve
 
 $$
 \mathcal{A}(f) = g
 $$
 
-for $f$. This is where the difficulty begins.
+for $$f$$. This is where the difficulty begins.
 
 
 ## Why Inversion Is Hard
@@ -54,27 +54,27 @@ A problem that violates any of these conditions is called *ill-posed*. Most inve
 
 The third condition is the one that causes the most grief in practice. In plain terms, it says that small errors in your measurements should produce only small changes in your reconstruction. But in many inverse problems, the opposite happens. A tiny perturbation in the data, a fraction of a percent of noise, can change the reconstructed solution completely.
 
-This instability is not a numerical glitch. In many inverse problems, $\mathcal{A}$ is compact or smoothing, so components of $f$ associated with small singular values have little effect on the data. Those components cannot be recovered stably without additional assumptions, even when the parameter and data spaces are both infinite-dimensional.
+This instability is not a numerical glitch. In many inverse problems, $$\mathcal{A}$$ is compact or smoothing, so components of $$f$$ associated with small singular values have little effect on the data. Those components cannot be recovered stably without additional assumptions, even when the parameter and data spaces are both infinite-dimensional.
 
-To see why mathematically, consider an injective compact operator $\mathcal{A}:X\to Y$ with a singular system $(\sigma_n,u_n,v_n)$ and infinite-dimensional range. Then $\sigma_n\to0$. For data in the domain of the unbounded generalized inverse, the formal expansion is
+To see why mathematically, consider an injective compact operator $$\mathcal{A}:X\to Y$$ with a singular system $$(\sigma_n,u_n,v_n)$$ and infinite-dimensional range. Then $$\sigma_n\to0$$. For data in the domain of the unbounded generalized inverse, the formal expansion is
 
 $$
 f_{\text{naive}} = \mathcal{A}^{\dagger} g^\delta
   = \sum_{n=1}^{\infty} \frac{\langle g^\delta, v_n \rangle}{\sigma_n} \, u_n,
 $$
 
-Noise coefficient $\langle g^\delta-g,v_n\rangle$ is amplified by $1/\sigma_n$. A norm bound $\lVert g^\delta-g\rVert\leq\delta$ does not determine each coefficient, but it allows severe amplification in small-singular-value directions. This is the spectral mechanism of instability.
+Noise coefficient $$\langle g^\delta-g,v_n\rangle$$ is amplified by $$1/\sigma_n$$. A norm bound $$\lVert g^\delta-g\rVert\leq\delta$$ does not determine each coefficient, but it allows severe amplification in small-singular-value directions. This is the spectral mechanism of instability.
 
-What it means in practice: if you naively try to invert your data, say, by least squares, the result will be dominated by amplified noise. Instead of recovering the true signal, you reconstruct whatever pattern in $f$ most effectively fits the noise in $g$. The output looks like chaos.
+What it means in practice: if you naively try to invert your data, say, by least squares, the result will be dominated by amplified noise. Instead of recovering the true signal, you reconstruct whatever pattern in $$f$$ most effectively fits the noise in $$g$$. The output looks like chaos.
 
 
 ## A Concrete Example: Electrical Impedance Tomography
 
 Let me be specific with an example from my own work.
 
-In electrical impedance tomography (EIT), you place electrodes on the boundary of a domain (a cross-section of the human torso, say). You inject small alternating currents through some electrodes and measure the resulting voltages on others. From these boundary voltages, you want to reconstruct the electrical conductivity $\sigma(x)$ inside the domain.
+In electrical impedance tomography (EIT), you place electrodes on the boundary of a domain (a cross-section of the human torso, say). You inject small alternating currents through some electrodes and measure the resulting voltages on others. From these boundary voltages, you want to reconstruct the electrical conductivity $$\sigma(x)$$ inside the domain.
 
-The physics is governed by a standard elliptic PDE. In the continuum model, the electric potential $u$ satisfies
+The physics is governed by a standard elliptic PDE. In the continuum model, the electric potential $$u$$ satisfies
 
 $$
 \nabla \cdot (\sigma \nabla u) = 0 \quad \text{in } \Omega,
@@ -82,15 +82,15 @@ $$
 
 with boundary conditions determined by the electrode configuration.
 
-The forward problem (given $\sigma$, compute the boundary voltages) is well-posed and solvable by standard finite element methods. It is a bread-and-butter elliptic problem.
+The forward problem (given $$\sigma$$, compute the boundary voltages) is well-posed and solvable by standard finite element methods. It is a bread-and-butter elliptic problem.
 
-The inverse problem (given boundary voltages, recover $\sigma$) is severely ill-posed. Alberto Calderón posed the mathematical foundation in 1980, asking whether the conductivity is uniquely determined by boundary measurements. Even this question, purely about uniqueness, took the community decades to resolve. The stability question is worse: Alessandrini showed that stability is at best logarithmic. More precisely, if $\sigma_1$ and $\sigma_2$ produce boundary data differing by at most $\varepsilon$, the best general stability estimate takes the form
+The inverse problem (given boundary voltages, recover $$\sigma$$) is severely ill-posed. Alberto Calderón posed the mathematical foundation in 1980, asking whether the conductivity is uniquely determined by boundary measurements. Even this question, purely about uniqueness, took the community decades to resolve. The stability question is worse: Alessandrini showed that stability is at best logarithmic. More precisely, if $$\sigma_1$$ and $$\sigma_2$$ produce boundary data differing by at most $$\varepsilon$$, the best general stability estimate takes the form
 
 $$
 \lVert \sigma_1 - \sigma_2 \rVert \leq C \left( \log \frac{1}{\varepsilon} \right)^{-\eta}
 $$
 
-for some $\eta > 0$, which means you need exponentially precise data to recover even moderately detailed features. Compare this with, say, differentiation (where errors grow polynomially) and you appreciate the severity of the problem.
+for some $$\eta > 0$$, which means you need exponentially precise data to recover even moderately detailed features. Compare this with, say, differentiation (where errors grow polynomially) and you appreciate the severity of the problem.
 
 In EIT, distinct conductivity perturbations can produce voltage differences below the measurement and modelling error. The data then cannot distinguish those perturbations reliably. An unregularized discretized inverse can amplify noise in weakly observed directions and produce unstable images.
 
@@ -103,13 +103,13 @@ This is where *regularization* enters, and it is arguably the central idea in th
 
 The principle is straightforward: since the data alone cannot determine a stable solution, you must incorporate additional information (prior knowledge, assumptions, constraints) to select a meaningful reconstruction from among all the candidates that roughly fit the data.
 
-The most classical approach is Tikhonov regularization. Instead of minimizing the data misfit $\lVert \mathcal{A}(f) - g \rVert^2$ alone, you minimize
+The most classical approach is Tikhonov regularization. Instead of minimizing the data misfit $$\lVert \mathcal{A}(f) - g \rVert^2$$ alone, you minimize
 
 $$
 J_\alpha(f) = \lVert \mathcal{A}(f) - g \rVert^2 + \alpha \lVert f \rVert^2,
 $$
 
-where $\alpha > 0$ is a regularization parameter. The penalty $\lVert f\rVert^2$ controls the magnitude of the solution. A roughness penalty instead uses a derivative or other operator, for example $\lVert Lf\rVert^2$.
+where $$\alpha > 0$$ is a regularization parameter. The penalty $$\lVert f\rVert^2$$ controls the magnitude of the solution. A roughness penalty instead uses a derivative or other operator, for example $$\lVert Lf\rVert^2$$.
 
 There is a satisfying way to understand Tikhonov regularization through the lens of the SVD. The regularized solution takes the form
 
@@ -119,15 +119,15 @@ f_\alpha^\delta = \sum_{n=1}^{\infty}
   \langle g^\delta, v_n \rangle \, u_n.
 $$
 
-The filter factor $\sigma_n / (\sigma_n^2 + \alpha)$ smoothly damps the components corresponding to small singular values. When $\sigma_n \gg \sqrt{\alpha}$, the factor is approximately $1/\sigma_n$ and the component is faithfully recovered. When $\sigma_n \ll \sqrt{\alpha}$, the factor is approximately $\sigma_n / \alpha$, and the noisy component is suppressed. The parameter $\alpha$ controls the transition between recovery and damping.
+The filter factor $$\sigma_n / (\sigma_n^2 + \alpha)$$ smoothly damps the components corresponding to small singular values. When $$\sigma_n \gg \sqrt{\alpha}$$, the factor is approximately $$1/\sigma_n$$ and the component is faithfully recovered. When $$\sigma_n \ll \sqrt{\alpha}$$, the factor is approximately $$\sigma_n / \alpha$$, and the noisy component is suppressed. The parameter $$\alpha$$ controls the transition between recovery and damping.
 
-The choice of $\alpha$ balances approximation and noise amplification. For quadratic Tikhonov regularization with a bounded linear operator, a noise bound $\lVert g^\delta-g\rVert\leq\delta$, and the source condition $f^\dagger=(\mathcal{A}^*\mathcal{A})^\mu w$ with $0<\mu\leq1$, one obtains a norm-error bound of the form
+The choice of $$\alpha$$ balances approximation and noise amplification. For quadratic Tikhonov regularization with a bounded linear operator, a noise bound $$\lVert g^\delta-g\rVert\leq\delta$$, and the source condition $$f^\dagger=(\mathcal{A}^*\mathcal{A})^\mu w$$ with $$0<\mu\leq1$$, one obtains a norm-error bound of the form
 
 $$
 \lVert f_\alpha^\delta - f^\dagger \rVert = O\!\left( \delta^{2\mu/(2\mu+1)} \right) \quad \text{as } \delta \to 0,
 $$
 
-provided $\alpha\asymp\delta^{2/(2\mu+1)}$. Optimality statements require a specified source set and loss. Morozov's discrepancy principle has convergence theory under suitable assumptions; the L-curve and generalized cross-validation are practical selection heuristics whose behaviour depends on the problem.
+provided $$\alpha\asymp\delta^{2/(2\mu+1)}$$. Optimality statements require a specified source set and loss. Morozov's discrepancy principle has convergence theory under suitable assumptions; the L-curve and generalized cross-validation are practical selection heuristics whose behaviour depends on the problem.
 
 Tikhonov is not the only option. Total variation regularization replaces the quadratic penalty with the TV seminorm:
 
@@ -136,7 +136,7 @@ J_\alpha^{\text{TV}}(f) = \lVert \mathcal{A}(f) - g \rVert^2
   + \alpha \int_\Omega \lvert \nabla f \rvert \, dx.
 $$
 
-This preserves edges, making it natural for problems where the solution has sharp boundaries (like detecting an inclusion in EIT). Sparsity penalties work when the solution has a concise representation in some basis $\\{\psi_n\\}$, leading to $\ell^1$-penalized problems of the form
+This preserves edges, making it natural for problems where the solution has sharp boundaries (like detecting an inclusion in EIT). Sparsity penalties work when the solution has a concise representation in some basis $$\{\psi_n\}$$, leading to $$\ell^1$$-penalized problems of the form
 
 $$
 \min_f \; \lVert \mathcal{A}(f) - g \rVert^2 + \alpha \sum_n \lvert c_n \rvert, \quad f = \sum_n c_n \psi_n.

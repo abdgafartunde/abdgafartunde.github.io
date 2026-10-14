@@ -28,21 +28,21 @@ This is the conceptual core of regularization, stated in the very first paragrap
 
 The paper is short enough to describe precisely. Let me go through it.
 
-**The setting.** Tikhonov formulates the problem using an operator equation $Az = u$ between metric spaces. In the linear Banach-space specialization familiar today, $z$ is the unknown, $u$ is the data, and ill-posedness means that the inverse is not continuous on its range. Compact linear operators on infinite-dimensional spaces provide the standard example, but compactness of $A$ is not the general starting assumption.
+**The setting.** Tikhonov formulates the problem using an operator equation $$Az = u$$ between metric spaces. In the linear Banach-space specialization familiar today, $$z$$ is the unknown, $$u$$ is the data, and ill-posedness means that the inverse is not continuous on its range. Compact linear operators on infinite-dimensional spaces provide the standard example, but compactness of $$A$$ is not the general starting assumption.
 
-He introduces a **stabilizing functional** $\Omega[z]$, a lower semicontinuous functional on the domain of $A$ whose sublevel sets $\{z : \Omega[z] \leq M\}$ are compact. These compact sets are the "admissible" solutions. The constraint $\Omega[z] \leq M$ encodes prior knowledge: you believe the true solution is regular in whatever sense $\Omega$ measures.
+He introduces a **stabilizing functional** $$\Omega[z]$$, a lower semicontinuous functional on the domain of $$A$$ whose sublevel sets $$\{z : \Omega[z] \leq M\}$$ are compact. These compact sets are the "admissible" solutions. The constraint $$\Omega[z] \leq M$$ encodes prior knowledge: you believe the true solution is regular in whatever sense $$\Omega$$ measures.
 
-**The key construction.** If $A$ is continuous and one-to-one on a compact admissible set, its inverse on the image of that set is continuous. Tikhonov then studies a regularizing functional that balances data discrepancy and the stabilizing functional. In Hilbert-space notation, the familiar quadratic form is
+**The key construction.** If $$A$$ is continuous and one-to-one on a compact admissible set, its inverse on the image of that set is continuous. Tikhonov then studies a regularizing functional that balances data discrepancy and the stabilizing functional. In Hilbert-space notation, the familiar quadratic form is
 
 $$
 R[z, u^\delta] = \lVert Az - u^\delta \rVert^2 + \alpha \Omega[z]
 $$
 
-has a minimizer for each $\alpha > 0$ and $u^\delta$. This minimizer $z_\alpha^\delta$ is the regularized solution.
+has a minimizer for each $$\alpha > 0$$ and $$u^\delta$$. This minimizer $$z_\alpha^\delta$$ is the regularized solution.
 
-He then states the convergence result: if $\alpha = \alpha(\delta)$ is chosen so that $\alpha(\delta) \to 0$ and $\delta^2 / \alpha(\delta) \to 0$ as the noise level $\delta \to 0$, then $z_\alpha^\delta \to z^\dagger$ in norm, where $z^\dagger$ is the true solution.
+He then states the convergence result: if $$\alpha = \alpha(\delta)$$ is chosen so that $$\alpha(\delta) \to 0$$ and $$\delta^2 / \alpha(\delta) \to 0$$ as the noise level $$\delta \to 0$$, then $$z_\alpha^\delta \to z^\dagger$$ in norm, where $$z^\dagger$$ is the true solution.
 
-**The Hilbert-space quadratic specialization.** If $A$ is a bounded linear operator between Hilbert spaces and $\Omega[z] = \lVert Lz \rVert^2$, the first-order optimality condition has the familiar form
+**The Hilbert-space quadratic specialization.** If $$A$$ is a bounded linear operator between Hilbert spaces and $$\Omega[z] = \lVert Lz \rVert^2$$, the first-order optimality condition has the familiar form
 
 $$
 (\alpha L^*L + A^*A) z = A^* u^\delta.
@@ -57,9 +57,9 @@ This is the formula that now appears in every textbook on inverse problems. It i
 
 Reading the paper carefully, a few things stand out that are sometimes obscured in textbook treatments.
 
-**The parameter $\alpha$ is not determined by the paper.** Tikhonov proves that *some* parameter choice strategy works (any $\alpha(\delta)$ with $\alpha \to 0$ and $\delta^2/\alpha \to 0$), but the paper gives no guidance on how to choose $\alpha$ in practice. The parameter choice problem (given actual noisy data $u^\delta$, how do you choose $\alpha$?) is entirely separate from the existence and convergence results. Methods for this (Morozov discrepancy principle, L-curve, generalized cross-validation) came later and are still active areas of research.
+**The parameter $$\alpha$$ is not determined by the paper.** Tikhonov proves that *some* parameter choice strategy works (any $$\alpha(\delta)$$ with $$\alpha \to 0$$ and $$\delta^2/\alpha \to 0$$), but the paper gives no guidance on how to choose $$\alpha$$ in practice. The parameter choice problem (given actual noisy data $$u^\delta$$, how do you choose $$\alpha$$?) is entirely separate from the existence and convergence results. Methods for this (Morozov discrepancy principle, L-curve, generalized cross-validation) came later and are still active areas of research.
 
-**The compact sublevel set assumption is strong.** The convergence analysis relies on the sublevel sets of $\Omega$ being compact. For the $L^2$ norm in an infinite-dimensional Hilbert space, $\{z : \lVert z \rVert^2 \leq M\}$ is the closed ball, which is *not* compact. Tikhonov's proof requires choosing $\Omega$ to be something like a Sobolev norm, whose sublevel sets are compact by the Rellich-Kondrachov theorem. The paper states this condition abstractly, but later textbooks sometimes state "Tikhonov regularization with $\Omega[z] = \lVert z \rVert^2$" without noting that the basic compactness argument no longer applies. The result is still true, but for different reasons.
+**The compact sublevel set assumption is strong.** The convergence analysis relies on the sublevel sets of $$\Omega$$ being compact. For the $$L^2$$ norm in an infinite-dimensional Hilbert space, $$\{z : \lVert z \rVert^2 \leq M\}$$ is the closed ball, which is *not* compact. Tikhonov's proof requires choosing $$\Omega$$ to be something like a Sobolev norm, whose sublevel sets are compact by the Rellich-Kondrachov theorem. The paper states this condition abstractly, but later textbooks sometimes state "Tikhonov regularization with $$\Omega[z] = \lVert z \rVert^2$$" without noting that the basic compactness argument no longer applies. The result is still true, but for different reasons.
 
 **The word "regularization" is not in the title as a method, but as a process.** Tikhonov is not proposing "a regularization method"; he is proving that ill-posed problems can be regularized (made well-posed) by a particular construction. The shift in meaning (from "regularization" as a property to "Tikhonov regularization" as a specific algorithm) happened gradually in the subsequent literature.
 
@@ -68,11 +68,11 @@ Reading the paper carefully, a few things stand out that are sometimes obscured 
 
 The 1963 paper does not discuss:
 
-- **Convergence rates.** The paper proves that $z_\alpha^\delta \to z^\dagger$ as $\delta \to 0$ but does not quantify how fast. For standard quadratic Tikhonov regularization, the source condition $z^\dagger \in \mathcal{R}((A^*A)^\nu)$ gives the rate $\lVert z_\alpha^\delta - z^\dagger \rVert = O(\delta^{2\nu/(2\nu+1)})$ for $0 < \nu \leq 1$, with an appropriate parameter choice. Later work developed these rate results and their extensions.
+- **Convergence rates.** The paper proves that $$z_\alpha^\delta \to z^\dagger$$ as $$\delta \to 0$$ but does not quantify how fast. For standard quadratic Tikhonov regularization, the source condition $$z^\dagger \in \mathcal{R}((A^*A)^\nu)$$ gives the rate $$\lVert z_\alpha^\delta - z^\dagger \rVert = O(\delta^{2\nu/(2\nu+1)})$$ for $$0 < \nu \leq 1$$, with an appropriate parameter choice. Later work developed these rate results and their extensions.
 
 - **Nonlinear problems.** The 1963 paper treats linear operators. Extending regularization theory to nonlinear operators is a much harder problem, and the general theory (convergence, rates, parameter choice for nonlinear Tikhonov) was developed primarily in the 1990s.
 
-- **Discrepancy-based parameter choice.** Morozov's discrepancy principle, which chooses $\alpha$ so that $\lVert Az_\alpha^\delta - u^\delta \rVert \approx \delta$, was published by Morozov in 1966, three years later.
+- **Discrepancy-based parameter choice.** Morozov's discrepancy principle, which chooses $$\alpha$$ so that $$\lVert Az_\alpha^\delta - u^\delta \rVert \approx \delta$$, was published by Morozov in 1966, three years later.
 
 - **Statistical interpretation.** The connection between Tikhonov regularization and MAP estimation under a Gaussian prior, which I described in earlier posts, was understood later. Tikhonov's framework is deterministic.
 
