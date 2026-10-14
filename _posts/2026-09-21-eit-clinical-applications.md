@@ -59,4 +59,4 @@ That translation is not guaranteed, but it is tractable. The mathematics is hard
 
 *For implementations of EIT reconstruction algorithms, see the [eit-reconstruction-toolkit GitHub repository](https://github.com/abdgafartunde/eit-reconstruction-toolkit) (to be updated).*
 
-Clinical context and evidence: the [2024 international expert report on adult ICU EIT](https://doi.org/10.1186/s13054-024-05173-x), the [2025 evidence-based consensus](https://doi.org/10.1016/j.eclinm.2025.103575), and the [PulmoVista 500 product documentation](https://www.draeger.com/en-us_ca/Products/PulmoVista-500).
+Clinical context and evidence: the [2024 international expert report on adult ICU EIT](https://doi.org/10.1186/s13054-024-05173-x) and the [2025 evidence-based consensus](https://doi.org/10.1016/j.eclinm.2025.103575).

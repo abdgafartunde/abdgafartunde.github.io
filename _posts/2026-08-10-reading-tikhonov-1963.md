@@ -103,4 +103,4 @@ That clarity is harder to achieve than it appears, and it is worth studying inde
 
 ## Further Context
 
-The bibliographic record and Russian full text of Tikhonov's note are available from [Math-Net.Ru](https://www.mathnet.ru/eng/dan/v153/i1/p49). For a modern treatment of regularization theory, Engl, Hanke, and Neubauer's *Regularization of Inverse Problems* (1996) is a standard reference. For the Bayesian counterpart, Stuart's 2010 *Acta Numerica* paper ["Inverse problems: a Bayesian perspective"](https://doi.org/10.1017/S0962492910000061) is a useful entry point.
+Tikhonov's note appeared in *Doklady Akademii Nauk SSSR*, vol. 153, no. 1, pp. 49–52 (1963). For a modern treatment of regularization theory, Engl, Hanke, and Neubauer's *Regularization of Inverse Problems* (1996) is a standard reference. For the Bayesian counterpart, Stuart's 2010 *Acta Numerica* paper ["Inverse problems: a Bayesian perspective"](https://doi.org/10.1017/S0962492910000061) is a useful entry point.
