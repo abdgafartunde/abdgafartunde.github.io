@@ -33,6 +33,8 @@ bundle exec jekyll serve --livereload --future
 
 Every push to `master` builds the site and deploys it to GitHub Pages (`.github/workflows/pages.yml`). Posts dated in the future stay hidden; a daily build at 00:07 China Standard Time publishes each post on the date in its front matter.
 
+`CV.pdf` is compiled from `CV.tex` during every deployment, so edit `CV.tex` and push; you do not need to commit the PDF. To see the CV in a local preview, run `latexmk -pdf CV.tex` first.
+
 Write inline math as `$$x$$`, not `$x$`. Kramdown only protects math inside `$$`, so single-dollar math loses backslash escapes such as `\{` and `\|`. A `$$` block on its own lines is displayed; `$$` inside a sentence is inline.
 
 ## License

@@ -116,6 +116,10 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
           <p>Released <a href="https://github.com/abdgafartunde/medical-imaging" target="_blank" rel="noopener">medimg v0.1.1</a> for compressed sensing reconstruction in MRI and CT.</p>
         </article>
         <article>
+          <time datetime="2026-07">July 2026</time>
+          <p>Published a <a href="https://doi.org/10.1007/978-3-032-18750-5_6" target="_blank" rel="noopener">book chapter</a> on neural-network solutions of second-order delay differential equations in <em>Neural Networks: Theory, Algorithms, Simulation, and Applications</em> (Springer).</p>
+        </article>
+        <article>
           <time datetime="2026-06">June 2026</time>
           <p>Released <a href="https://github.com/abdgafartunde/eit-reconstruction-toolkit" target="_blank" rel="noopener">eitkit v0.1.1</a>, a reconstruction toolkit for Electrical Impedance Tomography.</p>
         </article>

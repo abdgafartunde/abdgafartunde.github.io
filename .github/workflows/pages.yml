@@ -6,6 +6,9 @@
 #   A daily build at 00:07 China Standard Time (the site's timezone) publishes
 #   each post on the date in its front matter. No commits are needed.
 #
+# CV.pdf is compiled from CV.tex during every build, so the site always has
+# the latest CV. Edit CV.tex; the PDF in your working copy is for local preview.
+#
 # Pull requests are built to catch errors but are not deployed.
 # You can also trigger a build manually from the Actions tab.
 
@@ -44,6 +47,29 @@ jobs:
       - name: Configure Pages
         if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v5
+
+      # CV.pdf is compiled from CV.tex on every build. A CV problem must never
+      # block the site, so if TeX Live or the compile fails, the CV.pdf that
+      # is currently live is kept instead.
+      - name: Install TeX Live for the CV
+        continue-on-error: true
+        uses: zauguin/install-texlive@v4
+        with:
+          packages: >
+            scheme-basic latexmk enumitem fontawesome5 fontname times titlesec xcolor
+
+      - name: Build CV.pdf from CV.tex
+        run: |
+          outdir="$RUNNER_TEMP/cv"
+          mkdir -p "$outdir"
+          if latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir="$outdir" CV.tex; then
+            cp "$outdir/CV.pdf" CV.pdf
+            echo "CV.pdf compiled from CV.tex"
+          else
+            echo "::warning title=CV not updated::CV.tex did not compile; keeping the CV.pdf that is currently live."
+            curl -fsSL -o CV.pdf https://abdgafartunde.github.io/CV.pdf \
+              || echo "::warning title=CV missing::Could not fetch the live CV.pdf either."
+          fi
 
       - name: Build site
         env:

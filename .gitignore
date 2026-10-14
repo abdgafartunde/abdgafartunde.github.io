@@ -14,7 +14,8 @@ vendor/
 ehthumbs.db
 Thumbs.db
 
-# LaTeX build artifacts
+# LaTeX build artifacts (CV.pdf is compiled from CV.tex during deployment)
+CV.pdf
 *.fdb_latexmk
 *.fls
 *.aux
