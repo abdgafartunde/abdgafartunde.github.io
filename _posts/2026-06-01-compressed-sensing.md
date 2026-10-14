@@ -156,4 +156,4 @@ The theory was worked out in lecture halls and journals, but compressed sensing 
 
 The pattern is consistent. Any domain where measurements are expensive, slow, invasive, or constrained by physical geometry, and where the signal to be reconstructed is sparse in some transform domain, is a candidate for compressed sensing. The theory provides the rigorous foundation; the practice shows up in hospitals, telescopes, and production lines.
 
-*For code and implementations related to sparse reconstruction methods, see the [medical-imaging GitHub repository](https://github.com/abdgafartunde/medical-imaging) (to be updated).*
+*For code and implementations related to sparse reconstruction methods, see the [medical-imaging GitHub repository](https://github.com/abdgafartunde/medical-imaging).*

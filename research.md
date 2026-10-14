@@ -218,26 +218,26 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
       <div class="research-project-list">
         <article>
           <p class="research-project-meta">Reconstruction toolkit · Active</p>
-          <h3><a href="https://github.com/abdgafartunde/eit-reconstruction-toolkit" target="_blank" rel="noopener">EIT Reconstruction Toolkit</a></h3>
-          <p>Classical and learned reconstruction methods for Electrical Impedance Tomography, including Tikhonov regularization, total variation, and primal-dual algorithms.</p>
+          <h3><a href="https://github.com/abdgafartunde/eit-reconstruction-toolkit" target="_blank" rel="noopener">eitkit: EIT Reconstruction Toolkit</a></h3>
+          <p>Forward simulation, adjoint-based Jacobians, and classical reconstruction for two-dimensional Electrical Impedance Tomography, including Tikhonov regularization and total variation (ADMM) with L-curve parameter selection.</p>
           <div class="research-project-links">
             <a href="https://github.com/abdgafartunde/eit-reconstruction-toolkit" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
             <a href="https://doi.org/10.5281/zenodo.21037312" target="_blank" rel="noopener">Zenodo <span aria-hidden="true">↗</span></a>
           </div>
         </article>
         <article>
-          <p class="research-project-meta">Scientific machine learning · In development</p>
-          <h3><a href="https://github.com/abdgafartunde/seismic-inversion-ml" target="_blank" rel="noopener">Seismic Inversion ML</a></h3>
-          <p>Physics-informed and data-driven methods for recovering subsurface velocity models from seismic measurements.</p>
-        </article>
-        <article>
           <p class="research-project-meta">Computational imaging · Active</p>
-          <h3><a href="https://github.com/abdgafartunde/medical-imaging" target="_blank" rel="noopener">Medical Imaging</a></h3>
-          <p>Compressed sensing and sparse recovery algorithms for accelerated MRI and low-dose CT reconstruction.</p>
+          <h3><a href="https://github.com/abdgafartunde/medical-imaging" target="_blank" rel="noopener">medimg: Compressed Sensing for MRI and CT</a></h3>
+          <p>Compressed sensing and sparse recovery algorithms for accelerated MRI and sparse-view CT reconstruction.</p>
           <div class="research-project-links">
             <a href="https://github.com/abdgafartunde/medical-imaging" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
             <a href="https://doi.org/10.5281/zenodo.21321376" target="_blank" rel="noopener">Zenodo <span aria-hidden="true">↗</span></a>
           </div>
+        </article>
+        <article>
+          <p class="research-project-meta">Scientific machine learning · In development</p>
+          <h3><a href="https://github.com/abdgafartunde/seismic-inversion-ml" target="_blank" rel="noopener">Seismic Inversion ML</a></h3>
+          <p>Physics-informed and data-driven methods for recovering subsurface velocity models from seismic measurements.</p>
         </article>
         <article>
           <p class="research-project-meta">Geophysical inversion · In development</p>

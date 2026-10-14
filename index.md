@@ -2,6 +2,7 @@
 layout: page
 title: ""
 description: ""
+seo_title: "Abd'gafar Tunde Tiamiyu | Computational and Applied Mathematics"
 seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and writing on inverse problems and scientific computing."
 ---
 

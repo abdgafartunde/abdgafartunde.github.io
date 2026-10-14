@@ -57,6 +57,6 @@ The limitation is image quality. Resolution is low, and absolute conductivity im
 
 That translation is not guaranteed, but it is tractable. The mathematics is hard, the clinical need is genuine, and the computational tools available now are substantially more powerful than they were when the field started. That seems like a reasonable place to be working.
 
-*For implementations of EIT reconstruction algorithms, see the [eit-reconstruction-toolkit GitHub repository](https://github.com/abdgafartunde/eit-reconstruction-toolkit) (to be updated).*
+*For implementations of EIT reconstruction algorithms, see the [eit-reconstruction-toolkit GitHub repository](https://github.com/abdgafartunde/eit-reconstruction-toolkit).*
 
 Clinical context and evidence: the [2024 international expert report on adult ICU EIT](https://doi.org/10.1186/s13054-024-05173-x) and the [2025 evidence-based consensus](https://doi.org/10.1016/j.eclinm.2025.103575).

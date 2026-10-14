@@ -60,6 +60,6 @@ If cheap, portable imaging is to become clinically reliable, the following mathe
 
 These are not easy problems. But they are tractable, they are connected to mainstream mathematical research in inverse problems and scientific machine learning, and the potential benefit of solving them, even partially, is large. The distance between a research paper on a learned regulariser for EIT reconstruction and a deployable device in a Nigerian district hospital is long: it involves clinical validation, regulatory approval, supply chains, and training. But the journey starts with the mathematics being right.
 
-*For EIT reconstruction implementations, see the [eit-reconstruction-toolkit GitHub repository](https://github.com/abdgafartunde/eit-reconstruction-toolkit) (to be updated).*
+*For EIT reconstruction implementations, see the [eit-reconstruction-toolkit GitHub repository](https://github.com/abdgafartunde/eit-reconstruction-toolkit).*
 
 For current regional context, see the WHO report [*State of the Health Workforce in Africa 2026*](https://www.afro.who.int/publications/state-health-workforce-africa-2026-plan-train-and-retain) and the WHO report on [access to medical devices through local production](https://www.who.int/publications/i/item/9789241510141). The clinical scope and limitations of thoracic EIT are summarized in the [2024 international expert report](https://doi.org/10.1186/s13054-024-05173-x).
