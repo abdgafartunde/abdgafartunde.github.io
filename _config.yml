@@ -24,6 +24,8 @@ markdown: kramdown
 highlighter: rouge
 permalink: pretty
 timezone: Asia/Shanghai
+# Posts dated in the future stay hidden until their date (see .github/workflows/pages.yml)
+future: false
 
 
 

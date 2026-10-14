@@ -21,7 +21,19 @@ bundle install
 bundle exec jekyll serve --livereload
 ```
 
-Requires Ruby 3.2+ and Bundler. Open `http://localhost:4000` in your browser.
+Requires Ruby 3.4 (see `.ruby-version`; `github-pages` does not support Ruby 4) and Bundler. Open `http://localhost:4000` in your browser.
+
+To preview posts that are scheduled for a future date, add `--future`:
+
+```bash
+bundle exec jekyll serve --livereload --future
+```
+
+## Publishing
+
+Every push to `master` builds the site and deploys it to GitHub Pages (`.github/workflows/pages.yml`). Posts dated in the future stay hidden; a daily build at 00:07 China Standard Time publishes each post on the date in its front matter.
+
+Write inline math as `$$x$$`, not `$x$`. Kramdown only protects math inside `$$`, so single-dollar math loses backslash escapes such as `\{` and `\|`. A `$$` block on its own lines is displayed; `$$` inside a sentence is inline.
 
 ## License
 
