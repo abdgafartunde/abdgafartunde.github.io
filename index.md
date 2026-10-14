@@ -86,7 +86,7 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
           <p class="home-work-meta">Open-source software · 2026</p>
           <h3><a href="https://github.com/abdgafartunde/medical-imaging" target="_blank" rel="noopener">medimg</a></h3>
           <p>Compressed sensing reconstruction methods for accelerated MRI and CT.</p>
-          <a class="home-work-link" href="https://doi.org/10.5281/zenodo.21321376" target="_blank" rel="noopener">Software record <span aria-hidden="true">↗</span></a>
+          <a class="home-work-link" href="https://doi.org/10.5281/zenodo.21321199" target="_blank" rel="noopener">Software record <span aria-hidden="true">↗</span></a>
         </article>
         <article class="home-work-item">
           <p class="home-work-meta">Open-source software · 2026</p>

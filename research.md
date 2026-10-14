@@ -231,7 +231,15 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
           <p>Compressed sensing and sparse recovery algorithms for accelerated MRI and sparse-view CT reconstruction.</p>
           <div class="research-project-links">
             <a href="https://github.com/abdgafartunde/medical-imaging" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
-            <a href="https://doi.org/10.5281/zenodo.21321376" target="_blank" rel="noopener">Zenodo <span aria-hidden="true">↗</span></a>
+            <a href="https://doi.org/10.5281/zenodo.21321199" target="_blank" rel="noopener">Zenodo <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article>
+          <p class="research-project-meta">Optimization for imaging · Active</p>
+          <h3><a href="https://github.com/abdgafartunde/image-restoration-toolkit" target="_blank" rel="noopener">imrestore: Image Restoration Toolkit</a></h3>
+          <p>Adaptive gradient descent, inertial quasi-Newton forward-backward splitting, and primal-dual algorithms with linesearch for total-variation image denoising and deblurring, reimplemented from four research papers.</p>
+          <div class="research-project-links">
+            <a href="https://github.com/abdgafartunde/image-restoration-toolkit" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
           </div>
         </article>
         <article>
