@@ -244,14 +244,19 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
           </div>
         </article>
         <article>
+          <p class="research-project-meta">Geophysical inversion · Active</p>
+          <h3><a href="https://github.com/abdgafartunde/ertkit" target="_blank" rel="noopener">ertkit: Resistivity Imaging for Groundwater</a></h3>
+          <p>Vertical electrical sounding inversion for groundwater exploration, with depth-of-investigation and uncertainty estimates for every model and a verification report with every release; 2.5-D electrical resistivity tomography follows in later releases.</p>
+          <div class="research-project-links">
+            <a href="https://github.com/abdgafartunde/ertkit" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+            <a href="https://abdgafartunde.github.io/ertkit/" target="_blank" rel="noopener">Documentation <span aria-hidden="true">↗</span></a>
+            <a href="https://doi.org/10.5281/zenodo.23385097" target="_blank" rel="noopener">Zenodo <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article>
           <p class="research-project-meta">Scientific machine learning · In development</p>
           <h3><a href="https://github.com/abdgafartunde/seismic-inversion-ml" target="_blank" rel="noopener">Seismic Inversion ML</a></h3>
           <p>Physics-informed and data-driven methods for recovering subsurface velocity models from seismic measurements.</p>
-        </article>
-        <article>
-          <p class="research-project-meta">Geophysical inversion · In development</p>
-          <h3><a href="https://github.com/abdgafartunde/ertkit" target="_blank" rel="noopener">ertkit: Resistivity Imaging for Groundwater</a></h3>
-          <p>Vertical electrical sounding and 2.5-D electrical resistivity tomography for groundwater exploration, with depth-of-investigation and uncertainty estimates for every model.</p>
         </article>
       </div>
     </div>

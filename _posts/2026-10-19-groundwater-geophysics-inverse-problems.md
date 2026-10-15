@@ -108,6 +108,6 @@ The mathematical structure of these problems is the same as the inverse problems
 
 The mathematics here is not the frontier of the field; regularized Gauss-Newton ERT inversion is decades-old technology. But the combination of applying it correctly, incorporating appropriate prior information, and communicating uncertainty quantitatively is not yet standard practice in field hydrogeology. Closing that gap between what the mathematics can do and what actually gets used in decisions about where to drill is, in the end, the applied problem.
 
-*I am developing [ertkit](https://github.com/abdgafartunde/ertkit), an open package for VES and ERT inversion that reports depth of investigation and uncertainty with every model.*
+*I am developing [ertkit](https://github.com/abdgafartunde/ertkit), an open package for resistivity inversion that reports depth of investigation and uncertainty with every model. Its first release covers VES, and ERT follows.*
 
 Sources and further reading: MacDonald et al., ["Quantitative maps of groundwater resources in Africa"](https://nora.nerc.ac.uk/id/eprint/17892/) (2012); the [UNICEF drinking-water data portal](https://data.unicef.org/topic/water-and-sanitation/drinking-water/); the World Bank's [Horn of Africa Groundwater for Resilience Project](https://projects.worldbank.org/en/projects-operations/project-detail/P174867); and Furman, Ferré, and Warrick's [array-sensitivity study](https://doi.org/10.2136/vzj2003.4160).

@@ -113,6 +113,10 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
       <div class="home-update-list">
         <article>
           <time datetime="2026-10">October 2026</time>
+          <p>Released <a href="https://github.com/abdgafartunde/ertkit" target="_blank" rel="noopener">ertkit v0.1.0</a>, vertical electrical sounding inversion for groundwater exploration, with a depth of investigation and uncertainty estimates for every model.</p>
+        </article>
+        <article>
+          <time datetime="2026-10">October 2026</time>
           <p>Released <a href="https://github.com/abdgafartunde/image-restoration-toolkit" target="_blank" rel="noopener">imrestore v0.1.0</a>, adaptive and quasi-Newton first-order methods for image denoising and deblurring.</p>
         </article>
         <article>
