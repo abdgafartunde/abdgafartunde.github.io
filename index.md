@@ -31,6 +31,14 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
     </div>
   </header>
 
+  <nav class="home-page-nav" aria-label="Homepage sections">
+    <span>Explore</span>
+    <a href="#profile-heading">Profile</a>
+    <a href="#focus-heading">Research focus</a>
+    <a href="#work-heading">Selected work</a>
+    <a href="#updates-heading">Updates</a>
+  </nav>
+
   <section class="home-editorial-section" aria-labelledby="profile-heading">
     <div class="home-section-label">
       <p>Profile</p>
@@ -111,6 +119,10 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
     <div class="home-section-content">
       <h2 id="updates-heading">Latest updates</h2>
       <div class="home-update-list">
+        <article>
+          <time datetime="2026-11-09">November 2026</time>
+          <p>Released <a href="https://github.com/abdgafartunde/ertkit/releases/tag/v0.1.1" target="_blank" rel="noopener">ertkit v0.1.1</a>, with fixes for synthetic-data screening and smooth-inversion reporting, verified against pyGIMLi and SimPEG.</p>
+        </article>
         <article>
           <time datetime="2026-10">October 2026</time>
           <p>Released <a href="https://github.com/abdgafartunde/ertkit" target="_blank" rel="noopener">ertkit v0.1.0</a>, vertical electrical sounding inversion for groundwater exploration, with a depth of investigation and uncertainty estimates for every model.</p>

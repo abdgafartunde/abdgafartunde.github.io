@@ -2,6 +2,11 @@
 layout: page
 page_class: research-page
 title: "Research"
+redirect_from:
+  - /services/
+  - /services/students/
+  - /services/organizations/
+  - /services/book-a-call/
 eyebrow: "Research programme"
 description: "Computational and applied mathematics for inverse problems, imaging, and scientific machine learning."
 seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical impedance tomography, regularization theory, and scientific machine learning. Publications and presentations."

@@ -232,7 +232,7 @@ button:focus-visible,
 }
 
 .navbar .nav-link:focus-visible {
-    outline-color: var(--white);
+    outline-color: var(--accent);
 }
 
 /* Respect reduced motion preferences */
@@ -3176,6 +3176,51 @@ textarea.form-control {
     width: 100%;
 }
 
+.home-page-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem 1.4rem;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.home-page-nav > span {
+    margin-right: 0.4rem;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 650;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.content .home-page-nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--text-secondary);
+    font-size: 0.84rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.content .home-page-nav a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+}
+
+@media (max-width: 620px) {
+    .home-page-nav {
+        gap: 0.15rem 1.1rem;
+    }
+
+    .home-page-nav > span {
+        flex-basis: 100%;
+        margin: 0.4rem 0 0;
+    }
+}
+
 .home-hero {
     display: grid;
     grid-template-columns: 210px minmax(0, 1fr);
@@ -3932,6 +3977,10 @@ textarea.form-control {
    Shared Header and Footer
    ============================================ */
 
+main [id] {
+    scroll-margin-top: 6rem;
+}
+
 .navbar {
     min-height: 72px;
     padding: 0.65rem 0;
@@ -3961,6 +4010,31 @@ textarea.form-control {
     gap: 0.18rem;
 }
 
+.navbar-brand:hover .brand-name {
+    color: var(--accent);
+}
+
+.navbar-toggler {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    min-height: 44px;
+    padding: 0.5rem 0.7rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--heading);
+    background: var(--surface-alt);
+    font-size: 0.8rem;
+    font-weight: 650;
+    line-height: 1;
+}
+
+.navbar-toggler[hidden],
+.theme-toggle[hidden] {
+    display: none;
+}
+
 .brand-name {
     font-family: var(--font-sans);
     font-size: 0.88rem;
@@ -3979,6 +4053,10 @@ textarea.form-control {
 
 .nav-link {
     position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    min-height: 44px;
     margin: 0 0.08rem;
     padding: 0.62rem 0.68rem !important;
     border-radius: 0;
@@ -4007,11 +4085,18 @@ textarea.form-control {
     transform: scaleX(1);
 }
 
+.nav-file-format {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
 .theme-toggle {
     display: inline-grid;
     grid-template-columns: repeat(2, 1fr);
-    width: 96px;
-    height: 36px;
+    align-items: stretch;
+    width: 106px;
+    height: 44px;
     gap: 2px;
     margin-left: 0.65rem;
     padding: 3px;
@@ -4025,6 +4110,7 @@ textarea.form-control {
 
 .theme-option {
     display: inline-flex;
+    height: 100%;
     align-items: center;
     justify-content: center;
     border-radius: 999px;
@@ -4170,10 +4256,17 @@ textarea.form-control {
     font-size: 0.7rem;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991.98px) {
     .navbar-collapse {
         padding-top: 0.65rem;
         border-top: 1px solid var(--border);
+        max-height: calc(100vh - 5.5rem);
+        max-height: calc(100dvh - 5.5rem);
+        overflow-y: auto;
+    }
+
+    :root[data-navigation-ready] .navbar-collapse:not(.is-open) {
+        display: none;
     }
 
     .nav-link {
@@ -4243,6 +4336,12 @@ textarea.form-control {
 
     .footer-profiles {
         grid-column: auto;
+    }
+}
+
+@media (max-width: 420px) {
+    .brand-sub {
+        display: none;
     }
 }
 

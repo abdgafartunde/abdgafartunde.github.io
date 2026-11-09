@@ -48,13 +48,14 @@ navigation:
   - title: "Home"
     url: "/"
   - title: "Research"
-    url: "/research"
+    url: "/research/"
   - title: "Experience"
-    url: "/experience"
-  - title: "Services"
-    url: "/services"
+    url: "/experience/"
   - title: "Blog"
-    url: "/blog"
+    url: "/blog/"
+  - title: "CV"
+    url: "/CV.pdf"
+    label: "Curriculum vitae (PDF)"
 
 # Social links
 social:
@@ -104,6 +105,8 @@ defaults:
 
 # Exclude from processing
 exclude:
+  # Retain inactive service content in Git, without publishing the offers or booking form.
+  - services/
   - CV.tex
   - Gemfile
   - Gemfile.lock
