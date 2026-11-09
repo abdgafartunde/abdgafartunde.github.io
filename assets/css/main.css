@@ -24,10 +24,12 @@
     /* Semantic */
     --text: var(--slate);
     --text-secondary: var(--slate-light);
-    --text-muted: #65747e;
+    --text-muted: #596873;
     --heading: var(--navy);
     --accent: var(--blue);
     --accent-hover: #24567d;
+    /* Filled buttons keep a dark hover background in both themes. */
+    --button-hover: #24567d;
     --surface: var(--white);
     --surface-alt: var(--gray-50);
     --border: var(--gray-200);
@@ -193,7 +195,7 @@ img {
 
 ::selection {
     background: var(--blue-pale);
-    color: var(--navy);
+    color: var(--heading);
 }
 
 /* ============================================
@@ -205,7 +207,7 @@ img {
     top: -50px;
     left: 8px;
     background: var(--navy);
-    color: var(--white);
+    color: var(--on-dark);
     padding: 8px 16px;
     border-radius: 0 0 var(--radius-sm) var(--radius-sm);
     z-index: 2000;
@@ -216,7 +218,7 @@ img {
 
 .skip-link:focus {
     top: 0;
-    color: var(--white);
+    color: var(--on-dark);
 }
 
 /* Focus-visible styles for keyboard navigation */
@@ -2493,9 +2495,9 @@ a {
 
 .button-primary:hover,
 .content .button-primary:hover {
-    border-color: var(--accent-hover);
-    color: #fffdf8;
-    background: var(--accent-hover);
+    border-color: var(--button-hover);
+    color: var(--on-dark);
+    background: var(--button-hover);
 }
 
 .button-secondary,
@@ -3330,9 +3332,9 @@ textarea.form-control {
 }
 
 .content .home-primary-action:hover {
-    border-color: var(--accent-hover);
-    color: #fffdf8;
-    background: var(--accent-hover);
+    border-color: var(--button-hover);
+    color: var(--on-dark);
+    background: var(--button-hover);
 }
 
 .content .home-text-action {
@@ -6481,9 +6483,9 @@ main [id] {
 }
 
 .not-found-links .not-found-primary:hover {
-    border-color: var(--accent-hover);
+    border-color: var(--button-hover);
     color: var(--on-dark);
-    background: var(--accent-hover);
+    background: var(--button-hover);
 }
 
 main:focus {
