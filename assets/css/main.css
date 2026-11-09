@@ -4085,12 +4085,6 @@ main [id] {
     transform: scaleX(1);
 }
 
-.nav-file-format {
-    color: var(--text-muted);
-    font-size: 0.75rem;
-    font-weight: 500;
-}
-
 .theme-toggle {
     display: inline-grid;
     grid-template-columns: repeat(2, 1fr);

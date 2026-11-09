@@ -35,7 +35,6 @@
                     <li class="nav-item">
                         <a class="nav-link {% if item_active %}active{% endif %}" href="{{ item.url | relative_url }}"{% if item.label %} aria-label="{{ item.label | escape }}"{% endif %}{% if item_active %} aria-current="page"{% endif %}>
                             {{ item.title }}
-                            {% if item.url == '/CV.pdf' %}<span class="nav-file-format" aria-hidden="true">PDF</span>{% endif %}
                         </a>
                     </li>
                     {% endfor %}
