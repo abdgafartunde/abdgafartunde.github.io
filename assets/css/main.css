@@ -2087,41 +2087,6 @@ mjx-container[jax="SVG"]:not([display="true"]) {
     }
 }
 
-/* ============================================
-   Theme Toggle Button
-   ============================================ */
-
-.theme-toggle {
-    background: none;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: rgba(255, 255, 255, 0.7);
-    cursor: pointer;
-    padding: 0.35rem 0.55rem;
-    border-radius: var(--radius-sm);
-    font-size: 0.9rem;
-    transition: color var(--transition), border-color var(--transition);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 0.5rem;
-}
-
-.theme-toggle:hover {
-    color: var(--white);
-    border-color: rgba(255, 255, 255, 0.4);
-}
-
-.theme-toggle .fa-moon { display: inline; }
-.theme-toggle .fa-sun { display: none; }
-
-[data-theme="dark"] .theme-toggle .fa-moon { display: none; }
-[data-theme="dark"] .theme-toggle .fa-sun { display: inline; }
-
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) .theme-toggle .fa-moon { display: none; }
-    :root:not([data-theme="light"]) .theme-toggle .fa-sun { display: inline; }
-}
-
 [data-theme="light"] {
     color-scheme: light;
 }
@@ -2222,23 +2187,6 @@ a {
 .navbar-toggler {
     border-color: var(--border);
     background: var(--navy);
-}
-
-.theme-toggle {
-    width: 36px;
-    height: 36px;
-    margin-left: 0.7rem;
-    padding: 0;
-    border-color: var(--border);
-    border-radius: 50%;
-    color: var(--text-secondary);
-    background: var(--surface);
-}
-
-.theme-toggle:hover {
-    color: var(--heading);
-    border-color: var(--accent);
-    background: var(--blue-pale);
 }
 
 .main-container {
@@ -3053,9 +3001,6 @@ textarea.form-control {
         grid-template-columns: minmax(0, 760px);
     }
 
-    .theme-toggle {
-        margin: 0.5rem 0;
-    }
 }
 
 @media (max-width: 768px) {
@@ -4088,62 +4033,47 @@ main [id] {
 }
 
 .theme-toggle {
-    display: inline-grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: stretch;
-    width: 106px;
-    height: 44px;
-    gap: 2px;
-    margin-left: 0.65rem;
-    padding: 3px;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    color: var(--text-secondary);
-    background: var(--surface-alt);
-    font-size: 0.7rem;
-    font-weight: 650;
-}
-
-.theme-option {
     display: inline-flex;
-    height: 100%;
     align-items: center;
     justify-content: center;
-    border-radius: 999px;
-    line-height: 1;
-    transition: color var(--transition), background-color var(--transition), box-shadow var(--transition);
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    margin-left: 0.65rem;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--text-secondary);
+    background: var(--surface-alt);
+    cursor: pointer;
+    transition: color var(--transition), border-color var(--transition), background-color var(--transition);
 }
 
-.theme-option-light {
+.theme-toggle:hover {
     color: var(--heading);
-    background: var(--surface);
-    box-shadow: var(--shadow-sm);
+    border-color: var(--accent);
+    background: var(--blue-pale);
 }
 
-[data-theme="dark"] .theme-option-light {
-    color: var(--text-muted);
-    background: transparent;
-    box-shadow: none;
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
 }
 
-[data-theme="dark"] .theme-option-dark {
-    color: var(--heading);
-    background: var(--gray-200);
-    box-shadow: var(--shadow-sm);
+.theme-icon {
+    flex: none;
+    pointer-events: none;
 }
+
+.theme-icon-moon { display: block; }
+.theme-icon-sun { display: none; }
+
+[data-theme="dark"] .theme-icon-moon { display: none; }
+[data-theme="dark"] .theme-icon-sun { display: block; }
 
 @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) .theme-option-light {
-        color: var(--text-muted);
-        background: transparent;
-        box-shadow: none;
-    }
-
-    :root:not([data-theme="light"]) .theme-option-dark {
-        color: var(--heading);
-        background: var(--gray-200);
-        box-shadow: var(--shadow-sm);
-    }
+    :root:not([data-theme="light"]) .theme-icon-moon { display: none; }
+    :root:not([data-theme="light"]) .theme-icon-sun { display: block; }
 }
 
 .site-footer {

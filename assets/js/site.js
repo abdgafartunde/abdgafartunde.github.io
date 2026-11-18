@@ -39,7 +39,7 @@
     function updateThemeToggle() {
         var dark = isDark();
         var label = dark ? 'Switch to light mode' : 'Switch to dark mode';
-        themeToggle.setAttribute('aria-label', label);
+        // Keep the toggle's name stable; its pressed state means dark mode is on.
         themeToggle.setAttribute('aria-pressed', String(dark));
         themeToggle.title = label;
     }
