@@ -21,8 +21,7 @@ seo_description: "Academic and professional experience of A.T. Tiamiyu: postdoct
   <section class="editorial-section" id="appointments" aria-labelledby="appointments-heading">
     <div class="editorial-label"><p>Appointments</p></div>
     <div class="editorial-content">
-      <h2 id="appointments-heading">Research across inverse problems and numerical analysis</h2>
-      <p class="experience-introduction">My work combines mathematical analysis, scientific computing, and machine learning. I develop regularization and numerical methods for inverse problems, with applications in medical imaging, parameter identification, and subsurface reconstruction.</p>
+      <h2 id="appointments-heading">Academic appointments</h2>
 
       <div class="experience-records">
         <article class="experience-record experience-record-current">

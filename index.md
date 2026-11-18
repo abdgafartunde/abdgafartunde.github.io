@@ -14,8 +14,9 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
 
     <div class="home-hero-copy">
       <p class="home-eyebrow">Computational and applied mathematician</p>
-      <h1>Abd'gafar Tunde <span>TIAMIYU</span></h1>
+      <h1 id="profile-heading">Abd'gafar Tunde <span>TIAMIYU</span></h1>
       <p class="home-lede">I develop mathematical and computational methods for recovering hidden structure from incomplete and noisy measurements.</p>
+      <p class="home-summary" id="focus-heading">My work combines regularization, numerical analysis and scientific machine learning, with applications in medical and subsurface imaging.</p>
       <p class="home-position">Postdoctoral Researcher, School of Mathematics<br><a href="https://www.jlu.edu.cn/" target="_blank" rel="noopener">Jilin University</a>, Changchun, China</p>
 
       <div class="home-actions">
@@ -33,76 +34,10 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
 
   <nav class="home-page-nav" aria-label="Homepage sections">
     <span>Explore</span>
-    <a href="#profile-heading">Profile</a>
-    <a href="#writing-heading">Recent writing</a>
-    <a href="#focus-heading">Research focus</a>
     <a href="#work-heading">Selected work</a>
+    <a href="#writing-heading">Recent writing</a>
     <a href="#updates-heading">Updates</a>
   </nav>
-
-  <section class="home-editorial-section" aria-labelledby="profile-heading">
-    <div class="home-section-label">
-      <p>Profile</p>
-    </div>
-    <div class="home-section-content home-profile-copy">
-      <h2 id="profile-heading">Mathematics for difficult measurements</h2>
-      <p>I am a postdoctoral researcher in computational and applied mathematics at Jilin University. My research combines inverse problems, regularization theory, numerical analysis, and scientific machine learning.</p>
-      <p>My work is motivated by applications in medical imaging, subsurface imaging, and engineering simulation. I study both classical variational methods and learned computational approaches, from linear models to strongly nonlinear problems.</p>
-      <a class="home-inline-link" href="{{ '/experience/' | relative_url }}">Background and experience <span aria-hidden="true">→</span></a>
-    </div>
-  </section>
-
-  {% assign recent_posts = site.posts | sort: 'date' | reverse %}
-  {% if recent_posts.size > 0 %}
-  <section class="home-editorial-section" aria-labelledby="writing-heading">
-    <div class="home-section-label"><p>Recent writing</p></div>
-    <div class="home-section-content">
-      <h2 id="writing-heading">Notes from research and academic life</h2>
-      <div class="home-writing-list">
-        {% for post in recent_posts limit:2 %}
-        <article>
-          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %B %Y" }}</time>
-          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-          <p>{{ post.description }}</p>
-        </article>
-        {% endfor %}
-      </div>
-      <a class="home-inline-link" href="{{ '/blog/' | relative_url }}">All writing <span aria-hidden="true">→</span></a>
-    </div>
-  </section>
-  {% endif %}
-
-  <section class="home-editorial-section" aria-labelledby="focus-heading">
-    <div class="home-section-label">
-      <p>Research focus</p>
-    </div>
-    <div class="home-section-content">
-      <h2 id="focus-heading">Three connected areas</h2>
-      <ol class="home-focus-list">
-        <li>
-          <span class="home-item-number" aria-hidden="true">01</span>
-          <div>
-            <h3>Inverse problems and regularization</h3>
-            <p>Stable recovery from indirect and noisy data, including convergence analysis, parameter identification, and constrained optimization.</p>
-          </div>
-        </li>
-        <li>
-          <span class="home-item-number" aria-hidden="true">02</span>
-          <div>
-            <h3>Computational imaging</h3>
-            <p>Electrical impedance tomography, medical image reconstruction, seismic inversion, and subsurface inference.</p>
-          </div>
-        </li>
-        <li>
-          <span class="home-item-number" aria-hidden="true">03</span>
-          <div>
-            <h3>Scientific machine learning</h3>
-            <p>Physics-informed methods, learned solvers, and computational techniques for PDE-constrained problems.</p>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </section>
 
   <section class="home-editorial-section" aria-labelledby="work-heading">
     <div class="home-section-label">
@@ -143,12 +78,6 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
           <a class="home-work-link" href="https://doi.org/10.5281/zenodo.21321199" target="_blank" rel="noopener">Software record <span aria-hidden="true">↗</span></a>
         </article>
         <article class="home-work-item">
-          <p class="home-work-meta">Open-source software · 2026</p>
-          <h3><a href="https://github.com/abdgafartunde/eit-reconstruction-toolkit" target="_blank" rel="noopener">eitkit</a></h3>
-          <p>A two-dimensional Electrical Impedance Tomography reconstruction toolkit.</p>
-          <a class="home-work-link" href="https://doi.org/10.5281/zenodo.21037312" target="_blank" rel="noopener">Software record <span aria-hidden="true">↗</span></a>
-        </article>
-        <article class="home-work-item">
           <p class="home-work-meta">Journal article · 2026</p>
           <h3><a href="https://doi.org/10.1007/s13160-026-00778-x" target="_blank" rel="noopener">A spectral conjugate gradient method for constrained nonlinear equations</a></h3>
           <p>Published in the <em>Japan Journal of Industrial and Applied Mathematics</em>, with an application to image restoration.</p>
@@ -157,6 +86,26 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
       </div>
     </div>
   </section>
+
+  {% assign recent_posts = site.posts | sort: 'date' | reverse %}
+  {% if recent_posts.size > 0 %}
+  <section class="home-editorial-section" aria-labelledby="writing-heading">
+    <div class="home-section-label"><p>Recent writing</p></div>
+    <div class="home-section-content">
+      <h2 id="writing-heading">Notes from research and academic life</h2>
+      <div class="home-writing-list">
+        {% for post in recent_posts limit:2 %}
+        <article>
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %B %Y" }}</time>
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p>{{ post.description }}</p>
+        </article>
+        {% endfor %}
+      </div>
+      <a class="home-inline-link" href="{{ '/blog/' | relative_url }}">All writing <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+  {% endif %}
 
   <section class="home-editorial-section" aria-labelledby="updates-heading">
     <div class="home-section-label">
@@ -188,9 +137,4 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
     </div>
   </section>
 
-  <section class="home-contact-band" aria-labelledby="contact-heading">
-    <p class="home-eyebrow">Collaborations and enquiries</p>
-    <h2 id="contact-heading">Interested in a research problem involving indirect measurements or computational imaging?</h2>
-    <a href="mailto:abdgafartunde@yahoo.com">abdgafartunde@yahoo.com <span aria-hidden="true">→</span></a>
-  </section>
 </div>

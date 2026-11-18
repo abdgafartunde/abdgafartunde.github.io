@@ -17,8 +17,8 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
     <span>On this page</span>
     <a href="#programme">Programme</a>
     <a href="#publications">Publications</a>
-    <a href="#talks">Talks</a>
     <a href="#projects">Software</a>
+    <a href="#talks">Talks</a>
     <a href="#collaborate">Collaborate</a>
   </nav>
 
@@ -185,35 +185,6 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
     </div>
   </section>
 
-  <section class="editorial-section" id="talks" aria-labelledby="talks-heading">
-    <div class="editorial-label"><p>Presentations</p></div>
-    <div class="editorial-content">
-      <h2 id="talks-heading">Selected talks and academic events</h2>
-      <div class="research-talk-list">
-        <article>
-          <p class="research-talk-meta">Guest speaker · August 2025</p>
-          <h3>Harnessing AI for Innovative and Ethical Use in Academia</h3>
-          <p>ANSHK Research Forum 2025</p>
-        </article>
-        <article>
-          <p class="research-talk-meta">Minisymposium co-organizer · July 2025</p>
-          <h3>Industrial and Applied Mathematics</h3>
-          <p>HK-SIAM Conference 2025</p>
-        </article>
-        <article>
-          <p class="research-talk-meta">Speaker · July 2025</p>
-          <h3>Harnessing AI for Innovative Teaching and Ethical Research in Academia</h3>
-          <p>Academic Discourse with MLA, Nigeria</p>
-        </article>
-        <article>
-          <p class="research-talk-meta">Workshop co-organizer · 2024</p>
-          <h3>SIAM Student Chapter Workshop</h3>
-          <p>The Chinese University of Hong Kong</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
   <section class="editorial-section" id="projects" aria-labelledby="projects-heading">
     <div class="editorial-label"><p>Software</p></div>
     <div class="editorial-content">
@@ -262,6 +233,35 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
           <p class="research-project-meta">Scientific machine learning · In development</p>
           <h3><a href="https://github.com/abdgafartunde/seismic-inversion-ml" target="_blank" rel="noopener">Seismic Inversion ML</a></h3>
           <p>Physics-informed and data-driven methods for recovering subsurface velocity models from seismic measurements.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="editorial-section" id="talks" aria-labelledby="talks-heading">
+    <div class="editorial-label"><p>Presentations</p></div>
+    <div class="editorial-content">
+      <h2 id="talks-heading">Selected talks and academic events</h2>
+      <div class="research-talk-list">
+        <article>
+          <p class="research-talk-meta">Guest speaker · August 2025</p>
+          <h3>Harnessing AI for Innovative and Ethical Use in Academia</h3>
+          <p>ANSHK Research Forum 2025</p>
+        </article>
+        <article>
+          <p class="research-talk-meta">Minisymposium co-organizer · July 2025</p>
+          <h3>Industrial and Applied Mathematics</h3>
+          <p>HK-SIAM Conference 2025</p>
+        </article>
+        <article>
+          <p class="research-talk-meta">Speaker · July 2025</p>
+          <h3>Harnessing AI for Innovative Teaching and Ethical Research in Academia</h3>
+          <p>Academic Discourse with MLA, Nigeria</p>
+        </article>
+        <article>
+          <p class="research-talk-meta">Workshop co-organizer · 2024</p>
+          <h3>SIAM Student Chapter Workshop</h3>
+          <p>The Chinese University of Hong Kong</p>
         </article>
       </div>
     </div>

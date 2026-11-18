@@ -40,8 +40,8 @@
                 </ul>
             </div>
             <button class="theme-toggle" id="themeToggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Switch to dark mode" hidden>
-                    <svg class="theme-icon theme-icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/></svg>
-                    <svg class="theme-icon theme-icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+                <svg class="theme-icon theme-icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/></svg>
+                <svg class="theme-icon theme-icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
             </button>
         </div>
     </nav>
@@ -54,37 +54,21 @@
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer">
+    <footer class="site-footer" id="site-footer">
         <div class="container">
-            <div class="footer-introduction">
-                <div>
-                    <p class="footer-kicker">Research and collaboration</p>
-                    <p class="footer-statement">Mathematics for inverse problems, imaging, and scientific computing.</p>
-                </div>
-                <a class="footer-email" href="mailto:{{ site.social.email }}">{{ site.social.email }} <span aria-hidden="true">&rarr;</span></a>
-            </div>
-
-            <div class="footer-directory">
+            <div class="footer-main">
                 <div class="footer-identity">
-                    <p class="footer-name">{{ site.author.name }}</p>
+                    <p class="footer-name">&copy; {{ 'now' | date: "%Y" }} {{ site.author.name }}</p>
                     <p class="footer-position">{{ site.author.position }} at {{ site.author.affiliation }}</p>
                 </div>
-
-                <nav class="footer-nav" aria-label="Footer navigation">
-                    {% for item in site.navigation %}
-                    <a href="{{ item.url | relative_url }}"{% if item.label %} aria-label="{{ item.label | escape }}"{% endif %}>{{ item.title }}</a>
-                    {% endfor %}
-                </nav>
-
-                <nav class="footer-profiles" aria-label="Research and professional profiles">
+                <nav class="footer-profiles" aria-label="Contact and professional profiles">
+                    <a href="mailto:{{ site.social.email }}">Email</a>
                     {% if site.social.google_scholar %}<a href="https://scholar.google.com/citations?user={{ site.social.google_scholar }}" target="_blank" rel="noopener">Scholar</a>{% endif %}
                     {% if site.social.github %}<a href="https://github.com/{{ site.social.github }}" target="_blank" rel="noopener">GitHub</a>{% endif %}
                     {% if site.social.linkedin %}<a href="https://linkedin.com/in/{{ site.social.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
                     {% if site.social.orcid %}<a href="https://orcid.org/{{ site.social.orcid }}" target="_blank" rel="noopener">ORCID</a>{% endif %}
                 </nav>
             </div>
-
-            <p class="footer-copyright">&copy; {{ 'now' | date: "%Y" }} {{ site.author.name }}</p>
         </div>
     </footer>
 
