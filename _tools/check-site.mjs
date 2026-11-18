@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { spawnSync } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
 import axe from 'axe-core';
 import { HtmlValidate } from 'html-validate';
@@ -45,6 +46,17 @@ export async function checkSite(directory) {
     if (!siteUrl) throw new Error('Homepage has no canonical URL');
     const origin = new URL(siteUrl).origin;
     const label = filename => path.relative(root, filename).split(path.sep).join('/');
+    const checkedFeeds = new Set();
+    const checkedPdfs = new Set();
+    if (new URL(siteUrl).protocol !== 'https:') errors.push('Homepage canonical URL must use HTTPS');
+    for (const privatePath of ['_planning', '_tools', 'node_modules', '.git', '.env', 'package.json', 'package-lock.json', 'CV.tex']) {
+        try {
+            await fs.access(path.join(root, privatePath));
+            errors.push(`Private/development file must not be published: ${privatePath}`);
+        } catch (error) {
+            if (error.code !== 'ENOENT') throw error;
+        }
+    }
 
     try {
         for (const filename of files) {
@@ -103,6 +115,36 @@ export async function checkSite(directory) {
                     references.push(...srcset.split(',').map(item => item.trim().split(/\s+/)[0]));
                 }
             }
+            for (const feedLink of document.querySelectorAll('link[rel="alternate"][type="application/atom+xml"]')) {
+                const feedUrl = new URL(feedLink.href, dom.window.location.href);
+                if (feedUrl.origin !== origin) {
+                    errors.push(`${prefix}: Atom discovery link must use the site's origin`);
+                    continue;
+                }
+                if (checkedFeeds.has(feedUrl.href)) continue;
+                checkedFeeds.add(feedUrl.href);
+                let feed;
+                try {
+                    const feedPath = path.resolve(root, `.${decodeURIComponent(feedUrl.pathname)}`);
+                    if (!feedPath.startsWith(root + path.sep)) throw new Error('feed path escapes build directory');
+                    feed = new JSDOM(await fs.readFile(feedPath, 'utf8'), { contentType: 'application/xml' });
+                    const element = feed.window.document.documentElement;
+                    if (element.localName !== 'feed' || element.namespaceURI !== 'http://www.w3.org/2005/Atom') throw new Error('not an Atom feed');
+                    const entries = [...element.getElementsByTagNameNS(element.namespaceURI, 'entry')];
+                    if ([...pages.values()].some(page => page.window.document.querySelector('.post-article')) && !entries.length) throw new Error('published articles are missing from the feed');
+                    for (const entry of entries) {
+                        const link = [...entry.getElementsByTagNameNS(element.namespaceURI, 'link')].find(link => !link.getAttribute('rel') || link.getAttribute('rel') === 'alternate');
+                        if (!link?.getAttribute('href')) throw new Error('feed entry has no article link');
+                        const articleUrl = new URL(link.getAttribute('href'), feedUrl);
+                        if (articleUrl.origin !== origin) throw new Error('feed entry does not point to this site');
+                        references.push(articleUrl.href);
+                    }
+                } catch (error) {
+                    errors.push(`${prefix}: invalid Atom feed: ${error.message}`);
+                } finally {
+                    feed?.window.close();
+                }
+            }
             for (const reference of new Set(references)) {
                 try {
                     const url = new URL(reference, dom.window.location.href);
@@ -113,6 +155,13 @@ export async function checkSite(directory) {
                     const stat = await fs.stat(target);
                     if (stat.isDirectory()) target = path.join(target, 'index.html');
                     await fs.access(target);
+                    if (target.toLowerCase().endsWith('.pdf') && !checkedPdfs.has(target)) {
+                        checkedPdfs.add(target);
+                        const bytes = await fs.readFile(target);
+                        if (bytes.subarray(0, 5).toString() !== '%PDF-' || !bytes.subarray(-1024).toString('latin1').trimEnd().endsWith('%%EOF')) throw new Error('invalid or incomplete PDF');
+                        const validation = spawnSync('pdfinfo', [target], { encoding: 'utf8' });
+                        if (validation.error || validation.status !== 0) throw new Error('PDF validation failed (pdfinfo is required)');
+                    }
                     if (url.hash && pages.has(target)) {
                         const fragment = decodeURIComponent(url.hash.slice(1).split(':~:text=')[0]);
                         const destination = pages.get(target).window.document;
@@ -126,15 +175,43 @@ export async function checkSite(directory) {
                 }
             }
 
-            // Redirect pages have no shared content layout; their links are checked above.
-            if (!document.getElementById('main-content')) continue;
+            // Only actual noindex redirects may bypass the content-page audit.
+            // A missing main-content ID must fail instead of silently opting out.
+            const redirect = [...document.querySelectorAll('meta[http-equiv]')].some(meta => meta.httpEquiv.toLowerCase() === 'refresh') &&
+                /\bnoindex\b/i.test(document.querySelector('meta[name="robots"]')?.content || '');
+            if (redirect) continue;
             contentPages++;
+            if (!document.querySelector('main#main-content')) errors.push(`${prefix}: missing main#main-content landmark`);
             if (document.querySelectorAll('h1').length !== 1) errors.push(`${prefix}: expected exactly one h1`);
             if (!document.querySelector('meta[name="description"]')?.content.trim()) errors.push(`${prefix}: missing page description`);
-            if (!document.querySelector('link[rel="canonical"]')?.href.startsWith(`${origin}/`)) errors.push(`${prefix}: missing or incorrect canonical URL`);
-            for (const data of document.querySelectorAll('script[type="application/ld+json"]')) {
-                try { JSON.parse(data.textContent); }
+            const route = '/' + prefix.replace(/(^|\/)index\.html$/, '$1').split('/').map(encodeURIComponent).join('/');
+            const expectedUrl = origin + route;
+            const canonicals = document.querySelectorAll('link[rel="canonical"]');
+            if (canonicals.length !== 1 || canonicals[0].href !== expectedUrl) errors.push(`${prefix}: canonical URL must be ${expectedUrl}`);
+            const ogImages = document.querySelectorAll('meta[property="og:image"]');
+            const twitterImages = document.querySelectorAll('meta[name="twitter:image"]');
+            if (ogImages.length !== 1 || !ogImages[0].content.trim()) errors.push(`${prefix}: missing or duplicate Open Graph image metadata`);
+            if (twitterImages.length !== 1 || !twitterImages[0].content.trim()) errors.push(`${prefix}: missing or duplicate X/Twitter image metadata`);
+            if (ogImages[0]?.content !== twitterImages[0]?.content) errors.push(`${prefix}: sharing image metadata does not agree`);
+            if (!document.querySelector('link[rel="alternate"][type="application/atom+xml"]')) errors.push(`${prefix}: missing Atom feed discovery link`);
+            const structuredData = document.querySelectorAll('script[type="application/ld+json"]');
+            if (!structuredData.length) errors.push(`${prefix}: missing JSON-LD metadata`);
+            for (const data of structuredData) {
+                try {
+                    const value = JSON.parse(data.textContent);
+                    if (value.url && new URL(value.url, origin).href !== expectedUrl) errors.push(`${prefix}: JSON-LD URL does not agree with canonical URL`);
+                    if (value['@type'] === 'BlogPosting' && value.image !== ogImages[0]?.content) errors.push(`${prefix}: JSON-LD image does not agree with sharing image`);
+                }
                 catch { errors.push(`${prefix}: invalid JSON-LD metadata`); }
+            }
+            for (const current of document.querySelectorAll('nav[aria-label="Primary navigation"] a[aria-current="page"]')) {
+                if (current.href !== expectedUrl) errors.push(`${prefix}: aria-current="page" points to a different page`);
+            }
+            for (const entry of document.querySelectorAll('[data-blog-entry]')) {
+                for (const topic of entry.dataset.topics.split(/\s+/).filter(Boolean)) {
+                    const button = [...document.querySelectorAll('[data-topic]')].find(button => button.dataset.topic === topic);
+                    if (!button || !entry.dataset.search.toLowerCase().includes(button.textContent.trim().toLowerCase())) errors.push(`${prefix}: blog search does not include topic label ${topic}`);
+                }
             }
 
             dom.window.eval(axe.source);

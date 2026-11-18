@@ -65,7 +65,9 @@ seo_description: "Blog by A.T. Tiamiyu covering inverse problems, scientific com
         {% for post in sorted_posts %}
         {% capture post_topics %}{% for topic in site.data.blog_topics %}{% assign matches_topic = false %}{% for tag in topic.tags %}{% if post.tags contains tag %}{% assign matches_topic = true %}{% break %}{% endif %}{% endfor %}{% if matches_topic %}{{ topic.id }} {% endif %}{% endfor %}{% endcapture %}
         {% assign post_tags = post.tags | join: ' ' %}
-        {% capture search_text %}{{ post.title }} {{ post.description }} {{ post_tags }}{% endcapture %}
+        {% assign assigned_topics = post_topics | split: ' ' %}
+        {% capture topic_titles %}{% for topic in site.data.blog_topics %}{% if assigned_topics contains topic.id %}{{ topic.title }} {% endif %}{% endfor %}{% endcapture %}
+        {% capture search_text %}{{ post.title }} {{ post.description }} {{ post_tags }} {{ topic_titles }}{% endcapture %}
         <article data-blog-entry data-topics="{{ post_topics | strip }}" data-search="{{ search_text | strip | escape }}">
           <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
           <div>

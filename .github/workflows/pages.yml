@@ -56,6 +56,13 @@ jobs:
       - name: Install website check dependencies
         run: npm ci
 
+      - name: Install PDF validator
+        run: |
+          if ! command -v pdfinfo >/dev/null; then
+            sudo apt-get update
+            sudo apt-get install --no-install-recommends -y poppler-utils
+          fi
+
       - name: Test the website checker
         run: npm test
 
@@ -73,17 +80,7 @@ jobs:
             scheme-basic latexmk enumitem fontawesome5 fontname times titlesec xcolor
 
       - name: Build CV.pdf from CV.tex
-        run: |
-          outdir="$RUNNER_TEMP/cv"
-          mkdir -p "$outdir"
-          if latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir="$outdir" CV.tex; then
-            cp "$outdir/CV.pdf" CV.pdf
-            echo "CV.pdf compiled from CV.tex"
-          else
-            echo "::warning title=CV not updated::CV.tex did not compile; keeping the CV.pdf that is currently live."
-            curl -fsSL -o CV.pdf https://abdgafartunde.github.io/CV.pdf \
-              || echo "::warning title=CV missing::Could not fetch the live CV.pdf either."
-          fi
+        run: bash _tools/prepare-cv.sh
 
       - name: Build site
         env:

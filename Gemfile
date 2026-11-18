@@ -1,6 +1,12 @@
 source "https://rubygems.org"
 
-gem "github-pages", "232", group: :jekyll_plugins
+# GitHub Actions builds and deploys this site directly. Keep its existing
+# Jekyll engine without the unused GitHub Pages theme/remote-plugin bundle.
+gem "jekyll", "3.10.0"
+gem "kramdown-parser-gfm", "1.1.0"
+# Jekyll 3's safe_yaml and Liquid require these former standard-library gems.
+gem "base64", "~> 0.3.0"
+gem "bigdecimal", "~> 4.0"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do

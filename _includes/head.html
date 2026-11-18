@@ -40,8 +40,15 @@
 <meta property="og:title" content="{{ share_title | escape }}">
 <meta property="og:description" content="{{ page.seo_description | default: page.description | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
 <meta property="og:image" content="{{ share_image | absolute_url }}">
+{% if page.image %}
+{% if page.image_width and page.image_height %}
+<meta property="og:image:width" content="{{ page.image_width }}">
+<meta property="og:image:height" content="{{ page.image_height }}">
+{% endif %}
+{% else %}
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+{% endif %}
 <meta property="og:image:alt" content="{{ page.image_alt | default: share_title | escape }}">
 
 <!-- Twitter -->

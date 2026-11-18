@@ -36,6 +36,9 @@ CLAUDE.md
 .agents/
 .codex/
 
+# Private drafts stay out of this public repository until explicitly published.
+/_planning/
+
 # Logs
 *.log
 
