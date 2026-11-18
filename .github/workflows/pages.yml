@@ -90,6 +90,10 @@ jobs:
           JEKYLL_ENV: production
         run: bundle exec jekyll build --trace
 
+      - name: Generate article sharing images
+        # Only built posts receive cards; explicit image overrides take precedence.
+        run: npm run build:social-images
+
       - name: Check internal links, HTML and accessibility
         run: npm run check:site
 

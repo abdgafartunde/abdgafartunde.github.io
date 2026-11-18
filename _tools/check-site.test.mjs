@@ -77,3 +77,10 @@ test('returns a failing CLI exit code so deployment can be blocked', async t => 
     assert.equal(result.status, 1);
     assert.match(result.stderr, /broken internal reference/);
 });
+
+test('rejects missing social-sharing images referenced by page metadata', async t => {
+    const directory = await fixture(t, {
+        'index.html': page('<p>Home</p>').replace('</head>', '<meta property="og:image" content="https://example.test/missing-card.png"></head>')
+    });
+    assert.ok((await checkSite(directory)).errors.some(error => error.includes('missing-card.png')));
+});

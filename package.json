@@ -2,12 +2,16 @@
   "name": "academic-website-checks",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=24" },
+  "engines": {
+    "node": ">=24"
+  },
   "scripts": {
-    "test": "node --test _tools/check-site.test.mjs",
+    "test": "node --test _tools/*.test.mjs",
+    "build:social-images": "node _tools/generate-social-images.mjs",
     "check:site": "node _tools/check-site.mjs"
   },
   "devDependencies": {
+    "@napi-rs/canvas": "1.1.1",
     "axe-core": "4.14.1",
     "html-validate": "11.21.1",
     "jsdom": "31.0.1"

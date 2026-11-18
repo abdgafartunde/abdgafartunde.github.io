@@ -21,6 +21,7 @@
 <!-- Primary Meta Tags -->
 {% if page.seo_title %}{% assign document_title = page.seo_title %}{% elsif page.title and page.title != '' %}{% assign document_title = page.title | append: ' | ' | append: site.title %}{% else %}{% assign document_title = site.title %}{% endif %}
 {% if page.seo_title %}{% assign share_title = page.seo_title %}{% elsif page.title and page.title != '' %}{% assign share_title = page.title %}{% else %}{% assign share_title = site.title %}{% endif %}
+{% if page.image %}{% assign share_image = page.image %}{% elsif page.layout == 'post' %}{% assign share_image = page.url | prepend: '/assets/images/social' | append: 'card.png' %}{% else %}{% assign share_image = '/assets/images/og-default.png' %}{% endif %}
 <title>{{ document_title }}</title>
 <meta name="title" content="{{ document_title | escape }}">
 <meta name="description" content="{{ page.seo_description | default: page.description | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
@@ -38,18 +39,18 @@
 <meta property="og:url" content="{{ page.url | absolute_url }}">
 <meta property="og:title" content="{{ share_title | escape }}">
 <meta property="og:description" content="{{ page.seo_description | default: page.description | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
-<meta property="og:image" content="{{ page.image | default: '/assets/images/og-default.png' | absolute_url }}">
+<meta property="og:image" content="{{ share_image | absolute_url }}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="{{ share_title | escape }}">
+<meta property="og:image:alt" content="{{ page.image_alt | default: share_title | escape }}">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="{{ page.url | absolute_url }}">
 <meta name="twitter:title" content="{{ share_title | escape }}">
 <meta name="twitter:description" content="{{ page.seo_description | default: page.description | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
-<meta name="twitter:image" content="{{ page.image | default: '/assets/images/og-default.png' | absolute_url }}">
-<meta name="twitter:image:alt" content="{{ share_title | escape }}">
+<meta name="twitter:image" content="{{ share_image | absolute_url }}">
+<meta name="twitter:image:alt" content="{{ page.image_alt | default: share_title | escape }}">
 
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/favicon.svg' | relative_url }}">
@@ -114,7 +115,7 @@ MathJax = {
   "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
   "dateModified": {{ page.last_modified_at | default: page.date | date_to_xmlschema | jsonify }},
   "author": { "@type": "Person", "name": {{ page.author | default: site.author.name | jsonify }} },
-  "image": {{ page.image | default: '/assets/images/og-default.png' | absolute_url | jsonify }},
+  "image": {{ share_image | absolute_url | jsonify }},
   "url": {{ page.url | absolute_url | jsonify }}
 }
 {% elsif page.url == '/' %}

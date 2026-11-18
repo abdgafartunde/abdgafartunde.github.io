@@ -90,6 +90,9 @@ export async function checkSite(directory) {
             }
 
             const references = [];
+            for (const image of document.querySelectorAll('meta[property="og:image"], meta[name="twitter:image"]')) {
+                references.push(image.content);
+            }
             for (const element of document.querySelectorAll('[href], [src], [poster], [srcset]')) {
                 for (const attribute of ['href', 'src', 'poster']) {
                     if (element.hasAttribute(attribute)) references.push(element.getAttribute(attribute));

@@ -10,6 +10,10 @@ seo_description: "Blog by A.T. Tiamiyu covering inverse problems, scientific com
 {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
 
 <div class="blog-editorial">
+  <p class="blog-subscribe">
+    <a href="{{ '/feed.xml' | relative_url }}" type="application/atom+xml" rel="alternate"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true" focusable="false"><circle cx="4" cy="16" r="1" fill="currentColor" stroke="none"/><path d="M3 9a8 8 0 0 1 8 8M3 3a14 14 0 0 1 14 14"/></svg>Subscribe via RSS</a>
+    <span>New articles in your feed reader.</span>
+  </p>
   <nav class="blog-page-nav" aria-label="Blog page sections">
     <a href="#writing">Latest essay</a>
     {% if site.posts.size > 0 %}<a href="#archive">Browse by topic</a>{% endif %}

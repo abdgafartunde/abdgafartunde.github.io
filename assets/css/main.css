@@ -3700,6 +3700,28 @@ textarea.form-control {
     border-bottom: 1px solid var(--border);
 }
 
+.content .blog-subscribe {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 1rem;
+    margin: 0 0 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.blog-subscribe a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    min-height: 44px;
+    font-weight: 600;
+}
+
+.blog-subscribe svg {
+    flex: none;
+}
+
 .content .blog-page-nav a {
     display: inline-flex;
     align-items: center;
