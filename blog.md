@@ -11,13 +11,11 @@ seo_description: "Blog by A.T. Tiamiyu covering inverse problems, scientific com
 
 <div class="blog-editorial">
   <nav class="blog-page-nav" aria-label="Blog page sections">
-    <span>On this page</span>
     <a href="#writing">Latest essay</a>
     {% if site.posts.size > 0 %}<a href="#archive">Browse by topic</a>{% endif %}
   </nav>
 
   <section class="editorial-section" id="writing" aria-labelledby="writing-heading">
-    <div class="editorial-label"><p>Writing</p></div>
     <div class="editorial-content">
       <h2 id="writing-heading">Latest essay</h2>
 
@@ -44,7 +42,6 @@ seo_description: "Blog by A.T. Tiamiyu covering inverse problems, scientific com
 
   {% if site.posts.size > 0 %}
   <section class="editorial-section blog-archive-section" id="archive" aria-labelledby="archive-heading">
-    <div class="editorial-label"><p>Archive</p></div>
     <div class="editorial-content">
       <h2 id="archive-heading">Explore the writing</h2>
       <div class="blog-controls" id="blogControls" hidden>

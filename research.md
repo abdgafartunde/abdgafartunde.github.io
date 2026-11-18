@@ -91,19 +91,9 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
     <div class="editorial-label"><p>Publications</p></div>
     <div class="editorial-content">
       <h2 id="publications-heading">Selected publications</h2>
-      <p class="research-section-intro">A complete and current citation record is available on <a href="https://scholar.google.com/citations?user=oZ3egAIAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>.</p>
+      <p class="research-section-intro">Five journal articles spanning optimization, scientific machine learning and numerical simulation. See the complete publication list on <a href="https://scholar.google.com/citations?user=oZ3egAIAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>.</p>
 
       <div class="research-publication-list">
-        <article class="research-publication">
-          <time datetime="2026">2026</time>
-          <div>
-            <h3>Approximate numerical solutions of second-order delay differential equations using artificial neural networks</h3>
-            <p class="research-authors">Audu K.J., Iyanda F.K., Balogun O.O., <strong>Tiamiyu A.T.</strong>, Adedayo O.A., Iyadunni A.V., and Kamorudeen A.A.</p>
-            <p class="research-venue">In <em>Neural Networks: Theory, Algorithms, Simulation, and Applications</em>, Springer Nature Switzerland, pp. 91&ndash;112</p>
-            <p class="research-annotation">An artificial neural network method for second-order delay differential equations that incorporates the history function directly into the network structure.</p>
-            <a class="research-record-link" href="https://doi.org/10.1007/978-3-032-18750-5_6" target="_blank" rel="noopener">DOI <span aria-hidden="true">↗</span></a>
-          </div>
-        </article>
 
         <article class="research-publication">
           <time datetime="2026">2026</time>
@@ -141,17 +131,6 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
         <article class="research-publication">
           <time datetime="2025">2025</time>
           <div>
-            <h3>Numerical solution of first and higher order IVPs via a single continuous block method</h3>
-            <p class="research-authors">Garba J., Audu K.J., Mohammed U., and <strong>Tiamiyu A.T.</strong></p>
-            <p class="research-venue"><em>Scientific Journal of Mehmet Akif Ersoy University</em>, Vol. 8, No. 1, pp. 16&ndash;34</p>
-            <p class="research-annotation">A seventh-order continuous collocation scheme for solving first and higher order ordinary differential equations.</p>
-            <a class="research-record-link" href="https://dergipark.org.tr/en/pub/sjmakeu/article/1611387" target="_blank" rel="noopener">Article <span aria-hidden="true">↗</span></a>
-          </div>
-        </article>
-
-        <article class="research-publication">
-          <time datetime="2025">2025</time>
-          <div>
             <h3>Physics-informed neural networks in iterative form of nonlinear equations for numerical algorithms and simulations of delay differential equations</h3>
             <p class="research-authors">He J. and <strong>Tiamiyu A.T.</strong></p>
             <p class="research-venue"><em>Physica A: Statistical Mechanics and its Applications</em></p>
@@ -171,16 +150,6 @@ seo_description: "Research by A.T. Tiamiyu on inverse problems, electrical imped
           </div>
         </article>
 
-        <article class="research-publication">
-          <time datetime="2024">2024</time>
-          <div>
-            <h3>Numerical assessment of some semi-analytical techniques for solving a fractional-order leptospirosis model</h3>
-            <p class="research-authors">Audu K.J., <strong>Tiamiyu A.T.</strong>, Akpabio J.N., Ahmad H., and Olabiyi M.A.</p>
-            <p class="research-venue"><em>Malaysian Journal of Science</em></p>
-            <p class="research-annotation">A comparison of semi-analytical methods for a fractional-order epidemiological model of leptospirosis.</p>
-            <a class="research-record-link" href="https://doi.org/10.22452/mjs.vol43no3.9" target="_blank" rel="noopener">DOI <span aria-hidden="true">↗</span></a>
-          </div>
-        </article>
       </div>
     </div>
   </section>

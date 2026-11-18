@@ -3654,8 +3654,9 @@ textarea.form-control {
    ============================================ */
 
 .blog-page .page-header {
-    margin-bottom: 0;
-    padding: 3rem 0 4rem;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1.5rem 0 1.25rem;
 }
 
 .blog-page .page-header h1 {
@@ -3675,6 +3676,17 @@ textarea.form-control {
 
 .blog-editorial {
     width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.blog-page .editorial-section {
+    display: block;
+    padding: 1.5rem 0;
+}
+
+.blog-page .content .editorial-content > h2 {
+    margin-bottom: 1rem;
 }
 
 .blog-page-nav {
@@ -3682,20 +3694,14 @@ textarea.form-control {
     flex-wrap: wrap;
     align-items: center;
     gap: 0.6rem 1.3rem;
-    padding: 1.15rem 0;
+    padding: 0.35rem 0 0.5rem;
     border-bottom: 1px solid var(--border);
 }
 
-.blog-page-nav span {
-    margin-right: 0.3rem;
-    color: var(--text-muted);
-    font-size: 0.64rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-}
-
 .content .blog-page-nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
     color: var(--text-secondary);
     font-size: 0.75rem;
     font-weight: 600;
@@ -3715,9 +3721,8 @@ textarea.form-control {
 }
 
 .blog-lead {
-    padding: 2.2rem 0 2.35rem;
+    padding: 1.1rem 0 0;
     border-top: 1px solid var(--heading);
-    border-bottom: 1px solid var(--border);
 }
 
 .blog-lead-meta {
@@ -3726,7 +3731,7 @@ textarea.form-control {
     align-items: center;
     justify-content: space-between;
     gap: 0.6rem 1.25rem;
-    margin-bottom: 1.05rem;
+    margin-bottom: 0.75rem;
 }
 
 .blog-lead-meta span {
@@ -3776,7 +3781,7 @@ textarea.form-control {
     align-items: center;
     justify-content: space-between;
     gap: 0.65rem 1.25rem;
-    margin-top: 1.4rem;
+    margin-top: 1rem;
 }
 
 .content .blog-lead-footer a {
@@ -3799,7 +3804,7 @@ textarea.form-control {
     display: grid;
     grid-template-columns: 92px minmax(0, 1fr);
     gap: 1.6rem;
-    padding: 1.55rem 0;
+    padding: 1.1rem 0;
     border-bottom: 1px solid var(--border);
 }
 
@@ -3851,7 +3856,8 @@ textarea.form-control {
     text-transform: uppercase;
 }
 
-.blog-archive-section {
+.blog-page .blog-archive-section {
+    padding-bottom: 0;
     border-bottom: 0;
 }
 
@@ -3898,7 +3904,7 @@ textarea.form-control {
 
 @media (max-width: 760px) {
     .blog-page .page-header {
-        padding: 2.5rem 0 3.25rem;
+        padding: 1.25rem 0;
     }
 
     .blog-page .page-header h1 {
@@ -3909,10 +3915,6 @@ textarea.form-control {
         gap: 0.65rem 1rem;
     }
 
-    .blog-page-nav span {
-        flex-basis: 100%;
-        margin-bottom: 0.2rem;
-    }
 }
 
 @media (max-width: 520px) {
