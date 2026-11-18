@@ -57,7 +57,7 @@ seo_description: "Blog by A.T. Tiamiyu covering inverse problems, scientific com
         </div>
         <p class="blog-result-count" id="blogResultCount" role="status" aria-live="polite" aria-atomic="true"></p>
       </div>
-      <div class="blog-reading-list" id="blogArchive" aria-label="All essays">
+      <div class="blog-reading-list" id="blogArchive">
         {% for post in sorted_posts %}
         {% capture post_topics %}{% for topic in site.data.blog_topics %}{% assign matches_topic = false %}{% for tag in topic.tags %}{% if post.tags contains tag %}{% assign matches_topic = true %}{% break %}{% endif %}{% endfor %}{% if matches_topic %}{{ topic.id }} {% endif %}{% endfor %}{% endcapture %}
         {% assign post_tags = post.tags | join: ' ' %}

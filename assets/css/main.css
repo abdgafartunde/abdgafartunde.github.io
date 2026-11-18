@@ -8,12 +8,12 @@
     /* Palette */
     --navy: #17324d;
     --navy-light: #244966;
-    --blue: #326f9f;
+    --blue: #306b99;
     --blue-soft: #4d89b6;
     --blue-pale: #e2ecf4;
     --teal: #a15a3a;
     --slate: #27323a;
-    --slate-light: #60717e;
+    --slate-light: #566774;
     --slate-pale: #8a98a3;
     --gray-50: #f7f4ec;
     --gray-100: #ece8de;
@@ -2982,6 +2982,7 @@ textarea.form-control {
 
 .back-to-top {
     border-radius: 50%;
+    color: var(--surface-alt);
     background: var(--warm);
 }
 
