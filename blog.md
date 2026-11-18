@@ -13,7 +13,7 @@ seo_description: "Blog by A.T. Tiamiyu covering inverse problems, scientific com
   <nav class="blog-page-nav" aria-label="Blog page sections">
     <span>On this page</span>
     <a href="#writing">Writing</a>
-    {% if site.posts.size > 6 %}<a href="#archive">Archive</a>{% endif %}
+    {% if site.posts.size > 0 %}<a href="#archive">Browse by topic</a>{% endif %}
   </nav>
 
   <section class="editorial-section" id="writing" aria-labelledby="writing-heading">
@@ -38,39 +38,49 @@ seo_description: "Blog by A.T. Tiamiyu covering inverse problems, scientific com
       </article>
       {% endfor %}
 
-      <div class="blog-reading-list" aria-label="Recent essays">
-        {% for post in sorted_posts offset:1 limit:5 %}
-        <article>
-          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
-          <div>
-            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-            <p>{{ post.description }}</p>
-            {% if post.tags.size > 0 %}
-            <p class="blog-topic">{{ post.tags | first }}</p>
-            {% endif %}
-          </div>
-        </article>
-        {% endfor %}
-      </div>
       {% else %}
       <p class="blog-empty">No posts yet. New writing on computational mathematics and inverse problems will appear here.</p>
       {% endif %}
     </div>
   </section>
 
-  {% if site.posts.size > 6 %}
+  {% if site.posts.size > 0 %}
   <section class="editorial-section blog-archive-section" id="archive" aria-labelledby="archive-heading">
     <div class="editorial-label"><p>Archive</p></div>
     <div class="editorial-content">
-      <h2 id="archive-heading">Earlier essays</h2>
-      <ol class="blog-editorial-archive">
-        {% for post in sorted_posts offset:6 %}
-        <li>
-          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %Y" }}</time>
-          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        </li>
+      <h2 id="archive-heading">Explore the writing</h2>
+      <div class="blog-controls" id="blogControls" hidden>
+        <div class="blog-search" role="search" aria-label="Search the blog">
+          <label for="blogSearch">Search essays</label>
+          <input id="blogSearch" type="search" placeholder="Title, topic or description" aria-controls="blogArchive" autocomplete="off">
+        </div>
+        <div class="blog-topic-filters" role="group" aria-label="Filter essays by topic">
+          <button type="button" data-topic="all" aria-pressed="true" aria-controls="blogArchive">All topics</button>
+          {% for topic in site.data.blog_topics %}
+          <button type="button" data-topic="{{ topic.id }}" aria-pressed="false" aria-controls="blogArchive">{{ topic.title | escape }}</button>
+          {% endfor %}
+        </div>
+        <p class="blog-result-count" id="blogResultCount" role="status" aria-live="polite" aria-atomic="true"></p>
+      </div>
+      <div class="blog-reading-list" id="blogArchive" aria-label="All essays">
+        {% for post in sorted_posts %}
+        {% capture post_topics %}{% for topic in site.data.blog_topics %}{% assign matches_topic = false %}{% for tag in topic.tags %}{% if post.tags contains tag %}{% assign matches_topic = true %}{% break %}{% endif %}{% endfor %}{% if matches_topic %}{{ topic.id }} {% endif %}{% endfor %}{% endcapture %}
+        {% assign post_tags = post.tags | join: ' ' %}
+        {% capture search_text %}{{ post.title }} {{ post.description }} {{ post_tags }}{% endcapture %}
+        <article data-blog-entry data-topics="{{ post_topics | strip }}" data-search="{{ search_text | strip | escape }}">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
+          <div>
+            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            <p>{{ post.description }}</p>
+            {% if post.tags.size > 0 %}<p class="blog-topic">{{ post.tags | first }}</p>{% endif %}
+          </div>
+        </article>
         {% endfor %}
-      </ol>
+      </div>
+      <div class="blog-no-results" id="blogNoResults" hidden>
+        <p>No essays match this search and topic.</p>
+        <button type="button" id="blogReset">Clear filters</button>
+      </div>
     </div>
   </section>
   {% endif %}

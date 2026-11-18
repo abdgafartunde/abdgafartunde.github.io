@@ -12,7 +12,7 @@ layout: default
             <div class="post-meta-top">
                 <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d %B %Y" }}</time>
                 <span class="meta-sep" aria-hidden="true">/</span>
-                <span>{% assign words = content | number_of_words %}{% assign read_time = words | divided_by: 200 %}{% if read_time < 1 %}1{% else %}{{ read_time }}{% endif %} min read</span>
+                <span>{% assign words = content | strip_html | number_of_words %}{% assign read_time = words | divided_by: 200 %}{% if read_time < 1 %}1{% else %}{{ read_time }}{% endif %} min read</span>
             </div>
 
             <h1 class="post-title">{{ page.title }}</h1>
@@ -25,6 +25,13 @@ layout: default
             </ul>
             {% endif %}
         </header>
+
+        {% if words >= 1000 and page.toc != false %}
+        <details class="post-toc" id="postToc" open hidden>
+            <summary>On this page</summary>
+            <nav aria-label="Article contents"><ol></ol></nav>
+        </details>
+        {% endif %}
 
         <div class="content post-content">
             {{ content }}
@@ -55,20 +62,5 @@ layout: default
         </nav>
     </article>
 
-    <aside class="post-related" aria-labelledby="related-writing-heading">
-        <div class="post-related-heading">
-            <p>From the archive</p>
-            <h2 id="related-writing-heading">More writing</h2>
-        </div>
-        <div class="post-related-list">
-            {% assign other_posts = site.posts | where_exp: "post", "post.url != page.url" %}
-            {% for post in other_posts limit:3 %}
-            <article>
-                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
-                <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-            </article>
-            {% endfor %}
-        </div>
-        <a class="post-all-writing" href="{{ '/blog/' | relative_url }}">Browse the complete archive <span aria-hidden="true">&rarr;</span></a>
-    </aside>
+    {% include related-writing.html %}
 </div>

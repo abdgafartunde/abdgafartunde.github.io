@@ -4,7 +4,7 @@ title: "From PhD to Postdoc: What Changes and What Doesn't"
 description: "Honest reflections on the transition from doctoral student to postdoctoral researcher, including the adjustments nobody warned me about."
 date: 2026-03-16
 author: "Abd'gafar Tunde Tiamiyu"
-tags: [Academia, Career, Reflections]
+tags: [Academia, Career, Reflections, PhD]
 math: false
 ---
 

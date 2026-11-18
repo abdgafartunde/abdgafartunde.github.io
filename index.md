@@ -34,6 +34,7 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
   <nav class="home-page-nav" aria-label="Homepage sections">
     <span>Explore</span>
     <a href="#profile-heading">Profile</a>
+    <a href="#writing-heading">Recent writing</a>
     <a href="#focus-heading">Research focus</a>
     <a href="#work-heading">Selected work</a>
     <a href="#updates-heading">Updates</a>
@@ -50,6 +51,26 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
       <a class="home-inline-link" href="{{ '/experience/' | relative_url }}">Background and experience <span aria-hidden="true">→</span></a>
     </div>
   </section>
+
+  {% assign recent_posts = site.posts | sort: 'date' | reverse %}
+  {% if recent_posts.size > 0 %}
+  <section class="home-editorial-section" aria-labelledby="writing-heading">
+    <div class="home-section-label"><p>Recent writing</p></div>
+    <div class="home-section-content">
+      <h2 id="writing-heading">Notes from research and academic life</h2>
+      <div class="home-writing-list">
+        {% for post in recent_posts limit:2 %}
+        <article>
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %B %Y" }}</time>
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p>{{ post.description }}</p>
+        </article>
+        {% endfor %}
+      </div>
+      <a class="home-inline-link" href="{{ '/blog/' | relative_url }}">All writing <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+  {% endif %}
 
   <section class="home-editorial-section" aria-labelledby="focus-heading">
     <div class="home-section-label">
@@ -89,6 +110,31 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
     </div>
     <div class="home-section-content">
       <h2 id="work-heading">Software and publications</h2>
+      <div class="home-research-feature">
+        <h3>Reconstructing the interior from boundary measurements</h3>
+        <p>Electrical impedance tomography uses electrical measurements at the boundary to infer conductivity inside an object. This eitkit example compares two ways of regularizing that reconstruction.</p>
+        <figure class="research-visual">
+          <div class="research-visual-panels">
+            <svg viewBox="0 60 800 690" role="img" aria-labelledby="eit-known-title eit-known-desc">
+              <title id="eit-known-title">Known conductivity</title>
+              <desc id="eit-known-desc">A simulated circular object contains one more conductive inclusion at the upper right and one less conductive inclusion at the lower left. Sixteen electrodes surround its boundary.</desc>
+              <image href="{{ '/assets/images/eitkit-reconstructions.png' | relative_url }}" width="2400" height="750"/>
+            </svg>
+            <svg viewBox="800 60 800 690" role="img" aria-labelledby="eit-tikhonov-title eit-tikhonov-desc">
+              <title id="eit-tikhonov-title">Tikhonov reconstruction</title>
+              <desc id="eit-tikhonov-desc">The Tikhonov reconstruction locates the two inclusions but smooths their boundaries.</desc>
+              <image href="{{ '/assets/images/eitkit-reconstructions.png' | relative_url }}" width="2400" height="750"/>
+            </svg>
+            <svg viewBox="1600 60 800 690" role="img" aria-labelledby="eit-tv-title eit-tv-desc">
+              <title id="eit-tv-title">Total-variation reconstruction</title>
+              <desc id="eit-tv-desc">The total-variation reconstruction, computed with ADMM, retains sharper boundaries in this example.</desc>
+              <image href="{{ '/assets/images/eitkit-reconstructions.png' | relative_url }}" width="2400" height="750"/>
+            </svg>
+          </div>
+          <figcaption>Synthetic eitkit demonstration with 16 electrodes and 45 dB signal-to-noise ratio. Data were simulated on the reconstruction mesh. Panels show the known conductivity, Tikhonov reconstruction and total-variation reconstruction. <a href="{{ '/assets/images/eitkit-reconstructions.png' | relative_url }}">View the full figure</a>.</figcaption>
+        </figure>
+        <a class="home-inline-link" href="https://github.com/abdgafartunde/eit-reconstruction-toolkit/blob/442d581/scripts/reconstruct_and_plot.py" target="_blank" rel="noopener">Explore the eitkit example <span aria-hidden="true">↗</span></a>
+      </div>
       <div class="home-work-list">
         <article class="home-work-item">
           <p class="home-work-meta">Open-source software · 2026</p>
@@ -119,43 +165,26 @@ seo_description: "Personal website of A.T. Tiamiyu. Research, publications, and 
     <div class="home-section-content">
       <h2 id="updates-heading">Latest updates</h2>
       <div class="home-update-list">
+        {% for update in site.data.activity limit:3 %}
         <article>
-          <time datetime="2026-11-09">November 2026</time>
-          <p>Released <a href="https://github.com/abdgafartunde/ertkit/releases/tag/v0.1.1" target="_blank" rel="noopener">ertkit v0.1.1</a>, with fixes for synthetic-data screening and smooth-inversion reporting, verified against pyGIMLi and SimPEG.</p>
+          <time datetime="{{ update.date }}">{{ update.label }}</time>
+          <p>{{ update.text }}</p>
         </article>
-        <article>
-          <time datetime="2026-10">October 2026</time>
-          <p>Released <a href="https://github.com/abdgafartunde/ertkit" target="_blank" rel="noopener">ertkit v0.1.0</a>, vertical electrical sounding inversion for groundwater exploration, with a depth of investigation and uncertainty estimates for every model.</p>
-        </article>
-        <article>
-          <time datetime="2026-10">October 2026</time>
-          <p>Released <a href="https://github.com/abdgafartunde/image-restoration-toolkit" target="_blank" rel="noopener">imrestore v0.1.0</a>, adaptive and quasi-Newton first-order methods for image denoising and deblurring.</p>
-        </article>
-        <article>
-          <time datetime="2026-10">October 2026</time>
-          <p>Released <a href="https://github.com/abdgafartunde/eit-reconstruction-toolkit" target="_blank" rel="noopener">eitkit v0.2.0</a> and <a href="https://github.com/abdgafartunde/medical-imaging" target="_blank" rel="noopener">medimg v0.2.0</a>, with corrected solvers, tutorials, and expanded technical notes.</p>
-        </article>
-        <article>
-          <time datetime="2026-07">July 2026</time>
-          <p>Released <a href="https://github.com/abdgafartunde/medical-imaging" target="_blank" rel="noopener">medimg v0.1.1</a> for compressed sensing reconstruction in MRI and CT.</p>
-        </article>
-        <article>
-          <time datetime="2026-07">July 2026</time>
-          <p>Published a <a href="https://doi.org/10.1007/978-3-032-18750-5_6" target="_blank" rel="noopener">book chapter</a> on neural-network solutions of second-order delay differential equations in <em>Neural Networks: Theory, Algorithms, Simulation, and Applications</em> (Springer).</p>
-        </article>
-        <article>
-          <time datetime="2026-06">June 2026</time>
-          <p>Released <a href="https://github.com/abdgafartunde/eit-reconstruction-toolkit" target="_blank" rel="noopener">eitkit v0.1.1</a>, a reconstruction toolkit for Electrical Impedance Tomography.</p>
-        </article>
-        <article>
-          <time datetime="2026-04">April 2026</time>
-          <p>Published new work on constrained monotone nonlinear equations in two applied mathematics journals.</p>
-        </article>
-        <article>
-          <time datetime="2026-01">January 2026</time>
-          <p>Started a postdoctoral research position at Jilin University.</p>
-        </article>
+        {% endfor %}
       </div>
+      {% if site.data.activity.size > 3 %}
+      <details class="home-update-archive">
+        <summary>Earlier updates</summary>
+        <div class="home-update-list">
+          {% for update in site.data.activity offset:3 %}
+          <article>
+            <time datetime="{{ update.date }}">{{ update.label }}</time>
+            <p>{{ update.text }}</p>
+          </article>
+          {% endfor %}
+        </div>
+      </details>
+      {% endif %}
     </div>
   </section>
 

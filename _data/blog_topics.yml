@@ -1,0 +1,12 @@
+- id: inverse-problems
+  title: Inverse problems
+  tags: [Inverse Problems, EIT, Medical Imaging, Image Reconstruction, Geophysics, Regularization]
+- id: scientific-computing
+  title: Scientific computing
+  tags: [Scientific Computing, Numerical Methods, FEM, Optimization, Python, Tools, Spectral Methods, Model Order Reduction, Stochastic PDEs, Uncertainty Quantification, Bayesian Methods, Gaussian Processes]
+- id: ai-and-machine-learning
+  title: AI & machine learning
+  tags: [AI, Artificial Intelligence, Scientific Machine Learning, Deep Learning, Neural Operators, Neural ODEs, PINNs, Gaussian Processes]
+- id: academic-life
+  title: Academic life
+  tags: [Academia, Academic Life, Career, Communication, Advice, Reflections, Collaboration, Research, Scholarships, HKPFS, PhD]

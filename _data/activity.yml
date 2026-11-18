@@ -1,0 +1,27 @@
+- date: "2026-11-09"
+  label: November 2026
+  text: 'Released <a href="https://github.com/abdgafartunde/ertkit/releases/tag/v0.1.1" target="_blank" rel="noopener">ertkit v0.1.1</a>, with fixes for synthetic-data screening and smooth-inversion reporting, verified against pyGIMLi and SimPEG.'
+- date: "2026-10"
+  label: October 2026
+  text: 'Released <a href="https://github.com/abdgafartunde/ertkit" target="_blank" rel="noopener">ertkit v0.1.0</a>, vertical electrical sounding inversion for groundwater exploration, with a depth of investigation and uncertainty estimates for every model.'
+- date: "2026-10"
+  label: October 2026
+  text: 'Released <a href="https://github.com/abdgafartunde/image-restoration-toolkit" target="_blank" rel="noopener">imrestore v0.1.0</a>, adaptive and quasi-Newton first-order methods for image denoising and deblurring.'
+- date: "2026-10"
+  label: October 2026
+  text: 'Released <a href="https://github.com/abdgafartunde/eit-reconstruction-toolkit" target="_blank" rel="noopener">eitkit v0.2.0</a> and <a href="https://github.com/abdgafartunde/medical-imaging" target="_blank" rel="noopener">medimg v0.2.0</a>, with corrected solvers, tutorials, and expanded technical notes.'
+- date: "2026-07"
+  label: July 2026
+  text: 'Released <a href="https://github.com/abdgafartunde/medical-imaging" target="_blank" rel="noopener">medimg v0.1.1</a> for compressed sensing reconstruction in MRI and CT.'
+- date: "2026-07"
+  label: July 2026
+  text: 'Published a <a href="https://doi.org/10.1007/978-3-032-18750-5_6" target="_blank" rel="noopener">book chapter</a> on neural-network solutions of second-order delay differential equations in <em>Neural Networks: Theory, Algorithms, Simulation, and Applications</em> (Springer).'
+- date: "2026-06"
+  label: June 2026
+  text: 'Released <a href="https://github.com/abdgafartunde/eit-reconstruction-toolkit" target="_blank" rel="noopener">eitkit v0.1.1</a>, a reconstruction toolkit for Electrical Impedance Tomography.'
+- date: "2026-04"
+  label: April 2026
+  text: Published new work on constrained monotone nonlinear equations in two applied mathematics journals.
+- date: "2026-01"
+  label: January 2026
+  text: Started a postdoctoral research position at Jilin University.

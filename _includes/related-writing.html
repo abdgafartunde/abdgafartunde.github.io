@@ -1,0 +1,44 @@
+{% assign other_posts = site.posts | where_exp: "post", "post.url != page.url" | sort: 'date' | reverse %}
+{% assign selected_urls = '|' %}
+{% assign has_related = false %}
+{% capture related_articles %}
+  {% for slot in (1..3) %}
+    {% assign best_score = -1 %}
+    {% assign best_post = nil %}
+    {% for candidate in other_posts %}
+      {% assign candidate_marker = candidate.url | prepend: '|' | append: '|' %}
+      {% unless selected_urls contains candidate_marker %}
+        {% assign score = 0 %}
+        {% for tag in page.tags %}
+          {% if candidate.tags contains tag %}
+            {% if tag == 'Mathematics' or tag == 'Research' or tag == 'Reflections' %}
+              {% assign score = score | plus: 1 %}
+            {% else %}
+              {% assign score = score | plus: 3 %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+        {% if score > best_score %}
+          {% assign best_score = score %}
+          {% assign best_post = candidate %}
+        {% endif %}
+      {% endunless %}
+    {% endfor %}
+    {% if best_post %}
+      {% assign selected_urls = selected_urls | append: best_post.url | append: '|' %}
+      {% if best_score > 0 %}{% assign has_related = true %}{% endif %}
+      <article>
+        <time datetime="{{ best_post.date | date_to_xmlschema }}">{{ best_post.date | date: "%d %b %Y" }}</time>
+        <h3><a href="{{ best_post.url | relative_url }}">{{ best_post.title }}</a></h3>
+      </article>
+    {% endif %}
+  {% endfor %}
+{% endcapture %}
+<aside class="post-related" aria-labelledby="related-writing-heading">
+  <div class="post-related-heading">
+    <p>Continue reading</p>
+    <h2 id="related-writing-heading">{% if has_related %}Related writing{% else %}More writing{% endif %}</h2>
+  </div>
+  <div class="post-related-list">{{ related_articles }}</div>
+  <a class="post-all-writing" href="{{ '/blog/' | relative_url }}#archive">Browse the complete archive <span aria-hidden="true">&rarr;</span></a>
+</aside>

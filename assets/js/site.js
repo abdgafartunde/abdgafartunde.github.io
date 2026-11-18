@@ -59,6 +59,96 @@
     updateThemeToggle();
     themeToggle.hidden = false;
 
+    var blogControls = document.getElementById('blogControls');
+    if (blogControls) {
+        var search = document.getElementById('blogSearch');
+        var topicButtons = Array.from(blogControls.querySelectorAll('[data-topic]'));
+        var entries = Array.from(document.querySelectorAll('[data-blog-entry]'));
+        var resultCount = document.getElementById('blogResultCount');
+        var noResults = document.getElementById('blogNoResults');
+        var activeTopic = 'all';
+
+        function normalizeSearch(value) {
+            return value.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '');
+        }
+
+        var searchIndex = entries.map(function (entry) {
+            return normalizeSearch(entry.getAttribute('data-search'));
+        });
+
+        function filterEssays(updateUrl) {
+            var terms = normalizeSearch(search.value).trim().split(/\s+/).filter(Boolean);
+            var count = 0;
+            entries.forEach(function (entry, index) {
+                var topics = entry.getAttribute('data-topics').split(/\s+/);
+                var matches = (activeTopic === 'all' || topics.indexOf(activeTopic) !== -1) &&
+                    terms.every(function (term) { return searchIndex[index].indexOf(term) !== -1; });
+                entry.hidden = !matches;
+                if (matches) count += 1;
+            });
+            topicButtons.forEach(function (button) {
+                button.setAttribute('aria-pressed', String(button.getAttribute('data-topic') === activeTopic));
+            });
+            resultCount.textContent = count + (count === 1 ? ' essay' : ' essays');
+            noResults.hidden = count !== 0;
+
+            if (updateUrl) {
+                var url = new URL(window.location.href);
+                if (activeTopic === 'all') url.searchParams.delete('topic');
+                else url.searchParams.set('topic', activeTopic);
+                if (search.value.trim()) url.searchParams.set('q', search.value.trim());
+                else url.searchParams.delete('q');
+                // Filtering remains usable when history updates are restricted.
+                try { window.history.replaceState(null, '', url); } catch (error) {}
+            }
+        }
+
+        function readFiltersFromUrl() {
+            var parameters = new URL(window.location.href).searchParams;
+            var requestedTopic = parameters.get('topic');
+            activeTopic = topicButtons.some(function (button) {
+                return button.getAttribute('data-topic') === requestedTopic;
+            }) ? requestedTopic : 'all';
+            search.value = parameters.get('q') || '';
+            filterEssays(false);
+        }
+
+        topicButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                activeTopic = button.getAttribute('data-topic');
+                filterEssays(true);
+            });
+        });
+        search.addEventListener('input', function () { filterEssays(true); });
+        document.getElementById('blogReset').addEventListener('click', function () {
+            search.value = '';
+            activeTopic = 'all';
+            filterEssays(true);
+            search.focus();
+        });
+        window.addEventListener('popstate', readFiltersFromUrl);
+        readFiltersFromUrl();
+        blogControls.hidden = false;
+    }
+
+    var contents = document.getElementById('postToc');
+    if (contents) {
+        var headings = Array.from(document.querySelectorAll('.post-content h2[id]'));
+        if (headings.length >= 4) {
+            var contentsList = contents.querySelector('ol');
+            headings.forEach(function (heading) {
+                var item = document.createElement('li');
+                var link = document.createElement('a');
+                link.href = '#' + encodeURIComponent(heading.id);
+                link.textContent = heading.textContent;
+                item.appendChild(link);
+                contentsList.appendChild(item);
+            });
+            contents.open = !window.matchMedia('(max-width: 620px)').matches;
+            contents.hidden = false;
+        }
+    }
+
     var backToTop = document.getElementById('backToTop');
     function updateBackToTop() {
         backToTop.classList.toggle('visible', window.scrollY > 400);
