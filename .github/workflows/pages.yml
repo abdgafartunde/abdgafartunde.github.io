@@ -10,7 +10,8 @@
 # CV.pdf is compiled from CV.tex during every build, so the site always has
 # the latest CV. Edit CV.tex; the PDF in your working copy is for local preview.
 #
-# Pull requests are built to catch errors but are not deployed.
+# Every build checks internal links, HTML and structural accessibility before
+# its artifact can be deployed. Pull requests run the same checks, without deploying.
 # You can also trigger a build manually from the Actions tab.
 
 name: Build and Deploy Site
@@ -46,13 +47,24 @@ jobs:
         with:
           bundler-cache: true  # Ruby version comes from .ruby-version
 
+      - name: Set up Node for website checks
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+
+      - name: Install website check dependencies
+        run: npm ci
+
+      - name: Test the website checker
+        run: npm test
+
       - name: Configure Pages
         if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v6
 
-      # CV.pdf is compiled from CV.tex on every build. A CV problem must never
-      # block the site, so if TeX Live or the compile fails, the CV.pdf that
-      # is currently live is kept instead.
+      # If TeX Live or compilation fails, fall back to the currently live CV.
+      # The checks below still require the download link to resolve.
       - name: Install TeX Live for the CV
         continue-on-error: true
         uses: zauguin/install-texlive@v4
@@ -77,6 +89,9 @@ jobs:
         env:
           JEKYLL_ENV: production
         run: bundle exec jekyll build --trace
+
+      - name: Check internal links, HTML and accessibility
+        run: npm run check:site
 
       - name: Upload site artifact
         if: github.event_name != 'pull_request'

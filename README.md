@@ -37,6 +37,24 @@ Every push to `master` builds the site and deploys it to GitHub Pages (`.github/
 
 Write inline math as `$$x$$`, not `$x$`. Kramdown only protects math inside `$$`, so single-dollar math loses backslash escapes such as `\{` and `\|`. A `$$` block on its own lines is displayed; `$$` inside a sentence is inline.
 
+## Automated website checks
+
+Every deployment and pull request validates the generated site before publication. A failing check stops deployment and leaves the current live site available. The checks cover internal page links and heading anchors, image and script references, duplicate IDs, HTML structure, page metadata, and structural accessibility issues such as missing image descriptions and unlabelled controls.
+
+To run locally with Node.js 24 or newer:
+
+```bash
+npm ci
+npm test
+latexmk -pdf CV.tex
+JEKYLL_ENV=production bundle exec jekyll build
+npm run check:site
+```
+
+The checker scans every generated HTML page without a fixed article count. External websites are not deployment gates: rate limits and temporary third-party outages should not block publishing. The `/ertkit/` documentation is also excluded from local link resolution because its own repository deploys it separately.
+
+Accessibility checks use axe-core with JSDOM and cover document structure; they do not measure rendered color contrast, responsive layout or the quality of alternative text. Keep reviewing those in a browser after design changes. Node dependencies and checking tools are excluded from the published site.
+
 ## License
 
 The website theme is based on [Contrast](https://github.com/niklasbuschmann/contrast) by Niklas Buschmann, released into the [public domain](http://unlicense.org/). Content (blog posts, research descriptions, CV) is copyrighted by Abd'gafar Tunde Tiamiyu.
