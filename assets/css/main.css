@@ -52,6 +52,7 @@
     /* Layout */
     --content-width: 760px;
     --page-width: 1120px;
+    --section-space: 2rem;
     --radius: 16px;
     --radius-sm: 9px;
     --transition: 0.2s ease;
@@ -2191,7 +2192,7 @@ a {
 
 .main-container {
     max-width: var(--page-width);
-    margin: 3rem auto 5rem;
+    margin: 2rem auto 3rem;
     padding: 0 2rem;
     background: transparent;
     border: 0;
@@ -2986,7 +2987,7 @@ textarea.form-control {
 
 @media (max-width: 992px) {
     .main-container {
-        margin: 2rem auto 4rem;
+        margin: 2rem auto 3rem;
         padding: 0 1.5rem;
     }
 
@@ -3171,9 +3172,9 @@ textarea.form-control {
 .home-hero {
     display: grid;
     grid-template-columns: 210px minmax(0, 1fr);
-    gap: clamp(3rem, 6vw, 5rem);
+    gap: clamp(2rem, 4vw, 3.5rem);
     align-items: center;
-    padding: 2.25rem 0 3.25rem;
+    padding: 1rem 0 2rem;
     border-bottom: 1px solid var(--border);
 }
 
@@ -3201,7 +3202,7 @@ textarea.form-control {
 
 .content .home-eyebrow,
 .home-eyebrow {
-    margin: 0 0 1.1rem;
+    margin: 0 0 0.75rem;
     color: var(--accent);
     font-size: 0.7rem;
     font-weight: 700;
@@ -3231,7 +3232,7 @@ textarea.form-control {
 
 .content .home-lede {
     max-width: 610px;
-    margin: 1.55rem 0 1.25rem;
+    margin: 1rem 0 1rem;
     color: var(--text-secondary);
     font-size: clamp(1.08rem, 1.7vw, 1.22rem);
     line-height: 1.58;
@@ -3262,7 +3263,7 @@ textarea.form-control {
     flex-wrap: wrap;
     align-items: center;
     gap: 0.85rem 1.4rem;
-    margin-top: 1.75rem;
+    margin-top: 1.25rem;
 }
 
 .content .home-primary-action,
@@ -3306,7 +3307,7 @@ textarea.form-control {
     display: flex;
     flex-wrap: wrap;
     gap: 0.65rem 1.2rem;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
 }
 
 .content .home-profile-links a {
@@ -3322,9 +3323,9 @@ textarea.form-control {
 
 .home-editorial-section {
     display: grid;
-    grid-template-columns: 145px minmax(0, 1fr);
-    gap: clamp(2.5rem, 6vw, 4.75rem);
-    padding: clamp(3rem, 6vw, 4rem) 0;
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+    padding: var(--section-space) 0;
     border-bottom: 1px solid var(--border);
 }
 
@@ -3344,7 +3345,7 @@ textarea.form-control {
 
 .content .home-section-content > h2 {
     max-width: 640px;
-    margin: 0 0 2rem;
+    margin: 0 0 1rem;
     color: var(--heading);
     font-family: var(--font-sans);
     font-size: clamp(1.65rem, 3vw, 2rem);
@@ -3573,7 +3574,7 @@ textarea.form-control {
 
     .home-editorial-section {
         grid-template-columns: 110px minmax(0, 1fr);
-        gap: 2.5rem;
+        gap: 1.5rem;
     }
 
     .home-work-list {
@@ -3599,8 +3600,8 @@ textarea.form-control {
 @media (max-width: 620px) {
     .home-hero {
         grid-template-columns: 1fr;
-        gap: 2.25rem;
-        padding: 2.25rem 0 3.75rem;
+        gap: 1.25rem;
+        padding: 1.25rem 0 2rem;
     }
 
     .home-portrait-wrap {
@@ -3627,8 +3628,8 @@ textarea.form-control {
 
     .home-editorial-section {
         grid-template-columns: 1fr;
-        gap: 1.35rem;
-        padding: 3.5rem 0;
+        gap: 0.65rem;
+        padding: var(--section-space) 0;
     }
 
     .home-section-label p {
@@ -3636,7 +3637,7 @@ textarea.form-control {
     }
 
     .content .home-section-content > h2 {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
     }
 
     .home-update-list article {
@@ -4215,7 +4216,7 @@ main [id] {
 
 .research-page .page-header {
     margin-bottom: 0;
-    padding: 3rem 0 4rem;
+    padding: 1rem 0 1.25rem;
 }
 
 .research-page .page-header h1 {
@@ -4242,7 +4243,7 @@ main [id] {
     flex-wrap: wrap;
     align-items: center;
     gap: 0.6rem 1.3rem;
-    padding: 1.15rem 0;
+    padding: 0.35rem 0 0.5rem;
     border-bottom: 1px solid var(--border);
 }
 
@@ -4256,6 +4257,9 @@ main [id] {
 }
 
 .content .research-page-nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
     color: var(--text-secondary);
     font-size: 0.75rem;
     font-weight: 600;
@@ -4268,11 +4272,16 @@ main [id] {
 
 .editorial-section {
     display: grid;
-    grid-template-columns: 145px minmax(0, 1fr);
-    gap: clamp(2.5rem, 6vw, 4.75rem);
-    padding: clamp(4rem, 7vw, 5.5rem) 0;
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+    padding: var(--section-space) 0;
     border-bottom: 1px solid var(--border);
     scroll-margin-top: 88px;
+}
+
+.research-editorial > .editorial-section:last-child,
+.experience-editorial > .editorial-section:last-child {
+    padding-bottom: 0;
 }
 
 .editorial-label p {
@@ -4291,7 +4300,7 @@ main [id] {
 
 .content .editorial-content > h2 {
     max-width: 650px;
-    margin: 0 0 2rem;
+    margin: 0 0 1rem;
     color: var(--heading);
     font-family: var(--font-sans);
     font-size: clamp(1.7rem, 3vw, 2.05rem);
@@ -4302,7 +4311,7 @@ main [id] {
 
 .research-introduction {
     max-width: 700px;
-    margin-bottom: 2.75rem;
+    margin-bottom: 1.5rem;
 }
 
 .content .research-introduction p,
@@ -4321,7 +4330,7 @@ main [id] {
     display: grid;
     grid-template-columns: 44px minmax(0, 1fr);
     gap: 1.25rem;
-    padding: 1.75rem 0;
+    padding: 1.25rem 0;
     border-bottom: 1px solid var(--border);
 }
 
@@ -4388,7 +4397,7 @@ main [id] {
 
 .content .research-section-intro {
     max-width: 650px;
-    margin: -0.6rem 0 2rem;
+    margin: 0 0 1.25rem;
     color: var(--text-secondary);
     font-size: 0.88rem;
     line-height: 1.7;
@@ -4402,7 +4411,7 @@ main [id] {
     display: grid;
     grid-template-columns: 54px minmax(0, 1fr);
     gap: 1.5rem;
-    padding: 1.8rem 0;
+    padding: 1.25rem 0;
     border-bottom: 1px solid var(--border);
 }
 
@@ -4475,7 +4484,7 @@ main [id] {
     display: grid;
     grid-template-columns: 190px minmax(0, 1fr);
     gap: 1.5rem;
-    padding: 1.45rem 0;
+    padding: 1.1rem 0;
     border-bottom: 1px solid var(--border);
 }
 
@@ -4611,7 +4620,7 @@ main [id] {
 
 @media (max-width: 760px) {
     .research-page .page-header {
-        padding: 2.5rem 0 3.25rem;
+        padding: 1.25rem 0;
     }
 
     .research-page .page-header h1 {
@@ -4629,8 +4638,8 @@ main [id] {
 
     .editorial-section {
         grid-template-columns: 1fr;
-        gap: 1.35rem;
-        padding: 3.5rem 0;
+        gap: 0.65rem;
+        padding: var(--section-space) 0;
     }
 
     .editorial-label p {
@@ -4638,11 +4647,11 @@ main [id] {
     }
 
     .content .editorial-content > h2 {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
     }
 
     .research-introduction {
-        margin-bottom: 2.25rem;
+        margin-bottom: 1.5rem;
     }
 
     .research-talk-list article,
@@ -4686,7 +4695,7 @@ main [id] {
 
 .experience-page .page-header {
     margin-bottom: 0;
-    padding: 3rem 0 4rem;
+    padding: 1rem 0 1.25rem;
 }
 
 .experience-page .page-header h1 {
@@ -4713,7 +4722,7 @@ main [id] {
     flex-wrap: wrap;
     align-items: center;
     gap: 0.6rem 1.3rem;
-    padding: 1.15rem 0;
+    padding: 0.35rem 0 0.5rem;
     border-bottom: 1px solid var(--border);
 }
 
@@ -4727,6 +4736,9 @@ main [id] {
 }
 
 .content .experience-page-nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
     color: var(--text-secondary);
     font-size: 0.75rem;
     font-weight: 600;
@@ -4739,7 +4751,7 @@ main [id] {
 
 .content .experience-introduction {
     max-width: 680px;
-    margin: -0.55rem 0 2.35rem;
+    margin: 0 0 1.25rem;
     color: var(--text-secondary);
     font-size: 0.94rem;
     line-height: 1.8;
@@ -4753,7 +4765,7 @@ main [id] {
     display: grid;
     grid-template-columns: 145px minmax(0, 1fr);
     gap: 1.75rem;
-    padding: 1.8rem 0;
+    padding: 1.25rem 0;
     border-bottom: 1px solid var(--border);
 }
 
@@ -4836,7 +4848,7 @@ main [id] {
 }
 
 .experience-education-records .experience-record {
-    padding: 2rem 0;
+    padding: 1.25rem 0;
 }
 
 .experience-details {
@@ -4930,7 +4942,7 @@ main [id] {
 }
 
 .experience-memberships {
-    margin-top: 2.4rem;
+    margin-top: 1.5rem;
 }
 
 .content .experience-small-label {
@@ -4982,8 +4994,8 @@ main [id] {
 }
 
 .experience-skill-groups article {
-    min-height: 122px;
-    padding: 1.35rem 1.5rem 1.35rem 0;
+    min-height: 0;
+    padding: 1rem 1.5rem 1rem 0;
     border-bottom: 1px solid var(--border);
 }
 
@@ -5008,7 +5020,7 @@ main [id] {
 
 @media (max-width: 760px) {
     .experience-page .page-header {
-        padding: 2.5rem 0 3.25rem;
+        padding: 1.25rem 0;
     }
 
     .experience-page .page-header h1 {
@@ -5840,7 +5852,7 @@ main [id] {
 }
 
 .post-breadcrumb {
-    padding: 0.8rem 0 2.5rem;
+    padding: 0 0 1rem;
 }
 
 .post-breadcrumb a {
@@ -5860,8 +5872,8 @@ main [id] {
 }
 
 .post-header {
-    margin: 0 0 3.25rem;
-    padding: 1.25rem 0 3rem;
+    margin: 0 0 1.5rem;
+    padding: 0.5rem 0 1.5rem;
     border-bottom: 1px solid var(--border);
 }
 
@@ -5869,7 +5881,7 @@ main [id] {
     display: flex;
     flex-wrap: wrap;
     gap: 0.45rem;
-    margin: 0 0 1.2rem;
+    margin: 0 0 0.75rem;
     color: var(--text-muted);
     font-size: 0.65rem;
     font-weight: 650;
@@ -5894,7 +5906,7 @@ main [id] {
 
 .post-description {
     max-width: 690px;
-    margin: 1.25rem 0 0;
+    margin: 1rem 0 0;
     color: var(--text-secondary);
     font-family: var(--font-sans);
     font-size: 1.02rem;
@@ -5905,8 +5917,8 @@ main [id] {
     display: flex;
     flex-wrap: wrap;
     gap: 0.45rem 1rem;
-    margin: 1.4rem 0 0;
-    padding: 1.1rem 0 0;
+    margin: 1rem 0 0;
+    padding: 0.75rem 0 0;
     border-top: 1px solid var(--border);
     list-style: none;
 }
@@ -5934,14 +5946,14 @@ main [id] {
 }
 
 .content.post-content p {
-    margin: 0 0 1.35rem;
+    margin: 0 0 1rem;
     color: var(--text);
     font-size: 1rem;
     line-height: 1.88;
 }
 
 .content.post-content h2 {
-    margin: 3.6rem 0 1.2rem;
+    margin: 2rem 0 0.9rem;
     padding-top: 0.2rem;
     color: var(--heading);
     font-family: var(--font-sans);
@@ -5952,7 +5964,7 @@ main [id] {
 }
 
 .content.post-content h3 {
-    margin: 2.5rem 0 0.85rem;
+    margin: 1.5rem 0 0.75rem;
     color: var(--heading);
     font-family: var(--font-sans);
     font-size: 1.08rem;
@@ -6018,8 +6030,8 @@ main [id] {
 }
 
 .post-content mjx-container[jax="SVG"][display="true"] {
-    margin: 1.8rem 0 !important;
-    padding: 1.1rem 0;
+    margin: 1.1rem 0 !important;
+    padding: 0.65rem 0;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
 }
@@ -6030,8 +6042,8 @@ main [id] {
     align-items: center;
     justify-content: space-between;
     gap: 0.75rem 1.5rem;
-    margin-top: 4rem;
-    padding: 1.35rem 0;
+    margin-top: 2rem;
+    padding: 1rem 0;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
 }
@@ -6058,7 +6070,7 @@ main [id] {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0;
     margin: 0;
-    padding: 2.4rem 0 0;
+    padding: 1.5rem 0 0;
     border-top: 0;
 }
 
@@ -6075,17 +6087,13 @@ main [id] {
     grid-template-columns: 1fr;
 }
 
-.post-nav-single .post-nav-item:empty {
-    display: none;
-}
-
-.post-nav-single .post-nav-item + .post-nav-item {
-    padding-left: 0;
-    border-left: 0;
-}
-
 .post-nav-item:first-child {
     padding-right: 1.5rem;
+}
+
+.post-nav-single .post-nav-item {
+    padding: 0;
+    border-left: 0;
 }
 
 .post-nav-item a {
@@ -6124,10 +6132,10 @@ main [id] {
 
 .post-related {
     display: grid;
-    grid-template-columns: 145px minmax(0, 1fr);
-    gap: clamp(2.5rem, 6vw, 4.75rem);
-    margin-top: 5.5rem;
-    padding: 4rem 0 0;
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+    margin-top: 2.5rem;
+    padding: 1.5rem 0 0;
     border-top: 1px solid var(--border);
 }
 
@@ -6198,11 +6206,11 @@ main [id] {
 
 @media (max-width: 760px) {
     .post-breadcrumb {
-        padding: 2rem 0 1rem;
+        padding: 1rem 0;
     }
 
     .post-header {
-        padding-top: 1.5rem;
+        padding-top: 0.5rem;
     }
 
     .post-title {
@@ -6221,8 +6229,8 @@ main [id] {
 
 @media (max-width: 520px) {
     .post-header {
-        margin-bottom: 2.5rem;
-        padding-bottom: 2.4rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1.5rem;
     }
 
     .post-title {
@@ -6249,7 +6257,7 @@ main [id] {
         border-left: 0;
     }
 
-    .post-nav-next {
+    .post-nav-item + .post-nav-item {
         padding-top: 1.3rem !important;
         border-top: 1px solid var(--border);
         text-align: left;
@@ -6268,10 +6276,10 @@ main [id] {
 .not-found-page {
     display: grid;
     grid-template-columns: minmax(180px, 0.62fr) minmax(0, 1fr);
-    gap: clamp(3rem, 8vw, 7rem);
+    gap: clamp(2rem, 5vw, 4rem);
     align-items: start;
-    min-height: 58vh;
-    padding: clamp(3rem, 8vw, 6.5rem) 0;
+    min-height: 40vh;
+    padding: 2rem 0;
 }
 
 .not-found-code {
@@ -6363,9 +6371,9 @@ main:focus {
 @media (max-width: 760px) {
     .not-found-page {
         grid-template-columns: 1fr;
-        gap: 2.2rem;
+        gap: 1.25rem;
         min-height: 0;
-        padding: 3.5rem 0 4rem;
+        padding: 2rem 0;
     }
 
     .not-found-code {
@@ -6767,7 +6775,7 @@ main:focus {
 }
 
 .post-toc {
-    margin: -1.25rem 0 2.5rem;
+    margin: 0 0 1.5rem;
     padding: 0.5rem 1.25rem;
     border: 1px solid var(--border);
     border-radius: 8px;
@@ -6839,5 +6847,11 @@ main:focus {
 
     .post-toc {
         padding-inline: 1rem;
+    }
+}
+
+@media (max-width: 760px) {
+    :root {
+        --section-space: 1.75rem;
     }
 }

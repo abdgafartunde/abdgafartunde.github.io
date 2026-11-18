@@ -43,22 +43,22 @@ layout: default
         </footer>
 
         <nav class="post-nav{% unless page.previous.url and page.next.url %} post-nav-single{% endunless %}" aria-label="Adjacent articles">
+            {% if page.previous.url %}
             <div class="post-nav-item post-nav-prev">
-                {% if page.previous.url %}
                 <a href="{{ page.previous.url | relative_url }}">
                     <span class="post-nav-label"><span aria-hidden="true">&larr;</span> Previous</span>
                     <span class="post-nav-title">{{ page.previous.title | truncate: 62 }}</span>
                 </a>
-                {% endif %}
             </div>
+            {% endif %}
+            {% if page.next.url %}
             <div class="post-nav-item post-nav-next">
-                {% if page.next.url %}
                 <a href="{{ page.next.url | relative_url }}">
                     <span class="post-nav-label">Next <span aria-hidden="true">&rarr;</span></span>
                     <span class="post-nav-title">{{ page.next.title | truncate: 62 }}</span>
                 </a>
-                {% endif %}
             </div>
+            {% endif %}
         </nav>
     </article>
 
