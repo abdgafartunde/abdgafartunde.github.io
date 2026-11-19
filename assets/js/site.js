@@ -66,7 +66,10 @@
         var entries = Array.from(document.querySelectorAll('[data-blog-entry]'));
         var resultCount = document.getElementById('blogResultCount');
         var noResults = document.getElementById('blogNoResults');
+        var seeMore = document.getElementById('blogMore');
         var activeTopic = 'all';
+        var pageSize = 5;
+        var visibleLimit = pageSize;
 
         function normalizeSearch(value) {
             return value.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '');
@@ -77,19 +80,25 @@
         });
 
         function filterEssays(updateUrl) {
+            if (updateUrl) visibleLimit = pageSize;
             var terms = normalizeSearch(search.value).trim().split(/\s+/).filter(Boolean);
-            var count = 0;
+            var matchingEntries = [];
             entries.forEach(function (entry, index) {
                 var topics = entry.getAttribute('data-topics').split(/\s+/);
                 var matches = (activeTopic === 'all' || topics.indexOf(activeTopic) !== -1) &&
                     terms.every(function (term) { return searchIndex[index].indexOf(term) !== -1; });
-                entry.hidden = !matches;
-                if (matches) count += 1;
+                if (matches) matchingEntries.push(entry);
+                entry.hidden = !matches || matchingEntries.length > visibleLimit;
             });
             topicButtons.forEach(function (button) {
                 button.setAttribute('aria-pressed', String(button.getAttribute('data-topic') === activeTopic));
             });
-            resultCount.textContent = count + (count === 1 ? ' essay' : ' essays');
+            var count = matchingEntries.length;
+            var hasMore = count > visibleLimit;
+            resultCount.textContent = hasMore
+                ? 'Showing ' + visibleLimit + ' of ' + count + ' essays'
+                : count + (count === 1 ? ' essay' : ' essays');
+            seeMore.hidden = !hasMore;
             noResults.hidden = count !== 0;
 
             if (updateUrl) {
@@ -101,6 +110,7 @@
                 // Filtering remains usable when history updates are restricted.
                 try { window.history.replaceState(null, '', url); } catch (error) {}
             }
+            return matchingEntries;
         }
 
         function readFiltersFromUrl() {
@@ -110,6 +120,7 @@
                 return button.getAttribute('data-topic') === requestedTopic;
             }) ? requestedTopic : 'all';
             search.value = parameters.get('q') || '';
+            visibleLimit = pageSize;
             filterEssays(false);
         }
 
@@ -120,6 +131,12 @@
             });
         });
         search.addEventListener('input', function () { filterEssays(true); });
+        seeMore.addEventListener('click', function () {
+            var firstNewIndex = visibleLimit;
+            visibleLimit += pageSize;
+            var firstNewEntry = filterEssays(false)[firstNewIndex];
+            if (firstNewEntry) firstNewEntry.querySelector('h3 a').focus();
+        });
         document.getElementById('blogReset').addEventListener('click', function () {
             search.value = '';
             activeTopic = 'all';

@@ -3799,20 +3799,12 @@ textarea.form-control {
     font-size: 0.66rem;
 }
 
-.blog-reading-list {
-    border-bottom: 1px solid var(--border);
-}
-
 .blog-reading-list article {
     display: grid;
     grid-template-columns: 92px minmax(0, 1fr);
     gap: 1.6rem;
     padding: 1.1rem 0;
     border-bottom: 1px solid var(--border);
-}
-
-.blog-reading-list article:last-child {
-    border-bottom: 0;
 }
 
 .blog-reading-list article > time {
@@ -6730,6 +6722,7 @@ main:focus {
 }
 
 .blog-topic-filters button,
+.blog-more,
 .blog-no-results button {
     min-height: 44px;
     padding: 0.55rem 0.85rem;
@@ -6745,6 +6738,7 @@ main:focus {
 }
 
 .blog-topic-filters button:hover,
+.blog-more:hover,
 .blog-no-results button:hover {
     border-color: var(--accent);
     color: var(--heading);
@@ -6772,6 +6766,7 @@ main:focus {
     line-height: 1.6;
 }
 
+.blog-more,
 .blog-no-results button {
     margin-top: 0.75rem;
 }

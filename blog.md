@@ -74,6 +74,7 @@ seo_description: "Blog by A.T. Tiamiyu covering inverse problems, scientific com
         </article>
         {% endfor %}
       </div>
+      <button class="blog-more" id="blogMore" type="button" aria-controls="blogArchive" hidden>See more</button>
       <div class="blog-no-results" id="blogNoResults" hidden>
         <p>No essays match this search and topic.</p>
         <button type="button" id="blogReset">Clear filters</button>
