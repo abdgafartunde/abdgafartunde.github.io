@@ -4,7 +4,7 @@ title: "On the Quiet Erosion of Deep Thinking"
 description: "Reflections on AI tools in research, the disappearing art of struggle, and a question worth asking."
 date: 2026-02-06
 author: "Abd'gafar Tunde Tiamiyu"
-tags: [AI, Academia, Reflections]
+tags: [Artificial Intelligence, Academia, Reflections]
 math: false
 ---
 

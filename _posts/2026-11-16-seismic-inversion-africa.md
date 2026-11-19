@@ -76,6 +76,6 @@ From a technical standpoint, African contexts present specific challenges that t
 
 These are not uniquely African problems, but they are problems for which the African context provides urgency and specificity that motivates better mathematical work.
 
-*For seismic inversion implementations, see the [seismic-inversion-ml GitHub repository](https://github.com/abdgafartunde/seismic-inversion-ml) (to be updated).*
+*The [seismic-inversion-ml project](https://github.com/abdgafartunde/seismic-inversion-ml) is under development. Its README outlines plans to benchmark learned inversion methods on OpenFWI.*
 
 Sources: the [NUPRC announcement of the PEL 5 agreement](https://www.nuprc.gov.ng/media/news/b4d787a34e0927235867868e), the [NUPRC reserves position at 1 January 2026](https://www.nuprc.gov.ng/media/news/5fa3f1a3c8223aa7c4dc4a39), Spina's 2025 study of [shale tectonics across the Niger Delta](https://doi.org/10.1029/2024TC008689), and the [OpenFWI benchmark paper](https://proceedings.neurips.cc/paper_files/paper/2022/hash/27d3ef263c7cb8d542c4f9815a49b69b-Abstract-Datasets_and_Benchmarks.html).

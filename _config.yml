@@ -31,7 +31,7 @@ future: false
 
 # Kramdown settings
 kramdown:
-  input: GFM
+  input: GFMWithInlineMath
   hard_wrap: false
   auto_ids: true
   math_engine: mathjax

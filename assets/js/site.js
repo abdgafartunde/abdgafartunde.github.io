@@ -157,6 +157,7 @@
     updateBackToTop();
     backToTop.addEventListener('click', function () {
         var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        document.getElementById('main-content').focus({ preventScroll: true });
         window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
     });
 })();

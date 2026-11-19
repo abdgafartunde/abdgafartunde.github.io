@@ -457,7 +457,8 @@ mjx-container[jax="SVG"][display="true"] {
     text-align: center;
 }
 
-mjx-container[jax="SVG"][display="true"] svg {
+/* Fit the equation graphic when its natural width exceeds the text column. */
+mjx-container[jax="SVG"] > svg {
     max-width: 100%;
     height: auto;
 }

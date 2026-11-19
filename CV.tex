@@ -39,9 +39,12 @@
 \titlespacing*{\subsection}{0pt}{8pt}{4pt}
 
 % Custom commands
-\newcommand{\cventry}[4]{%
+\newenvironment{cventry}[4]{%
+    \par\noindent\begin{minipage}{\linewidth}%
     \noindent\textbf{#1}\hfill #2\\
     \textit{#3}\hfill\textit{#4}\par\vspace{2pt}%
+}{%
+    \end{minipage}\par
 }
 
 \newcommand{\publication}[4]{%
@@ -90,53 +93,59 @@ Partial differential equations
 \section{Education}
 %----------------------------------------------------------------------
 
-\cventry{PhD in Mathematics}{Aug 2021 -- Jul 2025}{The Chinese University of Hong Kong, Department of Mathematics}{Hong Kong}
+\begin{cventry}{PhD in Mathematics}{Aug 2021 -- Jul 2025}{The Chinese University of Hong Kong, Department of Mathematics}{Hong Kong}
 \begin{itemize}[nosep, leftmargin=1.5em]
     \item \textit{Dissertation:} Novel regularization and deep learning approaches for electrical impedance tomography (EIT) problems with partial measurement data
     \item \textit{Advisor:} Professor Jun Zou (Fellow of SIAM and AMS)
     \item \textit{Funding:} Hong Kong PhD Fellowship Scheme (RGC)
 \end{itemize}
+\end{cventry}
 \vspace{6pt}
 
-\cventry{B.Tech in Mathematics (First Class Honours)}{Oct 2012 -- Nov 2017}{Federal University of Technology, Department of Mathematics}{Minna, Nigeria}
+\begin{cventry}{B.Tech in Mathematics (First Class Honours)}{Oct 2012 -- Nov 2017}{Federal University of Technology, Department of Mathematics}{Minna, Nigeria}
 \begin{itemize}[nosep, leftmargin=1.5em]
     \item MTN Foundation Scholarship for Academic Excellence
 \end{itemize}
+\end{cventry}
 
 %----------------------------------------------------------------------
 \section{Research Experience}
 %----------------------------------------------------------------------
 
-\cventry{Postdoctoral Researcher}{Jan 2026 -- Present}{Jilin University, School of Mathematics}{Changchun, China}
+\begin{cventry}{Postdoctoral Researcher}{Jan 2026 -- Present}{Jilin University, School of Mathematics}{Changchun, China}
 \begin{itemize}[nosep, leftmargin=1.5em]
     \item Research on inverse problems, regularization methods, and scientific machine learning
     \item Developing optimization techniques for variational and convex problems with applications in SciML
     \item Deep learning approaches for computational imaging
 \end{itemize}
+\end{cventry}
 \vspace{6pt}
 
-\cventry{Doctoral Researcher}{Aug 2021 -- Jul 2025}{The Chinese University of Hong Kong}{Hong Kong}
+\begin{cventry}{Doctoral Researcher}{Aug 2021 -- Jul 2025}{The Chinese University of Hong Kong}{Hong Kong}
 \begin{itemize}[nosep, leftmargin=1.5em]
     \item Developed novel variational inversion schemes using adaptive primal-dual hybrid gradient methods, mitigating ill-posedness and nonlinearity in EIT reconstructions
     \item Integrated deep neural networks with physics-oriented models, improving accuracy by 15\% in noisy and incomplete measurement datasets
     \item Devised data-driven approaches for learning multi-parameter total variation-like regularizers via convex optimization
     \item Conducted numerical experiments on synthetic and experimental data, demonstrating robustness to high noise levels and partial measurements
 \end{itemize}
+\end{cventry}
 \vspace{6pt}
 
-\cventry{Visiting Researcher}{Oct 2023 -- Jun 2024}{University of Graz}{Graz, Austria}
+\begin{cventry}{Visiting Researcher}{Oct 2023 -- Jun 2024}{University of Graz}{Graz, Austria}
 \begin{itemize}[nosep, leftmargin=1.5em]
     \item Developed primal-dual algorithms with learned regularizers for EIT, improving reconstruction accuracy by 5\% over traditional methods
     \item Implemented GPU-accelerated TensorFlow models for real-time imaging
     \item Collaborated with Professor Kristian Bredies on algorithm development for EIT
 \end{itemize}
+\end{cventry}
 \vspace{6pt}
 
-\cventry{Research Assistant}{Jun 2018 -- Apr 2019}{Kano University of Science and Technology}{Kano, Nigeria}
+\begin{cventry}{Research Assistant}{Jun 2018 -- Apr 2019}{Kano University of Science and Technology}{Kano, Nigeria}
 \begin{itemize}[nosep, leftmargin=1.5em]
     \item Collaborated on numerical solutions for differential and integral equations
     \item Conducted numerical experiments using MATLAB and Maple
 \end{itemize}
+\end{cventry}
 
 %----------------------------------------------------------------------
 \section{Selected Publications}
@@ -195,19 +204,21 @@ Partial differential equations
 \section{Teaching Experience}
 %----------------------------------------------------------------------
 
-\cventry{Teaching Assistant}{Aug 2021 -- Jul 2025}{The Chinese University of Hong Kong}{Hong Kong}
+\begin{cventry}{Teaching Assistant}{Aug 2021 -- Jul 2025}{The Chinese University of Hong Kong}{Hong Kong}
 \begin{itemize}[nosep, leftmargin=1.5em]
     \item Calculus for Engineers (Fall 2022, 2023): Led weekly tutorials for 50+ students
     \item Games and Strategic Thinking (Fall 2024): Tutorial instruction and exam design
     \item Designed assignments incorporating real-world applications
 \end{itemize}
+\end{cventry}
 \vspace{6pt}
 
-\cventry{Mathematics Tutor}{May 2019 -- Dec 2020}{KUST Staff School}{Kano, Nigeria}
+\begin{cventry}{Mathematics Tutor}{May 2019 -- Dec 2020}{KUST Staff School}{Kano, Nigeria}
 \begin{itemize}[nosep, leftmargin=1.5em]
     \item Taught mathematics to 100+ high school students
     \item 85\% of students advanced to higher-level tracks
 \end{itemize}
+\end{cventry}
 
 %----------------------------------------------------------------------
 \section{Technical Skills}
@@ -242,18 +253,23 @@ Partial differential equations
 \section{References}
 %----------------------------------------------------------------------
 
-\begin{tabular}{@{}p{0.48\textwidth}p{0.48\textwidth}@{}}
-\textbf{Professor Jun Zou} & \textbf{Professor Bangti Jin} \\
-Fellow of SIAM and AMS & Global STEM Scholar \\
-Chairman, Choh-Ming Li Professor & Department of Mathematics \\
-Department of Mathematics, CUHK & The Chinese University of Hong Kong \\
-\href{mailto:zou@math.cuhk.edu.hk}{zou@math.cuhk.edu.hk} & \href{mailto:b.jin@cuhk.edu.hk}{b.jin@cuhk.edu.hk} \\[12pt]
-
-\textbf{Professor Kristian Bredies} & \\
-Department of Mathematics and & \\
-Scientific Computing & \\
-University of Graz, Austria & \\
-\href{mailto:kristian.bredies@uni-graz.at}{kristian.bredies@uni-graz.at} &
+\noindent\begin{tabular}{@{}p{0.315\textwidth}p{0.315\textwidth}p{0.315\textwidth}@{}}
+\raggedright\textbf{Professor Jun Zou}\newline
+Fellow of SIAM and AMS\newline
+Chairman, Choh-Ming Li Professor\newline
+Department of Mathematics, CUHK\newline
+\href{mailto:zou@math.cuhk.edu.hk}{zou@math.cuhk.edu.hk}
+&
+\raggedright\textbf{Professor Bangti Jin}\newline
+Global STEM Scholar\newline
+Department of Mathematics\newline
+The Chinese University of Hong Kong\newline
+\href{mailto:b.jin@cuhk.edu.hk}{b.jin@cuhk.edu.hk}
+&
+\raggedright\textbf{Professor Kristian Bredies}\newline
+Department of Mathematics and Scientific Computing\newline
+University of Graz, Austria\newline
+\href{mailto:kristian.bredies@uni-graz.at}{kristian.bredies@uni-graz.at}
 \end{tabular}
 
 \end{document}

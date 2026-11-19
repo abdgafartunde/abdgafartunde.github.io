@@ -4,7 +4,7 @@ title: "AI Agents and Cybersecurity: Lessons from the OpenAI–Hugging Face Inci
 description: "What the OpenAI–Hugging Face incident teaches researchers about giving AI agents access to tools and checking the work they produce."
 date: 2026-11-30
 author: "Abd'gafar Tunde Tiamiyu"
-tags: [AI, Cybersecurity, Research, Scientific Computing]
+tags: [Artificial Intelligence, Cybersecurity, Research, Scientific Computing]
 math: false
 last_reviewed: "2026-11-19"
 ---

@@ -72,4 +72,4 @@ Classical FWI is iterative and gradient-based. The emerging research direction c
 
 Each of these directions is active, and none has displaced classical FWI in production workflows. Hybrid methods that combine adjoint-based optimization with learned components are a focused research direction because they retain the governing physics while using data to improve initialization, parametrization, or regularization.
 
-*For code related to seismic inversion and FWI, see the [seismic-inversion-ml GitHub repository](https://github.com/abdgafartunde/seismic-inversion-ml) (to be updated).*
+*The [seismic-inversion-ml project](https://github.com/abdgafartunde/seismic-inversion-ml) is under development. Its README outlines plans to benchmark learned inversion methods on OpenFWI.*
